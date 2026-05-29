@@ -40,6 +40,8 @@ async function main() {
         ...youtube, ...soundcloud, ...playlists,
         google_trends_score: trends.score,
         google_trends_direction: trends.direction,
+        google_trends_countries: trends.top_countries ?? {},
+        google_trends_cities: trends.top_us_cities ?? {},
         spotify_monthly_listeners: spotify.spotify_followers ?? 0,
       });
       process.stdout.write(`\r${i + 1}/${artists.length} ${artist.name}`);
