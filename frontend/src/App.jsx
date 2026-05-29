@@ -860,6 +860,181 @@ function OnestoWatchPage({ rankings }) {
   );
 }
 
+// ── Velocity Tab ──────────────────────────────────────────────────
+
+const VELOCITY_LABELS = {
+  spotify_followers:          "Spotify Followers",
+  spotify_monthly_listeners:  "Monthly Listeners",
+  tiktok_post_count:          "TikTok Posts",
+  youtube_subscribers:        "YT Subscribers",
+  youtube_views_weekly:       "YT Views/wk",
+  google_trends_score:        "Google Trends",
+  mixcloud_followers:         "Mixcloud",
+};
+
+function VelocityBadge({ value }) {
+  if (value == null)  return <span className="vel-badge vel-badge--na">N/A</span>;
+  if (value > 0)  return <span className="vel-badge vel-badge--up">+{value.toFixed(1)}%</span>;
+  if (value < 0)  return <span className="vel-badge vel-badge--down">{value.toFixed(1)}%</span>;
+  return <span className="vel-badge vel-badge--flat">0%</span>;
+}
+
+function VelocityPage({ rankings }) {
+  const [sortKey, setSortKey] = useState("composite");
+
+  const artists = rankings
+    .filter(d => d.velocity)
+    .sort((a, b) => {
+      if (sortKey === "composite") return b.velocity.composite - a.velocity.composite;
+      const av = a.velocity.metrics?.[sortKey] ?? -Infinity;
+      const bv = b.velocity.metrics?.[sortKey] ?? -Infinity;
+      return bv - av;
+    });
+
+  if (!artists.length) return (
+    <div className="page vel-empty">
+      <h2>Velocity data will appear after the second data refresh</h2>
+      <p>Week-over-week comparisons need at least two snapshots. Check back in 6 hours.</p>
+    </div>
+  );
+
+  const metricKeys = Object.keys(VELOCITY_LABELS);
+
+  return (
+    <div className="page vel-page">
+      <div className="vel-header">
+        <h1 className="vel-title">Velocity</h1>
+        <p className="vel-sub">Week-over-week growth rate across every signal we track. Sort any column.</p>
+      </div>
+      <div className="vel-table-wrap">
+        <table className="vel-table">
+          <thead>
+            <tr>
+              <th className="vel-th vel-th--artist">Artist</th>
+              <th
+                className={`vel-th vel-th--composite ${sortKey === "composite" ? "vel-th--active" : ""}`}
+                onClick={() => setSortKey("composite")}
+              >Composite ↕</th>
+              {metricKeys.map(k => (
+                <th
+                  key={k}
+                  className={`vel-th ${sortKey === k ? "vel-th--active" : ""}`}
+                  onClick={() => setSortKey(k)}
+                >{VELOCITY_LABELS[k]} ↕</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {artists.map(dj => (
+              <tr key={dj.name} className="vel-row">
+                <td className="vel-td vel-td--artist">
+                  <span className="vel-rank">#{dj.rank}</span>
+                  {dj.image && <img src={dj.image} className="vel-img" alt="" />}
+                  <span className="vel-name">{dj.name}</span>
+                </td>
+                <td className="vel-td vel-td--composite">
+                  <VelocityBadge value={dj.velocity.composite} />
+                </td>
+                {metricKeys.map(k => (
+                  <td key={k} className="vel-td">
+                    <VelocityBadge value={dj.velocity.metrics?.[k] ?? null} />
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+// ── Breakouts Tab ─────────────────────────────────────────────────
+
+function BreakoutsPage({ rankings, breakouts: staticBreakouts, breakoutThreshold }) {
+  const [threshold, setThreshold] = useState(breakoutThreshold ?? 8);
+
+  // Re-compute from rankings if threshold changes
+  const alerts = rankings
+    .filter(d => d.velocity?.score_change_pct != null && d.velocity.score_change_pct >= threshold)
+    .sort((a, b) => b.velocity.score_change_pct - a.velocity.score_change_pct);
+
+  const noData = rankings.filter(d => d.velocity).length === 0;
+
+  return (
+    <div className="page brk-page">
+      <div className="brk-header">
+        <div>
+          <h1 className="brk-title">🚨 Breakout Alerts</h1>
+          <p className="brk-sub">Artists whose overall score jumped significantly week-over-week — move before the market catches on.</p>
+        </div>
+        <div className="brk-threshold">
+          <label>Alert threshold</label>
+          <div className="brk-threshold-row">
+            <input
+              type="range" min="2" max="30" step="1" value={threshold}
+              onChange={e => setThreshold(Number(e.target.value))}
+              className="brk-slider"
+            />
+            <span className="brk-threshold-val">+{threshold}%</span>
+          </div>
+        </div>
+      </div>
+
+      {noData ? (
+        <div className="brk-empty">
+          <div className="brk-empty-icon">⏳</div>
+          <h2>Waiting for second data snapshot</h2>
+          <p>Breakout detection needs two weeks of data to compare. Check back after the next refresh.</p>
+        </div>
+      ) : alerts.length === 0 ? (
+        <div className="brk-empty">
+          <div className="brk-empty-icon">📊</div>
+          <h2>No breakouts this week at +{threshold}%</h2>
+          <p>Lower the threshold to surface smaller movements, or check back after the next data refresh.</p>
+        </div>
+      ) : (
+        <div className="brk-list">
+          {alerts.map((dj, i) => {
+            const v = dj.velocity;
+            const drivers = Object.entries(v.metrics ?? {})
+              .filter(([, val]) => val > 5)
+              .sort((a, b) => b[1] - a[1])
+              .slice(0, 3);
+            return (
+              <div key={dj.name} className="brk-card">
+                <div className="brk-card-rank">#{i + 1}</div>
+                <div className="brk-card-avatar">
+                  {dj.image
+                    ? <img src={dj.image} alt={dj.name} />
+                    : <div className="brk-card-initial">{dj.name[0]}</div>}
+                </div>
+                <div className="brk-card-body">
+                  <div className="brk-card-name">{dj.name}</div>
+                  <div className="brk-card-meta">Rank #{dj.rank} · Overall score +{v.score_change_pct.toFixed(1)}% this week</div>
+                  {drivers.length > 0 && (
+                    <div className="brk-card-drivers">
+                      {drivers.map(([key, val]) => (
+                        <span key={key} className="brk-driver">
+                          {VELOCITY_LABELS[key] ?? key} <strong>+{val.toFixed(1)}%</strong>
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <div className="brk-card-score">
+                  <span className="brk-score-badge">+{v.score_change_pct.toFixed(1)}%</span>
+                  <span className="brk-score-label">score jump</span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ── Pro Paywall ────────────────────────────────────────────────────
 
 const PRO_KEY         = "djranks_pro_access";
@@ -985,8 +1160,11 @@ export default function App() {
   const [loading, setLoading]         = useState(true);
   const [error, setError]             = useState(null);
   const [lastUpdated, setLastUpdated] = useState(null);
-  const [movers, setMovers]           = useState(null);
-  const [onesToWatch, setOnesToWatch] = useState([]);
+  const [movers, setMovers]                   = useState(null);
+  const [onesToWatch, setOnesToWatch]         = useState([]);
+  const [velocityRanked, setVelocityRanked]   = useState([]);
+  const [breakouts, setBreakouts]             = useState([]);
+  const [breakoutThreshold, setBreakoutThreshold] = useState(8);
   const [expanded, setExpanded]       = useState(null);
   const [sortKey, setSortKey]         = useState("score");
   const [compareList, setCompareList] = useState([]);
@@ -1005,6 +1183,9 @@ export default function App() {
         setLastUpdated(Array.isArray(data) ? null : (data.lastUpdated ?? null));
         setMovers(data.movers ?? null);
         setOnesToWatch(data.onesToWatch ?? []);
+        setVelocityRanked(data.velocityRanked ?? []);
+        setBreakouts(data.breakouts ?? []);
+        setBreakoutThreshold(data.breakoutThreshold ?? 8);
         setLoading(false);
       })
       .catch(e => { setError(e.message); setLoading(false); });
@@ -1048,6 +1229,8 @@ export default function App() {
         <div className="top-tabs">
           <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>
           <button className={`top-tab ${activeTab === "ones-to-watch" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("ones-to-watch")}>Ones to Watch</button>
+          <button className={`top-tab ${activeTab === "velocity"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("velocity")}>Velocity</button>
+          <button className={`top-tab ${activeTab === "breakouts"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("breakouts")}>🚨 Breakouts</button>
           <button className={`top-tab ${activeTab === "movers"        ? "top-tab--active" : ""}`} onClick={() => setActiveTab("movers")}>Movers</button>
           <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
           <button className={`top-tab top-tab--pro ${activeTab === "pro" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("pro")}>Pro</button>
@@ -1060,6 +1243,8 @@ export default function App() {
           : <ProPaywall onUnlock={() => setProUnlocked(true)} />
       )}
       {activeTab === "ones-to-watch" && <OnestoWatchPage rankings={rankings} />}
+      {activeTab === "velocity"      && <VelocityPage rankings={rankings} />}
+      {activeTab === "breakouts"     && <BreakoutsPage rankings={rankings} breakouts={breakouts} breakoutThreshold={breakoutThreshold} />}
       {activeTab === "movers"        && <MoversPage />}
       {activeTab === "how-it-works"  && <HowItWorksPage />}
 
