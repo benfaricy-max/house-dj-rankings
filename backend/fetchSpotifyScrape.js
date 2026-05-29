@@ -1,8 +1,11 @@
 const delay = ms => new Promise(r => setTimeout(r, ms));
 
-// Set SKIP_PUPPETEER=true in Railway environment variables to skip headless Chrome
-// (avoids OOM on low-RAM containers). Monthly listeners will show as 0.
-const SKIP_PUPPETEER = process.env.SKIP_PUPPETEER === "true";
+// Skip headless Chrome on Railway (low-RAM containers) or if explicitly disabled.
+// Railway automatically sets RAILWAY_ENVIRONMENT — no manual env var needed.
+const SKIP_PUPPETEER =
+  process.env.SKIP_PUPPETEER === "true" ||
+  !!process.env.RAILWAY_ENVIRONMENT ||
+  !!process.env.RAILWAY_PROJECT_ID;
 
 let puppeteer = null;
 let browser   = null;
