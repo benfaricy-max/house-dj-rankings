@@ -65,7 +65,6 @@ async function main() {
       }
 
       // Compute weekly YouTube views from snapshot diff
-      const prevSnap = snapshots[artist.name]?.slice(-1)[0];
       const prevTotal = prevSnap?.youtube_total_views || 0;
       const currTotal = youtube.youtube_total_views || 0;
       const youtube_views_weekly = prevTotal > 0 && currTotal >= prevTotal
