@@ -11,13 +11,18 @@ let puppeteer = null;
 let browser   = null;
 
 function getPuppeteer() {
-  if (!puppeteer) puppeteer = require("puppeteer");
+  if (!puppeteer) {
+    try { puppeteer = require("puppeteer"); }
+    catch { return null; }
+  }
   return puppeteer;
 }
 
 async function getBrowser() {
+  const p = getPuppeteer();
+  if (!p) throw new Error("Puppeteer not installed");
   if (!browser || !browser.connected) {
-    browser = await getPuppeteer().launch({
+    browser = await p.launch({
       headless: true,
       args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
     });
