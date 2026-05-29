@@ -31,14 +31,9 @@ try { snapshots = JSON.parse(fs.readFileSync(SNAP_FILE, "utf8")); } catch {}
 const delay = ms => new Promise(r => setTimeout(r, ms));
 
 async function main() {
-  console.log(`Fetching data for ${artists.length} artists…`);
-  const token = await getSpotifyToken();
+  console.log(`Fetching data for ${artists.length} artists (Spotify from cache, live: YouTube/Trends/TikTok/Mixcloud)…`);
   const enriched = [];
   let channelIdUpdates = 0;
-
-  // Spotify data ages out after 23 hours — use cached snapshot data if still fresh
-  const SPOTIFY_TTL_MS = 23 * 60 * 60 * 1000;
-  const now = Date.now();
 
   for (const [i, artist] of artists.entries()) {
     if (i > 0) await delay(2500);
@@ -47,22 +42,19 @@ async function main() {
       await delay(20000);
     }
     try {
-      // Use cached Spotify data if it's less than 23 hours old
-      const prevSnap     = snapshots[artist.name]?.slice(-1)[0];
-      const snapAge      = prevSnap?.timestamp ? now - new Date(prevSnap.timestamp).getTime() : Infinity;
-      const spotifyFresh = prevSnap && snapAge < SPOTIFY_TTL_MS;
+      // Always use cached Spotify data — avoids rate limits entirely
+      const prevSnap = snapshots[artist.name]?.slice(-1)[0];
+      const spotifyCache = prevSnap ?? {
+        spotify_followers: 0, spotify_monthly_listeners: 0,
+        spotify_avg_track_popularity: 0, spotify_top_track_score: 0,
+        name: artist.name, image: null, spotify_url: null,
+      };
 
-      const spotifyPromise    = spotifyFresh ? Promise.resolve(prevSnap) : getSpotifyData(artist.spotify_id, token);
-      const topTracksPromise  = spotifyFresh ? Promise.resolve(prevSnap) : getSpotifyTopTracks(artist.spotify_id, token);
-
-      const [spotify, topTracks, tiktok, youtube, soundcloud, mixcloud, playlists, trends] = await Promise.all([
-        spotifyPromise,
-        topTracksPromise,
+      const [tiktok, youtube, soundcloud, mixcloud, trends] = await Promise.all([
         getTikTokMentions(artist.tiktok_tag),
         getYouTubeData(artist.youtube_channel_id),
         getSoundCloudData(artist.soundcloud_permalink),
         getMixcloudData(artist.mixcloud_username),
-        getPlaylistPlacements(artist.spotify_id, token, artist),
         getGoogleTrends(artist.name),
       ]);
 
@@ -81,14 +73,15 @@ async function main() {
         : 0;
 
       enriched.push({
-        ...artist, ...spotify, ...topTracks, ...tiktok,
-        ...youtube, ...soundcloud, ...mixcloud, ...playlists,
+        ...artist, ...spotifyCache, ...tiktok,
+        ...youtube, ...soundcloud, ...mixcloud,
+        spotify_playlist_placements: artist.album_count ?? 0,
         youtube_views_weekly,
         google_trends_score:     trends.score,
         google_trends_direction: trends.direction,
         google_trends_countries: trends.top_countries ?? {},
         google_trends_cities:    trends.top_us_cities ?? {},
-        spotify_monthly_listeners: spotify.spotify_followers ?? 0,
+        spotify_monthly_listeners: spotifyCache.spotify_monthly_listeners ?? spotifyCache.spotify_followers ?? 0,
       });
       process.stdout.write(`\r${i + 1}/${artists.length} ${artist.name}   `);
     } catch (err) {
