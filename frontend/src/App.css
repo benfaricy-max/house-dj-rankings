@@ -1,3 +1,37 @@
+/* ── Pro Paywall ─────────────────────────────────────────────────── */
+.paywall { max-width: 860px; margin: 0 auto; padding: 48px 24px 100px; }
+
+.paywall-hero { text-align: center; margin-bottom: 52px; }
+.paywall-badge { background: linear-gradient(135deg,#f5a623,#e07b00); color:#fff; font-size:.7rem; font-weight:800; letter-spacing:.12em; padding:4px 12px; border-radius:20px; text-transform:uppercase; }
+.paywall-title { font-size:2.4rem; font-weight:800; margin:.6rem 0 .8rem; background:linear-gradient(135deg,#fff 40%,#f5a623); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.paywall-sub { color:#aaa; font-size:1.05rem; max-width:540px; margin:0 auto; line-height:1.6; }
+
+.paywall-features { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; margin-bottom:52px; }
+.paywall-feature { background:#111; border:1px solid #222; border-radius:12px; padding:20px; display:flex; gap:14px; align-items:flex-start; }
+.paywall-feature-icon { font-size:1.4rem; flex-shrink:0; margin-top:2px; }
+.paywall-feature-title { font-weight:700; font-size:.95rem; margin:0 0 4px; color:#fff; }
+.paywall-feature-desc { font-size:.82rem; color:#888; margin:0; line-height:1.5; }
+
+.paywall-plans { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-bottom:40px; }
+.paywall-plan { background:#111; border:1px solid #2a2a2a; border-radius:16px; padding:32px 40px; text-align:center; min-width:200px; }
+.paywall-plan--featured { border-color:#f5a623; position:relative; }
+.paywall-plan-label { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:#f5a623; color:#000; font-size:.7rem; font-weight:800; padding:3px 12px; border-radius:20px; letter-spacing:.08em; white-space:nowrap; }
+.paywall-plan-price { font-size:2.4rem; font-weight:800; color:#fff; }
+.paywall-plan-price span { font-size:1rem; color:#888; font-weight:400; }
+.paywall-plan-name { color:#888; font-size:.9rem; margin:.4rem 0 1.6rem; }
+.paywall-save { background:#1a3a1a; color:#4caf50; font-size:.75rem; padding:2px 8px; border-radius:10px; margin-left:6px; }
+.paywall-cta { display:block; background:#f5a623; color:#000; font-weight:800; font-size:.95rem; padding:12px 24px; border-radius:10px; text-decoration:none; transition:opacity .15s; }
+.paywall-cta:hover { opacity:.85; }
+.paywall-cta--outline { background:transparent; color:#f5a623; border:2px solid #f5a623; }
+
+.paywall-code { text-align:center; color:#666; font-size:.9rem; }
+.paywall-code p { margin-bottom:10px; }
+.paywall-code-row { display:flex; gap:8px; justify-content:center; }
+.paywall-code-input { background:#111; border:1px solid #333; color:#fff; padding:10px 16px; border-radius:8px; font-size:.9rem; width:180px; }
+.paywall-code-btn { background:#222; color:#fff; border:1px solid #333; padding:10px 20px; border-radius:8px; cursor:pointer; font-size:.9rem; transition:background .15s; }
+.paywall-code-btn:hover { background:#333; }
+.paywall-code-err { color:#e74c3c; font-size:.82rem; margin-top:8px; }
+
 /* ── Layout ──────────────────────────────────────────────────────── */
 .page {
   padding: 48px 24px 120px;

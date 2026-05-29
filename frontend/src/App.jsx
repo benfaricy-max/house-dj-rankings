@@ -860,6 +860,99 @@ function OnestoWatchPage({ rankings }) {
   );
 }
 
+// ── Pro Paywall ────────────────────────────────────────────────────
+
+const PRO_KEY         = "djranks_pro_access";
+const STRIPE_LINK     = "https://buy.stripe.com/thedjrankings"; // replace with real Stripe Payment Link
+const PRO_PRICE_MONTH = 9;
+const PRO_PRICE_YEAR  = 79;
+
+function ProPaywall({ onUnlock }) {
+  const [code, setCode] = useState("");
+  const [err,  setErr]  = useState("");
+
+  // Check for ?pro=ACCESS_TOKEN in URL (Stripe redirect)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const token  = params.get("pro");
+    if (token) {
+      localStorage.setItem(PRO_KEY, token);
+      window.history.replaceState({}, "", window.location.pathname);
+      onUnlock();
+    }
+  }, []);
+
+  function tryCode() {
+    if (code.trim().toUpperCase() === "DJPRO2024") {
+      localStorage.setItem(PRO_KEY, "promo_" + Date.now());
+      onUnlock();
+    } else {
+      setErr("Invalid code.");
+    }
+  }
+
+  return (
+    <div className="paywall">
+      <div className="paywall-hero">
+        <span className="paywall-badge">PRO</span>
+        <h1 className="paywall-title">The Booker's Edge</h1>
+        <p className="paywall-sub">
+          Real-time data tools built for promoters, bookers, and talent buyers.
+          Stop guessing — start booking with confidence.
+        </p>
+      </div>
+
+      <div className="paywall-features">
+        {[
+          { icon: "📍", title: "Geographic Demand",       desc: "See exactly which cities and countries are buzzing for each artist — down to US city level." },
+          { icon: "💷", title: "Booking Fee Estimates",   desc: "Tier-based fee ranges updated with each ranking cycle. Know before you negotiate." },
+          { icon: "📈", title: "Momentum Scoring",        desc: "Weighted growth metrics surfacing artists breaking before the mainstream catches on." },
+          { icon: "🏟️", title: "Venue Fit Analysis",      desc: "Capacity recommendations matched to current draw based on follower density and trend data." },
+          { icon: "⭐", title: "Shortlist & Budget Planner", desc: "Build a lineup, track total fees, and export to CSV for your team." },
+          { icon: "🌍", title: "Market Penetration",      desc: "Understand which regions an artist hasn't cracked yet — spot opportunity before competitors." },
+        ].map(f => (
+          <div className="paywall-feature" key={f.title}>
+            <span className="paywall-feature-icon">{f.icon}</span>
+            <div>
+              <h3 className="paywall-feature-title">{f.title}</h3>
+              <p className="paywall-feature-desc">{f.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="paywall-plans">
+        <div className="paywall-plan paywall-plan--featured">
+          <div className="paywall-plan-label">Most Popular</div>
+          <div className="paywall-plan-price">£{PRO_PRICE_MONTH}<span>/mo</span></div>
+          <div className="paywall-plan-name">Monthly</div>
+          <a href={STRIPE_LINK + "?plan=monthly"} className="paywall-cta">Get Pro Access</a>
+        </div>
+        <div className="paywall-plan">
+          <div className="paywall-plan-price">£{PRO_PRICE_YEAR}<span>/yr</span></div>
+          <div className="paywall-plan-name">Annual <span className="paywall-save">Save 30%</span></div>
+          <a href={STRIPE_LINK + "?plan=annual"} className="paywall-cta paywall-cta--outline">Get Pro Access</a>
+        </div>
+      </div>
+
+      <div className="paywall-code">
+        <p>Have an access code?</p>
+        <div className="paywall-code-row">
+          <input
+            value={code}
+            onChange={e => { setCode(e.target.value); setErr(""); }}
+            onKeyDown={e => e.key === "Enter" && tryCode()}
+            placeholder="Enter code"
+            className="paywall-code-input"
+          />
+          <button onClick={tryCode} className="paywall-code-btn">Unlock</button>
+        </div>
+        {err && <p className="paywall-code-err">{err}</p>}
+      </div>
+    </div>
+  );
+}
+
 // ── Main App ───────────────────────────────────────────────────────
 
 export default function App() {
@@ -874,6 +967,7 @@ export default function App() {
   const [compareList, setCompareList] = useState([]);
   const [showCompare, setShowCompare] = useState(false);
   const [activeTab, setActiveTab]     = useState("rankings");
+  const [proUnlocked, setProUnlocked] = useState(() => !!localStorage.getItem(PRO_KEY));
   const cardRefs = useRef({});
 
   function load() {
@@ -935,7 +1029,11 @@ export default function App() {
         </div>
       </header>
 
-      {activeTab === "pro"           && <ProPage rankings={rankings} />}
+      {activeTab === "pro" && (
+        proUnlocked
+          ? <ProPage rankings={rankings} />
+          : <ProPaywall onUnlock={() => setProUnlocked(true)} />
+      )}
       {activeTab === "ones-to-watch" && <OnestoWatchPage rankings={rankings} />}
       {activeTab === "movers"        && <MoversPage />}
       {activeTab === "how-it-works"  && <HowItWorksPage />}
