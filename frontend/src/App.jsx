@@ -513,6 +513,249 @@ function CompareBar({ selected, onClear, onCompare }) {
   );
 }
 
+// ── How It Works page ─────────────────────────────────────────────
+
+const DATA_SOURCES = [
+  { icon: "🎵", name: "Spotify",       color: "#1DB954", points: ["Monthly listeners (scraped)", "Follower count & growth rate", "Average track popularity score", "Playlist placements count"] },
+  { icon: "▶",  name: "YouTube",       color: "#FF0000", points: ["Subscriber count", "Weekly view count"] },
+  { icon: "🎵", name: "TikTok",        color: "#010101", points: ["Hashtag post count — measures how much content is being created around an artist"] },
+  { icon: "📈", name: "Google Trends", color: "#4285F4", points: ["Search interest score (0–100) over the past 90 days"] },
+  { icon: "🎛",  name: "Scene Score",  color: "#8b5cf6", points: ["Manual override 0–100 — accounts for festival bookings, residencies, and cultural weight that algorithms miss"] },
+];
+
+const METRIC_DETAILS = [
+  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",  weight: 0.20, color: "#1DB954", why: "The single strongest proxy for active fanbase size. Scraped directly from Spotify artist pages — not filtered by Spotify's API restrictions." },
+  { key: "spotify_playlist_placements",  label: "Playlist Placements",weight: 0.12, color: "#1DB954", why: "How many editorial and algorithmic Spotify playlists feature this artist. A strong leading indicator — playlist inclusion drives listener growth 4–6 weeks later." },
+  { key: "tiktok_post_count",            label: "TikTok Posts",       weight: 0.12, color: "#010101", why: "Total posts using the artist's hashtag. Measures grassroots hype and cultural spread, especially among the 18–25 demographic that drives festival ticket sales." },
+  { key: "spotify_avg_track_popularity", label: "Track Popularity",   weight: 0.10, color: "#1DB954", why: "Average popularity score across the artist's top 10 tracks (0–100). Reflects recent stream velocity, not historical catalogue." },
+  { key: "youtube_subscribers",          label: "YouTube Subscribers", weight: 0.10, color: "#FF0000", why: "Subscriber count as a proxy for dedicated fanbase depth. YouTube fans tend to be more loyal and convert to ticket buyers at a higher rate." },
+  { key: "google_trends_score",          label: "Google Trends",      weight: 0.10, color: "#4285F4", why: "90-day search interest score (0–100) normalised to the artist's own peak. A rising trends score often precedes booking fee increases by 8–12 weeks." },
+  { key: "spotify_follower_growth_rate", label: "Follower Growth",    weight: 0.08, color: "#1DB954", why: "Week-over-week percentage change in Spotify followers. The most forward-looking signal in the model — today's growth becomes tomorrow's rank." },
+  { key: "youtube_views_weekly",         label: "YouTube Views/wk",   weight: 0.08, color: "#FF0000", why: "Weekly view count captures upload cadence and video virality. An artist releasing content consistently scores higher than one with a large back-catalogue but no new uploads." },
+  { key: "spotify_followers",            label: "Spotify Followers",  weight: 0.06, color: "#1DB954", why: "Total follower count as a baseline size signal. Weighted lower than listeners because followers are a lagging indicator — listeners spike first." },
+  { key: "manual_scene_score",           label: "Scene Score",        weight: 0.04, color: "#8b5cf6", why: "A 0–100 editorial override for industry context that algorithms can't capture: Boiler Room streams, Fabric residencies, festival closing slots, and critical heat." },
+];
+
+function HowItWorksPage() {
+  const totalWeight = METRIC_DETAILS.reduce((s, m) => s + m.weight, 0);
+  return (
+    <div className="hiw-page">
+      <div className="hiw-hero">
+        <div className="hiw-eyebrow">Methodology</div>
+        <h2 className="hiw-title">How we rank the world's hottest DJs</h2>
+        <p className="hiw-sub">
+          Every ranking is computed from 10 real-time signals pulled directly from Spotify, YouTube, TikTok, and Google Trends.
+          No editorial bias, no pay-to-play. Refreshed every 6 hours.
+        </p>
+      </div>
+
+      <section className="hiw-section">
+        <h3 className="hiw-section-title">The 10 Signals</h3>
+        <p className="hiw-section-sub">Each artist receives a score from 0–100 on each metric, normalised across the full ranked pool. Weighted scores are summed to produce the final ranking.</p>
+        <div className="hiw-metrics">
+          {METRIC_DETAILS.map(m => (
+            <div key={m.key} className="hiw-metric-row">
+              <div className="hiw-metric-info">
+                <div className="hiw-metric-name">{m.label}</div>
+                <div className="hiw-metric-why">{m.why}</div>
+              </div>
+              <div className="hiw-metric-right">
+                <div className="hiw-weight-bar-track">
+                  <div className="hiw-weight-bar-fill" style={{ width: `${(m.weight / 0.20) * 100}%`, background: m.color }} />
+                </div>
+                <div className="hiw-weight-label" style={{ color: m.color }}>{Math.round(m.weight * 100)}%</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="hiw-weight-note">Weights sum to 100%. Min-max normalisation ensures no single outlier distorts the rankings.</div>
+      </section>
+
+      <section className="hiw-section">
+        <h3 className="hiw-section-title">Data Sources</h3>
+        <div className="hiw-sources">
+          {DATA_SOURCES.map(s => (
+            <div key={s.name} className="hiw-source-card">
+              <div className="hiw-source-header">
+                <span className="hiw-source-icon" style={{ color: s.color }}>{s.icon}</span>
+                <span className="hiw-source-name" style={{ color: s.color }}>{s.name}</span>
+              </div>
+              <ul className="hiw-source-points">
+                {s.points.map((p, i) => <li key={i}>{p}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="hiw-section">
+        <h3 className="hiw-section-title">Momentum Score</h3>
+        <p className="hiw-section-sub">The Momentum Score is a separate composite signal that measures trajectory, not current standing. A DJ ranked #40 with a momentum of 85 is growing faster than someone at #10 with a momentum of 30.</p>
+        <div className="hiw-momentum-formula">
+          {[
+            { signal: "Follower Growth Rate",  weight: "35%", color: "#1DB954" },
+            { signal: "TikTok Post Count",     weight: "25%", color: "#010101" },
+            { signal: "Google Trends Score",   weight: "25%", color: "#4285F4" },
+            { signal: "Rank Change (weekly)",  weight: "15%", color: "var(--accent)" },
+          ].map((f, i, arr) => (
+            <div key={f.signal} className="hiw-formula-row">
+              <div className="hiw-formula-bar" style={{ background: f.color, width: f.weight }} />
+              <span className="hiw-formula-label">{f.signal}</span>
+              <span className="hiw-formula-weight" style={{ color: f.color }}>{f.weight}</span>
+              {i < arr.length - 1 && <span className="hiw-formula-plus">+</span>}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="hiw-section">
+        <h3 className="hiw-section-title">Update Schedule</h3>
+        <div className="hiw-schedule">
+          {[
+            { label: "Spotify Followers & Popularity",  freq: "Every 6 hours" },
+            { label: "Monthly Listeners",               freq: "Every 6 hours (scraped)" },
+            { label: "YouTube Subscribers & Views",     freq: "Every 6 hours" },
+            { label: "Google Trends Score",             freq: "Every 6 hours" },
+            { label: "TikTok Post Count",               freq: "Every 6 hours (scraped)" },
+            { label: "Rank Snapshots Retained",         freq: "365 data points" },
+          ].map(s => (
+            <div key={s.label} className="hiw-schedule-row">
+              <span className="hiw-schedule-label">{s.label}</span>
+              <span className="hiw-schedule-freq">{s.freq}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="hiw-section">
+        <h3 className="hiw-section-title">FAQ</h3>
+        <div className="hiw-faq">
+          {[
+            { q: "Why isn't SoundCloud included?", a: "SoundCloud's public API no longer exposes follower or play counts at scale. We include it in data collection but weight it at 0% until reliable data is available." },
+            { q: "Why do some artists show zero for certain metrics?", a: "Not every DJ has a YouTube channel or is active on TikTok. Zero values are genuine — they're not data errors. They pull the weighted score for that signal to zero but don't affect others." },
+            { q: "How is the manual scene score assigned?", a: "It's set manually by the editorial team (0–100) to account for industry factors that aren't yet measurable algorithmically: Boiler Room sets, festival headline slots, Fabric residencies, and critical tastemaker coverage. It carries only 4% weight." },
+            { q: "How does the Ones to Watch list differ from the main rankings?", a: "The main rankings weight current standing heavily. Ones to Watch reranks entirely by Momentum Score — so an artist can be #45 in the main chart but #2 in Ones to Watch if they're growing fast." },
+            { q: "Can I get notified when an artist moves?", a: "Pro subscribers receive weekly movement alerts by email. Subscribe under the Pro tab." },
+          ].map(({ q, a }) => (
+            <details key={q} className="hiw-faq-item">
+              <summary className="hiw-faq-q">{q}</summary>
+              <p className="hiw-faq-a">{a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
+
+// ── Movers page ───────────────────────────────────────────────────
+
+function MoverRow({ entry, direction }) {
+  const isRising = direction === "rising";
+  const change = Math.abs(entry.change);
+  return (
+    <div className="mover-entry">
+      <div className={`mover-change-badge ${isRising ? "mover-change--up" : "mover-change--down"}`}>
+        {isRising ? "▲" : "▼"}{change}
+      </div>
+      <div className="mover-avatar">
+        {entry.image
+          ? <img src={entry.image} alt={entry.name} />
+          : <div className="mover-placeholder">{entry.name[0]}</div>
+        }
+      </div>
+      <div className="mover-info">
+        <div className="mover-name">{entry.name}</div>
+        <div className="mover-ranks">
+          <span className="mover-past-rank">#{entry.pastRank}</span>
+          <span className="mover-arrow">{isRising ? "→" : "→"}</span>
+          <span className={`mover-current-rank ${isRising ? "mover-rank--up" : "mover-rank--down"}`}>#{entry.currentRank}</span>
+          <span className="mover-days-ago">{entry.daysAgo}d ago</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MoversPage() {
+  const [period,  setPeriod]  = useState("week");
+  const [data,    setData]    = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error,   setError]   = useState(null);
+
+  useEffect(() => {
+    fetch(`${API}/api/movers`)
+      .then(r => { if (!r.ok) throw new Error("Server error"); return r.json(); })
+      .then(d => { setData(d); setLoading(false); })
+      .catch(e => { setError(e.message); setLoading(false); });
+  }, []);
+
+  const PERIODS = [
+    { key: "week",  label: "This Week"  },
+    { key: "month", label: "This Month" },
+    { key: "year",  label: "This Year"  },
+  ];
+
+  const current = data?.[period];
+
+  return (
+    <div className="movers-page">
+      <div className="movers-page-header">
+        <h2 className="movers-page-title">Biggest Movers</h2>
+        <p className="movers-page-sub">Largest rank changes compared to the same period prior</p>
+      </div>
+
+      <div className="movers-period-tabs">
+        {PERIODS.map(p => (
+          <button
+            key={p.key}
+            className={`movers-period-btn ${period === p.key ? "movers-period-btn--active" : ""}`}
+            onClick={() => setPeriod(p.key)}
+          >{p.label}</button>
+        ))}
+      </div>
+
+      {loading && <div className="state-msg"><div className="spinner" />Loading movers…</div>}
+      {error   && <div className="state-msg state-msg--error">Error: {error}</div>}
+
+      {!loading && !error && (
+        current?.hasData ? (
+          <div className="movers-grid">
+            <div className="movers-col">
+              <div className="movers-col-header movers-col-header--rising">
+                <span className="movers-col-icon">▲</span> Biggest Risers
+              </div>
+              {current.rising.length > 0
+                ? current.rising.map(e => <MoverRow key={e.name} entry={e} direction="rising" />)
+                : <div className="movers-empty">No risers this period</div>
+              }
+            </div>
+            <div className="movers-col">
+              <div className="movers-col-header movers-col-header--falling">
+                <span className="movers-col-icon">▼</span> Biggest Fallers
+              </div>
+              {current.falling.length > 0
+                ? current.falling.map(e => <MoverRow key={e.name} entry={e} direction="falling" />)
+                : <div className="movers-empty">No fallers this period</div>
+              }
+            </div>
+          </div>
+        ) : (
+          <div className="movers-no-data">
+            <div className="movers-no-data-icon">📊</div>
+            <div className="movers-no-data-title">Not enough historical data yet</div>
+            <p className="movers-no-data-sub">
+              {period === "week"  && "Rankings need at least 7 days of snapshots to show weekly movers. Check back soon."}
+              {period === "month" && "Monthly movers require 30+ days of rank history. Keep checking — this will populate automatically."}
+              {period === "year"  && "Yearly movers require 365+ days of rank history."}
+            </p>
+          </div>
+        )
+      )}
+    </div>
+  );
+}
+
 // ── Ones to Watch page ────────────────────────────────────────────
 
 const BREAKING_SLOTS = ["Mau P", "ANOTR", "Disco Lines"];
@@ -682,14 +925,18 @@ export default function App() {
         <p className="header-sub">Scored across Spotify, TikTok, YouTube &amp; Google Trends</p>
         {lastUpdated && <p className="header-updated">Updated {new Date(lastUpdated).toLocaleString()}</p>}
         <div className="top-tabs">
-          <button className={`top-tab ${activeTab === "rankings" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>
+          <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>
           <button className={`top-tab ${activeTab === "ones-to-watch" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("ones-to-watch")}>Ones to Watch</button>
+          <button className={`top-tab ${activeTab === "movers"        ? "top-tab--active" : ""}`} onClick={() => setActiveTab("movers")}>Movers</button>
+          <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
           <button className={`top-tab top-tab--pro ${activeTab === "pro" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("pro")}>Pro</button>
         </div>
       </header>
 
       {activeTab === "pro"           && <ProPage rankings={rankings} />}
       {activeTab === "ones-to-watch" && <OnestoWatchPage rankings={rankings} />}
+      {activeTab === "movers"        && <MoversPage />}
+      {activeTab === "how-it-works"  && <HowItWorksPage />}
 
       {activeTab === "rankings" && <>
       {movers && <WeeklyMovers movers={movers} onScrollTo={scrollTo} />}

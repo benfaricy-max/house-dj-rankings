@@ -9,7 +9,7 @@ const { getSoundCloudData } = require("./fetchSoundCloud");
 const { getPlaylistPlacements } = require("./fetchSpotifyPlaylists");
 const { getGoogleTrends } = require("./fetchTrends");
 const { scoreArtists } = require("./score");
-const { saveSnapshot, getLastWeekSnapshot, updateRank, getArtistHistory } = require("./db");
+const { saveSnapshot, getLastWeekSnapshot, updateRank, getArtistHistory, getSnapshotNearDate } = require("./db");
 const { getArtistEvents } = require("./fetchEvents");
 const artists = require("./artists.json");
 
@@ -151,6 +151,38 @@ app.get("/api/events/:name", async (req, res) => {
   const name = decodeURIComponent(req.params.name);
   const events = await getArtistEvents(name);
   res.json(events);
+});
+
+// Movers: biggest rank changes over week / month / year
+app.get("/api/movers", (req, res) => {
+  if (!cache.rankings.length) return res.status(503).json({ error: "Not ready" });
+  const now = Date.now();
+  const PERIODS = { week: 7, month: 30, year: 365 };
+  const result = {};
+  for (const [key, days] of Object.entries(PERIODS)) {
+    const targetMs  = now - days * 24 * 60 * 60 * 1000;
+    const minAgeMs  = days * 0.35 * 24 * 60 * 60 * 1000;
+    const changes   = [];
+    for (const artist of cache.rankings) {
+      const past = getSnapshotNearDate(artist.name, new Date(targetMs));
+      if (!past?.rank || !past?.timestamp) continue;
+      const ageMs = now - new Date(past.timestamp).getTime();
+      if (ageMs < minAgeMs) continue;
+      const change = past.rank - artist.rank;
+      if (change === 0) continue;
+      changes.push({
+        name: artist.name, image: artist.image ?? null,
+        currentRank: artist.rank, pastRank: past.rank, change,
+        daysAgo: Math.round(ageMs / (24 * 60 * 60 * 1000)),
+      });
+    }
+    result[key] = {
+      hasData: changes.length > 0,
+      rising:  [...changes].filter(c => c.change > 0).sort((a, b) => b.change - a.change).slice(0, 10),
+      falling: [...changes].filter(c => c.change < 0).sort((a, b) => a.change - b.change).slice(0, 10),
+    };
+  }
+  res.json(result);
 });
 
 // Manual refresh trigger

@@ -18,7 +18,7 @@ function persist() {
 function saveSnapshot(artistName, data) {
   if (!snapshots[artistName]) snapshots[artistName] = [];
   snapshots[artistName].push({ ...data, timestamp: new Date().toISOString() });
-  if (snapshots[artistName].length > 52) snapshots[artistName].shift();
+  if (snapshots[artistName].length > 365) snapshots[artistName].shift();
   persist();
 }
 
@@ -35,7 +35,7 @@ function updateRank(artistName, rank) {
   persist();
 }
 
-// Returns last 8 snapshots (rank + score + listeners + timestamp) for trend chart
+// Returns last 8 snapshots for trend chart
 function getArtistHistory(artistName) {
   const h = snapshots[artistName] ?? [];
   return h.slice(-8).map(s => ({
@@ -46,4 +46,17 @@ function getArtistHistory(artistName) {
   }));
 }
 
-module.exports = { saveSnapshot, getLastWeekSnapshot, updateRank, getArtistHistory };
+// Returns the snapshot whose timestamp is closest to targetDate
+function getSnapshotNearDate(artistName, targetDate) {
+  const h = snapshots[artistName] ?? [];
+  const target = new Date(targetDate).getTime();
+  let best = null, bestDiff = Infinity;
+  for (const s of h) {
+    if (!s.timestamp || s.rank == null) continue;
+    const diff = Math.abs(new Date(s.timestamp).getTime() - target);
+    if (diff < bestDiff) { bestDiff = diff; best = s; }
+  }
+  return best;
+}
+
+module.exports = { saveSnapshot, getLastWeekSnapshot, updateRank, getArtistHistory, getSnapshotNearDate };

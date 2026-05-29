@@ -341,6 +341,149 @@
 .spinner { width: 18px; height: 18px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.7s linear infinite; flex-shrink: 0; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* ── How It Works page ───────────────────────────────────────────── */
+.hiw-page { max-width: 760px; margin: 0 auto; padding-bottom: 80px; }
+.hiw-hero { text-align: center; margin-bottom: 52px; }
+.hiw-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+}
+.hiw-title {
+  font-size: 30px; font-weight: 700; color: var(--text-h);
+  letter-spacing: -0.5px; margin: 0 0 12px; line-height: 1.2;
+}
+.hiw-sub { font-size: 15px; color: var(--muted); margin: 0; line-height: 1.6; }
+
+.hiw-section { margin-bottom: 52px; }
+.hiw-section-title {
+  font-size: 18px; font-weight: 700; color: var(--text-h);
+  margin: 0 0 8px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.hiw-section-sub { font-size: 13px; color: var(--muted); margin: 0 0 20px; line-height: 1.6; }
+
+/* Metrics */
+.hiw-metrics { display: flex; flex-direction: column; gap: 0; }
+.hiw-metric-row {
+  display: grid; grid-template-columns: 1fr 200px; gap: 20px; align-items: start;
+  padding: 16px 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
+}
+.hiw-metric-row:last-child { border-bottom: none; }
+.hiw-metric-name { font-size: 14px; font-weight: 600; color: var(--text-h); margin-bottom: 4px; }
+.hiw-metric-why  { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.hiw-metric-right { display: flex; align-items: center; gap: 10px; padding-top: 4px; }
+.hiw-weight-bar-track { flex: 1; height: 6px; background: color-mix(in srgb, var(--border) 80%, transparent); border-radius: 3px; overflow: hidden; }
+.hiw-weight-bar-fill  { height: 100%; border-radius: 3px; transition: width 0.6s ease; }
+.hiw-weight-label { font-size: 13px; font-weight: 700; min-width: 30px; text-align: right; }
+.hiw-weight-note  { font-size: 11px; color: var(--muted); margin-top: 16px; text-align: center; opacity: 0.7; }
+
+/* Data sources */
+.hiw-sources { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+.hiw-source-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.hiw-source-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.hiw-source-icon { font-size: 16px; }
+.hiw-source-name { font-size: 14px; font-weight: 700; }
+.hiw-source-points { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.hiw-source-points li { font-size: 12px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.4; }
+.hiw-source-points li::before { content: "–"; position: absolute; left: 0; color: var(--muted); }
+
+/* Momentum formula */
+.hiw-momentum-formula { display: flex; flex-direction: column; gap: 12px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.hiw-formula-row { display: grid; grid-template-columns: 160px 1fr 40px; align-items: center; gap: 12px; }
+.hiw-formula-bar { height: 8px; border-radius: 4px; }
+.hiw-formula-label { font-size: 13px; color: var(--text); }
+.hiw-formula-weight { font-size: 13px; font-weight: 700; text-align: right; }
+.hiw-formula-plus { grid-column: 1 / -1; font-size: 18px; color: var(--muted); text-align: center; margin: -4px 0; }
+
+/* Update schedule */
+.hiw-schedule { display: flex; flex-direction: column; gap: 0; background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.hiw-schedule-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-bottom: 1px solid color-mix(in srgb, var(--border) 50%, transparent); }
+.hiw-schedule-row:last-child { border-bottom: none; }
+.hiw-schedule-label { font-size: 13px; color: var(--text); }
+.hiw-schedule-freq  { font-size: 12px; font-weight: 600; color: var(--accent); }
+
+/* FAQ */
+.hiw-faq { display: flex; flex-direction: column; gap: 4px; }
+.hiw-faq-item {
+  background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+  overflow: hidden;
+}
+.hiw-faq-q {
+  font-size: 14px; font-weight: 600; color: var(--text-h); padding: 14px 16px;
+  cursor: pointer; list-style: none; display: flex; justify-content: space-between;
+  user-select: none;
+}
+.hiw-faq-q::after { content: "+"; color: var(--accent); font-size: 18px; font-weight: 300; }
+details[open] .hiw-faq-q::after { content: "–"; }
+.hiw-faq-a { font-size: 13px; color: var(--muted); padding: 0 16px 14px; line-height: 1.6; margin: 0; }
+
+/* ── Movers page ─────────────────────────────────────────────────── */
+.movers-page { padding-bottom: 80px; }
+.movers-page-header { margin-bottom: 24px; }
+.movers-page-title { font-size: 22px; font-weight: 700; color: var(--text-h); margin: 0 0 4px; }
+.movers-page-sub   { font-size: 13px; color: var(--muted); margin: 0; }
+
+.movers-period-tabs { display: flex; gap: 6px; margin-bottom: 28px; }
+.movers-period-btn {
+  background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+  color: var(--muted); font-size: 13px; font-weight: 600; padding: 7px 18px;
+  cursor: pointer; transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.movers-period-btn:hover { border-color: var(--accent); color: var(--accent); }
+.movers-period-btn--active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+.movers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.movers-col { display: flex; flex-direction: column; gap: 0; }
+.movers-col-header {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+  padding: 10px 14px; border-radius: 8px 8px 0 0;
+  display: flex; align-items: center; gap: 6px;
+}
+.movers-col-header--rising  { background: color-mix(in srgb, #4ade80 12%, var(--card)); color: #4ade80; border: 1px solid color-mix(in srgb, #4ade80 30%, var(--border)); border-bottom: none; }
+.movers-col-header--falling { background: color-mix(in srgb, #f87171 12%, var(--card)); color: #f87171; border: 1px solid color-mix(in srgb, #f87171 30%, var(--border)); border-bottom: none; }
+.movers-col-icon { font-size: 14px; }
+
+.mover-entry {
+  display: grid; grid-template-columns: 52px 42px 1fr; align-items: center; gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  border-top: none;
+  background: var(--card);
+  transition: background 0.15s;
+}
+.mover-entry:last-child { border-radius: 0 0 8px 8px; }
+.mover-entry:hover { background: color-mix(in srgb, var(--accent) 4%, var(--card)); }
+
+.mover-change-badge {
+  font-size: 13px; font-weight: 700; text-align: center;
+  padding: 4px 6px; border-radius: 6px;
+}
+.mover-change--up   { color: #4ade80; background: color-mix(in srgb, #4ade80 12%, transparent); }
+.mover-change--down { color: #f87171; background: color-mix(in srgb, #f87171 12%, transparent); }
+
+.mover-avatar, .mover-avatar img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+.mover-placeholder {
+  width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--accent) 20%, var(--card));
+  color: var(--accent); font-weight: 700; font-size: 14px;
+}
+.mover-info { min-width: 0; }
+.mover-name { font-size: 13px; font-weight: 600; color: var(--text-h); margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mover-ranks { display: flex; align-items: center; gap: 5px; font-size: 11px; }
+.mover-past-rank    { color: var(--muted); }
+.mover-arrow        { color: var(--muted); }
+.mover-current-rank { font-weight: 700; }
+.mover-rank--up     { color: #4ade80; }
+.mover-rank--down   { color: #f87171; }
+.mover-days-ago     { color: var(--muted); margin-left: 4px; font-size: 10px; }
+
+.movers-empty { padding: 20px 14px; font-size: 13px; color: var(--muted); border: 1px solid color-mix(in srgb, var(--border) 70%, transparent); border-top: none; border-radius: 0 0 8px 8px; background: var(--card); }
+
+.movers-no-data { text-align: center; padding: 60px 24px; }
+.movers-no-data-icon  { font-size: 40px; margin-bottom: 16px; }
+.movers-no-data-title { font-size: 18px; font-weight: 700; color: var(--text-h); margin-bottom: 10px; }
+.movers-no-data-sub   { font-size: 14px; color: var(--muted); max-width: 400px; margin: 0 auto; line-height: 1.6; }
+
 /* ── Ones to Watch page ──────────────────────────────────────────── */
 .otw-page { padding-bottom: 60px; }
 
