@@ -878,8 +878,8 @@ export default function App() {
 
   function load() {
     setLoading(true);
-    fetch(`${API}/api/rankings`)
-      .then(r => { if (!r.ok) throw new Error("Server error"); return r.json(); })
+    fetch("/rankings.json")
+      .then(r => { if (!r.ok) throw new Error("Data not available"); return r.json(); })
       .then(data => {
         const list = Array.isArray(data) ? data : (data.rankings ?? []);
         setRankings(list);
