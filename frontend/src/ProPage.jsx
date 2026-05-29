@@ -312,6 +312,8 @@ function ArtistDetailPanel({ dj, inShortlist, onToggleShortlist, onClose }) {
     { label: "TikTok Posts",      value: fmt(dj.tiktok_post_count) },
     { label: "Google Trends",     value: dj.google_trends_score ? `${Math.round(dj.google_trends_score)}/100` : "—" },
     { label: "Follower Growth",   value: dj.spotify_follower_growth_rate ? `+${dj.spotify_follower_growth_rate.toFixed(1)}%` : "—" },
+    { label: "Mixcloud Followers", value: fmt(dj.mixcloud_followers) },
+    { label: "Mixcloud Plays",    value: fmt(dj.mixcloud_play_count_total) },
   ];
   return (
     <div className="artist-detail-panel">

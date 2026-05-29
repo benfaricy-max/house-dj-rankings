@@ -8,6 +8,7 @@ const fs   = require("fs");
 
 const { getSpotifyToken, getSpotifyData, getSpotifyTopTracks, getYouTubeData } = require("./fetchArtist");
 const { getTikTokMentions }    = require("./fetchTikTok");
+const { getMixcloudData }      = require("./fetchMixcloud");
 const { getSoundCloudData }    = require("./fetchSoundCloud");
 const { getPlaylistPlacements } = require("./fetchSpotifyPlaylists");
 const { getGoogleTrends }      = require("./fetchTrends");
@@ -25,19 +26,20 @@ async function main() {
   for (const [i, artist] of artists.entries()) {
     if (i > 0) await delay(2000);
     try {
-      const [spotify, topTracks, tiktok, youtube, soundcloud, playlists, trends] = await Promise.all([
+      const [spotify, topTracks, tiktok, youtube, soundcloud, mixcloud, playlists, trends] = await Promise.all([
         getSpotifyData(artist.spotify_id, token),
         getSpotifyTopTracks(artist.spotify_id, token),
         getTikTokMentions(artist.tiktok_tag),
         getYouTubeData(artist.youtube_channel_id),
         getSoundCloudData(artist.soundcloud_permalink),
+        getMixcloudData(artist.mixcloud_username),
         getPlaylistPlacements(artist.spotify_id, token, artist),
         getGoogleTrends(artist.name),
       ]);
 
       enriched.push({
         ...artist, ...spotify, ...topTracks, ...tiktok,
-        ...youtube, ...soundcloud, ...playlists,
+        ...youtube, ...soundcloud, ...mixcloud, ...playlists,
         google_trends_score: trends.score,
         google_trends_direction: trends.direction,
         google_trends_countries: trends.top_countries ?? {},
