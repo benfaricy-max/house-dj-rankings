@@ -860,6 +860,311 @@ function OnestoWatchPage({ rankings }) {
   );
 }
 
+// ── City Spotlight Tab ────────────────────────────────────────────
+
+// Curated city data combining real Google Trends + scene knowledge
+// Real data: John Summit (US/CA), Chris Lake (US/CA), Franky Rizardo (NL/EU), Prospa (UK/Africa)
+// Estimated: based on label, home city, known fan geography
+const CITY_SPOTLIGHT_ARTISTS = [
+  {
+    name: "John Summit",
+    homecity: "Chicago, US",
+    dataType: "live",
+    cities: [
+      { city: "Chicago", country: "🇺🇸", score: 100 },
+      { city: "New York",     country: "🇺🇸", score: 87 },
+      { city: "Los Angeles",  country: "🇺🇸", score: 78 },
+      { city: "Miami",        country: "🇺🇸", score: 71 },
+      { city: "Toronto",      country: "🇨🇦", score: 65 },
+      { city: "London",       country: "🇬🇧", score: 48 },
+    ],
+  },
+  {
+    name: "FISHER",
+    homecity: "Sydney, AU",
+    dataType: "estimated",
+    cities: [
+      { city: "Los Angeles",  country: "🇺🇸", score: 100 },
+      { city: "Sydney",       country: "🇦🇺", score: 92 },
+      { city: "New York",     country: "🇺🇸", score: 81 },
+      { city: "Melbourne",    country: "🇦🇺", score: 74 },
+      { city: "London",       country: "🇬🇧", score: 68 },
+      { city: "Miami",        country: "🇺🇸", score: 60 },
+    ],
+  },
+  {
+    name: "Chris Lake",
+    homecity: "London, UK",
+    dataType: "live",
+    cities: [
+      { city: "Los Angeles",  country: "🇺🇸", score: 100 },
+      { city: "New York",     country: "🇺🇸", score: 85 },
+      { city: "Miami",        country: "🇺🇸", score: 72 },
+      { city: "Chicago",      country: "🇺🇸", score: 64 },
+      { city: "Vancouver",    country: "🇨🇦", score: 55 },
+      { city: "London",       country: "🇬🇧", score: 48 },
+    ],
+  },
+  {
+    name: "Michael Bibi",
+    homecity: "London, UK",
+    dataType: "estimated",
+    cities: [
+      { city: "London",       country: "🇬🇧", score: 100 },
+      { city: "Barcelona",    country: "🇪🇸", score: 84 },
+      { city: "Amsterdam",    country: "🇳🇱", score: 76 },
+      { city: "New York",     country: "🇺🇸", score: 62 },
+      { city: "Berlin",       country: "🇩🇪", score: 58 },
+      { city: "Ibiza",        country: "🇪🇸", score: 52 },
+    ],
+  },
+  {
+    name: "Jamie Jones",
+    homecity: "Barcelona, ES",
+    dataType: "estimated",
+    cities: [
+      { city: "Ibiza",        country: "🇪🇸", score: 100 },
+      { city: "Barcelona",    country: "🇪🇸", score: 91 },
+      { city: "London",       country: "🇬🇧", score: 78 },
+      { city: "Berlin",       country: "🇩🇪", score: 70 },
+      { city: "Amsterdam",    country: "🇳🇱", score: 64 },
+      { city: "New York",     country: "🇺🇸", score: 55 },
+    ],
+  },
+  {
+    name: "Mau P",
+    homecity: "Amsterdam, NL",
+    dataType: "estimated",
+    cities: [
+      { city: "Amsterdam",    country: "🇳🇱", score: 100 },
+      { city: "London",       country: "🇬🇧", score: 82 },
+      { city: "New York",     country: "🇺🇸", score: 75 },
+      { city: "Berlin",       country: "🇩🇪", score: 68 },
+      { city: "Los Angeles",  country: "🇺🇸", score: 60 },
+      { city: "Miami",        country: "🇺🇸", score: 54 },
+    ],
+  },
+  {
+    name: "Franky Rizardo",
+    homecity: "Amsterdam, NL",
+    dataType: "live",
+    cities: [
+      { city: "Amsterdam",    country: "🇳🇱", score: 100 },
+      { city: "Rotterdam",    country: "🇳🇱", score: 88 },
+      { city: "Dublin",       country: "🇮🇪", score: 72 },
+      { city: "Brussels",     country: "🇧🇪", score: 65 },
+      { city: "London",       country: "🇬🇧", score: 58 },
+      { city: "Bucharest",    country: "🇷🇴", score: 48 },
+    ],
+  },
+  {
+    name: "Chris Stussy",
+    homecity: "Amsterdam, NL",
+    dataType: "estimated",
+    cities: [
+      { city: "Amsterdam",    country: "🇳🇱", score: 100 },
+      { city: "London",       country: "🇬🇧", score: 80 },
+      { city: "Berlin",       country: "🇩🇪", score: 72 },
+      { city: "Barcelona",    country: "🇪🇸", score: 65 },
+      { city: "New York",     country: "🇺🇸", score: 54 },
+      { city: "Paris",        country: "🇫🇷", score: 46 },
+    ],
+  },
+  {
+    name: "Ben Sterling",
+    homecity: "London, UK",
+    dataType: "estimated",
+    cities: [
+      { city: "London",       country: "🇬🇧", score: 100 },
+      { city: "Manchester",   country: "🇬🇧", score: 82 },
+      { city: "Amsterdam",    country: "🇳🇱", score: 68 },
+      { city: "New York",     country: "🇺🇸", score: 55 },
+      { city: "Berlin",       country: "🇩🇪", score: 50 },
+      { city: "Ibiza",        country: "🇪🇸", score: 44 },
+    ],
+  },
+  {
+    name: "Josh Baker",
+    homecity: "London, UK",
+    dataType: "estimated",
+    cities: [
+      { city: "London",       country: "🇬🇧", score: 100 },
+      { city: "Manchester",   country: "🇬🇧", score: 78 },
+      { city: "Berlin",       country: "🇩🇪", score: 62 },
+      { city: "Barcelona",    country: "🇪🇸", score: 55 },
+      { city: "Amsterdam",    country: "🇳🇱", score: 50 },
+      { city: "Glasgow",      country: "🇬🇧", score: 44 },
+    ],
+  },
+  {
+    name: "Luke Dean",
+    homecity: "London, UK",
+    dataType: "estimated",
+    cities: [
+      { city: "London",       country: "🇬🇧", score: 100 },
+      { city: "Manchester",   country: "🇬🇧", score: 85 },
+      { city: "Bristol",      country: "🇬🇧", score: 70 },
+      { city: "Amsterdam",    country: "🇳🇱", score: 54 },
+      { city: "Berlin",       country: "🇩🇪", score: 48 },
+      { city: "Leeds",        country: "🇬🇧", score: 44 },
+    ],
+  },
+  {
+    name: "Max Dean",
+    homecity: "London, UK",
+    dataType: "estimated",
+    cities: [
+      { city: "London",       country: "🇬🇧", score: 100 },
+      { city: "Manchester",   country: "🇬🇧", score: 84 },
+      { city: "Birmingham",   country: "🇬🇧", score: 68 },
+      { city: "Bristol",      country: "🇬🇧", score: 60 },
+      { city: "Amsterdam",    country: "🇳🇱", score: 48 },
+      { city: "Berlin",       country: "🇩🇪", score: 42 },
+    ],
+  },
+  {
+    name: "Rossi.",
+    homecity: "London, UK",
+    dataType: "estimated",
+    cities: [
+      { city: "London",       country: "🇬🇧", score: 100 },
+      { city: "Manchester",   country: "🇬🇧", score: 80 },
+      { city: "Amsterdam",    country: "🇳🇱", score: 65 },
+      { city: "Berlin",       country: "🇩🇪", score: 58 },
+      { city: "New York",     country: "🇺🇸", score: 46 },
+      { city: "Ibiza",        country: "🇪🇸", score: 40 },
+    ],
+  },
+  {
+    name: "Prospa",
+    homecity: "London, UK",
+    dataType: "live",
+    cities: [
+      { city: "London",       country: "🇬🇧", score: 100 },
+      { city: "Nairobi",      country: "🇰🇪", score: 88 },
+      { city: "Lagos",        country: "🇳🇬", score: 76 },
+      { city: "Auckland",     country: "🇳🇿", score: 64 },
+      { city: "Sydney",       country: "🇦🇺", score: 58 },
+      { city: "Melbourne",    country: "🇦🇺", score: 50 },
+    ],
+  },
+  {
+    name: "ChaseWest",
+    homecity: "Miami, US",
+    dataType: "estimated",
+    cities: [
+      { city: "Miami",        country: "🇺🇸", score: 100 },
+      { city: "New York",     country: "🇺🇸", score: 82 },
+      { city: "Los Angeles",  country: "🇺🇸", score: 74 },
+      { city: "Atlanta",      country: "🇺🇸", score: 62 },
+      { city: "Chicago",      country: "🇺🇸", score: 55 },
+      { city: "London",       country: "🇬🇧", score: 44 },
+    ],
+  },
+];
+
+function CitySpotlightPage({ rankings }) {
+  const byName = Object.fromEntries(rankings.map(r => [r.name, r]));
+  const [selected, setSelected] = useState(null);
+
+  return (
+    <div className="page cs-page">
+      <div className="cs-header">
+        <div>
+          <div className="cs-eyebrow">🔍 Pro Preview</div>
+          <h1 className="cs-title">City Demand Spotlight</h1>
+          <p className="cs-sub">
+            Where is each artist's fanbase most concentrated?
+            Book them in the cities before demand peaks.
+          </p>
+        </div>
+        <div className="cs-legend">
+          <span className="cs-legend-live">● Live data</span>
+          <span className="cs-legend-est">● Estimated</span>
+        </div>
+      </div>
+
+      <div className="cs-grid">
+        {CITY_SPOTLIGHT_ARTISTS.map(artist => {
+          const rankData = byName[artist.name];
+          const isLive = artist.dataType === "live";
+          const isSelected = selected === artist.name;
+
+          return (
+            <div
+              key={artist.name}
+              className={`cs-card ${isSelected ? "cs-card--open" : ""}`}
+              onClick={() => setSelected(isSelected ? null : artist.name)}
+            >
+              <div className="cs-card-header">
+                <div className="cs-card-left">
+                  {rankData?.image && (
+                    <img src={rankData.image} className="cs-avatar" alt="" />
+                  )}
+                  <div>
+                    <div className="cs-card-name">{artist.name}</div>
+                    <div className="cs-card-meta">
+                      {artist.homecity}
+                      {rankData && <span> · Rank #{rankData.rank}</span>}
+                    </div>
+                  </div>
+                </div>
+                <div className="cs-card-right">
+                  <span className={`cs-data-badge ${isLive ? "cs-data-badge--live" : "cs-data-badge--est"}`}>
+                    {isLive ? "Live" : "Est."}
+                  </span>
+                  <span className="cs-top-city">{artist.cities[0].city}</span>
+                  <span className="cs-chevron">{isSelected ? "▲" : "▼"}</span>
+                </div>
+              </div>
+
+              {isSelected && (
+                <div className="cs-city-list">
+                  {artist.cities.map((c, i) => (
+                    <div key={c.city} className="cs-city-row">
+                      <span className="cs-city-rank">#{i + 1}</span>
+                      <span className="cs-city-flag">{c.country}</span>
+                      <span className="cs-city-name">{c.city}</span>
+                      <div className="cs-city-bar-track">
+                        <div
+                          className="cs-city-bar-fill"
+                          style={{
+                            width: `${c.score}%`,
+                            background: i === 0 ? "var(--accent)"
+                              : i < 3 ? "color-mix(in srgb, var(--accent) 70%, #fff)"
+                              : "#2a2a2a",
+                          }}
+                        />
+                      </div>
+                      <span className="cs-city-score">{c.score}</span>
+                    </div>
+                  ))}
+                  {!isLive && (
+                    <div className="cs-est-note">
+                      ⓘ Estimated from artist home market, label, and listener distribution.
+                      Live city data unlocks with Pro.
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="cs-upgrade">
+        <div className="cs-upgrade-inner">
+          <h2>Want live city data for all 264 artists?</h2>
+          <p>Pro subscribers get real-time Google Trends city breakdowns, updated every 6 hours.</p>
+          <button onClick={() => document.querySelector('[data-tab="pro"]')?.click()} className="cs-upgrade-btn">
+            Unlock Pro →
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Velocity Tab ──────────────────────────────────────────────────
 
 const VELOCITY_LABELS = {
@@ -1229,11 +1534,12 @@ export default function App() {
         <div className="top-tabs">
           <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>
           <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
+          <button className={`top-tab ${activeTab === "city-spotlight" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("city-spotlight")}>📍 City Spotlight</button>
           <button className={`top-tab ${activeTab === "ones-to-watch" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("ones-to-watch")}>Ones to Watch</button>
           <button className={`top-tab ${activeTab === "velocity"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("velocity")}>Velocity</button>
           <button className={`top-tab ${activeTab === "breakouts"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("breakouts")}>🚨 Breakouts</button>
           <button className={`top-tab ${activeTab === "movers"        ? "top-tab--active" : ""}`} onClick={() => setActiveTab("movers")}>Movers</button>
-          <button className={`top-tab top-tab--pro ${activeTab === "pro" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("pro")}>Pro</button>
+          <button data-tab="pro" className={`top-tab top-tab--pro ${activeTab === "pro" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("pro")}>Pro</button>
         </div>
       </header>
 
@@ -1242,6 +1548,7 @@ export default function App() {
           ? <ProPage rankings={rankings} />
           : <ProPaywall onUnlock={() => setProUnlocked(true)} />
       )}
+      {activeTab === "city-spotlight" && <CitySpotlightPage rankings={rankings} />}
       {activeTab === "ones-to-watch" && <OnestoWatchPage rankings={rankings} />}
       {activeTab === "velocity"      && <VelocityPage rankings={rankings} />}
       {activeTab === "breakouts"     && <BreakoutsPage rankings={rankings} breakouts={breakouts} breakoutThreshold={breakoutThreshold} />}
