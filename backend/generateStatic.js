@@ -36,16 +36,28 @@ async function main() {
   const enriched = [];
   let channelIdUpdates = 0;
 
+  // Spotify data ages out after 23 hours — use cached snapshot data if still fresh
+  const SPOTIFY_TTL_MS = 23 * 60 * 60 * 1000;
+  const now = Date.now();
+
   for (const [i, artist] of artists.entries()) {
-    if (i > 0) await delay(3000);       // 3s between artists — stays well under Spotify's rate limit
-    if (i > 0 && i % 50 === 0) {
-      console.log(`\n[pause] ${i} artists done — resting 30s to avoid rate limits…`);
-      await delay(30000);               // extra 30s breather every 50 artists
+    if (i > 0) await delay(2500);
+    if (i > 0 && i % 60 === 0) {
+      console.log(`\n[pause] ${i} done — resting 20s…`);
+      await delay(20000);
     }
     try {
+      // Use cached Spotify data if it's less than 23 hours old
+      const prevSnap     = snapshots[artist.name]?.slice(-1)[0];
+      const snapAge      = prevSnap?.timestamp ? now - new Date(prevSnap.timestamp).getTime() : Infinity;
+      const spotifyFresh = prevSnap && snapAge < SPOTIFY_TTL_MS;
+
+      const spotifyPromise    = spotifyFresh ? Promise.resolve(prevSnap) : getSpotifyData(artist.spotify_id, token);
+      const topTracksPromise  = spotifyFresh ? Promise.resolve(prevSnap) : getSpotifyTopTracks(artist.spotify_id, token);
+
       const [spotify, topTracks, tiktok, youtube, soundcloud, mixcloud, playlists, trends] = await Promise.all([
-        getSpotifyData(artist.spotify_id, token),
-        getSpotifyTopTracks(artist.spotify_id, token),
+        spotifyPromise,
+        topTracksPromise,
         getTikTokMentions(artist.tiktok_tag),
         getYouTubeData(artist.youtube_channel_id),
         getSoundCloudData(artist.soundcloud_permalink),
