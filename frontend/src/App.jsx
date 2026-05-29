@@ -778,7 +778,9 @@ function OnestoWatchPage({ rankings }) {
       const trends = norm(dj.google_trends_score || 0, "google_trends_score");
       const rankMo = dj.rank_change ? Math.min(Math.max(dj.rank_change * 8, 0), 100) : 40;
       return { ...dj, momentum: Math.round(growth * 0.35 + tiktok * 0.25 + trends * 0.25 + rankMo * 0.15) };
-    }).sort((a, b) => b.momentum - a.momentum);
+    })
+    .filter(dj => !dj.spotify_monthly_listeners || dj.spotify_monthly_listeners < 500_000)
+    .sort((a, b) => b.momentum - a.momentum);
   }, [rankings]);
 
   const breaking = withMomentum.filter(d => BREAKING_SLOTS.includes(d.name));
