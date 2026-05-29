@@ -221,13 +221,29 @@ function MomentumBar({ score }) {
 }
 
 // ── Geographic interest ──────────────────────────────────────────
-function GeographicInterest({ markets }) {
+function GeographicInterest({ markets, dj }) {
   const sorted = MARKET_REGIONS
     .map(r => ({ region: r, score: markets[r] || 0 }))
     .sort((a, b) => b.score - a.score);
+
+  const countries = dj?.google_trends_countries ?? {};
+  const cities    = dj?.google_trends_cities    ?? {};
+  const direction = dj?.google_trends_direction ?? "stable";
+  const hasRealData = Object.keys(countries).length > 0;
+
+  const dirColor = direction === "up" ? "#4caf50" : direction === "down" ? "#e74c3c" : "#888";
+  const dirLabel = direction === "up" ? "▲ Rising" : direction === "down" ? "▼ Falling" : "→ Stable";
+
   return (
     <div className="geo-interest">
-      <div className="geo-title">Geographic Demand</div>
+      <div className="geo-title">
+        Geographic Demand
+        <span className="geo-direction" style={{ color: dirColor, marginLeft: 10, fontSize: "0.8rem" }}>
+          {dirLabel} this week
+        </span>
+      </div>
+
+      {/* Region-level bars */}
       {sorted.map(({ region, score }) => (
         <div key={region} className="geo-row">
           <span className="geo-region">{region}</span>
@@ -240,7 +256,48 @@ function GeographicInterest({ markets }) {
           <span className="geo-score">{score}</span>
         </div>
       ))}
-      <div className="geo-note">Index 0–100 based on Spotify, TikTok &amp; trend signals</div>
+
+      {/* Top countries from Google Trends */}
+      {hasRealData && (
+        <div className="geo-breakdown">
+          <div className="geo-breakdown-title">🌍 Top Countries (Google Trends)</div>
+          {Object.entries(countries)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 5)
+            .map(([country, score]) => (
+              <div key={country} className="geo-row geo-row--sm">
+                <span className="geo-region">{country}</span>
+                <div className="geo-bar-track">
+                  <div className="geo-bar-fill" style={{ width: `${score}%`, background: "var(--accent)" }} />
+                </div>
+                <span className="geo-score">{score}</span>
+              </div>
+            ))}
+        </div>
+      )}
+
+      {/* Top US cities from Google Trends */}
+      {Object.keys(cities).length > 0 && (
+        <div className="geo-breakdown">
+          <div className="geo-breakdown-title">🇺🇸 Top US Cities</div>
+          {Object.entries(cities)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 5)
+            .map(([city, score]) => (
+              <div key={city} className="geo-row geo-row--sm">
+                <span className="geo-region">{city}</span>
+                <div className="geo-bar-track">
+                  <div className="geo-bar-fill" style={{ width: `${score}%`, background: "#3b9ede" }} />
+                </div>
+                <span className="geo-score">{score}</span>
+              </div>
+            ))}
+        </div>
+      )}
+
+      <div className="geo-note">
+        {hasRealData ? "Live Google Trends data · updated every 6 hours" : "Index 0–100 based on Spotify, TikTok & trend signals"}
+      </div>
     </div>
   );
 }
@@ -335,7 +392,7 @@ function ArtistDetailPanel({ dj, inShortlist, onToggleShortlist, onClose }) {
         </div>
 
         <div className="detail-col">
-          <GeographicInterest markets={dj.markets} />
+          <GeographicInterest markets={dj.markets} dj={dj} />
 
           <div className="detail-section" style={{ marginTop: 20 }}>
             <div className="detail-section-title">Key Metrics</div>

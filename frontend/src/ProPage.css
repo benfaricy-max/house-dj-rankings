@@ -429,6 +429,11 @@
 .geo-bar-fill  { height: 100%; border-radius: 3px; transition: width 0.5s ease; }
 .geo-score { font-size: 10px; font-weight: 700; color: var(--muted); text-align: right; }
 .geo-note { font-size: 9px; color: var(--muted); margin-top: 8px; opacity: 0.7; }
+.geo-breakdown { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border); }
+.geo-breakdown-title { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 8px; }
+.geo-row--sm { margin-bottom: 5px; }
+.geo-row--sm .geo-region { font-size: 10px; }
+.geo-direction { font-weight: 600; }
 
 /* ── Shortlist tray ──────────────────────────────────────────────── */
 .shortlist-tray {
