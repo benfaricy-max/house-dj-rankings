@@ -2,7 +2,7 @@ import { useEffect, useState, useMemo, useRef } from "react";
 import "./App.css";
 import ProPage from "./ProPage";
 
-const API = "http://localhost:3001";
+const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
 const MEDAL = { 1: "🥇", 2: "🥈", 3: "🥉" };
 
 const METRICS = [
