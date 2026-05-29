@@ -24,6 +24,16 @@
 .paywall-cta:hover { opacity:.85; }
 .paywall-cta--outline { background:transparent; color:#f5a623; border:2px solid #f5a623; }
 
+.paywall-why { background:#0d0d0d; border:1px solid #1e1e1e; border-radius:16px; padding:36px 40px; margin-bottom:48px; }
+.paywall-why-title { font-size:1.3rem; font-weight:800; margin:0 0 10px; color:#fff; }
+.paywall-why-intro { color:#888; font-size:.92rem; margin:0 0 24px; }
+.paywall-why-list { display:flex; flex-direction:column; gap:18px; margin-bottom:24px; }
+.paywall-why-item { display:flex; gap:16px; align-items:flex-start; }
+.paywall-why-num { background:#f5a623; color:#000; font-weight:900; font-size:.8rem; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+.paywall-why-item strong { display:block; color:#fff; font-size:.95rem; margin-bottom:4px; }
+.paywall-why-item p { color:#888; font-size:.85rem; margin:0; line-height:1.5; font-style:italic; }
+.paywall-why-footnote { color:#555; font-size:.82rem; margin:0; border-top:1px solid #1e1e1e; padding-top:20px; line-height:1.6; }
+
 .paywall-code { text-align:center; color:#666; font-size:.9rem; }
 .paywall-code p { margin-bottom:10px; }
 .paywall-code-row { display:flex; gap:8px; justify-content:center; }

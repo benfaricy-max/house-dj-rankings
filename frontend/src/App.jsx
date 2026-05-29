@@ -921,6 +921,31 @@ function ProPaywall({ onUnlock }) {
         ))}
       </div>
 
+      <div className="paywall-why">
+        <h2 className="paywall-why-title">Why industry professionals pay for this</h2>
+        <p className="paywall-why-intro">Raw rankings aren't that valuable to bookers and labels. What they actually pay for is:</p>
+        <div className="paywall-why-list">
+          {[
+            { n: "1", title: "Breakout Detection", desc: "\"This artist is growing 40% week over week in Chicago and Berlin before anyone is talking about them.\"" },
+            { n: "2", title: "Routing Intelligence", desc: "\"This artist has high search concentration in Miami and Detroit — book them there before demand peaks.\"" },
+            { n: "3", title: "Comparative Benchmarking", desc: "\"Artist A has 3× the engagement of Artist B despite similar Spotify numbers — stronger credibility with real fans.\"" },
+            { n: "4", title: "Historical Trajectory", desc: "\"This artist has been on a 12-week growth streak across every signal we track.\"" },
+          ].map(({ n, title, desc }) => (
+            <div key={n} className="paywall-why-item">
+              <span className="paywall-why-num">{n}</span>
+              <div>
+                <strong>{title}</strong>
+                <p>{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="paywall-why-footnote">
+          Booking agencies and labels pay for data subscriptions in the range of hundreds to thousands per month
+          when it directly informs talent decisions. This is that tool.
+        </p>
+      </div>
+
       <div className="paywall-plans">
         <div className="paywall-plan paywall-plan--featured">
           <div className="paywall-plan-label">Most Popular</div>
