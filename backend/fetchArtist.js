@@ -52,44 +52,39 @@ async function getSpotifyTopTracks(artistId, token) {
 }
 
 // --- YOUTUBE ---
-// Accepts a direct channel ID (UC...) or falls back to a search query
+// Accepts a direct channel ID (UC...) or falls back to a search query.
+// Returns resolved_channel_id so callers can cache it in artists.json,
+// saving 99 quota units on every future call (lookup=1 vs search=100).
 async function getYouTubeData(channelIdOrQuery) {
-  const empty = { youtube_subscribers: 0, youtube_total_views: 0 };
-  if (!process.env.YOUTUBE_API_KEY) return empty;
+  const empty = { youtube_subscribers: 0, youtube_total_views: 0, resolved_channel_id: null };
+  if (!process.env.YOUTUBE_API_KEY || !channelIdOrQuery) return empty;
 
   try {
-  let channelId = channelIdOrQuery;
+    let channelId = channelIdOrQuery;
 
-  if (!channelIdOrQuery.startsWith("UC")) {
-    const searchRes = await axios.get("https://www.googleapis.com/youtube/v3/search", {
-      params: {
-        part: "snippet",
-        q: channelIdOrQuery,
-        type: "channel",
-        maxResults: 1,
-        key: process.env.YOUTUBE_API_KEY,
-      },
+    // Only search if we don't have a real channel ID yet
+    if (!channelIdOrQuery.startsWith("UC")) {
+      const searchRes = await axios.get("https://www.googleapis.com/youtube/v3/search", {
+        params: { part: "snippet", q: channelIdOrQuery, type: "channel", maxResults: 1, key: process.env.YOUTUBE_API_KEY },
+      });
+      const hit = searchRes.data.items?.[0];
+      if (!hit) return empty;
+      channelId = hit.id.channelId;
+    }
+
+    const res = await axios.get("https://www.googleapis.com/youtube/v3/channels", {
+      params: { part: "statistics", id: channelId, key: process.env.YOUTUBE_API_KEY },
     });
-    const hit = searchRes.data.items?.[0];
-    if (!hit) return { youtube_subscribers: 0, youtube_total_views: 0 };
-    channelId = hit.id.channelId;
-  }
+    const channel = res.data.items?.[0];
+    if (!channel) return empty;
 
-  const res = await axios.get("https://www.googleapis.com/youtube/v3/channels", {
-    params: {
-      part: "statistics,snippet",
-      id: channelId,
-      key: process.env.YOUTUBE_API_KEY,
-    },
-  });
-  const channel = res.data.items?.[0];
-  if (!channel) return { youtube_subscribers: 0, youtube_total_views: 0 };
-  return {
-    youtube_subscribers: parseInt(channel.statistics.subscriberCount || "0"),
-    youtube_total_views: parseInt(channel.statistics.viewCount || "0"),
-  };
+    return {
+      youtube_subscribers:    parseInt(channel.statistics.subscriberCount || "0"),
+      youtube_total_views:    parseInt(channel.statistics.viewCount       || "0"),
+      resolved_channel_id:    channelId,  // caller caches this
+    };
   } catch (err) {
-    console.warn(`[YouTube] Failed for "${channelIdOrQuery}":`, err.response?.status ?? err.message);
+    console.warn(`[YouTube] Failed for "${channelIdOrQuery}":`, err.response?.status ?? err.message?.slice(0, 60));
     return empty;
   }
 }
