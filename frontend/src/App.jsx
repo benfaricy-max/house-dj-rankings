@@ -513,6 +513,108 @@ function CompareBar({ selected, onClear, onCompare }) {
   );
 }
 
+// ── Ones to Watch page ────────────────────────────────────────────
+
+const BREAKING_SLOTS = ["Mau P", "ANOTR", "Disco Lines"];
+
+function OnestoWatchPage({ rankings }) {
+  const withMomentum = useMemo(() => {
+    const keys = ["spotify_follower_growth_rate", "tiktok_post_count", "google_trends_score"];
+    const ranges = {};
+    for (const k of keys) {
+      const vals = rankings.map(r => r[k] || 0);
+      ranges[k] = { min: Math.min(...vals), max: Math.max(...vals) };
+    }
+    function norm(v, k) {
+      const { min, max } = ranges[k];
+      return max === min ? 0 : ((v - min) / (max - min)) * 100;
+    }
+    return [...rankings].map(dj => {
+      const growth = norm(dj.spotify_follower_growth_rate || 0, "spotify_follower_growth_rate");
+      const tiktok = norm(dj.tiktok_post_count || 0, "tiktok_post_count");
+      const trends = norm(dj.google_trends_score || 0, "google_trends_score");
+      const rankMo = dj.rank_change ? Math.min(Math.max(dj.rank_change * 8, 0), 100) : 40;
+      return { ...dj, momentum: Math.round(growth * 0.35 + tiktok * 0.25 + trends * 0.25 + rankMo * 0.15) };
+    }).sort((a, b) => b.momentum - a.momentum);
+  }, [rankings]);
+
+  const breaking = withMomentum.filter(d => BREAKING_SLOTS.includes(d.name));
+
+  return (
+    <div className="otw-page">
+      {breaking.length > 0 && (
+        <section className="breaking-section">
+          <div className="breaking-eyebrow">
+            <span className="breaking-live">● BREAKING</span>
+            <span className="breaking-sponsored">Sponsored — <a href="mailto:hello@thedjranks.com">get featured</a></span>
+          </div>
+          <div className="breaking-grid">
+            {breaking.map(dj => (
+              <div key={dj.name} className="breaking-card">
+                <div className="breaking-img">
+                  {dj.image ? <img src={dj.image} alt={dj.name} /> : <div className="breaking-placeholder">{dj.name[0]}</div>}
+                </div>
+                <div className="breaking-body">
+                  <div className="breaking-name">{dj.name}</div>
+                  <div className="breaking-stats">
+                    <span className="breaking-rank">Chart #{dj.rank}</span>
+                    {dj.spotify_follower_growth_rate > 0 && (
+                      <span className="breaking-growth">+{dj.spotify_follower_growth_rate.toFixed(1)}% growth</span>
+                    )}
+                  </div>
+                  <div className="breaking-mo">
+                    <div className="breaking-mo-bar-track">
+                      <div className="breaking-mo-bar-fill" style={{ width: `${dj.momentum}%` }} />
+                    </div>
+                    <span className="breaking-mo-val">{dj.momentum} momentum</span>
+                  </div>
+                  {dj.spotify_url && (
+                    <a href={dj.spotify_url} target="_blank" rel="noreferrer" className="breaking-spotify">Listen on Spotify ↗</a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section className="otw-list-section">
+        <div className="otw-section-header">
+          <h2 className="otw-section-title">Ones to Watch</h2>
+          <p className="otw-section-sub">All artists ranked by momentum — early trajectory, high growth</p>
+        </div>
+        {withMomentum.map((dj, i) => {
+          const moColor = dj.momentum >= 70 ? "#4ade80" : dj.momentum >= 40 ? "var(--accent)" : "var(--muted)";
+          return (
+            <div key={dj.name} className="otw-row">
+              <div className="otw-pos">#{i + 1}</div>
+              <div className="otw-avatar">
+                {dj.image ? <img src={dj.image} alt={dj.name} /> : <div className="otw-placeholder">{dj.name[0]}</div>}
+              </div>
+              <div className="otw-info">
+                <div className="otw-name">{dj.name}</div>
+                <div className="otw-subs">
+                  {dj.spotify_monthly_listeners > 0 && <span>{fmt(dj.spotify_monthly_listeners)} listeners</span>}
+                  {dj.spotify_follower_growth_rate > 0 && <span className="otw-growth">+{dj.spotify_follower_growth_rate.toFixed(1)}% growth</span>}
+                </div>
+              </div>
+              <div className="otw-chart-rank">
+                Chart #{dj.rank}
+                {dj.rank_change > 0 && <span className="up"> ▲{dj.rank_change}</span>}
+                {dj.rank_change < 0 && <span className="down"> ▼{Math.abs(dj.rank_change)}</span>}
+              </div>
+              <div className="otw-momentum">
+                <div className="otw-mo-score" style={{ color: moColor }}>{dj.momentum}</div>
+                <div className="otw-mo-label">momentum</div>
+              </div>
+            </div>
+          );
+        })}
+      </section>
+    </div>
+  );
+}
+
 // ── Main App ───────────────────────────────────────────────────────
 
 export default function App() {
@@ -581,11 +683,13 @@ export default function App() {
         {lastUpdated && <p className="header-updated">Updated {new Date(lastUpdated).toLocaleString()}</p>}
         <div className="top-tabs">
           <button className={`top-tab ${activeTab === "rankings" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>
+          <button className={`top-tab ${activeTab === "ones-to-watch" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("ones-to-watch")}>Ones to Watch</button>
           <button className={`top-tab top-tab--pro ${activeTab === "pro" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("pro")}>Pro</button>
         </div>
       </header>
 
-      {activeTab === "pro" && <ProPage rankings={rankings} />}
+      {activeTab === "pro"           && <ProPage rankings={rankings} />}
+      {activeTab === "ones-to-watch" && <OnestoWatchPage rankings={rankings} />}
 
       {activeTab === "rankings" && <>
       {movers && <WeeklyMovers movers={movers} onScrollTo={scrollTo} />}

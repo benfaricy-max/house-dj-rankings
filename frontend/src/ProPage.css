@@ -297,12 +297,181 @@
 .portal-empty-title { font-size: 18px; font-weight: 700; color: var(--text-h); margin-bottom: 10px; }
 .portal-empty-body  { font-size: 14px; color: var(--muted); max-width: 400px; margin: 0 auto; line-height: 1.6; }
 
+/* ── Filter row (new) ────────────────────────────────────────────── */
+.filter-row { display: flex; flex-direction: column; gap: 8px; width: 100%; margin-top: 8px; }
+.filter-group { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+.filter-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); min-width: 44px; }
+.filter-btn {
+  background: none; border: 1px solid var(--border); border-radius: 14px;
+  color: var(--muted); font-size: 11px; padding: 3px 10px; cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+.filter-btn--active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+
+/* ── Booker split layout ─────────────────────────────────────────── */
+.booker-main { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.booker-main--split { grid-template-columns: 1fr 380px; }
+
+/* Updated list header and row for fee column */
+.booker-list-header,
+.booker-row {
+  grid-template-columns: 64px 44px 1fr 130px 140px 36px;
+}
+.booker-row { cursor: pointer; }
+.booker-row--active { background: color-mix(in srgb, var(--accent) 8%, transparent) !important; }
+
+.booker-fee { font-size: 12px; font-weight: 700; }
+
+.star-btn {
+  background: none; border: none; font-size: 18px; cursor: pointer;
+  color: var(--muted); transition: color 0.15s; padding: 2px 4px;
+}
+.star-btn--on { color: #f59e0b; }
+.star-btn:hover { color: #f59e0b; }
+
+/* ── Artist detail panel ─────────────────────────────────────────── */
+.artist-detail-panel {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 20px; position: relative; overflow-y: auto;
+  max-height: 80vh;
+  align-self: flex-start;
+  position: sticky; top: 16px;
+}
+
+.detail-close {
+  position: absolute; top: 14px; right: 14px; background: none; border: none;
+  color: var(--muted); font-size: 16px; cursor: pointer; padding: 2px 6px;
+  border-radius: 4px; transition: color 0.15s;
+}
+.detail-close:hover { color: var(--text-h); }
+
+.detail-header { display: flex; gap: 14px; margin-bottom: 20px; }
+.detail-avatar, .detail-avatar img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.detail-avatar-placeholder {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 20%, var(--card));
+  color: var(--accent); font-size: 20px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.detail-name { font-size: 17px; font-weight: 700; color: var(--text-h); margin-bottom: 2px; }
+.detail-meta-line { font-size: 11px; color: var(--muted); margin-bottom: 6px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.detail-genres { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 6px; }
+.detail-rank-row { display: flex; align-items: center; gap: 8px; }
+.detail-rank { font-size: 15px; font-weight: 700; color: var(--text-h); }
+.detail-delta { font-size: 11px; font-weight: 700; }
+.detail-delta.up   { color: #4ade80; }
+.detail-delta.down { color: #f87171; }
+.detail-score { font-size: 11px; color: var(--muted); margin-left: auto; }
+
+.detail-body { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.detail-col { display: flex; flex-direction: column; gap: 0; }
+
+.detail-section { padding: 14px 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 60%, transparent); }
+.detail-section:last-child { border-bottom: none; }
+.detail-section-title {
+  font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--muted); margin-bottom: 10px;
+}
+
+/* Fee display */
+.fee-display { margin-bottom: 12px; }
+.fee-amount { font-size: 22px; font-weight: 700; line-height: 1; margin-bottom: 2px; }
+.fee-sub { font-size: 10px; color: var(--muted); margin-bottom: 8px; }
+.fee-dots { display: flex; gap: 4px; }
+.fee-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--border);
+}
+.fee-dot--on { }
+
+.venue-fit { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+.venue-icon { font-size: 20px; }
+.venue-label { font-size: 12px; font-weight: 600; color: var(--text-h); }
+.venue-sub   { font-size: 10px; color: var(--muted); }
+
+/* Momentum in detail */
+.detail-momentum-big { font-size: 36px; font-weight: 700; line-height: 1; margin-bottom: 8px; }
+.detail-momentum-big span { font-size: 14px; color: var(--muted); font-weight: 400; }
+
+/* Contact */
+.detail-contact-btn {
+  display: inline-block; background: var(--accent); color: #fff; border-radius: 8px;
+  padding: 8px 14px; font-size: 12px; font-weight: 600; text-decoration: none;
+  margin-bottom: 8px; word-break: break-all;
+}
+.detail-unclaimed { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.detail-unclaimed a { color: var(--accent); text-decoration: none; }
+.detail-spotify-link { font-size: 11px; color: #1DB954; text-decoration: none; display: block; }
+
+/* Stats grid */
+.detail-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.detail-stat-cell { }
+.detail-stat-val   { font-size: 14px; font-weight: 700; color: var(--text-h); }
+.detail-stat-label { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; }
+
+/* Footer */
+.detail-footer { border-top: 1px solid var(--border); padding-top: 14px; }
+.shortlist-btn {
+  background: none; border: 1.5px solid var(--border); border-radius: 8px; width: 100%;
+  color: var(--muted); font-size: 13px; font-weight: 600; padding: 9px; cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.shortlist-btn:hover { border-color: #f59e0b; color: #f59e0b; }
+.shortlist-btn--active { background: color-mix(in srgb, #f59e0b 12%, transparent); border-color: #f59e0b; color: #f59e0b; }
+
+/* ── Geographic interest ─────────────────────────────────────────── */
+.geo-interest { }
+.geo-title { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 10px; }
+.geo-row { display: grid; grid-template-columns: 62px 1fr 28px; align-items: center; gap: 6px; margin-bottom: 7px; }
+.geo-region { font-size: 10px; font-weight: 600; color: var(--text); }
+.geo-bar-track { height: 5px; background: color-mix(in srgb, var(--border) 80%, transparent); border-radius: 3px; overflow: hidden; }
+.geo-bar-fill  { height: 100%; border-radius: 3px; transition: width 0.5s ease; }
+.geo-score { font-size: 10px; font-weight: 700; color: var(--muted); text-align: right; }
+.geo-note { font-size: 9px; color: var(--muted); margin-top: 8px; opacity: 0.7; }
+
+/* ── Shortlist tray ──────────────────────────────────────────────── */
+.shortlist-tray {
+  position: sticky; bottom: 0; background: var(--card);
+  border: 1px solid var(--border); border-radius: 14px 14px 0 0;
+  padding: 16px 20px; margin-top: 16px;
+  box-shadow: 0 -8px 32px rgba(0,0,0,0.12);
+}
+.shortlist-tray-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.shortlist-tray-title  { font-size: 13px; font-weight: 700; color: var(--text-h); flex: 1; }
+.shortlist-tray-btns   { display: flex; gap: 6px; }
+.tray-btn {
+  background: var(--accent); border: none; border-radius: 6px; color: #fff;
+  font-size: 11px; font-weight: 700; padding: 5px 12px; cursor: pointer;
+}
+.tray-btn--clear { background: none; border: 1px solid var(--border); color: var(--muted); }
+
+.shortlist-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.shortlist-chip {
+  display: flex; align-items: center; gap: 6px; background: var(--bg);
+  border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px;
+}
+.chip-name { font-size: 11px; font-weight: 600; color: var(--text-h); }
+.chip-fee  { font-size: 10px; font-weight: 700; }
+.chip-remove {
+  background: none; border: none; color: var(--muted); font-size: 11px; cursor: pointer; padding: 0;
+}
+
+.shortlist-budget { display: flex; align-items: baseline; gap: 10px; }
+.budget-label { font-size: 11px; color: var(--muted); }
+.budget-total { font-size: 20px; font-weight: 700; color: var(--text-h); }
+.budget-note  { font-size: 11px; color: var(--muted); font-weight: 400; }
+
 /* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .booker-main--split { grid-template-columns: 1fr; }
+  .artist-detail-panel { position: static; max-height: none; }
+}
 @media (max-width: 700px) {
   .pricing-grid { grid-template-columns: 1fr; }
   .booker-list-header { display: none; }
-  .booker-row { grid-template-columns: 48px 36px 1fr; grid-template-rows: auto auto; gap: 6px; }
-  .booker-momentum { grid-column: 2 / 4; }
-  .booker-contact  { grid-column: 2 / 4; }
+  .booker-row, .booker-list-header { grid-template-columns: 48px 36px 1fr 36px; }
+  .booker-fee, .booker-momentum { display: none; }
   .pro-header { flex-direction: column; align-items: flex-start; }
+  .detail-body { grid-template-columns: 1fr; }
 }
