@@ -5,11 +5,16 @@ on:
     - cron: "0 */6 * * *"   # every 6 hours
   workflow_dispatch:          # manual trigger from GitHub UI
 
+permissions:
+  contents: write             # allows committing rankings.json + artists.json back to repo
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-node@v4
         with:

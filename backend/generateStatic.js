@@ -37,7 +37,11 @@ async function main() {
   let channelIdUpdates = 0;
 
   for (const [i, artist] of artists.entries()) {
-    if (i > 0) await delay(2000);
+    if (i > 0) await delay(3000);       // 3s between artists — stays well under Spotify's rate limit
+    if (i > 0 && i % 50 === 0) {
+      console.log(`\n[pause] ${i} artists done — resting 30s to avoid rate limits…`);
+      await delay(30000);               // extra 30s breather every 50 artists
+    }
     try {
       const [spotify, topTracks, tiktok, youtube, soundcloud, mixcloud, playlists, trends] = await Promise.all([
         getSpotifyData(artist.spotify_id, token),
