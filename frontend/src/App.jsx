@@ -1799,7 +1799,6 @@ export default function App() {
 
       {activeTab === "rankings" && <>
       {movers && <WeeklyMovers movers={movers} onScrollTo={scrollTo} />}
-      {onesToWatch.length > 0 && <OnesToWatch artists={onesToWatch} onScrollTo={scrollTo} />}
 
       <div className="sort-bar">
         <span className="sort-label">Sort by</span>
