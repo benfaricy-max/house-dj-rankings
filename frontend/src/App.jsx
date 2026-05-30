@@ -1698,6 +1698,18 @@ export default function App() {
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
 
+  // GA4 SPA virtual pageviews — track tab switches and profile navigation
+  useEffect(() => {
+    if (typeof window.gtag !== "function") return;
+    const path  = profileSlug ? `/artist/${profileSlug}` : `/${activeTab}`;
+    const title = profileSlug ? `Artist: ${profileSlug}` : `Tab: ${activeTab}`;
+    window.gtag("event", "page_view", {
+      page_title: title,
+      page_path: path,
+      page_location: window.location.origin + "/" + path.replace(/^\//, ""),
+    });
+  }, [activeTab, profileSlug]);
+
   const ranges   = useMemo(() => computeRanges(rankings), [rankings]);
   const maxScore = rankings[0]?.score ?? 1;
 
