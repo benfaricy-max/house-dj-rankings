@@ -19,7 +19,7 @@ const METRICS = [
   { key: "youtube_subscribers",          label: "YT Subscribers",     weight: 0.10, format: "count"    },
   { key: "google_trends_score",          label: "Google Trends",      weight: 0.10, format: "score100" },
   { key: "spotify_avg_track_popularity", label: "Track Popularity",   weight: 0.08, format: "score100" },
-  { key: "spotify_follower_growth_rate", label: "Follower Growth",    weight: 0.08, format: "pct"      },
+  { key: "spotify_follower_growth_rate", label: "Listener Growth",    weight: 0.08, format: "pct"      },
   { key: "youtube_views_weekly",         label: "YT Views / wk",      weight: 0.08, format: "count"    },
   { key: "spotify_followers",            label: "Spotify Followers",  weight: 0.05, format: "count"    },
   { key: "manual_scene_score",           label: "Scene Score",        weight: 0.04, format: "score100" },

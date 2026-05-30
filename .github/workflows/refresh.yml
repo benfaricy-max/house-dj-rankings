@@ -49,6 +49,11 @@ jobs:
         working-directory: backend
         continue-on-error: true   # never block the refresh if Songkick scrape fails
 
+      - name: Listener growth signal (kworb)
+        run: node enrichKworb.js
+        working-directory: backend
+        continue-on-error: true
+
       - name: Recompute booking fees (uses fresh listener data)
         run: node computeFees.js
         working-directory: backend
