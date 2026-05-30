@@ -28,6 +28,15 @@ const artists = JSON.parse(fs.readFileSync(ARTISTS_FILE, "utf8"));
 let snapshots = {};
 try { snapshots = JSON.parse(fs.readFileSync(SNAP_FILE, "utf8")); } catch {}
 
+// Load EXISTING rankings so we never wipe a metric we couldn't fetch this run
+// (e.g. TikTok needs puppeteer, unavailable in CI). Merge-safe: keep prior value.
+let prevRankings = {};
+try {
+  const rj = JSON.parse(fs.readFileSync(OUT_FILE, "utf8"));
+  prevRankings = Object.fromEntries((rj.rankings ?? []).map(r => [r.name, r]));
+} catch {}
+const keep = (next, prev) => (next && next > 0) ? next : (prev || 0);
+
 const delay = ms => new Promise(r => setTimeout(r, ms));
 
 async function main() {
@@ -71,16 +80,26 @@ async function main() {
         ? currTotal - prevTotal
         : 0;
 
+      // Merge-safe: only overwrite a metric if THIS run fetched a real value;
+      // otherwise preserve whatever's already live (e.g. locally-scraped TikTok).
+      const prev = prevRankings[artist.name] ?? {};
       enriched.push({
-        ...artist, ...spotifyCache, ...tiktok,
-        ...youtube, ...soundcloud, ...mixcloud,
+        ...prev, ...artist, ...spotifyCache,
+        ...soundcloud,
+        // image: keep a real image if we have one
+        image: artist.image ?? spotifyCache.image ?? prev.image ?? null,
+        tiktok_post_count:    keep(tiktok.tiktok_post_count, prev.tiktok_post_count),
+        youtube_subscribers:  keep(youtube.youtube_subscribers, prev.youtube_subscribers),
+        youtube_total_views:  keep(youtube.youtube_total_views, prev.youtube_total_views),
+        youtube_views_weekly: keep(youtube_views_weekly, prev.youtube_views_weekly),
+        mixcloud_followers:        keep(mixcloud.mixcloud_followers, prev.mixcloud_followers),
+        mixcloud_play_count_total: keep(mixcloud.mixcloud_play_count_total, prev.mixcloud_play_count_total),
         spotify_playlist_placements: artist.album_count ?? 0,
-        youtube_views_weekly,
-        google_trends_score:     trends.score,
-        google_trends_direction: trends.direction,
-        google_trends_countries: trends.top_countries ?? {},
-        google_trends_cities:    trends.top_us_cities ?? {},
-        spotify_monthly_listeners: spotifyCache.spotify_monthly_listeners ?? spotifyCache.spotify_followers ?? 0,
+        google_trends_score:     keep(trends.score, prev.google_trends_score),
+        google_trends_direction: trends.score > 0 ? trends.direction : (prev.google_trends_direction ?? "stable"),
+        google_trends_countries: (trends.top_countries && Object.keys(trends.top_countries).length) ? trends.top_countries : (prev.google_trends_countries ?? {}),
+        google_trends_cities:    (trends.top_us_cities && Object.keys(trends.top_us_cities).length) ? trends.top_us_cities : (prev.google_trends_cities ?? {}),
+        spotify_monthly_listeners: keep(spotifyCache.spotify_monthly_listeners ?? spotifyCache.spotify_followers, prev.spotify_monthly_listeners),
       });
       process.stdout.write(`\r${i + 1}/${artists.length} ${artist.name}   `);
     } catch (err) {
