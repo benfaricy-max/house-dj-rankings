@@ -46,6 +46,14 @@ Spotify listeners in one pass, concurrency 4, progressive save, null-on-fail.
 HTTP, no puppeteer) → beatport_score (core scene credibility). Runs in CI too.
 Then commit `frontend/public/rankings.json` + `backend/artists.json` and push.
 
+## Google Trends 12-month backfill
+`node backend/backfillTrendsBatch.js` — preferred: 5 terms/request with a fixed
+ANCHOR ("Carl Cox") rescaled to a common scale; 5× fewer requests. Resumable
+(skips fresh <20d), rate-limit-aware (backs off + stops on 429 streak), merge-safe.
+Stores full series in data/trends_history.json + trends_12m/momentum in rankings.
+`backfillTrends.js` is the 1-per-request fallback. Google throttles pytrends by IP —
+backfill accumulates across runs. Long-term fix: official Trends API (alpha, applied).
+
 ## Beatport signal (core credibility)
 `beatport_score` 0-100 from genre Top-100 charts: positionScore(101−best)·0.6 +
 trackBreadth·0.25 + crossGenreReach·0.15. Powers the "DJ's DJ" benchmark axis
