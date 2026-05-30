@@ -17,7 +17,8 @@
       "color": "#f59e0b",
       "band": "A",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 5.1
   },
   {
     "name": "Chris Lake",
@@ -44,7 +45,8 @@
     "beatport_charts": [
       "House",
       "Tech House"
-    ]
+    ],
+    "trends_mom_12w": 13.3
   },
   {
     "name": "John Summit",
@@ -71,7 +73,8 @@
     "beatport_charts": [
       "Melodic House & Techno",
       "Progressive House"
-    ]
+    ],
+    "trends_mom_12w": 35
   },
   {
     "name": "Fred Again",
@@ -110,7 +113,8 @@
       "color": "#f59e0b",
       "band": "B",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -50
   },
   {
     "name": "Disclosure",
@@ -137,7 +141,8 @@
     "beatport_charts": [
       "House",
       "Afro House"
-    ]
+    ],
+    "trends_mom_12w": 23.9
   },
   {
     "name": "Peggy Gou",
@@ -163,7 +168,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
-    ]
+    ],
+    "trends_mom_12w": -9.1
   },
   {
     "name": "Black Coffee",
@@ -189,7 +195,8 @@
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Melodic House & Techno"
-    ]
+    ],
+    "trends_mom_12w": 96.5
   },
   {
     "name": "Solomun",
@@ -215,7 +222,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
-    ]
+    ],
+    "trends_mom_12w": 34.5
   },
   {
     "name": "Tale Of Us",
@@ -235,7 +243,8 @@
       "color": "#f59e0b",
       "band": "B",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 4.8
   },
   {
     "name": "Bicep",
@@ -301,7 +310,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Tech House"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "Amelie Lens",
@@ -347,7 +357,8 @@
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Techno (Peak Time / Driving)"
-    ]
+    ],
+    "trends_mom_12w": 15.7
   },
   {
     "name": "Adam Beyer",
@@ -374,7 +385,8 @@
     "beatport_charts": [
       "Melodic House & Techno",
       "Techno (Peak Time / Driving)"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "DJ Koze",
@@ -401,7 +413,8 @@
     "beatport_charts": [
       "Melodic House & Techno",
       "Indie Dance"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "Bonobo",
@@ -421,7 +434,8 @@
       "color": "#f59e0b",
       "band": "B",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Mall Grab",
@@ -447,7 +461,8 @@
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "House"
-    ]
+    ],
+    "trends_mom_12w": -15.4
   },
   {
     "name": "DJ Harvey",
@@ -487,7 +502,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 12.2
   },
   {
     "name": "The Martinez Brothers",
@@ -507,7 +523,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -8.8
   },
   {
     "name": "Hot Since 82",
@@ -534,7 +551,8 @@
     "beatport_charts": [
       "House",
       "Melodic House & Techno"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "Seth Troxler",
@@ -580,7 +598,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Tech House"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "ANOTR",
@@ -608,7 +627,8 @@
       "House",
       "Deep House",
       "Afro House"
-    ]
+    ],
+    "trends_mom_12w": 140
   },
   {
     "name": "Mau P",
@@ -634,7 +654,8 @@
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Tech House"
-    ]
+    ],
+    "trends_mom_12w": 22.8
   },
   {
     "name": "SIDEPIECE",
@@ -660,7 +681,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Tech House"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "Chris Stussy",
@@ -686,7 +708,8 @@
     "beatport_charting_tracks": 9,
     "beatport_charts": [
       "Deep House"
-    ]
+    ],
+    "trends_mom_12w": 7.8
   },
   {
     "name": "PAWSA",
@@ -713,7 +736,8 @@
     "beatport_charts": [
       "House",
       "Minimal / Deep Tech"
-    ]
+    ],
+    "trends_mom_12w": 23.1
   },
   {
     "name": "Carlita",
@@ -733,7 +757,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "East End Dubs",
@@ -759,7 +784,8 @@
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Minimal / Deep Tech"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "Omar+",
@@ -787,7 +813,8 @@
       "House",
       "Tech House",
       "Deep House"
-    ]
+    ],
+    "trends_mom_12w": -14.1
   },
   {
     "name": "Dennis Cruz",
@@ -814,7 +841,8 @@
     "beatport_charts": [
       "Minimal / Deep Tech",
       "Indie Dance"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "Cloonee",
@@ -841,7 +869,8 @@
     "beatport_charts": [
       "House",
       "Tech House"
-    ]
+    ],
+    "trends_mom_12w": 38.5
   },
   {
     "name": "Josh Baker",
@@ -868,7 +897,8 @@
       "House",
       "Tech House",
       "Deep House"
-    ]
+    ],
+    "trends_mom_12w": -5.3
   },
   {
     "name": "Franky Rizardo",
@@ -894,7 +924,8 @@
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "House"
-    ]
+    ],
+    "trends_mom_12w": 30.8
   },
   {
     "name": "Ben Sterling",
@@ -934,7 +965,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -27.8
   },
   {
     "name": "Chris Lorenzo",
@@ -961,7 +993,8 @@
     "beatport_charts": [
       "House",
       "Tech House"
-    ]
+    ],
+    "trends_mom_12w": 16.1
   },
   {
     "name": "KETTAMA",
@@ -987,7 +1020,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
-    ]
+    ],
+    "trends_mom_12w": 23.7
   },
   {
     "name": "Ranger Trucco",
@@ -1013,7 +1047,8 @@
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Minimal / Deep Tech"
-    ]
+    ],
+    "trends_mom_12w": 66.7
   },
   {
     "name": "Beltran",
@@ -1078,7 +1113,8 @@
     "beatport_charts": [
       "House",
       "Tech House"
-    ]
+    ],
+    "trends_mom_12w": 115.7
   },
   {
     "name": "Roddy Lima",
@@ -1104,7 +1140,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "AYYBO",
@@ -1133,7 +1170,8 @@
       "Minimal / Deep Tech",
       "Deep House",
       "Indie Dance"
-    ]
+    ],
+    "trends_mom_12w": 4.9
   },
   {
     "name": "Max Styler",
@@ -1159,7 +1197,8 @@
     "beatport_charts": [
       "Tech House",
       "Indie Dance"
-    ]
+    ],
+    "trends_mom_12w": 111.4
   },
   {
     "name": "Riordan",
@@ -1185,7 +1224,8 @@
     "beatport_charts": [
       "House",
       "Tech House"
-    ]
+    ],
+    "trends_mom_12w": -6.2
   },
   {
     "name": "Locklead",
@@ -1250,7 +1290,8 @@
       "House",
       "Minimal / Deep Tech",
       "Deep House"
-    ]
+    ],
+    "trends_mom_12w": 10
   },
   {
     "name": "Murphy's Law",
@@ -1296,7 +1337,8 @@
       "House",
       "Tech House",
       "Deep House"
-    ]
+    ],
+    "trends_mom_12w": -4
   },
   {
     "name": "Max Dean",
@@ -1323,7 +1365,8 @@
       "Tech House",
       "Minimal / Deep Tech",
       "Deep House"
-    ]
+    ],
+    "trends_mom_12w": 50.6
   },
   {
     "name": "Julian Fijma",
@@ -1350,7 +1393,8 @@
     "beatport_charts": [
       "House",
       "Minimal / Deep Tech"
-    ]
+    ],
+    "trends_mom_12w": 157.1
   },
   {
     "name": "MALUGI",
@@ -1491,7 +1535,8 @@
     "beatport_charts": [
       "Tech House",
       "Melodic House & Techno"
-    ]
+    ],
+    "trends_mom_12w": 63.8
   },
   {
     "name": "Dom Dolla",
@@ -1517,7 +1562,8 @@
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Tech House"
-    ]
+    ],
+    "trends_mom_12w": -30
   },
   {
     "name": "James Hype",
@@ -1536,7 +1582,8 @@
       "color": "#f59e0b",
       "band": "B",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -3.5
   },
   {
     "name": "Claude VonStroke",
@@ -1562,7 +1609,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Minimal / Deep Tech"
-    ]
+    ],
+    "trends_mom_12w": 83.3
   },
   {
     "name": "Shiba San",
@@ -1606,7 +1654,8 @@
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Techno (Peak Time / Driving)"
-    ]
+    ],
+    "trends_mom_12w": 10.2
   },
   {
     "name": "HoneyLuv",
@@ -1748,7 +1797,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
-    ]
+    ],
+    "trends_mom_12w": -6.5
   },
   {
     "name": "Kerri Chandler",
@@ -1767,7 +1817,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Louie Vega",
@@ -1786,7 +1837,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 3.3
   },
   {
     "name": "Dennis Ferrer",
@@ -1811,7 +1863,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
-    ]
+    ],
+    "trends_mom_12w": 7.4
   },
   {
     "name": "Roger Sanchez",
@@ -1830,7 +1883,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -15.6
   },
   {
     "name": "Armand Van Helden",
@@ -1855,7 +1909,8 @@
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "House"
-    ]
+    ],
+    "trends_mom_12w": 38.7
   },
   {
     "name": "Mark Knight",
@@ -1881,7 +1936,8 @@
     "beatport_charts": [
       "House",
       "Tech House"
-    ]
+    ],
+    "trends_mom_12w": 4.6
   },
   {
     "name": "Loco Dice",
@@ -1900,7 +1956,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 4.6
   },
   {
     "name": "Steve Lawler",
@@ -2040,7 +2097,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Techno (Peak Time / Driving)"
-    ]
+    ],
+    "trends_mom_12w": 61.9
   },
   {
     "name": "Archie Hamilton",
@@ -2224,7 +2282,8 @@
     "beatport_charts": [
       "Melodic House & Techno",
       "Deep House"
-    ]
+    ],
+    "trends_mom_12w": 166.7
   },
   {
     "name": "DJ Boring",
@@ -2269,7 +2328,8 @@
     "beatport_charts": [
       "House",
       "Indie Dance"
-    ]
+    ],
+    "trends_mom_12w": 300
   },
   {
     "name": "Latmun",
@@ -2389,7 +2449,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
-    ]
+    ],
+    "trends_mom_12w": 13
   },
   {
     "name": "Tim Engelhardt",
@@ -2414,7 +2475,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
-    ]
+    ],
+    "trends_mom_12w": -100
   },
   {
     "name": "Colyn",
@@ -2458,7 +2520,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
-    ]
+    ],
+    "trends_mom_12w": 39.5
   },
   {
     "name": "Enoo Napa",
@@ -2502,7 +2565,8 @@
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Afro House"
-    ]
+    ],
+    "trends_mom_12w": 6.7
   },
   {
     "name": "Edu Imbernon",
@@ -2635,7 +2699,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 25
   },
   {
     "name": "Mark Farina",
@@ -2711,7 +2776,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -7.5
   },
   {
     "name": "Gui Boratto",
@@ -2774,7 +2840,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Tech House"
-    ]
+    ],
+    "trends_mom_12w": 100
   },
   {
     "name": "Objekt",
@@ -2858,7 +2925,8 @@
       "Tech House",
       "Melodic House & Techno",
       "Indie Dance"
-    ]
+    ],
+    "trends_mom_12w": 12.5
   },
   {
     "name": "Floating Points",
@@ -2978,7 +3046,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "Victor Calderone",
@@ -3016,7 +3085,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 17.6
   },
   {
     "name": "Levon Vincent",
@@ -3092,7 +3162,8 @@
       "color": "#f59e0b",
       "band": "B",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 5.5
   },
   {
     "name": "Richie Hawtin",
@@ -3111,7 +3182,8 @@
       "color": "#f59e0b",
       "band": "B",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Joseph Capriati",
@@ -3312,7 +3384,8 @@
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Melodic House & Techno"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "Yotto",
@@ -3338,7 +3411,8 @@
     "beatport_charts": [
       "Melodic House & Techno",
       "Progressive House"
-    ]
+    ],
+    "trends_mom_12w": 29.3
   },
   {
     "name": "Ben Böhmer",
@@ -3382,7 +3456,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Organic House / Downtempo"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "Adriatique",
@@ -3407,7 +3482,8 @@
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Melodic House & Techno"
-    ]
+    ],
+    "trends_mom_12w": 48
   },
   {
     "name": "Kollektiv Turmstrasse",
@@ -3521,7 +3597,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 9.3
   },
   {
     "name": "Blawan",
@@ -3565,7 +3642,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
-    ]
+    ],
+    "trends_mom_12w": 1
   },
   {
     "name": "Dax J",
@@ -3996,7 +4074,8 @@
     "beatport_charts": [
       "Melodic House & Techno",
       "Progressive House"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "Trikk",
@@ -4079,7 +4158,8 @@
     "beatport_charts": [
       "Techno (Peak Time / Driving)",
       "Techno (Raw / Deep / Hypnotic)"
-    ]
+    ],
+    "trends_mom_12w": 10
   },
   {
     "name": "Pearson Sound",
@@ -4276,7 +4356,8 @@
     "beatport_charts": [
       "Minimal / Deep Tech",
       "Deep House"
-    ]
+    ],
+    "trends_mom_12w": -8.7
   },
   {
     "name": "Sascha Dive",
@@ -4397,7 +4478,8 @@
     "beatport_charts": [
       "Tech House",
       "Afro House"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "GW Harrison",
@@ -4555,7 +4637,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -34.7
   },
   {
     "name": "MK",
@@ -4605,7 +4688,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
-    ]
+    ],
+    "trends_mom_12w": -10.9
   },
   {
     "name": "John Digweed",
@@ -4650,7 +4734,8 @@
     "beatport_charts": [
       "Melodic House & Techno",
       "Progressive House"
-    ]
+    ],
+    "trends_mom_12w": 35.4
   },
   {
     "name": "Midland",
@@ -4820,7 +4905,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 28.3
   },
   {
     "name": "Danny Tenaglia",
@@ -4896,7 +4982,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 16.9
   },
   {
     "name": "Larry Heard",
@@ -4959,7 +5046,8 @@
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Melodic House & Techno"
-    ]
+    ],
+    "trends_mom_12w": 5.9
   },
   {
     "name": "Alan Dixon",
@@ -5092,7 +5180,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 6
   },
   {
     "name": "Dimitri From Paris",
@@ -5136,7 +5225,8 @@
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "House"
-    ]
+    ],
+    "trends_mom_12w": 13.4
   },
   {
     "name": "Duke Dumont",
@@ -5496,7 +5586,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 19.2
   },
   {
     "name": "Len Faki",
@@ -5521,7 +5612,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
-    ]
+    ],
+    "trends_mom_12w": -20
   },
   {
     "name": "Truncate",
@@ -5565,7 +5657,8 @@
     "beatport_charting_tracks": 5,
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "Regis",
