@@ -41,11 +41,13 @@ function save() {
 }
 
 async function enrich(a) {
-  // --- YouTube (skip search once quota is dead, but still try direct UC lookups) ---
+  // --- YouTube: cheap @handle lookups first (1 unit); only search if quota allows ---
   const ytId = a.youtube_channel_id || "";
   const canTryYT = ytId.startsWith("UC") || !youtubeQuotaDead;
   if (canTryYT) {
-    const yt = await withTimeout(getYouTubeData(ytId), 12000, null);
+    // pass the artist object so resolver can guess @handles from the name;
+    // disable the 100-unit search fallback once we've seen quota trouble
+    const yt = await withTimeout(getYouTubeData(a, { allowSearch: !youtubeQuotaDead }), 12000, null);
     if (yt && yt.youtube_subscribers > 0) {
       a.youtube_subscribers = yt.youtube_subscribers;
       a.youtube_total_views = yt.youtube_total_views;
