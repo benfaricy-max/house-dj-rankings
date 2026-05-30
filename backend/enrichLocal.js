@@ -12,10 +12,11 @@ require("dotenv").config({ path: __dirname + "/.env" });
 const path = require("path");
 const fs   = require("fs");
 
-const { getYouTubeData }    = require("./fetchArtist");
-const { getMixcloudData }   = require("./fetchMixcloud");
-const { getTikTokMentions } = require("./fetchTikTok");
-const { getGoogleTrends }   = require("./fetchTrends");
+const { getYouTubeData }        = require("./fetchArtist");
+const { getMixcloudData }       = require("./fetchMixcloud");
+const { getTikTokMentions }     = require("./fetchTikTok");
+const { getGoogleTrends }       = require("./fetchTrends");
+const { scrapeMonthlyListeners } = require("./fetchSpotifyScrape");
 
 const RANKINGS = path.join(__dirname, "..", "frontend", "public", "rankings.json");
 const ARTISTS  = path.join(__dirname, "artists.json");
@@ -29,7 +30,7 @@ const artistById  = Object.fromEntries(artistsFile.map(a => [a.name, a]));
 let youtubeQuotaDead = false;
 let ytChannelUpdates = 0;
 let done = 0;
-const counts = { yt: 0, mc: 0, tt: 0, tr: 0 };
+const counts = { yt: 0, mc: 0, tt: 0, tr: 0, sp: 0 };
 
 const withTimeout = (p, ms, fallback) =>
   Promise.race([p, new Promise(r => setTimeout(() => r(fallback), ms))]);
@@ -90,10 +91,16 @@ async function enrich(a) {
     counts.tr++;
   }
 
+  // --- Spotify monthly listeners (puppeteer scrape; null on fail) ---
+  if (a.spotify_id) {
+    const ml = await withTimeout(scrapeMonthlyListeners(a.spotify_id), 20000, 0);
+    if (ml > 0) { a.spotify_monthly_listeners = ml; counts.sp++; }
+  }
+
   done++;
   if (done % 5 === 0) {
     save();
-    process.stdout.write(`\r${done}/${rankings.length} | YT:${counts.yt} MC:${counts.mc} TT:${counts.tt} TR:${counts.tr}${youtubeQuotaDead ? " (YT quota hit)" : ""}   `);
+    process.stdout.write(`\r${done}/${rankings.length} | YT:${counts.yt} MC:${counts.mc} TT:${counts.tt} TR:${counts.tr} SP:${counts.sp}${youtubeQuotaDead ? " (YT quota hit)" : ""}   `);
   }
 }
 
@@ -110,6 +117,6 @@ async function worker(queue) {
     fs.writeFileSync(ARTISTS, JSON.stringify(artistsFile, null, 2));
     console.log(`\nCached ${ytChannelUpdates} YouTube channel IDs → artists.json`);
   }
-  console.log(`\nDONE. YT:${counts.yt} MC:${counts.mc} TT:${counts.tt} TR:${counts.tr} of ${rankings.length}`);
+  console.log(`\nDONE. YT:${counts.yt} MC:${counts.mc} TT:${counts.tt} TR:${counts.tr} SP:${counts.sp} of ${rankings.length}`);
   process.exit(0);
 })();
