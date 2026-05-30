@@ -129,7 +129,7 @@ function computeMomentumScores(rankings) {
       momentum: Math.round(growth * 0.35 + tiktok * 0.25 + trends * 0.25 + rankMo * 0.15),
       meta:     getMeta(dj.name),
       markets:  computeMarkets(dj),
-      feeTier:  getFeeTier(dj.rank),
+      feeTier:  dj.booking_fee ?? getFeeTier(dj.rank),
       venueFit: getVenueFit(dj.rank),
     };
   });
@@ -353,7 +353,7 @@ function ArtistDetailPanel({ dj, inShortlist, onToggleShortlist, onClose }) {
             <div className="detail-section-title">Booking Estimate</div>
             <div className="fee-display">
               <div className="fee-amount" style={{ color: dj.feeTier.color }}>{dj.feeTier.label}</div>
-              <div className="fee-sub">Per show (estimated)</div>
+              <div className="fee-sub">Est. club / festival fee · per show</div>
               <div className="fee-dots">
                 {[1,2,3,4,5].map(t => (
                   <div key={t} className={`fee-dot ${t <= dj.feeTier.tier ? "fee-dot--on" : ""}`}
