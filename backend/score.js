@@ -14,6 +14,7 @@ function scoreArtists(artists) {
     "youtube_views_weekly",
     "tiktok_post_count",
     "google_trends_score",
+    "beatport_score",
     "manual_scene_score",
   ];
 
@@ -24,19 +25,20 @@ function scoreArtists(artists) {
   }
 
   const weights = {
-    spotify_monthly_listeners:    0.20,
-    spotify_playlist_placements:  0.12,
-    tiktok_post_count:            0.12,
-    spotify_avg_track_popularity: 0.10,
+    spotify_monthly_listeners:    0.17,
+    beatport_score:               0.10,  // core scene / chart credibility
+    spotify_playlist_placements:  0.10,
+    tiktok_post_count:            0.10,
     youtube_subscribers:          0.10,
     google_trends_score:          0.10,
+    spotify_avg_track_popularity: 0.08,
     spotify_follower_growth_rate: 0.08,
     youtube_views_weekly:         0.08,
-    spotify_followers:            0.06,
+    spotify_followers:            0.05,
     manual_scene_score:           0.04,
   };
 
-  // Weights must sum to 1.0 — verify if you add/remove signals
+  // Weights sum to 1.0 — verify if you add/remove signals
 
   return artists
     .map(artist => {

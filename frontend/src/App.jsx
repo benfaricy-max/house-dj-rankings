@@ -6,15 +6,16 @@ const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
 const MEDAL = { 1: "🥇", 2: "🥈", 3: "🥉" };
 
 const METRICS = [
-  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",  weight: 0.20, format: "count"    },
-  { key: "spotify_playlist_placements",  label: "Releases",           weight: 0.12, format: "number"   },
-  { key: "tiktok_post_count",            label: "TikTok Posts",       weight: 0.12, format: "posts"    },
-  { key: "spotify_avg_track_popularity", label: "Track Popularity",   weight: 0.10, format: "score100" },
+  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",  weight: 0.17, format: "count"    },
+  { key: "beatport_score",               label: "Beatport Chart",     weight: 0.10, format: "score100" },
+  { key: "spotify_playlist_placements",  label: "Releases",           weight: 0.10, format: "number"   },
+  { key: "tiktok_post_count",            label: "TikTok Posts",       weight: 0.10, format: "posts"    },
   { key: "youtube_subscribers",          label: "YT Subscribers",     weight: 0.10, format: "count"    },
   { key: "google_trends_score",          label: "Google Trends",      weight: 0.10, format: "score100" },
+  { key: "spotify_avg_track_popularity", label: "Track Popularity",   weight: 0.08, format: "score100" },
   { key: "spotify_follower_growth_rate", label: "Follower Growth",    weight: 0.08, format: "pct"      },
   { key: "youtube_views_weekly",         label: "YT Views / wk",      weight: 0.08, format: "count"    },
-  { key: "spotify_followers",            label: "Spotify Followers",  weight: 0.06, format: "count"    },
+  { key: "spotify_followers",            label: "Spotify Followers",  weight: 0.05, format: "count"    },
   { key: "manual_scene_score",           label: "Scene Score",        weight: 0.04, format: "score100" },
 ];
 
