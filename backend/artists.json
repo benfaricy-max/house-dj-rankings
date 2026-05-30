@@ -284,7 +284,8 @@
       "color": "#f59e0b",
       "band": "B",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 14.6
   },
   {
     "name": "Jamie Jones",
@@ -331,7 +332,8 @@
       "color": "#f59e0b",
       "band": "B",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 15.3
   },
   {
     "name": "Charlotte de Witte",
@@ -572,7 +574,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Michael Bibi",
@@ -945,7 +948,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 57.3
   },
   {
     "name": "Disco Lines",
@@ -1067,7 +1071,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Rossi.",
@@ -1087,7 +1092,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 20
   },
   {
     "name": "Prospa",
@@ -1263,7 +1269,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -100
   },
   {
     "name": "Kolter",
@@ -1439,7 +1446,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
-    ]
+    ],
+    "trends_mom_12w": -34.8
   },
   {
     "name": "Alisha",
@@ -1483,7 +1491,8 @@
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Minimal / Deep Tech"
-    ]
+    ],
+    "trends_mom_12w": -25
   },
   {
     "name": "Carl Cox",
@@ -1629,7 +1638,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -6.5
   },
   {
     "name": "Eli Brown",
@@ -1674,7 +1684,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 33.3
   },
   {
     "name": "Biscits",
@@ -1694,7 +1705,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -9.1
   },
   {
     "name": "Patrick Topping",
@@ -1713,7 +1725,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -3.8
   },
   {
     "name": "Richy Ahmed",
@@ -1732,7 +1745,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Hannah Wants",
@@ -1752,7 +1766,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 22.2
   },
   {
     "name": "Rebüke",
@@ -1771,7 +1786,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Âme",
@@ -1977,7 +1993,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 91.7
   },
   {
     "name": "Lee Foss",
@@ -1996,7 +2013,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Walker & Royce",
@@ -2015,7 +2033,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Kyle Watson",
@@ -2034,7 +2053,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -17.2
   },
   {
     "name": "Wehbba",
@@ -2053,7 +2073,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -100
   },
   {
     "name": "Paco Osuna",
@@ -2072,7 +2093,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -8
   },
   {
     "name": "Alan Fitzpatrick",
@@ -2117,7 +2139,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -20
   },
   {
     "name": "Cristoph",
@@ -2136,7 +2159,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -2.5
   },
   {
     "name": "Dense & Pika",
@@ -2155,7 +2179,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Sacha Robotti",
@@ -2193,7 +2218,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 2.1
   },
   {
     "name": "Simon Doty",
@@ -2231,7 +2257,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Roman Flügel",
@@ -2256,7 +2283,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "Booka Shade",
@@ -2348,7 +2376,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Danny Daze",
@@ -2386,7 +2415,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -100
   },
   {
     "name": "Octave One",
@@ -2405,7 +2435,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 7.4
   },
   {
     "name": "Pig&Dan",
@@ -2424,7 +2455,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Jimi Jules",
@@ -2540,7 +2572,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Pablo Fierro",
@@ -2585,7 +2618,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Re.You",
@@ -2623,7 +2657,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 1.1
   },
   {
     "name": "HVOB",
@@ -2680,7 +2715,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "David Morales",
@@ -2719,7 +2755,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 2.9
   },
   {
     "name": "Gene Farris",
@@ -2738,7 +2775,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "DJ T.",
@@ -2757,7 +2795,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 13.8
   },
   {
     "name": "Michael Mayer",
@@ -2796,7 +2835,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 100
   },
   {
     "name": "Oxia",
@@ -2815,7 +2855,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Marco Faraone",
@@ -2860,7 +2901,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 1.1
   },
   {
     "name": "Special Request",
@@ -2945,7 +2987,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 13
   },
   {
     "name": "Mount Kimbie",
@@ -2964,7 +3007,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 8
   },
   {
     "name": "HAAi",
@@ -3002,7 +3046,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Jayda G",
@@ -3021,7 +3066,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -23.3
   },
   {
     "name": "Joris Voorn",
@@ -3066,7 +3112,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 175
   },
   {
     "name": "Laurent Garnier",
@@ -3105,7 +3152,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Hunee",
@@ -3124,7 +3172,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 66.7
   },
   {
     "name": "Helena Hauff",
@@ -3143,7 +3192,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -11.8
   },
   {
     "name": "Sven Väth",
@@ -3202,7 +3252,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 50
   },
   {
     "name": "Sam Paganini",
@@ -3227,7 +3278,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
-    ]
+    ],
+    "trends_mom_12w": -24
   },
   {
     "name": "Maceo Plex",
@@ -3246,7 +3298,8 @@
       "color": "#f59e0b",
       "band": "B",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -7.7
   },
   {
     "name": "Mind Against",
@@ -3271,7 +3324,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
-    ]
+    ],
+    "trends_mom_12w": 7.4
   },
   {
     "name": "WhoMadeWho",
@@ -3296,7 +3350,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
-    ]
+    ],
+    "trends_mom_12w": 33.9
   },
   {
     "name": "Stephan Bodzin",
@@ -3315,7 +3370,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 20.6
   },
   {
     "name": "Trentemøller",
@@ -3334,7 +3390,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Monolink",
@@ -3359,7 +3416,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
-    ]
+    ],
+    "trends_mom_12w": -28.9
   },
   {
     "name": "Massano",
@@ -3431,7 +3489,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Nora En Pure",
@@ -3502,7 +3561,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Huxley",
@@ -3521,7 +3581,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Maya Jane Coles",
@@ -3540,7 +3601,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 18.2
   },
   {
     "name": "John Talabot",
@@ -3559,7 +3621,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 17.6
   },
   {
     "name": "Secondcity",
@@ -3578,7 +3641,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 175
   },
   {
     "name": "Surgeon",
@@ -3617,7 +3681,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -21.6
   },
   {
     "name": "DJ Rush",
@@ -3662,7 +3727,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 3.1
   },
   {
     "name": "Luigi Madonna",
@@ -3681,7 +3747,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -14.3
   },
   {
     "name": "Mathame",
@@ -3700,7 +3767,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -17.5
   },
   {
     "name": "Innellea",
@@ -3744,7 +3812,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
-    ]
+    ],
+    "trends_mom_12w": -6
   },
   {
     "name": "Tiefschwarz",
@@ -3763,7 +3832,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 4.8
   },
   {
     "name": "Recondite",
@@ -3801,7 +3871,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 153.5
   },
   {
     "name": "Dario D'Attis",
@@ -4235,7 +4306,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 27.3
   },
   {
     "name": "Actress",
@@ -4395,7 +4467,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 10.3
   },
   {
     "name": "Mathew Jonson",
@@ -4523,7 +4596,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Afro House"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "Nicholas Van Orton",
@@ -4663,7 +4737,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Tech House"
-    ]
+    ],
+    "trends_mom_12w": 9.9
   },
   {
     "name": "Sasha",
@@ -4708,7 +4783,8 @@
       "color": "#f59e0b",
       "band": "B",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -12.1
   },
   {
     "name": "Eric Prydz",
@@ -4760,7 +4836,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
-    ]
+    ],
+    "trends_mom_12w": 9.9
   },
   {
     "name": "Mano Le Tough",
@@ -4785,7 +4862,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
-    ]
+    ],
+    "trends_mom_12w": 100
   },
   {
     "name": "Job Jobse",
@@ -4842,7 +4920,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 20
   },
   {
     "name": "Axel Boman",
@@ -4886,7 +4965,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "Todd Terry",
@@ -4925,7 +5005,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "DJ Sneak",
@@ -4944,7 +5025,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 42.1
   },
   {
     "name": "Kevin Saunderson",
@@ -4963,7 +5045,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 18.2
   },
   {
     "name": "Frankie Knuckles",
@@ -5002,7 +5085,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 7.5
   },
   {
     "name": "Deborah De Luca",
@@ -5021,7 +5105,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -15.3
   },
   {
     "name": "Andrea Oliva",
@@ -5104,7 +5189,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 69.1
   },
   {
     "name": "Call Super",
@@ -5200,7 +5286,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Bob Sinclar",
@@ -5245,7 +5332,8 @@
       "color": "#f59e0b",
       "band": "B",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 47.8
   },
   {
     "name": "Route 94",
@@ -5270,7 +5358,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
-    ]
+    ],
+    "trends_mom_12w": 0
   },
   {
     "name": "Maxxi Soundsystem",
@@ -5308,7 +5397,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -14.6
   },
   {
     "name": "Stacey Pullen",
@@ -5327,7 +5417,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -100
   },
   {
     "name": "Kenny Larkin",
@@ -5346,7 +5437,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Maya",
@@ -5384,7 +5476,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -13.3
   },
   {
     "name": "Steve Bug",
@@ -5409,7 +5502,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
-    ]
+    ],
+    "trends_mom_12w": 65
   },
   {
     "name": "Akufen",
@@ -5491,7 +5585,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Minimal / Deep Tech"
-    ]
+    ],
+    "trends_mom_12w": 125
   },
   {
     "name": "Deetron",
@@ -5567,7 +5662,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Alignment",
