@@ -7,7 +7,8 @@
     "album_count": 27,
     "manual_scene_score": 90,
     "tiktok_tag": "fisher",
-    "mixcloud_username": "fisher-music"
+    "mixcloud_username": "fisher-music",
+    "debut_year": 2000
   },
   {
     "name": "Chris Lake",
@@ -17,7 +18,8 @@
     "album_count": 109,
     "manual_scene_score": 85,
     "tiktok_tag": "chrislake",
-    "mixcloud_username": "chrislake"
+    "mixcloud_username": "chrislake",
+    "debut_year": 2002
   },
   {
     "name": "John Summit",
@@ -27,7 +29,8 @@
     "album_count": 99,
     "manual_scene_score": 88,
     "tiktok_tag": "johnsummit",
-    "mixcloud_username": "johnsummit"
+    "mixcloud_username": "johnsummit",
+    "debut_year": 2017
   },
   {
     "name": "Fred Again",
@@ -47,7 +50,8 @@
     "album_count": 57,
     "manual_scene_score": 92,
     "tiktok_tag": "fourtet",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 1998
   },
   {
     "name": "Disclosure",
@@ -57,7 +61,8 @@
     "album_count": 85,
     "manual_scene_score": 80,
     "tiktok_tag": "disclosure",
-    "mixcloud_username": "disclosure"
+    "mixcloud_username": "disclosure",
+    "debut_year": 2010
   },
   {
     "name": "Peggy Gou",
@@ -67,7 +72,8 @@
     "album_count": 34,
     "manual_scene_score": 87,
     "tiktok_tag": "peggygou",
-    "mixcloud_username": "peggygou"
+    "mixcloud_username": "peggygou",
+    "debut_year": 2016
   },
   {
     "name": "Black Coffee",
@@ -77,7 +83,8 @@
     "album_count": 49,
     "manual_scene_score": 85,
     "tiktok_tag": "blackcoffeedj",
-    "mixcloud_username": "black-coffee"
+    "mixcloud_username": "black-coffee",
+    "debut_year": 1996
   },
   {
     "name": "Solomun",
@@ -87,7 +94,8 @@
     "album_count": 93,
     "manual_scene_score": 90,
     "tiktok_tag": "solomun",
-    "mixcloud_username": "solomun"
+    "mixcloud_username": "solomun",
+    "debut_year": 2007
   },
   {
     "name": "Tale Of Us",
@@ -97,7 +105,8 @@
     "album_count": 17,
     "manual_scene_score": 82,
     "tiktok_tag": "taleofus",
-    "mixcloud_username": "taleofus"
+    "mixcloud_username": "taleofus",
+    "debut_year": 2011
   },
   {
     "name": "Bicep",
@@ -107,7 +116,8 @@
     "album_count": 44,
     "manual_scene_score": 83,
     "tiktok_tag": "bicepmusic",
-    "mixcloud_username": "bicepmusic"
+    "mixcloud_username": "bicepmusic",
+    "debut_year": 2010
   },
   {
     "name": "Honey Dijon",
@@ -117,7 +127,8 @@
     "album_count": 65,
     "manual_scene_score": 80,
     "tiktok_tag": "honeydijon",
-    "mixcloud_username": "honeydijon"
+    "mixcloud_username": "honeydijon",
+    "debut_year": 1975
   },
   {
     "name": "Jamie Jones",
@@ -127,7 +138,8 @@
     "album_count": 79,
     "manual_scene_score": 82,
     "tiktok_tag": "jamiejones",
-    "mixcloud_username": "jamiejones"
+    "mixcloud_username": "jamiejones",
+    "debut_year": 2004
   },
   {
     "name": "Amelie Lens",
@@ -137,7 +149,8 @@
     "album_count": 39,
     "manual_scene_score": 80,
     "tiktok_tag": "amelielens",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2016
   },
   {
     "name": "Charlotte de Witte",
@@ -147,7 +160,8 @@
     "album_count": 47,
     "manual_scene_score": 85,
     "tiktok_tag": "charlottedewitte",
-    "mixcloud_username": "charlottedewitte"
+    "mixcloud_username": "charlottedewitte",
+    "debut_year": 2015
   },
   {
     "name": "Adam Beyer",
@@ -157,7 +171,8 @@
     "album_count": 83,
     "manual_scene_score": 82,
     "tiktok_tag": "adambeyer",
-    "mixcloud_username": "adambeyer"
+    "mixcloud_username": "adambeyer",
+    "debut_year": 2000
   },
   {
     "name": "DJ Koze",
@@ -167,7 +182,8 @@
     "album_count": 60,
     "manual_scene_score": 75,
     "tiktok_tag": "djkoze",
-    "mixcloud_username": "djkoze"
+    "mixcloud_username": "djkoze",
+    "debut_year": 2002
   },
   {
     "name": "Bonobo",
@@ -177,7 +193,8 @@
     "album_count": 53,
     "manual_scene_score": 78,
     "tiktok_tag": "bonobomusic",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2000
   },
   {
     "name": "Mall Grab",
@@ -187,7 +204,8 @@
     "album_count": 30,
     "manual_scene_score": 72,
     "tiktok_tag": "mallgrab",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2018
   },
   {
     "name": "DJ Harvey",
@@ -197,7 +215,8 @@
     "album_count": 11,
     "manual_scene_score": 70,
     "tiktok_tag": "djharvey",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2010
   },
   {
     "name": "Gorgon City",
@@ -207,7 +226,8 @@
     "album_count": 60,
     "manual_scene_score": 88,
     "tiktok_tag": "gorgoncity",
-    "mixcloud_username": "gorgoncity"
+    "mixcloud_username": "gorgoncity",
+    "debut_year": 2012
   },
   {
     "name": "The Martinez Brothers",
@@ -217,7 +237,8 @@
     "album_count": 55,
     "manual_scene_score": 87,
     "tiktok_tag": "themartinezbrothers",
-    "mixcloud_username": "themartinezbrothers"
+    "mixcloud_username": "themartinezbrothers",
+    "debut_year": 2006
   },
   {
     "name": "Hot Since 82",
@@ -227,7 +248,8 @@
     "album_count": 70,
     "manual_scene_score": 85,
     "tiktok_tag": "hotsince82",
-    "mixcloud_username": "hotsince82"
+    "mixcloud_username": "hotsince82",
+    "debut_year": 2012
   },
   {
     "name": "Seth Troxler",
@@ -237,7 +259,8 @@
     "album_count": 45,
     "manual_scene_score": 85,
     "tiktok_tag": "sethtroxler",
-    "mixcloud_username": "sethtroxler"
+    "mixcloud_username": "sethtroxler",
+    "debut_year": 2008
   },
   {
     "name": "Michael Bibi",
@@ -247,7 +270,8 @@
     "album_count": 40,
     "manual_scene_score": 84,
     "tiktok_tag": "michaelbibi",
-    "mixcloud_username": "michaelbibi"
+    "mixcloud_username": "michaelbibi",
+    "debut_year": 2014
   },
   {
     "name": "ANOTR",
@@ -257,7 +281,8 @@
     "album_count": 30,
     "manual_scene_score": 83,
     "tiktok_tag": "anotr",
-    "mixcloud_username": "anotr"
+    "mixcloud_username": "anotr",
+    "debut_year": 2015
   },
   {
     "name": "Mau P",
@@ -267,7 +292,8 @@
     "album_count": 20,
     "manual_scene_score": 82,
     "tiktok_tag": "maup",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2022
   },
   {
     "name": "SIDEPIECE",
@@ -277,7 +303,8 @@
     "album_count": 25,
     "manual_scene_score": 82,
     "tiktok_tag": "sidepiece",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2019
   },
   {
     "name": "Chris Stussy",
@@ -287,7 +314,8 @@
     "album_count": 35,
     "manual_scene_score": 82,
     "tiktok_tag": "chrisstussy",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2014
   },
   {
     "name": "PAWSA",
@@ -297,7 +325,8 @@
     "album_count": 30,
     "manual_scene_score": 81,
     "tiktok_tag": "pawsa",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2014
   },
   {
     "name": "Carlita",
@@ -307,7 +336,8 @@
     "album_count": 20,
     "manual_scene_score": 80,
     "tiktok_tag": "carlita",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2017
   },
   {
     "name": "East End Dubs",
@@ -317,7 +347,8 @@
     "album_count": 40,
     "manual_scene_score": 80,
     "tiktok_tag": "eastenddubs",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2012
   },
   {
     "name": "Omar+",
@@ -327,7 +358,8 @@
     "album_count": 25,
     "manual_scene_score": 79,
     "tiktok_tag": "omarplus",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2021
   },
   {
     "name": "Dennis Cruz",
@@ -337,7 +369,8 @@
     "album_count": 45,
     "manual_scene_score": 79,
     "tiktok_tag": "denniscruz",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2004
   },
   {
     "name": "Cloonee",
@@ -347,7 +380,8 @@
     "album_count": 25,
     "manual_scene_score": 79,
     "tiktok_tag": "cloonee",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2014
   },
   {
     "name": "Josh Baker",
@@ -367,7 +401,8 @@
     "album_count": 50,
     "manual_scene_score": 78,
     "tiktok_tag": "frankyrizardo",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2007
   },
   {
     "name": "Ben Sterling",
@@ -377,7 +412,8 @@
     "album_count": 30,
     "manual_scene_score": 78,
     "tiktok_tag": "benstirling",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2016
   },
   {
     "name": "Disco Lines",
@@ -387,7 +423,8 @@
     "album_count": 20,
     "manual_scene_score": 77,
     "tiktok_tag": "discolines",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2019
   },
   {
     "name": "Chris Lorenzo",
@@ -397,7 +434,8 @@
     "album_count": 35,
     "manual_scene_score": 77,
     "tiktok_tag": "chrislorenzo",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2016
   },
   {
     "name": "KETTAMA",
@@ -407,7 +445,8 @@
     "album_count": 20,
     "manual_scene_score": 77,
     "tiktok_tag": "kettama",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2018
   },
   {
     "name": "Ranger Trucco",
@@ -417,7 +456,8 @@
     "album_count": 15,
     "manual_scene_score": 76,
     "tiktok_tag": "rangertrucco",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2021
   },
   {
     "name": "Beltran",
@@ -437,7 +477,8 @@
     "album_count": 15,
     "manual_scene_score": 76,
     "tiktok_tag": "rossidj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2019
   },
   {
     "name": "Prospa",
@@ -457,7 +498,8 @@
     "album_count": 20,
     "manual_scene_score": 75,
     "tiktok_tag": "roddylima",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2020
   },
   {
     "name": "AYYBO",
@@ -467,7 +509,8 @@
     "album_count": 15,
     "manual_scene_score": 75,
     "tiktok_tag": "ayybo",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2022
   },
   {
     "name": "Max Styler",
@@ -500,7 +543,7 @@
     "mixcloud_username": ""
   },
   {
-    "name": "Obsk\u00fcr",
+    "name": "Obskür",
     "spotify_id": "29MTNlaVntQaQiDyj8KGwx",
     "youtube_channel_id": "Obskur DJ music",
     "soundcloud_permalink": "obskur",
@@ -557,7 +600,8 @@
     "album_count": 15,
     "manual_scene_score": 73,
     "tiktok_tag": "julianfijma",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2022
   },
   {
     "name": "MALUGI",
@@ -577,7 +621,8 @@
     "album_count": 10,
     "manual_scene_score": 72,
     "tiktok_tag": "silvabumpa",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2022
   },
   {
     "name": "Alisha",
@@ -607,7 +652,8 @@
     "album_count": 120,
     "manual_scene_score": 92,
     "tiktok_tag": "carlcox",
-    "mixcloud_username": "carlcox"
+    "mixcloud_username": "carlcox",
+    "debut_year": 1998
   },
   {
     "name": "Green Velvet",
@@ -627,7 +673,8 @@
     "album_count": 30,
     "manual_scene_score": 83,
     "tiktok_tag": "domdolla",
-    "mixcloud_username": "domdolla"
+    "mixcloud_username": "domdolla",
+    "debut_year": 2015
   },
   {
     "name": "James Hype",
@@ -647,7 +694,8 @@
     "album_count": 70,
     "manual_scene_score": 81,
     "tiktok_tag": "claudevonstroke",
-    "mixcloud_username": "claudevonstroke"
+    "mixcloud_username": "claudevonstroke",
+    "debut_year": 2006
   },
   {
     "name": "Shiba San",
@@ -687,7 +735,8 @@
     "album_count": 25,
     "manual_scene_score": 77,
     "tiktok_tag": "biscits",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2016
   },
   {
     "name": "Patrick Topping",
@@ -717,10 +766,11 @@
     "album_count": 30,
     "manual_scene_score": 76,
     "tiktok_tag": "hannahwants",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2016
   },
   {
-    "name": "Reb\u00fcke",
+    "name": "Rebüke",
     "spotify_id": "113reBz1jA6rVxbXl55mlj",
     "youtube_channel_id": "Rebuke DJ music",
     "soundcloud_permalink": "rebuke",
@@ -730,14 +780,15 @@
     "mixcloud_username": ""
   },
   {
-    "name": "\u00c2me",
+    "name": "Âme",
     "spotify_id": "5muFO8VqYRCRW13EkvX564",
     "youtube_channel_id": "Ame DJ Innervisions",
     "soundcloud_permalink": "ame",
     "album_count": 40,
     "manual_scene_score": 81,
     "tiktok_tag": "amedj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "debut_year": 2004
   },
   {
     "name": "Kerri Chandler",
@@ -817,7 +868,8 @@
     "album_count": 60,
     "manual_scene_score": 79,
     "tiktok_tag": "stevelawler",
-    "mixcloud_username": "stevelawler"
+    "mixcloud_username": "stevelawler",
+    "debut_year": 2005
   },
   {
     "name": "Lee Foss",
@@ -950,7 +1002,7 @@
     "mixcloud_username": "gerdjanson"
   },
   {
-    "name": "Roman Fl\u00fcgel",
+    "name": "Roman Flügel",
     "spotify_id": "2GvwZbDjH1DbQpodGKENDw",
     "youtube_channel_id": "Roman Flugel DJ",
     "soundcloud_permalink": "roman-flugel",
@@ -1400,7 +1452,7 @@
     "mixcloud_username": "helenahauff"
   },
   {
-    "name": "Sven V\u00e4th",
+    "name": "Sven Väth",
     "spotify_id": "5TQaBSTOSypp7S4jfSnN3F",
     "youtube_channel_id": "Sven Vath Cocoon Ibiza",
     "soundcloud_permalink": "sven-vath",
@@ -1480,7 +1532,7 @@
     "mixcloud_username": "stephanbodzin"
   },
   {
-    "name": "Trentem\u00f8ller",
+    "name": "Trentemøller",
     "spotify_id": "4O71i7ke5iIBX6RNSFoZbS",
     "youtube_channel_id": "Trentemoller official",
     "soundcloud_permalink": "trentemoller",
@@ -1520,7 +1572,7 @@
     "mixcloud_username": ""
   },
   {
-    "name": "Ben B\u00f6hmer",
+    "name": "Ben Böhmer",
     "spotify_id": "5tDjiBYUsTqzd0RkTZxK7u",
     "youtube_channel_id": "Ben Bohmer official",
     "soundcloud_permalink": "ben-bohmer",
@@ -2060,7 +2112,7 @@
     "mixcloud_username": ""
   },
   {
-    "name": "AM\u00c9M\u00c9",
+    "name": "AMÉMÉ",
     "spotify_id": "1txb9Qg5lJ3KATxPcIYyvO",
     "youtube_channel_id": "AMEME DJ Stamina Records",
     "soundcloud_permalink": "ameme",

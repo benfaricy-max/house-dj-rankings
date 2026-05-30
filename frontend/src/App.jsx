@@ -780,6 +780,7 @@ function OnestoWatchPage({ rankings }) {
       return { ...dj, momentum: Math.round(growth * 0.35 + tiktok * 0.25 + trends * 0.25 + rankMo * 0.15) };
     })
     .filter(dj => !dj.spotify_monthly_listeners || dj.spotify_monthly_listeners < 500_000)
+    .filter(dj => !dj.debut_year || dj.debut_year >= 2015)   // emerging artists only — exclude pre-2015 debuts
     .sort((a, b) => b.momentum - a.momentum);
   }, [rankings]);
 
