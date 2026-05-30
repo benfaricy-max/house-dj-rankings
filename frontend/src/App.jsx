@@ -1,6 +1,12 @@
 import { useEffect, useState, useMemo, useRef } from "react";
 import "./App.css";
 import ProPage from "./ProPage";
+import ArtistProfile, { slugify } from "./ArtistProfile";
+
+const parseProfileSlug = () => {
+  const m = (window.location.hash || "").match(/^#\/artist\/(.+)$/);
+  return m ? decodeURIComponent(m[1]) : null;
+};
 
 const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
 const MEDAL = { 1: "🥇", 2: "🥈", 3: "🥉" };
@@ -477,6 +483,9 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
 
       {expanded && (
         <div className="dj-detail">
+          <a className="profile-link" href={`#/artist/${slugify(dj.name)}`} onClick={e => e.stopPropagation()}>
+            View full profile &amp; shareable card →
+          </a>
           <div className="detail-tabs">
             <ScoreBreakdown dj={dj} ranges={ranges} />
             <div className="detail-right">
@@ -1682,6 +1691,13 @@ export default function App() {
 
   useEffect(() => { load(); }, []);
 
+  const [profileSlug, setProfileSlug] = useState(parseProfileSlug());
+  useEffect(() => {
+    const onHash = () => setProfileSlug(parseProfileSlug());
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+
   const ranges   = useMemo(() => computeRanges(rankings), [rankings]);
   const maxScore = rankings[0]?.score ?? 1;
 
@@ -1707,6 +1723,17 @@ export default function App() {
   }
 
   const compareDJs = compareList.map(n => rankings.find(r => r.name === n)).filter(Boolean);
+
+  // Profile page route — shareable URL like #/artist/john-summit (after all hooks)
+  if (profileSlug) {
+    return (
+      <div className="page">
+        {rankings.length
+          ? <ArtistProfile rankings={rankings} slug={profileSlug} onBack={() => { window.location.hash = ""; }} />
+          : <div className="loading">Loading…</div>}
+      </div>
+    );
+  }
 
   return (
     <div className="page">

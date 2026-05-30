@@ -121,6 +121,16 @@ async function main() {
   const ranked = scoreArtists(enriched);
   ranked.forEach((dj, i) => { dj.rank = i + 1; });
 
+  // Append today's rank to each artist's history (one point/day, keep ~90 days).
+  // Powers the historical rank chart on profile pages. Merge-safe — only grows.
+  const today = new Date().toISOString().slice(0, 10);
+  for (const dj of ranked) {
+    const prevHist = prevRankings[dj.name]?.rank_history ?? [];
+    const hist = prevHist.filter(p => p.d !== today);
+    hist.push({ d: today, r: dj.rank });
+    dj.rank_history = hist.slice(-90);
+  }
+
   const onesToWatch = ranked
     .filter(d => d.rank > 10 && (!d.spotify_monthly_listeners || d.spotify_monthly_listeners < 500_000))
     .slice(0, 50);

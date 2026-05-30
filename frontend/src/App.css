@@ -752,3 +752,6 @@ details[open] .hiw-faq-q::after { content: "–"; }
   .event-row { grid-template-columns: 80px 1fr auto; }
   .event-city { display: none; }
 }
+
+.profile-link { display:inline-block; color:#a8e00f; font-size:.85rem; font-weight:600; text-decoration:none; margin-bottom:14px; }
+.profile-link:hover { text-decoration:underline; }

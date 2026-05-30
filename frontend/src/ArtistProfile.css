@@ -1,0 +1,32 @@
+.ap-page { max-width: 880px; margin: 0 auto; padding: 32px 24px 90px; }
+.ap-back { background: none; border: none; color: #888; font-size: .9rem; cursor: pointer; padding: 6px 0; margin-bottom: 20px; }
+.ap-back:hover { color: #fff; }
+
+.ap-header { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+.ap-avatar img, .ap-avatar-ph { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.ap-avatar-ph { background: #1d1d1d; display: flex; align-items: center; justify-content: center; font-size: 2.6rem; font-weight: 800; color: #a8e00f; }
+.ap-head-info { flex: 1; min-width: 220px; }
+.ap-rank-badge { display: inline-block; background: #a8e00f; color: #000; font-weight: 800; font-size: .8rem; padding: 3px 12px; border-radius: 20px; }
+.ap-name { font-size: 2.2rem; font-weight: 800; margin: 8px 0 6px; }
+.ap-meta { display: flex; flex-wrap: wrap; gap: 6px 16px; color: #888; font-size: .85rem; margin-bottom: 12px; }
+.ap-meta span:not(:last-child)::after { content: ""; }
+.ap-genres { display: flex; flex-wrap: wrap; gap: 6px; }
+.ap-genre { background: #1a1a1a; border: 1px solid #2a2a2a; color: #bbb; font-size: .72rem; padding: 3px 10px; border-radius: 8px; }
+.ap-share { background: #a8e00f; color: #000; border: none; font-weight: 700; font-size: .88rem; padding: 11px 18px; border-radius: 10px; cursor: pointer; align-self: flex-start; }
+.ap-share:hover { opacity: .88; }
+
+.ap-bio { color: #ccc; font-size: 1rem; line-height: 1.65; margin: 26px 0 8px; }
+
+.ap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 22px 0; }
+@media (max-width: 720px) { .ap-grid { grid-template-columns: 1fr; } .ap-name { font-size: 1.8rem; } }
+.ap-card { background: #0e0e0e; border: 1px solid #222; border-radius: 14px; padding: 18px; }
+.ap-card-title { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #ddd; margin-bottom: 14px; }
+.ap-card-title span { color: #666; font-weight: 400; text-transform: none; letter-spacing: 0; }
+.ap-chart { width: 100%; height: 140px; display: block; }
+.ap-chart-empty { color: #666; font-size: .82rem; line-height: 1.5; padding: 40px 8px; text-align: center; }
+.ap-chart-foot { display: flex; justify-content: space-between; font-size: .72rem; color: #888; margin-top: 8px; }
+
+.ap-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; }
+.ap-stat { background: #111; border: 1px solid #222; border-radius: 12px; padding: 16px; text-align: center; }
+.ap-stat-val { font-size: 1.5rem; font-weight: 800; color: #fff; }
+.ap-stat-label { font-size: .72rem; color: #777; margin-top: 4px; text-transform: uppercase; letter-spacing: .05em; }
