@@ -42,7 +42,14 @@ forever. A partial update is always better than losing good data.
 ## Full local refresh (the good path)
 `node backend/enrichLocal.js` — pulls YouTube + Trends + TikTok + Mixcloud +
 Spotify listeners in one pass, concurrency 4, progressive save, null-on-fail.
+`node backend/enrichBeatport.js` — scrapes Beatport genre Top 100 charts (plain
+HTTP, no puppeteer) → beatport_score (core scene credibility). Runs in CI too.
 Then commit `frontend/public/rankings.json` + `backend/artists.json` and push.
+
+## Beatport signal (core credibility)
+`beatport_score` 0-100 from genre Top-100 charts: positionScore(101−best)·0.6 +
+trackBreadth·0.25 + crossGenreReach·0.15. Powers the "DJ's DJ" benchmark axis
+(high Beatport + low Spotify = scene-respected, not yet mainstream).
 
 ## Key per-artist fields (in artists.json, persisted)
 - `emerging` (bool) — reputation-based; drives "Ones to Watch" (excludes legends).

@@ -314,6 +314,8 @@ function ArtistDetailPanel({ dj, inShortlist, onToggleShortlist, onClose }) {
     { label: "Follower Growth",   value: dj.spotify_follower_growth_rate ? `+${dj.spotify_follower_growth_rate.toFixed(1)}%` : "—" },
     { label: "Mixcloud Followers", value: fmt(dj.mixcloud_followers) },
     { label: "Mixcloud Plays",    value: fmt(dj.mixcloud_play_count_total) },
+    { label: "Beatport Score",    value: dj.beatport_score ? `${dj.beatport_score}/100` : "—" },
+    { label: "Beatport Best Pos", value: dj.beatport_best_position ? `#${dj.beatport_best_position}` : "—" },
   ];
   return (
     <div className="artist-detail-panel">

@@ -39,6 +39,11 @@ jobs:
         run: node generateStatic.js
         working-directory: backend
 
+      - name: Beatport chart signal
+        run: node enrichBeatport.js
+        working-directory: backend
+        continue-on-error: true   # never block the refresh if Beatport scrape fails
+
       - name: Commit updated rankings
         run: |
           git config user.name  "github-actions[bot]"

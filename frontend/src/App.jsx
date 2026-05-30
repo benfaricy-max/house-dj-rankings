@@ -1169,6 +1169,7 @@ function CitySpotlightPage({ rankings }) {
 
 const CMP_METRICS = [
   { key: "spotify_monthly_listeners", label: "Spotify Listeners", short: "Spotify",  signal: "mainstream streaming audience", color: "#1DB954" },
+  { key: "beatport_score",            label: "Beatport Chart",    short: "Beatport", signal: "core scene / chart credibility",color: "#a8e00f" },
   { key: "tiktok_post_count",         label: "TikTok Posts",      short: "TikTok",   signal: "viral / social buzz",          color: "#ff0050" },
   { key: "mixcloud_followers",        label: "Mixcloud Followers",short: "Mixcloud", signal: "DJ / mix credibility",          color: "#5000ff" },
   { key: "google_trends_score",       label: "Google Trends",     short: "Trends",   signal: "search interest",              color: "#4285F4" },
@@ -1205,7 +1206,7 @@ function ComparativeBenchmarkingPage({ rankings }) {
   const insights = useMemo(() => {
     const archetypes = [
       { a: "tiktok_post_count",         b: "spotify_monthly_listeners", title: "Viral, Under-Streamed",   blurb: "Social buzz is running ahead of streaming — hype before the catalog catches up.", icon: "🚀" },
-      { a: "mixcloud_followers",        b: "tiktok_post_count",         title: "The DJ's DJ",             blurb: "Deep mix/credibility following that outweighs their viral social footprint.",    icon: "🎧" },
+      { a: "beatport_score",            b: "spotify_monthly_listeners", title: "The DJ's DJ",             blurb: "High Beatport chart credibility with the core scene, ahead of mainstream streaming.", icon: "🎧" },
       { a: "spotify_monthly_listeners", b: "tiktok_post_count",         title: "Streaming Giant, Quiet Socially", blurb: "Big streaming numbers without the viral social footprint.",            icon: "📀" },
       { a: "google_trends_score",       b: "tiktok_post_count",         title: "Search Breakout",         blurb: "Spiking search interest outpacing social buzz — early momentum signal.",         icon: "🔍" },
     ];
