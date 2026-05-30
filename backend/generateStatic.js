@@ -61,7 +61,7 @@ async function main() {
 
       const [tiktok, youtube, soundcloud, mixcloud, trends] = await Promise.all([
         getTikTokMentions(artist.tiktok_tag),
-        getYouTubeData(artist, { allowSearch: false }), // CI: cheap @handle only, never burn 100u searches
+        getYouTubeData(artist, { allowSearch: true }), // accurate search resolution; caches UC id so it's 1u next time. ~90/day fit in quota, completes over a few days.
         getSoundCloudData(artist.soundcloud_permalink),
         getMixcloudData(artist.mixcloud_username),
         getGoogleTrends(artist.name),

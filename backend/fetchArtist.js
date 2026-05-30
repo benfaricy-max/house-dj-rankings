@@ -88,31 +88,14 @@ async function getYouTubeData(artistOrQuery, opts = {}) {
   });
 
   try {
-    // 1. Cached channel id — trusted, no title check (1 unit)
+    // 1. Cached channel id — trusted, accurate (1 unit)
     if (cachedId && cachedId.startsWith("UC")) {
       const ch = await channelByParams({ id: cachedId });
       if (ch) return pack(ch, cachedId);
     }
 
-    if (name) {
-      const base = _norm(name);
-      const handleGuesses = [base, base + "official", base + "music", base + "dj", "dj" + base];
-      // 2. @handle lookups (1 unit each) — validate title to avoid wrong-artist matches
-      for (const h of handleGuesses) {
-        if (!h) continue;
-        try {
-          const ch = await channelByParams({ forHandle: h });
-          if (ch && _titleMatches(ch.snippet?.title, name)) return pack(ch, ch.id);
-        } catch { /* handle not found → next */ }
-      }
-      // 3. Legacy username (1 unit)
-      try {
-        const ch = await channelByParams({ forUsername: base });
-        if (ch && _titleMatches(ch.snippet?.title, name)) return pack(ch, ch.id);
-      } catch { /* none */ }
-    }
-
-    // 4. Search fallback (100 units) — only when nothing cheaper worked
+    // 2. Search (100 units) — popularity-ranked, so the real artist channel comes first.
+    //    This is the accurate path; we cache the resolved UC id so it's 1 unit next time.
     const q = (cachedId && !cachedId.startsWith("UC")) ? cachedId : name;
     if (allowSearch && q) {
       const s = await axios.get("https://www.googleapis.com/youtube/v3/search", {
@@ -122,6 +105,21 @@ async function getYouTubeData(artistOrQuery, opts = {}) {
       if (hit) {
         const ch = await channelByParams({ id: hit.id.channelId });
         if (ch) return pack(ch, hit.id.channelId);
+      }
+    }
+
+    // 3. Cheap @handle fallback (1 unit) — only when search is disabled (quota-safe mode).
+    //    Guard against common-name false positives: require a title match AND a real-sized
+    //    channel (>50k total views) so tiny impostor channels are rejected.
+    if (!allowSearch && name) {
+      const base = _norm(name);
+      for (const h of [base, base + "official", base + "music", base + "dj", "dj" + base]) {
+        if (!h) continue;
+        try {
+          const ch = await channelByParams({ forHandle: h });
+          if (ch && _titleMatches(ch.snippet?.title, name) && parseInt(ch.statistics.viewCount || "0") > 50000)
+            return pack(ch, ch.id);
+        } catch { /* next */ }
       }
     }
     return empty;
