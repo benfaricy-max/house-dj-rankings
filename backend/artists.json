@@ -3000,30 +3000,6 @@
     }
   },
   {
-    "name": "Daft Punk",
-    "spotify_id": "4tZwfgrHOc3mvqYlEYSvVi",
-    "youtube_channel_id": "Daft Punk official",
-    "soundcloud_permalink": "daftpunk",
-    "album_count": 60,
-    "manual_scene_score": 95,
-    "tiktok_tag": "daftpunk",
-    "mixcloud_username": "",
-    "emerging": false,
-    "booking_fee": {
-      "label": "Not touring",
-      "mid": 0,
-      "tier": 0,
-      "color": "var(--muted)",
-      "basis": "n/a"
-    },
-    "beatport_score": 32,
-    "beatport_best_position": 72,
-    "beatport_charting_tracks": 2,
-    "beatport_charts": [
-      "House"
-    ]
-  },
-  {
     "name": "Laurent Garnier",
     "spotify_id": "3y1SoTOdrmRNTBVph5T0VZ",
     "youtube_channel_id": "Laurent Garnier F Communications",

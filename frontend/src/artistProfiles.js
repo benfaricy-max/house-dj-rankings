@@ -1,7 +1,6 @@
 // Curated profile data for the top-ranked artists.
 // bio: 1-2 factual sentences · label: primary record label · genres · hometown · since (active from)
 export const ARTIST_PROFILES = {
-  "Daft Punk":          { label: "Daft Life / Columbia", hometown: "Paris, FR", since: 1993, genres: ["French House","Disco","Electronic"], bio: "Pioneering French duo Thomas Bangalter and Guy-Manuel de Homem-Christo who defined modern dance music before disbanding in 2021. Their robot personas and albums like Discovery and Random Access Memories remain era-defining." },
   "Disclosure":         { label: "Method / Capitol", hometown: "Surrey, UK", since: 2010, genres: ["UK House","Garage","Deep House"], bio: "Brothers Guy and Howard Lawrence who brought UK garage-tinged house to the mainstream with Settle and the global hit 'Latch'. Mainstays of festival main stages worldwide." },
   "Fred again..":       { label: "Atlantic", hometown: "London, UK", since: 2019, genres: ["House","UK Garage","Electronic"], bio: "Fred Gibson turns voice notes and everyday field recordings into emotive dance music across his Actual Life series. A Brian Eno protégé turned generational live performer." },
   "Chris Lake":         { label: "Black Book Records", hometown: "Los Angeles, US", since: 2004, genres: ["Tech House","House"], bio: "British producer and Black Book label boss who helped drive the modern tech house resurgence. Known for 'Turn Off The Lights' and relentless festival sets." },
