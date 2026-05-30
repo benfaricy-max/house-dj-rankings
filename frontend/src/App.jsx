@@ -1205,9 +1205,9 @@ function ComparativeBenchmarkingPage({ rankings }) {
   const insights = useMemo(() => {
     const archetypes = [
       { a: "tiktok_post_count",         b: "spotify_monthly_listeners", title: "Viral, Under-Streamed",   blurb: "Social buzz is running ahead of streaming — hype before the catalog catches up.", icon: "🚀" },
-      { a: "mixcloud_followers",        b: "spotify_monthly_listeners", title: "The DJ's DJ",             blurb: "Deep credibility with the core dance crowd, lower mainstream streaming.",        icon: "🎧" },
+      { a: "mixcloud_followers",        b: "tiktok_post_count",         title: "The DJ's DJ",             blurb: "Deep mix/credibility following that outweighs their viral social footprint.",    icon: "🎧" },
       { a: "spotify_monthly_listeners", b: "tiktok_post_count",         title: "Streaming Giant, Quiet Socially", blurb: "Big streaming numbers without the viral social footprint.",            icon: "📀" },
-      { a: "google_trends_score",       b: "spotify_monthly_listeners", title: "Search Breakout",         blurb: "Spiking search interest outpacing streaming — momentum signal.",                 icon: "🔍" },
+      { a: "google_trends_score",       b: "tiktok_post_count",         title: "Search Breakout",         blurb: "Spiking search interest outpacing social buzz — early momentum signal.",         icon: "🔍" },
     ];
     return archetypes.map(arc => {
       const picks = rankings
