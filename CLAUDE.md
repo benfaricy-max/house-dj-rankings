@@ -54,6 +54,12 @@ Stores full series in data/trends_history.json + trends_12m/momentum in rankings
 `backfillTrends.js` is the 1-per-request fallback. Google throttles pytrends by IP —
 backfill accumulates across runs. Long-term fix: official Trends API (alpha, applied).
 
+## Tour density signal (revenue/demand)
+`node backend/enrichTour.js [limit]` — Songkick public pages (no key; Bandsintown
+now 403s arbitrary app_ids). search → slug-matched artist page → ld+json upcoming
+MusicEvents → tour_upcoming/countries/next show + tour_score. Resumable, paced,
+merge-safe. Runs in CI too (continue-on-error).
+
 ## Beatport signal (core credibility)
 `beatport_score` 0-100 from genre Top-100 charts: positionScore(101−best)·0.6 +
 trackBreadth·0.25 + crossGenreReach·0.15. Powers the "DJ's DJ" benchmark axis

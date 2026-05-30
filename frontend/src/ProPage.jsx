@@ -365,6 +365,8 @@ function ArtistDetailPanel({ dj, inShortlist, onToggleShortlist, onClose }) {
     { label: "Mixcloud Plays",    value: fmt(dj.mixcloud_play_count_total) },
     { label: "Beatport Score",    value: dj.beatport_score ? `${dj.beatport_score}/100` : "—" },
     { label: "Beatport Best Pos", value: dj.beatport_best_position ? `#${dj.beatport_best_position}` : "—" },
+    { label: "Upcoming Shows",    value: dj.tour_upcoming ? `${dj.tour_upcoming}${dj.tour_upcoming_capped ? "+" : ""}` : "—" },
+    { label: "Touring Countries", value: dj.tour_countries || "—" },
   ];
   return (
     <div className="artist-detail-panel">

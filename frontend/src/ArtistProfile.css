@@ -30,3 +30,10 @@
 .ap-stat { background: #111; border: 1px solid #222; border-radius: 12px; padding: 16px; text-align: center; }
 .ap-stat-val { font-size: 1.5rem; font-weight: 800; color: #fff; }
 .ap-stat-label { font-size: .72rem; color: #777; margin-top: 4px; text-transform: uppercase; letter-spacing: .05em; }
+
+.ap-tour { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 8px 0 22px; }
+.ap-tour-item { background: #0e0e0e; border: 1px solid #222; border-radius: 12px; padding: 14px 16px; }
+.ap-tour-next { grid-column: span 2; }
+@media (max-width: 720px) { .ap-tour-next { grid-column: span 1; } }
+.ap-tour-val { font-size: 1.3rem; font-weight: 800; color: #fff; }
+.ap-tour-label { font-size: .72rem; color: #777; margin-top: 3px; text-transform: uppercase; letter-spacing: .04em; }

@@ -44,6 +44,11 @@ jobs:
         working-directory: backend
         continue-on-error: true   # never block the refresh if Beatport scrape fails
 
+      - name: Tour density signal (Songkick)
+        run: node enrichTour.js
+        working-directory: backend
+        continue-on-error: true   # never block the refresh if Songkick scrape fails
+
       - name: Commit updated rankings
         run: |
           git config user.name  "github-actions[bot]"

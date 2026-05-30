@@ -203,6 +203,27 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
 
       {profile.bio && <p className="ap-bio">{profile.bio}</p>}
 
+      {dj.tour_upcoming > 0 && (
+        <div className="ap-tour">
+          <div className="ap-tour-item">
+            <div className="ap-tour-val">{dj.tour_upcoming}{dj.tour_upcoming_capped ? "+" : ""}</div>
+            <div className="ap-tour-label">Upcoming shows</div>
+          </div>
+          <div className="ap-tour-item">
+            <div className="ap-tour-val">{dj.tour_countries}</div>
+            <div className="ap-tour-label">Countries</div>
+          </div>
+          <div className="ap-tour-item ap-tour-next">
+            <div className="ap-tour-val">{dj.tour_next_date}</div>
+            <div className="ap-tour-label">Next: {dj.tour_next_city}{dj.tour_next_country ? `, ${dj.tour_next_country}` : ""}</div>
+          </div>
+          <div className="ap-tour-item">
+            <div className="ap-tour-val" style={{ color: "#f5a623" }}>{dj.tour_score}</div>
+            <div className="ap-tour-label">Tour density</div>
+          </div>
+        </div>
+      )}
+
       <div className="ap-grid">
         <div className="ap-card">
           <div className="ap-card-title">Career Trajectory <span>· search interest, 12 mo</span></div>
