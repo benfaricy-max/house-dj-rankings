@@ -61,7 +61,7 @@ async function main() {
 
       const [tiktok, youtube, soundcloud, mixcloud, trends] = await Promise.all([
         getTikTokMentions(artist.tiktok_tag),
-        getYouTubeData(artist),
+        getYouTubeData(artist, { allowSearch: false }), // CI: cheap @handle only, never burn 100u searches
         getSoundCloudData(artist.soundcloud_permalink),
         getMixcloudData(artist.mixcloud_username),
         getGoogleTrends(artist.name),

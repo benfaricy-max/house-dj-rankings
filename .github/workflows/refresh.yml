@@ -2,7 +2,7 @@ name: Refresh Rankings
 
 on:
   schedule:
-    - cron: "0 8 * * *"     # daily at 8am UTC — after YouTube quota resets (midnight Pacific)
+    - cron: "12 7 * * *"    # 07:12 UTC = 00:12 Pacific — just after YouTube quota resets at midnight PT
   workflow_dispatch:          # manual trigger from GitHub UI
 
 permissions:
