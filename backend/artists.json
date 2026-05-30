@@ -8,7 +8,8 @@
     "manual_scene_score": 90,
     "tiktok_tag": "fisher",
     "mixcloud_username": "fisher-music",
-    "debut_year": 2000
+    "debut_year": 2000,
+    "emerging": false
   },
   {
     "name": "Chris Lake",
@@ -19,7 +20,8 @@
     "manual_scene_score": 85,
     "tiktok_tag": "chrislake",
     "mixcloud_username": "chrislake",
-    "debut_year": 2002
+    "debut_year": 2002,
+    "emerging": false
   },
   {
     "name": "John Summit",
@@ -30,7 +32,8 @@
     "manual_scene_score": 88,
     "tiktok_tag": "johnsummit",
     "mixcloud_username": "johnsummit",
-    "debut_year": 2017
+    "debut_year": 2017,
+    "emerging": false
   },
   {
     "name": "Fred Again",
@@ -40,7 +43,8 @@
     "album_count": 100,
     "manual_scene_score": 95,
     "tiktok_tag": "fredagain",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Four Tet",
@@ -51,7 +55,8 @@
     "manual_scene_score": 92,
     "tiktok_tag": "fourtet",
     "mixcloud_username": "",
-    "debut_year": 1998
+    "debut_year": 1998,
+    "emerging": false
   },
   {
     "name": "Disclosure",
@@ -62,7 +67,8 @@
     "manual_scene_score": 80,
     "tiktok_tag": "disclosure",
     "mixcloud_username": "disclosure",
-    "debut_year": 2010
+    "debut_year": 2010,
+    "emerging": false
   },
   {
     "name": "Peggy Gou",
@@ -73,7 +79,8 @@
     "manual_scene_score": 87,
     "tiktok_tag": "peggygou",
     "mixcloud_username": "peggygou",
-    "debut_year": 2016
+    "debut_year": 2016,
+    "emerging": false
   },
   {
     "name": "Black Coffee",
@@ -84,7 +91,8 @@
     "manual_scene_score": 85,
     "tiktok_tag": "blackcoffeedj",
     "mixcloud_username": "black-coffee",
-    "debut_year": 1996
+    "debut_year": 1996,
+    "emerging": false
   },
   {
     "name": "Solomun",
@@ -95,7 +103,8 @@
     "manual_scene_score": 90,
     "tiktok_tag": "solomun",
     "mixcloud_username": "solomun",
-    "debut_year": 2007
+    "debut_year": 2007,
+    "emerging": false
   },
   {
     "name": "Tale Of Us",
@@ -106,7 +115,8 @@
     "manual_scene_score": 82,
     "tiktok_tag": "taleofus",
     "mixcloud_username": "taleofus",
-    "debut_year": 2011
+    "debut_year": 2011,
+    "emerging": false
   },
   {
     "name": "Bicep",
@@ -117,7 +127,8 @@
     "manual_scene_score": 83,
     "tiktok_tag": "bicepmusic",
     "mixcloud_username": "bicepmusic",
-    "debut_year": 2010
+    "debut_year": 2010,
+    "emerging": false
   },
   {
     "name": "Honey Dijon",
@@ -128,7 +139,8 @@
     "manual_scene_score": 80,
     "tiktok_tag": "honeydijon",
     "mixcloud_username": "honeydijon",
-    "debut_year": 1975
+    "debut_year": 1975,
+    "emerging": false
   },
   {
     "name": "Jamie Jones",
@@ -139,7 +151,8 @@
     "manual_scene_score": 82,
     "tiktok_tag": "jamiejones",
     "mixcloud_username": "jamiejones",
-    "debut_year": 2004
+    "debut_year": 2004,
+    "emerging": false
   },
   {
     "name": "Amelie Lens",
@@ -150,7 +163,8 @@
     "manual_scene_score": 80,
     "tiktok_tag": "amelielens",
     "mixcloud_username": "",
-    "debut_year": 2016
+    "debut_year": 2016,
+    "emerging": false
   },
   {
     "name": "Charlotte de Witte",
@@ -161,7 +175,8 @@
     "manual_scene_score": 85,
     "tiktok_tag": "charlottedewitte",
     "mixcloud_username": "charlottedewitte",
-    "debut_year": 2015
+    "debut_year": 2015,
+    "emerging": false
   },
   {
     "name": "Adam Beyer",
@@ -172,7 +187,8 @@
     "manual_scene_score": 82,
     "tiktok_tag": "adambeyer",
     "mixcloud_username": "adambeyer",
-    "debut_year": 2000
+    "debut_year": 2000,
+    "emerging": false
   },
   {
     "name": "DJ Koze",
@@ -183,7 +199,8 @@
     "manual_scene_score": 75,
     "tiktok_tag": "djkoze",
     "mixcloud_username": "djkoze",
-    "debut_year": 2002
+    "debut_year": 2002,
+    "emerging": false
   },
   {
     "name": "Bonobo",
@@ -194,7 +211,8 @@
     "manual_scene_score": 78,
     "tiktok_tag": "bonobomusic",
     "mixcloud_username": "",
-    "debut_year": 2000
+    "debut_year": 2000,
+    "emerging": false
   },
   {
     "name": "Mall Grab",
@@ -205,7 +223,8 @@
     "manual_scene_score": 72,
     "tiktok_tag": "mallgrab",
     "mixcloud_username": "",
-    "debut_year": 2018
+    "debut_year": 2018,
+    "emerging": false
   },
   {
     "name": "DJ Harvey",
@@ -216,7 +235,8 @@
     "manual_scene_score": 70,
     "tiktok_tag": "djharvey",
     "mixcloud_username": "",
-    "debut_year": 2010
+    "debut_year": 2010,
+    "emerging": false
   },
   {
     "name": "Gorgon City",
@@ -227,7 +247,8 @@
     "manual_scene_score": 88,
     "tiktok_tag": "gorgoncity",
     "mixcloud_username": "gorgoncity",
-    "debut_year": 2012
+    "debut_year": 2012,
+    "emerging": false
   },
   {
     "name": "The Martinez Brothers",
@@ -238,7 +259,8 @@
     "manual_scene_score": 87,
     "tiktok_tag": "themartinezbrothers",
     "mixcloud_username": "themartinezbrothers",
-    "debut_year": 2006
+    "debut_year": 2006,
+    "emerging": false
   },
   {
     "name": "Hot Since 82",
@@ -249,7 +271,8 @@
     "manual_scene_score": 85,
     "tiktok_tag": "hotsince82",
     "mixcloud_username": "hotsince82",
-    "debut_year": 2012
+    "debut_year": 2012,
+    "emerging": false
   },
   {
     "name": "Seth Troxler",
@@ -260,7 +283,8 @@
     "manual_scene_score": 85,
     "tiktok_tag": "sethtroxler",
     "mixcloud_username": "sethtroxler",
-    "debut_year": 2008
+    "debut_year": 2008,
+    "emerging": false
   },
   {
     "name": "Michael Bibi",
@@ -271,7 +295,8 @@
     "manual_scene_score": 84,
     "tiktok_tag": "michaelbibi",
     "mixcloud_username": "michaelbibi",
-    "debut_year": 2014
+    "debut_year": 2014,
+    "emerging": true
   },
   {
     "name": "ANOTR",
@@ -282,7 +307,8 @@
     "manual_scene_score": 83,
     "tiktok_tag": "anotr",
     "mixcloud_username": "anotr",
-    "debut_year": 2015
+    "debut_year": 2015,
+    "emerging": true
   },
   {
     "name": "Mau P",
@@ -293,7 +319,8 @@
     "manual_scene_score": 82,
     "tiktok_tag": "maup",
     "mixcloud_username": "",
-    "debut_year": 2022
+    "debut_year": 2022,
+    "emerging": true
   },
   {
     "name": "SIDEPIECE",
@@ -304,7 +331,8 @@
     "manual_scene_score": 82,
     "tiktok_tag": "sidepiece",
     "mixcloud_username": "",
-    "debut_year": 2019
+    "debut_year": 2019,
+    "emerging": true
   },
   {
     "name": "Chris Stussy",
@@ -315,7 +343,8 @@
     "manual_scene_score": 82,
     "tiktok_tag": "chrisstussy",
     "mixcloud_username": "",
-    "debut_year": 2014
+    "debut_year": 2014,
+    "emerging": true
   },
   {
     "name": "PAWSA",
@@ -326,7 +355,8 @@
     "manual_scene_score": 81,
     "tiktok_tag": "pawsa",
     "mixcloud_username": "",
-    "debut_year": 2014
+    "debut_year": 2014,
+    "emerging": true
   },
   {
     "name": "Carlita",
@@ -337,7 +367,8 @@
     "manual_scene_score": 80,
     "tiktok_tag": "carlita",
     "mixcloud_username": "",
-    "debut_year": 2017
+    "debut_year": 2017,
+    "emerging": true
   },
   {
     "name": "East End Dubs",
@@ -348,7 +379,8 @@
     "manual_scene_score": 80,
     "tiktok_tag": "eastenddubs",
     "mixcloud_username": "",
-    "debut_year": 2012
+    "debut_year": 2012,
+    "emerging": true
   },
   {
     "name": "Omar+",
@@ -359,7 +391,8 @@
     "manual_scene_score": 79,
     "tiktok_tag": "omarplus",
     "mixcloud_username": "",
-    "debut_year": 2021
+    "debut_year": 2021,
+    "emerging": true
   },
   {
     "name": "Dennis Cruz",
@@ -370,7 +403,8 @@
     "manual_scene_score": 79,
     "tiktok_tag": "denniscruz",
     "mixcloud_username": "",
-    "debut_year": 2004
+    "debut_year": 2004,
+    "emerging": false
   },
   {
     "name": "Cloonee",
@@ -381,7 +415,8 @@
     "manual_scene_score": 79,
     "tiktok_tag": "cloonee",
     "mixcloud_username": "",
-    "debut_year": 2014
+    "debut_year": 2014,
+    "emerging": true
   },
   {
     "name": "Josh Baker",
@@ -391,7 +426,8 @@
     "album_count": 30,
     "manual_scene_score": 78,
     "tiktok_tag": "joshbakerdj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Franky Rizardo",
@@ -402,7 +438,8 @@
     "manual_scene_score": 78,
     "tiktok_tag": "frankyrizardo",
     "mixcloud_username": "",
-    "debut_year": 2007
+    "debut_year": 2007,
+    "emerging": false
   },
   {
     "name": "Ben Sterling",
@@ -413,7 +450,8 @@
     "manual_scene_score": 78,
     "tiktok_tag": "benstirling",
     "mixcloud_username": "",
-    "debut_year": 2016
+    "debut_year": 2016,
+    "emerging": true
   },
   {
     "name": "Disco Lines",
@@ -424,7 +462,8 @@
     "manual_scene_score": 77,
     "tiktok_tag": "discolines",
     "mixcloud_username": "",
-    "debut_year": 2019
+    "debut_year": 2019,
+    "emerging": true
   },
   {
     "name": "Chris Lorenzo",
@@ -435,7 +474,8 @@
     "manual_scene_score": 77,
     "tiktok_tag": "chrislorenzo",
     "mixcloud_username": "",
-    "debut_year": 2016
+    "debut_year": 2016,
+    "emerging": false
   },
   {
     "name": "KETTAMA",
@@ -446,7 +486,8 @@
     "manual_scene_score": 77,
     "tiktok_tag": "kettama",
     "mixcloud_username": "",
-    "debut_year": 2018
+    "debut_year": 2018,
+    "emerging": true
   },
   {
     "name": "Ranger Trucco",
@@ -457,7 +498,8 @@
     "manual_scene_score": 76,
     "tiktok_tag": "rangertrucco",
     "mixcloud_username": "",
-    "debut_year": 2021
+    "debut_year": 2021,
+    "emerging": true
   },
   {
     "name": "Beltran",
@@ -467,7 +509,8 @@
     "album_count": 20,
     "manual_scene_score": 76,
     "tiktok_tag": "beltrandj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Rossi.",
@@ -478,7 +521,8 @@
     "manual_scene_score": 76,
     "tiktok_tag": "rossidj",
     "mixcloud_username": "",
-    "debut_year": 2019
+    "debut_year": 2019,
+    "emerging": true
   },
   {
     "name": "Prospa",
@@ -488,7 +532,8 @@
     "album_count": 20,
     "manual_scene_score": 76,
     "tiktok_tag": "prospa",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Roddy Lima",
@@ -499,7 +544,8 @@
     "manual_scene_score": 75,
     "tiktok_tag": "roddylima",
     "mixcloud_username": "",
-    "debut_year": 2020
+    "debut_year": 2020,
+    "emerging": true
   },
   {
     "name": "AYYBO",
@@ -510,7 +556,8 @@
     "manual_scene_score": 75,
     "tiktok_tag": "ayybo",
     "mixcloud_username": "",
-    "debut_year": 2022
+    "debut_year": 2022,
+    "emerging": true
   },
   {
     "name": "Max Styler",
@@ -520,7 +567,8 @@
     "album_count": 20,
     "manual_scene_score": 75,
     "tiktok_tag": "maxstyler",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Riordan",
@@ -530,7 +578,8 @@
     "album_count": 15,
     "manual_scene_score": 74,
     "tiktok_tag": "riordandj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Locklead",
@@ -540,7 +589,8 @@
     "album_count": 15,
     "manual_scene_score": 74,
     "tiktok_tag": "locklead",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Obskür",
@@ -550,7 +600,8 @@
     "album_count": 15,
     "manual_scene_score": 74,
     "tiktok_tag": "obskur",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Kolter",
@@ -560,7 +611,8 @@
     "album_count": 10,
     "manual_scene_score": 73,
     "tiktok_tag": "kolter",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Murphy's Law",
@@ -570,7 +622,8 @@
     "album_count": 15,
     "manual_scene_score": 73,
     "tiktok_tag": "murphyslaw",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Luke Dean",
@@ -580,7 +633,8 @@
     "album_count": 15,
     "manual_scene_score": 74,
     "tiktok_tag": "lukedean",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Max Dean",
@@ -590,7 +644,8 @@
     "album_count": 15,
     "manual_scene_score": 74,
     "tiktok_tag": "maxdeandj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Julian Fijma",
@@ -601,7 +656,8 @@
     "manual_scene_score": 73,
     "tiktok_tag": "julianfijma",
     "mixcloud_username": "",
-    "debut_year": 2022
+    "debut_year": 2022,
+    "emerging": true
   },
   {
     "name": "MALUGI",
@@ -611,7 +667,8 @@
     "album_count": 10,
     "manual_scene_score": 72,
     "tiktok_tag": "malugi",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Silva Bumpa",
@@ -622,7 +679,8 @@
     "manual_scene_score": 72,
     "tiktok_tag": "silvabumpa",
     "mixcloud_username": "",
-    "debut_year": 2022
+    "debut_year": 2022,
+    "emerging": true
   },
   {
     "name": "Alisha",
@@ -632,7 +690,8 @@
     "album_count": 15,
     "manual_scene_score": 76,
     "tiktok_tag": "alishadj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Discip",
@@ -642,7 +701,8 @@
     "album_count": 10,
     "manual_scene_score": 72,
     "tiktok_tag": "discip",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Carl Cox",
@@ -653,7 +713,8 @@
     "manual_scene_score": 92,
     "tiktok_tag": "carlcox",
     "mixcloud_username": "carlcox",
-    "debut_year": 1998
+    "debut_year": 1998,
+    "emerging": false
   },
   {
     "name": "Green Velvet",
@@ -663,7 +724,8 @@
     "album_count": 60,
     "manual_scene_score": 80,
     "tiktok_tag": "greenvelvet",
-    "mixcloud_username": "green-velvet"
+    "mixcloud_username": "green-velvet",
+    "emerging": false
   },
   {
     "name": "Dom Dolla",
@@ -674,7 +736,8 @@
     "manual_scene_score": 83,
     "tiktok_tag": "domdolla",
     "mixcloud_username": "domdolla",
-    "debut_year": 2015
+    "debut_year": 2015,
+    "emerging": false
   },
   {
     "name": "James Hype",
@@ -684,7 +747,8 @@
     "album_count": 25,
     "manual_scene_score": 82,
     "tiktok_tag": "jameshype",
-    "mixcloud_username": "jameshype"
+    "mixcloud_username": "jameshype",
+    "emerging": false
   },
   {
     "name": "Claude VonStroke",
@@ -695,7 +759,8 @@
     "manual_scene_score": 81,
     "tiktok_tag": "claudevonstroke",
     "mixcloud_username": "claudevonstroke",
-    "debut_year": 2006
+    "debut_year": 2006,
+    "emerging": false
   },
   {
     "name": "Shiba San",
@@ -705,7 +770,8 @@
     "album_count": 35,
     "manual_scene_score": 79,
     "tiktok_tag": "shibasan",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Eli Brown",
@@ -715,7 +781,8 @@
     "album_count": 30,
     "manual_scene_score": 80,
     "tiktok_tag": "elibrowndj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "HoneyLuv",
@@ -725,7 +792,8 @@
     "album_count": 20,
     "manual_scene_score": 79,
     "tiktok_tag": "honeyluv",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Biscits",
@@ -736,7 +804,8 @@
     "manual_scene_score": 77,
     "tiktok_tag": "biscits",
     "mixcloud_username": "",
-    "debut_year": 2016
+    "debut_year": 2016,
+    "emerging": true
   },
   {
     "name": "Patrick Topping",
@@ -746,7 +815,8 @@
     "album_count": 50,
     "manual_scene_score": 80,
     "tiktok_tag": "patricktopping",
-    "mixcloud_username": "patricktopping"
+    "mixcloud_username": "patricktopping",
+    "emerging": false
   },
   {
     "name": "Richy Ahmed",
@@ -756,7 +826,8 @@
     "album_count": 35,
     "manual_scene_score": 76,
     "tiktok_tag": "richyahmed",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Hannah Wants",
@@ -767,7 +838,8 @@
     "manual_scene_score": 76,
     "tiktok_tag": "hannahwants",
     "mixcloud_username": "",
-    "debut_year": 2016
+    "debut_year": 2016,
+    "emerging": false
   },
   {
     "name": "Rebüke",
@@ -777,7 +849,8 @@
     "album_count": 25,
     "manual_scene_score": 77,
     "tiktok_tag": "rebukedj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Âme",
@@ -788,7 +861,8 @@
     "manual_scene_score": 81,
     "tiktok_tag": "amedj",
     "mixcloud_username": "",
-    "debut_year": 2004
+    "debut_year": 2004,
+    "emerging": false
   },
   {
     "name": "Kerri Chandler",
@@ -798,7 +872,8 @@
     "album_count": 80,
     "manual_scene_score": 82,
     "tiktok_tag": "kerrichandler",
-    "mixcloud_username": "kerrichandler"
+    "mixcloud_username": "kerrichandler",
+    "emerging": false
   },
   {
     "name": "Louie Vega",
@@ -808,7 +883,8 @@
     "album_count": 90,
     "manual_scene_score": 81,
     "tiktok_tag": "louievega",
-    "mixcloud_username": "louievega"
+    "mixcloud_username": "louievega",
+    "emerging": false
   },
   {
     "name": "Dennis Ferrer",
@@ -818,7 +894,8 @@
     "album_count": 55,
     "manual_scene_score": 79,
     "tiktok_tag": "dennisferrer",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Roger Sanchez",
@@ -828,7 +905,8 @@
     "album_count": 65,
     "manual_scene_score": 79,
     "tiktok_tag": "rogersanchez",
-    "mixcloud_username": "rogersanchez"
+    "mixcloud_username": "rogersanchez",
+    "emerging": false
   },
   {
     "name": "Armand Van Helden",
@@ -838,7 +916,8 @@
     "album_count": 75,
     "manual_scene_score": 81,
     "tiktok_tag": "armandvanhelden",
-    "mixcloud_username": "armandvanhelden"
+    "mixcloud_username": "armandvanhelden",
+    "emerging": false
   },
   {
     "name": "Mark Knight",
@@ -848,7 +927,8 @@
     "album_count": 85,
     "manual_scene_score": 80,
     "tiktok_tag": "markknightdj",
-    "mixcloud_username": "markknight"
+    "mixcloud_username": "markknight",
+    "emerging": false
   },
   {
     "name": "Loco Dice",
@@ -858,7 +938,8 @@
     "album_count": 50,
     "manual_scene_score": 79,
     "tiktok_tag": "locodice",
-    "mixcloud_username": "locodice"
+    "mixcloud_username": "locodice",
+    "emerging": false
   },
   {
     "name": "Steve Lawler",
@@ -869,7 +950,8 @@
     "manual_scene_score": 79,
     "tiktok_tag": "stevelawler",
     "mixcloud_username": "stevelawler",
-    "debut_year": 2005
+    "debut_year": 2005,
+    "emerging": false
   },
   {
     "name": "Lee Foss",
@@ -879,7 +961,8 @@
     "album_count": 45,
     "manual_scene_score": 75,
     "tiktok_tag": "leefoss",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Walker & Royce",
@@ -889,7 +972,8 @@
     "album_count": 35,
     "manual_scene_score": 77,
     "tiktok_tag": "walkerroyce",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Kyle Watson",
@@ -899,7 +983,8 @@
     "album_count": 30,
     "manual_scene_score": 76,
     "tiktok_tag": "kylewatson",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Wehbba",
@@ -909,7 +994,8 @@
     "album_count": 35,
     "manual_scene_score": 75,
     "tiktok_tag": "wehbba",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Paco Osuna",
@@ -919,7 +1005,8 @@
     "album_count": 50,
     "manual_scene_score": 78,
     "tiktok_tag": "pacoosuna",
-    "mixcloud_username": "pacoosuna"
+    "mixcloud_username": "pacoosuna",
+    "emerging": false
   },
   {
     "name": "Alan Fitzpatrick",
@@ -929,7 +1016,8 @@
     "album_count": 40,
     "manual_scene_score": 76,
     "tiktok_tag": "alanfitzpatrick",
-    "mixcloud_username": "alanfitzpatrick"
+    "mixcloud_username": "alanfitzpatrick",
+    "emerging": false
   },
   {
     "name": "Archie Hamilton",
@@ -939,7 +1027,8 @@
     "album_count": 30,
     "manual_scene_score": 74,
     "tiktok_tag": "archiehamilton",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Cristoph",
@@ -949,7 +1038,8 @@
     "album_count": 25,
     "manual_scene_score": 74,
     "tiktok_tag": "cristoph",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Dense & Pika",
@@ -959,7 +1049,8 @@
     "album_count": 30,
     "manual_scene_score": 73,
     "tiktok_tag": "densepika",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Sacha Robotti",
@@ -969,7 +1060,8 @@
     "album_count": 25,
     "manual_scene_score": 72,
     "tiktok_tag": "sacharobotti",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "WEISS",
@@ -979,7 +1071,8 @@
     "album_count": 35,
     "manual_scene_score": 76,
     "tiktok_tag": "weissdj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Simon Doty",
@@ -989,7 +1082,8 @@
     "album_count": 20,
     "manual_scene_score": 72,
     "tiktok_tag": "simondoty",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Gerd Janson",
@@ -999,7 +1093,8 @@
     "album_count": 45,
     "manual_scene_score": 75,
     "tiktok_tag": "gerdjanson",
-    "mixcloud_username": "gerdjanson"
+    "mixcloud_username": "gerdjanson",
+    "emerging": false
   },
   {
     "name": "Roman Flügel",
@@ -1009,7 +1104,8 @@
     "album_count": 40,
     "manual_scene_score": 73,
     "tiktok_tag": "romanflugel",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Booka Shade",
@@ -1019,7 +1115,8 @@
     "album_count": 55,
     "manual_scene_score": 77,
     "tiktok_tag": "bookashade",
-    "mixcloud_username": "bookashade"
+    "mixcloud_username": "bookashade",
+    "emerging": false
   },
   {
     "name": "DJ Boring",
@@ -1029,7 +1126,8 @@
     "album_count": 20,
     "manual_scene_score": 70,
     "tiktok_tag": "djboring",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "BLOND:ISH",
@@ -1039,7 +1137,8 @@
     "album_count": 30,
     "manual_scene_score": 75,
     "tiktok_tag": "blondish",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Latmun",
@@ -1049,7 +1148,8 @@
     "album_count": 25,
     "manual_scene_score": 74,
     "tiktok_tag": "latmun",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Danny Daze",
@@ -1059,7 +1159,8 @@
     "album_count": 20,
     "manual_scene_score": 70,
     "tiktok_tag": "dannydaze",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Pleasurekraft",
@@ -1069,7 +1170,8 @@
     "album_count": 25,
     "manual_scene_score": 72,
     "tiktok_tag": "pleasurekraft",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Octave One",
@@ -1079,7 +1181,8 @@
     "album_count": 50,
     "manual_scene_score": 75,
     "tiktok_tag": "octaveone",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Pig&Dan",
@@ -1089,7 +1192,8 @@
     "album_count": 45,
     "manual_scene_score": 73,
     "tiktok_tag": "piganddan",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Jimi Jules",
@@ -1099,7 +1203,8 @@
     "album_count": 20,
     "manual_scene_score": 73,
     "tiktok_tag": "jimilueles",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Tim Engelhardt",
@@ -1109,7 +1214,8 @@
     "album_count": 20,
     "manual_scene_score": 70,
     "tiktok_tag": "timengelhardt",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Colyn",
@@ -1119,7 +1225,8 @@
     "album_count": 15,
     "manual_scene_score": 72,
     "tiktok_tag": "colyn",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Anyma",
@@ -1129,7 +1236,8 @@
     "album_count": 15,
     "manual_scene_score": 77,
     "tiktok_tag": "anyma",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Enoo Napa",
@@ -1139,7 +1247,8 @@
     "album_count": 30,
     "manual_scene_score": 70,
     "tiktok_tag": "enoonapa",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Pablo Fierro",
@@ -1149,7 +1258,8 @@
     "album_count": 25,
     "manual_scene_score": 70,
     "tiktok_tag": "pablofierro",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Edu Imbernon",
@@ -1159,7 +1269,8 @@
     "album_count": 25,
     "manual_scene_score": 72,
     "tiktok_tag": "eduimbernon",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Re.You",
@@ -1169,7 +1280,8 @@
     "album_count": 25,
     "manual_scene_score": 70,
     "tiktok_tag": "reyou",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Justin Martin",
@@ -1179,7 +1291,8 @@
     "album_count": 35,
     "manual_scene_score": 73,
     "tiktok_tag": "justinmartin",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "HVOB",
@@ -1189,7 +1302,8 @@
     "album_count": 20,
     "manual_scene_score": 70,
     "tiktok_tag": "hvob",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Chelina Manuhutu",
@@ -1199,7 +1313,8 @@
     "album_count": 15,
     "manual_scene_score": 72,
     "tiktok_tag": "chelinamanuhutu",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Skream",
@@ -1209,7 +1324,8 @@
     "album_count": 50,
     "manual_scene_score": 79,
     "tiktok_tag": "skream",
-    "mixcloud_username": "skream"
+    "mixcloud_username": "skream",
+    "emerging": false
   },
   {
     "name": "David Morales",
@@ -1219,7 +1335,8 @@
     "album_count": 85,
     "manual_scene_score": 83,
     "tiktok_tag": "davidmorales",
-    "mixcloud_username": "davidmorales"
+    "mixcloud_username": "davidmorales",
+    "emerging": false
   },
   {
     "name": "Mark Farina",
@@ -1229,7 +1346,8 @@
     "album_count": 70,
     "manual_scene_score": 78,
     "tiktok_tag": "markfarina",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Gene Farris",
@@ -1239,7 +1357,8 @@
     "album_count": 45,
     "manual_scene_score": 72,
     "tiktok_tag": "genefarris",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "DJ T.",
@@ -1249,7 +1368,8 @@
     "album_count": 50,
     "manual_scene_score": 73,
     "tiktok_tag": "djt",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Michael Mayer",
@@ -1259,7 +1379,8 @@
     "album_count": 45,
     "manual_scene_score": 76,
     "tiktok_tag": "michaelmayer",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Gui Boratto",
@@ -1269,7 +1390,8 @@
     "album_count": 35,
     "manual_scene_score": 75,
     "tiktok_tag": "guiboratto",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Oxia",
@@ -1279,7 +1401,8 @@
     "album_count": 35,
     "manual_scene_score": 75,
     "tiktok_tag": "oxia",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Marco Faraone",
@@ -1289,7 +1412,8 @@
     "album_count": 30,
     "manual_scene_score": 73,
     "tiktok_tag": "marcofaraone",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Objekt",
@@ -1299,7 +1423,8 @@
     "album_count": 25,
     "manual_scene_score": 73,
     "tiktok_tag": "objekt",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Special Request",
@@ -1309,7 +1434,8 @@
     "album_count": 20,
     "manual_scene_score": 72,
     "tiktok_tag": "specialrequest",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "TSHA",
@@ -1319,7 +1445,8 @@
     "album_count": 15,
     "manual_scene_score": 74,
     "tiktok_tag": "tsha",
-    "mixcloud_username": "tsha"
+    "mixcloud_username": "tsha",
+    "emerging": true
   },
   {
     "name": "Tiga",
@@ -1329,7 +1456,8 @@
     "album_count": 40,
     "manual_scene_score": 76,
     "tiktok_tag": "tiga",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Floating Points",
@@ -1339,7 +1467,8 @@
     "album_count": 25,
     "manual_scene_score": 78,
     "tiktok_tag": "floatingpoints",
-    "mixcloud_username": "floating-points"
+    "mixcloud_username": "floating-points",
+    "emerging": false
   },
   {
     "name": "Mount Kimbie",
@@ -1349,7 +1478,8 @@
     "album_count": 30,
     "manual_scene_score": 74,
     "tiktok_tag": "mountkimbie",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "HAAi",
@@ -1359,7 +1489,8 @@
     "album_count": 15,
     "manual_scene_score": 74,
     "tiktok_tag": "haai",
-    "mixcloud_username": "haai"
+    "mixcloud_username": "haai",
+    "emerging": true
   },
   {
     "name": "Floorplan",
@@ -1369,7 +1500,8 @@
     "album_count": 30,
     "manual_scene_score": 75,
     "tiktok_tag": "floorplan",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Jayda G",
@@ -1379,7 +1511,8 @@
     "album_count": 20,
     "manual_scene_score": 74,
     "tiktok_tag": "jaydag",
-    "mixcloud_username": "jaydag"
+    "mixcloud_username": "jaydag",
+    "emerging": true
   },
   {
     "name": "Joris Voorn",
@@ -1389,7 +1522,8 @@
     "album_count": 55,
     "manual_scene_score": 78,
     "tiktok_tag": "jorisvoorn",
-    "mixcloud_username": "jorisvoorn"
+    "mixcloud_username": "jorisvoorn",
+    "emerging": false
   },
   {
     "name": "Victor Calderone",
@@ -1399,7 +1533,8 @@
     "album_count": 45,
     "manual_scene_score": 72,
     "tiktok_tag": "victorcalderone",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Daft Punk",
@@ -1409,7 +1544,8 @@
     "album_count": 60,
     "manual_scene_score": 95,
     "tiktok_tag": "daftpunk",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Laurent Garnier",
@@ -1419,7 +1555,8 @@
     "album_count": 80,
     "manual_scene_score": 88,
     "tiktok_tag": "laurentgarnier",
-    "mixcloud_username": "laurentgarnier"
+    "mixcloud_username": "laurentgarnier",
+    "emerging": false
   },
   {
     "name": "Levon Vincent",
@@ -1429,7 +1566,8 @@
     "album_count": 30,
     "manual_scene_score": 73,
     "tiktok_tag": "levonvincent",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Hunee",
@@ -1439,7 +1577,8 @@
     "album_count": 25,
     "manual_scene_score": 74,
     "tiktok_tag": "hunee",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Helena Hauff",
@@ -1449,7 +1588,8 @@
     "album_count": 20,
     "manual_scene_score": 76,
     "tiktok_tag": "helenahauff",
-    "mixcloud_username": "helenahauff"
+    "mixcloud_username": "helenahauff",
+    "emerging": false
   },
   {
     "name": "Sven Väth",
@@ -1459,7 +1599,8 @@
     "album_count": 95,
     "manual_scene_score": 88,
     "tiktok_tag": "svenvath",
-    "mixcloud_username": "svenvath"
+    "mixcloud_username": "svenvath",
+    "emerging": false
   },
   {
     "name": "Richie Hawtin",
@@ -1469,7 +1610,8 @@
     "album_count": 90,
     "manual_scene_score": 88,
     "tiktok_tag": "richiehawtin",
-    "mixcloud_username": "richiehawtin"
+    "mixcloud_username": "richiehawtin",
+    "emerging": false
   },
   {
     "name": "Joseph Capriati",
@@ -1479,7 +1621,8 @@
     "album_count": 40,
     "manual_scene_score": 78,
     "tiktok_tag": "josephcapriati",
-    "mixcloud_username": "josephcapriati"
+    "mixcloud_username": "josephcapriati",
+    "emerging": false
   },
   {
     "name": "Sam Paganini",
@@ -1489,7 +1632,8 @@
     "album_count": 35,
     "manual_scene_score": 74,
     "tiktok_tag": "sampaganini",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Maceo Plex",
@@ -1499,7 +1643,8 @@
     "album_count": 45,
     "manual_scene_score": 80,
     "tiktok_tag": "maceoplex",
-    "mixcloud_username": "maceoplex"
+    "mixcloud_username": "maceoplex",
+    "emerging": false
   },
   {
     "name": "Mind Against",
@@ -1509,7 +1654,8 @@
     "album_count": 25,
     "manual_scene_score": 77,
     "tiktok_tag": "mindagainst",
-    "mixcloud_username": "mindagainst"
+    "mixcloud_username": "mindagainst",
+    "emerging": false
   },
   {
     "name": "WhoMadeWho",
@@ -1519,7 +1665,8 @@
     "album_count": 35,
     "manual_scene_score": 76,
     "tiktok_tag": "whomadewho",
-    "mixcloud_username": "whomadewho"
+    "mixcloud_username": "whomadewho",
+    "emerging": false
   },
   {
     "name": "Stephan Bodzin",
@@ -1529,7 +1676,8 @@
     "album_count": 30,
     "manual_scene_score": 80,
     "tiktok_tag": "stephanbodzin",
-    "mixcloud_username": "stephanbodzin"
+    "mixcloud_username": "stephanbodzin",
+    "emerging": false
   },
   {
     "name": "Trentemøller",
@@ -1539,7 +1687,8 @@
     "album_count": 35,
     "manual_scene_score": 79,
     "tiktok_tag": "trentemoller",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Monolink",
@@ -1549,7 +1698,8 @@
     "album_count": 20,
     "manual_scene_score": 76,
     "tiktok_tag": "monolink",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Massano",
@@ -1559,7 +1709,8 @@
     "album_count": 15,
     "manual_scene_score": 75,
     "tiktok_tag": "massano",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Yotto",
@@ -1569,7 +1720,8 @@
     "album_count": 20,
     "manual_scene_score": 75,
     "tiktok_tag": "yotto",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Ben Böhmer",
@@ -1579,7 +1731,8 @@
     "album_count": 20,
     "manual_scene_score": 78,
     "tiktok_tag": "benbohmer",
-    "mixcloud_username": "benbohmer"
+    "mixcloud_username": "benbohmer",
+    "emerging": true
   },
   {
     "name": "Nora En Pure",
@@ -1589,7 +1742,8 @@
     "album_count": 30,
     "manual_scene_score": 74,
     "tiktok_tag": "noraenpure",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Adriatique",
@@ -1599,7 +1753,8 @@
     "album_count": 30,
     "manual_scene_score": 77,
     "tiktok_tag": "adriatique",
-    "mixcloud_username": "adriatique"
+    "mixcloud_username": "adriatique",
+    "emerging": false
   },
   {
     "name": "Kollektiv Turmstrasse",
@@ -1609,7 +1764,8 @@
     "album_count": 40,
     "manual_scene_score": 76,
     "tiktok_tag": "kollektivturmstrasse",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Huxley",
@@ -1619,7 +1775,8 @@
     "album_count": 30,
     "manual_scene_score": 73,
     "tiktok_tag": "huxley",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Maya Jane Coles",
@@ -1629,7 +1786,8 @@
     "album_count": 35,
     "manual_scene_score": 76,
     "tiktok_tag": "mayajanecoles",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "John Talabot",
@@ -1639,7 +1797,8 @@
     "album_count": 25,
     "manual_scene_score": 73,
     "tiktok_tag": "johntalabot",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Secondcity",
@@ -1649,7 +1808,8 @@
     "album_count": 25,
     "manual_scene_score": 74,
     "tiktok_tag": "secondcity",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Surgeon",
@@ -1659,7 +1819,8 @@
     "album_count": 45,
     "manual_scene_score": 74,
     "tiktok_tag": "surgeondj",
-    "mixcloud_username": "surgeon"
+    "mixcloud_username": "surgeon",
+    "emerging": false
   },
   {
     "name": "Blawan",
@@ -1669,7 +1830,8 @@
     "album_count": 25,
     "manual_scene_score": 73,
     "tiktok_tag": "blawan",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "DJ Rush",
@@ -1679,7 +1841,8 @@
     "album_count": 40,
     "manual_scene_score": 74,
     "tiktok_tag": "djrush",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Dax J",
@@ -1689,7 +1852,8 @@
     "album_count": 25,
     "manual_scene_score": 74,
     "tiktok_tag": "daxj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Luigi Madonna",
@@ -1699,7 +1863,8 @@
     "album_count": 30,
     "manual_scene_score": 73,
     "tiktok_tag": "luigimadonna",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Mathame",
@@ -1709,7 +1874,8 @@
     "album_count": 15,
     "manual_scene_score": 74,
     "tiktok_tag": "mathame",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Innellea",
@@ -1719,7 +1885,8 @@
     "album_count": 15,
     "manual_scene_score": 72,
     "tiktok_tag": "innellea",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Agents Of Time",
@@ -1729,7 +1896,8 @@
     "album_count": 15,
     "manual_scene_score": 73,
     "tiktok_tag": "agentsoftime",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Tiefschwarz",
@@ -1739,7 +1907,8 @@
     "album_count": 35,
     "manual_scene_score": 73,
     "tiktok_tag": "tiefschwarz",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Recondite",
@@ -1749,7 +1918,8 @@
     "album_count": 20,
     "manual_scene_score": 70,
     "tiktok_tag": "recondite",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "DJ Tennis",
@@ -1759,7 +1929,8 @@
     "album_count": 25,
     "manual_scene_score": 73,
     "tiktok_tag": "djtennis",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Dario D'Attis",
@@ -1769,7 +1940,8 @@
     "album_count": 20,
     "manual_scene_score": 72,
     "tiktok_tag": "dariodattis",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Henry Saiz",
@@ -1779,7 +1951,8 @@
     "album_count": 25,
     "manual_scene_score": 72,
     "tiktok_tag": "henrysaiz",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Pional",
@@ -1789,7 +1962,8 @@
     "album_count": 20,
     "manual_scene_score": 70,
     "tiktok_tag": "pional",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Ryan Crosson",
@@ -1799,7 +1973,8 @@
     "album_count": 25,
     "manual_scene_score": 70,
     "tiktok_tag": "ryancrosson",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Woo York",
@@ -1809,7 +1984,8 @@
     "album_count": 20,
     "manual_scene_score": 68,
     "tiktok_tag": "wooyork",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Burnski",
@@ -1819,7 +1995,8 @@
     "album_count": 20,
     "manual_scene_score": 65,
     "tiktok_tag": "burnski",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Alinka",
@@ -1829,7 +2006,8 @@
     "album_count": 15,
     "manual_scene_score": 68,
     "tiktok_tag": "alinka",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Answer Code Request",
@@ -1839,7 +2017,8 @@
     "album_count": 20,
     "manual_scene_score": 68,
     "tiktok_tag": "answercoderequest",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "DJ Stingray 313",
@@ -1849,7 +2028,8 @@
     "album_count": 25,
     "manual_scene_score": 72,
     "tiktok_tag": "djstingray313",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Pangaea",
@@ -1859,7 +2039,8 @@
     "album_count": 20,
     "manual_scene_score": 68,
     "tiktok_tag": "pangaeadj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Andre Crom",
@@ -1869,7 +2050,8 @@
     "album_count": 25,
     "manual_scene_score": 72,
     "tiktok_tag": "andrecrom",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Angelo Ferreri",
@@ -1879,7 +2061,8 @@
     "album_count": 20,
     "manual_scene_score": 68,
     "tiktok_tag": "angeloferreri",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Kastis Torrau",
@@ -1889,7 +2072,8 @@
     "album_count": 20,
     "manual_scene_score": 68,
     "tiktok_tag": "kastistorrau",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Robert Babicz",
@@ -1899,7 +2083,8 @@
     "album_count": 35,
     "manual_scene_score": 70,
     "tiktok_tag": "robertbabicz",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Trikk",
@@ -1909,7 +2094,8 @@
     "album_count": 15,
     "manual_scene_score": 68,
     "tiktok_tag": "trikk",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Tornado Wallace",
@@ -1919,7 +2105,8 @@
     "album_count": 15,
     "manual_scene_score": 68,
     "tiktok_tag": "tornadowallace",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Spektre",
@@ -1929,7 +2116,8 @@
     "album_count": 25,
     "manual_scene_score": 68,
     "tiktok_tag": "spektre",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Jay Lumen",
@@ -1939,7 +2127,8 @@
     "album_count": 20,
     "manual_scene_score": 68,
     "tiktok_tag": "jaylumen",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Pearson Sound",
@@ -1949,7 +2138,8 @@
     "album_count": 15,
     "manual_scene_score": 70,
     "tiktok_tag": "pearsonsound",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Palms Trax",
@@ -1959,7 +2149,8 @@
     "album_count": 15,
     "manual_scene_score": 68,
     "tiktok_tag": "palmstrax",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Lauer",
@@ -1969,7 +2160,8 @@
     "album_count": 15,
     "manual_scene_score": 70,
     "tiktok_tag": "lauer",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Simian Mobile Disco",
@@ -1979,7 +2171,8 @@
     "album_count": 25,
     "manual_scene_score": 74,
     "tiktok_tag": "simianmobiledisco",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Actress",
@@ -1989,7 +2182,8 @@
     "album_count": 20,
     "manual_scene_score": 72,
     "tiktok_tag": "actressmusic",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "DJ Holographic",
@@ -1999,7 +2193,8 @@
     "album_count": 15,
     "manual_scene_score": 70,
     "tiktok_tag": "djholographic",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "David Mayer",
@@ -2009,7 +2204,8 @@
     "album_count": 20,
     "manual_scene_score": 72,
     "tiktok_tag": "davidmayer",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Lee Curtiss",
@@ -2019,7 +2215,8 @@
     "album_count": 20,
     "manual_scene_score": 70,
     "tiktok_tag": "leecurtiss",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Wolf + Lamb",
@@ -2029,7 +2226,8 @@
     "album_count": 25,
     "manual_scene_score": 72,
     "tiktok_tag": "wolfandlamb",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Nick Curly",
@@ -2039,7 +2237,8 @@
     "album_count": 30,
     "manual_scene_score": 72,
     "tiktok_tag": "nickcurly",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Sascha Dive",
@@ -2049,7 +2248,8 @@
     "album_count": 25,
     "manual_scene_score": 72,
     "tiktok_tag": "saschadive",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Hector Romero",
@@ -2059,7 +2259,8 @@
     "album_count": 30,
     "manual_scene_score": 70,
     "tiktok_tag": "hectorromero",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Mathew Jonson",
@@ -2069,7 +2270,8 @@
     "album_count": 25,
     "manual_scene_score": 72,
     "tiktok_tag": "mathewjonson",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Christian Burkhardt",
@@ -2079,7 +2281,8 @@
     "album_count": 20,
     "manual_scene_score": 70,
     "tiktok_tag": "christianburkhardt",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Inigo Kennedy",
@@ -2089,7 +2292,8 @@
     "album_count": 20,
     "manual_scene_score": 68,
     "tiktok_tag": "inigokennedy",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Marshall Jefferson",
@@ -2099,7 +2303,8 @@
     "album_count": 35,
     "manual_scene_score": 82,
     "tiktok_tag": "marshalljefferson",
-    "mixcloud_username": "marshalljefferson"
+    "mixcloud_username": "marshalljefferson",
+    "emerging": false
   },
   {
     "name": "GW Harrison",
@@ -2109,7 +2314,8 @@
     "album_count": 15,
     "manual_scene_score": 70,
     "tiktok_tag": "gwharrison",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "AMÉMÉ",
@@ -2119,7 +2325,8 @@
     "album_count": 15,
     "manual_scene_score": 70,
     "tiktok_tag": "ameme",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Nicholas Van Orton",
@@ -2129,7 +2336,8 @@
     "album_count": 15,
     "manual_scene_score": 68,
     "tiktok_tag": "nicholasvanorton",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Alec Araujo",
@@ -2139,7 +2347,8 @@
     "album_count": 10,
     "manual_scene_score": 65,
     "tiktok_tag": "alecaraujo",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Leo Lukas",
@@ -2149,7 +2358,8 @@
     "album_count": 10,
     "manual_scene_score": 65,
     "tiktok_tag": "leolukas",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Nino Bua",
@@ -2159,7 +2369,8 @@
     "album_count": 10,
     "manual_scene_score": 65,
     "tiktok_tag": "ninobua",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Bas Ibellini",
@@ -2169,7 +2380,8 @@
     "album_count": 10,
     "manual_scene_score": 65,
     "tiktok_tag": "basibellini",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Ricardo Villalobos",
@@ -2179,7 +2391,8 @@
     "album_count": 60,
     "manual_scene_score": 85,
     "tiktok_tag": "ricardovillalobos",
-    "mixcloud_username": "ricardovillalobos"
+    "mixcloud_username": "ricardovillalobos",
+    "emerging": false
   },
   {
     "name": "MK",
@@ -2189,7 +2402,8 @@
     "album_count": 50,
     "manual_scene_score": 83,
     "tiktok_tag": "mkdj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Sasha",
@@ -2199,7 +2413,8 @@
     "album_count": 40,
     "manual_scene_score": 82,
     "tiktok_tag": "sashadj",
-    "mixcloud_username": "djsasha"
+    "mixcloud_username": "djsasha",
+    "emerging": false
   },
   {
     "name": "John Digweed",
@@ -2209,7 +2424,8 @@
     "album_count": 50,
     "manual_scene_score": 82,
     "tiktok_tag": "johndigweed",
-    "mixcloud_username": "johndigweed"
+    "mixcloud_username": "johndigweed",
+    "emerging": false
   },
   {
     "name": "Eric Prydz",
@@ -2219,7 +2435,8 @@
     "album_count": 45,
     "manual_scene_score": 84,
     "tiktok_tag": "ericprydz",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Midland",
@@ -2229,7 +2446,8 @@
     "album_count": 20,
     "manual_scene_score": 77,
     "tiktok_tag": "midlanddj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Mano Le Tough",
@@ -2239,7 +2457,8 @@
     "album_count": 20,
     "manual_scene_score": 76,
     "tiktok_tag": "manolettough",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Job Jobse",
@@ -2249,7 +2468,8 @@
     "album_count": 15,
     "manual_scene_score": 74,
     "tiktok_tag": "jobjobse",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "San Soda",
@@ -2259,7 +2479,8 @@
     "album_count": 15,
     "manual_scene_score": 73,
     "tiktok_tag": "sansoda",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Move D",
@@ -2269,7 +2490,8 @@
     "album_count": 30,
     "manual_scene_score": 73,
     "tiktok_tag": "moved",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Axel Boman",
@@ -2279,7 +2501,8 @@
     "album_count": 20,
     "manual_scene_score": 73,
     "tiktok_tag": "axelboman",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Guy Gerber",
@@ -2289,7 +2512,8 @@
     "album_count": 25,
     "manual_scene_score": 76,
     "tiktok_tag": "guygerber",
-    "mixcloud_username": "guygerber"
+    "mixcloud_username": "guygerber",
+    "emerging": false
   },
   {
     "name": "Todd Terry",
@@ -2299,7 +2523,8 @@
     "album_count": 60,
     "manual_scene_score": 80,
     "tiktok_tag": "toddterry",
-    "mixcloud_username": "toddterry"
+    "mixcloud_username": "toddterry",
+    "emerging": false
   },
   {
     "name": "Danny Tenaglia",
@@ -2309,7 +2534,8 @@
     "album_count": 45,
     "manual_scene_score": 80,
     "tiktok_tag": "dannytenaglia",
-    "mixcloud_username": "dannytenaglia"
+    "mixcloud_username": "dannytenaglia",
+    "emerging": false
   },
   {
     "name": "DJ Sneak",
@@ -2319,7 +2545,8 @@
     "album_count": 50,
     "manual_scene_score": 79,
     "tiktok_tag": "djsneak",
-    "mixcloud_username": "djsneak"
+    "mixcloud_username": "djsneak",
+    "emerging": false
   },
   {
     "name": "Kevin Saunderson",
@@ -2329,7 +2556,8 @@
     "album_count": 55,
     "manual_scene_score": 84,
     "tiktok_tag": "kevinsaunderson",
-    "mixcloud_username": "kevinsaunderson"
+    "mixcloud_username": "kevinsaunderson",
+    "emerging": false
   },
   {
     "name": "Frankie Knuckles",
@@ -2339,7 +2567,8 @@
     "album_count": 50,
     "manual_scene_score": 90,
     "tiktok_tag": "frankieknuckles",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Larry Heard",
@@ -2349,7 +2578,8 @@
     "album_count": 40,
     "manual_scene_score": 85,
     "tiktok_tag": "larryheard",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Deborah De Luca",
@@ -2359,7 +2589,8 @@
     "album_count": 20,
     "manual_scene_score": 76,
     "tiktok_tag": "deborahdeluca",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Andrea Oliva",
@@ -2369,7 +2600,8 @@
     "album_count": 25,
     "manual_scene_score": 75,
     "tiktok_tag": "andreaoliva",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Alan Dixon",
@@ -2379,7 +2611,8 @@
     "album_count": 20,
     "manual_scene_score": 73,
     "tiktok_tag": "alandixon",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Harvey McKay",
@@ -2389,7 +2622,8 @@
     "album_count": 20,
     "manual_scene_score": 73,
     "tiktok_tag": "harveymckay",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Mr. G",
@@ -2399,7 +2633,8 @@
     "album_count": 30,
     "manual_scene_score": 72,
     "tiktok_tag": "mrgdj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Call Super",
@@ -2409,7 +2644,8 @@
     "album_count": 15,
     "manual_scene_score": 70,
     "tiktok_tag": "callsuper",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Themba",
@@ -2419,7 +2655,8 @@
     "album_count": 20,
     "manual_scene_score": 74,
     "tiktok_tag": "thembadj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Culoe De Song",
@@ -2429,7 +2666,8 @@
     "album_count": 20,
     "manual_scene_score": 73,
     "tiktok_tag": "culoedesong",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Luciano",
@@ -2439,7 +2677,8 @@
     "album_count": 45,
     "manual_scene_score": 80,
     "tiktok_tag": "lucianodj",
-    "mixcloud_username": "luciano"
+    "mixcloud_username": "luciano",
+    "emerging": false
   },
   {
     "name": "Dimitri From Paris",
@@ -2449,7 +2688,8 @@
     "album_count": 40,
     "manual_scene_score": 78,
     "tiktok_tag": "dimitrifromparis",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Bob Sinclar",
@@ -2459,7 +2699,8 @@
     "album_count": 45,
     "manual_scene_score": 77,
     "tiktok_tag": "bobsinclar",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Duke Dumont",
@@ -2469,7 +2710,8 @@
     "album_count": 30,
     "manual_scene_score": 80,
     "tiktok_tag": "dukedumont",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Route 94",
@@ -2479,7 +2721,8 @@
     "album_count": 20,
     "manual_scene_score": 74,
     "tiktok_tag": "route94",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Maxxi Soundsystem",
@@ -2489,7 +2732,8 @@
     "album_count": 15,
     "manual_scene_score": 72,
     "tiktok_tag": "maxxisoundsystem",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "DJ Pierre",
@@ -2499,7 +2743,8 @@
     "album_count": 35,
     "manual_scene_score": 80,
     "tiktok_tag": "djpierre",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Stacey Pullen",
@@ -2509,7 +2754,8 @@
     "album_count": 30,
     "manual_scene_score": 75,
     "tiktok_tag": "staceypullen",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Kenny Larkin",
@@ -2519,7 +2765,8 @@
     "album_count": 25,
     "manual_scene_score": 73,
     "tiktok_tag": "kennylarkin",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Maya",
@@ -2529,7 +2776,8 @@
     "album_count": 20,
     "manual_scene_score": 72,
     "tiktok_tag": "mayadj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Slam",
@@ -2539,7 +2787,8 @@
     "album_count": 40,
     "manual_scene_score": 74,
     "tiktok_tag": "slamdj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Steve Bug",
@@ -2549,7 +2798,8 @@
     "album_count": 50,
     "manual_scene_score": 76,
     "tiktok_tag": "stevebug",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Akufen",
@@ -2559,7 +2809,8 @@
     "album_count": 15,
     "manual_scene_score": 70,
     "tiktok_tag": "akufen",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Miss Kittin",
@@ -2569,7 +2820,8 @@
     "album_count": 25,
     "manual_scene_score": 72,
     "tiktok_tag": "misskittin",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "The Hacker",
@@ -2579,7 +2831,8 @@
     "album_count": 25,
     "manual_scene_score": 70,
     "tiktok_tag": "thehacker",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Joeski",
@@ -2589,7 +2842,8 @@
     "album_count": 30,
     "manual_scene_score": 72,
     "tiktok_tag": "joeski",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Deetron",
@@ -2599,7 +2853,8 @@
     "album_count": 25,
     "manual_scene_score": 72,
     "tiktok_tag": "deetron",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Marika Rossa",
@@ -2609,7 +2864,8 @@
     "album_count": 20,
     "manual_scene_score": 70,
     "tiktok_tag": "marikarossa",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "SPFDJ",
@@ -2619,7 +2875,8 @@
     "album_count": 15,
     "manual_scene_score": 72,
     "tiktok_tag": "spfdj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Rebekah",
@@ -2629,7 +2886,8 @@
     "album_count": 15,
     "manual_scene_score": 70,
     "tiktok_tag": "rebekah",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Alignment",
@@ -2639,7 +2897,8 @@
     "album_count": 10,
     "manual_scene_score": 70,
     "tiktok_tag": "alignment",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   },
   {
     "name": "Len Faki",
@@ -2649,7 +2908,8 @@
     "album_count": 20,
     "manual_scene_score": 73,
     "tiktok_tag": "lenfaki",
-    "mixcloud_username": "lenfaki"
+    "mixcloud_username": "lenfaki",
+    "emerging": false
   },
   {
     "name": "Truncate",
@@ -2659,7 +2919,8 @@
     "album_count": 20,
     "manual_scene_score": 70,
     "tiktok_tag": "truncate",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Planetary Assault Systems",
@@ -2669,7 +2930,8 @@
     "album_count": 15,
     "manual_scene_score": 68,
     "tiktok_tag": "planetaryassaultsystems",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Regis",
@@ -2679,7 +2941,8 @@
     "album_count": 20,
     "manual_scene_score": 68,
     "tiktok_tag": "regisdj",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": false
   },
   {
     "name": "Phase Fatale",
@@ -2689,6 +2952,7 @@
     "album_count": 10,
     "manual_scene_score": 68,
     "tiktok_tag": "phasefatale",
-    "mixcloud_username": ""
+    "mixcloud_username": "",
+    "emerging": true
   }
 ]
