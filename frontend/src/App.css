@@ -42,6 +42,47 @@
 .cs-upgrade-btn { background: #f5a623; color: #000; font-weight: 800; font-size: .95rem; padding: 12px 28px; border-radius: 10px; border: none; cursor: pointer; transition: opacity .15s; }
 .cs-upgrade-btn:hover { opacity: .85; }
 
+/* ── Comparative Benchmarking Tab ────────────────────────────────── */
+.cmp-page { max-width: 920px; margin: 0 auto; padding: 40px 24px 80px; }
+.cmp-header { margin-bottom: 28px; }
+.cmp-title { font-size: 1.9rem; font-weight: 800; margin: 6px 0 8px; }
+.cmp-sub { color: #888; font-size: .92rem; margin: 0; max-width: 600px; line-height: 1.6; }
+
+.cmp-compare { background: #0e0e0e; border: 1px solid #222; border-radius: 16px; padding: 24px; margin-bottom: 40px; }
+.cmp-selectors { display: flex; align-items: center; gap: 12px; justify-content: center; margin-bottom: 18px; }
+.cmp-select { background: #1a1a1a; color: #fff; border: 1px solid #333; border-radius: 10px; padding: 10px 14px; font-size: .9rem; font-weight: 600; max-width: 38%; }
+.cmp-vs { color: #f5a623; font-weight: 800; font-size: .85rem; }
+.cmp-callout { background: linear-gradient(135deg,#1a1200,#111); border: 1px solid #2a2000; border-radius: 12px; padding: 14px 18px; text-align: center; font-size: .95rem; color: #ddd; margin-bottom: 20px; }
+.cmp-ratio { color: #f5a623; font-weight: 800; font-size: 1.1rem; }
+
+.cmp-grid { display: flex; flex-direction: column; gap: 14px; }
+.cmp-row { display: grid; grid-template-columns: 160px 1fr; gap: 12px; align-items: center; }
+.cmp-metric-label { font-size: .82rem; font-weight: 600; color: #ddd; display: flex; flex-direction: column; }
+.cmp-metric-signal { font-size: .68rem; color: #666; font-weight: 400; margin-top: 2px; }
+.cmp-bars { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.cmp-bar-side { display: flex; align-items: center; gap: 6px; }
+.cmp-bar-side--a { flex-direction: row-reverse; }
+.cmp-bar-track { flex: 1; height: 8px; background: #1a1a1a; border-radius: 4px; overflow: hidden; }
+.cmp-bar-fill { height: 100%; border-radius: 4px; transition: width .4s ease; }
+.cmp-val { font-size: .75rem; color: #aaa; min-width: 42px; }
+.cmp-bar-side--a .cmp-val { text-align: left; }
+.cmp-legend-row { display: flex; justify-content: space-between; margin-top: 14px; font-size: .8rem; color: #888; }
+.cmp-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; }
+
+.cmp-insights-title { font-size: 1.3rem; font-weight: 800; margin: 0 0 4px; }
+.cmp-insights-sub { color: #888; font-size: .86rem; margin: 0 0 20px; }
+.cmp-insights { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 14px; }
+.cmp-insight-card { background: #111; border: 1px solid #222; border-radius: 14px; padding: 18px; }
+.cmp-insight-head { display: flex; gap: 12px; margin-bottom: 14px; }
+.cmp-insight-icon { font-size: 1.5rem; }
+.cmp-insight-title { font-weight: 700; font-size: .95rem; }
+.cmp-insight-blurb { font-size: .78rem; color: #777; margin-top: 3px; line-height: 1.45; }
+.cmp-insight-list { display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #1a1a1a; padding-top: 12px; }
+.cmp-insight-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.cmp-insight-name { font-weight: 600; font-size: .85rem; color: #eee; }
+.cmp-insight-stat { font-size: .72rem; color: #888; white-space: nowrap; }
+.cmp-foot { font-size: .75rem; color: #555; margin-top: 18px; }
+
 /* ── Velocity Tab ────────────────────────────────────────────────── */
 .vel-page { padding: 40px 24px 80px; }
 .vel-header { margin-bottom: 28px; }

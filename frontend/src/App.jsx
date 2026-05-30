@@ -1165,6 +1165,188 @@ function CitySpotlightPage({ rankings }) {
   );
 }
 
+// ── Comparative Benchmarking Tab ──────────────────────────────────
+
+const CMP_METRICS = [
+  { key: "spotify_monthly_listeners", label: "Spotify Listeners", short: "Spotify",  signal: "mainstream streaming audience", color: "#1DB954" },
+  { key: "tiktok_post_count",         label: "TikTok Posts",      short: "TikTok",   signal: "viral / social buzz",          color: "#ff0050" },
+  { key: "mixcloud_followers",        label: "Mixcloud Followers",short: "Mixcloud", signal: "DJ / mix credibility",          color: "#5000ff" },
+  { key: "google_trends_score",       label: "Google Trends",     short: "Trends",   signal: "search interest",              color: "#4285F4" },
+];
+
+// percentile of value within a sorted ascending array of positive values
+function pctRank(value, sortedVals) {
+  if (!sortedVals.length) return 0;
+  let below = 0;
+  for (const v of sortedVals) { if (v < value) below++; else break; }
+  return Math.round((below / Math.max(sortedVals.length - 1, 1)) * 100);
+}
+
+function ComparativeBenchmarkingPage({ rankings }) {
+  // Build percentile maps per metric (only artists with non-zero values count)
+  const { profiles, sortedByMetric } = useMemo(() => {
+    const sortedByMetric = {};
+    for (const m of CMP_METRICS) {
+      sortedByMetric[m.key] = rankings.map(r => r[m.key] || 0).filter(v => v > 0).sort((a, b) => a - b);
+    }
+    const profiles = {};
+    for (const dj of rankings) {
+      const prof = {};
+      for (const m of CMP_METRICS) {
+        const v = dj[m.key] || 0;
+        prof[m.key] = v > 0 ? { value: v, pct: pctRank(v, sortedByMetric[m.key]) } : null;
+      }
+      profiles[dj.name] = prof;
+    }
+    return { profiles, sortedByMetric };
+  }, [rankings]);
+
+  // Auto-generated discrepancy insights (over-indexers)
+  const insights = useMemo(() => {
+    const archetypes = [
+      { a: "tiktok_post_count",         b: "spotify_monthly_listeners", title: "Viral, Under-Streamed",   blurb: "Social buzz is running ahead of streaming — hype before the catalog catches up.", icon: "🚀" },
+      { a: "mixcloud_followers",        b: "spotify_monthly_listeners", title: "The DJ's DJ",             blurb: "Deep credibility with the core dance crowd, lower mainstream streaming.",        icon: "🎧" },
+      { a: "spotify_monthly_listeners", b: "tiktok_post_count",         title: "Streaming Giant, Quiet Socially", blurb: "Big streaming numbers without the viral social footprint.",            icon: "📀" },
+      { a: "google_trends_score",       b: "spotify_monthly_listeners", title: "Search Breakout",         blurb: "Spiking search interest outpacing streaming — momentum signal.",                 icon: "🔍" },
+    ];
+    return archetypes.map(arc => {
+      const picks = rankings
+        .map(dj => {
+          const pa = profiles[dj.name]?.[arc.a];
+          const pb = profiles[dj.name]?.[arc.b];
+          if (!pa || !pb) return null;
+          return { dj, gap: pa.pct - pb.pct, pa, pb };
+        })
+        .filter(x => x && x.gap >= 25)
+        .sort((a, b) => b.gap - a.gap)
+        .slice(0, 3);
+      const am = CMP_METRICS.find(m => m.key === arc.a);
+      const bm = CMP_METRICS.find(m => m.key === arc.b);
+      return { ...arc, am, bm, picks };
+    }).filter(arc => arc.picks.length > 0);
+  }, [profiles, rankings]);
+
+  // Direct comparison selectors — default to two data-rich artists
+  const withData = rankings.filter(d => CMP_METRICS.filter(m => (d[m.key] || 0) > 0).length >= 2);
+  const names = rankings.map(d => d.name).sort((a, b) => a.localeCompare(b));
+  const [aName, setAName] = useState(withData[0]?.name ?? rankings[0]?.name);
+  const [bName, setBName] = useState(withData[1]?.name ?? rankings[1]?.name);
+
+  const A = rankings.find(d => d.name === aName);
+  const B = rankings.find(d => d.name === bName);
+
+  // Headline callout for the A/B comparison
+  const callout = useMemo(() => {
+    if (!A || !B) return null;
+    const shared = CMP_METRICS.filter(m => (A[m.key] || 0) > 0 && (B[m.key] || 0) > 0);
+    if (!shared.length) return null;
+    let biggest = null, similar = null;
+    for (const m of shared) {
+      const va = A[m.key], vb = B[m.key];
+      const ratio = Math.max(va, vb) / Math.min(va, vb);
+      const leader = va >= vb ? A : B, trailer = va >= vb ? B : A;
+      if (!biggest || ratio > biggest.ratio) biggest = { m, ratio, leader, trailer };
+      if (ratio < 1.3 && (!similar || ratio < similar.ratio)) similar = { m, ratio };
+    }
+    if (!biggest || biggest.ratio < 1.5) return null;
+    return { biggest, similar };
+  }, [A, B]);
+
+  return (
+    <div className="page cmp-page">
+      <div className="cmp-header">
+        <div className="cs-eyebrow">🔬 Pro Preview</div>
+        <h1 className="cmp-title">Comparative Benchmarking</h1>
+        <p className="cmp-sub">
+          Cross-metric analysis that exposes hidden signal — who's viral but not streaming,
+          who's a DJ's DJ, who's quietly breaking out. Compare any two artists head-to-head.
+        </p>
+      </div>
+
+      {/* ── Direct comparison ── */}
+      <div className="cmp-compare">
+        <div className="cmp-selectors">
+          <select className="cmp-select" value={aName} onChange={e => setAName(e.target.value)}>
+            {names.map(n => <option key={n} value={n}>{n}</option>)}
+          </select>
+          <span className="cmp-vs">vs</span>
+          <select className="cmp-select" value={bName} onChange={e => setBName(e.target.value)}>
+            {names.map(n => <option key={n} value={n}>{n}</option>)}
+          </select>
+        </div>
+
+        {callout && (
+          <div className="cmp-callout">
+            <strong>{callout.biggest.leader.name}</strong> has{" "}
+            <span className="cmp-ratio">{callout.biggest.ratio.toFixed(1)}×</span>{" "}
+            the {callout.biggest.m.short} presence of <strong>{callout.biggest.trailer.name}</strong>
+            {callout.similar && callout.similar.m.key !== callout.biggest.m.key
+              ? <> — despite similar {callout.similar.m.short} numbers.</>
+              : <>.</>}
+          </div>
+        )}
+
+        <div className="cmp-grid">
+          {CMP_METRICS.map(m => {
+            const va = A?.[m.key] || 0, vb = B?.[m.key] || 0;
+            const max = Math.max(va, vb, 1);
+            const fmtV = v => m.key === "google_trends_score" ? (v ? Math.round(v) : "—") : (v ? fmt(v) : "—");
+            return (
+              <div className="cmp-row" key={m.key}>
+                <div className="cmp-metric-label">{m.label}<span className="cmp-metric-signal">{m.signal}</span></div>
+                <div className="cmp-bars">
+                  <div className="cmp-bar-side cmp-bar-side--a">
+                    <span className="cmp-val">{fmtV(va)}</span>
+                    <div className="cmp-bar-track"><div className="cmp-bar-fill" style={{ width: `${(va/max)*100}%`, background: m.color, marginLeft: "auto" }} /></div>
+                  </div>
+                  <div className="cmp-bar-side cmp-bar-side--b">
+                    <div className="cmp-bar-track"><div className="cmp-bar-fill" style={{ width: `${(vb/max)*100}%`, background: m.color }} /></div>
+                    <span className="cmp-val">{fmtV(vb)}</span>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="cmp-legend-row">
+          <span><span className="cmp-dot" style={{background:"#888"}} /> {aName}</span>
+          <span>{bName} <span className="cmp-dot" style={{background:"#888"}} /></span>
+        </div>
+      </div>
+
+      {/* ── Auto insights ── */}
+      <h2 className="cmp-insights-title">Biggest Discrepancies</h2>
+      <p className="cmp-insights-sub">Artists who over-index on one signal but lag on another — the gaps a sharp booker exploits.</p>
+      <div className="cmp-insights">
+        {insights.map(arc => (
+          <div className="cmp-insight-card" key={arc.title}>
+            <div className="cmp-insight-head">
+              <span className="cmp-insight-icon">{arc.icon}</span>
+              <div>
+                <div className="cmp-insight-title">{arc.title}</div>
+                <div className="cmp-insight-blurb">{arc.blurb}</div>
+              </div>
+            </div>
+            <div className="cmp-insight-list">
+              {arc.picks.map(p => (
+                <div className="cmp-insight-row" key={p.dj.name}>
+                  <span className="cmp-insight-name">{p.dj.name}</span>
+                  <span className="cmp-insight-stat">
+                    <span style={{ color: arc.am.color }}>{arc.am.short} {p.pa.pct}th</span>
+                    {" · "}
+                    <span style={{ color: arc.bm.color }}>{arc.bm.short} {p.pb.pct}th</span>
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <p className="cmp-foot">Percentiles are within artists that have data for each metric. Updated every refresh.</p>
+    </div>
+  );
+}
+
 // ── Velocity Tab ──────────────────────────────────────────────────
 
 const VELOCITY_LABELS = {
@@ -1536,6 +1718,7 @@ export default function App() {
           <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
           <button className={`top-tab ${activeTab === "city-spotlight" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("city-spotlight")}>📍 City Spotlight</button>
           <button className={`top-tab ${activeTab === "ones-to-watch" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("ones-to-watch")}>Ones to Watch</button>
+          <button className={`top-tab ${activeTab === "benchmark"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("benchmark")}>🔬 Benchmark</button>
           <button className={`top-tab ${activeTab === "velocity"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("velocity")}>Velocity</button>
           <button className={`top-tab ${activeTab === "breakouts"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("breakouts")}>🚨 Breakouts</button>
           <button className={`top-tab ${activeTab === "movers"        ? "top-tab--active" : ""}`} onClick={() => setActiveTab("movers")}>Movers</button>
@@ -1550,6 +1733,7 @@ export default function App() {
       )}
       {activeTab === "city-spotlight" && <CitySpotlightPage rankings={rankings} />}
       {activeTab === "ones-to-watch" && <OnestoWatchPage rankings={rankings} />}
+      {activeTab === "benchmark"     && <ComparativeBenchmarkingPage rankings={rankings} />}
       {activeTab === "velocity"      && <VelocityPage rankings={rankings} />}
       {activeTab === "breakouts"     && <BreakoutsPage rankings={rankings} breakouts={breakouts} breakoutThreshold={breakoutThreshold} />}
       {activeTab === "movers"        && <MoversPage />}
