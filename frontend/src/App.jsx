@@ -461,6 +461,17 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
           </div>
         </div>
 
+        <div className="dj-side-stats">
+          <div className="dss">
+            <span className="dss-num">{fmt(dj.spotify_monthly_listeners)}</span>
+            <span className="dss-lbl">listeners</span>
+          </div>
+          <div className="dss">
+            <span className="dss-num">{fmt(dj.tiktok_post_count)}</span>
+            <span className="dss-lbl">TikTok</span>
+          </div>
+        </div>
+
         <div className="dj-side">
           <div className="dj-actions" onClick={e => e.stopPropagation()}>
             {dj.spotify_url && (
@@ -1752,7 +1763,13 @@ export default function App() {
       <header className="page-header">
         <div className="header-eyebrow">Live Rankings</div>
         <h1 className="header-title">House DJ Rankings</h1>
-        <p className="header-sub">Scored across Spotify, TikTok, YouTube &amp; Google Trends</p>
+        <div className="header-platforms">
+          <span className="plat-pill"><span className="plat-dot" style={{ background: "#1DB954" }} />Spotify</span>
+          <span className="plat-pill"><span className="plat-dot" style={{ background: "#a8e00f" }} />Beatport</span>
+          <span className="plat-pill"><span className="plat-dot" style={{ background: "#ff0050" }} />TikTok</span>
+          <span className="plat-pill"><span className="plat-dot" style={{ background: "#FF0000" }} />YouTube</span>
+          <span className="plat-pill"><span className="plat-dot" style={{ background: "#4285F4" }} />Trends</span>
+        </div>
         {lastUpdated && <p className="header-updated">Updated {new Date(lastUpdated).toLocaleString()}</p>}
         <div className="top-tabs">
           <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>

@@ -498,7 +498,7 @@ function BookerArtistRow({ dj, rank, active, inShortlist, onClick, onToggleShort
       </div>
       <div className="booker-info">
         <div className="booker-name">
-          {dj.name}
+          <span className="booker-name-text">{dj.name}</span>
           {dj.meta.booking && <span className="claimed-badge">Claimed</span>}
         </div>
         <div className="booker-meta">

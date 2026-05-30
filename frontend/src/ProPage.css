@@ -150,7 +150,7 @@
 }
 .booker-row {
   display: grid; grid-template-columns: 64px 44px 1fr 160px 120px;
-  align-items: center; gap: 8px; padding: 12px 16px;
+  align-items: center; gap: 8px; padding: 15px 16px;
   border-bottom: 1px solid color-mix(in srgb, var(--border) 50%, transparent);
   transition: background 0.15s;
 }
@@ -172,10 +172,12 @@
 }
 
 .booker-info { min-width: 0; }
-.booker-name { font-size: 13px; font-weight: 600; color: var(--text-h); display: flex; align-items: center; gap: 6px; margin-bottom: 3px; }
+.booker-name { font-size: 13px; font-weight: 600; color: var(--text-h); display: flex; align-items: center; gap: 6px; margin-bottom: 5px; min-width: 0; }
+.booker-name-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .claimed-badge {
   font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
   color: #4ade80; border: 1px solid #4ade80; padding: 1px 6px; border-radius: 8px;
+  flex-shrink: 0;
 }
 .booker-meta { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--muted); flex-wrap: wrap; }
 .genre-tag {
