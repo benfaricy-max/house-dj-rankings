@@ -1388,67 +1388,76 @@ function VelocityBadge({ value }) {
   return <span className="vel-badge vel-badge--flat">0%</span>;
 }
 
+// Tiny inline sparkline for the 12-month search-interest series
+function VelSpark({ series }) {
+  if (!Array.isArray(series) || series.length < 4) return <span className="vel-na">—</span>;
+  const s = series.slice(-26); // last ~6 months for compactness
+  const W = 96, H = 24, max = Math.max(...s, 1);
+  const pts = s.map((v, i) => `${(i / (s.length - 1) * W).toFixed(1)},${(H - (v / max) * (H - 3) - 1.5).toFixed(1)}`).join(" ");
+  const up = s[s.length - 1] >= s[0];
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="vel-spark" preserveAspectRatio="none">
+      <polyline points={pts} fill="none" stroke={up ? "#4ade80" : "#f87171"} strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
+    </svg>
+  );
+}
+
 function VelocityPage({ rankings }) {
-  const [sortKey, setSortKey] = useState("composite");
+  const [sortKey, setSortKey] = useState("mom4");
 
   const artists = rankings
-    .filter(d => d.velocity)
-    .sort((a, b) => {
-      if (sortKey === "composite") return b.velocity.composite - a.velocity.composite;
-      const av = a.velocity.metrics?.[sortKey] ?? -Infinity;
-      const bv = b.velocity.metrics?.[sortKey] ?? -Infinity;
-      return bv - av;
-    });
+    .filter(d => d.trends_mom_4w != null && Array.isArray(d.trends_12m) && d.trends_12m.length > 4)
+    .map(d => {
+      const rh = (d.rank_history || []).filter(p => p.r != null);
+      const rankDelta = rh.length >= 2 ? rh[0].r - rh[rh.length - 1].r : null;
+      return { dj: d, mom4: d.trends_mom_4w ?? 0, mom12: d.trends_mom_12w ?? 0, rankDelta };
+    })
+    .sort((a, b) => (sortKey === "mom12" ? b.mom12 - a.mom12 : b.mom4 - a.mom4));
 
   if (!artists.length) return (
     <div className="page vel-empty">
-      <h2>Velocity data will appear after the second data refresh</h2>
-      <p>Week-over-week comparisons need at least two snapshots. Check back in 6 hours.</p>
+      <h2>Velocity data is still building</h2>
+      <p>Driven by the 12-month Google Trends backfill — check back as it accumulates.</p>
     </div>
   );
-
-  const metricKeys = Object.keys(VELOCITY_LABELS);
 
   return (
     <div className="page vel-page">
       <div className="vel-header">
         <h1 className="vel-title">Velocity</h1>
-        <p className="vel-sub">Week-over-week growth rate across every signal we track. Sort any column.</p>
+        <p className="vel-sub">
+          Real momentum from 12 months of Google Trends search data — who's accelerating right now.
+          Spotify, TikTok &amp; YouTube velocity join here as weekly history accumulates.
+        </p>
       </div>
       <div className="vel-table-wrap">
         <table className="vel-table">
           <thead>
             <tr>
               <th className="vel-th vel-th--artist">Artist</th>
-              <th
-                className={`vel-th vel-th--composite ${sortKey === "composite" ? "vel-th--active" : ""}`}
-                onClick={() => setSortKey("composite")}
-              >Composite ↕</th>
-              {metricKeys.map(k => (
-                <th
-                  key={k}
-                  className={`vel-th ${sortKey === k ? "vel-th--active" : ""}`}
-                  onClick={() => setSortKey(k)}
-                >{VELOCITY_LABELS[k]} ↕</th>
-              ))}
+              <th className={`vel-th vel-th--composite ${sortKey === "mom4" ? "vel-th--active" : ""}`} onClick={() => setSortKey("mom4")}>Search · 4-wk ↕</th>
+              <th className={`vel-th ${sortKey === "mom12" ? "vel-th--active" : ""}`} onClick={() => setSortKey("mom12")}>Search · 12-wk ↕</th>
+              <th className="vel-th">Rank move</th>
+              <th className="vel-th">12-mo trend</th>
             </tr>
           </thead>
           <tbody>
-            {artists.map(dj => (
+            {artists.map(({ dj, mom4, mom12, rankDelta }) => (
               <tr key={dj.name} className="vel-row">
                 <td className="vel-td vel-td--artist">
                   <span className="vel-rank">#{dj.rank}</span>
                   {dj.image && <img src={dj.image} className="vel-img" alt="" />}
                   <span className="vel-name">{dj.name}</span>
                 </td>
-                <td className="vel-td vel-td--composite">
-                  <VelocityBadge value={dj.velocity.composite} />
+                <td className="vel-td vel-td--composite"><VelocityBadge value={mom4} /></td>
+                <td className="vel-td"><VelocityBadge value={mom12} /></td>
+                <td className="vel-td">
+                  {rankDelta == null ? <span className="vel-na">—</span>
+                    : rankDelta > 0 ? <span className="vel-badge vel-badge--up">▲{rankDelta}</span>
+                    : rankDelta < 0 ? <span className="vel-badge vel-badge--down">▼{Math.abs(rankDelta)}</span>
+                    : <span className="vel-badge vel-badge--flat">—</span>}
                 </td>
-                {metricKeys.map(k => (
-                  <td key={k} className="vel-td">
-                    <VelocityBadge value={dj.velocity.metrics?.[k] ?? null} />
-                  </td>
-                ))}
+                <td className="vel-td"><VelSpark series={dj.trends_12m} /></td>
               </tr>
             ))}
           </tbody>

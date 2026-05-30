@@ -791,3 +791,6 @@ details[open] .hiw-faq-q::after { content: "–"; }
 
 .profile-link { display:inline-block; color:#a8e00f; font-size:.85rem; font-weight:600; text-decoration:none; margin-bottom:14px; }
 .profile-link:hover { text-decoration:underline; }
+
+.vel-spark { width: 96px; height: 24px; display: block; }
+.vel-na { color: var(--muted); opacity: 0.6; }
