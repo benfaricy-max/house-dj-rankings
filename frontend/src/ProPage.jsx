@@ -221,6 +221,55 @@ function MomentumBar({ score }) {
 }
 
 // ── Geographic interest ──────────────────────────────────────────
+function TrendSparkline({ dj }) {
+  const series = dj.trends_12m;
+  if (!Array.isArray(series) || series.length < 4) return null;
+
+  const W = 280, H = 64, pad = 4;
+  const max = Math.max(...series, 1);
+  const pts = series.map((v, i) => {
+    const x = pad + (i / (series.length - 1)) * (W - pad * 2);
+    const y = H - pad - (v / max) * (H - pad * 2);
+    return [x, y];
+  });
+  const line = pts.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
+  const area = `${pad},${H - pad} ${line} ${(W - pad).toFixed(1)},${H - pad}`;
+
+  const mom = dj.trends_mom_12w;
+  const dir = dj.google_trends_direction;
+  const momColor = mom > 0 ? "#4caf50" : mom < 0 ? "#e74c3c" : "#888";
+  const stroke = dir === "up" ? "#4caf50" : dir === "down" ? "#e74c3c" : "var(--accent)";
+
+  return (
+    <div className="detail-section" style={{ marginTop: 20 }}>
+      <div className="detail-section-title">
+        Search Interest — 12 Months
+        {mom != null && mom !== 0 && (
+          <span style={{ color: momColor, marginLeft: 8, fontSize: "0.78rem", fontWeight: 700 }}>
+            {mom > 0 ? "▲" : "▼"} {Math.abs(mom).toFixed(0)}% vs prior qtr
+          </span>
+        )}
+      </div>
+      <svg viewBox={`0 0 ${W} ${H}`} className="trend-spark" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id={`tg-${dj.rank}`} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"  stopColor={stroke} stopOpacity="0.35" />
+            <stop offset="100%" stopColor={stroke} stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        <polygon points={area} fill={`url(#tg-${dj.rank})`} />
+        <polyline points={line} fill="none" stroke={stroke} strokeWidth="2"
+          strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+      </svg>
+      <div className="trend-spark-foot">
+        <span>12 mo ago</span>
+        <span>Peak {dj.trends_peak ?? max}</span>
+        <span>now</span>
+      </div>
+    </div>
+  );
+}
+
 function GeographicInterest({ markets, dj }) {
   const sorted = MARKET_REGIONS
     .map(r => ({ region: r, score: markets[r] || 0 }))
@@ -409,6 +458,8 @@ function ArtistDetailPanel({ dj, inShortlist, onToggleShortlist, onClose }) {
               ))}
             </div>
           </div>
+
+          <TrendSparkline dj={dj} />
         </div>
       </div>
 
