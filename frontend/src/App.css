@@ -199,7 +199,8 @@
 }
 .header-title {
   font-size: 46px !important; font-weight: 800 !important;
-  letter-spacing: -1.5px !important; margin: 0 0 14px !important;
+  letter-spacing: -1.5px !important; margin: 0 0 18px !important;
+  line-height: 1.25 !important; padding: 0.08em 0 0.16em !important; overflow: visible !important;
   background: linear-gradient(90deg,
     var(--text-h) 0%,
     color-mix(in srgb, var(--accent) 65%, #fff) 35%,
