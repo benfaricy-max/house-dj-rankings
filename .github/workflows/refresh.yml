@@ -49,6 +49,11 @@ jobs:
         working-directory: backend
         continue-on-error: true   # never block the refresh if Songkick scrape fails
 
+      - name: Recompute booking fees (uses fresh listener data)
+        run: node computeFees.js
+        working-directory: backend
+        continue-on-error: true
+
       - name: Commit updated rankings
         run: |
           git config user.name  "github-actions[bot]"
