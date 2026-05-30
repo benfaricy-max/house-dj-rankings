@@ -485,3 +485,7 @@
   .pro-header { flex-direction: column; align-items: flex-start; }
   .detail-body { grid-template-columns: 1fr; }
 }
+
+.report-btn { margin-top: 10px; width: 100%; background: #15151c; color: #fff; border: 1px solid #2a2a3a; border-radius: 10px; padding: 12px 14px; font-weight: 700; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background .15s; }
+.report-btn:hover { background: #23233a; }
+.report-pro { background: #a8e00f; color: #000; font-size: 9px; font-weight: 800; letter-spacing: .08em; padding: 2px 7px; border-radius: 10px; }

@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import "./ProPage.css";
+import { openMomentumReport } from "./momentumReport";
 
 // ── Region defaults for geographic interest ──────────────────────
 const REGION_DEFAULTS = {
@@ -352,7 +353,7 @@ function GeographicInterest({ markets, dj }) {
 }
 
 // ── Artist detail panel ──────────────────────────────────────────
-function ArtistDetailPanel({ dj, inShortlist, onToggleShortlist, onClose }) {
+function ArtistDetailPanel({ dj, inShortlist, onToggleShortlist, onClose, allArtists }) {
   const claimed = !!dj.meta.booking;
   const stats = [
     { label: "Monthly Listeners", value: fmt(dj.spotify_monthly_listeners) },
@@ -471,6 +472,9 @@ function ArtistDetailPanel({ dj, inShortlist, onToggleShortlist, onClose }) {
           onClick={() => onToggleShortlist(dj)}
         >
           {inShortlist ? "★ In Shortlist" : "☆ Add to Shortlist"}
+        </button>
+        <button className="report-btn" onClick={() => openMomentumReport(dj, allArtists || [])}>
+          ⬇ Generate Momentum Report <span className="report-pro">PRO</span>
         </button>
       </div>
     </div>
@@ -659,6 +663,7 @@ function BookerDashboard({ enriched }) {
         {activeArtist && (
           <ArtistDetailPanel
             dj={activeArtist}
+            allArtists={enriched}
             inShortlist={shortlist.some(d => d.name === activeArtist.name)}
             onToggleShortlist={toggleShortlist}
             onClose={() => setActiveRow(null)}
