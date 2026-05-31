@@ -484,7 +484,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 15.6
   },
   {
     "name": "Gorgon City",
@@ -1250,7 +1251,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -66.7
   },
   {
     "name": "Obskür",
@@ -1420,7 +1422,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -16.3
   },
   {
     "name": "Silva Bumpa",
@@ -2199,7 +2202,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "WEISS",
@@ -2238,7 +2242,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -33.3
   },
   {
     "name": "Gerd Janson",
@@ -2330,7 +2335,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "BLOND:ISH",
@@ -2396,7 +2402,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Pleasurekraft",
@@ -2527,7 +2534,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Anyma",
@@ -2638,7 +2646,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Justin Martin",
@@ -2677,7 +2686,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Chelina Manuhutu",
@@ -2696,7 +2706,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Skream",
@@ -2921,7 +2932,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -3.8
   },
   {
     "name": "TSHA",
@@ -2940,7 +2952,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -38.9
   },
   {
     "name": "Tiga",
@@ -3027,7 +3040,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 9.4
   },
   {
     "name": "Floorplan",
@@ -3787,7 +3801,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 19.2
   },
   {
     "name": "Agents Of Time",
@@ -3852,7 +3867,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -10.5
   },
   {
     "name": "DJ Tennis",
@@ -3891,7 +3907,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Henry Saiz",
@@ -3910,7 +3927,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Pional",
@@ -3929,7 +3947,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Ryan Crosson",
@@ -3948,7 +3967,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Woo York",
@@ -3967,7 +3987,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 5.1
   },
   {
     "name": "Burnski",
@@ -3986,7 +4007,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Alinka",
@@ -4005,7 +4027,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -13.4
   },
   {
     "name": "Answer Code Request",
@@ -4024,7 +4047,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 18.9
   },
   {
     "name": "DJ Stingray 313",
@@ -4043,7 +4067,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Pangaea",
@@ -4062,7 +4087,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -20.5
   },
   {
     "name": "Andre Crom",
@@ -4081,7 +4107,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Angelo Ferreri",
@@ -4100,7 +4127,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Kastis Torrau",
@@ -4119,7 +4147,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Robert Babicz",
@@ -4165,7 +4194,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -14
   },
   {
     "name": "Tornado Wallace",
@@ -4184,7 +4214,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 9.1
   },
   {
     "name": "Spektre",
@@ -4203,7 +4234,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Jay Lumen",
@@ -4249,7 +4281,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 40
   },
   {
     "name": "Palms Trax",
@@ -4268,7 +4301,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 14.3
   },
   {
     "name": "Lauer",
@@ -4287,7 +4321,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -0.3
   },
   {
     "name": "Simian Mobile Disco",
@@ -4326,7 +4361,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -2.5
   },
   {
     "name": "DJ Holographic",
@@ -4345,7 +4381,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "David Mayer",
@@ -4364,7 +4401,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Lee Curtiss",
@@ -4383,7 +4421,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 50
   },
   {
     "name": "Wolf + Lamb",
@@ -4402,7 +4441,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 4.4
   },
   {
     "name": "Nick Curly",
@@ -4448,7 +4488,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Hector Romero",
@@ -4487,7 +4528,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 300
   },
   {
     "name": "Christian Burkhardt",
@@ -4506,7 +4548,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Inigo Kennedy",
@@ -4525,7 +4568,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Marshall Jefferson",
@@ -4571,7 +4615,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "AMÉMÉ",
@@ -4616,7 +4661,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Alec Araujo",
@@ -4635,7 +4681,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Leo Lukas",
@@ -4654,7 +4701,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -20
   },
   {
     "name": "Nino Bua",
@@ -4673,7 +4721,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Bas Ibellini",
@@ -4692,7 +4741,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Ricardo Villalobos",
@@ -4882,7 +4932,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": 13.9
   },
   {
     "name": "San Soda",
@@ -4901,7 +4952,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 42.8
   },
   {
     "name": "Move D",
@@ -4940,7 +4992,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 100
   },
   {
     "name": "Guy Gerber",
@@ -5151,7 +5204,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -17.3
   },
   {
     "name": "Harvey McKay",
@@ -5170,7 +5224,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 4300
   },
   {
     "name": "Mr. G",
@@ -5209,7 +5264,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -1.3
   },
   {
     "name": "Themba",
@@ -5228,7 +5284,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -3.3
   },
   {
     "name": "Culoe De Song",
@@ -5247,7 +5304,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -4.2
   },
   {
     "name": "Luciano",
@@ -5378,7 +5436,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "DJ Pierre",
@@ -5457,7 +5516,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -15.2
   },
   {
     "name": "Slam",
@@ -5522,7 +5582,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -11.1
   },
   {
     "name": "Miss Kittin",
@@ -5541,7 +5602,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "curated"
-    }
+    },
+    "trends_mom_12w": -5
   },
   {
     "name": "The Hacker",
@@ -5560,7 +5622,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "Joeski",
@@ -5605,7 +5668,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 33.3
   },
   {
     "name": "Marika Rossa",
@@ -5624,7 +5688,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": 0
   },
   {
     "name": "SPFDJ",
@@ -5643,7 +5708,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -37.5
   },
   {
     "name": "Rebekah",
@@ -5728,7 +5794,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -0.9
   },
   {
     "name": "Planetary Assault Systems",
@@ -5773,7 +5840,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -2.2
   },
   {
     "name": "Phase Fatale",
@@ -5792,6 +5860,7 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "estimate"
-    }
+    },
+    "trends_mom_12w": -75
   }
 ]
