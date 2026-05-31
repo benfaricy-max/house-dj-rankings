@@ -3,303 +3,345 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The DJ Rankings — Product Walkthrough</title>
+<title>The DJ Rankings — Product &amp; Strategy</title>
 <style>
-  :root { --bg:#16171d; --card:#1e1f27; --ink:#f3f4f6; --muted:#9ca3af; --accent:#c084fc; --line:#2e303a; --green:#4ade80; }
+  :root { --bg:#16171d; --card:#1e1f27; --ink:#f3f4f6; --muted:#9ca3af; --accent:#c084fc; --line:#2e303a; --green:#4ade80; --red:#f87171; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
   body { background: var(--bg); color: var(--ink); font-family: -apple-system, "Segoe UI", Inter, Arial, sans-serif; }
-  .slide {
-    min-height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: center;
-    align-items: center; padding: 56px 40px; scroll-snap-align: start; border-bottom: 1px solid var(--line); position: relative;
-  }
+  .slide { min-height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 60px 44px; scroll-snap-align: start; border-bottom: 1px solid var(--line); }
   .wrap { max-width: 1080px; width: 100%; }
-  .eyebrow { color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 14px; }
-  h1 { font-size: 52px; font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 18px;
-       background: linear-gradient(90deg, #fff, var(--accent)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-  h2 { font-size: 34px; font-weight: 800; letter-spacing: -.5px; margin-bottom: 14px; }
-  h3 { font-size: 19px; font-weight: 700; margin-bottom: 6px; color: #fff; }
-  p { color: var(--muted); font-size: 17px; line-height: 1.6; margin-bottom: 12px; max-width: 760px; }
-  .lead { font-size: 20px; color: #d6d7df; }
-  .shot { width: 100%; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 18px 50px rgba(0,0,0,.5); margin-top: 22px; display: block; }
-  .shot--cap { max-height: 460px; object-fit: cover; object-position: top; }
-  .split { display: grid; grid-template-columns: 1.05fr 1fr; gap: 36px; align-items: center; }
-  .split--rev { grid-template-columns: 1fr 1.05fr; }
-  .split .shot { margin-top: 0; max-height: 540px; object-fit: contain; }
-  ul { list-style: none; margin: 12px 0; }
-  li { color: var(--muted); font-size: 16px; line-height: 1.55; padding-left: 26px; position: relative; margin-bottom: 10px; }
-  li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
-  li b { color: #fff; font-weight: 700; }
-  .grid3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 22px; }
-  .grid2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; margin-top: 22px; }
-  .box { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
-  .box .ic { font-size: 26px; margin-bottom: 10px; display: block; }
-  .box p { font-size: 14px; margin: 0; }
-  .pill { display:inline-flex; align-items:center; gap:7px; background: var(--card); border:1px solid var(--line); border-radius:20px; padding:5px 13px; font-size:13px; font-weight:600; color:#d6d7df; margin:4px; }
-  .dot { width:9px;height:9px;border-radius:50%; }
-  .tiers { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:24px; }
-  .tier { background: var(--card); border:1px solid var(--line); border-radius:16px; padding:26px; }
-  .tier--feat { border-color: var(--accent); }
-  .tier .price { font-size:40px; font-weight:800; color:#fff; }
-  .tier .price span { font-size:15px; color:var(--muted); font-weight:500; }
-  .tier .who { font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
-  .tier li { font-size:13.5px; padding-left:22px; margin-bottom:7px; }
-  .free-tag { display:inline-block; background:#1a3a1a; color:var(--green); font-size:12px; font-weight:700; padding:3px 10px; border-radius:12px; }
-  .nav { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 50; background: rgba(20,21,27,.8); padding: 8px 12px; border-radius: 22px; border:1px solid var(--line); backdrop-filter: blur(6px); }
-  .nav button { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 16px; padding: 2px 6px; }
-  .nav button:hover { color:#fff; }
-  .counter { position: fixed; top: 18px; right: 22px; color: var(--muted); font-size: 13px; z-index: 50; }
-  .brandmark { position: fixed; top: 18px; left: 22px; color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing:.12em; z-index:50; }
-  .kpis { display:flex; gap:30px; flex-wrap:wrap; margin-top:20px; }
+  .eyebrow { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 16px; }
+  h1 { font-size: 50px; font-weight: 800; line-height: 1.12; letter-spacing: -1px; margin-bottom: 18px; background: linear-gradient(90deg,#fff,var(--accent)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  h2 { font-size: 33px; font-weight: 800; letter-spacing: -.4px; margin-bottom: 16px; }
+  h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; color: #fff; }
+  p { color: var(--muted); font-size: 16.5px; line-height: 1.62; margin-bottom: 12px; max-width: 780px; }
+  .lead { font-size: 19px; color: #d6d7df; }
+  .shot { width: 100%; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 16px 44px rgba(0,0,0,.5); margin-top: 20px; display: block; }
+  .shot--cap { max-height: 470px; object-fit: cover; object-position: top; }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; align-items: center; }
+  .split .shot { margin-top: 0; max-height: 560px; object-fit: contain; }
+  ul { list-style: none; margin: 10px 0; }
+  li { color: var(--muted); font-size: 15.5px; line-height: 1.5; padding-left: 22px; position: relative; margin-bottom: 9px; }
+  li::before { content: "›"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  li b { color: #fff; font-weight: 600; }
+  .grid3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 20px; }
+  .grid2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 20px; }
+  .box { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .box .ic { font-size: 22px; margin-bottom: 8px; display: block; }
+  .box p { font-size: 13.5px; margin: 0; }
+  .box h3 { font-size: 16px; }
+  .kpis { display:flex; gap:34px; flex-wrap:wrap; margin-top:22px; }
   .kpi .n { font-size:34px; font-weight:800; color:var(--accent); }
   .kpi .l { font-size:13px; color:var(--muted); }
-  @media (max-width: 820px){ .split,.split--rev,.tiers,.grid3,.grid2{grid-template-columns:1fr} h1{font-size:36px} h2{font-size:26px} }
-  @media print {
-    .nav,.counter,.brandmark{display:none} .slide{min-height:auto;page-break-after:always;border:none;padding:30px}
-    body{background:#fff;color:#111} h2{color:#111} h3{color:#111} p,li{color:#333} .box,.tier{background:#f6f6f8}
-    h1{-webkit-text-fill-color:#7c3aed}
-  }
+  /* weight bars */
+  .wt { display:grid; grid-template-columns:200px 1fr 46px; gap:12px; align-items:center; margin-bottom:8px; }
+  .wt .nm { font-size:14px; color:#d6d7df; text-align:right; }
+  .wt .track { height:16px; background:#15161c; border-radius:5px; overflow:hidden; }
+  .wt .fill { height:100%; border-radius:5px; background:linear-gradient(90deg,var(--accent),#8b6fd6); }
+  .wt .v { font-size:13px; color:var(--muted); font-weight:700; }
+  .formula { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 22px; font-size:16px; color:#d6d7df; margin:16px 0; line-height:1.7; }
+  .formula b { color:#fff; } .formula .w { color:var(--accent); font-weight:800; }
+  /* ranked list */
+  .rank-list { margin-top:18px; }
+  .rl-row { display:grid; grid-template-columns:34px 1fr auto; gap:14px; align-items:center; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:13px 18px; margin-bottom:9px; }
+  .rl-pos { font-size:18px; font-weight:800; color:var(--accent); }
+  .rl-name { font-size:16px; font-weight:600; color:#fff; }
+  .rl-sub { font-size:12px; color:var(--muted); }
+  .rl-val { font-size:18px; font-weight:800; }
+  .up{color:var(--green)} .down{color:var(--red)}
+  .tiers { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:22px; }
+  .tier { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:24px; }
+  .tier--feat { border-color:var(--accent); }
+  .tier .price { font-size:38px; font-weight:800; color:#fff; } .tier .price span{font-size:14px;color:var(--muted);font-weight:500;}
+  .tier .who { font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+  .tier li { font-size:13px; padding-left:20px; margin-bottom:6px; }
+  .nav { position:fixed; bottom:18px; left:50%; transform:translateX(-50%); display:flex; gap:6px; z-index:50; background:rgba(20,21,27,.85); padding:7px 11px; border-radius:20px; border:1px solid var(--line); }
+  .nav button { background:none; border:none; color:var(--muted); cursor:pointer; font-size:15px; padding:2px 7px; } .nav button:hover{color:#fff}
+  .counter { position:fixed; top:16px; right:20px; color:var(--muted); font-size:12px; z-index:50; }
+  .brandmark { position:fixed; top:16px; left:20px; color:var(--accent); font-size:12px; font-weight:800; letter-spacing:.12em; z-index:50; }
+  @media (max-width:860px){ .split,.tiers,.grid3,.grid2{grid-template-columns:1fr} h1{font-size:34px} h2{font-size:25px} .wt{grid-template-columns:120px 1fr 40px} }
+  @media print { .nav,.counter,.brandmark{display:none} .slide{min-height:auto;page-break-after:always;border:none;padding:28px} body{background:#fff;color:#111} h2,h3{color:#111} p,li,.rl-sub{color:#333} .box,.tier,.formula,.rl-row,.wt .track{background:#f5f5f7} h1{-webkit-text-fill-color:#7c3aed} }
 </style>
 </head>
 <body>
 <div class="brandmark">THE DJ RANKINGS</div>
-<div class="counter" id="counter">1 / 18</div>
+<div class="counter" id="counter"></div>
 
 <!-- 1 TITLE -->
 <section class="slide"><div class="wrap" style="text-align:center">
-  <div class="eyebrow">Product Walkthrough</div>
+  <div class="eyebrow">Product &amp; Strategy Overview</div>
   <h1>The DJ Rankings</h1>
-  <p class="lead" style="margin:0 auto">A live, data-driven ranking of the world's house &amp; techno DJs — turning scattered streaming, social, chart and touring signals into one clear picture of who's hot, who's rising, and who's worth booking.</p>
+  <p class="lead" style="margin:0 auto">A data platform that ranks the world's house and techno artists by combining streaming, social, chart, search, and touring signals into a single, continuously updated measure of demand.</p>
   <div class="kpis" style="justify-content:center">
     <div class="kpi"><div class="n">263</div><div class="l">artists tracked</div></div>
-    <div class="kpi"><div class="n">7</div><div class="l">live data sources</div></div>
-    <div class="kpi"><div class="n">10+</div><div class="l">feature views</div></div>
+    <div class="kpi"><div class="n">7</div><div class="l">independent data sources</div></div>
+    <div class="kpi"><div class="n">Daily</div><div class="l">automated refresh</div></div>
   </div>
-  <p style="margin:24px auto 0;font-size:14px">thedjrankings.com · use ← → arrow keys to navigate</p>
+  <p style="margin:24px auto 0;font-size:14px">thedjrankings.com. Navigate with the left and right arrow keys.</p>
 </div></section>
 
-<!-- 2 PROBLEM -->
+<!-- 2 OPPORTUNITY -->
 <section class="slide"><div class="wrap">
-  <div class="eyebrow">The Idea</div>
-  <h2>Reputation in dance music is invisible — until now</h2>
-  <p class="lead">Who's the "biggest" house DJ? Ask ten people and you'll get ten answers. Popularity is spread across Spotify, TikTok, Beatport, YouTube, Google searches and tour schedules — and nobody combines them.</p>
-  <p>The DJ Rankings pulls all of those signals together, scores every artist on a single 0–100 scale, and updates daily. For <b>fans</b> it's a fun, credible leaderboard and discovery tool. For <b>industry</b> it's a decision-making instrument — spotting breakouts and pricing talent before the market catches up.</p>
+  <div class="eyebrow">The Opportunity</div>
+  <h2>Demand in dance music is real but unmeasured</h2>
+  <p class="lead">An artist's popularity is fragmented across Spotify, Beatport, TikTok, YouTube, Google search, and live touring. No single source captures it, and the industry currently relies on instinct and relationships to value talent.</p>
+  <p>The DJ Rankings consolidates these signals, normalizes them onto one scale, and updates daily. For enthusiasts it is a credible discovery tool. For industry professionals it is a decision instrument for identifying momentum and pricing talent earlier than competitors can.</p>
 </div></section>
 
 <!-- 3 RANKINGS -->
 <section class="slide"><div class="wrap">
-  <div class="eyebrow">The Core · Free</div>
+  <div class="eyebrow">The Core Product. Free tier.</div>
   <h2>The Rankings</h2>
-  <p>Every artist gets a weighted score across all signals. Click any name to dig in. Think of it as the Billboard chart for the underground — but transparent and multi-source instead of just sales.</p>
+  <p>Every artist receives a weighted composite score across all signals, refreshed daily. The result is a transparent, multi-source chart of the scene, comparable to an industry standard index rather than a single sales or streaming metric.</p>
   <img class="shot" src="img/deck-rankings.png" alt="Rankings" />
 </div></section>
 
-<!-- 4 HOW IT WORKS -->
+<!-- 4 PROFILE FROM RANKINGS -->
 <section class="slide"><div class="wrap">
   <div class="split">
     <div>
-      <div class="eyebrow">Trust · Free</div>
-      <h2>How It Works</h2>
-      <p>Credibility comes from transparency. A dedicated page explains exactly what each signal is, how it's weighted, and how often it refreshes — so no one has to take the ranking on faith.</p>
-      <p>This is also a strategic moat: being open about methodology is what makes journalists, labels and fans cite the rankings as a source.</p>
+      <div class="eyebrow">From list to detail</div>
+      <h2>Every name opens a full profile</h2>
+      <p>Selecting any artist, for example Disclosure, opens a dedicated profile: biography, genre tags, label, booking-relevant metrics, a 12-month trajectory chart, and historical rank.</p>
+      <p>Artist names are linked throughout the entire site, so the platform functions as a navigable reference, not just a leaderboard.</p>
     </div>
-    <img class="shot" src="img/deck-howitworks.png" alt="How it works" />
+    <img class="shot" src="img/deck-profile-disclosure.png" alt="Disclosure profile" />
   </div>
 </div></section>
 
-<!-- 5 SIGNALS -->
+<!-- 5 HOW IT WORKS / WEIGHTING -->
 <section class="slide"><div class="wrap">
-  <div class="eyebrow">Under the Hood</div>
-  <h2>Seven signals, each telling a different story</h2>
-  <p>The magic is that these measure <b>different kinds</b> of popularity — and the gaps between them are where the insight lives.</p>
+  <div class="eyebrow">Methodology. Free tier.</div>
+  <h2>How the composite score is calculated</h2>
+  <p>Each signal is normalized to a 0 to 100 scale across the full field, then combined using fixed weights that sum to 100 percent. Streaming reach carries the most weight; scene credibility, growth, and search interest balance it.</p>
+  <div style="margin-top:18px">
+    <div class="wt"><span class="nm">Spotify Monthly Listeners</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="v">17%</span></div>
+    <div class="wt"><span class="nm">Beatport Chart Credibility</span><div class="track"><div class="fill" style="width:59%"></div></div><span class="v">10%</span></div>
+    <div class="wt"><span class="nm">Releases / Catalog</span><div class="track"><div class="fill" style="width:59%"></div></div><span class="v">10%</span></div>
+    <div class="wt"><span class="nm">TikTok Presence</span><div class="track"><div class="fill" style="width:59%"></div></div><span class="v">10%</span></div>
+    <div class="wt"><span class="nm">YouTube Subscribers</span><div class="track"><div class="fill" style="width:59%"></div></div><span class="v">10%</span></div>
+    <div class="wt"><span class="nm">Google Search Interest</span><div class="track"><div class="fill" style="width:59%"></div></div><span class="v">10%</span></div>
+    <div class="wt"><span class="nm">Track Popularity</span><div class="track"><div class="fill" style="width:47%"></div></div><span class="v">8%</span></div>
+    <div class="wt"><span class="nm">Listener Growth</span><div class="track"><div class="fill" style="width:47%"></div></div><span class="v">8%</span></div>
+    <div class="wt"><span class="nm">YouTube Weekly Views</span><div class="track"><div class="fill" style="width:47%"></div></div><span class="v">8%</span></div>
+    <div class="wt"><span class="nm">Spotify Followers</span><div class="track"><div class="fill" style="width:29%"></div></div><span class="v">5%</span></div>
+    <div class="wt"><span class="nm">Scene / Editorial Score</span><div class="track"><div class="fill" style="width:24%"></div></div><span class="v">4%</span></div>
+  </div>
+  <p style="font-size:13px;margin-top:14px">Composite score = the sum of each normalized signal multiplied by its weight. Publishing the methodology is deliberate: transparency is what allows press, labels, and fans to cite the index as a source.</p>
+</div></section>
+
+<!-- 6 SIGNALS -->
+<section class="slide"><div class="wrap">
+  <div class="eyebrow">The Inputs</div>
+  <h2>Seven signals, each measuring a different form of demand</h2>
+  <p>The signals are intentionally diverse. The gaps between them are where the analytical value lies.</p>
   <div class="grid3">
-    <div class="box"><span class="ic" style="color:#1DB954">●</span><h3>Spotify</h3><p>Mainstream streaming reach — the size of the casual audience.</p></div>
-    <div class="box"><span class="ic" style="color:#a8e00f">●</span><h3>Beatport</h3><p>The DJ store. Charting here = credibility with the core scene.</p></div>
-    <div class="box"><span class="ic" style="color:#ff0050">●</span><h3>TikTok</h3><p>Viral / cultural buzz — often the earliest breakout signal.</p></div>
-    <div class="box"><span class="ic" style="color:#FF0000">●</span><h3>YouTube</h3><p>Depth of fandom — subscribers and weekly views.</p></div>
-    <div class="box"><span class="ic" style="color:#4285F4">●</span><h3>Google Trends</h3><p>Raw public curiosity, with 12-month history &amp; geography.</p></div>
-    <div class="box"><span class="ic" style="color:#5000ff">●</span><h3>Mixcloud + Songkick</h3><p>Mix credibility &amp; live tour density — real-world demand.</p></div>
+    <div class="box"><span class="ic" style="color:#1DB954">●</span><h3>Spotify</h3><p>Mainstream streaming reach. The size of the casual audience.</p></div>
+    <div class="box"><span class="ic" style="color:#a8e00f">●</span><h3>Beatport</h3><p>The DJ retail chart. Presence signals credibility with the core scene.</p></div>
+    <div class="box"><span class="ic" style="color:#ff0050">●</span><h3>TikTok</h3><p>Cultural and viral activity, often the earliest breakout indicator.</p></div>
+    <div class="box"><span class="ic" style="color:#FF0000">●</span><h3>YouTube</h3><p>Depth of fandom through subscribers and weekly views.</p></div>
+    <div class="box"><span class="ic" style="color:#4285F4">●</span><h3>Google Trends</h3><p>Public search interest, with 12 months of history and geography.</p></div>
+    <div class="box"><span class="ic" style="color:#5000ff">●</span><h3>Mixcloud &amp; Songkick</h3><p>Mix credibility and live touring density. Real-world demand.</p></div>
   </div>
 </div></section>
 
-<!-- 6 ONES TO WATCH -->
+<!-- 7 ONES TO WATCH + MOMENTUM -->
 <section class="slide"><div class="wrap">
-  <div class="eyebrow">Discovery · Free</div>
-  <h2>Ones to Watch</h2>
-  <p>The whole list re-ranked by <b>momentum</b>, not size — surfacing emerging artists breaking out before they're famous. Legends are filtered out by reputation, so it's genuinely "new talent." This is the content fans and tastemakers share.</p>
-  <img class="shot shot--cap" src="img/deck-onestowatch.png" alt="Ones to Watch" />
+  <div class="eyebrow">Discovery. Free tier.</div>
+  <h2>Ones to Watch, ranked by momentum</h2>
+  <p>The field is re-ranked by a momentum score rather than size, surfacing emerging artists before they reach scale. Established acts are excluded by reputation, isolating genuine new talent.</p>
+  <div class="formula"><b>Momentum</b> = <span class="w">35%</span> listener growth + <span class="w">25%</span> TikTok activity + <span class="w">25%</span> search interest + <span class="w">15%</span> rank movement. Each input is normalized 0 to 100 across the field.</div>
+  <div class="grid2" style="align-items:start">
+    <div class="rank-list" style="margin-top:0">
+      <div class="rl-row"><span class="rl-pos">1</span><div><div class="rl-name">Alignment</div><div class="rl-sub">Overall rank #24</div></div><span class="rl-val up">70</span></div>
+      <div class="rl-row"><span class="rl-pos">2</span><div><div class="rl-name">Prospa</div><div class="rl-sub">Overall rank #7</div></div><span class="rl-val up">53</span></div>
+      <div class="rl-row"><span class="rl-pos">3</span><div><div class="rl-name">Beltran</div><div class="rl-sub">Overall rank #170</div></div><span class="rl-val up">52</span></div>
+      <div class="rl-row"><span class="rl-pos">4</span><div><div class="rl-name">WEISS</div><div class="rl-sub">Overall rank #125</div></div><span class="rl-val up">47</span></div>
+      <div class="rl-row"><span class="rl-pos">5</span><div><div class="rl-name">Cloonee</div><div class="rl-sub">Overall rank #11</div></div><span class="rl-val up">44</span></div>
+    </div>
+    <div>
+      <h3 style="margin-top:6px">Why it matters</h3>
+      <p style="font-size:14px">Note the spread in overall rank. An artist at #170 with high momentum is precisely the kind of early signal labels and bookers pay to find. Momentum, not current size, is the leading indicator.</p>
+    </div>
+  </div>
 </div></section>
 
-<!-- 7 VELOCITY -->
+<!-- 8 VELOCITY -->
+<section class="slide"><div class="wrap">
+  <div class="eyebrow">Momentum. Free tier.</div>
+  <h2>Velocity: who is accelerating now</h2>
+  <p>Built on 12 months of search-interest history, Velocity reports 4-week and 12-week growth for each artist. The distinction between popular and rapidly gaining is the entire basis for acting early on talent.</p>
+  <div class="rank-list">
+    <div class="rl-row"><span class="rl-pos">1</span><div><div class="rl-name">Solomun</div><div class="rl-sub">12-week: +34.5%</div></div><span class="rl-val up">+102% <span style="font-size:12px;color:var(--muted)">4-wk</span></span></div>
+    <div class="rl-row"><span class="rl-pos">2</span><div><div class="rl-name">Dom Dolla</div><div class="rl-sub">12-week: -30%</div></div><span class="rl-val up">+76%</span></div>
+    <div class="rl-row"><span class="rl-pos">3</span><div><div class="rl-name">Amelie Lens</div><div class="rl-sub">12-week: +15.3%</div></div><span class="rl-val up">+25%</span></div>
+    <div class="rl-row"><span class="rl-pos">4</span><div><div class="rl-name">Peggy Gou</div><div class="rl-sub">12-week: -9.1%</div></div><span class="rl-val up">+25%</span></div>
+    <div class="rl-row"><span class="rl-pos">5</span><div><div class="rl-name">Mau P</div><div class="rl-sub">12-week: +22.8%</div></div><span class="rl-val up">+23%</span></div>
+  </div>
+</div></section>
+
+<!-- 9 BREAKOUTS -->
 <section class="slide"><div class="wrap">
   <div class="split">
-    <div>
-      <div class="eyebrow">Momentum · Free</div>
-      <h2>Velocity</h2>
-      <p>Who is <b>accelerating right now?</b> Powered by 12 months of real search-interest history, it shows 4-week and 12-week growth — the difference between "popular" and "getting popular fast."</p>
-      <p>For a booker, catching an artist on the way up (before fees spike) is the entire game.</p>
-    </div>
-    <img class="shot" src="img/deck-velocity.png" alt="Velocity" />
-  </div>
-</div></section>
-
-<!-- 8 BREAKOUTS -->
-<section class="slide"><div class="wrap">
-  <div class="split--rev">
     <img class="shot" src="img/deck-breakouts.png" alt="Breakouts" />
     <div>
-      <div class="eyebrow">Alerts · Free</div>
-      <h2>Breakout Detection</h2>
-      <p>Automatic flags when an artist's overall score jumps past a threshold week-over-week — with an adjustable sensitivity slider and the specific signals driving the jump.</p>
-      <p>It answers the question every A&amp;R and promoter is paid to answer: <b>"who's about to pop?"</b></p>
+      <div class="eyebrow">Alerts. Free tier.</div>
+      <h2>Breakout detection</h2>
+      <p>The system flags artists whose composite score rises past an adjustable threshold week over week, and identifies the specific signals driving the change.</p>
+      <p>This directly answers the core question for A&amp;R and promotion teams: which artists are about to break.</p>
     </div>
   </div>
 </div></section>
 
-<!-- 9 CITY SPOTLIGHT -->
+<!-- 10 CITY DEMAND -->
 <section class="slide"><div class="wrap">
-  <div class="eyebrow">Geography · Free preview</div>
-  <h2>City &amp; Market Demand</h2>
-  <p>Where is an artist's audience actually concentrated? Real Google Trends geography shows which countries and cities are searching hardest — so a promoter knows <b>where</b> to book, not just who.</p>
-  <img class="shot shot--cap" src="img/deck-cityspotlight.png" alt="City Spotlight" />
+  <div class="eyebrow">Geographic Demand</div>
+  <h2>Where an audience actually is</h2>
+  <p>Search-interest geography shows the cities and countries where demand for an artist concentrates. The example below ranks FISHER's markets: Los Angeles leads, followed by Sydney, New York, Melbourne, and London. A promoter learns where to book, not only whom.</p>
+  <img class="shot shot--cap" src="img/deck-cityclose.png" alt="City demand close-up" />
 </div></section>
 
-<!-- 10 BENCHMARKING -->
+<!-- 11 BENCHMARK -->
 <section class="slide"><div class="wrap">
-  <div class="eyebrow">The Killer Insight</div>
-  <h2>Comparative Benchmarking</h2>
-  <p>Compare any two artists across every signal. The tool auto-detects the story — here, <b>Carl Cox has ~200× the DJ-credibility (Mixcloud) of Dom Dolla, who in turn has ~7× the streaming reach.</b> "Scene legend" vs "streaming star," made visible.</p>
-  <p>No other ranking site exposes the <b>gap between reach and credibility</b> — and that gap is exactly what tells you whether an artist is underpriced, overhyped, or a hidden gem.</p>
-  <img class="shot shot--cap" src="img/deck-benchmark.png" alt="Benchmark" />
+  <div class="eyebrow">Comparative Analysis</div>
+  <h2>Benchmarking reach against credibility</h2>
+  <p>Any two artists can be compared across every signal. In this example, Carl Cox holds roughly 200 times the Mixcloud following of Dom Dolla, who in turn holds roughly 7 times the Spotify reach. One is a scene institution, the other a streaming-era headliner.</p>
+  <p style="font-size:14px">No comparable index exposes the gap between reach and credibility. That gap is what indicates whether an artist is underpriced, overexposed, or undervalued.</p>
+  <img class="shot shot--cap" src="img/deck-benchmark2.png" alt="Carl Cox vs Dom Dolla benchmark" />
 </div></section>
 
-<!-- 11 PROFILES -->
+<!-- 12 PROFILES + REPORT -->
 <section class="slide"><div class="wrap">
   <div class="split">
     <div>
-      <div class="eyebrow">Depth · Free</div>
-      <h2>Artist Profiles</h2>
-      <p>Every artist has a shareable profile page: bio, genre tags, label, a 12-month career-trajectory chart, historical rank, and a one-tap <b>shareable ranking card</b> for social media.</p>
-      <p>Artist names are clickable everywhere on the site — turning the whole platform into a browsable encyclopedia.</p>
+      <div class="eyebrow">Shareable Assets</div>
+      <h2>Profiles and momentum reports</h2>
+      <p>Each profile includes a downloadable ranking card for social media and a one-page momentum report: rank and trend, metrics versus the scene average, top markets, breakout signals, and a 12-week trajectory.</p>
+      <p>The report addresses a recurring need: a manager sending evidence of demand to a festival buyer. This is a primary commercial entry point into the professional market.</p>
     </div>
-    <img class="shot" src="img/deck-profile.png" alt="Profile" />
-  </div>
-</div></section>
-
-<!-- 12 MOMENTUM REPORT -->
-<section class="slide"><div class="wrap">
-  <div class="split--rev">
     <img class="shot" src="img/deck-report.png" alt="Momentum report" />
-    <div>
-      <div class="eyebrow">The Money Feature</div>
-      <h2>One-Page Momentum Report</h2>
-      <p>A clean, branded PDF an artist's manager can send a festival booker as <b>evidence of demand</b> — rank &amp; trend, metrics vs scene average, top cities, breakout signals, and a 12-week trajectory.</p>
-      <p>This is a real, recurring industry need people already pay for. It's the wedge into the professional market.</p>
-    </div>
   </div>
 </div></section>
 
-<!-- 13 WHO IT'S FOR -->
+<!-- 13 AUDIENCES -->
 <section class="slide"><div class="wrap">
-  <div class="eyebrow">The Value</div>
+  <div class="eyebrow">The Market</div>
   <h2>Two audiences, one platform</h2>
   <div class="grid2">
-    <div class="box">
-      <span class="ic">🎧</span><h3>Fans &amp; Enthusiasts</h3>
+    <div class="box"><span class="ic">🎧</span><h3>Enthusiasts</h3>
+      <ul><li>A credible, current leaderboard for the scene</li><li>Early discovery of rising artists</li><li>Shareable cards and recurring "who is rising" content</li></ul></div>
+    <div class="box"><span class="ic">💼</span><h3>Industry</h3>
+      <ul><li>Bookers and promoters pricing and routing talent</li><li>Labels and A&amp;R scouting momentum</li><li>Managers evidencing demand; brands vetting partners</li></ul></div>
+  </div>
+  <p style="margin-top:16px">The free tier builds the audience and search footprint. The professional tier converts the industry. The following slide details the distinct value to each professional segment.</p>
+</div></section>
+
+<!-- 14 VALUE BY SEGMENT -->
+<section class="slide"><div class="wrap">
+  <div class="eyebrow">Value by Customer Segment</div>
+  <h2>Distinct, defensible value for each industry buyer</h2>
+  <div class="grid2">
+    <div class="box"><h3>Booking Agents &amp; Promoters</h3>
       <ul>
-        <li>A credible, fun leaderboard for the music they love</li>
-        <li>Discover rising artists before friends do</li>
-        <li>Shareable cards &amp; "who's hot" social content</li>
-        <li>Settle the "who's bigger?" argument with data</li>
-      </ul>
-    </div>
-    <div class="box">
-      <span class="ic">💼</span><h3>Industry Professionals</h3>
+        <li><b>Geographic demand:</b> where an artist is trending now, and where to book</li>
+        <li><b>Touring gap analysis:</b> strong demand in cities not recently played</li>
+        <li><b>Demand vs supply:</b> high search with low recent bookings signals opportunity</li>
+        <li><b>Price trajectory:</b> is demand rising fast enough to justify a higher fee</li>
+      </ul></div>
+    <div class="box"><h3>Record Labels &amp; A&amp;R</h3>
       <ul>
-        <li><b>Bookers/promoters:</b> spot breakouts, price talent, pick markets</li>
-        <li><b>Labels / A&amp;R:</b> scout momentum before competitors</li>
-        <li><b>Managers/agents:</b> prove an artist's demand to buyers</li>
-        <li><b>Brands:</b> identify credible artists for partnerships</li>
-      </ul>
-    </div>
+        <li><b>Breakout alerts:</b> systematic early detection, already built</li>
+        <li><b>Unsigned momentum:</b> independent artists rising before they sign</li>
+        <li><b>Catalog performance:</b> sustained streaming versus a single hit</li>
+        <li><b>Peer comparison:</b> growth curves of two artists at the same stage</li>
+      </ul></div>
+    <div class="box"><h3>Artist Management</h3>
+      <ul>
+        <li><b>Benchmark reports:</b> an artist against comparable peers in their tier</li>
+        <li><b>Target markets:</b> where demand is growing fastest and untapped</li>
+        <li><b>Momentum reports:</b> a weekly PDF as evidence of demand for buyers</li>
+        <li><b>Playlist tracking:</b> editorial placements gained or lost</li>
+      </ul></div>
+    <div class="box"><h3>PR &amp; Marketing Agencies</h3>
+      <ul>
+        <li><b>Press timing:</b> pitch media when search interest is peaking</li>
+        <li><b>Campaign performance:</b> whether a push moved any data signal</li>
+        <li><b>Competitor monitoring:</b> which rival artist is gaining buzz this week</li>
+      </ul></div>
   </div>
 </div></section>
 
-<!-- 14 PRO STRATEGY -->
+<!-- 15 PRO STRATEGY -->
 <section class="slide"><div class="wrap">
   <div class="eyebrow">Business Model</div>
-  <h2>Free to hook, Pro to monetize</h2>
-  <p>Everything that drives <b>traffic and credibility</b> stays free — rankings, discovery, momentum, profiles. The <b>decision-grade tools professionals rely on</b> sit behind a subscription.</p>
+  <h2>Free tier for reach, professional tier for revenue</h2>
+  <p>Everything that drives traffic and credibility remains free: rankings, discovery, momentum, and profiles. The decision-grade tooling professionals depend on sits behind a subscription.</p>
   <div class="tiers">
-    <div class="tier">
-      <div class="who">Artist / Management</div>
-      <div class="price">£29<span>/mo</span></div>
-      <ul><li>Claim &amp; verify profile</li><li>Booking contact &amp; press kit</li><li>Profile-view analytics</li><li>Rank history &amp; trend charts</li><li>Generate momentum reports</li></ul>
+    <div class="tier"><div class="who">Artist / Management</div><div class="price">£29<span>/mo</span></div>
+      <ul><li>Claim and verify profile</li><li>Booking contact and press kit</li><li>Profile analytics</li><li>Rank history and trend charts</li><li>Momentum report generation</li></ul></div>
+    <div class="tier tier--feat"><div class="who">Booker / Promoter</div><div class="price">£49<span>/mo</span></div>
+      <ul><li>Full booker dashboard</li><li>Geographic demand by market</li><li>Booking-fee estimates per show</li><li>Venue-size fit guidance</li><li>Shortlist, budget planner, CSV export</li><li>Direct contacts and movement alerts</li></ul></div>
+  </div>
+</div></section>
+
+<!-- 16 PRO DASHBOARD + DETAIL -->
+<section class="slide"><div class="wrap">
+  <div class="split">
+    <img class="shot" src="img/deck-detail.png" alt="Artist detail with booking fee" />
+    <div>
+      <div class="eyebrow">Inside the Professional Tier</div>
+      <h2>The booker dashboard</h2>
+      <p>Selecting an artist opens a decision view: an estimated booking-fee range, venue-size fit, geographic demand, momentum, and direct booking contact, with the option to shortlist and export.</p>
+      <p>The free tabs answer "who." The professional tier answers "whom should I book, in which market, and at what fee."</p>
     </div>
-    <div class="tier tier--feat">
-      <div class="who">Booker / Promoter · Most Popular</div>
-      <div class="price">£49<span>/mo</span></div>
-      <ul><li>Full booker dashboard</li><li>Geographic demand by market</li><li>Booking-fee estimates per show</li><li>Venue-size fit recommendations</li><li>Shortlist + budget planner, CSV export</li><li>Direct booking contacts &amp; movement alerts</li></ul>
-    </div>
   </div>
 </div></section>
 
-<!-- 15 PRO DASHBOARD -->
+<!-- 17 ENGAGEMENT -->
 <section class="slide"><div class="wrap">
-  <div class="eyebrow">What Pro Unlocks</div>
-  <h2>The Booker Dashboard</h2>
-  <p>A working talent-buying cockpit: filter by region/genre, sort by momentum, see fee estimates and venue fit, drill into geographic demand, build a shortlist with a running budget, and export it. The free tabs answer "who?" — Pro answers <b>"who should I book, where, and for how much?"</b></p>
-  <img class="shot shot--cap" src="img/deck-prodash.png" alt="Pro dashboard" />
-</div></section>
-
-<!-- 16 ENGAGEMENT STRATEGY -->
-<section class="slide"><div class="wrap">
-  <div class="eyebrow">Growth Plan</div>
-  <h2>Engagement strategy — growing site visits</h2>
+  <div class="eyebrow">Growth Strategy</div>
+  <h2>Engagement: growing site traffic</h2>
   <div class="grid2">
-    <div class="box"><span class="ic">🔎</span><h3>SEO at scale</h3><p>263 artist profile pages capture long-tail searches ("[artist] booking fee / monthly listeners / rank") — a compounding organic-traffic engine.</p></div>
-    <div class="box"><span class="ic">📤</span><h3>Built-in virality</h3><p>Shareable ranking cards &amp; momentum reports are designed to be posted by artists &amp; fans — every share links back to the site.</p></div>
-    <div class="box"><span class="ic">🗓️</span><h3>Recurring content</h3><p>Weekly "Movers," "Breakouts" &amp; "Ones to Watch" become social posts, a newsletter, and press hooks — a reason to return.</p></div>
-    <div class="box"><span class="ic">🎤</span><h3>Artist-driven loops</h3><p>Artists claim profiles and send their own fanbases to the page; managers share reports with buyers — distribution we don't pay for.</p></div>
+    <div class="box"><span class="ic">🔎</span><h3>Search footprint</h3><p>263 artist profiles capture long-tail queries such as booking fee, monthly listeners, and rank. A compounding organic-traffic asset.</p></div>
+    <div class="box"><span class="ic">📤</span><h3>Distributable assets</h3><p>Ranking cards and momentum reports are designed to be shared by artists and fans. Each share links back to the platform.</p></div>
+    <div class="box"><span class="ic">📣</span><h3>Parallel social channels</h3><p>A dedicated Instagram and short-form presence posting regular insights, such as an artist breaking out, drives steady attention and referral traffic back to the site.</p></div>
+    <div class="box"><span class="ic">🗓️</span><h3>Recurring editorial</h3><p>Weekly Movers, Breakouts, and Ones to Watch supply a newsletter, social calendar, and press hooks, creating a reason to return.</p></div>
   </div>
-  <p style="margin-top:18px">Reinforced by analytics (GA4 live) to double down on whatever tabs, artists and shares convert best.</p>
 </div></section>
 
-<!-- 17 MONETIZATION STRATEGY -->
+<!-- 18 MONETIZATION -->
 <section class="slide"><div class="wrap">
-  <div class="eyebrow">Revenue Plan</div>
-  <h2>Monetization strategy</h2>
-  <div class="grid2">
-    <div class="box"><span class="ic">💳</span><h3>Pro subscriptions</h3><p>Recurring revenue from Artist (£29) &amp; Booker (£49) tiers — the core engine.</p></div>
-    <div class="box"><span class="ic">⭐</span><h3>Sponsored "Breaking" slots</h3><p>Labels pay to feature a new release or rising artist atop Ones to Watch — standard in music media.</p></div>
-    <div class="box"><span class="ic">🗄️</span><h3>Data licensing &amp; API</h3><p>The high-value play: agencies &amp; labels pay for feeds/API access — defensible B2B revenue at hundreds–thousands/mo.</p></div>
-    <div class="box"><span class="ic">📄</span><h3>Paid reports &amp; affiliates</h3><p>One-off premium momentum reports, plus ticketing/booking referral commissions.</p></div>
+  <div class="eyebrow">Revenue Strategy</div>
+  <h2>Monetization</h2>
+  <div class="grid3">
+    <div class="box"><span class="ic">💳</span><h3>Subscriptions</h3><p>Recurring revenue from the Artist (£29) and Booker (£49) tiers. The core engine.</p></div>
+    <div class="box"><span class="ic">🗄️</span><h3>Data licensing &amp; API</h3><p>Agencies and labels pay for feeds and API access. Defensible B2B revenue at higher contract values.</p></div>
+    <div class="box"><span class="ic">⭐</span><h3>Sponsored placement</h3><p>Labels pay to feature a release or rising artist in the Breaking section. Standard in music media.</p></div>
+    <div class="box"><span class="ic">📰</span><h3>Display &amp; sponsored ads</h3><p>Google Ads and direct sponsored promotions against a high-intent, genre-specific audience.</p></div>
+    <div class="box"><span class="ic">📄</span><h3>Paid reports</h3><p>One-off premium momentum and benchmark reports for managers and agencies.</p></div>
+    <div class="box"><span class="ic">🎟️</span><h3>Affiliate</h3><p>Referral commissions on ticketing and booking links surfaced across profiles.</p></div>
   </div>
-  <p style="margin-top:18px">Free tier grows the audience &amp; SEO → Pro converts professionals → data licensing scales to the institutions. Each layer feeds the next.</p>
+  <p style="margin-top:16px">The tiers reinforce one another: the free product grows audience and search, subscriptions convert professionals, and licensing scales to institutions.</p>
 </div></section>
 
-<!-- 18 CLOSE -->
+<!-- 19 CLOSE -->
 <section class="slide"><div class="wrap" style="text-align:center">
-  <div class="eyebrow">In Short</div>
-  <h1>Reach is everywhere.<br/>Insight is the product.</h1>
-  <p class="lead" style="margin:0 auto">The DJ Rankings makes the invisible reputation economy of dance music legible — free enough to grow virally, sharp enough that professionals will pay, and structured to scale into a data business.</p>
+  <div class="eyebrow">Summary</div>
+  <h1>Reach is commoditized.<br/>Insight is the product.</h1>
+  <p class="lead" style="margin:0 auto">The DJ Rankings makes the demand economy of dance music measurable. The free tier is built to grow through search and sharing, the professional tier is priced for the industry, and the underlying data positions the platform to scale into a licensing business.</p>
   <p style="margin-top:22px;font-size:15px"><b style="color:var(--accent)">thedjrankings.com</b></p>
 </div></section>
 
-<div class="nav">
-  <button id="prev">←</button><button id="next">→</button>
-</div>
+<div class="nav"><button id="prev">←</button><button id="next">→</button></div>
 <script>
-  const slides = [...document.querySelectorAll('.slide')];
-  const counter = document.getElementById('counter');
-  let i = 0;
-  function go(n){ i = Math.max(0, Math.min(slides.length-1, n)); slides[i].scrollIntoView({behavior:'smooth'}); counter.textContent = (i+1)+' / '+slides.length; }
-  document.getElementById('next').onclick = ()=>go(i+1);
-  document.getElementById('prev').onclick = ()=>go(i-1);
-  document.addEventListener('keydown', e=>{ if(e.key==='ArrowRight'||e.key==='PageDown'){go(i+1)} if(e.key==='ArrowLeft'||e.key==='PageUp'){go(i-1)} });
-  // update counter on manual scroll
-  const obs = new IntersectionObserver(es=>{ es.forEach(en=>{ if(en.isIntersecting){ i=slides.indexOf(en.target); counter.textContent=(i+1)+' / '+slides.length; } }); }, {threshold:0.6});
-  slides.forEach(s=>obs.observe(s));
+  const slides=[...document.querySelectorAll('.slide')], counter=document.getElementById('counter');
+  let i=0; const set=n=>{counter.textContent=(n+1)+' / '+slides.length};
+  function go(n){i=Math.max(0,Math.min(slides.length-1,n));slides[i].scrollIntoView({behavior:'smooth'});set(i);}
+  document.getElementById('next').onclick=()=>go(i+1);
+  document.getElementById('prev').onclick=()=>go(i-1);
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown')go(i+1);if(e.key==='ArrowLeft'||e.key==='PageUp')go(i-1);});
+  const obs=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){i=slides.indexOf(en.target);set(i);}}),{threshold:.6});
+  slides.forEach(s=>obs.observe(s)); set(0);
 </script>
 </body>
 </html>
