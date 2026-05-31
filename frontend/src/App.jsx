@@ -1303,7 +1303,7 @@ function ComparativeBenchmarkingPage({ rankings }) {
             <span className="cmp-ratio">{callout.biggest.ratio.toFixed(1)}×</span>{" "}
             the {callout.biggest.m.short} presence of <strong><ArtistLink name={callout.biggest.trailer.name} /></strong>
             {callout.similar && callout.similar.m.key !== callout.biggest.m.key
-              ? <> — despite similar {callout.similar.m.short} numbers.</>
+              ? <>, despite similar {callout.similar.m.short} numbers.</>
               : <>.</>}
           </div>
         )}
