@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import "./ProPage.css";
 import { openMomentumReport } from "./momentumReport";
+import { ArtistLink } from "./ArtistProfile";
 
 // ── Region defaults for geographic interest ──────────────────────
 const REGION_DEFAULTS = {
@@ -381,7 +382,7 @@ function ArtistDetailPanel({ dj, inShortlist, onToggleShortlist, onClose, allArt
           }
         </div>
         <div className="detail-header-info">
-          <div className="detail-name">{dj.name}</div>
+          <div className="detail-name"><ArtistLink name={dj.name} /></div>
           <div className="detail-meta-line">
             {dj.meta.city} · {dj.meta.agency}
             {claimed && <span className="claimed-badge">Claimed</span>}
@@ -498,7 +499,7 @@ function BookerArtistRow({ dj, rank, active, inShortlist, onClick, onToggleShort
       </div>
       <div className="booker-info">
         <div className="booker-name">
-          <span className="booker-name-text">{dj.name}</span>
+          <span className="booker-name-text"><ArtistLink name={dj.name} /></span>
           {dj.meta.booking && <span className="claimed-badge">Claimed</span>}
         </div>
         <div className="booker-meta">

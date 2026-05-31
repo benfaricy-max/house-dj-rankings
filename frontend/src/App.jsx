@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo, useRef } from "react";
 import "./App.css";
 import ProPage from "./ProPage";
-import ArtistProfile, { slugify } from "./ArtistProfile";
+import ArtistProfile, { slugify, ArtistLink } from "./ArtistProfile";
 
 const parseProfileSlug = () => {
   const m = (window.location.hash || "").match(/^#\/artist\/(.+)$/);
@@ -450,7 +450,7 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
 
         <div className="dj-info">
           <div className="dj-name-row">
-            <span className="dj-name">{dj.name}</span>
+            <span className="dj-name"><ArtistLink name={dj.name} /></span>
             <span className="dj-score-badge">{dj.score} pts</span>
           </div>
           <ScoreBar score={dj.score} maxScore={maxScore} />
@@ -686,7 +686,7 @@ function MoverRow({ entry, direction }) {
         }
       </div>
       <div className="mover-info">
-        <div className="mover-name">{entry.name}</div>
+        <div className="mover-name"><ArtistLink name={entry.name} /></div>
         <div className="mover-ranks">
           <span className="mover-past-rank">#{entry.pastRank}</span>
           <span className="mover-arrow">{isRising ? "→" : "→"}</span>
@@ -821,7 +821,7 @@ function OnestoWatchPage({ rankings }) {
                   {dj.image ? <img src={dj.image} alt={dj.name} /> : <div className="breaking-placeholder">{dj.name[0]}</div>}
                 </div>
                 <div className="breaking-body">
-                  <div className="breaking-name">{dj.name}</div>
+                  <div className="breaking-name"><ArtistLink name={dj.name} /></div>
                   <div className="breaking-stats">
                     <span className="breaking-rank">Chart #{dj.rank}</span>
                     {dj.spotify_follower_growth_rate > 0 && (
@@ -858,7 +858,7 @@ function OnestoWatchPage({ rankings }) {
                 {dj.image ? <img src={dj.image} alt={dj.name} /> : <div className="otw-placeholder">{dj.name[0]}</div>}
               </div>
               <div className="otw-info">
-                <div className="otw-name">{dj.name}</div>
+                <div className="otw-name"><ArtistLink name={dj.name} /></div>
                 <div className="otw-subs">
                   {dj.spotify_monthly_listeners > 0 && <span>{fmt(dj.spotify_monthly_listeners)} listeners</span>}
                   {dj.spotify_follower_growth_rate > 0 && <span className="otw-growth">+{dj.spotify_follower_growth_rate.toFixed(1)}% growth</span>}
@@ -1123,7 +1123,7 @@ function CitySpotlightPage({ rankings }) {
                     <img src={rankData.image} className="cs-avatar" alt="" />
                   )}
                   <div>
-                    <div className="cs-card-name">{artist.name}</div>
+                    <div className="cs-card-name"><ArtistLink name={artist.name} /></div>
                     <div className="cs-card-meta">
                       {artist.homecity}
                       {rankData && <span> · Rank #{rankData.rank}</span>}
@@ -1299,9 +1299,9 @@ function ComparativeBenchmarkingPage({ rankings }) {
 
         {callout && (
           <div className="cmp-callout">
-            <strong>{callout.biggest.leader.name}</strong> has{" "}
+            <strong><ArtistLink name={callout.biggest.leader.name} /></strong> has{" "}
             <span className="cmp-ratio">{callout.biggest.ratio.toFixed(1)}×</span>{" "}
-            the {callout.biggest.m.short} presence of <strong>{callout.biggest.trailer.name}</strong>
+            the {callout.biggest.m.short} presence of <strong><ArtistLink name={callout.biggest.trailer.name} /></strong>
             {callout.similar && callout.similar.m.key !== callout.biggest.m.key
               ? <> — despite similar {callout.similar.m.short} numbers.</>
               : <>.</>}
@@ -1352,7 +1352,7 @@ function ComparativeBenchmarkingPage({ rankings }) {
             <div className="cmp-insight-list">
               {arc.picks.map(p => (
                 <div className="cmp-insight-row" key={p.dj.name}>
-                  <span className="cmp-insight-name">{p.dj.name}</span>
+                  <span className="cmp-insight-name"><ArtistLink name={p.dj.name} /></span>
                   <span className="cmp-insight-stat">
                     <span style={{ color: arc.am.color }}>{arc.am.short} {p.pa.pct}th</span>
                     {" · "}
@@ -1447,7 +1447,7 @@ function VelocityPage({ rankings }) {
                 <td className="vel-td vel-td--artist">
                   <span className="vel-rank">#{dj.rank}</span>
                   {dj.image && <img src={dj.image} className="vel-img" alt="" />}
-                  <span className="vel-name">{dj.name}</span>
+                  <span className="vel-name"><ArtistLink name={dj.name} /></span>
                 </td>
                 <td className="vel-td vel-td--composite"><VelocityBadge value={mom4} /></td>
                 <td className="vel-td"><VelocityBadge value={mom12} /></td>
@@ -1528,7 +1528,7 @@ function BreakoutsPage({ rankings, breakouts: staticBreakouts, breakoutThreshold
                     : <div className="brk-card-initial">{dj.name[0]}</div>}
                 </div>
                 <div className="brk-card-body">
-                  <div className="brk-card-name">{dj.name}</div>
+                  <div className="brk-card-name"><ArtistLink name={dj.name} /></div>
                   <div className="brk-card-meta">Rank #{dj.rank} · Overall score +{v.score_change_pct.toFixed(1)}% this week</div>
                   {drivers.length > 0 && (
                     <div className="brk-card-drivers">
