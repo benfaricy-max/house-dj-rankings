@@ -15,6 +15,7 @@ function scoreArtists(artists) {
     "tiktok_post_count",
     "google_trends_score",
     "beatport_score",
+    "wikipedia_pageviews",
     "manual_scene_score",
   ];
 
@@ -34,7 +35,7 @@ function scoreArtists(artists) {
     spotify_avg_track_popularity: 0.08,
     spotify_follower_growth_rate: 0.08,
     youtube_views_weekly:         0.08,
-    spotify_followers:            0.05,
+    wikipedia_pageviews:          0.05,  // public interest (replaced Spotify followers)
     manual_scene_score:           0.04,
   };
 

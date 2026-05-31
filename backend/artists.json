@@ -18,7 +18,8 @@
       "band": "A",
       "basis": "curated"
     },
-    "trends_mom_12w": 5.1
+    "trends_mom_12w": 5.1,
+    "wikipedia_title": "Fisher"
   },
   {
     "name": "Chris Lake",
@@ -46,7 +47,8 @@
       "House",
       "Tech House"
     ],
-    "trends_mom_12w": 13.3
+    "trends_mom_12w": 13.3,
+    "wikipedia_title": "Chris Lake"
   },
   {
     "name": "John Summit",
@@ -74,7 +76,8 @@
       "Melodic House & Techno",
       "Progressive House"
     ],
-    "trends_mom_12w": 35
+    "trends_mom_12w": 35,
+    "wikipedia_title": "John Summit"
   },
   {
     "name": "Fred Again",
@@ -114,7 +117,8 @@
       "band": "B",
       "basis": "curated"
     },
-    "trends_mom_12w": -50
+    "trends_mom_12w": -50,
+    "wikipedia_title": "Four Tet"
   },
   {
     "name": "Disclosure",
@@ -142,7 +146,8 @@
       "House",
       "Afro House"
     ],
-    "trends_mom_12w": 23.9
+    "trends_mom_12w": 23.9,
+    "wikipedia_title": "Disclosure"
   },
   {
     "name": "Peggy Gou",
@@ -169,7 +174,8 @@
     "beatport_charts": [
       "Indie Dance"
     ],
-    "trends_mom_12w": -9.1
+    "trends_mom_12w": -9.1,
+    "wikipedia_title": "Peggy Gou"
   },
   {
     "name": "Black Coffee",
@@ -196,7 +202,8 @@
     "beatport_charts": [
       "Melodic House & Techno"
     ],
-    "trends_mom_12w": 96.5
+    "trends_mom_12w": 96.5,
+    "wikipedia_title": "Black Coffee (DJ)"
   },
   {
     "name": "Solomun",
@@ -223,7 +230,8 @@
     "beatport_charts": [
       "Indie Dance"
     ],
-    "trends_mom_12w": 34.5
+    "trends_mom_12w": 34.5,
+    "wikipedia_title": "Solomun (musician)"
   },
   {
     "name": "Tale Of Us",
@@ -244,7 +252,8 @@
       "band": "B",
       "basis": "curated"
     },
-    "trends_mom_12w": 4.8
+    "trends_mom_12w": 4.8,
+    "wikipedia_title": "Tale of Us"
   },
   {
     "name": "Bicep",
@@ -285,7 +294,8 @@
       "band": "B",
       "basis": "curated"
     },
-    "trends_mom_12w": 14.6
+    "trends_mom_12w": 14.6,
+    "wikipedia_title": "Honey Dijon"
   },
   {
     "name": "Jamie Jones",
@@ -312,7 +322,8 @@
     "beatport_charts": [
       "Tech House"
     ],
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Jamie Jones"
   },
   {
     "name": "Amelie Lens",
@@ -333,7 +344,8 @@
       "band": "B",
       "basis": "curated"
     },
-    "trends_mom_12w": 15.3
+    "trends_mom_12w": 15.3,
+    "wikipedia_title": "Amelie Lens"
   },
   {
     "name": "Charlotte de Witte",
@@ -360,7 +372,8 @@
     "beatport_charts": [
       "Techno (Peak Time / Driving)"
     ],
-    "trends_mom_12w": 15.7
+    "trends_mom_12w": 15.7,
+    "wikipedia_title": "Charlotte de Witte"
   },
   {
     "name": "Adam Beyer",
@@ -388,7 +401,8 @@
       "Melodic House & Techno",
       "Techno (Peak Time / Driving)"
     ],
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Adam Beyer"
   },
   {
     "name": "DJ Koze",
@@ -416,7 +430,8 @@
       "Melodic House & Techno",
       "Indie Dance"
     ],
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "DJ Koze"
   },
   {
     "name": "Bonobo",
@@ -437,7 +452,8 @@
       "band": "B",
       "basis": "curated"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Bonobo"
   },
   {
     "name": "Mall Grab",
@@ -464,7 +480,8 @@
     "beatport_charts": [
       "House"
     ],
-    "trends_mom_12w": -15.4
+    "trends_mom_12w": -15.4,
+    "wikipedia_title": "Mall Grab"
   },
   {
     "name": "DJ Harvey",
@@ -485,7 +502,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 15.6
+    "trends_mom_12w": 15.6,
+    "wikipedia_title": "DJ Harvey"
   },
   {
     "name": "Gorgon City",
@@ -506,7 +524,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": 12.2
+    "trends_mom_12w": 12.2,
+    "wikipedia_title": "Gorgon City"
   },
   {
     "name": "The Martinez Brothers",
@@ -527,7 +546,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": -8.8
+    "trends_mom_12w": -8.8,
+    "wikipedia_title": "The Martinez Brothers"
   },
   {
     "name": "Hot Since 82",
@@ -555,7 +575,8 @@
       "House",
       "Melodic House & Techno"
     ],
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Hot Since 82"
   },
   {
     "name": "Seth Troxler",
@@ -603,7 +624,8 @@
     "beatport_charts": [
       "Tech House"
     ],
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Michael Bibi"
   },
   {
     "name": "ANOTR",
@@ -659,7 +681,8 @@
     "beatport_charts": [
       "Tech House"
     ],
-    "trends_mom_12w": 22.8
+    "trends_mom_12w": 22.8,
+    "wikipedia_title": "Mau P"
   },
   {
     "name": "SIDEPIECE",
@@ -686,7 +709,8 @@
     "beatport_charts": [
       "Tech House"
     ],
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Sidepiece (EDM Duo)"
   },
   {
     "name": "Chris Stussy",
@@ -713,7 +737,8 @@
     "beatport_charts": [
       "Deep House"
     ],
-    "trends_mom_12w": 7.8
+    "trends_mom_12w": 7.8,
+    "wikipedia_title": "Chris Stussy"
   },
   {
     "name": "PAWSA",
@@ -741,7 +766,8 @@
       "House",
       "Minimal / Deep Tech"
     ],
-    "trends_mom_12w": 23.1
+    "trends_mom_12w": 23.1,
+    "wikipedia_title": "PAWSA"
   },
   {
     "name": "Carlita",
@@ -762,7 +788,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Carlita (musician)"
   },
   {
     "name": "East End Dubs",
@@ -846,7 +873,8 @@
       "Minimal / Deep Tech",
       "Indie Dance"
     ],
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Dennis Cruz"
   },
   {
     "name": "Cloonee",
@@ -902,7 +930,8 @@
       "Tech House",
       "Deep House"
     ],
-    "trends_mom_12w": -5.3
+    "trends_mom_12w": -5.3,
+    "wikipedia_title": "Josh Baker (cricketer)"
   },
   {
     "name": "Franky Rizardo",
@@ -950,7 +979,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 57.3
+    "trends_mom_12w": 57.3,
+    "wikipedia_title": "Ben Sterling"
   },
   {
     "name": "Disco Lines",
@@ -971,7 +1001,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": -27.8
+    "trends_mom_12w": -27.8,
+    "wikipedia_title": "Disco Lines"
   },
   {
     "name": "Chris Lorenzo",
@@ -999,7 +1030,8 @@
       "House",
       "Tech House"
     ],
-    "trends_mom_12w": 16.1
+    "trends_mom_12w": 16.1,
+    "wikipedia_title": "Chris Lorenzo"
   },
   {
     "name": "KETTAMA",
@@ -1026,7 +1058,8 @@
     "beatport_charts": [
       "Melodic House & Techno"
     ],
-    "trends_mom_12w": 23.7
+    "trends_mom_12w": 23.7,
+    "wikipedia_title": "Kettama"
   },
   {
     "name": "Ranger Trucco",
@@ -1073,7 +1106,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Beltrán"
   },
   {
     "name": "Rossi.",
@@ -1094,7 +1128,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 20
+    "trends_mom_12w": 20,
+    "wikipedia_title": "Rossi"
   },
   {
     "name": "Prospa",
@@ -1121,7 +1156,8 @@
       "House",
       "Tech House"
     ],
-    "trends_mom_12w": 115.7
+    "trends_mom_12w": 115.7,
+    "wikipedia_title": "Prospa"
   },
   {
     "name": "Roddy Lima",
@@ -1232,7 +1268,8 @@
       "House",
       "Tech House"
     ],
-    "trends_mom_12w": -6.2
+    "trends_mom_12w": -6.2,
+    "wikipedia_title": "Riordan"
   },
   {
     "name": "Locklead",
@@ -1300,7 +1337,8 @@
       "Minimal / Deep Tech",
       "Deep House"
     ],
-    "trends_mom_12w": 10
+    "trends_mom_12w": 10,
+    "wikipedia_title": "Kolter"
   },
   {
     "name": "Murphy's Law",
@@ -1347,7 +1385,8 @@
       "Tech House",
       "Deep House"
     ],
-    "trends_mom_12w": -4
+    "trends_mom_12w": -4,
+    "wikipedia_title": "Luke Dean"
   },
   {
     "name": "Max Dean",
@@ -1375,7 +1414,8 @@
       "Minimal / Deep Tech",
       "Deep House"
     ],
-    "trends_mom_12w": 50.6
+    "trends_mom_12w": 50.6,
+    "wikipedia_title": "Max Dean"
   },
   {
     "name": "Julian Fijma",
@@ -1521,7 +1561,8 @@
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
-    ]
+    ],
+    "wikipedia_title": "Carl Cox"
   },
   {
     "name": "Green Velvet",
@@ -1548,7 +1589,8 @@
       "Tech House",
       "Melodic House & Techno"
     ],
-    "trends_mom_12w": 63.8
+    "trends_mom_12w": 63.8,
+    "wikipedia_title": "Green Velvet"
   },
   {
     "name": "Dom Dolla",
@@ -1575,7 +1617,8 @@
     "beatport_charts": [
       "Tech House"
     ],
-    "trends_mom_12w": -30
+    "trends_mom_12w": -30,
+    "wikipedia_title": "Dom Dolla"
   },
   {
     "name": "James Hype",
@@ -1595,7 +1638,8 @@
       "band": "B",
       "basis": "curated"
     },
-    "trends_mom_12w": -3.5
+    "trends_mom_12w": -3.5,
+    "wikipedia_title": "James Hype"
   },
   {
     "name": "Claude VonStroke",
@@ -1622,7 +1666,8 @@
     "beatport_charts": [
       "Minimal / Deep Tech"
     ],
-    "trends_mom_12w": 83.3
+    "trends_mom_12w": 83.3,
+    "wikipedia_title": "Claude VonStroke"
   },
   {
     "name": "Shiba San",
@@ -1668,7 +1713,8 @@
     "beatport_charts": [
       "Techno (Peak Time / Driving)"
     ],
-    "trends_mom_12w": 10.2
+    "trends_mom_12w": 10.2,
+    "wikipedia_title": "Eli Brown"
   },
   {
     "name": "HoneyLuv",
@@ -1729,7 +1775,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": -3.8
+    "trends_mom_12w": -3.8,
+    "wikipedia_title": "Patrick Topping"
   },
   {
     "name": "Richy Ahmed",
@@ -1749,7 +1796,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Richy Ahmed"
   },
   {
     "name": "Hannah Wants",
@@ -1770,7 +1818,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 22.2
+    "trends_mom_12w": 22.2,
+    "wikipedia_title": "Hannah Wants"
   },
   {
     "name": "Rebüke",
@@ -1790,7 +1839,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Rebuke"
   },
   {
     "name": "Âme",
@@ -1817,7 +1867,8 @@
     "beatport_charts": [
       "Indie Dance"
     ],
-    "trends_mom_12w": -6.5
+    "trends_mom_12w": -6.5,
+    "wikipedia_title": "Âme"
   },
   {
     "name": "Kerri Chandler",
@@ -1837,7 +1888,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Kerri Chandler"
   },
   {
     "name": "Louie Vega",
@@ -1883,7 +1935,8 @@
     "beatport_charts": [
       "Deep House"
     ],
-    "trends_mom_12w": 7.4
+    "trends_mom_12w": 7.4,
+    "wikipedia_title": "Dennis Ferrer"
   },
   {
     "name": "Roger Sanchez",
@@ -1903,7 +1956,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": -15.6
+    "trends_mom_12w": -15.6,
+    "wikipedia_title": "Roger Sanchez"
   },
   {
     "name": "Armand Van Helden",
@@ -1929,7 +1983,8 @@
     "beatport_charts": [
       "House"
     ],
-    "trends_mom_12w": 38.7
+    "trends_mom_12w": 38.7,
+    "wikipedia_title": "Armand van Helden"
   },
   {
     "name": "Mark Knight",
@@ -1956,7 +2011,8 @@
       "House",
       "Tech House"
     ],
-    "trends_mom_12w": 4.6
+    "trends_mom_12w": 4.6,
+    "wikipedia_title": "Mark Knight"
   },
   {
     "name": "Loco Dice",
@@ -1976,7 +2032,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": 4.6
+    "trends_mom_12w": 4.6,
+    "wikipedia_title": "Loco Dice"
   },
   {
     "name": "Steve Lawler",
@@ -1997,7 +2054,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 91.7
+    "trends_mom_12w": 91.7,
+    "wikipedia_title": "Steve Lawler"
   },
   {
     "name": "Lee Foss",
@@ -2057,7 +2115,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": -17.2
+    "trends_mom_12w": -17.2,
+    "wikipedia_title": "Kyle Watson"
   },
   {
     "name": "Wehbba",
@@ -2143,7 +2202,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": -20
+    "trends_mom_12w": -20,
+    "wikipedia_title": "Archie Hamilton"
   },
   {
     "name": "Cristoph",
@@ -2316,7 +2376,8 @@
       "Melodic House & Techno",
       "Deep House"
     ],
-    "trends_mom_12w": 166.7
+    "trends_mom_12w": 166.7,
+    "wikipedia_title": "Booka Shade"
   },
   {
     "name": "DJ Boring",
@@ -2363,7 +2424,8 @@
       "House",
       "Indie Dance"
     ],
-    "trends_mom_12w": 300
+    "trends_mom_12w": 300,
+    "wikipedia_title": "Blond:ish"
   },
   {
     "name": "Latmun",
@@ -2443,7 +2505,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 7.4
+    "trends_mom_12w": 7.4,
+    "wikipedia_title": "Octave One"
   },
   {
     "name": "Pig&Dan",
@@ -2489,7 +2552,8 @@
     "beatport_charts": [
       "Melodic House & Techno"
     ],
-    "trends_mom_12w": 13
+    "trends_mom_12w": 13,
+    "wikipedia_title": "Jimi Jules"
   },
   {
     "name": "Tim Engelhardt",
@@ -2535,7 +2599,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Colyn"
   },
   {
     "name": "Anyma",
@@ -2561,7 +2626,8 @@
     "beatport_charts": [
       "Melodic House & Techno"
     ],
-    "trends_mom_12w": 39.5
+    "trends_mom_12w": 39.5,
+    "wikipedia_title": "Anyma"
   },
   {
     "name": "Enoo Napa",
@@ -2667,7 +2733,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 1.1
+    "trends_mom_12w": 1.1,
+    "wikipedia_title": "Justin Martin"
   },
   {
     "name": "HVOB",
@@ -2687,7 +2754,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "HVOB"
   },
   {
     "name": "Chelina Manuhutu",
@@ -2727,7 +2795,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Skream"
   },
   {
     "name": "David Morales",
@@ -2747,7 +2816,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 25
+    "trends_mom_12w": 25,
+    "wikipedia_title": "David Morales"
   },
   {
     "name": "Mark Farina",
@@ -2767,7 +2837,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": 2.9
+    "trends_mom_12w": 2.9,
+    "wikipedia_title": "Mark Farina"
   },
   {
     "name": "Gene Farris",
@@ -2847,7 +2918,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 100
+    "trends_mom_12w": 100,
+    "wikipedia_title": "Gui Boratto"
   },
   {
     "name": "Oxia",
@@ -2867,7 +2939,8 @@
       "band": "D",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Oxia"
   },
   {
     "name": "Marco Faraone",
@@ -2953,7 +3026,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": -38.9
+    "trends_mom_12w": -38.9,
+    "wikipedia_title": "TSHA"
   },
   {
     "name": "Tiga",
@@ -2981,7 +3055,8 @@
       "Melodic House & Techno",
       "Indie Dance"
     ],
-    "trends_mom_12w": 12.5
+    "trends_mom_12w": 12.5,
+    "wikipedia_title": "Tiga"
   },
   {
     "name": "Floating Points",
@@ -3001,7 +3076,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": 13
+    "trends_mom_12w": 13,
+    "wikipedia_title": "Floating Points"
   },
   {
     "name": "Mount Kimbie",
@@ -3021,7 +3097,8 @@
       "band": "D",
       "basis": "estimate"
     },
-    "trends_mom_12w": 8
+    "trends_mom_12w": 8,
+    "wikipedia_title": "Mount Kimbie"
   },
   {
     "name": "HAAi",
@@ -3041,7 +3118,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 9.4
+    "trends_mom_12w": 9.4,
+    "wikipedia_title": "HAAi"
   },
   {
     "name": "Floorplan",
@@ -3061,7 +3139,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Floor plan"
   },
   {
     "name": "Jayda G",
@@ -3081,7 +3160,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": -23.3
+    "trends_mom_12w": -23.3,
+    "wikipedia_title": "Jayda G"
   },
   {
     "name": "Joris Voorn",
@@ -3107,7 +3187,8 @@
     "beatport_charts": [
       "Melodic House & Techno"
     ],
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Joris Voorn"
   },
   {
     "name": "Victor Calderone",
@@ -3127,7 +3208,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 175
+    "trends_mom_12w": 175,
+    "wikipedia_title": "Victor Calderone"
   },
   {
     "name": "Laurent Garnier",
@@ -3147,7 +3229,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": 17.6
+    "trends_mom_12w": 17.6,
+    "wikipedia_title": "Laurent Garnier"
   },
   {
     "name": "Levon Vincent",
@@ -3207,7 +3290,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": -11.8
+    "trends_mom_12w": -11.8,
+    "wikipedia_title": "Helena Hauff"
   },
   {
     "name": "Sven Väth",
@@ -3227,7 +3311,8 @@
       "band": "B",
       "basis": "curated"
     },
-    "trends_mom_12w": 5.5
+    "trends_mom_12w": 5.5,
+    "wikipedia_title": "Sven Väth"
   },
   {
     "name": "Richie Hawtin",
@@ -3247,7 +3332,8 @@
       "band": "B",
       "basis": "curated"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Richie Hawtin"
   },
   {
     "name": "Joseph Capriati",
@@ -3365,7 +3451,8 @@
     "beatport_charts": [
       "Melodic House & Techno"
     ],
-    "trends_mom_12w": 33.9
+    "trends_mom_12w": 33.9,
+    "wikipedia_title": "WhoMadeWho"
   },
   {
     "name": "Stephan Bodzin",
@@ -3385,7 +3472,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": 20.6
+    "trends_mom_12w": 20.6,
+    "wikipedia_title": "Stephan Bodzin"
   },
   {
     "name": "Trentemøller",
@@ -3405,7 +3493,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Trentemøller"
   },
   {
     "name": "Monolink",
@@ -3431,7 +3520,8 @@
     "beatport_charts": [
       "Melodic House & Techno"
     ],
-    "trends_mom_12w": -28.9
+    "trends_mom_12w": -28.9,
+    "wikipedia_title": "Monolink"
   },
   {
     "name": "Massano",
@@ -3484,7 +3574,8 @@
       "Melodic House & Techno",
       "Progressive House"
     ],
-    "trends_mom_12w": 29.3
+    "trends_mom_12w": 29.3,
+    "wikipedia_title": "Yotto"
   },
   {
     "name": "Ben Böhmer",
@@ -3530,7 +3621,8 @@
     "beatport_charts": [
       "Organic House / Downtempo"
     ],
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Nora En Pure"
   },
   {
     "name": "Adriatique",
@@ -3556,7 +3648,8 @@
     "beatport_charts": [
       "Melodic House & Techno"
     ],
-    "trends_mom_12w": 48
+    "trends_mom_12w": 48,
+    "wikipedia_title": "Adriatique"
   },
   {
     "name": "Kollektiv Turmstrasse",
@@ -3596,7 +3689,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Huxley"
   },
   {
     "name": "Maya Jane Coles",
@@ -3616,7 +3710,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": 18.2
+    "trends_mom_12w": 18.2,
+    "wikipedia_title": "Maya Jane Coles"
   },
   {
     "name": "John Talabot",
@@ -3636,7 +3731,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 17.6
+    "trends_mom_12w": 17.6,
+    "wikipedia_title": "John Talabot"
   },
   {
     "name": "Secondcity",
@@ -3656,7 +3752,8 @@
       "band": "D",
       "basis": "estimate"
     },
-    "trends_mom_12w": 175
+    "trends_mom_12w": 175,
+    "wikipedia_title": "Secondcity"
   },
   {
     "name": "Surgeon",
@@ -3676,7 +3773,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 9.3
+    "trends_mom_12w": 9.3,
+    "wikipedia_title": "Surgeon"
   },
   {
     "name": "Blawan",
@@ -3696,7 +3794,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": -21.6
+    "trends_mom_12w": -21.6,
+    "wikipedia_title": "Blawan"
   },
   {
     "name": "DJ Rush",
@@ -3722,7 +3821,8 @@
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
     ],
-    "trends_mom_12w": 1
+    "trends_mom_12w": 1,
+    "wikipedia_title": "DJ Rush"
   },
   {
     "name": "Dax J",
@@ -3782,7 +3882,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": -17.5
+    "trends_mom_12w": -17.5,
+    "wikipedia_title": "Mathame"
   },
   {
     "name": "Innellea",
@@ -3848,7 +3949,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 4.8
+    "trends_mom_12w": 4.8,
+    "wikipedia_title": "Tiefschwarz"
   },
   {
     "name": "Recondite",
@@ -3868,7 +3970,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": -10.5
+    "trends_mom_12w": -10.5,
+    "wikipedia_title": "Recondite"
   },
   {
     "name": "DJ Tennis",
@@ -3888,7 +3991,8 @@
       "band": "D",
       "basis": "estimate"
     },
-    "trends_mom_12w": 153.5
+    "trends_mom_12w": 153.5,
+    "wikipedia_title": "DJ Tennis"
   },
   {
     "name": "Dario D'Attis",
@@ -3928,7 +4032,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Henry Saiz"
   },
   {
     "name": "Pional",
@@ -3948,7 +4053,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Pional"
   },
   {
     "name": "Ryan Crosson",
@@ -4088,7 +4194,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": -20.5
+    "trends_mom_12w": -20.5,
+    "wikipedia_title": "Pangaea"
   },
   {
     "name": "Andre Crom",
@@ -4175,7 +4282,8 @@
       "Melodic House & Techno",
       "Progressive House"
     ],
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Robert Babicz"
   },
   {
     "name": "Trikk",
@@ -4195,7 +4303,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": -14
+    "trends_mom_12w": -14,
+    "wikipedia_title": "Trikk"
   },
   {
     "name": "Tornado Wallace",
@@ -4262,7 +4371,8 @@
       "Techno (Peak Time / Driving)",
       "Techno (Raw / Deep / Hypnotic)"
     ],
-    "trends_mom_12w": 10
+    "trends_mom_12w": 10,
+    "wikipedia_title": "Jay Lumen"
   },
   {
     "name": "Pearson Sound",
@@ -4282,7 +4392,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 40
+    "trends_mom_12w": 40,
+    "wikipedia_title": "Pearson Sound"
   },
   {
     "name": "Palms Trax",
@@ -4322,7 +4433,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": -0.3
+    "trends_mom_12w": -0.3,
+    "wikipedia_title": "Lauer"
   },
   {
     "name": "Simian Mobile Disco",
@@ -4342,7 +4454,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 27.3
+    "trends_mom_12w": 27.3,
+    "wikipedia_title": "Simian Mobile Disco"
   },
   {
     "name": "Actress",
@@ -4382,7 +4495,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "DJ Holographic"
   },
   {
     "name": "David Mayer",
@@ -4402,7 +4516,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "David Mayer"
   },
   {
     "name": "Lee Curtiss",
@@ -4509,7 +4624,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 10.3
+    "trends_mom_12w": 10.3,
+    "wikipedia_title": "Héctor Romero"
   },
   {
     "name": "Mathew Jonson",
@@ -4596,7 +4712,8 @@
       "Tech House",
       "Afro House"
     ],
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Marshall Jefferson"
   },
   {
     "name": "GW Harrison",
@@ -4762,7 +4879,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": -34.7
+    "trends_mom_12w": -34.7,
+    "wikipedia_title": "Ricardo Villalobos"
   },
   {
     "name": "MK",
@@ -4788,7 +4906,8 @@
     "beatport_charts": [
       "Tech House"
     ],
-    "trends_mom_12w": 9.9
+    "trends_mom_12w": 9.9,
+    "wikipedia_title": "MK"
   },
   {
     "name": "Sasha",
@@ -4814,7 +4933,8 @@
     "beatport_charts": [
       "Melodic House & Techno"
     ],
-    "trends_mom_12w": -10.9
+    "trends_mom_12w": -10.9,
+    "wikipedia_title": "Sasha"
   },
   {
     "name": "John Digweed",
@@ -4834,7 +4954,8 @@
       "band": "B",
       "basis": "curated"
     },
-    "trends_mom_12w": -12.1
+    "trends_mom_12w": -12.1,
+    "wikipedia_title": "John Digweed"
   },
   {
     "name": "Eric Prydz",
@@ -4861,7 +4982,8 @@
       "Melodic House & Techno",
       "Progressive House"
     ],
-    "trends_mom_12w": 35.4
+    "trends_mom_12w": 35.4,
+    "wikipedia_title": "Eric Prydz"
   },
   {
     "name": "Midland",
@@ -4887,7 +5009,8 @@
     "beatport_charts": [
       "Deep House"
     ],
-    "trends_mom_12w": 9.9
+    "trends_mom_12w": 9.9,
+    "wikipedia_title": "Midland"
   },
   {
     "name": "Mano Le Tough",
@@ -4993,7 +5116,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 100
+    "trends_mom_12w": 100,
+    "wikipedia_title": "Axel Boman"
   },
   {
     "name": "Guy Gerber",
@@ -5019,7 +5143,8 @@
     "beatport_charts": [
       "Indie Dance"
     ],
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Guy Gerber"
   },
   {
     "name": "Todd Terry",
@@ -5039,7 +5164,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 28.3
+    "trends_mom_12w": 28.3,
+    "wikipedia_title": "Todd Terry"
   },
   {
     "name": "Danny Tenaglia",
@@ -5099,7 +5225,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 18.2
+    "trends_mom_12w": 18.2,
+    "wikipedia_title": "Kevin Saunderson"
   },
   {
     "name": "Frankie Knuckles",
@@ -5119,7 +5246,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 16.9
+    "trends_mom_12w": 16.9,
+    "wikipedia_title": "Frankie Knuckles"
   },
   {
     "name": "Larry Heard",
@@ -5205,7 +5333,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": -17.3
+    "trends_mom_12w": -17.3,
+    "wikipedia_title": "Alan Dixon"
   },
   {
     "name": "Harvey McKay",
@@ -5245,7 +5374,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 69.1
+    "trends_mom_12w": 69.1,
+    "wikipedia_title": "Mr G"
   },
   {
     "name": "Call Super",
@@ -5265,7 +5395,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": -1.3
+    "trends_mom_12w": -1.3,
+    "wikipedia_title": "Call super"
   },
   {
     "name": "Themba",
@@ -5285,7 +5416,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": -3.3
+    "trends_mom_12w": -3.3,
+    "wikipedia_title": "Themba"
   },
   {
     "name": "Culoe De Song",
@@ -5305,7 +5437,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": -4.2
+    "trends_mom_12w": -4.2,
+    "wikipedia_title": "Culoe De Song"
   },
   {
     "name": "Luciano",
@@ -5325,7 +5458,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": 6
+    "trends_mom_12w": 6,
+    "wikipedia_title": "Luciano"
   },
   {
     "name": "Dimitri From Paris",
@@ -5345,7 +5479,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Dimitri from Paris"
   },
   {
     "name": "Bob Sinclar",
@@ -5371,7 +5506,8 @@
     "beatport_charts": [
       "House"
     ],
-    "trends_mom_12w": 13.4
+    "trends_mom_12w": 13.4,
+    "wikipedia_title": "Bob Sinclar"
   },
   {
     "name": "Duke Dumont",
@@ -5391,7 +5527,8 @@
       "band": "B",
       "basis": "curated"
     },
-    "trends_mom_12w": 47.8
+    "trends_mom_12w": 47.8,
+    "wikipedia_title": "Duke Dumont"
   },
   {
     "name": "Route 94",
@@ -5417,7 +5554,8 @@
     "beatport_charts": [
       "Deep House"
     ],
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Route 94 (musician)"
   },
   {
     "name": "Maxxi Soundsystem",
@@ -5457,7 +5595,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": -14.6
+    "trends_mom_12w": -14.6,
+    "wikipedia_title": "DJ Pierre"
   },
   {
     "name": "Stacey Pullen",
@@ -5477,7 +5616,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": -100
+    "trends_mom_12w": -100,
+    "wikipedia_title": "Stacey Pullen"
   },
   {
     "name": "Kenny Larkin",
@@ -5497,7 +5637,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "Kenny Larkin"
   },
   {
     "name": "Maya",
@@ -5517,7 +5658,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": -15.2
+    "trends_mom_12w": -15.2,
+    "wikipedia_title": "Maya"
   },
   {
     "name": "Slam",
@@ -5537,7 +5679,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": -13.3
+    "trends_mom_12w": -13.3,
+    "wikipedia_title": "Slam"
   },
   {
     "name": "Steve Bug",
@@ -5583,7 +5726,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": -11.1
+    "trends_mom_12w": -11.1,
+    "wikipedia_title": "Akufen"
   },
   {
     "name": "Miss Kittin",
@@ -5603,7 +5747,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": -5
+    "trends_mom_12w": -5,
+    "wikipedia_title": "Miss Kittin"
   },
   {
     "name": "The Hacker",
@@ -5623,7 +5768,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "wikipedia_title": "The Hacker"
   },
   {
     "name": "Joeski",
@@ -5749,7 +5895,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": 19.2
+    "trends_mom_12w": 19.2,
+    "wikipedia_title": "Alignment"
   },
   {
     "name": "Len Faki",
@@ -5775,7 +5922,8 @@
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
     ],
-    "trends_mom_12w": -20
+    "trends_mom_12w": -20,
+    "wikipedia_title": "Len Faki"
   },
   {
     "name": "Truncate",
@@ -5795,7 +5943,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": -0.9
+    "trends_mom_12w": -0.9,
+    "wikipedia_title": "Truncate (SQL)"
   },
   {
     "name": "Planetary Assault Systems",
@@ -5841,7 +5990,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": -2.2
+    "trends_mom_12w": -2.2,
+    "wikipedia_title": "Regis"
   },
   {
     "name": "Phase Fatale",

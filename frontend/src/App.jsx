@@ -21,7 +21,7 @@ const METRICS = [
   { key: "spotify_avg_track_popularity", label: "Track Popularity",   weight: 0.08, format: "score100" },
   { key: "spotify_follower_growth_rate", label: "Listener Growth",    weight: 0.08, format: "pct"      },
   { key: "youtube_views_weekly",         label: "YT Views / wk",      weight: 0.08, format: "count"    },
-  { key: "spotify_followers",            label: "Spotify Followers",  weight: 0.05, format: "count"    },
+  { key: "wikipedia_pageviews",          label: "Wikipedia Views",    weight: 0.05, format: "count"    },
   { key: "manual_scene_score",           label: "Scene Score",        weight: 0.04, format: "score100" },
 ];
 
@@ -31,7 +31,7 @@ const SORT_OPTIONS = [
   { key: "tiktok_post_count",           label: "TikTok"     },
   { key: "google_trends_score",         label: "Trending"   },
   { key: "youtube_subscribers",         label: "YouTube"    },
-  { key: "spotify_followers",           label: "Followers"  },
+  { key: "wikipedia_pageviews",         label: "Wikipedia" },
 ];
 
 // ── Utilities ─────────────────────────────────────────────────────
@@ -545,16 +545,17 @@ const DATA_SOURCES = [
 ];
 
 const METRIC_DETAILS = [
-  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",  weight: 0.20, color: "#1DB954", why: "The single strongest proxy for active fanbase size. Scraped directly from Spotify artist pages — not filtered by Spotify's API restrictions." },
-  { key: "spotify_playlist_placements",  label: "Playlist Placements",weight: 0.12, color: "#1DB954", why: "How many editorial and algorithmic Spotify playlists feature this artist. A strong leading indicator — playlist inclusion drives listener growth 4–6 weeks later." },
-  { key: "tiktok_post_count",            label: "TikTok Posts",       weight: 0.12, color: "#010101", why: "Total posts using the artist's hashtag. Measures grassroots hype and cultural spread, especially among the 18–25 demographic that drives festival ticket sales." },
-  { key: "spotify_avg_track_popularity", label: "Track Popularity",   weight: 0.10, color: "#1DB954", why: "Average popularity score across the artist's top 10 tracks (0–100). Reflects recent stream velocity, not historical catalogue." },
-  { key: "youtube_subscribers",          label: "YouTube Subscribers", weight: 0.10, color: "#FF0000", why: "Subscriber count as a proxy for dedicated fanbase depth. YouTube fans tend to be more loyal and convert to ticket buyers at a higher rate." },
-  { key: "google_trends_score",          label: "Google Trends",      weight: 0.10, color: "#4285F4", why: "90-day search interest score (0–100) normalised to the artist's own peak. A rising trends score often precedes booking fee increases by 8–12 weeks." },
-  { key: "spotify_follower_growth_rate", label: "Follower Growth",    weight: 0.08, color: "#1DB954", why: "Week-over-week percentage change in Spotify followers. The most forward-looking signal in the model — today's growth becomes tomorrow's rank." },
-  { key: "youtube_views_weekly",         label: "YouTube Views/wk",   weight: 0.08, color: "#FF0000", why: "Weekly view count captures upload cadence and video virality. An artist releasing content consistently scores higher than one with a large back-catalogue but no new uploads." },
-  { key: "spotify_followers",            label: "Spotify Followers",  weight: 0.06, color: "#1DB954", why: "Total follower count as a baseline size signal. Weighted lower than listeners because followers are a lagging indicator — listeners spike first." },
-  { key: "manual_scene_score",           label: "Scene Score",        weight: 0.04, color: "#8b5cf6", why: "A 0–100 editorial override for industry context that algorithms can't capture: Boiler Room streams, Fabric residencies, festival closing slots, and critical heat." },
+  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",   weight: 0.17, color: "#1DB954", why: "The strongest single proxy for active fanbase size, scraped directly from Spotify artist pages rather than the rate-limited API." },
+  { key: "beatport_score",               label: "Beatport Chart",      weight: 0.10, color: "#a8e00f", why: "Position across genre Top 100 charts. The DJ retail store, so charting signals credibility with the core scene rather than the mainstream." },
+  { key: "spotify_playlist_placements",  label: "Releases / Catalog",  weight: 0.10, color: "#1DB954", why: "Depth and recency of catalog. Active release schedules score higher than a single back-catalog hit." },
+  { key: "tiktok_post_count",            label: "TikTok Posts",        weight: 0.10, color: "#010101", why: "Posts using the artist's hashtag. Measures grassroots cultural spread, often the earliest breakout indicator." },
+  { key: "youtube_subscribers",          label: "YouTube Subscribers", weight: 0.10, color: "#FF0000", why: "A proxy for dedicated fanbase depth. YouTube audiences tend to convert to ticket buyers at a higher rate." },
+  { key: "google_trends_score",          label: "Google Trends",       weight: 0.10, color: "#4285F4", why: "Search interest normalized to the artist's own peak. Rising search frequently precedes booking-fee increases." },
+  { key: "spotify_avg_track_popularity", label: "Track Popularity",    weight: 0.08, color: "#1DB954", why: "Average popularity across the artist's top tracks (0 to 100). Reflects recent stream velocity, not historical totals." },
+  { key: "spotify_follower_growth_rate", label: "Listener Growth",     weight: 0.08, color: "#1DB954", why: "Week-over-week change in audience. The most forward-looking signal in the model: today's growth becomes tomorrow's rank." },
+  { key: "youtube_views_weekly",         label: "YouTube Views/wk",    weight: 0.08, color: "#FF0000", why: "Weekly view count captures upload cadence and video virality alongside raw subscriber size." },
+  { key: "wikipedia_pageviews",          label: "Wikipedia Views",     weight: 0.05, color: "#9aa0a6", why: "Trailing 30-day article pageviews. A clean, independent measure of broad public interest, with reliable history and no platform bias." },
+  { key: "manual_scene_score",           label: "Scene Score",         weight: 0.04, color: "#8b5cf6", why: "A 0 to 100 editorial input for industry context algorithms miss: Boiler Room sets, Ibiza residencies, festival closing slots, and critical standing." },
 ];
 
 function HowItWorksPage() {
@@ -633,12 +634,14 @@ function HowItWorksPage() {
         <h3 className="hiw-section-title">Update Schedule</h3>
         <div className="hiw-schedule">
           {[
-            { label: "Spotify Followers & Popularity",  freq: "Every 6 hours" },
-            { label: "Monthly Listeners",               freq: "Every 6 hours (scraped)" },
-            { label: "YouTube Subscribers & Views",     freq: "Every 6 hours" },
-            { label: "Google Trends Score",             freq: "Every 6 hours" },
-            { label: "TikTok Post Count",               freq: "Every 6 hours (scraped)" },
-            { label: "Rank Snapshots Retained",         freq: "365 data points" },
+            { label: "Spotify Monthly Listeners",       freq: "Daily (scraped)" },
+            { label: "Beatport Chart Position",         freq: "Daily" },
+            { label: "YouTube Subscribers & Views",     freq: "Daily" },
+            { label: "Google Trends (12-month history)",freq: "Daily" },
+            { label: "TikTok Post Count",               freq: "Daily (scraped)" },
+            { label: "Wikipedia Pageviews",             freq: "Daily" },
+            { label: "Tour Density (Songkick)",         freq: "Daily" },
+            { label: "Rank Snapshots Retained",         freq: "90 data points" },
           ].map(s => (
             <div key={s.label} className="hiw-schedule-row">
               <span className="hiw-schedule-label">{s.label}</span>

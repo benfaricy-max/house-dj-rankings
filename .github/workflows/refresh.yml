@@ -54,6 +54,11 @@ jobs:
         working-directory: backend
         continue-on-error: true
 
+      - name: Wikipedia pageviews signal
+        run: node enrichWikipedia.js
+        working-directory: backend
+        continue-on-error: true
+
       - name: Recompute booking fees (uses fresh listener data)
         run: node computeFees.js
         working-directory: backend
