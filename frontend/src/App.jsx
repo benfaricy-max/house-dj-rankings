@@ -1688,7 +1688,6 @@ export default function App() {
   const [compareList, setCompareList] = useState([]);
   const [showCompare, setShowCompare] = useState(false);
   const [activeTab, setActiveTab]     = useState("rankings");
-  const [proUnlocked, setProUnlocked] = useState(() => !!localStorage.getItem(PRO_KEY));
   const cardRefs = useRef({});
 
   function load() {
@@ -1793,11 +1792,7 @@ export default function App() {
         </div>
       </header>
 
-      {activeTab === "pro" && (
-        proUnlocked
-          ? <ProPage rankings={rankings} />
-          : <ProPaywall onUnlock={() => setProUnlocked(true)} />
-      )}
+      {activeTab === "pro" && <ProPage rankings={rankings} />}
       {activeTab === "city-spotlight" && <CitySpotlightPage rankings={rankings} />}
       {activeTab === "ones-to-watch" && <OnestoWatchPage rankings={rankings} />}
       {activeTab === "benchmark"     && <ComparativeBenchmarkingPage rankings={rankings} />}

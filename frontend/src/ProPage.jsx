@@ -204,6 +204,26 @@ function Paywall({ onDemo }) {
           <button className="pricing-cta pricing-cta--booker" onClick={onDemo}>Get Booker Access</button>
         </div>
       </div>
+
+      <div className="paywall-why">
+        <h3 className="paywall-why-title">Why industry professionals pay for this</h3>
+        <p className="paywall-why-intro">Raw rankings are free. What bookers and labels pay for is the decision layer:</p>
+        <div className="paywall-why-list">
+          {[
+            ["1", "Breakout Detection", "“Growing 40% week-over-week in Chicago & Berlin before anyone's talking about them.”"],
+            ["2", "Routing Intelligence", "“High search concentration in Miami & Detroit — book them there before demand peaks.”"],
+            ["3", "Comparative Benchmarking", "“3× the Beatport credibility of a peer with similar Spotify numbers — stronger with the core scene.”"],
+            ["4", "Historical Trajectory", "“On a 12-week growth streak across every signal we track.”"],
+          ].map(([n, t, d]) => (
+            <div className="paywall-why-item" key={n}>
+              <span className="paywall-why-num">{n}</span>
+              <div><strong>{t}</strong><p>{d}</p></div>
+            </div>
+          ))}
+        </div>
+        <p className="paywall-why-foot">Agencies and labels pay for data that directly informs talent decisions — typically hundreds to thousands per month.</p>
+      </div>
+
       <button className="paywall-demo-btn" onClick={onDemo}>Preview Pro Dashboard (Demo)</button>
     </div>
   );
