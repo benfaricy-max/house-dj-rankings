@@ -20,25 +20,35 @@ const MARK = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
     <rect x="22.6" y="4" width="3.6" height="22.5" rx="1.3"/>
   </g></svg>`;
 
-const shell = (body, { pad = true } = {}) => `<!doctype html><html><head><meta charset="utf-8">
+const shell = (body, { pad = true, w = 1080, h = 1080, footTop = 60 } = {}) => `<!doctype html><html><head><meta charset="utf-8">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
   *{margin:0;box-sizing:border-box}
   :root{--bg:#0c0c0e;--card:#111114;--text-h:#E9E7DF;--text:#a9a8a2;--muted:#75767d;
     --border:#1e1f23;--accent:#C8F750;--on-accent:#0c0c0e;
     --sans:'Space Grotesk',system-ui,sans-serif;--mono:'IBM Plex Mono',monospace}
-  html,body{width:1080px;height:1080px}
-  .stage{width:1080px;height:1080px;background:var(--bg);color:var(--text-h);
+  html,body{width:${w}px;height:${h}px}
+  .stage{width:${w}px;height:${h}px;background:var(--bg);color:var(--text-h);
     font-family:var(--sans);position:relative;overflow:hidden;${pad ? "padding:84px" : ""}}
   .topbar{display:flex;align-items:center;gap:14px;position:absolute;top:64px;left:84px}
   .topbar svg{width:40px;height:40px;display:block}
   .topbar .wm{font-family:var(--mono);font-weight:600;font-size:24px;letter-spacing:0.22em;color:var(--text-h)}
-  .foot{position:absolute;bottom:60px;left:84px;right:84px;display:flex;justify-content:space-between;
+  .foot{position:absolute;bottom:${footTop}px;left:84px;right:84px;display:flex;justify-content:space-between;
     align-items:center;font-family:var(--mono);font-size:20px;color:var(--muted);letter-spacing:0.04em}
   .foot .dot{color:var(--accent)}
   .eyebrow{font-family:var(--mono);font-size:24px;font-weight:600;letter-spacing:0.18em;
     text-transform:uppercase;color:var(--accent)}
 </style></head><body><div class="stage">${body}</div></body></html>`;
+
+// weighting from backend/score.js — keep in sync if weights change
+const WEIGHTS = [
+  ["Spotify Monthly Listeners", 17], ["Beatport Chart Credibility", 10],
+  ["Playlist Placements", 10], ["TikTok Presence", 10],
+  ["YouTube Subscribers", 10], ["Google Trends Interest", 10],
+  ["Track Popularity", 8], ["Follower Growth", 8],
+  ["YouTube Views / wk", 8], ["Wikipedia Pageviews", 5],
+  ["Scene Score", 4],
+];
 
 // ---- 1. avatar --------------------------------------------------------------
 const avatar = () => `<!doctype html><html><head><meta charset="utf-8">
@@ -145,19 +155,131 @@ const reachCred = () => {
   `);
 };
 
+// ---- 5. Methodology drop (square) -------------------------------------------
+const methodRows = (max) => WEIGHTS.map(([label, w]) => `
+  <div class="wt">
+    <span class="lab">${label}</span>
+    <div class="track"><div class="fill" style="width:${(w / max) * 100}%"></div></div>
+    <span class="pct">${w}%</span>
+  </div>`).join("");
+
+const methodology = () => {
+  const max = Math.max(...WEIGHTS.map(w => w[1]));
+  return shell(`
+    <div class="topbar">${MARK}<span class="wm">PEAKTIME</span></div>
+    <div style="position:absolute;top:172px;left:84px;right:84px">
+      <div class="eyebrow">Methodology</div>
+      <h1 style="font-size:54px;font-weight:700;letter-spacing:-1.5px;margin:14px 0 8px;line-height:1.02">
+        How the score works</h1>
+      <p style="font-size:26px;color:var(--text);margin-bottom:30px">
+        11 signals, normalized 0–100, weighted into one demand index. No black box.</p>
+      <style>
+        .wt{display:grid;grid-template-columns:360px 1fr 78px;align-items:center;gap:20px;margin-bottom:14px}
+        .lab{font-size:24px;color:var(--text-h);text-align:right}
+        .track{height:20px;background:#15161c;border-radius:6px;overflow:hidden}
+        .fill{height:100%;border-radius:6px;background:var(--accent)}
+        .pct{font-family:var(--mono);font-size:26px;font-weight:600;color:var(--accent);text-align:right}
+      </style>
+      ${methodRows(max)}
+    </div>
+    <div class="foot"><span>weights sum to 100% · refreshed daily</span><span><span class="dot">●</span> thedjrankings.com</span></div>
+  `);
+};
+
+// ---- STORY (1080×1920) variants ---------------------------------------------
+const STORY = { w: 1080, h: 1920, footTop: 110 };
+
+const storyTop5 = () => {
+  const rows = ARTISTS.slice(0, 5).map(a => `
+    <div class="row">
+      <div class="rk">${String(a.rank).padStart(2, "0")}</div>
+      <div class="nm">${a.name}</div>
+      <div class="sc">${a.score.toFixed(1)}</div>
+    </div>`).join("");
+  return shell(`
+    <div class="topbar">${MARK}<span class="wm">PEAKTIME</span></div>
+    <div style="position:absolute;top:360px;left:84px;right:84px">
+      <div class="eyebrow">Demand Index · Top 5</div>
+      <h1 style="font-size:78px;font-weight:700;letter-spacing:-2px;margin:22px 0 60px;line-height:1.0">
+        Who's earning<br/>peak time</h1>
+      <style>
+        .row{display:grid;grid-template-columns:140px 1fr 190px;align-items:baseline;
+          padding:38px 0;border-top:1px solid var(--border)}
+        .row:last-child{border-bottom:1px solid var(--border)}
+        .rk{font-family:var(--mono);font-size:42px;color:var(--muted)}
+        .nm{font-size:50px;font-weight:500;color:var(--text-h)}
+        .sc{font-family:var(--mono);font-size:50px;font-weight:600;color:var(--accent);text-align:right}
+      </style>
+      ${rows}
+    </div>
+    <div class="foot"><span>house &amp; techno · 263 DJs</span><span><span class="dot">●</span> thedjrankings.com</span></div>
+  `, STORY);
+};
+
+const storyBreakout = () => {
+  const a = ARTISTS.find(x => x.name === "BLOND:ISH");
+  return shell(`
+    <div class="topbar">${MARK}<span class="wm">PEAKTIME</span></div>
+    <div style="position:absolute;top:420px;left:84px;right:84px">
+      <div class="eyebrow">Breakout of the week</div>
+      <h1 style="font-size:108px;font-weight:700;letter-spacing:-3px;margin:30px 0 10px;line-height:0.96">${a.name}</h1>
+      <div style="font-family:var(--mono);font-size:30px;color:var(--muted);margin-bottom:80px">
+        currently #${a.rank} on the index</div>
+      <div class="m"><div class="big">+${a.trends_mom_12w}%</div><div class="cap">search demand · last 12 weeks</div></div>
+      <div class="m"><div class="big">${fmtML(a.spotify_monthly_listeners)}</div><div class="cap">monthly listeners</div></div>
+      <div class="m"><div class="big">${a.tour_upcoming} shows</div><div class="cap">across ${a.tour_countries} countries</div></div>
+      <p style="font-size:40px;line-height:1.34;color:var(--text);margin-top:56px">
+        Search interest is accelerating faster than the streams — the rooms
+        are moving before the algorithm catches up.</p>
+      <style>.m{margin-bottom:46px}.big{font-family:var(--mono);font-size:96px;font-weight:600;color:var(--accent);line-height:1}
+        .cap{font-family:var(--mono);font-size:26px;color:var(--muted);margin-top:14px;letter-spacing:0.03em}</style>
+    </div>
+    <div class="foot"><span>signal: Google Trends momentum</span><span><span class="dot">●</span> thedjrankings.com</span></div>
+  `, STORY);
+};
+
+const storyMethodology = () => {
+  const max = Math.max(...WEIGHTS.map(w => w[1]));
+  return shell(`
+    <div class="topbar">${MARK}<span class="wm">PEAKTIME</span></div>
+    <div style="position:absolute;top:340px;left:84px;right:84px">
+      <div class="eyebrow">Methodology</div>
+      <h1 style="font-size:76px;font-weight:700;letter-spacing:-2px;margin:20px 0 14px;line-height:1.0">
+        How the score works</h1>
+      <p style="font-size:34px;color:var(--text);margin-bottom:56px;line-height:1.3">
+        11 signals, normalized 0–100, weighted into one demand index. No black box.</p>
+      <style>
+        .wt{display:grid;grid-template-columns:1fr 96px;align-items:center;gap:22px;margin-bottom:30px}
+        .lab{font-size:34px;color:var(--text-h)}
+        .pct{font-family:var(--mono);font-size:36px;font-weight:600;color:var(--accent);text-align:right}
+        .track{grid-column:1 / -1;height:22px;background:#15161c;border-radius:6px;overflow:hidden;margin-top:-14px}
+        .fill{height:100%;border-radius:6px;background:var(--accent)}
+      </style>
+      ${WEIGHTS.map(([label, w]) => `
+        <div class="wt"><span class="lab">${label}</span><span class="pct">${w}%</span>
+          <div class="track"><div class="fill" style="width:${(w / max) * 100}%"></div></div></div>`).join("")}
+    </div>
+    <div class="foot"><span>weights sum to 100% · daily</span><span><span class="dot">●</span> thedjrankings.com</span></div>
+  `, STORY);
+};
+
 // ---- render -----------------------------------------------------------------
 const JOBS = [
-  ["avatar-1080.png", avatar()],
-  ["post-top5-1080.png", top5()],
-  ["post-breakout-1080.png", breakout()],
-  ["post-reach-cred-1080.png", reachCred()],
+  ["avatar-1080.png", avatar(), 1080, 1080],
+  ["post-top5-1080.png", top5(), 1080, 1080],
+  ["post-breakout-1080.png", breakout(), 1080, 1080],
+  ["post-reach-cred-1080.png", reachCred(), 1080, 1080],
+  ["post-methodology-1080.png", methodology(), 1080, 1080],
+  ["story-top5-1080x1920.png", storyTop5(), 1080, 1920],
+  ["story-breakout-1080x1920.png", storyBreakout(), 1080, 1920],
+  ["story-methodology-1080x1920.png", storyMethodology(), 1080, 1920],
 ];
 
 (async () => {
   const browser = await puppeteer.launch({ headless: "new", args: ["--no-sandbox", "--disable-setuid-sandbox"] });
   const page = await browser.newPage();
-  await page.setViewport({ width: 1080, height: 1080, deviceScaleFactor: 1 });
-  for (const [name, html] of JOBS) {
+  for (const [name, html, w, h] of JOBS) {
+    await page.setViewport({ width: w, height: h, deviceScaleFactor: 1 });
     await page.setContent(html, { waitUntil: "load", timeout: 60000 });
     await page.evaluate(() => document.fonts.ready);
     await new Promise(r => setTimeout(r, 600));
