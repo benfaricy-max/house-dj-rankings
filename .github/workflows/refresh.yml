@@ -31,6 +31,19 @@ jobs:
         run: npm install
         working-directory: backend
 
+      - name: Resolve missing Spotify IDs (new/discovered artists)
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+        run: node resolveSpotifyIds.js
+        working-directory: backend
+        continue-on-error: true
+
+      - name: Beatport discovery (auto-add strong new chart artists)
+        run: node discoverBeatport.js --add
+        working-directory: backend
+        continue-on-error: true   # roster growth is non-critical
+
       - name: Generate rankings
         env:
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
