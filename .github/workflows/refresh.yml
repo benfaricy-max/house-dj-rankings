@@ -64,10 +64,20 @@ jobs:
         working-directory: backend
         continue-on-error: true
 
+      - name: Install Chrome for Puppeteer
+        run: npx puppeteer browsers install chrome
+        working-directory: backend
+        continue-on-error: true   # social-asset rendering is non-critical
+
+      - name: Regenerate social brand assets (uses fresh numbers)
+        run: node makeBrandAssets.js
+        working-directory: backend
+        continue-on-error: true   # never block the refresh on rendering
+
       - name: Commit updated rankings
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add frontend/public/rankings.json backend/artists.json
+          git add frontend/public/rankings.json backend/artists.json frontend/public/brand
           git diff --staged --quiet || git commit -m "chore: refresh rankings + cache YouTube channel IDs [skip ci]"
           git push

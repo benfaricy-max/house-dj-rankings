@@ -11,6 +11,18 @@ const raw = require("../frontend/public/rankings.json");
 const ARTISTS = Array.isArray(raw) ? raw : raw.artists || raw.rankings;
 const fmtML = n => (n >= 1e6 ? (n / 1e6).toFixed(1) + "M" : Math.round(n / 1e3) + "K");
 
+// Breakout of the week: fastest-accelerating artist with credible reach.
+// Filters out noise (huge % momentum on tiny/zero listener bases).
+const pickBreakout = () => {
+  const candidates = ARTISTS.filter(a =>
+    Number.isFinite(a.trends_mom_12w) && a.trends_mom_12w > 0 &&
+    a.spotify_monthly_listeners >= 500000 &&   // must have real reach
+    a.rank > 10                                // a riser, not an established top-10 act
+  );
+  candidates.sort((p, q) => q.trends_mom_12w - p.trends_mom_12w);
+  return candidates[0] || ARTISTS.find(a => a.name === "BLOND:ISH") || ARTISTS[0];
+};
+
 // ---- shared chrome ----------------------------------------------------------
 const MARK = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
   <g fill="#C8F750">
@@ -92,7 +104,7 @@ const top5 = () => {
 
 // ---- 3. Breakout of the week ------------------------------------------------
 const breakout = () => {
-  const a = ARTISTS.find(x => x.name === "BLOND:ISH");
+  const a = pickBreakout();
   return shell(`
     <div class="topbar">${MARK}<span class="wm">PEAKTIME</span></div>
     <div style="position:absolute;top:210px;left:84px;right:84px">
@@ -103,7 +115,7 @@ const breakout = () => {
       <div style="display:flex;gap:56px;margin-bottom:54px">
         <div><div class="big">+${a.trends_mom_12w}%</div><div class="cap">search demand · 12 wks</div></div>
         <div><div class="big">${fmtML(a.spotify_monthly_listeners)}</div><div class="cap">monthly listeners</div></div>
-        <div><div class="big">${a.tour_upcoming}</div><div class="cap">shows · ${a.tour_countries} countries</div></div>
+        ${a.tour_upcoming > 0 ? `<div><div class="big">${a.tour_upcoming}</div><div class="cap">shows · ${a.tour_countries} countries</div></div>` : ``}
       </div>
       <p style="font-size:36px;line-height:1.32;color:var(--text);max-width:840px">
         Search interest is accelerating faster than the streams —
@@ -217,7 +229,7 @@ const storyTop5 = () => {
 };
 
 const storyBreakout = () => {
-  const a = ARTISTS.find(x => x.name === "BLOND:ISH");
+  const a = pickBreakout();
   return shell(`
     <div class="topbar">${MARK}<span class="wm">PEAKTIME</span></div>
     <div style="position:absolute;top:420px;left:84px;right:84px">
@@ -227,7 +239,7 @@ const storyBreakout = () => {
         currently #${a.rank} on the index</div>
       <div class="m"><div class="big">+${a.trends_mom_12w}%</div><div class="cap">search demand · last 12 weeks</div></div>
       <div class="m"><div class="big">${fmtML(a.spotify_monthly_listeners)}</div><div class="cap">monthly listeners</div></div>
-      <div class="m"><div class="big">${a.tour_upcoming} shows</div><div class="cap">across ${a.tour_countries} countries</div></div>
+      ${a.tour_upcoming > 0 ? `<div class="m"><div class="big">${a.tour_upcoming} shows</div><div class="cap">across ${a.tour_countries} countries</div></div>` : ``}
       <p style="font-size:40px;line-height:1.34;color:var(--text);margin-top:56px">
         Search interest is accelerating faster than the streams — the rooms
         are moving before the algorithm catches up.</p>
