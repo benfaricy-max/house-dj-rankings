@@ -1772,7 +1772,19 @@ export default function App() {
   return (
     <div className="page">
       <header className="page-header">
-        <div className="header-eyebrow">Live Rankings</div>
+        <a href="#" className="brand-lockup" onClick={e => { e.preventDefault(); window.location.hash = ""; setActiveTab("rankings"); }}>
+          <svg className="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <rect width="32" height="32" rx="7" fill="#0c0c0e" />
+            <g fill="var(--accent)">
+              <rect x="5.5" y="18.5" width="3.6" height="8" rx="1.3" />
+              <rect x="11.2" y="13" width="3.6" height="13.5" rx="1.3" />
+              <rect x="16.9" y="8" width="3.6" height="18.5" rx="1.3" />
+              <rect x="22.6" y="4" width="3.6" height="22.5" rx="1.3" />
+            </g>
+          </svg>
+          <span className="brand-word">THE DJ RANKINGS</span>
+        </a>
+        <div className="header-eyebrow">The demand index for electronic music</div>
         <h1 className="header-title">House DJ Rankings</h1>
         <div className="header-platforms">
           <span className="plat-pill"><span className="plat-dot" style={{ background: "#1DB954" }} />Spotify</span>

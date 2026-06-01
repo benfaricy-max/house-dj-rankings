@@ -193,6 +193,19 @@
 
 /* ── Header ──────────────────────────────────────────────────────── */
 .page-header { text-align: center; margin-bottom: 36px; }
+.brand-lockup {
+  display: inline-flex; align-items: center; gap: 9px;
+  text-decoration: none; margin: 28px 0 22px;
+  padding: 7px 14px 7px 9px; border: 1px solid var(--border);
+  border-radius: 999px; background: var(--card);
+  transition: border-color 0.15s ease;
+}
+.brand-lockup:hover { border-color: var(--accent-border); }
+.brand-mark { width: 22px; height: 22px; display: block; }
+.brand-word {
+  font-family: var(--mono); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.22em; color: var(--text-h); padding-right: 2px;
+}
 .header-eyebrow {
   font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
