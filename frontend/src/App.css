@@ -924,3 +924,14 @@ details[open] .hiw-faq-q::after { content: "–"; }
 
 .bk-account { margin-top: 16px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
 .bk-link-btn { background: none; border: none; color: var(--accent); cursor: pointer; font-family: var(--mono); font-size: 13px; text-decoration: underline; padding: 0; }
+
+/* momentum pill on ranking rows */
+.qs-pill--mo { color: var(--muted); border-color: var(--border); }
+.qs-pill--mo.qs-mo--hot { color: var(--on-accent); background: var(--accent); border-color: var(--accent); font-weight: 600; }
+/* scene rubric (How It Works) */
+.hiw-rubric { display: flex; flex-direction: column; gap: 8px; margin: 16px 0; }
+.hiw-rubric-row { display: grid; grid-template-columns: 56px 1fr auto; gap: 14px; align-items: baseline; padding: 11px 16px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; }
+.hiw-rubric-pts { font-family: var(--mono); font-weight: 600; color: var(--accent); }
+.hiw-rubric-item { color: var(--text-h); font-size: 15px; }
+.hiw-rubric-note { color: var(--muted); font-size: 13px; text-align: right; }
+@media (max-width: 640px) { .hiw-rubric-row { grid-template-columns: 48px 1fr; } .hiw-rubric-note { display: none; } }

@@ -126,9 +126,10 @@ function computeMomentumScores(rankings) {
     const tiktok = norm(dj.tiktok_post_count || 0, "tiktok_post_count");
     const trends = norm(dj.google_trends_score || 0, "google_trends_score");
     const rankMo = dj.rank_change ? Math.min(Math.max(dj.rank_change * 8, 0), 100) : 40;
+    const fallbackMo = Math.round(growth * 0.35 + tiktok * 0.25 + trends * 0.25 + rankMo * 0.15);
     return {
       ...dj,
-      momentum: Math.round(growth * 0.35 + tiktok * 0.25 + trends * 0.25 + rankMo * 0.15),
+      momentum: Number.isFinite(dj.momentum_score) ? dj.momentum_score : fallbackMo,
       meta:     getMeta(dj.name),
       markets:  computeMarkets(dj),
       feeTier:  dj.booking_fee ?? getFeeTier(dj.rank),

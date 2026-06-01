@@ -74,6 +74,31 @@ Stale threshold: 14 days. Runs in CI (plain HTTP, no puppeteer). Weight: 0.08 in
 trackBreadth·0.25 + crossGenreReach·0.15. Powers the "DJ's DJ" benchmark axis
 (high Beatport + low Spotify = scene-respected, not yet mainstream).
 
+## Momentum Score (core differentiator)
+`node backend/enrichMomentum.js` (runs LAST in refresh, after all rate-of-change
+signals). Standalone `momentum_score` 0-100 — ranks who's ACCELERATING, not who's
+biggest. Blend (self-healing, per-artist renormalized): Trends slope 42% +
+listener growth 25% + Wikipedia trend 15% + Beatport WoW change 12% + tour
+velocity 6%. Logic in `momentum.js`. Guards against namesake/noise: gated to
+artists with ≥50k monthly listeners; Trends needs google_trends_score≥8; outliers
+clipped. Beatport `beatport_pos_change` + `tour_velocity` are TRUE deltas built
+from inline `beatport_history`/`tour_history` (stored on each artist so they
+survive the CI commit; data/ is gitignored). `wikipedia_trend` = recent-30d vs
+prior-30d (fetchWikipedia). UI: "Momentum" sort on Rankings + pill on rows;
+Ones-to-Watch/Pro prefer momentum_score, fall back to client calc if null.
+
+## Scene Score (transparent editorial layer)
+`manual_scene_score` 0-100, weight 0.11 (raised from 0.04). Published rubric in
+How It Works (SCENE_RUBRIC in App.jsx): Boiler Room/HÖR +20, Berghain/fabric/DC10
++20, festival closing +15, respected label +15, RA/Mixmag/DJ Mag cover +10, Ibiza
+residency +10, Essential Mix +10. Explicit criteria = credible + hard to game.
+
+## Composite weights (score.js, sum=1.0)
+growth .13, listeners .13, scene .11, beatport .10, trends .09, ra .08, tiktok .08,
+yt_subs .08, releases .07, yt_views .06, track_pop .04, wikipedia .03. Self-healing:
+empty-field signals redistribute their weight. Listener GROWTH weighted heavily on
+purpose (acceleration > size).
+
 ## Key per-artist fields (in artists.json, persisted)
 - `emerging` (bool) — reputation-based; drives "Ones to Watch" (excludes legends).
 - `booking_fee` {label, mid, tier, color} — curated club/festival estimate.

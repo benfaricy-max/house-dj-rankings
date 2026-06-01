@@ -23,6 +23,7 @@ const delay = ms => new Promise(r => setTimeout(r, ms));
     const res = await getWikipediaViews(seed);
     if (res.resolved_title) {                       // only write on a real article match
       dj.wikipedia_pageviews = res.wikipedia_pageviews;
+      dj.wikipedia_trend = res.wikipedia_trend;      // % change recent-30d vs prior-30d (momentum signal)
       if (byName[dj.name]) byName[dj.name].wikipedia_title = res.resolved_title;
       hits++;
     }

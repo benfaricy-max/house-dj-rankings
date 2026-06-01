@@ -90,6 +90,11 @@ jobs:
         working-directory: backend
         continue-on-error: true
 
+      - name: Momentum Score + velocity (after all rate-of-change signals)
+        run: node enrichMomentum.js
+        working-directory: backend
+        continue-on-error: true   # runs last so Trends/listener/Wikipedia/Beatport/tour are all fresh
+
       - name: Install Chrome for Puppeteer
         run: npx puppeteer browsers install chrome
         working-directory: backend

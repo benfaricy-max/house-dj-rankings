@@ -13,26 +13,27 @@ const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
 const MEDAL = { 1: "🥇", 2: "🥈", 3: "🥉" };
 
 const METRICS = [
-  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",  weight: 0.17, format: "count"    },
+  { key: "spotify_follower_growth_rate", label: "Listener Growth",    weight: 0.13, format: "pct"      },
+  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",  weight: 0.13, format: "count"    },
+  { key: "manual_scene_score",           label: "Scene Score",        weight: 0.11, format: "score100" },
   { key: "beatport_score",               label: "Beatport Chart",     weight: 0.10, format: "score100" },
-  { key: "spotify_playlist_placements",  label: "Releases",           weight: 0.10, format: "number"   },
-  { key: "tiktok_post_count",            label: "TikTok Posts",       weight: 0.10, format: "posts"    },
-  { key: "youtube_subscribers",          label: "YT Subscribers",     weight: 0.10, format: "count"    },
-  { key: "google_trends_score",          label: "Google Trends",      weight: 0.10, format: "score100" },
-  { key: "spotify_avg_track_popularity", label: "Track Popularity",   weight: 0.08, format: "score100" },
-  { key: "spotify_follower_growth_rate", label: "Listener Growth",    weight: 0.08, format: "pct"      },
-  { key: "youtube_views_weekly",         label: "YT Views / wk",      weight: 0.08, format: "count"    },
-  { key: "wikipedia_pageviews",          label: "Wikipedia Views",    weight: 0.05, format: "count"    },
-  { key: "manual_scene_score",           label: "Scene Score",        weight: 0.04, format: "score100" },
+  { key: "google_trends_score",          label: "Google Trends",      weight: 0.09, format: "score100" },
+  { key: "ra_score",                     label: "RA Booking",         weight: 0.08, format: "score100" },
+  { key: "tiktok_post_count",            label: "TikTok Posts",       weight: 0.08, format: "posts"    },
+  { key: "youtube_subscribers",          label: "YT Subscribers",     weight: 0.08, format: "count"    },
+  { key: "spotify_playlist_placements",  label: "Releases",           weight: 0.07, format: "number"   },
+  { key: "youtube_views_weekly",         label: "YT Views / wk",      weight: 0.06, format: "count"    },
+  { key: "spotify_avg_track_popularity", label: "Track Popularity",   weight: 0.04, format: "score100" },
+  { key: "wikipedia_pageviews",          label: "Wikipedia Views",    weight: 0.03, format: "count"    },
 ];
 
 const SORT_OPTIONS = [
   { key: "score",                       label: "Score"      },
+  { key: "momentum_score",              label: "Momentum"   },
   { key: "spotify_monthly_listeners",   label: "Listeners"  },
-  { key: "tiktok_post_count",           label: "TikTok"     },
   { key: "google_trends_score",         label: "Trending"   },
   { key: "youtube_subscribers",         label: "YouTube"    },
-  { key: "wikipedia_pageviews",         label: "Wikipedia" },
+  { key: "beatport_score",              label: "Beatport"   },
 ];
 
 // ── Utilities ─────────────────────────────────────────────────────
@@ -456,6 +457,11 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
           </div>
           <ScoreBar score={dj.score} maxScore={maxScore} />
           <div className="dj-quick-stats">
+            {Number.isFinite(dj.momentum_score) && (
+              <span className={`qs-pill qs-pill--mo ${dj.momentum_score >= 65 ? "qs-mo--hot" : ""}`}>
+                ▲ Momentum {dj.momentum_score}
+              </span>
+            )}
             {dj.spotify_monthly_listeners > 0 && <span className="qs-pill">{fmt(dj.spotify_monthly_listeners)} listeners</span>}
             {dj.tiktok_post_count > 0 && <span className="qs-pill">{fmt(dj.tiktok_post_count)} TikTok posts</span>}
             {dj.google_trends_score > 0 && <span className="qs-pill">Trends {dj.google_trends_score}/100</span>}
@@ -546,17 +552,30 @@ const DATA_SOURCES = [
 ];
 
 const METRIC_DETAILS = [
-  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",   weight: 0.17, color: "#1DB954", why: "The strongest single proxy for active fanbase size, scraped directly from Spotify artist pages rather than the rate-limited API." },
+  { key: "spotify_follower_growth_rate", label: "Listener Growth",     weight: 0.13, color: "#C8F750", why: "Rate of change in audience — weighted heavily because acceleration predicts demand better than size. Today's growth is tomorrow's headline fee." },
+  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",   weight: 0.13, color: "#1DB954", why: "The strongest single proxy for active fanbase size, scraped directly from Spotify artist pages rather than the rate-limited API." },
+  { key: "manual_scene_score",           label: "Scene Score",         weight: 0.11, color: "#8b5cf6", why: "Editorial credibility for what algorithms miss — Boiler Room, Berghain/fabric bookings, festival closing slots, press covers. Scored against a published, transparent rubric (below)." },
   { key: "beatport_score",               label: "Beatport Chart",      weight: 0.10, color: "#a8e00f", why: "Position across genre Top 100 charts. The DJ retail store, so charting signals credibility with the core scene rather than the mainstream." },
-  { key: "spotify_playlist_placements",  label: "Releases / Catalog",  weight: 0.10, color: "#1DB954", why: "Depth and recency of catalog. Active release schedules score higher than a single back-catalog hit." },
-  { key: "tiktok_post_count",            label: "TikTok Posts",        weight: 0.10, color: "#010101", why: "Posts using the artist's hashtag. Measures grassroots cultural spread, often the earliest breakout indicator." },
-  { key: "youtube_subscribers",          label: "YouTube Subscribers", weight: 0.10, color: "#FF0000", why: "A proxy for dedicated fanbase depth. YouTube audiences tend to convert to ticket buyers at a higher rate." },
-  { key: "google_trends_score",          label: "Google Trends",       weight: 0.10, color: "#4285F4", why: "Search interest normalized to the artist's own peak. Rising search frequently precedes booking-fee increases." },
-  { key: "spotify_avg_track_popularity", label: "Track Popularity",    weight: 0.08, color: "#1DB954", why: "Average popularity across the artist's top tracks (0 to 100). Reflects recent stream velocity, not historical totals." },
-  { key: "spotify_follower_growth_rate", label: "Listener Growth",     weight: 0.08, color: "#1DB954", why: "Week-over-week change in audience. The most forward-looking signal in the model: today's growth becomes tomorrow's rank." },
-  { key: "youtube_views_weekly",         label: "YouTube Views/wk",    weight: 0.08, color: "#FF0000", why: "Weekly view count captures upload cadence and video virality alongside raw subscriber size." },
-  { key: "wikipedia_pageviews",          label: "Wikipedia Views",     weight: 0.05, color: "#9aa0a6", why: "Trailing 30-day article pageviews. A clean, independent measure of broad public interest, with reliable history and no platform bias." },
-  { key: "manual_scene_score",           label: "Scene Score",         weight: 0.04, color: "#8b5cf6", why: "A 0 to 100 editorial input for industry context algorithms miss: Boiler Room sets, Ibiza residencies, festival closing slots, and critical standing." },
+  { key: "google_trends_score",          label: "Google Trends",       weight: 0.09, color: "#4285F4", why: "Search interest normalized to the artist's own peak. Rising search frequently precedes booking-fee increases." },
+  { key: "ra_score",                     label: "RA Booking",          weight: 0.08, color: "#FF5C00", why: "Resident Advisor booking signal: venue-capacity tier, attendance, and geographic spread of upcoming and recent shows. Direct demand from the touring market." },
+  { key: "tiktok_post_count",            label: "TikTok Posts",        weight: 0.08, color: "#E9E7DF", why: "Posts using the artist's hashtag. Measures grassroots cultural spread, often the earliest breakout indicator." },
+  { key: "youtube_subscribers",          label: "YouTube Subscribers", weight: 0.08, color: "#FF0000", why: "A proxy for dedicated fanbase depth. YouTube audiences tend to convert to ticket buyers at a higher rate." },
+  { key: "spotify_playlist_placements",  label: "Releases / Catalog",  weight: 0.07, color: "#1DB954", why: "Depth and recency of catalog. Active release schedules score higher than a single back-catalog hit." },
+  { key: "youtube_views_weekly",         label: "YouTube Views/wk",    weight: 0.06, color: "#FF0000", why: "Weekly view count captures upload cadence and video virality alongside raw subscriber size." },
+  { key: "spotify_avg_track_popularity", label: "Track Popularity",    weight: 0.04, color: "#1DB954", why: "Average popularity across the artist's top tracks (0 to 100). Reflects recent stream velocity, not historical totals." },
+  { key: "wikipedia_pageviews",          label: "Wikipedia Views",     weight: 0.03, color: "#9aa0a6", why: "Trailing 30-day article pageviews. A clean, independent measure of broad public interest, with reliable history and no platform bias." },
+];
+
+// Published, transparent Scene Score rubric — explicit so it's a credible
+// editorial layer, not a black box (and harder to game than pure data signals).
+const SCENE_RUBRIC = [
+  { pts: "+20", item: "Boiler Room / HÖR / Cercle set", note: "tastemaker-platform booking" },
+  { pts: "+20", item: "Berghain / fabric / DC10 booking or residency", note: "institutional venue credibility" },
+  { pts: "+15", item: "Festival closing or main-stage headline slot", note: "Awakenings, DGTL, Time Warp, Movement…" },
+  { pts: "+15", item: "Respected label home or own imprint", note: "Drumcode, Hessle, Dystopian, etc." },
+  { pts: "+10", item: "RA / Mixmag / DJ Mag cover or feature", note: "critical / editorial standing" },
+  { pts: "+10", item: "Ibiza residency", note: "season-long booking at a major club" },
+  { pts: "+10", item: "Essential Mix / fabric or RA podcast", note: "landmark mix-series invitation" },
 ];
 
 function HowItWorksPage() {
@@ -595,6 +614,24 @@ function HowItWorksPage() {
       </section>
 
       <section className="hiw-section">
+        <h3 className="hiw-section-title">Scene Score — the published rubric</h3>
+        <p className="hiw-section-sub">
+          Scene Score (11% of the rank) is the one editorial layer in the model — the industry credibility that pure data misses.
+          To keep it honest, the criteria are public. Points accrue toward a 0–100 score; it's deliberately harder to game than a follower count.
+        </p>
+        <div className="hiw-rubric">
+          {SCENE_RUBRIC.map(r => (
+            <div key={r.item} className="hiw-rubric-row">
+              <span className="hiw-rubric-pts">{r.pts}</span>
+              <span className="hiw-rubric-item">{r.item}</span>
+              <span className="hiw-rubric-note">{r.note}</span>
+            </div>
+          ))}
+        </div>
+        <div className="hiw-weight-note">Capped at 100. Reviewed editorially; corrections welcome. This makes the scene layer a transparent, defensible signal rather than a black box.</div>
+      </section>
+
+      <section className="hiw-section">
         <h3 className="hiw-section-title">Data Sources</h3>
         <div className="hiw-sources">
           {DATA_SOURCES.map(s => (
@@ -613,13 +650,14 @@ function HowItWorksPage() {
 
       <section className="hiw-section">
         <h3 className="hiw-section-title">Momentum Score</h3>
-        <p className="hiw-section-sub">The Momentum Score is a separate composite signal that measures trajectory, not current standing. A DJ ranked #40 with a momentum of 85 is growing faster than someone at #10 with a momentum of 30.</p>
+        <p className="hiw-section-sub">Our core differentiator. The Momentum Score (0–100) ranks who is <em>accelerating</em> relative to their own baseline — not who is biggest. An artist climbing 50k→150k monthly listeners outscores one sitting flat at 2M. It blends only rate-of-change signals, and an artist is scored on whichever of these it has data for (no fabricated acceleration from a static snapshot).</p>
         <div className="hiw-momentum-formula">
           {[
-            { signal: "Follower Growth Rate",  weight: "35%", color: "#1DB954" },
-            { signal: "TikTok Post Count",     weight: "25%", color: "#010101" },
-            { signal: "Google Trends Score",   weight: "25%", color: "#4285F4" },
-            { signal: "Rank Change (weekly)",  weight: "15%", color: "var(--accent)" },
+            { signal: "Google Trends slope (search acceleration)", weight: "42%", color: "#4285F4" },
+            { signal: "Listener growth rate",                      weight: "25%", color: "#1DB954" },
+            { signal: "Wikipedia views trend (30d vs prior 30d)",  weight: "15%", color: "#9aa0a6" },
+            { signal: "Beatport position change (week/week)",      weight: "12%", color: "#a8e00f" },
+            { signal: "Touring velocity (cities & shows growth)",  weight: "6%",  color: "#FF5C00" },
           ].map((f, i, arr) => (
             <div key={f.signal} className="hiw-formula-row">
               <div className="hiw-formula-bar" style={{ background: f.color, width: f.weight }} />
@@ -658,7 +696,7 @@ function HowItWorksPage() {
           {[
             { q: "Why isn't SoundCloud included?", a: "SoundCloud's public API no longer exposes follower or play counts at scale. We include it in data collection but weight it at 0% until reliable data is available." },
             { q: "Why do some artists show zero for certain metrics?", a: "Not every DJ has a YouTube channel or is active on TikTok. Zero values are genuine — they're not data errors. They pull the weighted score for that signal to zero but don't affect others." },
-            { q: "How is the manual scene score assigned?", a: "It's set manually by the editorial team (0–100) to account for industry factors that aren't yet measurable algorithmically: Boiler Room sets, festival headline slots, Fabric residencies, and critical tastemaker coverage. It carries only 4% weight." },
+            { q: "How is the Scene Score assigned?", a: "It's an editorial 0–100 score against the published rubric above — Boiler Room/HÖR sets, Berghain/fabric/DC10 bookings, festival closing slots, respected label homes, RA/Mixmag/DJ Mag covers, Ibiza residencies, Essential Mix invitations. It carries 11% weight, and the explicit criteria make it harder to game than pure data signals." },
             { q: "How does the Ones to Watch list differ from the main rankings?", a: "The main rankings weight current standing heavily. Ones to Watch reranks entirely by Momentum Score — so an artist can be #45 in the main chart but #2 in Ones to Watch if they're growing fast." },
             { q: "Can I get notified when an artist moves?", a: "Pro subscribers receive weekly movement alerts by email. Subscribe under the Pro tab." },
           ].map(({ q, a }) => (
@@ -802,7 +840,10 @@ function OnestoWatchPage({ rankings }) {
       const tiktok = norm(dj.tiktok_post_count || 0, "tiktok_post_count");
       const trends = norm(dj.google_trends_score || 0, "google_trends_score");
       const rankMo = dj.rank_change ? Math.min(Math.max(dj.rank_change * 8, 0), 100) : 40;
-      return { ...dj, momentum: Math.round(growth * 0.35 + tiktok * 0.25 + trends * 0.25 + rankMo * 0.15) };
+      // Prefer the real backend Momentum Score (rate-of-change blend); fall back
+      // to this client estimate only where momentum hasn't been computed yet.
+      const fallback = Math.round(growth * 0.35 + tiktok * 0.25 + trends * 0.25 + rankMo * 0.15);
+      return { ...dj, momentum: Number.isFinite(dj.momentum_score) ? dj.momentum_score : fallback };
     })
     .filter(dj => dj.emerging === true)   // reputation-based: emerging breakouts only, excludes veterans/legends
     .sort((a, b) => b.momentum - a.momentum);
