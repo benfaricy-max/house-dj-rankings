@@ -804,3 +804,71 @@ details[open] .hiw-faq-q::after { content: "–"; }
 .vel-table, .cmp-val, .cmp-ratio, .otw-momentum, .breaking-mo-score,
 .watch-mo-score, .mover-rank, .mover-past-rank, .mover-current-rank,
 .header-updated, .header-platforms, .plat-pill { font-family: var(--mono); }
+
+/* ---- Booking Intelligence ---- */
+.bk-page { text-align: left; max-width: 1000px; margin: 0 auto; padding: 0 8px; }
+.bk-header { margin-bottom: 24px; }
+.bk-controls {
+  display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-end;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 20px 22px; margin-bottom: 22px;
+}
+.bk-field label {
+  display: block; font-family: var(--mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+}
+.bk-budget-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.bk-chip {
+  font-family: var(--mono); font-size: 14px; cursor: pointer;
+  background: var(--bg); color: var(--text); border: 1px solid var(--border);
+  border-radius: 8px; padding: 9px 14px; transition: all 0.12s ease;
+}
+.bk-chip:hover { border-color: var(--accent-border); color: var(--text-h); }
+.bk-chip--on { background: var(--accent); color: var(--on-accent); border-color: var(--accent); font-weight: 600; }
+.bk-select {
+  font-family: var(--sans); font-size: 16px; color: var(--text-h);
+  background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+  padding: 10px 14px; min-width: 200px; cursor: pointer;
+}
+.bk-summary {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 18px;
+}
+.bk-sum-cell { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+.bk-sum-n { font-family: var(--mono); font-size: 34px; font-weight: 600; color: var(--accent); line-height: 1; }
+.bk-sum-n span { font-size: 16px; color: var(--muted); }
+.bk-sum-l { font-size: 13px; color: var(--muted); margin-top: 8px; }
+.bk-lineup { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.bk-act {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px;
+}
+.bk-act--head { grid-column: 1 / -1; border-color: var(--accent-border); }
+.bk-act-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.bk-act-role {
+  font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--accent);
+}
+.bk-mom { font-family: var(--mono); font-size: 13px; font-weight: 600; }
+.bk-mom--up { color: var(--accent); }
+.bk-mom--down { color: #df7a5c; }
+.bk-mom--flat { color: var(--muted); }
+.bk-act-name { font-size: 26px; font-weight: 600; color: var(--text-h); }
+.bk-act--head .bk-act-name { font-size: 34px; }
+.bk-act-meta { font-family: var(--mono); font-size: 14px; color: var(--muted); margin: 4px 0 14px; }
+.bk-act-stats { display: flex; flex-direction: column; gap: 8px; }
+.bk-stat-l { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 6px; }
+.bk-gauge { display: flex; align-items: center; gap: 12px; }
+.bk-gauge-track { flex: 1; height: 10px; background: var(--bg); border-radius: 5px; overflow: hidden; }
+.bk-gauge-fill { height: 100%; background: var(--accent); border-radius: 5px; }
+.bk-gauge-val { font-family: var(--mono); font-size: 18px; font-weight: 600; color: var(--text-h); min-width: 30px; }
+.bk-act-sub { font-size: 13px; color: var(--text); }
+.bk-method {
+  margin-top: 20px; font-size: 14px; line-height: 1.6; color: var(--muted);
+  background: var(--code-bg); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px;
+}
+.bk-method b { color: var(--text-h); }
+.bk-roadmap { color: var(--accent); display: block; margin-top: 8px; }
+.bk-empty { color: var(--muted); padding: 40px; text-align: center; }
+@media (max-width: 760px) {
+  .bk-summary { grid-template-columns: 1fr; }
+  .bk-lineup { grid-template-columns: 1fr; }
+}

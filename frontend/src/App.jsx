@@ -1087,6 +1087,182 @@ const CITY_SPOTLIGHT_ARTISTS = [
   },
 ];
 
+// ---- Booking Intelligence -------------------------------------------------
+const BOOKING_MARKETS = [
+  { city: "Amsterdam", country: "Netherlands" },
+  { city: "Berlin", country: "Germany" },
+  { city: "London", country: "United Kingdom" },
+  { city: "Ibiza", country: "Spain" },
+  { city: "Paris", country: "France" },
+  { city: "Miami", country: "United States" },
+  { city: "New York", country: "United States" },
+  { city: "Los Angeles", country: "United States" },
+  { city: "Las Vegas", country: "United States" },
+  { city: "Melbourne", country: "Australia" },
+  { city: "Sydney", country: "Australia" },
+  { city: "Toronto", country: "Canada" },
+  { city: "Mexico City", country: "Mexico" },
+];
+const BUDGET_PRESETS = [25000, 50000, 100000, 250000, 500000];
+const fmtGBP = n =>
+  n >= 1000 ? "£" + Math.round(n / 1000) + "K" : "£" + n;
+
+function momentumTag(a) {
+  const m = a.trends_mom_12w;
+  if (!Number.isFinite(m)) return { arrow: "→", cls: "flat", label: "steady" };
+  if (m >= 25) return { arrow: "↑", cls: "up", label: `+${Math.round(m)}% 12wk` };
+  if (m <= -25) return { arrow: "↓", cls: "down", label: `${Math.round(m)}% 12wk` };
+  return { arrow: "→", cls: "flat", label: "steady" };
+}
+
+function BookingToolPage({ rankings }) {
+  const [budget, setBudget] = useState(100000);
+  const [market, setMarket] = useState(BOOKING_MARKETS[0]);
+
+  const maxScore = useMemo(
+    () => Math.max(...rankings.map(r => r.score || 0)) || 1,
+    [rankings]
+  );
+
+  // Demand Fit (0–100): how well an artist suits THIS market. Blends local
+  // (country-level search interest) with overall demand. Transparent, no black box.
+  const scored = useMemo(() => {
+    return rankings
+      .filter(r => r.booking_fee?.mid > 0)
+      .map(r => {
+        const overall = Math.round(((r.score || 0) / maxScore) * 100);
+        const local = r.google_trends_countries?.[market.country];
+        const hasLocal = Number.isFinite(local) && local > 0;
+        const fit = hasLocal ? Math.round(0.6 * local + 0.4 * overall) : overall;
+        return { ...r, _overall: overall, _local: hasLocal ? local : null, _fit: fit };
+      })
+      .sort((a, b) => b._fit - a._fit);
+  }, [rankings, market, maxScore]);
+
+  // Greedy lineup: best-fit headliner within ~70% of budget, then fill support.
+  const lineup = useMemo(() => {
+    const headMax = budget * 0.72;
+    let head = scored.find(a => a.booking_fee.mid <= headMax);
+    if (!head) head = scored.find(a => a.booking_fee.mid <= budget); // tiny budget: relax
+    if (!head) return null;
+    let remaining = budget - head.booking_fee.mid;
+    const support = [];
+    for (const a of scored) {
+      if (a.name === head.name) continue;
+      if (support.length >= 3) break;
+      if (a.booking_fee.mid <= remaining) {
+        support.push(a);
+        remaining -= a.booking_fee.mid;
+      }
+    }
+    const acts = [head, ...support];
+    const total = acts.reduce((s, a) => s + a.booking_fee.mid, 0);
+    // lineup demand index — headliner weighted 2x
+    const wSum = head._fit * 2 + support.reduce((s, a) => s + a._fit, 0);
+    const wDen = 2 + support.length;
+    const demandIndex = Math.round(wSum / wDen);
+    return { head, support, acts, total, remaining: budget - total, demandIndex };
+  }, [scored, budget]);
+
+  const Gauge = ({ value }) => (
+    <div className="bk-gauge">
+      <div className="bk-gauge-track"><div className="bk-gauge-fill" style={{ width: value + "%" }} /></div>
+      <span className="bk-gauge-val">{value}</span>
+    </div>
+  );
+
+  const ActCard = ({ a, role }) => {
+    const mt = momentumTag(a);
+    return (
+      <div className={`bk-act bk-act--${role}`}>
+        <div className="bk-act-top">
+          <span className="bk-act-role">{role === "head" ? "Headliner" : "Support"}</span>
+          <span className={`bk-mom bk-mom--${mt.cls}`}>{mt.arrow} {mt.label}</span>
+        </div>
+        <div className="bk-act-name"><ArtistLink name={a.name} /></div>
+        <div className="bk-act-meta">#{a.rank} · {a.booking_fee.label}</div>
+        <div className="bk-act-stats">
+          <div><span className="bk-stat-l">Demand Fit</span><Gauge value={a._fit} /></div>
+          <div className="bk-act-sub">
+            {a._local != null
+              ? <>Local interest in {market.country}: <b>{a._local}/100</b></>
+              : <>No local data — using <b>global demand {a._overall}/100</b></>}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <div className="page bk-page">
+      <div className="bk-header">
+        <div className="cs-eyebrow">Pro · Booking Intelligence</div>
+        <h1 className="cs-title">Build a lineup that sells</h1>
+        <p className="cs-sub">
+          Enter a budget and a market. We propose a lineup, sized to your budget,
+          ranked by projected demand in that city — so you book the right names
+          before you overpay.
+        </p>
+      </div>
+
+      <div className="bk-controls">
+        <div className="bk-field">
+          <label>Budget</label>
+          <div className="bk-budget-row">
+            {BUDGET_PRESETS.map(b => (
+              <button key={b}
+                className={`bk-chip ${budget === b ? "bk-chip--on" : ""}`}
+                onClick={() => setBudget(b)}>{fmtGBP(b)}</button>
+            ))}
+          </div>
+        </div>
+        <div className="bk-field">
+          <label>Market</label>
+          <select className="bk-select" value={market.city}
+            onChange={e => setMarket(BOOKING_MARKETS.find(m => m.city === e.target.value))}>
+            {BOOKING_MARKETS.map(m => <option key={m.city} value={m.city}>{m.city}</option>)}
+          </select>
+        </div>
+      </div>
+
+      {!lineup ? (
+        <div className="bk-empty">No artist fits within {fmtGBP(budget)}. Try a larger budget.</div>
+      ) : (
+        <>
+          <div className="bk-summary">
+            <div className="bk-sum-cell">
+              <div className="bk-sum-n">{lineup.demandIndex}<span>/100</span></div>
+              <div className="bk-sum-l">Lineup Demand Fit · {market.city}</div>
+            </div>
+            <div className="bk-sum-cell">
+              <div className="bk-sum-n">{fmtGBP(lineup.total)}</div>
+              <div className="bk-sum-l">Projected cost · {Math.round(lineup.total / budget * 100)}% of budget</div>
+            </div>
+            <div className="bk-sum-cell">
+              <div className="bk-sum-n">{lineup.acts.length}</div>
+              <div className="bk-sum-l">Acts · {fmtGBP(lineup.remaining)} unspent</div>
+            </div>
+          </div>
+
+          <div className="bk-lineup">
+            <ActCard a={lineup.head} role="head" />
+            {lineup.support.map(a => <ActCard key={a.name} a={a} role="support" />)}
+          </div>
+
+          <div className="bk-method">
+            <b>How this is computed.</b> Demand Fit blends country-level search
+            interest for {market.country} (60%) with each artist's overall demand
+            score (40%); fees are our curated booking benchmarks. This is a demand
+            estimate, not a guaranteed ticket forecast.
+            <span className="bk-roadmap"> Connect your ticketing data to calibrate
+            this into a sell-through prediction →</span>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
 function CitySpotlightPage({ rankings }) {
   const byName = Object.fromEntries(rankings.map(r => [r.name, r]));
   const [selected, setSelected] = useState(null);
@@ -1797,6 +1973,7 @@ export default function App() {
         <div className="top-tabs">
           <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>
           <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
+          <button className={`top-tab ${activeTab === "booking" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking")}>Booking</button>
           <button className={`top-tab ${activeTab === "city-spotlight" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("city-spotlight")}>City Spotlight</button>
           <button className={`top-tab ${activeTab === "ones-to-watch" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("ones-to-watch")}>Ones to Watch</button>
           <button className={`top-tab ${activeTab === "benchmark"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("benchmark")}>Benchmark</button>
@@ -1808,6 +1985,7 @@ export default function App() {
       </header>
 
       {activeTab === "pro" && <ProPage rankings={rankings} />}
+      {activeTab === "booking"       && <BookingToolPage rankings={rankings} />}
       {activeTab === "city-spotlight" && <CitySpotlightPage rankings={rankings} />}
       {activeTab === "ones-to-watch" && <OnestoWatchPage rankings={rankings} />}
       {activeTab === "benchmark"     && <ComparativeBenchmarkingPage rankings={rankings} />}
