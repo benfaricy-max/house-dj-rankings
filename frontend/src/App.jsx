@@ -1095,7 +1095,7 @@ function CitySpotlightPage({ rankings }) {
     <div className="page cs-page">
       <div className="cs-header">
         <div>
-          <div className="cs-eyebrow">🔍 Pro Preview</div>
+          <div className="cs-eyebrow">Pro Preview</div>
           <h1 className="cs-title">City Demand Spotlight</h1>
           <p className="cs-sub">
             Where is each artist's fanbase most concentrated?
@@ -1280,7 +1280,7 @@ function ComparativeBenchmarkingPage({ rankings }) {
   return (
     <div className="page cmp-page">
       <div className="cmp-header">
-        <div className="cs-eyebrow">🔬 Pro Preview</div>
+        <div className="cs-eyebrow">Pro Preview</div>
         <h1 className="cmp-title">Comparative Benchmarking</h1>
         <p className="cmp-sub">
           Cross-metric analysis that exposes hidden signal — who's viral but not streaming,
@@ -1486,7 +1486,7 @@ function BreakoutsPage({ rankings, breakouts: staticBreakouts, breakoutThreshold
     <div className="page brk-page">
       <div className="brk-header">
         <div>
-          <h1 className="brk-title">🚨 Breakout Alerts</h1>
+          <h1 className="brk-title">Breakout Alerts</h1>
           <p className="brk-sub">Artists whose overall score jumped significantly week-over-week — move before the market catches on.</p>
         </div>
         <div className="brk-threshold">
@@ -1785,11 +1785,11 @@ export default function App() {
         <div className="top-tabs">
           <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>
           <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
-          <button className={`top-tab ${activeTab === "city-spotlight" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("city-spotlight")}>📍 City Spotlight</button>
+          <button className={`top-tab ${activeTab === "city-spotlight" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("city-spotlight")}>City Spotlight</button>
           <button className={`top-tab ${activeTab === "ones-to-watch" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("ones-to-watch")}>Ones to Watch</button>
-          <button className={`top-tab ${activeTab === "benchmark"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("benchmark")}>🔬 Benchmark</button>
+          <button className={`top-tab ${activeTab === "benchmark"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("benchmark")}>Benchmark</button>
           <button className={`top-tab ${activeTab === "velocity"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("velocity")}>Velocity</button>
-          <button className={`top-tab ${activeTab === "breakouts"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("breakouts")}>🚨 Breakouts</button>
+          <button className={`top-tab ${activeTab === "breakouts"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("breakouts")}>Breakouts</button>
           <button className={`top-tab ${activeTab === "movers"        ? "top-tab--active" : ""}`} onClick={() => setActiveTab("movers")}>Movers</button>
           <button data-tab="pro" className={`top-tab top-tab--pro ${activeTab === "pro" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("pro")}>Pro</button>
         </div>
