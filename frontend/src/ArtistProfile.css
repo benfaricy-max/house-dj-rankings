@@ -56,3 +56,15 @@
 .ap-ra-regions { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; font-size: .8rem; color: #999; }
 .ap-ra-regions-label { color: #666; }
 .ap-ra-tag { display: inline-block; background: #151f0d; border: 1px solid #2a3a1a; color: #a8e00f; font-size: .7rem; padding: 2px 9px; border-radius: 6px; margin: 2px 4px 2px 0; }
+
+/* momentum + value-gap signals on profile */
+.ap-signals { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0; }
+.ap-signal { background: var(--card, #111114); border: 1px solid var(--border, #1e1f23); border-radius: 12px; padding: 16px 18px; }
+.ap-signal--buy { border-color: var(--accent-border, rgba(200,247,80,0.45)); }
+.ap-signal--prem { border-color: rgba(223,122,92,0.45); }
+.ap-signal-val { font-family: var(--mono, monospace); font-size: 26px; font-weight: 600; color: var(--text-h, #E9E7DF); line-height: 1; }
+.ap-signal-val span { font-size: 14px; color: var(--muted, #75767d); }
+.ap-signal--buy .ap-signal-val { color: var(--accent, #C8F750); }
+.ap-signal--prem .ap-signal-val { color: #df7a5c; }
+.ap-signal-key { font-family: var(--mono, monospace); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted, #75767d); margin-top: 10px; }
+.ap-signal-sub { font-size: 12.5px; color: var(--muted, #75767d); margin-top: 4px; }

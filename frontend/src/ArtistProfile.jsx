@@ -223,6 +223,40 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
 
       {profile.bio && <p className="ap-bio">{profile.bio}</p>}
 
+      {(Number.isFinite(dj.momentum_score) || dj.value_signal) && (
+        <div className="ap-signals">
+          {Number.isFinite(dj.momentum_score) && (
+            <div className="ap-signal">
+              <div className="ap-signal-val" style={{ color: dj.momentum_score >= 65 ? "#C8F750" : "#E9E7DF" }}>
+                {dj.momentum_score}<span>/100</span>
+              </div>
+              <div className="ap-signal-key">Momentum</div>
+              <div className="ap-signal-sub">acceleration vs. own baseline</div>
+            </div>
+          )}
+          {dj.booking_fee && (
+            <div className="ap-signal">
+              <div className="ap-signal-val">{dj.booking_fee.label}</div>
+              <div className="ap-signal-key">Booking fee {dj.booking_fee.basis === "curated" || dj.booking_fee.basis === "anchored" ? "" : "(est.)"}</div>
+              <div className="ap-signal-sub">curated club/festival range</div>
+            </div>
+          )}
+          {dj.value_signal && dj.value_signal !== "fair" && (
+            <div className={`ap-signal ap-signal--${dj.value_signal === "premium" ? "prem" : "buy"}`}>
+              <div className="ap-signal-val">
+                {dj.value_signal === "premium" ? "Priced ahead" : `${dj.value_gap > 0 ? "+" : ""}${dj.value_gap} tier${Math.abs(dj.value_gap) !== 1 ? "s" : ""}`}
+              </div>
+              <div className="ap-signal-key">
+                {dj.value_signal === "strong-buy" ? "Strong buy" : dj.value_signal === "buy" ? "Underpriced" : "Price vs demand"}
+              </div>
+              <div className="ap-signal-sub">
+                {dj.value_signal === "premium" ? "fee runs hotter than demand" : `demand implies ${dj.demand_fee_label}`}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
       {dj.tour_upcoming > 0 && (
         <div className="ap-tour">
           <div className="ap-tour-item">
