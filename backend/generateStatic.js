@@ -88,7 +88,10 @@ async function main() {
         ...soundcloud,
         // image: keep a real image if we have one
         image: artist.image ?? spotifyCache.image ?? prev.image ?? null,
-        tiktok_post_count:    keep(tiktok.tiktok_post_count, prev.tiktok_post_count),
+        // A null/empty tiktok_tag means the hashtag is too generic to be a clean
+        // signal (e.g. "alignment" catches unrelated content) — force 0 so the
+        // old inflated value is never resurrected by keep().
+        tiktok_post_count:    artist.tiktok_tag ? keep(tiktok.tiktok_post_count, prev.tiktok_post_count) : 0,
         youtube_subscribers:  keep(youtube.youtube_subscribers, prev.youtube_subscribers),
         youtube_total_views:  keep(youtube.youtube_total_views, prev.youtube_total_views),
         youtube_views_weekly: keep(youtube_views_weekly, prev.youtube_views_weekly),
