@@ -64,7 +64,7 @@ async function main() {
         getYouTubeData(artist, { allowSearch: true }), // accurate search resolution; caches UC id so it's 1u next time. ~90/day fit in quota, completes over a few days.
         getSoundCloudData(artist.soundcloud_permalink),
         getMixcloudData(artist.mixcloud_username),
-        getGoogleTrends(artist.name),
+        getGoogleTrends(artist.search_alias || artist.name), // search_alias disambiguates common names (e.g. "Rebekah techno")
       ]);
 
       // Cache resolved YouTube channel ID back to artists.json to save quota

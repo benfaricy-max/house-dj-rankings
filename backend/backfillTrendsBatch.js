@@ -87,7 +87,8 @@ function save() {
 
   let ok = 0, failStreak = 0, backoff = BASE_DELAY_MS;
   for (const [bi, batch] of batches.entries()) {
-    const terms = [ANCHOR, ...batch.map(d => d.name)];
+    const termOf = d => d.search_alias || d.name; // disambiguate common names
+    const terms = [ANCHOR, ...batch.map(termOf)];
     const res = await runBatch(terms);
 
     const anchorRaw = res && !res.error ? res[ANCHOR] : null;
@@ -96,7 +97,7 @@ function save() {
       const factor = anchorLevel >= 5 ? (ANCHOR_BASE / anchorLevel) : 1;
       const weeks = res._weeks || [];
       for (const dj of batch) {
-        const raw = res[dj.name];
+        const raw = res[termOf(dj)];
         if (raw && raw.length) { applyArtist(dj, raw, factor, weeks); ok++; }
       }
       failStreak = 0; backoff = BASE_DELAY_MS;

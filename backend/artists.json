@@ -5864,7 +5864,7 @@
     "soundcloud_permalink": "rebekah",
     "album_count": 15,
     "manual_scene_score": 70,
-    "tiktok_tag": "rebekah",
+    "tiktok_tag": null,
     "mixcloud_username": "",
     "emerging": false,
     "booking_fee": {
@@ -5875,7 +5875,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "search_alias": "Rebekah techno"
   },
   {
     "name": "Alignment",
