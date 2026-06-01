@@ -1,0 +1,48 @@
+import { useState, useEffect } from "react";
+
+// Commercialization scaffold. The paywall is OFF by default so the live site
+// behaves exactly as before. Flip it on (and point at your API) only once
+// Stripe + the serverless functions are deployed — see COMMERCE.md.
+//   VITE_PAYWALL_ENABLED=true        → gate Pro features
+//   VITE_API_BASE=https://api.…      → where the serverless functions live
+const PAYWALL = import.meta.env.VITE_PAYWALL_ENABLED === "true";
+const API = import.meta.env.VITE_API_BASE || "";
+
+// Returns { pro, loading, paywall }. When the paywall is disabled, everyone is
+// "pro" — i.e. the whole product is open, which is the current behaviour.
+export function usePro() {
+  const [pro, setPro] = useState(!PAYWALL);
+  const [loading, setLoading] = useState(PAYWALL);
+
+  useEffect(() => {
+    if (!PAYWALL) return;
+    // Dev/manual unlock for testing without a backend.
+    if (localStorage.getItem("peaktime_pro") === "1") { setPro(true); setLoading(false); return; }
+    if (!API) { setLoading(false); return; }
+    fetch(`${API}/api/me`, { credentials: "include" })
+      .then(r => (r.ok ? r.json() : { pro: false }))
+      .then(d => setPro(!!d.pro))
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  }, []);
+
+  return { pro, loading, paywall: PAYWALL };
+}
+
+// Kicks off Stripe Checkout via the serverless function.
+export async function startCheckout(plan = "pro") {
+  if (!API) { alert("Checkout isn't configured yet — see COMMERCE.md."); return; }
+  try {
+    const r = await fetch(`${API}/api/checkout`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({ plan }),
+    });
+    const { url, error } = await r.json();
+    if (url) window.location.href = url;
+    else alert(error || "Could not start checkout.");
+  } catch {
+    alert("Could not reach the checkout service.");
+  }
+}

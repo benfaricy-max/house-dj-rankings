@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo, useRef } from "react";
 import "./App.css";
 import ProPage from "./ProPage";
 import ArtistProfile, { slugify, ArtistLink } from "./ArtistProfile";
+import { usePro, startCheckout } from "./usePro";
 
 const parseProfileSlug = () => {
   const m = (window.location.hash || "").match(/^#\/artist\/(.+)$/);
@@ -1157,6 +1158,7 @@ function BookingToolPage({ rankings }) {
   const [market, setMarket] = useState(BOOKING_MARKETS[0]);
   const [quotes, setQuotes] = useState({});   // artist name -> quoted ask (£)
   const [memoOpen, setMemoOpen] = useState(false);
+  const { pro } = usePro();   // gates support acts, fair-price check, rationale
 
   const maxScore = useMemo(
     () => Math.max(...rankings.map(r => r.score || 0)) || 1,
@@ -1232,16 +1234,22 @@ function BookingToolPage({ rankings }) {
           </div>
         </div>
         <div className="bk-quote">
-          <span className="bk-stat-l">Your quote (optional)</span>
-          <div className="bk-quote-row">
-            <span className="bk-quote-prefix">£</span>
-            <input
-              type="number" className="bk-quote-input" placeholder={String(a.booking_fee.mid)}
-              value={quotes[a.name] ?? ""}
-              onChange={e => setQuotes(q => ({ ...q, [a.name]: e.target.value }))}
-            />
-            {verdict && <span className={`bk-verdict bk-verdict--${verdict.cls}`}>{verdict.label}</span>}
-          </div>
+          <span className="bk-stat-l">Your quote {pro ? "(optional)" : "· Pro"}</span>
+          {pro ? (
+            <div className="bk-quote-row">
+              <span className="bk-quote-prefix">£</span>
+              <input
+                type="number" className="bk-quote-input" placeholder={String(a.booking_fee.mid)}
+                value={quotes[a.name] ?? ""}
+                onChange={e => setQuotes(q => ({ ...q, [a.name]: e.target.value }))}
+              />
+              {verdict && <span className={`bk-verdict bk-verdict--${verdict.cls}`}>{verdict.label}</span>}
+            </div>
+          ) : (
+            <div className="bk-locked-inline" onClick={() => startCheckout()}>
+              🔒 Benchmark a quote against the market — unlock with Pro
+            </div>
+          )}
         </div>
       </div>
     );
@@ -1300,15 +1308,30 @@ function BookingToolPage({ rankings }) {
 
           <div className="bk-lineup">
             {ActCard(lineup.head, "head")}
-            {lineup.support.map(a => ActCard(a, "support"))}
+            {pro
+              ? lineup.support.map(a => ActCard(a, "support"))
+              : lineup.support.length > 0 && (
+                <div className="bk-upgrade" onClick={() => startCheckout()}>
+                  <span className="bk-act-role">Pro</span>
+                  <h3>+ {lineup.support.length} support acts, sized to your budget</h3>
+                  <p>See the full demand-ranked lineup, benchmark every fee, and generate a booking rationale.</p>
+                  <button className="bk-upgrade-btn">Unlock Pro →</button>
+                </div>
+              )}
           </div>
 
           <div className="bk-memo-bar">
-            <button className="bk-memo-btn" onClick={() => setMemoOpen(o => !o)}>
-              {memoOpen ? "Hide booking rationale" : "✦ Generate booking rationale"}
-            </button>
+            {pro ? (
+              <button className="bk-memo-btn" onClick={() => setMemoOpen(o => !o)}>
+                {memoOpen ? "Hide booking rationale" : "✦ Generate booking rationale"}
+              </button>
+            ) : (
+              <button className="bk-memo-btn bk-memo-btn--locked" onClick={() => startCheckout()}>
+                🔒 Generate booking rationale — Pro
+              </button>
+            )}
           </div>
-          {memoOpen && (
+          {pro && memoOpen && (
             <div className="bk-memo">
               <div className="bk-memo-head">
                 <span className="bk-act-role">Auto-generated rationale</span>

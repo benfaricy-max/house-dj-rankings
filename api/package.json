@@ -1,0 +1,13 @@
+{
+  "name": "peaktime-api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Serverless functions for PEAKTIME Pro — Stripe billing, entitlement, AI rationale. Deploy on Vercel/Cloudflare/Netlify (see COMMERCE.md).",
+  "type": "module",
+  "dependencies": {
+    "stripe": "^16.0.0"
+  },
+  "optionalDependencies": {
+    "@anthropic-ai/sdk": "^0.27.0"
+  }
+}

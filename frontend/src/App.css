@@ -902,3 +902,22 @@ details[open] .hiw-faq-q::after { content: "–"; }
 .bk-memo-tag { font-family: var(--mono); font-size: 12px; color: var(--muted); }
 .bk-memo-line { font-size: 16px; line-height: 1.6; color: var(--text); margin-bottom: 12px; }
 .bk-memo-line:last-child { margin-bottom: 0; color: var(--muted); font-size: 14px; font-style: italic; }
+
+/* booking — paywall teaser */
+.bk-locked-inline {
+  font-family: var(--mono); font-size: 13px; color: var(--muted); cursor: pointer;
+  border: 1px dashed var(--border); border-radius: 8px; padding: 10px 12px; transition: all 0.12s;
+}
+.bk-locked-inline:hover { color: var(--accent); border-color: var(--accent-border); }
+.bk-upgrade {
+  background: var(--card); border: 1px dashed var(--accent-border); border-radius: 14px;
+  padding: 22px; cursor: pointer; display: flex; flex-direction: column; justify-content: center;
+}
+.bk-upgrade:hover { border-color: var(--accent); }
+.bk-upgrade h3 { font-size: 19px; color: var(--text-h); margin: 8px 0; }
+.bk-upgrade p { font-size: 14px; color: var(--muted); margin-bottom: 16px; }
+.bk-upgrade-btn, .bk-memo-btn--locked {
+  align-self: flex-start; font-family: var(--mono); font-size: 13px; font-weight: 600; cursor: pointer;
+  background: var(--accent); color: var(--on-accent); border: none; border-radius: 8px; padding: 10px 16px;
+}
+.bk-memo-btn--locked { background: var(--social-bg); color: var(--text-h); border: 1px solid var(--border); }
