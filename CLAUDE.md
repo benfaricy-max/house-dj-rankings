@@ -87,6 +87,17 @@ survive the CI commit; data/ is gitignored). `wikipedia_trend` = recent-30d vs
 prior-30d (fetchWikipedia). UI: "Momentum" sort on Rankings + pill on rows;
 Ones-to-Watch/Pro prefer momentum_score, fall back to client calc if null.
 
+## Price/Demand Gap (the buy signal — Pitchbook analog)
+`node backend/enrichValueGap.js` (after computeFees + enrichMomentum). Estimates a
+demand-implied fee tier and flags artists whose demand outpaced their known fee.
+`demand_index` 0-100 = reach .40 (log listeners) + RA booking .22 + beatport .18 +
+youtube .10 (log) + trends .10, self-healing. Calibrated to tiers using the ACTUAL
+fee-tier distribution (relative repricing; sum of gaps ≈ 0). `value_gap` =
+demand_tier − fee tier (+ve = underpriced). value_signal: "strong-buy" (gap≥1 AND
+momentum≥40 — underpriced + surging), "buy" (gap≥1 static), "premium" (gap≤−1),
+"fair". ONLY judges curated/anchored fees (a gap vs a fallback estimate just
+measures the estimate's staleness). UI: "Value Gap" tab + badge on Booking acts.
+
 ## Scene Score (transparent editorial layer)
 `manual_scene_score` 0-100, weight 0.11 (raised from 0.04). Published rubric in
 How It Works (SCENE_RUBRIC in App.jsx): Boiler Room/HÖR +20, Berghain/fabric/DC10

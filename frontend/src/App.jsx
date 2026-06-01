@@ -1273,6 +1273,14 @@ function BookingToolPage({ rankings }) {
               ? <>Local interest in {market.country}: <b>{a._local}/100</b></>
               : <>No local data — using <b>global demand {a._overall}/100</b></>}
           </div>
+          {(a.value_signal === "buy" || a.value_signal === "strong-buy") && (
+            <div className="bk-value bk-value--buy">
+              {a.value_signal === "strong-buy" ? "◆ Strong buy" : "▲ Underpriced"} — demand implies {a.demand_fee_label}
+            </div>
+          )}
+          {a.value_signal === "premium" && (
+            <div className="bk-value bk-value--prem">Priced ahead of current demand</div>
+          )}
         </div>
         <div className="bk-quote">
           <span className="bk-stat-l">Your quote {pro ? "(optional)" : "· Pro"}</span>
@@ -1400,6 +1408,76 @@ function BookingToolPage({ rankings }) {
           )}
         </>
       )}
+    </div>
+  );
+}
+
+// ---- Price/Demand Gap — the buy signal -------------------------------------
+function ValueGapPage({ rankings }) {
+  const { strong, buy, premium } = useMemo(() => {
+    const withGap = rankings.filter(a => a.booking_fee && Number.isFinite(a.value_gap));
+    const byGap = (x, y) => (y.value_gap - x.value_gap) || ((y.momentum_score || 0) - (x.momentum_score || 0));
+    return {
+      strong:  withGap.filter(a => a.value_signal === "strong-buy").sort(byGap),
+      buy:     withGap.filter(a => a.value_signal === "buy").sort(byGap),
+      premium: withGap.filter(a => a.value_signal === "premium").sort((x, y) => x.value_gap - y.value_gap),
+    };
+  }, [rankings]);
+
+  const Row = ({ a }) => (
+    <div className="vg-row">
+      <div className="vg-name"><ArtistLink name={a.name} /><span className="vg-rank">#{a.rank}</span></div>
+      <div className="vg-fee">
+        <span className="vg-now">{a.booking_fee.label}</span>
+        <span className="vg-arrow">→</span>
+        <span className="vg-implied">{a.demand_fee_label}</span>
+      </div>
+      <div className="vg-gap">
+        <span className={`vg-gap-badge vg-gap--${a.value_gap > 0 ? "up" : "down"}`}>
+          {a.value_gap > 0 ? "+" : ""}{a.value_gap} tier{Math.abs(a.value_gap) !== 1 ? "s" : ""}
+        </span>
+        {Number.isFinite(a.momentum_score) && <span className="vg-mo">▲ {a.momentum_score}</span>}
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="page vg-page">
+      <div className="bk-header">
+        <div className="cs-eyebrow">Pro · Price vs Demand</div>
+        <h1 className="cs-title">The buy signals</h1>
+        <p className="cs-sub">
+          We estimate where each artist's fee <em>should</em> sit from demand data — reach, live
+          booking demand (RA venue tier &amp; attendance), Beatport credibility, search — then flag
+          where demand has outpaced the known fee tier. Underpriced + accelerating = book before the price catches up.
+        </p>
+      </div>
+
+      <div className="vg-section">
+        <div className="vg-head vg-head--strong">Strong buy · underpriced &amp; demand surging</div>
+        {strong.length ? strong.map(a => <Row key={a.name} a={a} />)
+          : <div className="vg-empty">No strong buys right now — none are both underpriced and surging on momentum.</div>}
+      </div>
+
+      <div className="vg-section">
+        <div className="vg-head">Underpriced · demand-implied tier above current fee</div>
+        {buy.slice(0, 25).map(a => <Row key={a.name} a={a} />)}
+      </div>
+
+      {premium.length > 0 && (
+        <div className="vg-section">
+          <div className="vg-head vg-head--prem">Priced ahead · fee runs hotter than current demand</div>
+          {premium.slice(0, 8).map(a => <Row key={a.name} a={a} />)}
+        </div>
+      )}
+
+      <div className="bk-method">
+        <b>How this is computed.</b> A 0–100 demand index (40% reach · 22% RA booking demand ·
+        18% Beatport · 10% YouTube · 10% search) is calibrated to fee tiers using the real fee
+        distribution, so a gap means demand ranks an artist higher than their fee — not a scale
+        artefact. "Strong buy" additionally requires positive Momentum. Fee bands are curated
+        estimates; treat this as a directional buy signal, not a quote.
+      </div>
     </div>
   );
 }
@@ -2115,6 +2193,7 @@ export default function App() {
           <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>
           <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
           <button className={`top-tab ${activeTab === "booking" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking")}>Booking</button>
+          <button className={`top-tab ${activeTab === "value" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("value")}>Value Gap</button>
           <button className={`top-tab ${activeTab === "city-spotlight" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("city-spotlight")}>City Spotlight</button>
           <button className={`top-tab ${activeTab === "ones-to-watch" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("ones-to-watch")}>Ones to Watch</button>
           <button className={`top-tab ${activeTab === "benchmark"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("benchmark")}>Benchmark</button>
@@ -2127,6 +2206,7 @@ export default function App() {
 
       {activeTab === "pro" && <ProPage rankings={rankings} />}
       {activeTab === "booking"       && <BookingToolPage rankings={rankings} />}
+      {activeTab === "value"         && <ValueGapPage rankings={rankings} />}
       {activeTab === "city-spotlight" && <CitySpotlightPage rankings={rankings} />}
       {activeTab === "ones-to-watch" && <OnestoWatchPage rankings={rankings} />}
       {activeTab === "benchmark"     && <ComparativeBenchmarkingPage rankings={rankings} />}

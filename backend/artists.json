@@ -20,7 +20,11 @@
     },
     "trends_mom_12w": 5.1,
     "wikipedia_title": "Fisher",
-    "ra_slug": "fisher"
+    "ra_slug": "fisher",
+    "demand_index": 93,
+    "demand_tier": 6,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Chris Lake",
@@ -50,7 +54,11 @@
     ],
     "trends_mom_12w": 13.3,
     "wikipedia_title": "Chris Lake",
-    "ra_slug": "chrislake"
+    "ra_slug": "chrislake",
+    "demand_index": 70,
+    "demand_tier": 4,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "John Summit",
@@ -80,7 +88,11 @@
     ],
     "trends_mom_12w": 35,
     "wikipedia_title": "John Summit",
-    "ra_slug": "johnsummit"
+    "ra_slug": "johnsummit",
+    "demand_index": 68,
+    "demand_tier": 4,
+    "value_gap": -2,
+    "value_signal": "premium"
   },
   {
     "name": "Fred Again",
@@ -122,7 +134,11 @@
     },
     "trends_mom_12w": -50,
     "wikipedia_title": "Four Tet",
-    "ra_slug": "fourtet"
+    "ra_slug": "fourtet",
+    "demand_index": 85,
+    "demand_tier": 6,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Disclosure",
@@ -152,7 +168,11 @@
     ],
     "trends_mom_12w": 23.9,
     "wikipedia_title": "Disclosure",
-    "ra_slug": "disclosure"
+    "ra_slug": "disclosure",
+    "demand_index": 76,
+    "demand_tier": 5,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Peggy Gou",
@@ -181,7 +201,11 @@
     ],
     "trends_mom_12w": -9.1,
     "wikipedia_title": "Peggy Gou",
-    "ra_slug": "peggygou"
+    "ra_slug": "peggygou",
+    "demand_index": 65,
+    "demand_tier": 4,
+    "value_gap": -2,
+    "value_signal": "premium"
   },
   {
     "name": "Black Coffee",
@@ -210,7 +234,11 @@
     ],
     "trends_mom_12w": 96.5,
     "wikipedia_title": "Black Coffee (DJ)",
-    "ra_slug": "blackcoffee"
+    "ra_slug": "blackcoffee",
+    "demand_index": 72,
+    "demand_tier": 5,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Solomun",
@@ -239,7 +267,11 @@
     ],
     "trends_mom_12w": 34.5,
     "wikipedia_title": "Solomun (musician)",
-    "ra_slug": "solomun"
+    "ra_slug": "solomun",
+    "demand_index": 76,
+    "demand_tier": 5,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Tale Of Us",
@@ -262,7 +294,11 @@
     },
     "trends_mom_12w": 4.8,
     "wikipedia_title": "Tale of Us",
-    "ra_slug": "taleofus"
+    "ra_slug": "taleofus",
+    "demand_index": 61,
+    "demand_tier": 3,
+    "value_gap": -2,
+    "value_signal": "premium"
   },
   {
     "name": "Bicep",
@@ -304,7 +340,11 @@
       "basis": "curated"
     },
     "trends_mom_12w": 14.6,
-    "wikipedia_title": "Honey Dijon"
+    "wikipedia_title": "Honey Dijon",
+    "demand_index": 68,
+    "demand_tier": 4,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Jamie Jones",
@@ -333,7 +373,11 @@
     ],
     "trends_mom_12w": 0,
     "wikipedia_title": "Jamie Jones",
-    "ra_slug": "jamiejones"
+    "ra_slug": "jamiejones",
+    "demand_index": 60,
+    "demand_tier": 3,
+    "value_gap": -2,
+    "value_signal": "premium"
   },
   {
     "name": "Amelie Lens",
@@ -356,7 +400,11 @@
     },
     "trends_mom_12w": 15.3,
     "wikipedia_title": "Amelie Lens",
-    "ra_slug": "amelielens"
+    "ra_slug": "amelielens",
+    "demand_index": 63,
+    "demand_tier": 3,
+    "value_gap": -2,
+    "value_signal": "premium"
   },
   {
     "name": "Charlotte de Witte",
@@ -385,7 +433,11 @@
     ],
     "trends_mom_12w": 15.7,
     "wikipedia_title": "Charlotte de Witte",
-    "ra_slug": "charlottedewitte"
+    "ra_slug": "charlottedewitte",
+    "demand_index": 75,
+    "demand_tier": 5,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Adam Beyer",
@@ -415,7 +467,11 @@
     ],
     "trends_mom_12w": 0,
     "wikipedia_title": "Adam Beyer",
-    "ra_slug": "adambeyer"
+    "ra_slug": "adambeyer",
+    "demand_index": 77,
+    "demand_tier": 5,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "DJ Koze",
@@ -445,7 +501,11 @@
     ],
     "trends_mom_12w": 0,
     "wikipedia_title": "DJ Koze",
-    "ra_slug": "djkoze"
+    "ra_slug": "djkoze",
+    "demand_index": 73,
+    "demand_tier": 5,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Bonobo",
@@ -468,7 +528,11 @@
     },
     "trends_mom_12w": 0,
     "wikipedia_title": "Bonobo",
-    "ra_slug": "bonobo"
+    "ra_slug": "bonobo",
+    "demand_index": 79,
+    "demand_tier": 5,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Mall Grab",
@@ -497,7 +561,11 @@
     ],
     "trends_mom_12w": -15.4,
     "wikipedia_title": "Mall Grab",
-    "ra_slug": "mallgrab"
+    "ra_slug": "mallgrab",
+    "demand_index": 70,
+    "demand_tier": 4,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "DJ Harvey",
@@ -520,7 +588,11 @@
     },
     "trends_mom_12w": 15.6,
     "wikipedia_title": "DJ Harvey",
-    "ra_slug": "djharvey"
+    "ra_slug": "djharvey",
+    "demand_index": 42,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Gorgon City",
@@ -543,7 +615,11 @@
     },
     "trends_mom_12w": 12.2,
     "wikipedia_title": "Gorgon City",
-    "ra_slug": "gorgoncity"
+    "ra_slug": "gorgoncity",
+    "demand_index": 65,
+    "demand_tier": 4,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "The Martinez Brothers",
@@ -565,7 +641,11 @@
       "basis": "curated"
     },
     "trends_mom_12w": -8.8,
-    "wikipedia_title": "The Martinez Brothers"
+    "wikipedia_title": "The Martinez Brothers",
+    "demand_index": 62,
+    "demand_tier": 3,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Hot Since 82",
@@ -595,7 +675,11 @@
     ],
     "trends_mom_12w": 0,
     "wikipedia_title": "Hot Since 82",
-    "ra_slug": "hotsince82"
+    "ra_slug": "hotsince82",
+    "demand_index": 72,
+    "demand_tier": 4,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Seth Troxler",
@@ -618,7 +702,11 @@
     },
     "trends_mom_12w": 0,
     "wikipedia_title": "Seth Troxler",
-    "ra_slug": "sethtroxler"
+    "ra_slug": "sethtroxler",
+    "demand_index": 67,
+    "demand_tier": 4,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Michael Bibi",
@@ -647,7 +735,11 @@
     ],
     "trends_mom_12w": 0,
     "wikipedia_title": "Michael Bibi",
-    "ra_slug": "michaelbibi"
+    "ra_slug": "michaelbibi",
+    "demand_index": 63,
+    "demand_tier": 3,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "ANOTR",
@@ -677,7 +769,11 @@
       "Afro House"
     ],
     "trends_mom_12w": 140,
-    "ra_slug": "anotr"
+    "ra_slug": "anotr",
+    "demand_index": 84,
+    "demand_tier": 6,
+    "value_gap": 2,
+    "value_signal": "strong-buy"
   },
   {
     "name": "Mau P",
@@ -706,7 +802,11 @@
     ],
     "trends_mom_12w": 22.8,
     "wikipedia_title": "Mau P",
-    "ra_slug": "maup"
+    "ra_slug": "maup",
+    "demand_index": 71,
+    "demand_tier": 4,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "SIDEPIECE",
@@ -734,7 +834,11 @@
       "Tech House"
     ],
     "trends_mom_12w": 0,
-    "wikipedia_title": "Sidepiece (EDM Duo)"
+    "wikipedia_title": "Sidepiece (EDM Duo)",
+    "demand_index": 66,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Chris Stussy",
@@ -763,7 +867,11 @@
     ],
     "trends_mom_12w": 7.8,
     "wikipedia_title": "Chris Stussy",
-    "ra_slug": "chrisstussy"
+    "ra_slug": "chrisstussy",
+    "demand_index": 72,
+    "demand_tier": 4,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "PAWSA",
@@ -793,7 +901,11 @@
     ],
     "trends_mom_12w": 23.1,
     "wikipedia_title": "PAWSA",
-    "ra_slug": "pawsa"
+    "ra_slug": "pawsa",
+    "demand_index": 77,
+    "demand_tier": 5,
+    "value_gap": 2,
+    "value_signal": "strong-buy"
   },
   {
     "name": "Carlita",
@@ -816,7 +928,11 @@
     },
     "trends_mom_12w": 0,
     "wikipedia_title": "Carlita (musician)",
-    "ra_slug": "carlita"
+    "ra_slug": "carlita",
+    "demand_index": 65,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "East End Dubs",
@@ -844,7 +960,11 @@
       "Minimal / Deep Tech"
     ],
     "trends_mom_12w": 0,
-    "ra_slug": "eastenddubs"
+    "ra_slug": "eastenddubs",
+    "demand_index": 66,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Omar+",
@@ -873,7 +993,11 @@
       "Tech House",
       "Deep House"
     ],
-    "trends_mom_12w": -14.1
+    "trends_mom_12w": -14.1,
+    "demand_index": 76,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Dennis Cruz",
@@ -903,7 +1027,11 @@
     ],
     "trends_mom_12w": 0,
     "wikipedia_title": "Dennis Cruz",
-    "ra_slug": "denniscruz"
+    "ra_slug": "denniscruz",
+    "demand_index": 63,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Cloonee",
@@ -932,7 +1060,11 @@
       "Tech House"
     ],
     "trends_mom_12w": 38.5,
-    "ra_slug": "cloonee"
+    "ra_slug": "cloonee",
+    "demand_index": 73,
+    "demand_tier": 5,
+    "value_gap": 1,
+    "value_signal": "strong-buy"
   },
   {
     "name": "Josh Baker",
@@ -962,7 +1094,11 @@
     ],
     "trends_mom_12w": -5.3,
     "wikipedia_title": "Josh Baker (cricketer)",
-    "ra_slug": "joshbaker"
+    "ra_slug": "joshbaker",
+    "demand_index": 79,
+    "demand_tier": 5,
+    "value_gap": 2,
+    "value_signal": "buy"
   },
   {
     "name": "Franky Rizardo",
@@ -990,7 +1126,11 @@
       "House"
     ],
     "trends_mom_12w": 30.8,
-    "ra_slug": "frankyrizardo"
+    "ra_slug": "frankyrizardo",
+    "demand_index": 70,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Ben Sterling",
@@ -1013,7 +1153,11 @@
     },
     "trends_mom_12w": 57.3,
     "wikipedia_title": "Ben Sterling",
-    "ra_slug": "bensterling"
+    "ra_slug": "bensterling",
+    "demand_index": 60,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Disco Lines",
@@ -1035,7 +1179,11 @@
       "basis": "curated"
     },
     "trends_mom_12w": -27.8,
-    "wikipedia_title": "Disco Lines"
+    "wikipedia_title": "Disco Lines",
+    "demand_index": 82,
+    "demand_tier": 6,
+    "value_gap": 2,
+    "value_signal": "buy"
   },
   {
     "name": "Chris Lorenzo",
@@ -1065,7 +1213,11 @@
     ],
     "trends_mom_12w": 16.1,
     "wikipedia_title": "Chris Lorenzo",
-    "ra_slug": "chrislorenzo"
+    "ra_slug": "chrislorenzo",
+    "demand_index": 67,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "KETTAMA",
@@ -1094,7 +1246,11 @@
     ],
     "trends_mom_12w": 23.7,
     "wikipedia_title": "Kettama",
-    "ra_slug": "kettama"
+    "ra_slug": "kettama",
+    "demand_index": 70,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Ranger Trucco",
@@ -1122,7 +1278,11 @@
       "Minimal / Deep Tech"
     ],
     "trends_mom_12w": 66.7,
-    "ra_slug": "rangertrucco"
+    "ra_slug": "rangertrucco",
+    "demand_index": 53,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Beltran",
@@ -1144,7 +1304,11 @@
     },
     "trends_mom_12w": 0,
     "wikipedia_title": "Beltrán",
-    "ra_slug": "beltran"
+    "ra_slug": "beltran",
+    "demand_index": 74,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Rossi.",
@@ -1167,7 +1331,11 @@
     },
     "trends_mom_12w": 20,
     "wikipedia_title": "Rossi",
-    "ra_slug": "rossi"
+    "ra_slug": "rossi",
+    "demand_index": 62,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Prospa",
@@ -1196,7 +1364,11 @@
     ],
     "trends_mom_12w": 115.7,
     "wikipedia_title": "Prospa",
-    "ra_slug": "prospa"
+    "ra_slug": "prospa",
+    "demand_index": 87,
+    "demand_tier": 6,
+    "value_gap": 2,
+    "value_signal": "strong-buy"
   },
   {
     "name": "Roddy Lima",
@@ -1223,7 +1395,11 @@
     "beatport_charts": [
       "Melodic House & Techno"
     ],
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "demand_index": 68,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "AYYBO",
@@ -1253,7 +1429,11 @@
       "Deep House",
       "Indie Dance"
     ],
-    "trends_mom_12w": 4.9
+    "trends_mom_12w": 4.9,
+    "demand_index": 72,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Max Styler",
@@ -1281,7 +1461,11 @@
       "Indie Dance"
     ],
     "trends_mom_12w": 111.4,
-    "ra_slug": "maxstyler"
+    "ra_slug": "maxstyler",
+    "demand_index": 71,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Riordan",
@@ -1310,7 +1494,11 @@
     ],
     "trends_mom_12w": -6.2,
     "wikipedia_title": "Riordan",
-    "ra_slug": "riordan"
+    "ra_slug": "riordan",
+    "demand_index": 65,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Locklead",
@@ -1331,7 +1519,11 @@
       "basis": "estimate"
     },
     "trends_mom_12w": -66.7,
-    "ra_slug": "locklead"
+    "ra_slug": "locklead",
+    "demand_index": 57,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Obskür",
@@ -1352,7 +1544,11 @@
       "basis": "estimate"
     },
     "trends_mom_12w": -100,
-    "ra_slug": "obskur"
+    "ra_slug": "obskur",
+    "demand_index": 81,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Kolter",
@@ -1382,7 +1578,11 @@
     ],
     "trends_mom_12w": 10,
     "wikipedia_title": "Kolter",
-    "ra_slug": "kolter"
+    "ra_slug": "kolter",
+    "demand_index": 81,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Murphy's Law",
@@ -1430,7 +1630,11 @@
       "Deep House"
     ],
     "trends_mom_12w": -4,
-    "wikipedia_title": "Luke Dean"
+    "wikipedia_title": "Luke Dean",
+    "demand_index": 70,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Max Dean",
@@ -1459,7 +1663,11 @@
       "Deep House"
     ],
     "trends_mom_12w": 50.6,
-    "wikipedia_title": "Max Dean"
+    "wikipedia_title": "Max Dean",
+    "demand_index": 80,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Julian Fijma",
@@ -1488,7 +1696,11 @@
       "Minimal / Deep Tech"
     ],
     "trends_mom_12w": 157.1,
-    "ra_slug": "julianfijma"
+    "ra_slug": "julianfijma",
+    "demand_index": 58,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "MALUGI",
@@ -1509,7 +1721,11 @@
       "basis": "estimate"
     },
     "trends_mom_12w": -16.3,
-    "ra_slug": "malugi"
+    "ra_slug": "malugi",
+    "demand_index": 60,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Silva Bumpa",
@@ -1537,7 +1753,11 @@
       "House"
     ],
     "trends_mom_12w": -34.8,
-    "ra_slug": "silvabumpa"
+    "ra_slug": "silvabumpa",
+    "demand_index": 57,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Alisha",
@@ -1582,7 +1802,11 @@
     "beatport_charts": [
       "Minimal / Deep Tech"
     ],
-    "trends_mom_12w": -25
+    "trends_mom_12w": -25,
+    "demand_index": 59,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Carl Cox",
@@ -1611,7 +1835,11 @@
     ],
     "wikipedia_title": "Carl Cox",
     "image": "https://cdn-images.dzcdn.net/images/artist/d3d9f5bf4750e23c5a2e879327c2d446/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "carlcox"
+    "ra_slug": "carlcox",
+    "demand_index": 63,
+    "demand_tier": 3,
+    "value_gap": -2,
+    "value_signal": "premium"
   },
   {
     "name": "Green Velvet",
@@ -1641,7 +1869,11 @@
     "trends_mom_12w": 63.8,
     "wikipedia_title": "Green Velvet",
     "image": "https://cdn-images.dzcdn.net/images/artist/b0a56315df2977ebb0740c414330b831/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "greenvelvet"
+    "ra_slug": "greenvelvet",
+    "demand_index": 69,
+    "demand_tier": 4,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Dom Dolla",
@@ -1671,7 +1903,11 @@
     "trends_mom_12w": -30,
     "wikipedia_title": "Dom Dolla",
     "image": "https://cdn-images.dzcdn.net/images/artist/64e51b9c69e898c15cf61e200e277a17/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "domdolla"
+    "ra_slug": "domdolla",
+    "demand_index": 76,
+    "demand_tier": 5,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "James Hype",
@@ -1693,7 +1929,11 @@
     },
     "trends_mom_12w": -3.5,
     "wikipedia_title": "James Hype",
-    "image": "https://cdn-images.dzcdn.net/images/artist/9e567fe860f1caca9be09512edee3dc8/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/9e567fe860f1caca9be09512edee3dc8/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 84,
+    "demand_tier": 6,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Claude VonStroke",
@@ -1723,7 +1963,11 @@
     "trends_mom_12w": 83.3,
     "wikipedia_title": "Claude VonStroke",
     "image": "https://cdn-images.dzcdn.net/images/artist/39e189aae2ae5705e96b9ffbf021402f/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "claudevonstroke"
+    "ra_slug": "claudevonstroke",
+    "demand_index": 57,
+    "demand_tier": 3,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Shiba San",
@@ -1745,7 +1989,11 @@
     },
     "trends_mom_12w": -6.5,
     "image": "https://cdn-images.dzcdn.net/images/artist/54fee0825c4366a615e5b28756e5e1d6/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "shibasan"
+    "ra_slug": "shibasan",
+    "demand_index": 50,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Eli Brown",
@@ -1774,7 +2022,11 @@
     "trends_mom_12w": 10.2,
     "wikipedia_title": "Eli Brown",
     "image": "https://cdn-images.dzcdn.net/images/artist/97ebf1084bb11f8febd76a2b5e926eee/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "elibrown"
+    "ra_slug": "elibrown",
+    "demand_index": 68,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "HoneyLuv",
@@ -1796,7 +2048,11 @@
     },
     "trends_mom_12w": 33.3,
     "image": "https://cdn-images.dzcdn.net/images/artist/eee6e3042fb3d2056d91c356902c596f/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "honeyluv"
+    "ra_slug": "honeyluv",
+    "demand_index": 58,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Biscits",
@@ -1819,7 +2075,11 @@
     },
     "trends_mom_12w": -9.1,
     "image": "https://cdn-images.dzcdn.net/images/artist/892b3f599405fae8fe0f5343193d670e/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "biscits"
+    "ra_slug": "biscits",
+    "demand_index": 53,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Patrick Topping",
@@ -1842,7 +2102,11 @@
     "trends_mom_12w": -3.8,
     "wikipedia_title": "Patrick Topping",
     "image": "https://cdn-images.dzcdn.net/images/artist/484d12729574ab2d90fe8b467f3b30ed/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "patricktopping"
+    "ra_slug": "patricktopping",
+    "demand_index": 58,
+    "demand_tier": 3,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Richy Ahmed",
@@ -1865,7 +2129,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Richy Ahmed",
     "image": "https://cdn-images.dzcdn.net/images/artist/bbb6ce0c1c40a0dad8c5a8bd06b7c2a1/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "richyahmed"
+    "ra_slug": "richyahmed",
+    "demand_index": 58,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Hannah Wants",
@@ -1889,7 +2157,11 @@
     "trends_mom_12w": 22.2,
     "wikipedia_title": "Hannah Wants",
     "image": "https://cdn-images.dzcdn.net/images/artist/526257ab17ab4487ef8659fee7e6eb59/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "hannahwants"
+    "ra_slug": "hannahwants",
+    "demand_index": 58,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Rebüke",
@@ -1912,7 +2184,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Rebuke",
     "image": "https://cdn-images.dzcdn.net/images/artist/611575cb91c4e977c2bef9e3e836c9e5/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "rebuke"
+    "ra_slug": "rebuke",
+    "demand_index": 71,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Âme",
@@ -1942,7 +2218,11 @@
     "trends_mom_12w": -6.5,
     "wikipedia_title": "Âme",
     "image": "https://cdn-images.dzcdn.net/images/artist/5381f9f67e6b7cef61861a59d0c19ed2/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "ame"
+    "ra_slug": "ame",
+    "demand_index": 69,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Kerri Chandler",
@@ -1965,7 +2245,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Kerri Chandler",
     "image": "https://cdn-images.dzcdn.net/images/artist/03e419d90076baed9b7934dd043873b2/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "kerrichandler"
+    "ra_slug": "kerrichandler",
+    "demand_index": 81,
+    "demand_tier": 6,
+    "value_gap": 2,
+    "value_signal": "buy"
   },
   {
     "name": "Louie Vega",
@@ -1987,7 +2271,11 @@
     },
     "trends_mom_12w": 3.3,
     "image": "https://cdn-images.dzcdn.net/images/artist/2ab9ebbca056284384828af2f0a5f111/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "louievega"
+    "ra_slug": "louievega",
+    "demand_index": 64,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Dennis Ferrer",
@@ -2016,7 +2304,11 @@
     "trends_mom_12w": 7.4,
     "wikipedia_title": "Dennis Ferrer",
     "image": "https://cdn-images.dzcdn.net/images/artist/fd6111c16b3e08ca0ef8ba19b88e514f/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "dennisferrer"
+    "ra_slug": "dennisferrer",
+    "demand_index": 54,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Roger Sanchez",
@@ -2039,7 +2331,11 @@
     "trends_mom_12w": -15.6,
     "wikipedia_title": "Roger Sanchez",
     "image": "https://cdn-images.dzcdn.net/images/artist/b7dfca93bf80433e50010850aab555c8/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "rogersanchez"
+    "ra_slug": "rogersanchez",
+    "demand_index": 67,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Armand Van Helden",
@@ -2068,7 +2364,11 @@
     "trends_mom_12w": 38.7,
     "wikipedia_title": "Armand van Helden",
     "image": "https://cdn-images.dzcdn.net/images/artist/5fed9ea5ac6c97c12b098be3f6c019b1/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "armandvanhelden"
+    "ra_slug": "armandvanhelden",
+    "demand_index": 66,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Mark Knight",
@@ -2098,7 +2398,11 @@
     "trends_mom_12w": 4.6,
     "wikipedia_title": "Mark Knight",
     "image": "https://cdn-images.dzcdn.net/images/artist/61c7a3b9e83879a5683ef76d285aa230/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "markknight"
+    "ra_slug": "markknight",
+    "demand_index": 67,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Loco Dice",
@@ -2121,7 +2425,11 @@
     "trends_mom_12w": 4.6,
     "wikipedia_title": "Loco Dice",
     "image": "https://cdn-images.dzcdn.net/images/artist/8131f032038b906ce9c46118ac9198cb/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "locodice"
+    "ra_slug": "locodice",
+    "demand_index": 58,
+    "demand_tier": 3,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Steve Lawler",
@@ -2145,7 +2453,11 @@
     "trends_mom_12w": 91.7,
     "wikipedia_title": "Steve Lawler",
     "image": "https://cdn-images.dzcdn.net/images/artist/49425cb7a8fc535c7daf97d0c5fa7e6f/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "stevelawler"
+    "ra_slug": "stevelawler",
+    "demand_index": 47,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Lee Foss",
@@ -2168,7 +2480,11 @@
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/761202d298f282dec0a3104ecb0ee9e4/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Lee Foss",
-    "ra_slug": "leefoss"
+    "ra_slug": "leefoss",
+    "demand_index": 80,
+    "demand_tier": 5,
+    "value_gap": 2,
+    "value_signal": "buy"
   },
   {
     "name": "Walker & Royce",
@@ -2190,7 +2506,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/d9bbc30198623f48c1dfee62bbb2d72b/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "walkerroyce"
+    "ra_slug": "walkerroyce",
+    "demand_index": 23,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Kyle Watson",
@@ -2213,7 +2533,11 @@
     "trends_mom_12w": -17.2,
     "wikipedia_title": "Kyle Watson",
     "image": "https://cdn-images.dzcdn.net/images/artist/7477a88887bb1e4b9c9870a3a46e60bb/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "kylewatson"
+    "ra_slug": "kylewatson",
+    "demand_index": 47,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Wehbba",
@@ -2235,7 +2559,11 @@
     },
     "trends_mom_12w": -100,
     "image": "https://cdn-images.dzcdn.net/images/artist/4bbe0aa54150b09e3d8a2af7f7b30eb0/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "wehbba"
+    "ra_slug": "wehbba",
+    "demand_index": 50,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Paco Osuna",
@@ -2257,7 +2585,11 @@
     },
     "trends_mom_12w": -8,
     "image": "https://cdn-images.dzcdn.net/images/artist/749a5f884c1d253f830ad777a7c173bf/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "pacoosuna"
+    "ra_slug": "pacoosuna",
+    "demand_index": 54,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Alan Fitzpatrick",
@@ -2285,7 +2617,11 @@
     ],
     "trends_mom_12w": 61.9,
     "image": "https://cdn-images.dzcdn.net/images/artist/48e01e35f4064f6fdf0ebc4774bdd41d/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "alanfitzpatrick"
+    "ra_slug": "alanfitzpatrick",
+    "demand_index": 58,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Archie Hamilton",
@@ -2308,7 +2644,11 @@
     "trends_mom_12w": -20,
     "wikipedia_title": "Archie Hamilton",
     "image": "https://cdn-images.dzcdn.net/images/artist/4d465413d6015342325934185edef312/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "archiehamilton"
+    "ra_slug": "archiehamilton",
+    "demand_index": 57,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Cristoph",
@@ -2330,7 +2670,11 @@
     },
     "trends_mom_12w": -2.5,
     "image": "https://cdn-images.dzcdn.net/images/artist/ff27f3c85580e715218626aa78af1647/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "cristoph"
+    "ra_slug": "cristoph",
+    "demand_index": 72,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Dense & Pika",
@@ -2352,7 +2696,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/e26ed3bde6c3244ddbc126b589b3e2f7/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "densepika"
+    "ra_slug": "densepika",
+    "demand_index": 62,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Sacha Robotti",
@@ -2374,7 +2722,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/d699a5c0f2d25bc2b31c9e931e86574f/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "sacharobotti"
+    "ra_slug": "sacharobotti",
+    "demand_index": 49,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "WEISS",
@@ -2397,7 +2749,11 @@
     "trends_mom_12w": 2.1,
     "image": "https://cdn-images.dzcdn.net/images/artist/65bdeefb154473558982f52685df84bd/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "weiss",
-    "wikipedia_title": "Weiss"
+    "wikipedia_title": "Weiss",
+    "demand_index": 61,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Simon Doty",
@@ -2419,7 +2775,11 @@
     },
     "trends_mom_12w": -33.3,
     "image": "https://cdn-images.dzcdn.net/images/artist/69e3638f73a76444a83fc618158f1f0f/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "simondoty"
+    "ra_slug": "simondoty",
+    "demand_index": 50,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Gerd Janson",
@@ -2441,7 +2801,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/17f88ba007e7b38e30b4b395b010a875/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "gerdjanson"
+    "ra_slug": "gerdjanson",
+    "demand_index": 67,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Roman Flügel",
@@ -2469,7 +2833,11 @@
     ],
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/d0af8aec32bc8103af060a84a7aae0bb/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "romanflugel"
+    "ra_slug": "romanflugel",
+    "demand_index": 47,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Booka Shade",
@@ -2499,7 +2867,11 @@
     "trends_mom_12w": 166.7,
     "wikipedia_title": "Booka Shade",
     "image": "https://cdn-images.dzcdn.net/images/artist/f6d1bcd168ed940ac97943f470a2b6f3/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "bookashade"
+    "ra_slug": "bookashade",
+    "demand_index": 59,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "DJ Boring",
@@ -2521,7 +2893,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/9968539fa309c56e50bbba88ab0c4db8/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "djboring"
+    "ra_slug": "djboring",
+    "demand_index": 70,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "BLOND:ISH",
@@ -2551,7 +2927,11 @@
     "trends_mom_12w": 300,
     "wikipedia_title": "Blond:ish",
     "image": "https://cdn-images.dzcdn.net/images/artist/acc95cb78870eaffb0b737bf83e5578a/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "blondish"
+    "ra_slug": "blondish",
+    "demand_index": 64,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Latmun",
@@ -2573,7 +2953,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/b12f62174c15418fa1f0b10f13815ed1/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "Latmun"
+    "ra_slug": "Latmun",
+    "demand_index": 52,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Danny Daze",
@@ -2595,7 +2979,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/be3a246f36fc11bf9ff15025fb867cd6/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "dannydaze"
+    "ra_slug": "dannydaze",
+    "demand_index": 56,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Pleasurekraft",
@@ -2617,7 +3005,11 @@
     },
     "trends_mom_12w": -100,
     "image": "https://cdn-images.dzcdn.net/images/artist/9edb4af9990c270f8c50520218aa3c1d/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "pleasurekraft"
+    "ra_slug": "pleasurekraft",
+    "demand_index": 52,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Octave One",
@@ -2640,7 +3032,11 @@
     "trends_mom_12w": 7.4,
     "wikipedia_title": "Octave One",
     "image": "https://cdn-images.dzcdn.net/images/artist/e7c54db436c0dcb9e0212fe722f8c0b7/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "octaveone"
+    "ra_slug": "octaveone",
+    "demand_index": 66,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Pig&Dan",
@@ -2661,7 +3057,11 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 0,
-    "image": "https://cdn-images.dzcdn.net/images/artist/6a92857addc653d93c4b62e825074c82/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/6a92857addc653d93c4b62e825074c82/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 69,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Jimi Jules",
@@ -2690,7 +3090,11 @@
     "trends_mom_12w": 13,
     "wikipedia_title": "Jimi Jules",
     "image": "https://cdn-images.dzcdn.net/images/artist/92d282558d7dd99f90945765e904ac41/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "jimijules"
+    "ra_slug": "jimijules",
+    "demand_index": 60,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Tim Engelhardt",
@@ -2718,7 +3122,11 @@
     ],
     "trends_mom_12w": -100,
     "image": "https://cdn-images.dzcdn.net/images/artist/a3ee153ac8a2ba16664b4f298a05d481/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "timengelhardt"
+    "ra_slug": "timengelhardt",
+    "demand_index": 61,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Colyn",
@@ -2741,7 +3149,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Colyn",
     "image": "https://cdn-images.dzcdn.net/images/artist/a25b208534aaf17c8ec2fa4cb0460ce5/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "colyn"
+    "ra_slug": "colyn",
+    "demand_index": 85,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Anyma",
@@ -2770,7 +3182,11 @@
     "trends_mom_12w": 39.5,
     "wikipedia_title": "Anyma",
     "image": "https://cdn-images.dzcdn.net/images/artist/e5da03f68a575f4cf133ff387a8b4267/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "anyma"
+    "ra_slug": "anyma",
+    "demand_index": 59,
+    "demand_tier": 3,
+    "value_gap": -2,
+    "value_signal": "premium"
   },
   {
     "name": "Enoo Napa",
@@ -2792,7 +3208,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/c39121f135ebd6a180d5d1f64b2af2e6/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "enoonapa"
+    "ra_slug": "enoonapa",
+    "demand_index": 59,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Pablo Fierro",
@@ -2820,7 +3240,11 @@
     ],
     "trends_mom_12w": 6.7,
     "image": "https://cdn-images.dzcdn.net/images/artist/187368e58dbd7abe70a2fe7e0b6dfdea/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "pablofierro"
+    "ra_slug": "pablofierro",
+    "demand_index": 62,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Edu Imbernon",
@@ -2842,7 +3266,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/927dcaaa6ee1fd9fe42fa3c4a972d718/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "eduimbernon"
+    "ra_slug": "eduimbernon",
+    "demand_index": 54,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Re.You",
@@ -2863,7 +3291,11 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 0,
-    "image": "https://cdn-images.dzcdn.net/images/artist/0647d1aba014eebb0dbd0c106983d7d9/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/0647d1aba014eebb0dbd0c106983d7d9/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 65,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Justin Martin",
@@ -2886,7 +3318,11 @@
     "trends_mom_12w": 1.1,
     "wikipedia_title": "Justin Martin",
     "image": "https://cdn-images.dzcdn.net/images/artist/ff0849315f7554621ac37b533cb48541/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "justinmartin"
+    "ra_slug": "justinmartin",
+    "demand_index": 48,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "HVOB",
@@ -2909,7 +3345,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "HVOB",
     "image": "https://cdn-images.dzcdn.net/images/artist/b0dddd922dbee40fc5510a2dd42cfc36/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "hvob"
+    "ra_slug": "hvob",
+    "demand_index": 62,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Chelina Manuhutu",
@@ -2931,7 +3371,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/1f76c6e10b69d562df4b8ec21cea2ff4/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "chelinamanuhutu"
+    "ra_slug": "chelinamanuhutu",
+    "demand_index": 42,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Skream",
@@ -2954,7 +3398,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Skream",
     "image": "https://cdn-images.dzcdn.net/images/artist/9bff92c37ccb03ceec7ea841efbd0840/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "skream"
+    "ra_slug": "skream",
+    "demand_index": 76,
+    "demand_tier": 5,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "David Morales",
@@ -2977,7 +3425,11 @@
     "trends_mom_12w": 25,
     "wikipedia_title": "David Morales",
     "image": "https://cdn-images.dzcdn.net/images/artist/e7755d91844651e22e380af8f3130d2a/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "davidmorales"
+    "ra_slug": "davidmorales",
+    "demand_index": 62,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Mark Farina",
@@ -3000,7 +3452,11 @@
     "trends_mom_12w": 2.9,
     "wikipedia_title": "Mark Farina",
     "image": "https://cdn-images.dzcdn.net/images/artist/1d6e23155d69190a712ba0f308f3829c/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "markfarina"
+    "ra_slug": "markfarina",
+    "demand_index": 55,
+    "demand_tier": 3,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Gene Farris",
@@ -3022,7 +3478,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/f8de0bf0792a17da1e6b8e971787e3ee/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "genefarris"
+    "ra_slug": "genefarris",
+    "demand_index": 57,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "DJ T.",
@@ -3044,7 +3504,11 @@
     },
     "trends_mom_12w": 13.8,
     "image": "https://cdn-images.dzcdn.net/images/artist/d493b15317dfdb64b1fb2854c80be33f/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "djt"
+    "ra_slug": "djt",
+    "demand_index": 52,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Michael Mayer",
@@ -3067,7 +3531,11 @@
     "trends_mom_12w": -7.5,
     "image": "https://cdn-images.dzcdn.net/images/artist/623c0d8a9306d60397e896158f92b780/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Michael Mayer",
-    "ra_slug": "michaelmayer"
+    "ra_slug": "michaelmayer",
+    "demand_index": 53,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Gui Boratto",
@@ -3090,7 +3558,11 @@
     "trends_mom_12w": 100,
     "wikipedia_title": "Gui Boratto",
     "image": "https://cdn-images.dzcdn.net/images/artist/f413b8a08bc6b2d2cc0ad14fff3dd5bd/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "guiboratto"
+    "ra_slug": "guiboratto",
+    "demand_index": 49,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Oxia",
@@ -3113,7 +3585,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Oxia",
     "image": "https://cdn-images.dzcdn.net/images/artist/1db0b332cb38b8c9e23d6543a3fb8c79/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "oxia"
+    "ra_slug": "oxia",
+    "demand_index": 63,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Marco Faraone",
@@ -3141,7 +3617,11 @@
     ],
     "trends_mom_12w": 100,
     "image": "https://cdn-images.dzcdn.net/images/artist/d040e96decedf36f967c64794a3f71c0/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "marcofaraone"
+    "ra_slug": "marcofaraone",
+    "demand_index": 60,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Objekt",
@@ -3163,7 +3643,11 @@
     },
     "trends_mom_12w": 1.1,
     "image": "https://cdn-images.dzcdn.net/images/artist/b3bc5e2fa9c9a62dc77adea71c09ec61/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "objekt"
+    "ra_slug": "objekt",
+    "demand_index": 74,
+    "demand_tier": 5,
+    "value_gap": 2,
+    "value_signal": "buy"
   },
   {
     "name": "Special Request",
@@ -3185,7 +3669,11 @@
     },
     "trends_mom_12w": -3.8,
     "image": "https://cdn-images.dzcdn.net/images/artist/4d61d4c0fd2c912ca76c16968ce32e1c/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "specialrequest"
+    "ra_slug": "specialrequest",
+    "demand_index": 73,
+    "demand_tier": 5,
+    "value_gap": 2,
+    "value_signal": "buy"
   },
   {
     "name": "TSHA",
@@ -3208,7 +3696,11 @@
     "trends_mom_12w": -38.9,
     "wikipedia_title": "TSHA",
     "image": "https://cdn-images.dzcdn.net/images/artist/eb22effcb6b2e4dad765bbfcce30fd7b/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "tsha"
+    "ra_slug": "tsha",
+    "demand_index": 61,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Tiga",
@@ -3239,7 +3731,11 @@
     "trends_mom_12w": 12.5,
     "wikipedia_title": "Tiga",
     "image": "https://cdn-images.dzcdn.net/images/artist/bac70428661be07d87075b37eef1a263/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "tiga"
+    "ra_slug": "tiga",
+    "demand_index": 72,
+    "demand_tier": 5,
+    "value_gap": 2,
+    "value_signal": "buy"
   },
   {
     "name": "Floating Points",
@@ -3262,7 +3758,11 @@
     "trends_mom_12w": 13,
     "wikipedia_title": "Floating Points",
     "image": "https://cdn-images.dzcdn.net/images/artist/826c23c227aeb8db234cfbf426a3b5bf/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "floatingpoints"
+    "ra_slug": "floatingpoints",
+    "demand_index": 68,
+    "demand_tier": 4,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Mount Kimbie",
@@ -3285,7 +3785,11 @@
     "trends_mom_12w": 8,
     "wikipedia_title": "Mount Kimbie",
     "image": "https://cdn-images.dzcdn.net/images/artist/8d4d418ff4fbfb3afa9b4eb03ab8e786/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "mountkimbie"
+    "ra_slug": "mountkimbie",
+    "demand_index": 70,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "HAAi",
@@ -3308,7 +3812,11 @@
     "trends_mom_12w": 9.4,
     "wikipedia_title": "HAAi",
     "image": "https://cdn-images.dzcdn.net/images/artist/d26b752d31f95083e8c933c17dd95cb8/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "haai"
+    "ra_slug": "haai",
+    "demand_index": 75,
+    "demand_tier": 5,
+    "value_gap": 2,
+    "value_signal": "buy"
   },
   {
     "name": "Floorplan",
@@ -3331,7 +3839,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Floor plan",
     "image": "https://cdn-images.dzcdn.net/images/artist/d7cf149027e1a86a63139454112266bc/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "floorplan"
+    "ra_slug": "floorplan",
+    "demand_index": 79,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Jayda G",
@@ -3354,7 +3866,11 @@
     "trends_mom_12w": -23.3,
     "wikipedia_title": "Jayda G",
     "image": "https://cdn-images.dzcdn.net/images/artist/86e20a3f7118a0e333e2785725baa796/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "jaydag"
+    "ra_slug": "jaydag",
+    "demand_index": 75,
+    "demand_tier": 5,
+    "value_gap": 2,
+    "value_signal": "buy"
   },
   {
     "name": "Joris Voorn",
@@ -3383,7 +3899,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Joris Voorn",
     "image": "https://cdn-images.dzcdn.net/images/artist/3cc863620c17261e92db9474f0c5aeb7/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "jorisvoorn"
+    "ra_slug": "jorisvoorn",
+    "demand_index": 62,
+    "demand_tier": 3,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Victor Calderone",
@@ -3406,7 +3926,11 @@
     "trends_mom_12w": 175,
     "wikipedia_title": "Victor Calderone",
     "image": "https://cdn-images.dzcdn.net/images/artist/1374d528e174e322d8b877577e57b4fe/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "victorcalderone"
+    "ra_slug": "victorcalderone",
+    "demand_index": 42,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Laurent Garnier",
@@ -3429,7 +3953,11 @@
     "trends_mom_12w": 17.6,
     "wikipedia_title": "Laurent Garnier",
     "image": "https://cdn-images.dzcdn.net/images/artist/a8a32a9184a88268a07aa5def94d9995/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "laurentgarnier"
+    "ra_slug": "laurentgarnier",
+    "demand_index": 65,
+    "demand_tier": 4,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Levon Vincent",
@@ -3451,7 +3979,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/ad287c3501277b4453e0050de8392420/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "levonvincent"
+    "ra_slug": "levonvincent",
+    "demand_index": 51,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Hunee",
@@ -3473,7 +4005,11 @@
     },
     "trends_mom_12w": 66.7,
     "image": "https://cdn-images.dzcdn.net/images/artist/391f9737c4316d4660997305dd6b1bbf/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "hunee"
+    "ra_slug": "hunee",
+    "demand_index": 65,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Helena Hauff",
@@ -3496,7 +4032,11 @@
     "trends_mom_12w": -11.8,
     "wikipedia_title": "Helena Hauff",
     "image": "https://cdn-images.dzcdn.net/images/artist/911d574d68644f6f53ffb96889f2e27f/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "helenahauff"
+    "ra_slug": "helenahauff",
+    "demand_index": 62,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Sven Väth",
@@ -3519,7 +4059,11 @@
     "trends_mom_12w": 5.5,
     "wikipedia_title": "Sven Väth",
     "image": "https://cdn-images.dzcdn.net/images/artist/03e76fd7db150f6a5f147fffe0d12c0a/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "svenvath"
+    "ra_slug": "svenvath",
+    "demand_index": 67,
+    "demand_tier": 4,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Richie Hawtin",
@@ -3542,7 +4086,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Richie Hawtin",
     "image": "https://cdn-images.dzcdn.net/images/artist/f9977b35e4579e7fec01e84ea5c52941/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "richiehawtin"
+    "ra_slug": "richiehawtin",
+    "demand_index": 68,
+    "demand_tier": 4,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Joseph Capriati",
@@ -3565,7 +4113,11 @@
     "trends_mom_12w": 50,
     "image": "https://cdn-images.dzcdn.net/images/artist/f3f673823ccb5c53b75debe36d350307/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Joseph Capriati",
-    "ra_slug": "josephcapriati"
+    "ra_slug": "josephcapriati",
+    "demand_index": 59,
+    "demand_tier": 3,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Sam Paganini",
@@ -3594,7 +4146,11 @@
     "trends_mom_12w": -24,
     "image": "https://cdn-images.dzcdn.net/images/artist/9409d8dc0befa21f01323225476067b3/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Sam Paganini",
-    "ra_slug": "sampaganini"
+    "ra_slug": "sampaganini",
+    "demand_index": 48,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Maceo Plex",
@@ -3617,7 +4173,11 @@
     "trends_mom_12w": -7.7,
     "image": "https://cdn-images.dzcdn.net/images/artist/c02e49a5c71f43770db7e53ebac32bbf/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Maceo Plex",
-    "ra_slug": "maceoplex"
+    "ra_slug": "maceoplex",
+    "demand_index": 60,
+    "demand_tier": 3,
+    "value_gap": -2,
+    "value_signal": "premium"
   },
   {
     "name": "Mind Against",
@@ -3645,7 +4205,11 @@
     ],
     "trends_mom_12w": 7.4,
     "image": "https://cdn-images.dzcdn.net/images/artist/cf7f06ad142154b0750193bbf1d2c0c1/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "mindagainst"
+    "ra_slug": "mindagainst",
+    "demand_index": 64,
+    "demand_tier": 4,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "WhoMadeWho",
@@ -3674,7 +4238,11 @@
     "trends_mom_12w": 33.9,
     "wikipedia_title": "WhoMadeWho",
     "image": "https://cdn-images.dzcdn.net/images/artist/45dc56f1c4084e18a6d7022f7f22b034/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "whomadewho"
+    "ra_slug": "whomadewho",
+    "demand_index": 54,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Stephan Bodzin",
@@ -3697,7 +4265,11 @@
     "trends_mom_12w": 20.6,
     "wikipedia_title": "Stephan Bodzin",
     "image": "https://cdn-images.dzcdn.net/images/artist/c51e2fdf97eb264bf1cf4f020c8500b9/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "stephanbodzin"
+    "ra_slug": "stephanbodzin",
+    "demand_index": 61,
+    "demand_tier": 3,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Trentemøller",
@@ -3719,7 +4291,11 @@
     },
     "trends_mom_12w": 0,
     "wikipedia_title": "Trentemøller",
-    "image": "https://cdn-images.dzcdn.net/images/artist/05705890cf13e76d765cafc84d4f4653/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/05705890cf13e76d765cafc84d4f4653/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 73,
+    "demand_tier": 5,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Monolink",
@@ -3748,7 +4324,11 @@
     "trends_mom_12w": -28.9,
     "wikipedia_title": "Monolink",
     "image": "https://cdn-images.dzcdn.net/images/artist/d6ede7f36d1b0bdaf8753263afcb5324/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "monolink"
+    "ra_slug": "monolink",
+    "demand_index": 58,
+    "demand_tier": 3,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Massano",
@@ -3776,7 +4356,11 @@
     ],
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/06a41e2ec0c3a373af5db2b85763f00e/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "massano"
+    "ra_slug": "massano",
+    "demand_index": 66,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Yotto",
@@ -3806,7 +4390,11 @@
     "trends_mom_12w": 29.3,
     "wikipedia_title": "Yotto",
     "image": "https://cdn-images.dzcdn.net/images/artist/20ab7ad9d339807c46907461d885630a/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "yotto"
+    "ra_slug": "yotto",
+    "demand_index": 70,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Ben Böhmer",
@@ -3829,7 +4417,11 @@
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/66840a9b7da1d5ebf6fe9b6cd65f1a29/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Ben Böhmer",
-    "ra_slug": "benbohmer"
+    "ra_slug": "benbohmer",
+    "demand_index": 69,
+    "demand_tier": 4,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Nora En Pure",
@@ -3858,7 +4450,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Nora En Pure",
     "image": "https://cdn-images.dzcdn.net/images/artist/43249d304342f9e467f80e9a61a5d782/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "noraenpure"
+    "ra_slug": "noraenpure",
+    "demand_index": 63,
+    "demand_tier": 3,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Adriatique",
@@ -3887,7 +4483,11 @@
     "trends_mom_12w": 48,
     "wikipedia_title": "Adriatique",
     "image": "https://cdn-images.dzcdn.net/images/artist/d88bff3a5bd4ba8055121e346ccc80c2/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "adriatique"
+    "ra_slug": "adriatique",
+    "demand_index": 70,
+    "demand_tier": 4,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Kollektiv Turmstrasse",
@@ -3909,7 +4509,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/914723f09c1bdc011caa583af2d98ca7/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "kollektivturmstrasse"
+    "ra_slug": "kollektivturmstrasse",
+    "demand_index": 60,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Huxley",
@@ -3932,7 +4536,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Huxley",
     "image": "https://cdn-images.dzcdn.net/images/artist/a9be2e32591439abdb17428b2dbe2ad9/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "huxley"
+    "ra_slug": "huxley",
+    "demand_index": 74,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Maya Jane Coles",
@@ -3955,7 +4563,11 @@
     "trends_mom_12w": 18.2,
     "wikipedia_title": "Maya Jane Coles",
     "image": "https://cdn-images.dzcdn.net/images/artist/980669078b9541b2d4e3fd15772e0729/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "mayajanecoles"
+    "ra_slug": "mayajanecoles",
+    "demand_index": 64,
+    "demand_tier": 3,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "John Talabot",
@@ -3978,7 +4590,11 @@
     "trends_mom_12w": 17.6,
     "wikipedia_title": "John Talabot",
     "image": "https://cdn-images.dzcdn.net/images/artist/668c61c240e55fa1e1fcfd4534561424/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "johntalabot"
+    "ra_slug": "johntalabot",
+    "demand_index": 64,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Secondcity",
@@ -4001,7 +4617,11 @@
     "trends_mom_12w": 175,
     "wikipedia_title": "Secondcity",
     "image": "https://cdn-images.dzcdn.net/images/artist/3eb399c32b9866877d2cc51c8aff81cf/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "secondcity"
+    "ra_slug": "secondcity",
+    "demand_index": 67,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Surgeon",
@@ -4024,7 +4644,11 @@
     "trends_mom_12w": 9.3,
     "wikipedia_title": "Surgeon",
     "image": "https://cdn-images.dzcdn.net/images/artist/cbb8855d3aec037618667a16bffe1735/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "surgeon"
+    "ra_slug": "surgeon",
+    "demand_index": 69,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Blawan",
@@ -4047,7 +4671,11 @@
     "trends_mom_12w": -21.6,
     "wikipedia_title": "Blawan",
     "image": "https://cdn-images.dzcdn.net/images/artist/e99669dc042127b16026dc45dfd7c568/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "blawan"
+    "ra_slug": "blawan",
+    "demand_index": 62,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "DJ Rush",
@@ -4076,7 +4704,11 @@
     "trends_mom_12w": 1,
     "wikipedia_title": "DJ Rush",
     "image": "https://cdn-images.dzcdn.net/images/artist/56b14eed9aa9d5a9ee095834af152cfa/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "djrush"
+    "ra_slug": "djrush",
+    "demand_index": 48,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Dax J",
@@ -4098,7 +4730,11 @@
     },
     "trends_mom_12w": 3.1,
     "image": "https://cdn-images.dzcdn.net/images/artist/3653b5878e761cdd7b1239ea58b4bf49/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "daxj"
+    "ra_slug": "daxj",
+    "demand_index": 64,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Luigi Madonna",
@@ -4120,7 +4756,11 @@
     },
     "trends_mom_12w": -14.3,
     "image": "https://cdn-images.dzcdn.net/images/artist/7b93e10d44041ffb1a3c321f7c2912cf/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "luigimadonna"
+    "ra_slug": "luigimadonna",
+    "demand_index": 42,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Mathame",
@@ -4143,7 +4783,11 @@
     "trends_mom_12w": -17.5,
     "wikipedia_title": "Mathame",
     "image": "https://cdn-images.dzcdn.net/images/artist/36fe4bc4dd81abe51791dbd7542dc82d/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "mathame"
+    "ra_slug": "mathame",
+    "demand_index": 60,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Innellea",
@@ -4165,7 +4809,11 @@
     },
     "trends_mom_12w": 19.2,
     "image": "https://cdn-images.dzcdn.net/images/artist/77cd3c3e154fa274d11147d856e76095/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "innellea"
+    "ra_slug": "innellea",
+    "demand_index": 65,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Agents Of Time",
@@ -4193,7 +4841,11 @@
     ],
     "trends_mom_12w": -6,
     "image": "https://cdn-images.dzcdn.net/images/artist/0334b3c65ba31b1e01491589309346be/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "agentsoftime"
+    "ra_slug": "agentsoftime",
+    "demand_index": 66,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Tiefschwarz",
@@ -4216,7 +4868,11 @@
     "trends_mom_12w": 4.8,
     "wikipedia_title": "Tiefschwarz",
     "image": "https://cdn-images.dzcdn.net/images/artist/b1ac13a1a4ec47854fe2ac573804dc51/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "tiefschwarz"
+    "ra_slug": "tiefschwarz",
+    "demand_index": 36,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Recondite",
@@ -4239,7 +4895,11 @@
     "trends_mom_12w": -10.5,
     "wikipedia_title": "Recondite",
     "image": "https://cdn-images.dzcdn.net/images/artist/e6dbc79d256c7e9a8c298ae1980ef433/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "recondite"
+    "ra_slug": "recondite",
+    "demand_index": 59,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "DJ Tennis",
@@ -4262,7 +4922,11 @@
     "trends_mom_12w": 153.5,
     "wikipedia_title": "DJ Tennis",
     "image": "https://cdn-images.dzcdn.net/images/artist/8644271f3e3fca07f5475138213868cb/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "djtennis"
+    "ra_slug": "djtennis",
+    "demand_index": 65,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Dario D'Attis",
@@ -4284,7 +4948,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/c7be615a7d6959a14fa68c693a0df1a5/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "dariodattis"
+    "ra_slug": "dariodattis",
+    "demand_index": 65,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Henry Saiz",
@@ -4307,7 +4975,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Henry Saiz",
     "image": "https://cdn-images.dzcdn.net/images/artist/f64cb40ad5bb763ee098c54f588fbd7e/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "henrysaiz"
+    "ra_slug": "henrysaiz",
+    "demand_index": 54,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Pional",
@@ -4330,7 +5002,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Pional",
     "image": "https://cdn-images.dzcdn.net/images/artist/c2e63c9541c963df261821ab03bceff0/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "pional"
+    "ra_slug": "pional",
+    "demand_index": 63,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Ryan Crosson",
@@ -4352,7 +5028,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/85283fbe7773ca0a9f5159a736e535a6/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "ryancrosson"
+    "ra_slug": "ryancrosson",
+    "demand_index": 44,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Woo York",
@@ -4374,7 +5054,11 @@
     },
     "trends_mom_12w": 5.1,
     "image": "https://cdn-images.dzcdn.net/images/artist/c77cecc48eed7461338505261612b6d6/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "wooyork"
+    "ra_slug": "wooyork",
+    "demand_index": 59,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Burnski",
@@ -4396,7 +5080,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/5fe744a226e182b44cbc07d5dddd02e5/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "burnski"
+    "ra_slug": "burnski",
+    "demand_index": 61,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Alinka",
@@ -4418,7 +5106,11 @@
     },
     "trends_mom_12w": -13.4,
     "image": "https://cdn-images.dzcdn.net/images/artist/3cbe3968050d5a5fde134091c61472e6/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "alinka"
+    "ra_slug": "alinka",
+    "demand_index": 54,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Answer Code Request",
@@ -4440,7 +5132,11 @@
     },
     "trends_mom_12w": 18.9,
     "image": "https://cdn-images.dzcdn.net/images/artist/3d52df3598eab84ee5bf62ac935571e0/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "answercoderequest"
+    "ra_slug": "answercoderequest",
+    "demand_index": 48,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "DJ Stingray 313",
@@ -4461,7 +5157,11 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 0,
-    "image": "https://cdn-images.dzcdn.net/images/artist/a445205b673358dce351a606f02d0202/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/a445205b673358dce351a606f02d0202/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 53,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Pangaea",
@@ -4484,7 +5184,11 @@
     "trends_mom_12w": -20.5,
     "wikipedia_title": "Pangaea",
     "image": "https://cdn-images.dzcdn.net/images/artist/28a8b35032e077ccfd4a4b785c5419ba/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "pangaea"
+    "ra_slug": "pangaea",
+    "demand_index": 50,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Andre Crom",
@@ -4506,7 +5210,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/dc63ed7d562fa853f9cc9221dce7f4de/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "andrecrom"
+    "ra_slug": "andrecrom",
+    "demand_index": 59,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Angelo Ferreri",
@@ -4528,7 +5236,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/76fffa6bd9060bde9e8816c96a9f24cd/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "angeloferreri"
+    "ra_slug": "angeloferreri",
+    "demand_index": 53,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Kastis Torrau",
@@ -4550,7 +5262,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/0b914a75d771eb12a6f6007ad132403e/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "kastistorrau"
+    "ra_slug": "kastistorrau",
+    "demand_index": 55,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Robert Babicz",
@@ -4580,7 +5296,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Robert Babicz",
     "image": "https://cdn-images.dzcdn.net/images/artist/86daafd37da4b89d74c4dfbb9a69bb06/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "robertbabicz"
+    "ra_slug": "robertbabicz",
+    "demand_index": 53,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Trikk",
@@ -4603,7 +5323,11 @@
     "trends_mom_12w": -14,
     "wikipedia_title": "Trikk",
     "image": "https://cdn-images.dzcdn.net/images/artist/be15292053c4648e4fca886ac86f1afa/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "trikk"
+    "ra_slug": "trikk",
+    "demand_index": 54,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Tornado Wallace",
@@ -4625,7 +5349,11 @@
     },
     "trends_mom_12w": 9.1,
     "image": "https://cdn-images.dzcdn.net/images/artist/d1e1c0fc1b25082942080332727a16f6/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "tornadowallace"
+    "ra_slug": "tornadowallace",
+    "demand_index": 59,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Spektre",
@@ -4647,7 +5375,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/ab3f00d94dec8b9b2f7e99190ee5de8b/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "spektre"
+    "ra_slug": "spektre",
+    "demand_index": 67,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Jay Lumen",
@@ -4677,7 +5409,11 @@
     "trends_mom_12w": 10,
     "wikipedia_title": "Jay Lumen",
     "image": "https://cdn-images.dzcdn.net/images/artist/4d767b0acca1a6366544222fb968c9c3/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "jaylumen"
+    "ra_slug": "jaylumen",
+    "demand_index": 47,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Pearson Sound",
@@ -4700,7 +5436,11 @@
     "trends_mom_12w": 40,
     "wikipedia_title": "Pearson Sound",
     "image": "https://cdn-images.dzcdn.net/images/artist/20d8d38a49056f30aa3460933dbdeac3/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "pearsonsound"
+    "ra_slug": "pearsonsound",
+    "demand_index": 57,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Palms Trax",
@@ -4722,7 +5462,11 @@
     },
     "trends_mom_12w": 14.3,
     "image": "https://cdn-images.dzcdn.net/images/artist/efb9ee8308d0a518331cac0d14d49d70/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "palmstrax"
+    "ra_slug": "palmstrax",
+    "demand_index": 66,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Lauer",
@@ -4745,7 +5489,11 @@
     "trends_mom_12w": -0.3,
     "wikipedia_title": "Lauer",
     "image": "https://cdn-images.dzcdn.net/images/artist/ecf6a2e5d88fbb596c6bc6ab8523fe36/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "lauer"
+    "ra_slug": "lauer",
+    "demand_index": 64,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Simian Mobile Disco",
@@ -4768,7 +5516,11 @@
     "trends_mom_12w": 27.3,
     "wikipedia_title": "Simian Mobile Disco",
     "image": "https://cdn-images.dzcdn.net/images/artist/1213e4ee80f388bc81d4e0a6c152af17/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "simianmobiledisco"
+    "ra_slug": "simianmobiledisco",
+    "demand_index": 58,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Actress",
@@ -4790,7 +5542,11 @@
     },
     "trends_mom_12w": -2.5,
     "image": "https://cdn-images.dzcdn.net/images/artist/22a79334c8b0a01c8aeca1d1096e4b00/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "actress"
+    "ra_slug": "actress",
+    "demand_index": 76,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "DJ Holographic",
@@ -4813,7 +5569,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "DJ Holographic",
     "image": "https://cdn-images.dzcdn.net/images/artist/024194e917a0ea3f1f4c4d34e409e3d2/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "djholographic"
+    "ra_slug": "djholographic",
+    "demand_index": 43,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "David Mayer",
@@ -4836,7 +5596,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "David Mayer",
     "image": "https://cdn-images.dzcdn.net/images/artist/f91ec3dc80a8400dd9ddf19dc64a4004/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "davidmayer"
+    "ra_slug": "davidmayer",
+    "demand_index": 58,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Lee Curtiss",
@@ -4858,7 +5622,11 @@
     },
     "trends_mom_12w": 50,
     "image": "https://cdn-images.dzcdn.net/images/artist/870fbf17a3d1c92e6a71bfe7864d321e/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "leecurtiss"
+    "ra_slug": "leecurtiss",
+    "demand_index": 40,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Wolf + Lamb",
@@ -4880,7 +5648,11 @@
     },
     "trends_mom_12w": 4.4,
     "image": "https://cdn-images.dzcdn.net/images/artist/60253c6f2bdccb13749410393c77cb66/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "wolflamb"
+    "ra_slug": "wolflamb",
+    "demand_index": 55,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Nick Curly",
@@ -4909,7 +5681,11 @@
     ],
     "trends_mom_12w": -8.7,
     "image": "https://cdn-images.dzcdn.net/images/artist/65fa5d68010ce07894fd661b65a1517e/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "nickcurly"
+    "ra_slug": "nickcurly",
+    "demand_index": 65,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Sascha Dive",
@@ -4931,7 +5707,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/0ff33ea940e498f40de0fc3e68979be0/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "saschadive"
+    "ra_slug": "saschadive",
+    "demand_index": 35,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Hector Romero",
@@ -4954,7 +5734,11 @@
     "trends_mom_12w": 10.3,
     "wikipedia_title": "Héctor Romero",
     "image": "https://cdn-images.dzcdn.net/images/artist/ccf6c72c1bbd3899ee5f61f048c1c997/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "hectorromero"
+    "ra_slug": "hectorromero",
+    "demand_index": 32,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Mathew Jonson",
@@ -4976,7 +5760,11 @@
     },
     "trends_mom_12w": 300,
     "image": "https://cdn-images.dzcdn.net/images/artist/c8f52b9377b77abf452d2614a9d19139/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "mathewjonson"
+    "ra_slug": "mathewjonson",
+    "demand_index": 54,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Christian Burkhardt",
@@ -4998,7 +5786,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/ee28670d2cb0aa89683c6373bcaa3bbc/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "christianburkhardt"
+    "ra_slug": "christianburkhardt",
+    "demand_index": 35,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Inigo Kennedy",
@@ -5020,7 +5812,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/170373a000595eacb9c8e4a75e2f2e47/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "inigokennedy"
+    "ra_slug": "inigokennedy",
+    "demand_index": 46,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Marshall Jefferson",
@@ -5050,7 +5846,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Marshall Jefferson",
     "image": "https://cdn-images.dzcdn.net/images/artist/c6a568324347a6c45eb24daaa607ce0d/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "marshalljefferson"
+    "ra_slug": "marshalljefferson",
+    "demand_index": 63,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "GW Harrison",
@@ -5072,7 +5872,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/e52b2730f4d5fd63f10b98c230a67469/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "gwharrison"
+    "ra_slug": "gwharrison",
+    "demand_index": 51,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "AMÉMÉ",
@@ -5099,7 +5903,11 @@
       "Afro House"
     ],
     "trends_mom_12w": 0,
-    "image": "https://cdn-images.dzcdn.net/images/artist/f093e2d256619597a2c3a54d26ff74b7/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/f093e2d256619597a2c3a54d26ff74b7/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 61,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Nicholas Van Orton",
@@ -5121,7 +5929,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/f33ef9727735973921fea1b0bb848590/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "nicholasvanorton"
+    "ra_slug": "nicholasvanorton",
+    "demand_index": 50,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Alec Araujo",
@@ -5143,7 +5955,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/29f45b973ded01073ffba8d73e324688/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "alecaraujo"
+    "ra_slug": "alecaraujo",
+    "demand_index": 0,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Leo Lukas",
@@ -5164,7 +5980,11 @@
       "basis": "estimate"
     },
     "trends_mom_12w": -20,
-    "image": "https://cdn-images.dzcdn.net/images/artist/4a13f039b2a18946519088c910a72eee/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/4a13f039b2a18946519088c910a72eee/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 25,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Nino Bua",
@@ -5185,7 +6005,11 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 0,
-    "image": "https://cdn-images.dzcdn.net/images/artist/04a4218b17dfd973f8b818771d6444ef/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/04a4218b17dfd973f8b818771d6444ef/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 24,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Bas Ibellini",
@@ -5206,7 +6030,11 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 0,
-    "image": "https://cdn-images.dzcdn.net/images/artist/4e231667dda230cbe23c614610bb35ee/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/4e231667dda230cbe23c614610bb35ee/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 48,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Ricardo Villalobos",
@@ -5229,7 +6057,11 @@
     "trends_mom_12w": -34.7,
     "wikipedia_title": "Ricardo Villalobos",
     "image": "https://cdn-images.dzcdn.net/images/artist/e1ed2f2c42bfd0072a42c6d0755dd7c1/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "ricardovillalobos"
+    "ra_slug": "ricardovillalobos",
+    "demand_index": 41,
+    "demand_tier": 3,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "MK",
@@ -5257,7 +6089,11 @@
     ],
     "trends_mom_12w": 9.9,
     "wikipedia_title": "MK",
-    "image": "https://cdn-images.dzcdn.net/images/artist/ce42df7d498a54a4045511554561183d/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/ce42df7d498a54a4045511554561183d/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 32,
+    "demand_tier": 3,
+    "value_gap": -2,
+    "value_signal": "premium"
   },
   {
     "name": "Sasha",
@@ -5286,7 +6122,11 @@
     "trends_mom_12w": -10.9,
     "wikipedia_title": "Sasha",
     "image": "https://cdn-images.dzcdn.net/images/artist/5856ea0878199627363194d3513fea36/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "sasha"
+    "ra_slug": "sasha",
+    "demand_index": 62,
+    "demand_tier": 3,
+    "value_gap": -2,
+    "value_signal": "premium"
   },
   {
     "name": "John Digweed",
@@ -5308,7 +6148,11 @@
     },
     "trends_mom_12w": -12.1,
     "wikipedia_title": "John Digweed",
-    "image": "https://cdn-images.dzcdn.net/images/artist/ef6150eae1e00574b3a4c2008776c50b/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/ef6150eae1e00574b3a4c2008776c50b/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 6,
+    "demand_tier": 3,
+    "value_gap": -2,
+    "value_signal": "premium"
   },
   {
     "name": "Eric Prydz",
@@ -5338,7 +6182,11 @@
     "trends_mom_12w": 35.4,
     "wikipedia_title": "Eric Prydz",
     "image": "https://cdn-images.dzcdn.net/images/artist/0adb6d9882303b2429a5ec930fbbd2f5/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "ericprydz"
+    "ra_slug": "ericprydz",
+    "demand_index": 47,
+    "demand_tier": 3,
+    "value_gap": -3,
+    "value_signal": "premium"
   },
   {
     "name": "Midland",
@@ -5367,7 +6215,11 @@
     "trends_mom_12w": 9.9,
     "wikipedia_title": "Midland",
     "image": "https://cdn-images.dzcdn.net/images/artist/651873946c042a39b18b69e8e1898c49/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "midland"
+    "ra_slug": "midland",
+    "demand_index": 57,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Mano Le Tough",
@@ -5395,7 +6247,11 @@
     ],
     "trends_mom_12w": 100,
     "image": "https://cdn-images.dzcdn.net/images/artist/128965928fd06bd47dae4cdde78d1d82/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "manoletough"
+    "ra_slug": "manoletough",
+    "demand_index": 40,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Job Jobse",
@@ -5416,7 +6272,11 @@
       "basis": "curated"
     },
     "trends_mom_12w": 13.9,
-    "ra_slug": "jobjobse"
+    "ra_slug": "jobjobse",
+    "demand_index": 66,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "San Soda",
@@ -5438,7 +6298,11 @@
     },
     "trends_mom_12w": 42.8,
     "image": "https://cdn-images.dzcdn.net/images/artist/ec97eda6fb10fd7c5941e35576af134d/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "sansoda"
+    "ra_slug": "sansoda",
+    "demand_index": 14,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Move D",
@@ -5460,7 +6324,11 @@
     },
     "trends_mom_12w": 20,
     "image": "https://cdn-images.dzcdn.net/images/artist/5ba8596310c0178547475ffbc28c8ab1/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "moved"
+    "ra_slug": "moved",
+    "demand_index": 49,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Axel Boman",
@@ -5483,7 +6351,11 @@
     "trends_mom_12w": 100,
     "wikipedia_title": "Axel Boman",
     "image": "https://cdn-images.dzcdn.net/images/artist/89282a25e8934af0ceb0846b4bd42878/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "axelboman"
+    "ra_slug": "axelboman",
+    "demand_index": 66,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Guy Gerber",
@@ -5512,7 +6384,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Guy Gerber",
     "image": "https://cdn-images.dzcdn.net/images/artist/5f914a203bbe63e7188cb54fc8c45e4b/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "guygerber"
+    "ra_slug": "guygerber",
+    "demand_index": 52,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Todd Terry",
@@ -5535,7 +6411,11 @@
     "trends_mom_12w": 28.3,
     "wikipedia_title": "Todd Terry",
     "image": "https://cdn-images.dzcdn.net/images/artist/c61a78c86caddc877225d46b004b4913/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "toddterry"
+    "ra_slug": "toddterry",
+    "demand_index": 58,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Danny Tenaglia",
@@ -5558,7 +6438,11 @@
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/37ba17ea495685ff26628813ceffbb91/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Danny Tenaglia",
-    "ra_slug": "dannytenaglia"
+    "ra_slug": "dannytenaglia",
+    "demand_index": 83,
+    "demand_tier": 6,
+    "value_gap": 3,
+    "value_signal": "buy"
   },
   {
     "name": "DJ Sneak",
@@ -5581,7 +6465,11 @@
     "trends_mom_12w": 42.1,
     "image": "https://cdn-images.dzcdn.net/images/artist/05c69af88f6d797fcb0c36dbe8ca9a45/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "DJ Sneak",
-    "ra_slug": "djsneak"
+    "ra_slug": "djsneak",
+    "demand_index": 31,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Kevin Saunderson",
@@ -5604,7 +6492,11 @@
     "trends_mom_12w": 18.2,
     "wikipedia_title": "Kevin Saunderson",
     "image": "https://cdn-images.dzcdn.net/images/artist/0decd14778e62bd212b4eb8e57a14f48/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "kevinsaunderson"
+    "ra_slug": "kevinsaunderson",
+    "demand_index": 29,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Frankie Knuckles",
@@ -5627,7 +6519,11 @@
     "trends_mom_12w": 16.9,
     "wikipedia_title": "Frankie Knuckles",
     "image": "https://cdn-images.dzcdn.net/images/artist/931a6bf7a67be3d0d0b9eee08f83afd2/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "frankieknuckles"
+    "ra_slug": "frankieknuckles",
+    "demand_index": 37,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Larry Heard",
@@ -5650,7 +6546,11 @@
     "trends_mom_12w": 7.5,
     "image": "https://cdn-images.dzcdn.net/images/artist/c17c8a2ae2874d8ecca028ee58084f0e/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Larry Heard",
-    "ra_slug": "larryheard"
+    "ra_slug": "larryheard",
+    "demand_index": 3,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Deborah De Luca",
@@ -5672,7 +6572,11 @@
     },
     "trends_mom_12w": -15.3,
     "image": "https://cdn-images.dzcdn.net/images/artist/0d78da13b10885c287328867a7080a8a/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "deborahdeluca"
+    "ra_slug": "deborahdeluca",
+    "demand_index": 49,
+    "demand_tier": 3,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Andrea Oliva",
@@ -5700,7 +6604,11 @@
     ],
     "trends_mom_12w": 5.9,
     "image": "https://cdn-images.dzcdn.net/images/artist/b688797416486c8aada695ea7da76f3d/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "andreaoliva"
+    "ra_slug": "andreaoliva",
+    "demand_index": 41,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Alan Dixon",
@@ -5723,7 +6631,11 @@
     "trends_mom_12w": -17.3,
     "wikipedia_title": "Alan Dixon",
     "image": "https://cdn-images.dzcdn.net/images/artist/ba5bc2562056f94fecfce5df2b2a71a4/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "alandixon"
+    "ra_slug": "alandixon",
+    "demand_index": 35,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Harvey McKay",
@@ -5745,7 +6657,11 @@
     },
     "trends_mom_12w": 4300,
     "image": "https://cdn-images.dzcdn.net/images/artist/c3a8c35e78527740fa802c6c719e077d/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "harveymckay"
+    "ra_slug": "harveymckay",
+    "demand_index": 12,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Mr. G",
@@ -5767,7 +6683,11 @@
     },
     "trends_mom_12w": 69.1,
     "wikipedia_title": "Mr G",
-    "image": "https://cdn-images.dzcdn.net/images/artist/85904d79c5722a15547442b6aaa12493/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/85904d79c5722a15547442b6aaa12493/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 23,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Call Super",
@@ -5790,7 +6710,11 @@
     "trends_mom_12w": -1.3,
     "wikipedia_title": "Call super",
     "image": "https://cdn-images.dzcdn.net/images/artist/4d7976c880c5cae21d75d55abc751feb/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "callsuper"
+    "ra_slug": "callsuper",
+    "demand_index": 93,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Themba",
@@ -5813,7 +6737,11 @@
     "trends_mom_12w": -3.3,
     "wikipedia_title": "Themba",
     "image": "https://cdn-images.dzcdn.net/images/artist/fabdfa4fd04378bd2b16d7bb02a0d854/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "themba"
+    "ra_slug": "themba",
+    "demand_index": 58,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Culoe De Song",
@@ -5836,7 +6764,11 @@
     "trends_mom_12w": -4.2,
     "wikipedia_title": "Culoe De Song",
     "image": "https://cdn-images.dzcdn.net/images/artist/ba0ee981a5870e7db090d422045fb569/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "culoedesong"
+    "ra_slug": "culoedesong",
+    "demand_index": 24,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Luciano",
@@ -5859,7 +6791,11 @@
     "trends_mom_12w": 6,
     "wikipedia_title": "Luciano",
     "image": "https://cdn-images.dzcdn.net/images/artist/641feaa5b5e07e97ef97d17d1861e4e8/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "luciano"
+    "ra_slug": "luciano",
+    "demand_index": 65,
+    "demand_tier": 4,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Dimitri From Paris",
@@ -5882,7 +6818,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Dimitri from Paris",
     "image": "https://cdn-images.dzcdn.net/images/artist/1f18d2f7b5f61ab87597c98690e0090b/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "dimitrifromparis"
+    "ra_slug": "dimitrifromparis",
+    "demand_index": 58,
+    "demand_tier": 3,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Bob Sinclar",
@@ -5911,7 +6851,11 @@
     "trends_mom_12w": 13.4,
     "wikipedia_title": "Bob Sinclar",
     "image": "https://cdn-images.dzcdn.net/images/artist/6f5b029c7a977b6ccdc8f5843208f04c/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "bobsinclar"
+    "ra_slug": "bobsinclar",
+    "demand_index": 55,
+    "demand_tier": 3,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Duke Dumont",
@@ -5934,7 +6878,11 @@
     "trends_mom_12w": 47.8,
     "wikipedia_title": "Duke Dumont",
     "image": "https://cdn-images.dzcdn.net/images/artist/4118024e71bd7fe8346e41042b624491/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "dukedumont"
+    "ra_slug": "dukedumont",
+    "demand_index": 31,
+    "demand_tier": 3,
+    "value_gap": -2,
+    "value_signal": "premium"
   },
   {
     "name": "Route 94",
@@ -5963,7 +6911,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Route 94 (musician)",
     "image": "https://cdn-images.dzcdn.net/images/artist/69da2bc61d1624fc3837cad12b12dd4f/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "route94"
+    "ra_slug": "route94",
+    "demand_index": 27,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Maxxi Soundsystem",
@@ -5985,7 +6937,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/3449457cb26faecba1f8e7b6dc841b7d/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "maxxisoundsystem"
+    "ra_slug": "maxxisoundsystem",
+    "demand_index": null,
+    "value_gap": null,
+    "value_signal": null,
+    "demand_tier": null
   },
   {
     "name": "DJ Pierre",
@@ -6008,7 +6964,11 @@
     "trends_mom_12w": -14.6,
     "wikipedia_title": "DJ Pierre",
     "image": "https://cdn-images.dzcdn.net/images/artist/0e410278b71d6f2df5bba8cf0a87c377/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "djpierre"
+    "ra_slug": "djpierre",
+    "demand_index": 45,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Stacey Pullen",
@@ -6031,7 +6991,11 @@
     "trends_mom_12w": -100,
     "wikipedia_title": "Stacey Pullen",
     "image": "https://cdn-images.dzcdn.net/images/artist/32ad1d862009bbd3fdc73a9cf34bc5ec/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "staceypullen"
+    "ra_slug": "staceypullen",
+    "demand_index": 67,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy"
   },
   {
     "name": "Kenny Larkin",
@@ -6054,7 +7018,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Kenny Larkin",
     "image": "https://cdn-images.dzcdn.net/images/artist/184ddc811b3995155ef2cc163d5399da/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "kennylarkin"
+    "ra_slug": "kennylarkin",
+    "demand_index": 36,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Maya",
@@ -6077,7 +7045,11 @@
     "trends_mom_12w": -15.2,
     "wikipedia_title": "Maya",
     "image": "https://cdn-images.dzcdn.net/images/artist/24be5e4ba21f4fc349e6371943dc22d9/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "maya"
+    "ra_slug": "maya",
+    "demand_index": 69,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Slam",
@@ -6100,7 +7072,11 @@
     "trends_mom_12w": -13.3,
     "wikipedia_title": "Slam",
     "image": "https://cdn-images.dzcdn.net/images/artist/29b5d13239bcfee2e86fd3b162cf0203/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "slam"
+    "ra_slug": "slam",
+    "demand_index": 54,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Steve Bug",
@@ -6128,7 +7104,11 @@
     ],
     "trends_mom_12w": 65,
     "image": "https://cdn-images.dzcdn.net/images/artist/b64a331d5dc4382c5bd1984f0474d535/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "stevebug"
+    "ra_slug": "stevebug",
+    "demand_index": 23,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Akufen",
@@ -6151,7 +7131,11 @@
     "trends_mom_12w": -11.1,
     "wikipedia_title": "Akufen",
     "image": "https://cdn-images.dzcdn.net/images/artist/12ecb60bae684e53b0c3b4384c624820/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "akufen"
+    "ra_slug": "akufen",
+    "demand_index": 10,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Miss Kittin",
@@ -6174,7 +7158,11 @@
     "trends_mom_12w": -5,
     "wikipedia_title": "Miss Kittin",
     "image": "https://cdn-images.dzcdn.net/images/artist/528804b14c70671b78d4f390a30a50a1/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "misskittin"
+    "ra_slug": "misskittin",
+    "demand_index": 44,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "The Hacker",
@@ -6197,7 +7185,11 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "The Hacker",
     "image": "https://cdn-images.dzcdn.net/images/artist/b059197697b1acbddcf06c98ce7962ed/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "thehacker"
+    "ra_slug": "thehacker",
+    "demand_index": 67,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Joeski",
@@ -6225,7 +7217,11 @@
     ],
     "trends_mom_12w": 125,
     "image": "https://cdn-images.dzcdn.net/images/artist/1f1d5c73d94124c2e8508328805a72e5/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "joeski"
+    "ra_slug": "joeski",
+    "demand_index": 20,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Deetron",
@@ -6247,7 +7243,11 @@
     },
     "trends_mom_12w": 33.3,
     "image": "https://cdn-images.dzcdn.net/images/artist/3e929b6e0a47a17a4e4c29d770d1ec49/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "deetron"
+    "ra_slug": "deetron",
+    "demand_index": 48,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Marika Rossa",
@@ -6269,7 +7269,11 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/de33f8dad4cc523a2aaf76d6eaa38b11/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "marikarossa"
+    "ra_slug": "marikarossa",
+    "demand_index": 20,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "SPFDJ",
@@ -6291,7 +7295,11 @@
     },
     "trends_mom_12w": -37.5,
     "image": "https://cdn-images.dzcdn.net/images/artist/a33bab863b1ab1e49ca82970e20e18ed/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "spfdj"
+    "ra_slug": "spfdj",
+    "demand_index": 47,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Rebekah",
@@ -6314,7 +7322,11 @@
     "trends_mom_12w": 0,
     "search_alias": "Rebekah techno",
     "image": "https://cdn-images.dzcdn.net/images/artist/32d11d6be5b8aa1b7f69e1479cd241b3/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "rebekah"
+    "ra_slug": "rebekah",
+    "demand_index": 69,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Alignment",
@@ -6337,7 +7349,11 @@
     "trends_mom_12w": 19.2,
     "wikipedia_title": "Alignment",
     "image": "https://cdn-images.dzcdn.net/images/artist/0e3f06f92ff06cedc2d1d9dddd345331/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "alignment"
+    "ra_slug": "alignment",
+    "demand_index": 65,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Len Faki",
@@ -6366,7 +7382,11 @@
     "trends_mom_12w": -20,
     "wikipedia_title": "Len Faki",
     "image": "https://cdn-images.dzcdn.net/images/artist/41d8282678383860293c4fe677371de6/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "lenfaki"
+    "ra_slug": "lenfaki",
+    "demand_index": 54,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Truncate",
@@ -6389,7 +7409,11 @@
     "trends_mom_12w": -0.9,
     "wikipedia_title": "Truncate (SQL)",
     "image": "https://cdn-images.dzcdn.net/images/artist/7507759a56762e08374b3427bd633f6a/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "truncate"
+    "ra_slug": "truncate",
+    "demand_index": 73,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Planetary Assault Systems",
@@ -6417,7 +7441,11 @@
     ],
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/e60eb9108935c07342dce6f2f2faede3/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "planetaryassaultsystems"
+    "ra_slug": "planetaryassaultsystems",
+    "demand_index": 57,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Regis",
@@ -6440,7 +7468,11 @@
     "trends_mom_12w": -2.2,
     "wikipedia_title": "Regis",
     "image": "https://cdn-images.dzcdn.net/images/artist/f42d5728c714e7f026609cf928e4c9aa/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "regis"
+    "ra_slug": "regis",
+    "demand_index": 64,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Phase Fatale",
@@ -6462,7 +7494,11 @@
     },
     "trends_mom_12w": -75,
     "image": "https://cdn-images.dzcdn.net/images/artist/b565f9473478e377a05b952d8cfa4de4/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "phasefatale"
+    "ra_slug": "phasefatale",
+    "demand_index": 49,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Hugel",
@@ -6470,28 +7506,44 @@
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/3c13af28b7ea160a4e844c16e5109d18/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "hugel",
-    "wikipedia_title": "Hugel (DJ)"
+    "wikipedia_title": "Hugel (DJ)",
+    "demand_index": 98,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Adam Ten",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/ae5dd6a1d44024b1722cdf8788f85ee5/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "adamten"
+    "ra_slug": "adamten",
+    "demand_index": 73,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Sidney Charles",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/b1daf96bd9384c595a70d602df9ee528/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "sidneycharles"
+    "ra_slug": "sidneycharles",
+    "demand_index": 74,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Brunello",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/5326cd4e7ececde856f840b029083f8b/1000x1000-000000-80-0-0.jpg",
-    "wikipedia_title": "Brunello"
+    "wikipedia_title": "Brunello",
+    "demand_index": 99,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Rafael",
@@ -6499,7 +7551,11 @@
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/1eadeb2ff4f00ca2b401e115ca9d12fa/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Rafael",
-    "ra_slug": "rafael"
+    "ra_slug": "rafael",
+    "demand_index": 66,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Gorge",
@@ -6507,20 +7563,32 @@
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/44051e7510a5be98e7bd27dafe19423b/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Gorge (disambiguation)",
-    "ra_slug": "gorge"
+    "ra_slug": "gorge",
+    "demand_index": 54,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Ilias Katelanos",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/329dd3a828813885191199cd82a736f4/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/329dd3a828813885191199cd82a736f4/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 93,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "LUCH",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/ccf0a65e8c2bc7d7b2aea4cf1dfd6b9f/1000x1000-000000-80-0-0.jpg",
-    "wikipedia_title": "Luch"
+    "wikipedia_title": "Luch",
+    "demand_index": 91,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Adam Port",
@@ -6528,47 +7596,75 @@
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/ae6a1a99ec641a71ca699955430b5471/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Adam Port",
-    "ra_slug": "adamport"
+    "ra_slug": "adamport",
+    "demand_index": 66,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Keinemusik",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/56b575ed2abe430764d6319e8414b02e/1000x1000-000000-80-0-0.jpg",
-    "wikipedia_title": "Keinemusik"
+    "wikipedia_title": "Keinemusik",
+    "demand_index": 91,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "OMRI.",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/c94be4346bbe88c7cd2f993c0ed711e0/1000x1000-000000-80-0-0.jpg",
-    "wikipedia_title": "Omri"
+    "wikipedia_title": "Omri",
+    "demand_index": 89,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Bonafique",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/5278b7fdb0fd0572e5ddd9eeb6c64470/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/5278b7fdb0fd0572e5ddd9eeb6c64470/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 89,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Volkoder",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/6629a6d262ffd6ecccdda364003df8fb/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/6629a6d262ffd6ecccdda364003df8fb/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 88,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Josh Gigante",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/39dc32612285f438d322358248a60d93/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "joshgigante"
+    "ra_slug": "joshgigante",
+    "demand_index": 51,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Gai Barone",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/477ff0ffd414a2e693acc62ca08dce28/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "gaibarone"
+    "ra_slug": "gaibarone",
+    "demand_index": 50,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "HotLap",
@@ -6576,13 +7672,21 @@
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/2424c217bb97418e660830854c7e0d25/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Hot lap",
-    "ra_slug": "hotlap"
+    "ra_slug": "hotlap",
+    "demand_index": 63,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "GEØVHÄN",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/d7f19e03cbf43a76063fb01fe4a32625/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/d7f19e03cbf43a76063fb01fe4a32625/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 84,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "CamelPhat",
@@ -6590,7 +7694,11 @@
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/0323760d53e2a30fea1e66dafcb0f09e/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "CamelPhat",
-    "ra_slug": "camelphat"
+    "ra_slug": "camelphat",
+    "demand_index": 65,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "&ME",
@@ -6598,20 +7706,32 @@
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/05fb14f9ef0462ea4251dd4903c8ccc8/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "&Me",
-    "ra_slug": "me"
+    "ra_slug": "me",
+    "demand_index": 68,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Jacob Matthews",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/4ad9b30669505ef154e3112511deff27/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/4ad9b30669505ef154e3112511deff27/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 83,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Kamilo Sanclemente",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/18907187d78c33590e0c71c5c989177b/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "kamilosanclemente"
+    "ra_slug": "kamilosanclemente",
+    "demand_index": 61,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Meduza",
@@ -6619,7 +7739,11 @@
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/ab9d5b17af04e65b048b33fc2806f910/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Meduza",
-    "ra_slug": "meduza"
+    "ra_slug": "meduza",
+    "demand_index": 70,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Vintage Culture",
@@ -6627,14 +7751,22 @@
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/bbc7f0e75f9154e5982420c42e805484/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Vintage Culture",
-    "ra_slug": "vintageculture"
+    "ra_slug": "vintageculture",
+    "demand_index": 88,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Hardt Antoine",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/6f42f2643c4b8878e4a0259f325dae38/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "hardtantoine"
+    "ra_slug": "hardtantoine",
+    "demand_index": 70,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Rampa",
@@ -6642,20 +7774,32 @@
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/05454ee4114bef513b8f0446271dae0b/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Rampa",
-    "ra_slug": "rampa"
+    "ra_slug": "rampa",
+    "demand_index": 74,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Boss Priester",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/7a5322f58d4db6a6637ba05c32a7473e/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "bosspriester"
+    "ra_slug": "bosspriester",
+    "demand_index": 68,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Plecta",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/85631fcc84c814f15df29c0445c3e4fc/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/85631fcc84c814f15df29c0445c3e4fc/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 79,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Ultra Nate",
@@ -6663,14 +7807,22 @@
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/825f7b460438bdb5f4a52ac45a90e6ca/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Ultra Naté",
-    "ra_slug": "ultranate"
+    "ra_slug": "ultranate",
+    "demand_index": 53,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Franc Fala",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/9a3cf8e0bd8a6d50e24aaa33eeacc62f/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "francfala"
+    "ra_slug": "francfala",
+    "demand_index": 66,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "RÜFÜS DU SOL",
@@ -6678,66 +7830,106 @@
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/e9890b80076d03cce617888ec3ab2996/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Rüfüs Du Sol",
-    "ra_slug": "rufusdusol"
+    "ra_slug": "rufusdusol",
+    "demand_index": 57,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Township Rebellion",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/faeccb3a5444665d1b571391ebc138eb/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "townshiprebellion"
+    "ra_slug": "townshiprebellion",
+    "demand_index": 86,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Cam Stockman",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/ad6670eb74002572713894c48e340e47/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "camstockman"
+    "ra_slug": "camstockman",
+    "demand_index": 88,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Antdot",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/733326f723ed09dce49de7a0a1f9878b/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "antdot"
+    "ra_slug": "antdot",
+    "demand_index": 62,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Jordan Brando",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/90186f5bec8200ce40ed5819d32f7dc2/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "jordanbrando"
+    "ra_slug": "jordanbrando",
+    "demand_index": 52,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Jitwam",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/e215c84949bafdf5638a62d3e3bee2b3/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/e215c84949bafdf5638a62d3e3bee2b3/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 76,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "GUDFELLA",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/631d226f876dc220aa83cc35f5b8f6da/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/631d226f876dc220aa83cc35f5b8f6da/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 76,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Mason Collective",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/42a95684e854e0d34750be163eb34ae5/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "masoncollective"
+    "ra_slug": "masoncollective",
+    "demand_index": 69,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "RSquared",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://cdn-images.dzcdn.net/images/artist/20b41ef4e6944f6f2bc5cea36a90bbdb/1000x1000-000000-80-0-0.jpg",
-    "ra_slug": "rsquared"
+    "ra_slug": "rsquared",
+    "demand_index": 67,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   },
   {
     "name": "Yuvèe",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/92125e8bd7e7ebc49a4a85d2aed367e3/1000x1000-000000-80-0-0.jpg"
+    "image": "https://cdn-images.dzcdn.net/images/artist/92125e8bd7e7ebc49a4a85d2aed367e3/1000x1000-000000-80-0-0.jpg",
+    "demand_index": 75,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   }
 ]
