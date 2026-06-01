@@ -4,15 +4,17 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>The DJ Rankings · Product &amp; Strategy</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#16171d; --card:#1e1f27; --ink:#f3f4f6; --muted:#9ca3af; --accent:#c084fc; --line:#2e303a; --green:#4ade80; --red:#f87171; }
+  :root { --bg:#0c0c0e; --card:#111114; --ink:#E9E7DF; --muted:#75767d; --accent:#C8F750; --on-accent:#0c0c0e; --line:#1e1f23; --green:#8ed06a; --red:#df7a5c; --mono:'IBM Plex Mono',monospace; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--ink); font-family: -apple-system, "Segoe UI", Inter, Arial, sans-serif; }
+  body { background: var(--bg); color: var(--ink); font-family: 'Space Grotesk', system-ui, sans-serif; }
   .slide { min-height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 60px 44px; scroll-snap-align: start; border-bottom: 1px solid var(--line); }
   .wrap { max-width: 1080px; width: 100%; }
-  .eyebrow { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 16px; }
-  h1 { font-size: 50px; font-weight: 800; line-height: 1.12; letter-spacing: -1px; margin-bottom: 18px; background: linear-gradient(90deg,#fff,var(--accent)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-  h2 { font-size: 33px; font-weight: 800; letter-spacing: -.4px; margin-bottom: 16px; }
+  .eyebrow { color: var(--accent); font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 16px; }
+  h1 { font-size: 56px; font-weight: 700; line-height: 1.0; letter-spacing: -1.8px; margin-bottom: 18px; color: var(--ink); }
+  h2 { font-size: 34px; font-weight: 700; letter-spacing: -.8px; margin-bottom: 16px; }
+  .kpi .n,.kpi .l,.wt .v,.rl-pos,.rl-val,.rl-sub,.tier .price,.tier .who,.brandmark,.counter,.formula .w { font-family: var(--mono); }
   h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; color: #fff; }
   p { color: var(--muted); font-size: 16.5px; line-height: 1.62; margin-bottom: 12px; max-width: 780px; }
   .lead { font-size: 19px; color: #d6d7df; }
@@ -37,7 +39,7 @@
   .wt { display:grid; grid-template-columns:200px 1fr 46px; gap:12px; align-items:center; margin-bottom:8px; }
   .wt .nm { font-size:14px; color:#d6d7df; text-align:right; }
   .wt .track { height:16px; background:#15161c; border-radius:5px; overflow:hidden; }
-  .wt .fill { height:100%; border-radius:5px; background:linear-gradient(90deg,var(--accent),#8b6fd6); }
+  .wt .fill { height:100%; border-radius:5px; background:var(--accent); }
   .wt .v { font-size:13px; color:var(--muted); font-weight:700; }
   .formula { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 22px; font-size:16px; color:#d6d7df; margin:16px 0; line-height:1.7; }
   .formula b { color:#fff; } .formula .w { color:var(--accent); font-weight:800; }
@@ -228,9 +230,9 @@
   <div class="eyebrow">The Market</div>
   <h2>Two audiences, one platform</h2>
   <div class="grid2">
-    <div class="box"><span class="ic">🎧</span><h3>Enthusiasts</h3>
+    <div class="box"><h3>Enthusiasts</h3>
       <ul><li>A credible, current leaderboard for the scene</li><li>Early discovery of rising artists</li><li>Shareable cards and recurring "who is rising" content</li></ul></div>
-    <div class="box"><span class="ic">💼</span><h3>Industry</h3>
+    <div class="box"><h3>Industry</h3>
       <ul><li>Bookers and promoters pricing and routing talent</li><li>Labels and A&amp;R scouting momentum</li><li>Managers evidencing demand; brands vetting partners</li></ul></div>
   </div>
   <p style="margin-top:16px">The free tier builds the audience and search footprint. The professional tier converts the industry. The following slide details the distinct value to each professional segment.</p>
@@ -302,10 +304,10 @@
   <div class="eyebrow">Growth Strategy</div>
   <h2>Engagement: growing site traffic</h2>
   <div class="grid2">
-    <div class="box"><span class="ic">🔎</span><h3>Search footprint</h3><p>263 artist profiles capture long-tail queries such as booking fee, monthly listeners, and rank. A compounding organic-traffic asset.</p></div>
-    <div class="box"><span class="ic">📤</span><h3>Distributable assets</h3><p>Ranking cards and momentum reports are designed to be shared by artists and fans. Each share links back to the platform.</p></div>
-    <div class="box"><span class="ic">📣</span><h3>Parallel social channels</h3><p>A dedicated Instagram and short-form presence posting regular insights, such as an artist breaking out, drives steady attention and referral traffic back to the site.</p></div>
-    <div class="box"><span class="ic">🗓️</span><h3>Recurring editorial</h3><p>Weekly Movers, Breakouts, and Ones to Watch supply a newsletter, social calendar, and press hooks, creating a reason to return.</p></div>
+    <div class="box"><h3>Search footprint</h3><p>263 artist profiles capture long-tail queries such as booking fee, monthly listeners, and rank. A compounding organic-traffic asset.</p></div>
+    <div class="box"><h3>Distributable assets</h3><p>Ranking cards and momentum reports are designed to be shared by artists and fans. Each share links back to the platform.</p></div>
+    <div class="box"><h3>Parallel social channels</h3><p>A dedicated Instagram and short-form presence posting regular insights, such as an artist breaking out, drives steady attention and referral traffic back to the site.</p></div>
+    <div class="box"><h3>Recurring editorial</h3><p>Weekly Movers, Breakouts, and Ones to Watch supply a newsletter, social calendar, and press hooks, creating a reason to return.</p></div>
   </div>
 </div></section>
 
@@ -314,12 +316,12 @@
   <div class="eyebrow">Revenue Strategy</div>
   <h2>Monetization</h2>
   <div class="grid3">
-    <div class="box"><span class="ic">💳</span><h3>Subscriptions</h3><p>Recurring revenue from the Artist (£29) and Booker (£49) tiers. The core engine.</p></div>
-    <div class="box"><span class="ic">🗄️</span><h3>Data licensing &amp; API</h3><p>Agencies and labels pay for feeds and API access. Defensible B2B revenue at higher contract values.</p></div>
-    <div class="box"><span class="ic">⭐</span><h3>Sponsored placement</h3><p>Labels pay to feature a release or rising artist in the Breaking section. Standard in music media.</p></div>
-    <div class="box"><span class="ic">📰</span><h3>Display &amp; sponsored ads</h3><p>Google Ads and direct sponsored promotions against a high-intent, genre-specific audience.</p></div>
-    <div class="box"><span class="ic">📄</span><h3>Paid reports</h3><p>One-off premium momentum and benchmark reports for managers and agencies.</p></div>
-    <div class="box"><span class="ic">🎟️</span><h3>Affiliate</h3><p>Referral commissions on ticketing and booking links surfaced across profiles.</p></div>
+    <div class="box"><h3>Subscriptions</h3><p>Recurring revenue from the Artist (£29) and Booker (£49) tiers. The core engine.</p></div>
+    <div class="box"><h3>Data licensing &amp; API</h3><p>Agencies and labels pay for feeds and API access. Defensible B2B revenue at higher contract values.</p></div>
+    <div class="box"><h3>Sponsored placement</h3><p>Labels pay to feature a release or rising artist in the Breaking section. Standard in music media.</p></div>
+    <div class="box"><h3>Display &amp; sponsored ads</h3><p>Google Ads and direct sponsored promotions against a high-intent, genre-specific audience.</p></div>
+    <div class="box"><h3>Paid reports</h3><p>One-off premium momentum and benchmark reports for managers and agencies.</p></div>
+    <div class="box"><h3>Affiliate</h3><p>Referral commissions on ticketing and booking links surfaced across profiles.</p></div>
   </div>
   <p style="margin-top:16px">The tiers reinforce one another: the free product grows audience and search, subscriptions convert professionals, and licensing scales to institutions.</p>
 </div></section>
