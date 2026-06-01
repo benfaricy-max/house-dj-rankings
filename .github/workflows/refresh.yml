@@ -62,6 +62,11 @@ jobs:
         working-directory: backend
         continue-on-error: true   # never block the refresh if Songkick scrape fails
 
+      - name: Resident Advisor booking signal
+        run: node enrichRA.js
+        working-directory: backend
+        continue-on-error: true   # plain GraphQL, no puppeteer — runs in CI; skip stale (<14d)
+
       - name: Listener growth signal (kworb)
         run: node enrichKworb.js
         working-directory: backend

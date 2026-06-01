@@ -60,6 +60,15 @@ now 403s arbitrary app_ids). search → slug-matched artist page → ld+json upc
 MusicEvents → tour_upcoming/countries/next show + tour_score. Resumable, paced,
 merge-safe. Runs in CI too (continue-on-error).
 
+## Resident Advisor signal (booking intelligence)
+`node backend/enrichRA.js [limit]` — RA public GraphQL (ra.co/graphql, no auth).
+Slug = name.normalize().toLowerCase().replace(/[^a-z0-9]/g, '') — add `ra_slug`
+to artists.json to override for ambiguous names (e.g. "fisher" → Mike Fisher).
+Fetches: ra_followers, ra_upcoming, ra_events_6m, ra_avg_attending, ra_top_attending,
+ra_attending_h1/h2 (trajectory), ra_venue_tier (1-5 capacity buckets), ra_countries,
+ra_country_list, ra_top_regions, ra_top_venues → composite ra_score 0-100.
+Stale threshold: 14 days. Runs in CI (plain HTTP, no puppeteer). Weight: 0.08 in score.
+
 ## Beatport signal (core credibility)
 `beatport_score` 0-100 from genre Top-100 charts: positionScore(101−best)·0.6 +
 trackBreadth·0.25 + crossGenreReach·0.15. Powers the "DJ's DJ" benchmark axis

@@ -103,6 +103,22 @@ async function main() {
         google_trends_countries: (trends.top_countries && Object.keys(trends.top_countries).length) ? trends.top_countries : (prev.google_trends_countries ?? {}),
         google_trends_cities:    (trends.top_us_cities && Object.keys(trends.top_us_cities).length) ? trends.top_us_cities : (prev.google_trends_cities ?? {}),
         spotify_monthly_listeners: keep(spotifyCache.spotify_monthly_listeners ?? spotifyCache.spotify_followers, prev.spotify_monthly_listeners),
+        // RA fields: never fetched in CI (requires local enrichRA.js run) — always preserve prev
+        ra_slug:          prev.ra_slug          ?? null,
+        ra_followers:     prev.ra_followers      ?? 0,
+        ra_upcoming:      prev.ra_upcoming       ?? 0,
+        ra_events_6m:     prev.ra_events_6m      ?? 0,
+        ra_avg_attending: prev.ra_avg_attending  ?? 0,
+        ra_top_attending: prev.ra_top_attending  ?? 0,
+        ra_attending_h1:  prev.ra_attending_h1   ?? 0,
+        ra_attending_h2:  prev.ra_attending_h2   ?? 0,
+        ra_venue_tier:    prev.ra_venue_tier      ?? 0,
+        ra_countries:     prev.ra_countries       ?? 0,
+        ra_country_list:  prev.ra_country_list    ?? [],
+        ra_top_regions:   prev.ra_top_regions     ?? [],
+        ra_top_venues:    prev.ra_top_venues      ?? [],
+        ra_score:         prev.ra_score           ?? 0,
+        ra_updated:       prev.ra_updated         ?? null,
       });
       process.stdout.write(`\r${i + 1}/${artists.length} ${artist.name}   `);
     } catch (err) {

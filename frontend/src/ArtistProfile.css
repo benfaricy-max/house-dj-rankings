@@ -37,3 +37,22 @@
 @media (max-width: 720px) { .ap-tour-next { grid-column: span 1; } }
 .ap-tour-val { font-size: 1.3rem; font-weight: 800; color: #fff; }
 .ap-tour-label { font-size: .72rem; color: #777; margin-top: 3px; text-transform: uppercase; letter-spacing: .04em; }
+
+/* ── Resident Advisor block ── */
+.ap-ra { background: #0a0f07; border: 1px solid #1e2b12; border-radius: 14px; padding: 18px 20px; margin: 8px 0 22px; }
+.ap-ra-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.ap-ra-label { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: #a8e00f; }
+.ap-ra-link { font-size: .78rem; color: #666; text-decoration: none; }
+.ap-ra-link:hover { color: #a8e00f; }
+.ap-ra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; }
+.ap-ra-item { background: #111; border: 1px solid #1e1e1e; border-radius: 10px; padding: 12px 14px; }
+.ap-ra-val { font-size: 1.25rem; font-weight: 800; color: #fff; display: flex; align-items: baseline; gap: 4px; }
+.ap-ra-unit { font-size: .75rem; font-weight: 400; color: #666; }
+.ap-ra-key { font-size: .68rem; color: #666; margin-top: 3px; text-transform: uppercase; letter-spacing: .05em; }
+.ap-ra-trend { font-size: .85rem; font-weight: 700; }
+.ap-ra-trend--up { color: #4caf50; }
+.ap-ra-trend--down { color: #e74c3c; }
+.ap-ra-trend--flat { color: #888; }
+.ap-ra-regions { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; font-size: .8rem; color: #999; }
+.ap-ra-regions-label { color: #666; }
+.ap-ra-tag { display: inline-block; background: #151f0d; border: 1px solid #2a3a1a; color: #a8e00f; font-size: .7rem; padding: 2px 9px; border-radius: 6px; margin: 2px 4px 2px 0; }

@@ -189,10 +189,16 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
     { label: "Overall Score", value: dj.score ?? "—" },
     { label: "Spotify Listeners", value: fmt(dj.spotify_monthly_listeners) },
     { label: "Beatport Score", value: dj.beatport_score ? `${dj.beatport_score}/100` : "—" },
+    { label: "RA Score", value: dj.ra_score ? `${dj.ra_score}/100` : "—" },
     { label: "TikTok Posts", value: fmt(dj.tiktok_post_count) },
     { label: "YouTube Subs", value: fmt(dj.youtube_subscribers) },
     { label: "Google Trends", value: dj.google_trends_score ? `${Math.round(dj.google_trends_score)}/100` : "—" },
   ];
+
+  const TIER_LABELS = ["", "<300 cap", "300–700", "700–1.5K", "1.5K–5K", "5K+"];
+  const raAttendTrend = dj.ra_attending_h1 && dj.ra_attending_h2
+    ? dj.ra_attending_h1 > dj.ra_attending_h2 * 1.1 ? "↑" : dj.ra_attending_h1 < dj.ra_attending_h2 * 0.9 ? "↓" : "→"
+    : null;
 
   return (
     <div className="ap-page">
@@ -235,6 +241,64 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
             <div className="ap-tour-val" style={{ color: "#f5a623" }}>{dj.tour_score}</div>
             <div className="ap-tour-label">Tour density</div>
           </div>
+        </div>
+      )}
+
+      {dj.ra_score > 0 && (
+        <div className="ap-ra">
+          <div className="ap-ra-header">
+            <span className="ap-ra-label">Resident Advisor</span>
+            <a className="ap-ra-link" href={`https://ra.co/dj/${dj.ra_slug}`} target="_blank" rel="noreferrer">View on RA ↗</a>
+          </div>
+          <div className="ap-ra-grid">
+            <div className="ap-ra-item">
+              <div className="ap-ra-val">{dj.ra_followers ? fmt(dj.ra_followers) : "—"}</div>
+              <div className="ap-ra-key">RA Followers</div>
+            </div>
+            <div className="ap-ra-item">
+              <div className="ap-ra-val">{dj.ra_events_6m ?? "—"}<span className="ap-ra-unit"> / 6mo</span></div>
+              <div className="ap-ra-key">Bookings</div>
+            </div>
+            <div className="ap-ra-item">
+              <div className="ap-ra-val">
+                {dj.ra_avg_attending ?? "—"}
+                {raAttendTrend && <span className={`ap-ra-trend ap-ra-trend--${raAttendTrend === "↑" ? "up" : raAttendTrend === "↓" ? "down" : "flat"}`}>{raAttendTrend}</span>}
+              </div>
+              <div className="ap-ra-key">Avg Attending</div>
+            </div>
+            <div className="ap-ra-item">
+              <div className="ap-ra-val">{dj.ra_venue_tier ? TIER_LABELS[Math.round(dj.ra_venue_tier)] : "—"}</div>
+              <div className="ap-ra-key">Venue Size</div>
+            </div>
+            <div className="ap-ra-item">
+              <div className="ap-ra-val">{dj.ra_countries ?? "—"}</div>
+              <div className="ap-ra-key">Countries</div>
+            </div>
+            <div className="ap-ra-item">
+              <div className="ap-ra-val">{dj.ra_upcoming ?? "—"}</div>
+              <div className="ap-ra-key">Upcoming</div>
+            </div>
+          </div>
+          {(dj.ra_top_regions?.length > 0 || dj.ra_country_list?.length > 0) && (
+            <div className="ap-ra-regions">
+              {dj.ra_top_regions?.length > 0 && (
+                <div>
+                  <span className="ap-ra-regions-label">Most played: </span>
+                  {dj.ra_top_regions.map((r, i) => (
+                    <span key={i} className="ap-ra-tag">{r.name}</span>
+                  ))}
+                </div>
+              )}
+              {dj.ra_country_list?.length > 0 && (
+                <div>
+                  <span className="ap-ra-regions-label">Recent markets: </span>
+                  {dj.ra_country_list.map((c, i) => (
+                    <span key={i} className="ap-ra-tag">{c}</span>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
         </div>
       )}
 

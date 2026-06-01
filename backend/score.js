@@ -17,6 +17,7 @@ function scoreArtists(artists) {
     "beatport_score",
     "wikipedia_pageviews",
     "manual_scene_score",
+    "ra_score",
   ];
 
   const ranges = {};
@@ -26,18 +27,20 @@ function scoreArtists(artists) {
   }
 
   const weights = {
-    spotify_monthly_listeners:    0.17,
+    spotify_follower_growth_rate: 0.13,  // GROWTH weighted heavily — acceleration > size
+    spotify_monthly_listeners:    0.13,
+    manual_scene_score:           0.11,  // editorial scene credibility (transparent rubric — see How It Works)
     beatport_score:               0.10,  // core scene / chart credibility
-    spotify_playlist_placements:  0.10,
-    tiktok_post_count:            0.10,
-    youtube_subscribers:          0.10,
-    google_trends_score:          0.10,
-    spotify_avg_track_popularity: 0.08,  // currently blocked by Spotify (403) — auto-excluded below
-    spotify_follower_growth_rate: 0.08,
-    youtube_views_weekly:         0.08,  // delta metric — empty until 2 snapshots exist, then auto-included
-    wikipedia_pageviews:          0.05,  // public interest (replaced Spotify followers)
-    manual_scene_score:           0.04,
+    google_trends_score:          0.09,
+    ra_score:                     0.08,  // RA booking momentum: venue tier, attending, geo spread
+    tiktok_post_count:            0.08,
+    youtube_subscribers:          0.08,
+    spotify_playlist_placements:  0.07,
+    youtube_views_weekly:         0.06,  // delta metric — empty until 2 snapshots exist, then auto-included
+    spotify_avg_track_popularity: 0.04,  // currently blocked by Spotify (403) — auto-excluded below
+    wikipedia_pageviews:          0.03,  // public interest (replaced Spotify followers)
   };
+  // sum = 1.00
 
   // Weights sum to 1.0 by design. But a signal that is EMPTY across the entire
   // field (max === 0 — e.g. Spotify track popularity is API-blocked, or
