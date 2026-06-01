@@ -29,12 +29,20 @@ serverless platform. The frontend talks to them via `VITE_API_BASE`.
 
 | File | Role |
 |------|------|
-| `frontend/src/usePro.js` | `usePro()` entitlement hook + `startCheckout()` |
+| `frontend/src/usePro.js` | `usePro()` entitlement hook + `startCheckout()` + `startPortal()` |
 | `api/checkout.js` | Creates a Stripe Checkout subscription session |
-| `api/webhook.js` | Verifies Stripe events; mints a 30-day Pro session cookie |
-| `api/me.js` | Returns `{ pro }` from the signed cookie |
+| `api/webhook.js` | Verifies Stripe events; persists entitlement + mints a Pro cookie |
+| `api/me.js` | Returns `{ pro }` — confirms against the store, falls back to cookie |
+| `api/portal.js` | Stripe Billing Portal session (self-serve cancel / upgrade) |
 | `api/rationale.js` | LLM-generated booking memo (Pro); falls back to the template |
+| `api/_store.js` | Upstash Redis entitlement store (keyed by Stripe customer) |
 | `api/_lib.js` | CORS + signed-session helpers |
+
+The entitlement store and customer portal are **already wired**: the webhook writes
+`active`/`inactive` to Upstash, `/api/me` confirms it (so cancellations revoke access),
+and Pro users get a "Manage subscription" link that opens the Stripe portal. Both
+degrade gracefully — without Upstash configured, `/me` falls back to trusting the
+signed cookie, so the stub still runs.
 
 ## Go-live checklist (~1–2 days)
 
@@ -49,23 +57,26 @@ serverless platform. The frontend talks to them via `VITE_API_BASE`.
    - `STRIPE_WEBHOOK_SECRET`
    - `SESSION_SECRET` (random 32+ chars)
    - `FRONTEND_URL=https://thedjrankings.com`
+   - `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` (create a free Upstash Redis
+     DB — this is the entitlement store; without it `/me` falls back to the cookie)
    - `ANTHROPIC_API_KEY` (optional — enables the real AI memo; without it the memo
      falls back to the deterministic template)
+   - In the Stripe Billing Portal settings, enable cancellation + plan switching so
+     `/api/portal` works.
 4. **Env vars (frontend build):**
    - `VITE_API_BASE=https://api.thedjrankings.com`
    - `VITE_PAYWALL_ENABLED=true`
 5. **Test:** `localStorage.setItem('peaktime_pro','1')` unlocks Pro locally without
    paying, so you can QA the gated UI.
 
-## Production hardening (before charging at scale)
+## Production hardening
 
-- **Replace the cookie with a datastore.** The stub trusts a signed cookie. For real
-  billing, persist `{ stripe_customer_id, status }` in Vercel KV / Upstash / Postgres
-  keyed off the webhook, and have `/api/me` confirm the subscription is still active so
-  you can revoke on cancellation. (TODOs are marked in `webhook.js` / `me.js`.)
-- **Add login.** Tie entitlement to an account (Clerk or Supabase Auth, magic-link) so
-  it follows the user across devices.
-- **Customer portal.** Add a Stripe Billing Portal link for self-serve cancel/upgrade.
+- ✅ **Entitlement store** — `api/_store.js` (Upstash Redis). Webhook persists
+  active/inactive; `/api/me` confirms it so cancellations revoke access.
+- ✅ **Customer portal** — `api/portal.js` + "Manage subscription" link.
+- ⬜ **Add login.** Entitlement currently follows a signed cookie tied to the Stripe
+  customer. For multi-device access, add an account layer (Clerk or Supabase Auth,
+  magic-link) and key the store on the user id as well as the customer id.
 
 ## Pricing (starting point)
 

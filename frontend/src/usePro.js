@@ -46,3 +46,16 @@ export async function startCheckout(plan = "pro") {
     alert("Could not reach the checkout service.");
   }
 }
+
+// Opens the Stripe Billing Portal for self-serve cancel / upgrade.
+export async function startPortal() {
+  if (!API) { alert("Billing portal isn't configured yet — see COMMERCE.md."); return; }
+  try {
+    const r = await fetch(`${API}/api/portal`, { method: "POST", credentials: "include" });
+    const { url, error } = await r.json();
+    if (url) window.location.href = url;
+    else alert(error || "Could not open the billing portal.");
+  } catch {
+    alert("Could not reach the billing service.");
+  }
+}

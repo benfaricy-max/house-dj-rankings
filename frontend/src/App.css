@@ -921,3 +921,6 @@ details[open] .hiw-faq-q::after { content: "–"; }
   background: var(--accent); color: var(--on-accent); border: none; border-radius: 8px; padding: 10px 16px;
 }
 .bk-memo-btn--locked { background: var(--social-bg); color: var(--text-h); border: 1px solid var(--border); }
+
+.bk-account { margin-top: 16px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+.bk-link-btn { background: none; border: none; color: var(--accent); cursor: pointer; font-family: var(--mono); font-size: 13px; text-decoration: underline; padding: 0; }

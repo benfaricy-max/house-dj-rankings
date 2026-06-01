@@ -2,7 +2,7 @@ import { useEffect, useState, useMemo, useRef } from "react";
 import "./App.css";
 import ProPage from "./ProPage";
 import ArtistProfile, { slugify, ArtistLink } from "./ArtistProfile";
-import { usePro, startCheckout } from "./usePro";
+import { usePro, startCheckout, startPortal } from "./usePro";
 
 const parseProfileSlug = () => {
   const m = (window.location.hash || "").match(/^#\/artist\/(.+)$/);
@@ -1158,7 +1158,7 @@ function BookingToolPage({ rankings }) {
   const [market, setMarket] = useState(BOOKING_MARKETS[0]);
   const [quotes, setQuotes] = useState({});   // artist name -> quoted ask (£)
   const [memoOpen, setMemoOpen] = useState(false);
-  const { pro } = usePro();   // gates support acts, fair-price check, rationale
+  const { pro, paywall } = usePro();   // gates support acts, fair-price check, rationale
 
   const maxScore = useMemo(
     () => Math.max(...rankings.map(r => r.score || 0)) || 1,
@@ -1351,6 +1351,12 @@ function BookingToolPage({ rankings }) {
             <span className="bk-roadmap"> Connect your ticketing data to calibrate
             this into a sell-through prediction →</span>
           </div>
+
+          {paywall && pro && (
+            <div className="bk-account">
+              Pro active · <button className="bk-link-btn" onClick={() => startPortal()}>Manage subscription</button>
+            </div>
+          )}
         </>
       )}
     </div>

@@ -5,6 +5,7 @@
 // parsing for this route (Vercel: `export const config = { api:{ bodyParser:false } }`).
 import Stripe from "stripe";
 import { signSession } from "./_lib.js";
+import { setEntitlement } from "./_store.js";
 
 export const config = { api: { bodyParser: false } };
 
@@ -29,20 +30,24 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: `Signature verification failed: ${e.message}` });
   }
 
-  switch (event.type) {
-    case "checkout.session.completed": {
-      const s = event.data.object;
-      // TODO: persist { customerId: s.customer, status: 'active' } in a datastore
-      // so entitlement survives across devices and can be revoked. For the stub
-      // we mint a 30-day signed session cookie tied to the customer.
-      const token = signSession({ customer: s.customer, plan: "pro", exp: Date.now() + 30 * 864e5 });
-      res.setHeader("Set-Cookie", `pt_session=${token}; Path=/; Max-Age=${30 * 86400}; HttpOnly; Secure; SameSite=None`);
-      break;
+  try {
+    switch (event.type) {
+      case "checkout.session.completed": {
+        const s = event.data.object;
+        // Source of truth: the entitlement store (if configured). The signed
+        // cookie is a convenience so /me works instantly on the success redirect.
+        await setEntitlement(s.customer, { status: "active", plan: "pro", subscription: s.subscription });
+        const token = signSession({ customer: s.customer, plan: "pro", exp: Date.now() + 30 * 864e5 });
+        res.setHeader("Set-Cookie", `pt_session=${token}; Path=/; Max-Age=${30 * 86400}; HttpOnly; Secure; SameSite=None`);
+        break;
+      }
+      case "customer.subscription.deleted":
+      case "customer.subscription.paused":
+        await setEntitlement(event.data.object.customer, { status: "inactive", plan: "pro" });
+        break;
     }
-    case "customer.subscription.deleted":
-    case "customer.subscription.paused":
-      // TODO: mark the customer inactive in the datastore.
-      break;
+  } catch (e) {
+    return res.status(500).json({ error: e.message });
   }
   return res.status(200).json({ received: true });
 }
