@@ -1115,9 +1115,48 @@ function momentumTag(a) {
   return { arrow: "→", cls: "flat", label: "steady" };
 }
 
+// Compare a quoted ask against our curated benchmark mid.
+function priceVerdict(mid, quote) {
+  const q = Number(quote);
+  if (!q || q <= 0 || !mid) return null;
+  const pct = Math.round(((q - mid) / mid) * 100);
+  if (pct <= -8) return { pct, cls: "good", label: `${Math.abs(pct)}% below benchmark — good deal` };
+  if (pct >= 8)  return { pct, cls: "over", label: `${pct}% over benchmark — likely overpaying` };
+  return { pct, cls: "fair", label: "in line with benchmark" };
+}
+
+// Plain-English booking memo, composed from the lineup signals.
+function buildRationale(lineup, market, budget) {
+  const { head, support, total, remaining } = lineup;
+  const util = Math.round((total / budget) * 100);
+  const s = [];
+  if (head._local != null && head._local >= 70)
+    s.push(`${head.name} anchors the bill: search demand in ${market.country} is among the strongest in the field (${head._local}/100), so the headline slot is tightly matched to ${market.city}.`);
+  else if (head._local != null)
+    s.push(`${head.name} anchors the bill, with ${market.country} search interest at ${head._local}/100 — a solid if not peak fit for ${market.city}.`);
+  else
+    s.push(`${head.name} anchors the bill on overall demand (${head._overall}/100); we don't yet have ${market.country}-specific signal for them, so treat the local read as provisional.`);
+
+  const m = head.trends_mom_12w;
+  if (Number.isFinite(m) && m >= 25)
+    s.push(`Momentum is climbing (+${Math.round(m)}% over 12 weeks), which typically precedes fee increases — locking them now likely beats next season's rate.`);
+  else if (Number.isFinite(m) && m <= -25)
+    s.push(`Momentum has cooled (${Math.round(m)}% over 12 weeks), which is leverage: there's likely room to negotiate below the benchmark.`);
+
+  if (support.length) {
+    const topSup = [...support].sort((a, b) => (b._local ?? b._overall) - (a._local ?? a._overall))[0];
+    s.push(`${support.length} support act${support.length > 1 ? "s" : ""} (${support.map(a => a.name).join(", ")}) round out the night without stretching spend${topSup._local != null ? `; ${topSup.name} also indexes high locally (${topSup._local}/100)` : ""}.`);
+  }
+  s.push(`At ${fmtGBP(total)}, the lineup uses ${util}% of your ${fmtGBP(budget)} budget${remaining > 0 ? `, leaving ${fmtGBP(remaining)} for production, visuals, or a local opener` : ""}.`);
+  s.push(`These are demand estimates from public signals — search, streaming, charts, touring — not a ticket guarantee. Calibrate against your own on-sale history before committing.`);
+  return s;
+}
+
 function BookingToolPage({ rankings }) {
   const [budget, setBudget] = useState(100000);
   const [market, setMarket] = useState(BOOKING_MARKETS[0]);
+  const [quotes, setQuotes] = useState({});   // artist name -> quoted ask (£)
+  const [memoOpen, setMemoOpen] = useState(false);
 
   const maxScore = useMemo(
     () => Math.max(...rankings.map(r => r.score || 0)) || 1,
@@ -1164,29 +1203,44 @@ function BookingToolPage({ rankings }) {
     return { head, support, acts, total, remaining: budget - total, demandIndex };
   }, [scored, budget]);
 
-  const Gauge = ({ value }) => (
+  const Gauge = value => (
     <div className="bk-gauge">
       <div className="bk-gauge-track"><div className="bk-gauge-fill" style={{ width: value + "%" }} /></div>
       <span className="bk-gauge-val">{value}</span>
     </div>
   );
 
-  const ActCard = ({ a, role }) => {
+  // Rendered as a function call (not <ActCard/>) so the quote <input> keeps
+  // focus across keystrokes — defining a component inline would remount it.
+  const ActCard = (a, role) => {
     const mt = momentumTag(a);
+    const verdict = priceVerdict(a.booking_fee.mid, quotes[a.name]);
     return (
-      <div className={`bk-act bk-act--${role}`}>
+      <div className={`bk-act bk-act--${role}`} key={a.name}>
         <div className="bk-act-top">
           <span className="bk-act-role">{role === "head" ? "Headliner" : "Support"}</span>
           <span className={`bk-mom bk-mom--${mt.cls}`}>{mt.arrow} {mt.label}</span>
         </div>
         <div className="bk-act-name"><ArtistLink name={a.name} /></div>
-        <div className="bk-act-meta">#{a.rank} · {a.booking_fee.label}</div>
+        <div className="bk-act-meta">#{a.rank} · benchmark {a.booking_fee.label}</div>
         <div className="bk-act-stats">
-          <div><span className="bk-stat-l">Demand Fit</span><Gauge value={a._fit} /></div>
+          <div><span className="bk-stat-l">Demand Fit</span>{Gauge(a._fit)}</div>
           <div className="bk-act-sub">
             {a._local != null
               ? <>Local interest in {market.country}: <b>{a._local}/100</b></>
               : <>No local data — using <b>global demand {a._overall}/100</b></>}
+          </div>
+        </div>
+        <div className="bk-quote">
+          <span className="bk-stat-l">Your quote (optional)</span>
+          <div className="bk-quote-row">
+            <span className="bk-quote-prefix">£</span>
+            <input
+              type="number" className="bk-quote-input" placeholder={String(a.booking_fee.mid)}
+              value={quotes[a.name] ?? ""}
+              onChange={e => setQuotes(q => ({ ...q, [a.name]: e.target.value }))}
+            />
+            {verdict && <span className={`bk-verdict bk-verdict--${verdict.cls}`}>{verdict.label}</span>}
           </div>
         </div>
       </div>
@@ -1245,9 +1299,26 @@ function BookingToolPage({ rankings }) {
           </div>
 
           <div className="bk-lineup">
-            <ActCard a={lineup.head} role="head" />
-            {lineup.support.map(a => <ActCard key={a.name} a={a} role="support" />)}
+            {ActCard(lineup.head, "head")}
+            {lineup.support.map(a => ActCard(a, "support"))}
           </div>
+
+          <div className="bk-memo-bar">
+            <button className="bk-memo-btn" onClick={() => setMemoOpen(o => !o)}>
+              {memoOpen ? "Hide booking rationale" : "✦ Generate booking rationale"}
+            </button>
+          </div>
+          {memoOpen && (
+            <div className="bk-memo">
+              <div className="bk-memo-head">
+                <span className="bk-act-role">Auto-generated rationale</span>
+                <span className="bk-memo-tag">{market.city} · {fmtGBP(budget)} budget</span>
+              </div>
+              {buildRationale(lineup, market, budget).map((line, i) => (
+                <p key={i} className="bk-memo-line">{line}</p>
+              ))}
+            </div>
+          )}
 
           <div className="bk-method">
             <b>How this is computed.</b> Demand Fit blends country-level search

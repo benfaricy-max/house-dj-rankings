@@ -872,3 +872,33 @@ details[open] .hiw-faq-q::after { content: "–"; }
   .bk-summary { grid-template-columns: 1fr; }
   .bk-lineup { grid-template-columns: 1fr; }
 }
+
+/* booking — quote check + rationale */
+.bk-quote { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
+.bk-quote-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.bk-quote-prefix { font-family: var(--mono); color: var(--muted); font-size: 16px; }
+.bk-quote-input {
+  font-family: var(--mono); font-size: 15px; color: var(--text-h);
+  background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+  padding: 8px 12px; width: 120px;
+}
+.bk-quote-input:focus { outline: none; border-color: var(--accent-border); }
+.bk-verdict { font-family: var(--mono); font-size: 13px; font-weight: 600; padding: 5px 10px; border-radius: 7px; }
+.bk-verdict--good { background: var(--accent-bg); color: var(--accent); }
+.bk-verdict--over { background: rgba(223,122,92,0.14); color: #df7a5c; }
+.bk-verdict--fair { background: var(--social-bg); color: var(--muted); }
+.bk-memo-bar { margin-top: 18px; }
+.bk-memo-btn {
+  font-family: var(--mono); font-size: 14px; font-weight: 600; cursor: pointer;
+  background: var(--accent); color: var(--on-accent); border: none;
+  border-radius: 9px; padding: 12px 20px; letter-spacing: 0.02em; transition: opacity 0.12s;
+}
+.bk-memo-btn:hover { opacity: 0.88; }
+.bk-memo {
+  margin-top: 14px; background: var(--card); border: 1px solid var(--accent-border);
+  border-radius: 14px; padding: 22px 24px;
+}
+.bk-memo-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.bk-memo-tag { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.bk-memo-line { font-size: 16px; line-height: 1.6; color: var(--text); margin-bottom: 12px; }
+.bk-memo-line:last-child { margin-bottom: 0; color: var(--muted); font-size: 14px; font-style: italic; }
