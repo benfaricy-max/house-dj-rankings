@@ -1562,7 +1562,8 @@
     "beatport_charts": [
       "Deep House"
     ],
-    "wikipedia_title": "Carl Cox"
+    "wikipedia_title": "Carl Cox",
+    "image": "https://cdn-images.dzcdn.net/images/artist/d3d9f5bf4750e23c5a2e879327c2d446/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Green Velvet",
@@ -1590,7 +1591,8 @@
       "Melodic House & Techno"
     ],
     "trends_mom_12w": 63.8,
-    "wikipedia_title": "Green Velvet"
+    "wikipedia_title": "Green Velvet",
+    "image": "https://cdn-images.dzcdn.net/images/artist/b0a56315df2977ebb0740c414330b831/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Dom Dolla",
@@ -1618,7 +1620,8 @@
       "Tech House"
     ],
     "trends_mom_12w": -30,
-    "wikipedia_title": "Dom Dolla"
+    "wikipedia_title": "Dom Dolla",
+    "image": "https://cdn-images.dzcdn.net/images/artist/64e51b9c69e898c15cf61e200e277a17/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "James Hype",
@@ -1639,7 +1642,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": -3.5,
-    "wikipedia_title": "James Hype"
+    "wikipedia_title": "James Hype",
+    "image": "https://cdn-images.dzcdn.net/images/artist/9e567fe860f1caca9be09512edee3dc8/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Claude VonStroke",
@@ -1667,7 +1671,8 @@
       "Minimal / Deep Tech"
     ],
     "trends_mom_12w": 83.3,
-    "wikipedia_title": "Claude VonStroke"
+    "wikipedia_title": "Claude VonStroke",
+    "image": "https://cdn-images.dzcdn.net/images/artist/39e189aae2ae5705e96b9ffbf021402f/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Shiba San",
@@ -1687,7 +1692,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": -6.5
+    "trends_mom_12w": -6.5,
+    "image": "https://cdn-images.dzcdn.net/images/artist/54fee0825c4366a615e5b28756e5e1d6/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Eli Brown",
@@ -1714,7 +1720,8 @@
       "Techno (Peak Time / Driving)"
     ],
     "trends_mom_12w": 10.2,
-    "wikipedia_title": "Eli Brown"
+    "wikipedia_title": "Eli Brown",
+    "image": "https://cdn-images.dzcdn.net/images/artist/97ebf1084bb11f8febd76a2b5e926eee/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "HoneyLuv",
@@ -1734,7 +1741,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 33.3
+    "trends_mom_12w": 33.3,
+    "image": "https://cdn-images.dzcdn.net/images/artist/eee6e3042fb3d2056d91c356902c596f/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Biscits",
@@ -1755,7 +1763,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": -9.1
+    "trends_mom_12w": -9.1,
+    "image": "https://cdn-images.dzcdn.net/images/artist/892b3f599405fae8fe0f5343193d670e/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Patrick Topping",
@@ -1776,7 +1785,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": -3.8,
-    "wikipedia_title": "Patrick Topping"
+    "wikipedia_title": "Patrick Topping",
+    "image": "https://cdn-images.dzcdn.net/images/artist/484d12729574ab2d90fe8b467f3b30ed/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Richy Ahmed",
@@ -1797,7 +1807,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 0,
-    "wikipedia_title": "Richy Ahmed"
+    "wikipedia_title": "Richy Ahmed",
+    "image": "https://cdn-images.dzcdn.net/images/artist/bbb6ce0c1c40a0dad8c5a8bd06b7c2a1/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Hannah Wants",
@@ -1819,7 +1830,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 22.2,
-    "wikipedia_title": "Hannah Wants"
+    "wikipedia_title": "Hannah Wants",
+    "image": "https://cdn-images.dzcdn.net/images/artist/526257ab17ab4487ef8659fee7e6eb59/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Rebüke",
@@ -1840,7 +1852,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 0,
-    "wikipedia_title": "Rebuke"
+    "wikipedia_title": "Rebuke",
+    "image": "https://cdn-images.dzcdn.net/images/artist/611575cb91c4e977c2bef9e3e836c9e5/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Âme",
@@ -1868,7 +1881,8 @@
       "Indie Dance"
     ],
     "trends_mom_12w": -6.5,
-    "wikipedia_title": "Âme"
+    "wikipedia_title": "Âme",
+    "image": "https://cdn-images.dzcdn.net/images/artist/5381f9f67e6b7cef61861a59d0c19ed2/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Kerri Chandler",
@@ -1889,7 +1903,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 0,
-    "wikipedia_title": "Kerri Chandler"
+    "wikipedia_title": "Kerri Chandler",
+    "image": "https://cdn-images.dzcdn.net/images/artist/03e419d90076baed9b7934dd043873b2/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Louie Vega",
@@ -1909,7 +1924,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 3.3
+    "trends_mom_12w": 3.3,
+    "image": "https://cdn-images.dzcdn.net/images/artist/2ab9ebbca056284384828af2f0a5f111/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Dennis Ferrer",
@@ -1936,7 +1952,8 @@
       "Deep House"
     ],
     "trends_mom_12w": 7.4,
-    "wikipedia_title": "Dennis Ferrer"
+    "wikipedia_title": "Dennis Ferrer",
+    "image": "https://cdn-images.dzcdn.net/images/artist/fd6111c16b3e08ca0ef8ba19b88e514f/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Roger Sanchez",
@@ -1957,7 +1974,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": -15.6,
-    "wikipedia_title": "Roger Sanchez"
+    "wikipedia_title": "Roger Sanchez",
+    "image": "https://cdn-images.dzcdn.net/images/artist/b7dfca93bf80433e50010850aab555c8/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Armand Van Helden",
@@ -1984,7 +2002,8 @@
       "House"
     ],
     "trends_mom_12w": 38.7,
-    "wikipedia_title": "Armand van Helden"
+    "wikipedia_title": "Armand van Helden",
+    "image": "https://cdn-images.dzcdn.net/images/artist/5fed9ea5ac6c97c12b098be3f6c019b1/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Mark Knight",
@@ -2012,7 +2031,8 @@
       "Tech House"
     ],
     "trends_mom_12w": 4.6,
-    "wikipedia_title": "Mark Knight"
+    "wikipedia_title": "Mark Knight",
+    "image": "https://cdn-images.dzcdn.net/images/artist/61c7a3b9e83879a5683ef76d285aa230/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Loco Dice",
@@ -2033,7 +2053,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 4.6,
-    "wikipedia_title": "Loco Dice"
+    "wikipedia_title": "Loco Dice",
+    "image": "https://cdn-images.dzcdn.net/images/artist/8131f032038b906ce9c46118ac9198cb/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Steve Lawler",
@@ -2055,7 +2076,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 91.7,
-    "wikipedia_title": "Steve Lawler"
+    "wikipedia_title": "Steve Lawler",
+    "image": "https://cdn-images.dzcdn.net/images/artist/49425cb7a8fc535c7daf97d0c5fa7e6f/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Lee Foss",
@@ -2075,7 +2097,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/761202d298f282dec0a3104ecb0ee9e4/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Walker & Royce",
@@ -2095,7 +2118,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/d9bbc30198623f48c1dfee62bbb2d72b/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Kyle Watson",
@@ -2116,7 +2140,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": -17.2,
-    "wikipedia_title": "Kyle Watson"
+    "wikipedia_title": "Kyle Watson",
+    "image": "https://cdn-images.dzcdn.net/images/artist/7477a88887bb1e4b9c9870a3a46e60bb/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Wehbba",
@@ -2136,7 +2161,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": -100
+    "trends_mom_12w": -100,
+    "image": "https://cdn-images.dzcdn.net/images/artist/4bbe0aa54150b09e3d8a2af7f7b30eb0/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Paco Osuna",
@@ -2156,7 +2182,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": -8
+    "trends_mom_12w": -8,
+    "image": "https://cdn-images.dzcdn.net/images/artist/749a5f884c1d253f830ad777a7c173bf/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Alan Fitzpatrick",
@@ -2182,7 +2209,8 @@
     "beatport_charts": [
       "Techno (Peak Time / Driving)"
     ],
-    "trends_mom_12w": 61.9
+    "trends_mom_12w": 61.9,
+    "image": "https://cdn-images.dzcdn.net/images/artist/48e01e35f4064f6fdf0ebc4774bdd41d/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Archie Hamilton",
@@ -2203,7 +2231,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": -20,
-    "wikipedia_title": "Archie Hamilton"
+    "wikipedia_title": "Archie Hamilton",
+    "image": "https://cdn-images.dzcdn.net/images/artist/4d465413d6015342325934185edef312/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Cristoph",
@@ -2223,7 +2252,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": -2.5
+    "trends_mom_12w": -2.5,
+    "image": "https://cdn-images.dzcdn.net/images/artist/ff27f3c85580e715218626aa78af1647/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Dense & Pika",
@@ -2243,7 +2273,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/e26ed3bde6c3244ddbc126b589b3e2f7/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Sacha Robotti",
@@ -2263,7 +2294,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/d699a5c0f2d25bc2b31c9e931e86574f/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "WEISS",
@@ -2283,7 +2315,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 2.1
+    "trends_mom_12w": 2.1,
+    "image": "https://cdn-images.dzcdn.net/images/artist/65bdeefb154473558982f52685df84bd/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Simon Doty",
@@ -2303,7 +2336,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": -33.3
+    "trends_mom_12w": -33.3,
+    "image": "https://cdn-images.dzcdn.net/images/artist/69e3638f73a76444a83fc618158f1f0f/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Gerd Janson",
@@ -2323,7 +2357,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/17f88ba007e7b38e30b4b395b010a875/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Roman Flügel",
@@ -2349,7 +2384,8 @@
     "beatport_charts": [
       "Indie Dance"
     ],
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/d0af8aec32bc8103af060a84a7aae0bb/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Booka Shade",
@@ -2377,7 +2413,8 @@
       "Deep House"
     ],
     "trends_mom_12w": 166.7,
-    "wikipedia_title": "Booka Shade"
+    "wikipedia_title": "Booka Shade",
+    "image": "https://cdn-images.dzcdn.net/images/artist/f6d1bcd168ed940ac97943f470a2b6f3/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "DJ Boring",
@@ -2397,7 +2434,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/9968539fa309c56e50bbba88ab0c4db8/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "BLOND:ISH",
@@ -2425,7 +2463,8 @@
       "Indie Dance"
     ],
     "trends_mom_12w": 300,
-    "wikipedia_title": "Blond:ish"
+    "wikipedia_title": "Blond:ish",
+    "image": "https://cdn-images.dzcdn.net/images/artist/acc95cb78870eaffb0b737bf83e5578a/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Latmun",
@@ -2445,7 +2484,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/b12f62174c15418fa1f0b10f13815ed1/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Danny Daze",
@@ -2465,7 +2505,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/be3a246f36fc11bf9ff15025fb867cd6/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Pleasurekraft",
@@ -2485,7 +2526,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": -100
+    "trends_mom_12w": -100,
+    "image": "https://cdn-images.dzcdn.net/images/artist/9edb4af9990c270f8c50520218aa3c1d/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Octave One",
@@ -2506,7 +2548,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 7.4,
-    "wikipedia_title": "Octave One"
+    "wikipedia_title": "Octave One",
+    "image": "https://cdn-images.dzcdn.net/images/artist/e7c54db436c0dcb9e0212fe722f8c0b7/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Pig&Dan",
@@ -2526,7 +2569,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/6a92857addc653d93c4b62e825074c82/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Jimi Jules",
@@ -2553,7 +2597,8 @@
       "Melodic House & Techno"
     ],
     "trends_mom_12w": 13,
-    "wikipedia_title": "Jimi Jules"
+    "wikipedia_title": "Jimi Jules",
+    "image": "https://cdn-images.dzcdn.net/images/artist/92d282558d7dd99f90945765e904ac41/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Tim Engelhardt",
@@ -2579,7 +2624,8 @@
     "beatport_charts": [
       "Melodic House & Techno"
     ],
-    "trends_mom_12w": -100
+    "trends_mom_12w": -100,
+    "image": "https://cdn-images.dzcdn.net/images/artist/a3ee153ac8a2ba16664b4f298a05d481/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Colyn",
@@ -2600,7 +2646,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 0,
-    "wikipedia_title": "Colyn"
+    "wikipedia_title": "Colyn",
+    "image": "https://cdn-images.dzcdn.net/images/artist/a25b208534aaf17c8ec2fa4cb0460ce5/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Anyma",
@@ -2627,7 +2674,8 @@
       "Melodic House & Techno"
     ],
     "trends_mom_12w": 39.5,
-    "wikipedia_title": "Anyma"
+    "wikipedia_title": "Anyma",
+    "image": "https://cdn-images.dzcdn.net/images/artist/e5da03f68a575f4cf133ff387a8b4267/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Enoo Napa",
@@ -2647,7 +2695,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/c39121f135ebd6a180d5d1f64b2af2e6/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Pablo Fierro",
@@ -2673,7 +2722,8 @@
     "beatport_charts": [
       "Afro House"
     ],
-    "trends_mom_12w": 6.7
+    "trends_mom_12w": 6.7,
+    "image": "https://cdn-images.dzcdn.net/images/artist/187368e58dbd7abe70a2fe7e0b6dfdea/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Edu Imbernon",
@@ -2693,7 +2743,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/927dcaaa6ee1fd9fe42fa3c4a972d718/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Re.You",
@@ -2713,7 +2764,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/0647d1aba014eebb0dbd0c106983d7d9/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Justin Martin",
@@ -2734,7 +2786,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 1.1,
-    "wikipedia_title": "Justin Martin"
+    "wikipedia_title": "Justin Martin",
+    "image": "https://cdn-images.dzcdn.net/images/artist/ff0849315f7554621ac37b533cb48541/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "HVOB",
@@ -2755,7 +2808,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 0,
-    "wikipedia_title": "HVOB"
+    "wikipedia_title": "HVOB",
+    "image": "https://cdn-images.dzcdn.net/images/artist/b0dddd922dbee40fc5510a2dd42cfc36/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Chelina Manuhutu",
@@ -2775,7 +2829,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/1f76c6e10b69d562df4b8ec21cea2ff4/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Skream",
@@ -2796,7 +2851,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 0,
-    "wikipedia_title": "Skream"
+    "wikipedia_title": "Skream",
+    "image": "https://cdn-images.dzcdn.net/images/artist/9bff92c37ccb03ceec7ea841efbd0840/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "David Morales",
@@ -2817,7 +2873,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 25,
-    "wikipedia_title": "David Morales"
+    "wikipedia_title": "David Morales",
+    "image": "https://cdn-images.dzcdn.net/images/artist/e7755d91844651e22e380af8f3130d2a/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Mark Farina",
@@ -2838,7 +2895,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 2.9,
-    "wikipedia_title": "Mark Farina"
+    "wikipedia_title": "Mark Farina",
+    "image": "https://cdn-images.dzcdn.net/images/artist/1d6e23155d69190a712ba0f308f3829c/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Gene Farris",
@@ -2858,7 +2916,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/f8de0bf0792a17da1e6b8e971787e3ee/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "DJ T.",
@@ -2878,7 +2937,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 13.8
+    "trends_mom_12w": 13.8,
+    "image": "https://cdn-images.dzcdn.net/images/artist/d493b15317dfdb64b1fb2854c80be33f/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Michael Mayer",
@@ -2898,7 +2958,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": -7.5
+    "trends_mom_12w": -7.5,
+    "image": "https://cdn-images.dzcdn.net/images/artist/623c0d8a9306d60397e896158f92b780/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Gui Boratto",
@@ -2919,7 +2980,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 100,
-    "wikipedia_title": "Gui Boratto"
+    "wikipedia_title": "Gui Boratto",
+    "image": "https://cdn-images.dzcdn.net/images/artist/f413b8a08bc6b2d2cc0ad14fff3dd5bd/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Oxia",
@@ -2940,7 +3002,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 0,
-    "wikipedia_title": "Oxia"
+    "wikipedia_title": "Oxia",
+    "image": "https://cdn-images.dzcdn.net/images/artist/1db0b332cb38b8c9e23d6543a3fb8c79/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Marco Faraone",
@@ -2966,7 +3029,8 @@
     "beatport_charts": [
       "Tech House"
     ],
-    "trends_mom_12w": 100
+    "trends_mom_12w": 100,
+    "image": "https://cdn-images.dzcdn.net/images/artist/d040e96decedf36f967c64794a3f71c0/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Objekt",
@@ -2986,7 +3050,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 1.1
+    "trends_mom_12w": 1.1,
+    "image": "https://cdn-images.dzcdn.net/images/artist/b3bc5e2fa9c9a62dc77adea71c09ec61/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Special Request",
@@ -3006,7 +3071,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": -3.8
+    "trends_mom_12w": -3.8,
+    "image": "https://cdn-images.dzcdn.net/images/artist/4d61d4c0fd2c912ca76c16968ce32e1c/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "TSHA",
@@ -3027,7 +3093,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": -38.9,
-    "wikipedia_title": "TSHA"
+    "wikipedia_title": "TSHA",
+    "image": "https://cdn-images.dzcdn.net/images/artist/eb22effcb6b2e4dad765bbfcce30fd7b/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Tiga",
@@ -3056,7 +3123,8 @@
       "Indie Dance"
     ],
     "trends_mom_12w": 12.5,
-    "wikipedia_title": "Tiga"
+    "wikipedia_title": "Tiga",
+    "image": "https://cdn-images.dzcdn.net/images/artist/bac70428661be07d87075b37eef1a263/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Floating Points",
@@ -3077,7 +3145,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 13,
-    "wikipedia_title": "Floating Points"
+    "wikipedia_title": "Floating Points",
+    "image": "https://cdn-images.dzcdn.net/images/artist/826c23c227aeb8db234cfbf426a3b5bf/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Mount Kimbie",
@@ -3098,7 +3167,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 8,
-    "wikipedia_title": "Mount Kimbie"
+    "wikipedia_title": "Mount Kimbie",
+    "image": "https://cdn-images.dzcdn.net/images/artist/8d4d418ff4fbfb3afa9b4eb03ab8e786/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "HAAi",
@@ -3119,7 +3189,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 9.4,
-    "wikipedia_title": "HAAi"
+    "wikipedia_title": "HAAi",
+    "image": "https://cdn-images.dzcdn.net/images/artist/d26b752d31f95083e8c933c17dd95cb8/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Floorplan",
@@ -3140,7 +3211,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 0,
-    "wikipedia_title": "Floor plan"
+    "wikipedia_title": "Floor plan",
+    "image": "https://cdn-images.dzcdn.net/images/artist/d7cf149027e1a86a63139454112266bc/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Jayda G",
@@ -3161,7 +3233,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": -23.3,
-    "wikipedia_title": "Jayda G"
+    "wikipedia_title": "Jayda G",
+    "image": "https://cdn-images.dzcdn.net/images/artist/86e20a3f7118a0e333e2785725baa796/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Joris Voorn",
@@ -3188,7 +3261,8 @@
       "Melodic House & Techno"
     ],
     "trends_mom_12w": 0,
-    "wikipedia_title": "Joris Voorn"
+    "wikipedia_title": "Joris Voorn",
+    "image": "https://cdn-images.dzcdn.net/images/artist/3cc863620c17261e92db9474f0c5aeb7/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Victor Calderone",
@@ -3209,7 +3283,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 175,
-    "wikipedia_title": "Victor Calderone"
+    "wikipedia_title": "Victor Calderone",
+    "image": "https://cdn-images.dzcdn.net/images/artist/1374d528e174e322d8b877577e57b4fe/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Laurent Garnier",
@@ -3230,7 +3305,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 17.6,
-    "wikipedia_title": "Laurent Garnier"
+    "wikipedia_title": "Laurent Garnier",
+    "image": "https://cdn-images.dzcdn.net/images/artist/a8a32a9184a88268a07aa5def94d9995/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Levon Vincent",
@@ -3250,7 +3326,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/ad287c3501277b4453e0050de8392420/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Hunee",
@@ -3270,7 +3347,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 66.7
+    "trends_mom_12w": 66.7,
+    "image": "https://cdn-images.dzcdn.net/images/artist/391f9737c4316d4660997305dd6b1bbf/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Helena Hauff",
@@ -3291,7 +3369,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": -11.8,
-    "wikipedia_title": "Helena Hauff"
+    "wikipedia_title": "Helena Hauff",
+    "image": "https://cdn-images.dzcdn.net/images/artist/911d574d68644f6f53ffb96889f2e27f/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Sven Väth",
@@ -3312,7 +3391,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 5.5,
-    "wikipedia_title": "Sven Väth"
+    "wikipedia_title": "Sven Väth",
+    "image": "https://cdn-images.dzcdn.net/images/artist/03e76fd7db150f6a5f147fffe0d12c0a/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Richie Hawtin",
@@ -3333,7 +3413,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 0,
-    "wikipedia_title": "Richie Hawtin"
+    "wikipedia_title": "Richie Hawtin",
+    "image": "https://cdn-images.dzcdn.net/images/artist/f9977b35e4579e7fec01e84ea5c52941/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Joseph Capriati",
@@ -3353,7 +3434,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": 50
+    "trends_mom_12w": 50,
+    "image": "https://cdn-images.dzcdn.net/images/artist/f3f673823ccb5c53b75debe36d350307/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Sam Paganini",
@@ -3379,7 +3461,8 @@
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
     ],
-    "trends_mom_12w": -24
+    "trends_mom_12w": -24,
+    "image": "https://cdn-images.dzcdn.net/images/artist/9409d8dc0befa21f01323225476067b3/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Maceo Plex",
@@ -3399,7 +3482,8 @@
       "band": "B",
       "basis": "curated"
     },
-    "trends_mom_12w": -7.7
+    "trends_mom_12w": -7.7,
+    "image": "https://cdn-images.dzcdn.net/images/artist/c02e49a5c71f43770db7e53ebac32bbf/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Mind Against",
@@ -3425,7 +3509,8 @@
     "beatport_charts": [
       "Melodic House & Techno"
     ],
-    "trends_mom_12w": 7.4
+    "trends_mom_12w": 7.4,
+    "image": "https://cdn-images.dzcdn.net/images/artist/cf7f06ad142154b0750193bbf1d2c0c1/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "WhoMadeWho",
@@ -3452,7 +3537,8 @@
       "Melodic House & Techno"
     ],
     "trends_mom_12w": 33.9,
-    "wikipedia_title": "WhoMadeWho"
+    "wikipedia_title": "WhoMadeWho",
+    "image": "https://cdn-images.dzcdn.net/images/artist/45dc56f1c4084e18a6d7022f7f22b034/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Stephan Bodzin",
@@ -3473,7 +3559,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 20.6,
-    "wikipedia_title": "Stephan Bodzin"
+    "wikipedia_title": "Stephan Bodzin",
+    "image": "https://cdn-images.dzcdn.net/images/artist/c51e2fdf97eb264bf1cf4f020c8500b9/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Trentemøller",
@@ -3494,7 +3581,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 0,
-    "wikipedia_title": "Trentemøller"
+    "wikipedia_title": "Trentemøller",
+    "image": "https://cdn-images.dzcdn.net/images/artist/05705890cf13e76d765cafc84d4f4653/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Monolink",
@@ -3521,7 +3609,8 @@
       "Melodic House & Techno"
     ],
     "trends_mom_12w": -28.9,
-    "wikipedia_title": "Monolink"
+    "wikipedia_title": "Monolink",
+    "image": "https://cdn-images.dzcdn.net/images/artist/d6ede7f36d1b0bdaf8753263afcb5324/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Massano",
@@ -3547,7 +3636,8 @@
     "beatport_charts": [
       "Melodic House & Techno"
     ],
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/06a41e2ec0c3a373af5db2b85763f00e/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Yotto",
@@ -3575,7 +3665,8 @@
       "Progressive House"
     ],
     "trends_mom_12w": 29.3,
-    "wikipedia_title": "Yotto"
+    "wikipedia_title": "Yotto",
+    "image": "https://cdn-images.dzcdn.net/images/artist/20ab7ad9d339807c46907461d885630a/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Ben Böhmer",
@@ -3595,7 +3686,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/66840a9b7da1d5ebf6fe9b6cd65f1a29/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Nora En Pure",
@@ -3622,7 +3714,8 @@
       "Organic House / Downtempo"
     ],
     "trends_mom_12w": 0,
-    "wikipedia_title": "Nora En Pure"
+    "wikipedia_title": "Nora En Pure",
+    "image": "https://cdn-images.dzcdn.net/images/artist/43249d304342f9e467f80e9a61a5d782/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Adriatique",
@@ -3649,7 +3742,8 @@
       "Melodic House & Techno"
     ],
     "trends_mom_12w": 48,
-    "wikipedia_title": "Adriatique"
+    "wikipedia_title": "Adriatique",
+    "image": "https://cdn-images.dzcdn.net/images/artist/d88bff3a5bd4ba8055121e346ccc80c2/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Kollektiv Turmstrasse",
@@ -3669,7 +3763,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/914723f09c1bdc011caa583af2d98ca7/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Huxley",
@@ -3690,7 +3785,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 0,
-    "wikipedia_title": "Huxley"
+    "wikipedia_title": "Huxley",
+    "image": "https://cdn-images.dzcdn.net/images/artist/a9be2e32591439abdb17428b2dbe2ad9/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Maya Jane Coles",
@@ -3711,7 +3807,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 18.2,
-    "wikipedia_title": "Maya Jane Coles"
+    "wikipedia_title": "Maya Jane Coles",
+    "image": "https://cdn-images.dzcdn.net/images/artist/980669078b9541b2d4e3fd15772e0729/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "John Talabot",
@@ -3732,7 +3829,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 17.6,
-    "wikipedia_title": "John Talabot"
+    "wikipedia_title": "John Talabot",
+    "image": "https://cdn-images.dzcdn.net/images/artist/668c61c240e55fa1e1fcfd4534561424/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Secondcity",
@@ -3753,7 +3851,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 175,
-    "wikipedia_title": "Secondcity"
+    "wikipedia_title": "Secondcity",
+    "image": "https://cdn-images.dzcdn.net/images/artist/3eb399c32b9866877d2cc51c8aff81cf/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Surgeon",
@@ -3774,7 +3873,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 9.3,
-    "wikipedia_title": "Surgeon"
+    "wikipedia_title": "Surgeon",
+    "image": "https://cdn-images.dzcdn.net/images/artist/cbb8855d3aec037618667a16bffe1735/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Blawan",
@@ -3795,7 +3895,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": -21.6,
-    "wikipedia_title": "Blawan"
+    "wikipedia_title": "Blawan",
+    "image": "https://cdn-images.dzcdn.net/images/artist/e99669dc042127b16026dc45dfd7c568/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "DJ Rush",
@@ -3822,7 +3923,8 @@
       "Techno (Raw / Deep / Hypnotic)"
     ],
     "trends_mom_12w": 1,
-    "wikipedia_title": "DJ Rush"
+    "wikipedia_title": "DJ Rush",
+    "image": "https://cdn-images.dzcdn.net/images/artist/56b14eed9aa9d5a9ee095834af152cfa/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Dax J",
@@ -3842,7 +3944,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 3.1
+    "trends_mom_12w": 3.1,
+    "image": "https://cdn-images.dzcdn.net/images/artist/3653b5878e761cdd7b1239ea58b4bf49/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Luigi Madonna",
@@ -3862,7 +3965,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": -14.3
+    "trends_mom_12w": -14.3,
+    "image": "https://cdn-images.dzcdn.net/images/artist/7b93e10d44041ffb1a3c321f7c2912cf/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Mathame",
@@ -3883,7 +3987,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": -17.5,
-    "wikipedia_title": "Mathame"
+    "wikipedia_title": "Mathame",
+    "image": "https://cdn-images.dzcdn.net/images/artist/36fe4bc4dd81abe51791dbd7542dc82d/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Innellea",
@@ -3903,7 +4008,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 19.2
+    "trends_mom_12w": 19.2,
+    "image": "https://cdn-images.dzcdn.net/images/artist/77cd3c3e154fa274d11147d856e76095/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Agents Of Time",
@@ -3929,7 +4035,8 @@
     "beatport_charts": [
       "Melodic House & Techno"
     ],
-    "trends_mom_12w": -6
+    "trends_mom_12w": -6,
+    "image": "https://cdn-images.dzcdn.net/images/artist/0334b3c65ba31b1e01491589309346be/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Tiefschwarz",
@@ -3950,7 +4057,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 4.8,
-    "wikipedia_title": "Tiefschwarz"
+    "wikipedia_title": "Tiefschwarz",
+    "image": "https://cdn-images.dzcdn.net/images/artist/b1ac13a1a4ec47854fe2ac573804dc51/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Recondite",
@@ -3971,7 +4079,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": -10.5,
-    "wikipedia_title": "Recondite"
+    "wikipedia_title": "Recondite",
+    "image": "https://cdn-images.dzcdn.net/images/artist/e6dbc79d256c7e9a8c298ae1980ef433/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "DJ Tennis",
@@ -3992,7 +4101,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 153.5,
-    "wikipedia_title": "DJ Tennis"
+    "wikipedia_title": "DJ Tennis",
+    "image": "https://cdn-images.dzcdn.net/images/artist/8644271f3e3fca07f5475138213868cb/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Dario D'Attis",
@@ -4012,7 +4122,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/c7be615a7d6959a14fa68c693a0df1a5/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Henry Saiz",
@@ -4033,7 +4144,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 0,
-    "wikipedia_title": "Henry Saiz"
+    "wikipedia_title": "Henry Saiz",
+    "image": "https://cdn-images.dzcdn.net/images/artist/f64cb40ad5bb763ee098c54f588fbd7e/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Pional",
@@ -4054,7 +4166,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 0,
-    "wikipedia_title": "Pional"
+    "wikipedia_title": "Pional",
+    "image": "https://cdn-images.dzcdn.net/images/artist/c2e63c9541c963df261821ab03bceff0/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Ryan Crosson",
@@ -4074,7 +4187,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/85283fbe7773ca0a9f5159a736e535a6/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Woo York",
@@ -4094,7 +4208,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 5.1
+    "trends_mom_12w": 5.1,
+    "image": "https://cdn-images.dzcdn.net/images/artist/c77cecc48eed7461338505261612b6d6/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Burnski",
@@ -4114,7 +4229,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/5fe744a226e182b44cbc07d5dddd02e5/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Alinka",
@@ -4134,7 +4250,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": -13.4
+    "trends_mom_12w": -13.4,
+    "image": "https://cdn-images.dzcdn.net/images/artist/3cbe3968050d5a5fde134091c61472e6/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Answer Code Request",
@@ -4154,7 +4271,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 18.9
+    "trends_mom_12w": 18.9,
+    "image": "https://cdn-images.dzcdn.net/images/artist/3d52df3598eab84ee5bf62ac935571e0/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "DJ Stingray 313",
@@ -4174,7 +4292,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/a445205b673358dce351a606f02d0202/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Pangaea",
@@ -4195,7 +4314,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": -20.5,
-    "wikipedia_title": "Pangaea"
+    "wikipedia_title": "Pangaea",
+    "image": "https://cdn-images.dzcdn.net/images/artist/28a8b35032e077ccfd4a4b785c5419ba/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Andre Crom",
@@ -4215,7 +4335,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/dc63ed7d562fa853f9cc9221dce7f4de/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Angelo Ferreri",
@@ -4235,7 +4356,8 @@
       "band": "D",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/76fffa6bd9060bde9e8816c96a9f24cd/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Kastis Torrau",
@@ -4255,7 +4377,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/0b914a75d771eb12a6f6007ad132403e/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Robert Babicz",
@@ -4283,7 +4406,8 @@
       "Progressive House"
     ],
     "trends_mom_12w": 0,
-    "wikipedia_title": "Robert Babicz"
+    "wikipedia_title": "Robert Babicz",
+    "image": "https://cdn-images.dzcdn.net/images/artist/86daafd37da4b89d74c4dfbb9a69bb06/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Trikk",
@@ -4304,7 +4428,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": -14,
-    "wikipedia_title": "Trikk"
+    "wikipedia_title": "Trikk",
+    "image": "https://cdn-images.dzcdn.net/images/artist/be15292053c4648e4fca886ac86f1afa/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Tornado Wallace",
@@ -4324,7 +4449,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": 9.1
+    "trends_mom_12w": 9.1,
+    "image": "https://cdn-images.dzcdn.net/images/artist/d1e1c0fc1b25082942080332727a16f6/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Spektre",
@@ -4344,7 +4470,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/ab3f00d94dec8b9b2f7e99190ee5de8b/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Jay Lumen",
@@ -4372,7 +4499,8 @@
       "Techno (Raw / Deep / Hypnotic)"
     ],
     "trends_mom_12w": 10,
-    "wikipedia_title": "Jay Lumen"
+    "wikipedia_title": "Jay Lumen",
+    "image": "https://cdn-images.dzcdn.net/images/artist/4d767b0acca1a6366544222fb968c9c3/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Pearson Sound",
@@ -4393,7 +4521,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 40,
-    "wikipedia_title": "Pearson Sound"
+    "wikipedia_title": "Pearson Sound",
+    "image": "https://cdn-images.dzcdn.net/images/artist/20d8d38a49056f30aa3460933dbdeac3/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Palms Trax",
@@ -4413,7 +4542,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": 14.3
+    "trends_mom_12w": 14.3,
+    "image": "https://cdn-images.dzcdn.net/images/artist/efb9ee8308d0a518331cac0d14d49d70/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Lauer",
@@ -4434,7 +4564,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": -0.3,
-    "wikipedia_title": "Lauer"
+    "wikipedia_title": "Lauer",
+    "image": "https://cdn-images.dzcdn.net/images/artist/ecf6a2e5d88fbb596c6bc6ab8523fe36/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Simian Mobile Disco",
@@ -4455,7 +4586,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 27.3,
-    "wikipedia_title": "Simian Mobile Disco"
+    "wikipedia_title": "Simian Mobile Disco",
+    "image": "https://cdn-images.dzcdn.net/images/artist/1213e4ee80f388bc81d4e0a6c152af17/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Actress",
@@ -4475,7 +4607,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": -2.5
+    "trends_mom_12w": -2.5,
+    "image": "https://cdn-images.dzcdn.net/images/artist/22a79334c8b0a01c8aeca1d1096e4b00/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "DJ Holographic",
@@ -4496,7 +4629,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 0,
-    "wikipedia_title": "DJ Holographic"
+    "wikipedia_title": "DJ Holographic",
+    "image": "https://cdn-images.dzcdn.net/images/artist/024194e917a0ea3f1f4c4d34e409e3d2/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "David Mayer",
@@ -4517,7 +4651,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 0,
-    "wikipedia_title": "David Mayer"
+    "wikipedia_title": "David Mayer",
+    "image": "https://cdn-images.dzcdn.net/images/artist/f91ec3dc80a8400dd9ddf19dc64a4004/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Lee Curtiss",
@@ -4537,7 +4672,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 50
+    "trends_mom_12w": 50,
+    "image": "https://cdn-images.dzcdn.net/images/artist/870fbf17a3d1c92e6a71bfe7864d321e/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Wolf + Lamb",
@@ -4557,7 +4693,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 4.4
+    "trends_mom_12w": 4.4,
+    "image": "https://cdn-images.dzcdn.net/images/artist/60253c6f2bdccb13749410393c77cb66/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Nick Curly",
@@ -4584,7 +4721,8 @@
       "Minimal / Deep Tech",
       "Deep House"
     ],
-    "trends_mom_12w": -8.7
+    "trends_mom_12w": -8.7,
+    "image": "https://cdn-images.dzcdn.net/images/artist/65fa5d68010ce07894fd661b65a1517e/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Sascha Dive",
@@ -4604,7 +4742,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/0ff33ea940e498f40de0fc3e68979be0/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Hector Romero",
@@ -4625,7 +4764,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 10.3,
-    "wikipedia_title": "Héctor Romero"
+    "wikipedia_title": "Héctor Romero",
+    "image": "https://cdn-images.dzcdn.net/images/artist/ccf6c72c1bbd3899ee5f61f048c1c997/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Mathew Jonson",
@@ -4645,7 +4785,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 300
+    "trends_mom_12w": 300,
+    "image": "https://cdn-images.dzcdn.net/images/artist/c8f52b9377b77abf452d2614a9d19139/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Christian Burkhardt",
@@ -4665,7 +4806,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/ee28670d2cb0aa89683c6373bcaa3bbc/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Inigo Kennedy",
@@ -4685,7 +4827,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/170373a000595eacb9c8e4a75e2f2e47/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Marshall Jefferson",
@@ -4713,7 +4856,8 @@
       "Afro House"
     ],
     "trends_mom_12w": 0,
-    "wikipedia_title": "Marshall Jefferson"
+    "wikipedia_title": "Marshall Jefferson",
+    "image": "https://cdn-images.dzcdn.net/images/artist/c6a568324347a6c45eb24daaa607ce0d/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "GW Harrison",
@@ -4733,7 +4877,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/e52b2730f4d5fd63f10b98c230a67469/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "AMÉMÉ",
@@ -4759,7 +4904,8 @@
     "beatport_charts": [
       "Afro House"
     ],
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/f093e2d256619597a2c3a54d26ff74b7/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Nicholas Van Orton",
@@ -4779,7 +4925,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/f33ef9727735973921fea1b0bb848590/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Alec Araujo",
@@ -4799,7 +4946,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/29f45b973ded01073ffba8d73e324688/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Leo Lukas",
@@ -4819,7 +4967,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": -20
+    "trends_mom_12w": -20,
+    "image": "https://cdn-images.dzcdn.net/images/artist/4a13f039b2a18946519088c910a72eee/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Nino Bua",
@@ -4839,7 +4988,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/04a4218b17dfd973f8b818771d6444ef/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Bas Ibellini",
@@ -4859,7 +5009,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/4e231667dda230cbe23c614610bb35ee/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Ricardo Villalobos",
@@ -4880,7 +5031,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": -34.7,
-    "wikipedia_title": "Ricardo Villalobos"
+    "wikipedia_title": "Ricardo Villalobos",
+    "image": "https://cdn-images.dzcdn.net/images/artist/e1ed2f2c42bfd0072a42c6d0755dd7c1/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "MK",
@@ -4907,7 +5059,8 @@
       "Tech House"
     ],
     "trends_mom_12w": 9.9,
-    "wikipedia_title": "MK"
+    "wikipedia_title": "MK",
+    "image": "https://cdn-images.dzcdn.net/images/artist/ce42df7d498a54a4045511554561183d/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Sasha",
@@ -4934,7 +5087,8 @@
       "Melodic House & Techno"
     ],
     "trends_mom_12w": -10.9,
-    "wikipedia_title": "Sasha"
+    "wikipedia_title": "Sasha",
+    "image": "https://cdn-images.dzcdn.net/images/artist/5856ea0878199627363194d3513fea36/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "John Digweed",
@@ -4955,7 +5109,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": -12.1,
-    "wikipedia_title": "John Digweed"
+    "wikipedia_title": "John Digweed",
+    "image": "https://cdn-images.dzcdn.net/images/artist/ef6150eae1e00574b3a4c2008776c50b/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Eric Prydz",
@@ -4983,7 +5138,8 @@
       "Progressive House"
     ],
     "trends_mom_12w": 35.4,
-    "wikipedia_title": "Eric Prydz"
+    "wikipedia_title": "Eric Prydz",
+    "image": "https://cdn-images.dzcdn.net/images/artist/0adb6d9882303b2429a5ec930fbbd2f5/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Midland",
@@ -5010,7 +5166,8 @@
       "Deep House"
     ],
     "trends_mom_12w": 9.9,
-    "wikipedia_title": "Midland"
+    "wikipedia_title": "Midland",
+    "image": "https://cdn-images.dzcdn.net/images/artist/651873946c042a39b18b69e8e1898c49/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Mano Le Tough",
@@ -5036,7 +5193,8 @@
     "beatport_charts": [
       "Indie Dance"
     ],
-    "trends_mom_12w": 100
+    "trends_mom_12w": 100,
+    "image": "https://cdn-images.dzcdn.net/images/artist/128965928fd06bd47dae4cdde78d1d82/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Job Jobse",
@@ -5076,7 +5234,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 42.8
+    "trends_mom_12w": 42.8,
+    "image": "https://cdn-images.dzcdn.net/images/artist/ec97eda6fb10fd7c5941e35576af134d/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Move D",
@@ -5096,7 +5255,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 20
+    "trends_mom_12w": 20,
+    "image": "https://cdn-images.dzcdn.net/images/artist/5ba8596310c0178547475ffbc28c8ab1/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Axel Boman",
@@ -5117,7 +5277,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 100,
-    "wikipedia_title": "Axel Boman"
+    "wikipedia_title": "Axel Boman",
+    "image": "https://cdn-images.dzcdn.net/images/artist/89282a25e8934af0ceb0846b4bd42878/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Guy Gerber",
@@ -5144,7 +5305,8 @@
       "Indie Dance"
     ],
     "trends_mom_12w": 0,
-    "wikipedia_title": "Guy Gerber"
+    "wikipedia_title": "Guy Gerber",
+    "image": "https://cdn-images.dzcdn.net/images/artist/5f914a203bbe63e7188cb54fc8c45e4b/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Todd Terry",
@@ -5165,7 +5327,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 28.3,
-    "wikipedia_title": "Todd Terry"
+    "wikipedia_title": "Todd Terry",
+    "image": "https://cdn-images.dzcdn.net/images/artist/c61a78c86caddc877225d46b004b4913/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Danny Tenaglia",
@@ -5185,7 +5348,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/37ba17ea495685ff26628813ceffbb91/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "DJ Sneak",
@@ -5205,7 +5369,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 42.1
+    "trends_mom_12w": 42.1,
+    "image": "https://cdn-images.dzcdn.net/images/artist/05c69af88f6d797fcb0c36dbe8ca9a45/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Kevin Saunderson",
@@ -5226,7 +5391,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 18.2,
-    "wikipedia_title": "Kevin Saunderson"
+    "wikipedia_title": "Kevin Saunderson",
+    "image": "https://cdn-images.dzcdn.net/images/artist/0decd14778e62bd212b4eb8e57a14f48/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Frankie Knuckles",
@@ -5247,7 +5413,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 16.9,
-    "wikipedia_title": "Frankie Knuckles"
+    "wikipedia_title": "Frankie Knuckles",
+    "image": "https://cdn-images.dzcdn.net/images/artist/931a6bf7a67be3d0d0b9eee08f83afd2/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Larry Heard",
@@ -5267,7 +5434,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "trends_mom_12w": 7.5
+    "trends_mom_12w": 7.5,
+    "image": "https://cdn-images.dzcdn.net/images/artist/c17c8a2ae2874d8ecca028ee58084f0e/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Deborah De Luca",
@@ -5287,7 +5455,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "trends_mom_12w": -15.3
+    "trends_mom_12w": -15.3,
+    "image": "https://cdn-images.dzcdn.net/images/artist/0d78da13b10885c287328867a7080a8a/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Andrea Oliva",
@@ -5313,7 +5482,8 @@
     "beatport_charts": [
       "Melodic House & Techno"
     ],
-    "trends_mom_12w": 5.9
+    "trends_mom_12w": 5.9,
+    "image": "https://cdn-images.dzcdn.net/images/artist/b688797416486c8aada695ea7da76f3d/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Alan Dixon",
@@ -5334,7 +5504,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": -17.3,
-    "wikipedia_title": "Alan Dixon"
+    "wikipedia_title": "Alan Dixon",
+    "image": "https://cdn-images.dzcdn.net/images/artist/ba5bc2562056f94fecfce5df2b2a71a4/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Harvey McKay",
@@ -5354,7 +5525,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 4300
+    "trends_mom_12w": 4300,
+    "image": "https://cdn-images.dzcdn.net/images/artist/c3a8c35e78527740fa802c6c719e077d/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Mr. G",
@@ -5375,7 +5547,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 69.1,
-    "wikipedia_title": "Mr G"
+    "wikipedia_title": "Mr G",
+    "image": "https://cdn-images.dzcdn.net/images/artist/85904d79c5722a15547442b6aaa12493/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Call Super",
@@ -5396,7 +5569,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": -1.3,
-    "wikipedia_title": "Call super"
+    "wikipedia_title": "Call super",
+    "image": "https://cdn-images.dzcdn.net/images/artist/4d7976c880c5cae21d75d55abc751feb/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Themba",
@@ -5417,7 +5591,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": -3.3,
-    "wikipedia_title": "Themba"
+    "wikipedia_title": "Themba",
+    "image": "https://cdn-images.dzcdn.net/images/artist/fabdfa4fd04378bd2b16d7bb02a0d854/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Culoe De Song",
@@ -5438,7 +5613,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": -4.2,
-    "wikipedia_title": "Culoe De Song"
+    "wikipedia_title": "Culoe De Song",
+    "image": "https://cdn-images.dzcdn.net/images/artist/ba0ee981a5870e7db090d422045fb569/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Luciano",
@@ -5459,7 +5635,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 6,
-    "wikipedia_title": "Luciano"
+    "wikipedia_title": "Luciano",
+    "image": "https://cdn-images.dzcdn.net/images/artist/641feaa5b5e07e97ef97d17d1861e4e8/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Dimitri From Paris",
@@ -5480,7 +5657,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 0,
-    "wikipedia_title": "Dimitri from Paris"
+    "wikipedia_title": "Dimitri from Paris",
+    "image": "https://cdn-images.dzcdn.net/images/artist/1f18d2f7b5f61ab87597c98690e0090b/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Bob Sinclar",
@@ -5507,7 +5685,8 @@
       "House"
     ],
     "trends_mom_12w": 13.4,
-    "wikipedia_title": "Bob Sinclar"
+    "wikipedia_title": "Bob Sinclar",
+    "image": "https://cdn-images.dzcdn.net/images/artist/6f5b029c7a977b6ccdc8f5843208f04c/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Duke Dumont",
@@ -5528,7 +5707,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 47.8,
-    "wikipedia_title": "Duke Dumont"
+    "wikipedia_title": "Duke Dumont",
+    "image": "https://cdn-images.dzcdn.net/images/artist/4118024e71bd7fe8346e41042b624491/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Route 94",
@@ -5555,7 +5735,8 @@
       "Deep House"
     ],
     "trends_mom_12w": 0,
-    "wikipedia_title": "Route 94 (musician)"
+    "wikipedia_title": "Route 94 (musician)",
+    "image": "https://cdn-images.dzcdn.net/images/artist/69da2bc61d1624fc3837cad12b12dd4f/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Maxxi Soundsystem",
@@ -5575,7 +5756,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/3449457cb26faecba1f8e7b6dc841b7d/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "DJ Pierre",
@@ -5596,7 +5778,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": -14.6,
-    "wikipedia_title": "DJ Pierre"
+    "wikipedia_title": "DJ Pierre",
+    "image": "https://cdn-images.dzcdn.net/images/artist/0e410278b71d6f2df5bba8cf0a87c377/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Stacey Pullen",
@@ -5617,7 +5800,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": -100,
-    "wikipedia_title": "Stacey Pullen"
+    "wikipedia_title": "Stacey Pullen",
+    "image": "https://cdn-images.dzcdn.net/images/artist/32ad1d862009bbd3fdc73a9cf34bc5ec/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Kenny Larkin",
@@ -5638,7 +5822,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": 0,
-    "wikipedia_title": "Kenny Larkin"
+    "wikipedia_title": "Kenny Larkin",
+    "image": "https://cdn-images.dzcdn.net/images/artist/184ddc811b3995155ef2cc163d5399da/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Maya",
@@ -5659,7 +5844,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": -15.2,
-    "wikipedia_title": "Maya"
+    "wikipedia_title": "Maya",
+    "image": "https://cdn-images.dzcdn.net/images/artist/24be5e4ba21f4fc349e6371943dc22d9/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Slam",
@@ -5680,7 +5866,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": -13.3,
-    "wikipedia_title": "Slam"
+    "wikipedia_title": "Slam",
+    "image": "https://cdn-images.dzcdn.net/images/artist/29b5d13239bcfee2e86fd3b162cf0203/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Steve Bug",
@@ -5706,7 +5893,8 @@
     "beatport_charts": [
       "Deep House"
     ],
-    "trends_mom_12w": 65
+    "trends_mom_12w": 65,
+    "image": "https://cdn-images.dzcdn.net/images/artist/b64a331d5dc4382c5bd1984f0474d535/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Akufen",
@@ -5727,7 +5915,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": -11.1,
-    "wikipedia_title": "Akufen"
+    "wikipedia_title": "Akufen",
+    "image": "https://cdn-images.dzcdn.net/images/artist/12ecb60bae684e53b0c3b4384c624820/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Miss Kittin",
@@ -5748,7 +5937,8 @@
       "basis": "curated"
     },
     "trends_mom_12w": -5,
-    "wikipedia_title": "Miss Kittin"
+    "wikipedia_title": "Miss Kittin",
+    "image": "https://cdn-images.dzcdn.net/images/artist/528804b14c70671b78d4f390a30a50a1/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "The Hacker",
@@ -5769,7 +5959,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 0,
-    "wikipedia_title": "The Hacker"
+    "wikipedia_title": "The Hacker",
+    "image": "https://cdn-images.dzcdn.net/images/artist/b059197697b1acbddcf06c98ce7962ed/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Joeski",
@@ -5795,7 +5986,8 @@
     "beatport_charts": [
       "Minimal / Deep Tech"
     ],
-    "trends_mom_12w": 125
+    "trends_mom_12w": 125,
+    "image": "https://cdn-images.dzcdn.net/images/artist/1f1d5c73d94124c2e8508328805a72e5/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Deetron",
@@ -5815,7 +6007,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "trends_mom_12w": 33.3
+    "trends_mom_12w": 33.3,
+    "image": "https://cdn-images.dzcdn.net/images/artist/3e929b6e0a47a17a4e4c29d770d1ec49/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Marika Rossa",
@@ -5835,7 +6028,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/de33f8dad4cc523a2aaf76d6eaa38b11/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "SPFDJ",
@@ -5855,7 +6049,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": -37.5
+    "trends_mom_12w": -37.5,
+    "image": "https://cdn-images.dzcdn.net/images/artist/a33bab863b1ab1e49ca82970e20e18ed/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Rebekah",
@@ -5876,7 +6071,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 0,
-    "search_alias": "Rebekah techno"
+    "search_alias": "Rebekah techno",
+    "image": "https://cdn-images.dzcdn.net/images/artist/32d11d6be5b8aa1b7f69e1479cd241b3/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Alignment",
@@ -5897,7 +6093,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": 19.2,
-    "wikipedia_title": "Alignment"
+    "wikipedia_title": "Alignment",
+    "image": "https://cdn-images.dzcdn.net/images/artist/0e3f06f92ff06cedc2d1d9dddd345331/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Len Faki",
@@ -5924,7 +6121,8 @@
       "Techno (Raw / Deep / Hypnotic)"
     ],
     "trends_mom_12w": -20,
-    "wikipedia_title": "Len Faki"
+    "wikipedia_title": "Len Faki",
+    "image": "https://cdn-images.dzcdn.net/images/artist/41d8282678383860293c4fe677371de6/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Truncate",
@@ -5945,7 +6143,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": -0.9,
-    "wikipedia_title": "Truncate (SQL)"
+    "wikipedia_title": "Truncate (SQL)",
+    "image": "https://cdn-images.dzcdn.net/images/artist/7507759a56762e08374b3427bd633f6a/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Planetary Assault Systems",
@@ -5971,7 +6170,8 @@
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
     ],
-    "trends_mom_12w": 0
+    "trends_mom_12w": 0,
+    "image": "https://cdn-images.dzcdn.net/images/artist/e60eb9108935c07342dce6f2f2faede3/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Regis",
@@ -5992,7 +6192,8 @@
       "basis": "estimate"
     },
     "trends_mom_12w": -2.2,
-    "wikipedia_title": "Regis"
+    "wikipedia_title": "Regis",
+    "image": "https://cdn-images.dzcdn.net/images/artist/f42d5728c714e7f026609cf928e4c9aa/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Phase Fatale",
@@ -6012,6 +6213,7 @@
       "band": "F",
       "basis": "estimate"
     },
-    "trends_mom_12w": -75
+    "trends_mom_12w": -75,
+    "image": "https://cdn-images.dzcdn.net/images/artist/b565f9473478e377a05b952d8cfa4de4/1000x1000-000000-80-0-0.jpg"
   }
 ]

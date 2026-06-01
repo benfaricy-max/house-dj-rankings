@@ -59,6 +59,14 @@ jobs:
         working-directory: backend
         continue-on-error: true
 
+      - name: Backfill artist images (Deezer + Spotify fallback)
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+        run: node enrichImages.js
+        working-directory: backend
+        continue-on-error: true   # never block the refresh on image lookups
+
       - name: Recompute booking fees (uses fresh listener data)
         run: node computeFees.js
         working-directory: backend
