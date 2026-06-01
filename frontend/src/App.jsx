@@ -1782,7 +1782,7 @@ export default function App() {
               <rect x="22.6" y="4" width="3.6" height="22.5" rx="1.3" />
             </g>
           </svg>
-          <span className="brand-word">THE DJ RANKINGS</span>
+          <span className="brand-word">PEAKTIME</span>
         </a>
         <div className="header-eyebrow">The demand index for electronic music</div>
         <h1 className="header-title">House DJ Rankings</h1>
