@@ -45,16 +45,17 @@
       "band": "B",
       "basis": "curated"
     },
-    "beatport_score": 70,
+    "beatport_score": 75,
     "beatport_best_position": 10,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
+      "House",
       "Tech House"
     ],
     "trends_mom_12w": 13.3,
     "wikipedia_title": "Chris Lake",
     "ra_slug": "chrislake",
-    "demand_index": 68,
+    "demand_index": 69,
     "demand_tier": 4,
     "value_gap": -1,
     "value_signal": "premium",
@@ -84,8 +85,8 @@
       "band": "A",
       "basis": "curated"
     },
-    "beatport_score": 63,
-    "beatport_best_position": 29,
+    "beatport_score": 64,
+    "beatport_best_position": 27,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -183,8 +184,8 @@
       "band": "A",
       "basis": "curated"
     },
-    "beatport_score": 66,
-    "beatport_best_position": 24,
+    "beatport_score": 69,
+    "beatport_best_position": 19,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "House",
@@ -224,8 +225,8 @@
       "band": "A",
       "basis": "curated"
     },
-    "beatport_score": 48,
-    "beatport_best_position": 38,
+    "beatport_score": 56,
+    "beatport_best_position": 25,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
@@ -233,7 +234,7 @@
     "trends_mom_12w": -9.1,
     "wikipedia_title": "Peggy Gou",
     "ra_slug": "peggygou",
-    "demand_index": 68,
+    "demand_index": 70,
     "demand_tier": 4,
     "value_gap": -2,
     "value_signal": "premium",
@@ -263,8 +264,8 @@
       "band": "A",
       "basis": "curated"
     },
-    "beatport_score": 65,
-    "beatport_best_position": 18,
+    "beatport_score": 63,
+    "beatport_best_position": 21,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -303,8 +304,8 @@
       "band": "B",
       "basis": "curated"
     },
-    "beatport_score": 66,
-    "beatport_best_position": 8,
+    "beatport_score": 68,
+    "beatport_best_position": 4,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
@@ -481,22 +482,21 @@
       "band": "B",
       "basis": "curated"
     },
-    "beatport_score": 87,
-    "beatport_best_position": 6,
-    "beatport_charting_tracks": 5,
+    "beatport_score": 81,
+    "beatport_best_position": 7,
+    "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Techno (Peak Time / Driving)"
     ],
     "trends_mom_12w": 15.7,
     "wikipedia_title": "Charlotte de Witte",
     "ra_slug": "charlottedewitte",
-    "demand_index": 76,
+    "demand_index": 74,
     "demand_tier": 5,
     "value_gap": 0,
     "value_signal": "fair",
     "beatport_labels": [
-      "KNTXT",
-      "NINETOZERO"
+      "KNTXT"
     ],
     "label_best": "KNTXT",
     "label_tier": 2,
@@ -572,9 +572,9 @@
     "wikipedia_title": "DJ Koze",
     "ra_slug": "djkoze",
     "demand_index": 72,
-    "demand_tier": 5,
-    "value_gap": 1,
-    "value_signal": "buy",
+    "demand_tier": 4,
+    "value_gap": 0,
+    "value_signal": "fair",
     "beatport_labels": [
       "Pampa Records",
       "Maeve"
@@ -748,8 +748,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "beatport_score": 37,
-    "beatport_best_position": 64,
+    "beatport_score": 41,
+    "beatport_best_position": 58,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "House"
@@ -815,8 +815,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "beatport_score": 65,
-    "beatport_best_position": 9,
+    "beatport_score": 66,
+    "beatport_best_position": 8,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Tech House"
@@ -894,23 +894,24 @@
       "band": "C",
       "basis": "curated"
     },
-    "beatport_score": 67,
-    "beatport_best_position": 22,
-    "beatport_charting_tracks": 3,
+    "beatport_score": 74,
+    "beatport_best_position": 19,
+    "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Tech House"
     ],
     "trends_mom_12w": 22.8,
     "wikipedia_title": "Mau P",
     "ra_slug": "maup",
-    "demand_index": 70,
-    "demand_tier": 4,
-    "value_gap": 0,
-    "value_signal": "fair",
+    "demand_index": 72,
+    "demand_tier": 5,
+    "value_gap": 1,
+    "value_signal": "buy",
     "beatport_labels": [
       "Black Book Records",
       "Diynamic",
-      "Nervous Records"
+      "Nervous Records",
+      "Repopulate Mars"
     ],
     "label_best": "Diynamic",
     "label_tier": 5,
@@ -1014,8 +1015,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 64,
-    "beatport_best_position": 36,
+    "beatport_score": 62,
+    "beatport_best_position": 39,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "House",
@@ -1120,16 +1121,16 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 84,
-    "beatport_best_position": 19,
-    "beatport_charting_tracks": 4,
+    "beatport_score": 79,
+    "beatport_best_position": 20,
+    "beatport_charting_tracks": 3,
     "beatport_charts": [
       "House",
       "Tech House",
       "Deep House"
     ],
     "trends_mom_12w": -14.1,
-    "demand_index": 76,
+    "demand_index": 75,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -1161,23 +1162,21 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 45,
-    "beatport_best_position": 60,
-    "beatport_charting_tracks": 2,
+    "beatport_score": 39,
+    "beatport_best_position": 52,
+    "beatport_charting_tracks": 1,
     "beatport_charts": [
-      "Minimal / Deep Tech",
-      "Indie Dance"
+      "Minimal / Deep Tech"
     ],
     "trends_mom_12w": 0,
     "wikipedia_title": "Dennis Cruz",
     "ra_slug": "denniscruz",
-    "demand_index": 63,
+    "demand_index": 61,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
     "beatport_labels": [
-      "Lemon-aid Music",
-      "Botaniq"
+      "Lemon-aid Music"
     ],
     "label_best": "Lemon-aid Music",
     "label_tier": 2,
@@ -1243,7 +1242,7 @@
       "basis": "curated"
     },
     "beatport_score": 79,
-    "beatport_best_position": 19,
+    "beatport_best_position": 20,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "House",
@@ -1284,8 +1283,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 74,
-    "beatport_best_position": 11,
+    "beatport_score": 73,
+    "beatport_best_position": 12,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "House"
@@ -1393,8 +1392,8 @@
     "beatport_labels": [
       "tszr",
       "Turbo Blanco",
-      "Black Book Records",
-      "Catch & Release"
+      "Catch & Release",
+      "Black Book Records"
     ],
     "label_best": "Black Book Records",
     "label_tier": 4,
@@ -1419,8 +1418,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 26,
-    "beatport_best_position": 74,
+    "beatport_score": 29,
+    "beatport_best_position": 70,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -1428,7 +1427,7 @@
     "trends_mom_12w": 23.7,
     "wikipedia_title": "Kettama",
     "ra_slug": "kettama",
-    "demand_index": 68,
+    "demand_index": 69,
     "demand_tier": 4,
     "value_gap": 1,
     "value_signal": "buy",
@@ -1458,15 +1457,15 @@
       "band": "F",
       "basis": "estimate"
     },
-    "beatport_score": 62,
-    "beatport_best_position": 22,
+    "beatport_score": 61,
+    "beatport_best_position": 25,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Minimal / Deep Tech"
     ],
     "trends_mom_12w": 66.7,
     "ra_slug": "rangertrucco",
-    "demand_index": 53,
+    "demand_index": 52,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -1498,10 +1497,22 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Beltrán",
     "ra_slug": "beltran",
-    "demand_index": 74,
+    "demand_index": 64,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "beatport_score": 31,
+    "beatport_best_position": 66,
+    "beatport_charting_tracks": 1,
+    "beatport_charts": [
+      "Indie Dance"
+    ],
+    "beatport_labels": [
+      "Turbo Recordings"
+    ],
+    "label_best": "Turbo Recordings",
+    "label_tier": 2,
+    "label_score": 40
   },
   {
     "name": "Rossi.",
@@ -1525,12 +1536,12 @@
     "trends_mom_12w": 20,
     "wikipedia_title": "Rossi",
     "ra_slug": "rossi",
-    "demand_index": 51,
+    "demand_index": 53,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 15,
-    "beatport_best_position": 93,
+    "beatport_score": 24,
+    "beatport_best_position": 78,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Minimal / Deep Tech"
@@ -1638,17 +1649,16 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 85,
-    "beatport_best_position": 17,
-    "beatport_charting_tracks": 4,
+    "beatport_score": 79,
+    "beatport_best_position": 19,
+    "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Tech House",
       "Minimal / Deep Tech",
-      "Deep House",
-      "Indie Dance"
+      "Deep House"
     ],
     "trends_mom_12w": 4.9,
-    "demand_index": 73,
+    "demand_index": 71,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -1679,16 +1689,17 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 93,
+    "beatport_score": 98,
     "beatport_best_position": 4,
-    "beatport_charting_tracks": 8,
+    "beatport_charting_tracks": 6,
     "beatport_charts": [
       "Tech House",
+      "Melodic House & Techno",
       "Indie Dance"
     ],
     "trends_mom_12w": 111.4,
     "ra_slug": "maxstyler",
-    "demand_index": 71,
+    "demand_index": 72,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -1696,8 +1707,7 @@
       "Nu Moda",
       "AFFAIRS",
       "Black Book Records",
-      "Diynamic",
-      "When Stars Align"
+      "Diynamic"
     ],
     "label_best": "Diynamic",
     "label_tier": 5,
@@ -1722,7 +1732,7 @@
       "basis": "estimate"
     },
     "beatport_score": 64,
-    "beatport_best_position": 27,
+    "beatport_best_position": 28,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "House",
@@ -1914,8 +1924,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 87,
-    "beatport_best_position": 14,
+    "beatport_score": 88,
+    "beatport_best_position": 13,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Tech House",
@@ -1924,7 +1934,7 @@
     ],
     "trends_mom_12w": 50.6,
     "wikipedia_title": "Max Dean",
-    "demand_index": 79,
+    "demand_index": 80,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -2022,8 +2032,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 18,
-    "beatport_best_position": 87,
+    "beatport_score": 16,
+    "beatport_best_position": 91,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
@@ -2078,14 +2088,14 @@
       "band": "F",
       "basis": "estimate"
     },
-    "beatport_score": 49,
-    "beatport_best_position": 45,
+    "beatport_score": 47,
+    "beatport_best_position": 47,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Minimal / Deep Tech"
     ],
     "trends_mom_12w": -25,
-    "demand_index": 57,
+    "demand_index": 56,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -2116,8 +2126,8 @@
       "band": "B",
       "basis": "anchored"
     },
-    "beatport_score": 53,
-    "beatport_best_position": 30,
+    "beatport_score": 54,
+    "beatport_best_position": 28,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
@@ -2263,8 +2273,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "beatport_score": 59,
-    "beatport_best_position": 19,
+    "beatport_score": 58,
+    "beatport_best_position": 21,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Minimal / Deep Tech"
@@ -2531,9 +2541,9 @@
       "band": "D",
       "basis": "estimate"
     },
-    "beatport_score": 53,
-    "beatport_best_position": 29,
-    "beatport_charting_tracks": 1,
+    "beatport_score": 65,
+    "beatport_best_position": 18,
+    "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Indie Dance"
     ],
@@ -2541,7 +2551,7 @@
     "wikipedia_title": "Âme",
     "image": "https://cdn-images.dzcdn.net/images/artist/5381f9f67e6b7cef61861a59d0c19ed2/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "ame",
-    "demand_index": 69,
+    "demand_index": 72,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -2601,9 +2611,9 @@
     "image": "https://cdn-images.dzcdn.net/images/artist/2ab9ebbca056284384828af2f0a5f111/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "louievega",
     "demand_index": 64,
-    "demand_tier": 4,
-    "value_gap": 1,
-    "value_signal": "buy"
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "Dennis Ferrer",
@@ -2624,7 +2634,7 @@
       "basis": "estimate"
     },
     "beatport_score": 33,
-    "beatport_best_position": 62,
+    "beatport_best_position": 63,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
@@ -2690,7 +2700,7 @@
       "basis": "curated"
     },
     "beatport_score": 40,
-    "beatport_best_position": 60,
+    "beatport_best_position": 59,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "House"
@@ -2729,8 +2739,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 64,
-    "beatport_best_position": 28,
+    "beatport_score": 62,
+    "beatport_best_position": 31,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "House",
@@ -2956,8 +2966,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 40,
-    "beatport_best_position": 51,
+    "beatport_score": 46,
+    "beatport_best_position": 41,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Techno (Peak Time / Driving)"
@@ -2965,7 +2975,7 @@
     "trends_mom_12w": 61.9,
     "image": "https://cdn-images.dzcdn.net/images/artist/48e01e35f4064f6fdf0ebc4774bdd41d/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "alanfitzpatrick",
-    "demand_index": 62,
+    "demand_index": 63,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
@@ -3025,8 +3035,8 @@
     "image": "https://cdn-images.dzcdn.net/images/artist/ff27f3c85580e715218626aa78af1647/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "cristoph",
     "demand_index": 72,
-    "demand_tier": 5,
-    "value_gap": 2,
+    "demand_tier": 4,
+    "value_gap": 1,
     "value_signal": "buy"
   },
   {
@@ -3178,8 +3188,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 24,
-    "beatport_best_position": 77,
+    "beatport_score": 49,
+    "beatport_best_position": 36,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
@@ -3187,7 +3197,7 @@
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/d0af8aec32bc8103af060a84a7aae0bb/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "romanflugel",
-    "demand_index": 46,
+    "demand_index": 52,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
@@ -3216,8 +3226,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 36,
-    "beatport_best_position": 57,
+    "beatport_score": 35,
+    "beatport_best_position": 59,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
@@ -3226,7 +3236,7 @@
     "wikipedia_title": "Booka Shade",
     "image": "https://cdn-images.dzcdn.net/images/artist/f6d1bcd168ed940ac97943f470a2b6f3/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "bookashade",
-    "demand_index": 56,
+    "demand_index": 55,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
@@ -3281,8 +3291,8 @@
       "band": "C",
       "basis": "estimate"
     },
-    "beatport_score": 58,
-    "beatport_best_position": 37,
+    "beatport_score": 65,
+    "beatport_best_position": 26,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "House",
@@ -3292,7 +3302,7 @@
     "wikipedia_title": "Blond:ish",
     "image": "https://cdn-images.dzcdn.net/images/artist/acc95cb78870eaffb0b737bf83e5578a/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "blondish",
-    "demand_index": 64,
+    "demand_index": 66,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -3452,8 +3462,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 47,
-    "beatport_best_position": 40,
+    "beatport_score": 44,
+    "beatport_best_position": 44,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -3556,8 +3566,8 @@
       "band": "B",
       "basis": "curated"
     },
-    "beatport_score": 32,
-    "beatport_best_position": 64,
+    "beatport_score": 27,
+    "beatport_best_position": 73,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -3566,7 +3576,7 @@
     "wikipedia_title": "Anyma",
     "image": "https://cdn-images.dzcdn.net/images/artist/e5da03f68a575f4cf133ff387a8b4267/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "anyma",
-    "demand_index": 61,
+    "demand_index": 60,
     "demand_tier": 3,
     "value_gap": -2,
     "value_signal": "premium",
@@ -4123,24 +4133,26 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 70,
+    "beatport_score": 85,
     "beatport_best_position": 17,
-    "beatport_charting_tracks": 2,
+    "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Tech House",
-      "Melodic House & Techno"
+      "Melodic House & Techno",
+      "Indie Dance"
     ],
     "trends_mom_12w": 12.5,
     "wikipedia_title": "Tiga",
     "image": "https://cdn-images.dzcdn.net/images/artist/bac70428661be07d87075b37eef1a263/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "tiga",
-    "demand_index": 69,
-    "demand_tier": 4,
-    "value_gap": 1,
+    "demand_index": 72,
+    "demand_tier": 5,
+    "value_gap": 2,
     "value_signal": "buy",
     "beatport_labels": [
       "Three Six Zero Recordings",
-      "Armada Music"
+      "Armada Music",
+      "Turbo Recordings"
     ],
     "label_best": "Armada Music",
     "label_tier": 4,
@@ -4299,20 +4311,21 @@
       "band": "C",
       "basis": "curated"
     },
-    "beatport_score": 63,
+    "beatport_score": 78,
     "beatport_best_position": 12,
-    "beatport_charting_tracks": 1,
+    "beatport_charting_tracks": 3,
     "beatport_charts": [
-      "Melodic House & Techno"
+      "Melodic House & Techno",
+      "Indie Dance"
     ],
     "trends_mom_12w": 0,
     "wikipedia_title": "Joris Voorn",
     "image": "https://cdn-images.dzcdn.net/images/artist/3cc863620c17261e92db9474f0c5aeb7/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "jorisvoorn",
-    "demand_index": 61,
-    "demand_tier": 3,
-    "value_gap": -1,
-    "value_signal": "premium",
+    "demand_index": 64,
+    "demand_tier": 4,
+    "value_gap": 0,
+    "value_signal": "fair",
     "beatport_labels": [
       "Spectrum (NL)"
     ],
@@ -4612,8 +4625,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "beatport_score": 38,
-    "beatport_best_position": 62,
+    "beatport_score": 42,
+    "beatport_best_position": 56,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -4621,15 +4634,15 @@
     "trends_mom_12w": 7.4,
     "image": "https://cdn-images.dzcdn.net/images/artist/cf7f06ad142154b0750193bbf1d2c0c1/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "mindagainst",
-    "demand_index": 63,
+    "demand_index": 64,
     "demand_tier": 3,
     "value_gap": -1,
     "value_signal": "premium",
     "beatport_labels": [
-      "CORE Records",
-      "HABITAT Records"
+      "HABITAT Records",
+      "CORE Records"
     ],
-    "label_best": "CORE Records",
+    "label_best": "HABITAT Records",
     "label_tier": 2,
     "label_score": 40
   },
@@ -4815,8 +4828,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 64,
-    "beatport_best_position": 45,
+    "beatport_score": 66,
+    "beatport_best_position": 41,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -4884,8 +4897,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "beatport_score": 55,
-    "beatport_best_position": 26,
+    "beatport_score": 57,
+    "beatport_best_position": 23,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Organic House / Downtempo"
@@ -4923,8 +4936,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "beatport_score": 70,
-    "beatport_best_position": 17,
+    "beatport_score": 69,
+    "beatport_best_position": 19,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -5151,8 +5164,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 34,
-    "beatport_best_position": 61,
+    "beatport_score": 27,
+    "beatport_best_position": 73,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
@@ -5161,7 +5174,7 @@
     "wikipedia_title": "DJ Rush",
     "image": "https://cdn-images.dzcdn.net/images/artist/56b14eed9aa9d5a9ee095834af152cfa/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "djrush",
-    "demand_index": 47,
+    "demand_index": 46,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
@@ -5295,8 +5308,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 22,
-    "beatport_best_position": 81,
+    "beatport_score": 20,
+    "beatport_best_position": 84,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -5304,7 +5317,7 @@
     "trends_mom_12w": -6,
     "image": "https://cdn-images.dzcdn.net/images/artist/0334b3c65ba31b1e01491589309346be/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "agentsoftime",
-    "demand_index": 66,
+    "demand_index": 65,
     "demand_tier": 4,
     "value_gap": 1,
     "value_signal": "buy",
@@ -5754,8 +5767,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 86,
-    "beatport_best_position": 7,
+    "beatport_score": 85,
+    "beatport_best_position": 9,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -5765,7 +5778,7 @@
     "wikipedia_title": "Robert Babicz",
     "image": "https://cdn-images.dzcdn.net/images/artist/86daafd37da4b89d74c4dfbb9a69bb06/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "robertbabicz",
-    "demand_index": 53,
+    "demand_index": 52,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -5798,10 +5811,22 @@
     "wikipedia_title": "Trikk",
     "image": "https://cdn-images.dzcdn.net/images/artist/be15292053c4648e4fca886ac86f1afa/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "trikk",
-    "demand_index": 54,
+    "demand_index": 44,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "beatport_score": 14,
+    "beatport_best_position": 95,
+    "beatport_charting_tracks": 1,
+    "beatport_charts": [
+      "Indie Dance"
+    ],
+    "beatport_labels": [
+      "Innervisions"
+    ],
+    "label_best": "Innervisions",
+    "label_tier": 5,
+    "label_score": 100
   },
   {
     "name": "Tornado Wallace",
@@ -6153,22 +6178,20 @@
       "band": "D",
       "basis": "estimate"
     },
-    "beatport_score": 91,
+    "beatport_score": 86,
     "beatport_best_position": 7,
-    "beatport_charting_tracks": 6,
+    "beatport_charting_tracks": 5,
     "beatport_charts": [
-      "Minimal / Deep Tech",
       "Deep House"
     ],
     "trends_mom_12w": -8.7,
     "image": "https://cdn-images.dzcdn.net/images/artist/65fa5d68010ce07894fd661b65a1517e/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "nickcurly",
-    "demand_index": 64,
+    "demand_index": 63,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Deepalma",
       "Cecille",
       "8Bit",
       "Defected"
@@ -6326,8 +6349,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 59,
-    "beatport_best_position": 36,
+    "beatport_score": 55,
+    "beatport_best_position": 42,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Tech House",
@@ -6337,7 +6360,7 @@
     "wikipedia_title": "Marshall Jefferson",
     "image": "https://cdn-images.dzcdn.net/images/artist/c6a568324347a6c45eb24daaa607ce0d/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "marshalljefferson",
-    "demand_index": 63,
+    "demand_index": 62,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
@@ -6394,7 +6417,7 @@
       "basis": "estimate"
     },
     "beatport_score": 32,
-    "beatport_best_position": 65,
+    "beatport_best_position": 64,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Afro House"
@@ -6616,8 +6639,8 @@
       "band": "B",
       "basis": "curated"
     },
-    "beatport_score": 53,
-    "beatport_best_position": 29,
+    "beatport_score": 54,
+    "beatport_best_position": 28,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -6626,7 +6649,7 @@
     "wikipedia_title": "Sasha",
     "image": "https://cdn-images.dzcdn.net/images/artist/5856ea0878199627363194d3513fea36/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "sasha",
-    "demand_index": 60,
+    "demand_index": 61,
     "demand_tier": 3,
     "value_gap": -2,
     "value_signal": "premium",
@@ -6681,8 +6704,8 @@
       "band": "A",
       "basis": "curated"
     },
-    "beatport_score": 43,
-    "beatport_best_position": 63,
+    "beatport_score": 42,
+    "beatport_best_position": 65,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -6692,7 +6715,7 @@
     "wikipedia_title": "Eric Prydz",
     "image": "https://cdn-images.dzcdn.net/images/artist/0adb6d9882303b2429a5ec930fbbd2f5/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "ericprydz",
-    "demand_index": 50,
+    "demand_index": 49,
     "demand_tier": 3,
     "value_gap": -3,
     "value_signal": "premium",
@@ -6722,8 +6745,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 20,
-    "beatport_best_position": 85,
+    "beatport_score": 25,
+    "beatport_best_position": 76,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
@@ -6732,7 +6755,7 @@
     "wikipedia_title": "Midland",
     "image": "https://cdn-images.dzcdn.net/images/artist/651873946c042a39b18b69e8e1898c49/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "midland",
-    "demand_index": 58,
+    "demand_index": 60,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
@@ -6761,8 +6784,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 51,
-    "beatport_best_position": 33,
+    "beatport_score": 58,
+    "beatport_best_position": 21,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
@@ -6770,7 +6793,7 @@
     "trends_mom_12w": 100,
     "image": "https://cdn-images.dzcdn.net/images/artist/128965928fd06bd47dae4cdde78d1d82/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "manoletough",
-    "demand_index": 40,
+    "demand_index": 42,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
@@ -7130,8 +7153,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 62,
-    "beatport_best_position": 22,
+    "beatport_score": 66,
+    "beatport_best_position": 16,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -7139,7 +7162,7 @@
     "trends_mom_12w": 5.9,
     "image": "https://cdn-images.dzcdn.net/images/artist/b688797416486c8aada695ea7da76f3d/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "andreaoliva",
-    "demand_index": 42,
+    "demand_index": 44,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -7383,17 +7406,18 @@
       "band": "C",
       "basis": "curated"
     },
-    "beatport_score": 64,
-    "beatport_best_position": 20,
-    "beatport_charting_tracks": 2,
+    "beatport_score": 74,
+    "beatport_best_position": 19,
+    "beatport_charting_tracks": 3,
     "beatport_charts": [
-      "House"
+      "House",
+      "Afro House"
     ],
     "trends_mom_12w": 13.4,
     "wikipedia_title": "Bob Sinclar",
     "image": "https://cdn-images.dzcdn.net/images/artist/6f5b029c7a977b6ccdc8f5843208f04c/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "bobsinclar",
-    "demand_index": 53,
+    "demand_index": 56,
     "demand_tier": 3,
     "value_gap": -1,
     "value_signal": "premium",
@@ -7450,7 +7474,7 @@
       "basis": "estimate"
     },
     "beatport_score": 39,
-    "beatport_best_position": 53,
+    "beatport_best_position": 52,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
@@ -7626,12 +7650,12 @@
     "wikipedia_title": "Slam",
     "image": "https://cdn-images.dzcdn.net/images/artist/29b5d13239bcfee2e86fd3b162cf0203/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "slam",
-    "demand_index": 49,
+    "demand_index": 50,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
-    "beatport_score": 47,
-    "beatport_best_position": 39,
+    "beatport_score": 51,
+    "beatport_best_position": 33,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
@@ -7661,8 +7685,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 15,
-    "beatport_best_position": 93,
+    "beatport_score": 11,
+    "beatport_best_position": 100,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
@@ -7670,10 +7694,16 @@
     "trends_mom_12w": 65,
     "image": "https://cdn-images.dzcdn.net/images/artist/b64a331d5dc4382c5bd1984f0474d535/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "stevebug",
-    "demand_index": 23,
+    "demand_index": 21,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "beatport_labels": [
+      "Bondage Music"
+    ],
+    "label_best": "Bondage Music",
+    "label_tier": 2,
+    "label_score": 40
   },
   {
     "name": "Akufen",
@@ -7945,7 +7975,7 @@
       "basis": "curated"
     },
     "beatport_score": 68,
-    "beatport_best_position": 4,
+    "beatport_best_position": 5,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
@@ -8010,8 +8040,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 73,
-    "beatport_best_position": 30,
+    "beatport_score": 75,
+    "beatport_best_position": 26,
     "beatport_charting_tracks": 6,
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
@@ -8019,7 +8049,7 @@
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/e60eb9108935c07342dce6f2f2faede3/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "planetaryassaultsystems",
-    "demand_index": 56,
+    "demand_index": 57,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -8087,7 +8117,7 @@
     "name": "Hugel",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/3c13af28b7ea160a4e844c16e5109d18/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebb02f6c6948dd082ff04b2a86",
     "ra_slug": "hugel",
     "wikipedia_title": "Hugel (DJ)",
     "demand_index": 98,
@@ -8096,39 +8126,39 @@
     "value_signal": null,
     "beatport_score": 100,
     "beatport_best_position": 1,
-    "beatport_charting_tracks": 16,
+    "beatport_charting_tracks": 15,
     "beatport_charts": [
       "House",
       "Tech House",
-      "Afro House",
-      "Indie Dance"
+      "Afro House"
     ],
     "beatport_labels": [
       "Make The Girls Dance Records",
       "Cr2 Records",
       "MoBlack Records",
       "Virgin",
-      "UNION RECORDS (IT)",
       "Insomniac Records",
+      "UNION RECORDS (IT)",
       "Defected"
     ],
     "label_best": "Defected",
     "label_tier": 5,
-    "label_score": 100
+    "label_score": 100,
+    "spotify_id": "5PlfkPxwCpRRWQJBxCa0By"
   },
   {
     "name": "Adam Ten",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/ae5dd6a1d44024b1722cdf8788f85ee5/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb124d9ef54fb1a032b951518e",
     "ra_slug": "adamten",
-    "demand_index": 73,
+    "demand_index": 71,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 100,
-    "beatport_best_position": 1,
-    "beatport_charting_tracks": 8,
+    "beatport_score": 98,
+    "beatport_best_position": 5,
+    "beatport_charting_tracks": 9,
     "beatport_charts": [
       "House",
       "Tech House",
@@ -8137,21 +8167,23 @@
     ],
     "beatport_labels": [
       "Hot Creations",
+      "Experts Only",
       "Maccabi House",
       "Rose Avenue/Reprise",
-      "Experts Only",
       "Kompakt",
-      "Higher Ground"
+      "Higher Ground",
+      "Life And Death"
     ],
     "label_best": "Hot Creations",
     "label_tier": 5,
-    "label_score": 100
+    "label_score": 100,
+    "spotify_id": "05tmGPn4fFdVpnsMt0YW5S"
   },
   {
     "name": "Sidney Charles",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/b1daf96bd9384c595a70d602df9ee528/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb2ce015e7efe44a5255407dfd",
     "ra_slug": "sidneycharles",
     "demand_index": 74,
     "demand_tier": null,
@@ -8171,20 +8203,21 @@
     ],
     "label_best": "Koltrax",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "0J6ZEXmLQfZMeHBoa4JZTH"
   },
   {
     "name": "Brunello",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/5326cd4e7ececde856f840b029083f8b/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebf09aeff34e4a5c220d6627a5",
     "wikipedia_title": "Brunello",
     "demand_index": 99,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
     "beatport_score": 99,
-    "beatport_best_position": 2,
+    "beatport_best_position": 3,
     "beatport_charting_tracks": 7,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -8193,26 +8226,28 @@
       "Indie Dance"
     ],
     "beatport_labels": [
-      "Mellow Circus Records"
+      "Mellow Circus Records",
+      "Nervous Records"
     ],
     "label_best": "Mellow Circus Records",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "7FZIk8RSha4GBa4ZEPuytU"
   },
   {
     "name": "Rafael",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/1eadeb2ff4f00ca2b401e115ca9d12fa/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebe81fa13ccd203b25572c34a7",
     "wikipedia_title": "Rafael",
     "ra_slug": "rafael",
-    "demand_index": 66,
+    "demand_index": 61,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 98,
-    "beatport_best_position": 5,
-    "beatport_charting_tracks": 5,
+    "beatport_score": 88,
+    "beatport_best_position": 4,
+    "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Tech House",
       "Minimal / Deep Tech",
@@ -8220,19 +8255,18 @@
     ],
     "beatport_labels": [
       "Maccabi House",
-      "Beltools Records",
-      "Get Physical Music",
-      "tszr"
+      "Beltools Records"
     ],
-    "label_best": "Get Physical Music",
-    "label_tier": 4,
-    "label_score": 80
+    "label_best": "Maccabi House",
+    "label_tier": 2,
+    "label_score": 40,
+    "spotify_id": "3DHC2ZUVADRKLSmqPcqvc6"
   },
   {
     "name": "Gorge",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/44051e7510a5be98e7bd27dafe19423b/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebabe8200b458b2364dda6fef0",
     "wikipedia_title": "Gorge (disambiguation)",
     "ra_slug": "gorge",
     "demand_index": 54,
@@ -8254,13 +8288,14 @@
     ],
     "label_best": "8Bit",
     "label_tier": 3,
-    "label_score": 60
+    "label_score": 60,
+    "spotify_id": "643bM79Ki1Ohrq5sSpKKgq"
   },
   {
     "name": "Ilias Katelanos",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/329dd3a828813885191199cd82a736f4/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb9b29726fc74da1d132b180d2",
     "demand_index": 93,
     "demand_tier": null,
     "value_gap": null,
@@ -8280,41 +8315,41 @@
     ],
     "label_best": "Hollystone Records",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "1sqLCBbu9hQESkdUn8hpfC"
   },
   {
     "name": "LUCH",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/ccf0a65e8c2bc7d7b2aea4cf1dfd6b9f/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebdf64bb4f8dffa3f27ec389f7",
     "wikipedia_title": "Luch",
-    "demand_index": 91,
+    "demand_index": 80,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 92,
+    "beatport_score": 82,
     "beatport_best_position": 14,
-    "beatport_charting_tracks": 5,
+    "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Tech House",
-      "Melodic House & Techno",
-      "Afro House"
+      "Melodic House & Techno"
     ],
     "beatport_labels": [
       "Gozar Records",
       "Human By Default",
-      "Warner Music Central Europe",
-      "Magnifik Music"
+      "Warner Music Central Europe"
     ],
     "label_best": "Gozar Records",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "0Jp7EXwEqkmsUO7eu9kbbp"
   },
   {
     "name": "Adam Port",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/ae6a1a99ec641a71ca699955430b5471/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb561389a1adf5f4c8631e45f0",
     "wikipedia_title": "Adam Port",
     "ra_slug": "adamport",
     "demand_index": 66,
@@ -8334,13 +8369,14 @@
     ],
     "label_best": "Keinemusik",
     "label_tier": 5,
-    "label_score": 100
+    "label_score": 100,
+    "spotify_id": "2loEsOijJ6XiGzWYFXMIRk"
   },
   {
     "name": "Keinemusik",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/56b575ed2abe430764d6319e8414b02e/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebc24a9a329a26cbdfabfd73e2",
     "wikipedia_title": "Keinemusik",
     "demand_index": 91,
     "demand_tier": null,
@@ -8358,20 +8394,21 @@
     ],
     "label_best": "Keinemusik",
     "label_tier": 5,
-    "label_score": 100
+    "label_score": 100,
+    "spotify_id": "26WKgv73kRHD0gEDKD1i8j"
   },
   {
     "name": "OMRI.",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/c94be4346bbe88c7cd2f993c0ed711e0/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb06b08bc598832401202aa41b",
     "wikipedia_title": "Omri",
-    "demand_index": 89,
+    "demand_index": 88,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 90,
-    "beatport_best_position": 17,
+    "beatport_score": 89,
+    "beatport_best_position": 19,
     "beatport_charting_tracks": 5,
     "beatport_charts": [
       "Tech House",
@@ -8382,75 +8419,79 @@
       "tszr",
       "Higher Ground",
       "Crosstown Rebels",
-      "AFFAIRS"
+      "Hot Creations"
     ],
     "label_best": "Crosstown Rebels",
     "label_tier": 5,
-    "label_score": 100
+    "label_score": 100,
+    "spotify_id": "36jn1T9teX1BHEJYcPoazX"
   },
   {
     "name": "Bonafique",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/5278b7fdb0fd0572e5ddd9eeb6c64470/1000x1000-000000-80-0-0.jpg",
-    "demand_index": 89,
+    "image": "https://i.scdn.co/image/ab6761610000e5eb6d46eba60972d0ce0f5e6544",
+    "demand_index": 79,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 90,
-    "beatport_best_position": 9,
-    "beatport_charting_tracks": 5,
+    "beatport_score": 81,
+    "beatport_best_position": 32,
+    "beatport_charting_tracks": 6,
     "beatport_charts": [
+      "Tech House",
       "Deep House",
       "Indie Dance"
     ],
     "beatport_labels": [
-      "Crosstown Rebels",
       "Get Physical Music",
+      "Crosstown Rebels",
       "Beat Boutique",
-      "Club Sweat"
+      "Maccabi House"
     ],
     "label_best": "Crosstown Rebels",
     "label_tier": 5,
-    "label_score": 100
+    "label_score": 100,
+    "spotify_id": "4iYZQBR8znMgLUEM949803"
   },
   {
     "name": "Volkoder",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/6629a6d262ffd6ecccdda364003df8fb/1000x1000-000000-80-0-0.jpg",
-    "demand_index": 88,
+    "image": "https://i.scdn.co/image/ab6761610000e5eb28eb3ef8ecd29ca04527dd20",
+    "demand_index": 74,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 89,
-    "beatport_best_position": 3,
+    "beatport_score": 77,
+    "beatport_best_position": 23,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Tech House",
       "Indie Dance"
     ],
     "beatport_labels": [
+      "THRIVE MUSIC",
       "Maccabi House",
-      "Diynamic",
-      "THRIVE MUSIC"
+      "Diynamic"
     ],
     "label_best": "Diynamic",
     "label_tier": 5,
-    "label_score": 100
+    "label_score": 100,
+    "spotify_id": "5SwGFGfUlV6Dan4ygjF5CU"
   },
   {
     "name": "Josh Gigante",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/39dc32612285f438d322358248a60d93/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebc38a3a42d7d8e4864085e350",
     "ra_slug": "joshgigante",
     "demand_index": 51,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 88,
-    "beatport_best_position": 5,
+    "beatport_score": 89,
+    "beatport_best_position": 2,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "House",
@@ -8463,21 +8504,22 @@
     ],
     "label_best": "When Stars Align",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "7dcUWT1KmxjXieEnzFSjeH"
   },
   {
     "name": "Gai Barone",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/477ff0ffd414a2e693acc62ca08dce28/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb4f92eae7b45fe3da4be1ea1b",
     "ra_slug": "gaibarone",
     "demand_index": 50,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 88,
-    "beatport_best_position": 12,
-    "beatport_charting_tracks": 10,
+    "beatport_score": 87,
+    "beatport_best_position": 15,
+    "beatport_charting_tracks": 9,
     "beatport_charts": [
       "Progressive House",
       "Organic House / Downtempo"
@@ -8485,21 +8527,22 @@
     "beatport_labels": [
       "Forensic Records",
       "Dreaming Awake",
+      "ASTIR Recordings",
       "Music To Die For",
       "Univack",
-      "ASTIR Recordings",
-      "Polyptych Noir",
-      "Vapour Recordings"
+      "Vapour Recordings",
+      "Polyptych Noir"
     ],
     "label_best": "Forensic Records",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "6ITKskiAcS4w9egVKClT7e"
   },
   {
     "name": "HotLap",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/2424c217bb97418e660830854c7e0d25/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb7d7244819809c5d68c50f259",
     "wikipedia_title": "Hot lap",
     "ra_slug": "hotlap",
     "demand_index": 63,
@@ -8507,7 +8550,7 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_score": 86,
-    "beatport_best_position": 7,
+    "beatport_best_position": 8,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -8521,20 +8564,21 @@
     ],
     "label_best": "Insomniac Records",
     "label_tier": 3,
-    "label_score": 60
+    "label_score": 60,
+    "spotify_id": "7fQllKIlkVSl9JD1aJ8XYg"
   },
   {
     "name": "GEØVHÄN",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/d7f19e03cbf43a76063fb01fe4a32625/1000x1000-000000-80-0-0.jpg",
-    "demand_index": 84,
+    "image": "https://i.scdn.co/image/ab6761610000e5ebc3c7d97a38752e1d911511b9",
+    "demand_index": 78,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 86,
-    "beatport_best_position": 8,
-    "beatport_charting_tracks": 4,
+    "beatport_score": 80,
+    "beatport_best_position": 10,
+    "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Progressive House",
       "Organic House / Downtempo"
@@ -8545,21 +8589,22 @@
     ],
     "label_best": "The Soundgarden",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "4XRxf0NeUtnYQidZgbwNGs"
   },
   {
     "name": "CamelPhat",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/0323760d53e2a30fea1e66dafcb0f09e/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb85bc993b6a738f94ef4df7cf",
     "wikipedia_title": "CamelPhat",
     "ra_slug": "camelphat",
-    "demand_index": 65,
+    "demand_index": 64,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 85,
-    "beatport_best_position": 10,
+    "beatport_score": 84,
+    "beatport_best_position": 11,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "House",
@@ -8572,21 +8617,22 @@
     ],
     "label_best": "Interstellar Recordings (Insomniac)",
     "label_tier": 3,
-    "label_score": 60
+    "label_score": 60,
+    "spotify_id": "240wlM8vDrf6S4zCyzGj2W"
   },
   {
     "name": "&ME",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/05fb14f9ef0462ea4251dd4903c8ccc8/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebbf5cac401f8b25cda35221e9",
     "wikipedia_title": "&Me",
     "ra_slug": "me",
-    "demand_index": 68,
+    "demand_index": 67,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 85,
-    "beatport_best_position": 18,
+    "beatport_score": 83,
+    "beatport_best_position": 21,
     "beatport_charting_tracks": 5,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -8597,13 +8643,14 @@
     ],
     "label_best": "Keinemusik",
     "label_tier": 5,
-    "label_score": 100
+    "label_score": 100,
+    "spotify_id": "5mIowAJMp7RKNheelruV5z"
   },
   {
     "name": "Jacob Matthews",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/4ad9b30669505ef154e3112511deff27/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb8d9d05dcd3e3179d41a18c94",
     "demand_index": 83,
     "demand_tier": null,
     "value_gap": null,
@@ -8620,13 +8667,14 @@
     ],
     "label_best": "ABODE Records",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "6OLFLlG1W9ihgTCDQt5jaz"
   },
   {
     "name": "Kamilo Sanclemente",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/18907187d78c33590e0c71c5c989177b/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb3abf59b9626af670673af263",
     "ra_slug": "kamilosanclemente",
     "demand_index": 61,
     "demand_tier": null,
@@ -8645,13 +8693,14 @@
     ],
     "label_best": "Kling Klong Music",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "2AYLgq9P1arichVXbNbjVy"
   },
   {
     "name": "Meduza",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/ab9d5b17af04e65b048b33fc2806f910/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb1b3b3325a43e81577b03b9c9",
     "wikipedia_title": "Meduza",
     "ra_slug": "meduza",
     "demand_index": 70,
@@ -8672,25 +8721,25 @@
     ],
     "label_best": "Armada Music",
     "label_tier": 4,
-    "label_score": 80
+    "label_score": 80,
+    "spotify_id": "0xRXCcSX89eobfrshSVdyu"
   },
   {
     "name": "Vintage Culture",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/bbc7f0e75f9154e5982420c42e805484/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb0041f76b2e740b535b6919a3",
     "wikipedia_title": "Vintage Culture",
     "ra_slug": "vintageculture",
-    "demand_index": 88,
+    "demand_index": 81,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 84,
-    "beatport_best_position": 3,
-    "beatport_charting_tracks": 3,
+    "beatport_score": 71,
+    "beatport_best_position": 7,
+    "beatport_charting_tracks": 2,
     "beatport_charts": [
-      "Tech House",
-      "Indie Dance"
+      "Tech House"
     ],
     "beatport_labels": [
       "AFFAIRS",
@@ -8698,20 +8747,21 @@
     ],
     "label_best": "AFFAIRS",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "28uJnu5EsrGml2tBd7y8ts"
   },
   {
     "name": "Hardt Antoine",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/6f42f2643c4b8878e4a0259f325dae38/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb7d9c4c57734d078fb47c2fe2",
     "ra_slug": "hardtantoine",
-    "demand_index": 70,
+    "demand_index": 69,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 84,
-    "beatport_best_position": 3,
+    "beatport_score": 83,
+    "beatport_best_position": 4,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -8724,13 +8774,14 @@
     ],
     "label_best": "Innervisions",
     "label_tier": 5,
-    "label_score": 100
+    "label_score": 100,
+    "spotify_id": "3nJOVgthGYcDojzO7utIyA"
   },
   {
     "name": "Rampa",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/05454ee4114bef513b8f0446271dae0b/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb350efff32f3a579155fe40d2",
     "wikipedia_title": "Rampa",
     "ra_slug": "rampa",
     "demand_index": 74,
@@ -8749,20 +8800,21 @@
     ],
     "label_best": "Keinemusik",
     "label_tier": 5,
-    "label_score": 100
+    "label_score": 100,
+    "spotify_id": "08jywfUS0hp8XYlYs0cvz8"
   },
   {
     "name": "Boss Priester",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/7a5322f58d4db6a6637ba05c32a7473e/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb1f17c6481f60e951fff3e959",
     "ra_slug": "bosspriester",
-    "demand_index": 68,
+    "demand_index": 69,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 81,
-    "beatport_best_position": 24,
+    "beatport_score": 83,
+    "beatport_best_position": 21,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "House",
@@ -8776,19 +8828,20 @@
     ],
     "label_best": "Heavy House Society",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "0aut7mlvs8CZUwZKn5e3ZE"
   },
   {
     "name": "Plecta",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/85631fcc84c814f15df29c0445c3e4fc/1000x1000-000000-80-0-0.jpg",
-    "demand_index": 79,
+    "image": "https://i.scdn.co/image/ab6761610000e5eb691028dd734c7fe4c299341d",
+    "demand_index": 80,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 81,
-    "beatport_best_position": 16,
+    "beatport_score": 82,
+    "beatport_best_position": 14,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Progressive House",
@@ -8801,13 +8854,14 @@
     ],
     "label_best": "Warung Recordings",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "4vD1wLsCdEuPUWDMg3LBlC"
   },
   {
     "name": "Ultra Nate",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/825f7b460438bdb5f4a52ac45a90e6ca/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebcb9ab2d03652eabe4a002368",
     "wikipedia_title": "Ultra Naté",
     "ra_slug": "ultranate",
     "demand_index": 53,
@@ -8827,48 +8881,49 @@
     ],
     "label_best": "Make The Girls Dance Records",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "1cK2Abwkni7m51wJCSGllN"
   },
   {
     "name": "Franc Fala",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/9a3cf8e0bd8a6d50e24aaa33eeacc62f/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb2681f2534f7827ab3f7d696e",
     "ra_slug": "francfala",
-    "demand_index": 66,
+    "demand_index": 64,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 80,
-    "beatport_best_position": 17,
+    "beatport_score": 75,
+    "beatport_best_position": 18,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Tech House",
-      "Afro House",
-      "Indie Dance"
+      "Afro House"
     ],
     "beatport_labels": [
       "Nervous Records",
-      "Universal Music Division Decca Records France",
-      "NO ART"
+      "NO ART",
+      "Universal Music Division Decca Records France"
     ],
     "label_best": "NO ART",
     "label_tier": 4,
-    "label_score": 80
+    "label_score": 80,
+    "spotify_id": "0FSasrFTs0AQBrJkcFE6vB"
   },
   {
     "name": "RÜFÜS DU SOL",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/e9890b80076d03cce617888ec3ab2996/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebdbe0d58f538b7d18e324af5e",
     "wikipedia_title": "Rüfüs Du Sol",
     "ra_slug": "rufusdusol",
     "demand_index": 57,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 80,
-    "beatport_best_position": 17,
+    "beatport_score": 79,
+    "beatport_best_position": 19,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Tech House",
@@ -8881,13 +8936,14 @@
     ],
     "label_best": "Sweat It Out",
     "label_tier": 4,
-    "label_score": 80
+    "label_score": 80,
+    "spotify_id": "5Pb27ujIyYb33zBqVysBkj"
   },
   {
     "name": "Township Rebellion",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/faeccb3a5444665d1b571391ebc138eb/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebdd339968c3b3f39463d834e4",
     "ra_slug": "townshiprebellion",
     "demand_index": 86,
     "demand_tier": null,
@@ -8907,13 +8963,14 @@
     ],
     "label_best": "Drumcode",
     "label_tier": 5,
-    "label_score": 100
+    "label_score": 100,
+    "spotify_id": "4gGD7nrLZRnnCSz3KGEu4R"
   },
   {
     "name": "Cam Stockman",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/ad6670eb74002572713894c48e340e47/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb998ad662216ba33e18f6b12b",
     "ra_slug": "camstockman",
     "demand_index": 88,
     "demand_tier": null,
@@ -8932,20 +8989,21 @@
     ],
     "label_best": "neXup recz",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "6ZznWCJd9W0TBbLtCK7oFg"
   },
   {
     "name": "Antdot",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/733326f723ed09dce49de7a0a1f9878b/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb3a1441be1eb329cbeb1ad4b7",
     "ra_slug": "antdot",
-    "demand_index": 62,
+    "demand_index": 63,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 80,
-    "beatport_best_position": 9,
+    "beatport_score": 81,
+    "beatport_best_position": 8,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Afro House",
@@ -8956,13 +9014,14 @@
     ],
     "label_best": "Dawn Patrol Records",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "3of9b8iUxyXtfnwwahfUNx"
   },
   {
     "name": "Jordan Brando",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/90186f5bec8200ce40ed5819d32f7dc2/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eba887692a346c47018860a712",
     "ra_slug": "jordanbrando",
     "demand_index": 52,
     "demand_tier": null,
@@ -8981,59 +9040,60 @@
     ],
     "label_best": "Defected",
     "label_tier": 5,
-    "label_score": 100
+    "label_score": 100,
+    "spotify_id": "1LvEV4mvbTOdntchECXeAO"
   },
   {
     "name": "Jitwam",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/e215c84949bafdf5638a62d3e3bee2b3/1000x1000-000000-80-0-0.jpg",
-    "demand_index": 76,
+    "image": "https://i.scdn.co/image/ab6761610000e5eb231acb4091d6adeca9373912",
+    "demand_index": 69,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 79,
-    "beatport_best_position": 3,
+    "beatport_score": 72,
+    "beatport_best_position": 6,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
-      "Tech House",
-      "Indie Dance"
+      "Tech House"
     ],
     "beatport_labels": [
       "THRIVE MUSIC"
     ],
     "label_best": "THRIVE MUSIC",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "3yg8VEfEzpr8T9NkiEsycS"
   },
   {
     "name": "GUDFELLA",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/631d226f876dc220aa83cc35f5b8f6da/1000x1000-000000-80-0-0.jpg",
-    "demand_index": 76,
+    "image": "https://i.scdn.co/image/ab6761610000e5eb7687226a794cb27175b9079f",
+    "demand_index": 69,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 79,
-    "beatport_best_position": 3,
+    "beatport_score": 72,
+    "beatport_best_position": 6,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
-      "Tech House",
-      "Indie Dance"
+      "Tech House"
     ],
     "beatport_labels": [
       "THRIVE MUSIC"
     ],
     "label_best": "THRIVE MUSIC",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "3KjZMSSy0BaCVdvL0VABRO"
   },
   {
     "name": "Mason Collective",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/42a95684e854e0d34750be163eb34ae5/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb5cae8a863816980f7fd1f4e3",
     "ra_slug": "masoncollective",
     "demand_index": 69,
     "demand_tier": null,
@@ -9052,13 +9112,14 @@
     ],
     "label_best": "MVSON",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "5v1K4IgzvVs7rFzessYPhS"
   },
   {
     "name": "RSquared",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/20b41ef4e6944f6f2bc5cea36a90bbdb/1000x1000-000000-80-0-0.jpg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb2b985aba58c784f6ea58c9c4",
     "ra_slug": "rsquared",
     "demand_index": 67,
     "demand_tier": null,
@@ -9079,30 +9140,436 @@
     ],
     "label_best": "RWorks",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "spotify_id": "3uuAdAghYzgytUdLDQUHZ2"
   },
   {
     "name": "Yuvèe",
     "manual_scene_score": 50,
     "source": "beatport-discovery",
-    "image": "https://cdn-images.dzcdn.net/images/artist/92125e8bd7e7ebc49a4a85d2aed367e3/1000x1000-000000-80-0-0.jpg",
-    "demand_index": 75,
+    "image": "https://i.scdn.co/image/ab6761610000e5ebebdd74a5194a9d19b666376f",
+    "demand_index": 34,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 78,
-    "beatport_best_position": 12,
+    "beatport_score": 41,
+    "beatport_best_position": 74,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
-      "Deep House",
-      "Indie Dance"
+      "Tech House",
+      "Deep House"
     ],
     "beatport_labels": [
-      "Anjunadeep Explorations",
-      "Get Physical Music"
+      "Get Physical Music",
+      "Anjunadeep Explorations"
     ],
     "label_best": "Anjunadeep Explorations",
     "label_tier": 5,
-    "label_score": 100
+    "label_score": 100,
+    "spotify_id": "2uUpxGX8XaVGhqh398dP2f"
+  },
+  {
+    "name": "Mochakk",
+    "manual_scene_score": 66,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb25eb7fae06eeb3765c8832c0",
+    "spotify_id": "0rTh1tAdrEbdKZBTiiAQSo",
+    "ra_slug": "mochakk",
+    "beatport_score": 72,
+    "beatport_best_position": 6,
+    "beatport_charting_tracks": 2,
+    "beatport_charts": [
+      "House"
+    ],
+    "beatport_labels": [
+      "Verve",
+      "Nervous Records"
+    ],
+    "label_best": "Verve",
+    "label_tier": 2,
+    "label_score": 40,
+    "demand_index": 60,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "Sonny Fodera",
+    "manual_scene_score": 70,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebbc9d0179e9d2f6ca78a03fe7",
+    "spotify_id": "39B7ChWwrWDs7zXlsu3MoP",
+    "ra_slug": "sonnyfodera",
+    "demand_index": 51,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "Layton Giordani",
+    "manual_scene_score": 65,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb1c4a89caa76ae4f1d3232f61",
+    "spotify_id": "7mC3RkNNTV6p2j9w4F8Ip4",
+    "ra_slug": "laytongiordani",
+    "beatport_score": 48,
+    "beatport_best_position": 54,
+    "beatport_charting_tracks": 2,
+    "beatport_charts": [
+      "Tech House",
+      "Melodic House & Techno"
+    ],
+    "beatport_labels": [
+      "Experts Only",
+      "Defected"
+    ],
+    "label_best": "Defected",
+    "label_tier": 5,
+    "label_score": 100,
+    "demand_index": 46,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "I Hate Models",
+    "manual_scene_score": 72,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb1a0d54ab853f86eba713585b",
+    "spotify_id": "0KqSULB80ft2H3aFg6kJmN",
+    "ra_slug": "ihatemodels",
+    "demand_index": 58,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "Ben UFO",
+    "manual_scene_score": 78,
+    "source": "crssd-fall26",
+    "spotify_id": "44j1ebTzFis2TUjf7boDpM",
+    "image": "https://i.scdn.co/image/ab67616d0000b273819cfb3f891635a288a44818",
+    "ra_slug": "benufo",
+    "spotify_monthly_listeners": 2514,
+    "demand_index": 61,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "Groove Armada",
+    "manual_scene_score": 75,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb922cfaf258406578ccb12bcc",
+    "spotify_id": "67tgMwUfnmqzYsNAtnP6YJ",
+    "ra_slug": "groovearmada",
+    "demand_index": 63,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "999999999",
+    "manual_scene_score": 68,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebecb23a5f80883b6d546f3c96",
+    "spotify_id": "6uD2LjPHUjxrpax0se17Nc",
+    "ra_slug": "999999999",
+    "demand_index": 56,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "VTSS",
+    "manual_scene_score": 62,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb2c592ef981e3103fac56b539",
+    "spotify_id": "0zo109NM3S7CqHpvlXwqEN",
+    "ra_slug": "vtss",
+    "demand_index": 75,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "Marlon Hoffstadt",
+    "manual_scene_score": 60,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb2744c0aa6cccfab6120ef015",
+    "spotify_id": "0HHa7ZJZxUQlg5l2mB0N0f",
+    "ra_slug": "marlonhoffstadt",
+    "demand_index": 50,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "KAS:ST",
+    "manual_scene_score": 60,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebd31231e66c6ad0dad52c8721",
+    "spotify_id": "7orlzf5LTqSnCzURkZFebN",
+    "ra_slug": "kasst",
+    "demand_index": 52,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "Torren Foot",
+    "manual_scene_score": 55,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb757f9284997fc4d677fbecf0",
+    "spotify_id": "7lQOxDl96wmNoqGoW4kgv4",
+    "ra_slug": "torrenfoot",
+    "demand_index": 7,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "salute",
+    "manual_scene_score": 58,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebf431bdb80cf96cc5a3926e6c",
+    "spotify_id": "1np8xozf7ATJZDi9JX8Dx5",
+    "ra_slug": "salute",
+    "demand_index": 64,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "Jay de Lys",
+    "manual_scene_score": 52,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb0d8537d57ae20d107b197b27",
+    "spotify_id": "6hr0SehcycxwgYfCgVy32M",
+    "ra_slug": "jaydelys",
+    "beatport_score": 39,
+    "beatport_best_position": 70,
+    "beatport_charting_tracks": 2,
+    "beatport_charts": [
+      "Tech House",
+      "Minimal / Deep Tech"
+    ],
+    "beatport_labels": [
+      "Black Book Records",
+      "Deeperfect"
+    ],
+    "label_best": "Black Book Records",
+    "label_tier": 4,
+    "label_score": 80,
+    "demand_index": 44,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "Sam Alfred",
+    "manual_scene_score": 50,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebb6fe5b843faee3c7d2712448",
+    "spotify_id": "4PVzoVUDxey3mxGdkf4HgR",
+    "ra_slug": "samalfred",
+    "demand_index": 71,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "Arodes",
+    "manual_scene_score": 54,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb19b4f4016d144c4b13b3e058",
+    "spotify_id": "4p2f8wUtltMAFuIJB4NR47",
+    "ra_slug": "arodes",
+    "beatport_score": 65,
+    "beatport_best_position": 17,
+    "beatport_charting_tracks": 2,
+    "beatport_charts": [
+      "Melodic House & Techno"
+    ],
+    "beatport_labels": [
+      "Unreleased Records",
+      "Interstellar Recordings (Insomniac)"
+    ],
+    "label_best": "Interstellar Recordings (Insomniac)",
+    "label_tier": 3,
+    "label_score": 60,
+    "demand_index": 77,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "MPH",
+    "manual_scene_score": 50,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb7e64c67ba432f9223f1acf9f",
+    "spotify_id": "62SCu33InHVq97VaWw3eof",
+    "demand_index": null,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "Son of Son",
+    "manual_scene_score": 46,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb2920a56b02597dfba1c455a4",
+    "spotify_id": "4xG5i2Smlt6o5QxuGp9LqM",
+    "ra_slug": "sonofson",
+    "beatport_score": 34,
+    "beatport_best_position": 61,
+    "beatport_charting_tracks": 1,
+    "beatport_charts": [
+      "Melodic House & Techno"
+    ],
+    "beatport_labels": [
+      "The End Of Genesys"
+    ],
+    "label_best": "The End Of Genesys",
+    "label_tier": 2,
+    "label_score": 40,
+    "demand_index": 41,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "Chasewest",
+    "manual_scene_score": 46,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb1d048fa1c49b0d0b0cb95ba5",
+    "spotify_id": "4770WxUOyJMOJ1CHiZi2d6",
+    "ra_slug": "chasewest",
+    "demand_index": 45,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "Genesi",
+    "manual_scene_score": 46,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebd8ca415eb84795f2fd696dee",
+    "spotify_id": "4OG9hOPsfAEziKvOJj2SG7",
+    "ra_slug": "genesi",
+    "demand_index": 25,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "Greg 99",
+    "manual_scene_score": 46,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb080c895a176068bde1b743ae",
+    "spotify_id": "68ocQOFVB9wvLiC1C1WjYp",
+    "demand_index": null,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "Jamback",
+    "manual_scene_score": 50,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebf0465c0020a51319cd2c2e23",
+    "spotify_id": "7n5VjDNd00Hy0ZDEGn0erB",
+    "ra_slug": "jamback",
+    "beatport_score": 84,
+    "beatport_best_position": 3,
+    "beatport_charting_tracks": 4,
+    "beatport_charts": [
+      "Minimal / Deep Tech"
+    ],
+    "beatport_labels": [
+      "CircoLoco Records",
+      "BOX RED",
+      "ROSSI.HOME//GRXWN.",
+      "Solid Grooves Records"
+    ],
+    "label_best": "Solid Grooves Records",
+    "label_tier": 4,
+    "label_score": 80,
+    "demand_index": 89,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "Marco Strous",
+    "manual_scene_score": 48,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebdfac350ed96ab20fe683c85f",
+    "spotify_id": "56HtyYJoZvYc5aVdqDd94i",
+    "ra_slug": "marcostrous",
+    "demand_index": 29,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "Dean Turnley",
+    "manual_scene_score": 46,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebeaab6c2f430d35bce8b88240",
+    "spotify_id": "3BcWcwYXVjvLWHMGKsuvsd",
+    "ra_slug": "deanturnley",
+    "beatport_score": 63,
+    "beatport_best_position": 13,
+    "beatport_charting_tracks": 1,
+    "beatport_charts": [
+      "House"
+    ],
+    "beatport_labels": [
+      "ROSSI.HOME//GRXWN."
+    ],
+    "label_best": "ROSSI.HOME//GRXWN.",
+    "label_tier": 2,
+    "label_score": 40,
+    "demand_index": 26,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "Notion",
+    "manual_scene_score": 50,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb8436c7707f218912b3dc25a4",
+    "spotify_id": "1uRVM0wBdtyEuU582EeKJM",
+    "ra_slug": "notion",
+    "demand_index": 51,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
+  },
+  {
+    "name": "oskar med k",
+    "manual_scene_score": 46,
+    "source": "crssd-fall26",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb5b20497e2d4858ba2d565f3a",
+    "spotify_id": "28ntgpEkMU9Zm7F3gLDMhZ",
+    "ra_slug": "oskarmedk",
+    "beatport_score": 23,
+    "beatport_best_position": 80,
+    "beatport_charting_tracks": 1,
+    "beatport_charts": [
+      "Deep House"
+    ],
+    "beatport_labels": [
+      "7CULT"
+    ],
+    "label_best": "7CULT",
+    "label_tier": 2,
+    "label_score": 40,
+    "demand_index": 26,
+    "demand_tier": null,
+    "value_gap": null,
+    "value_signal": null
   }
 ]
