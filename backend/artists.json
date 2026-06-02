@@ -8144,7 +8144,15 @@
     "label_best": "Defected",
     "label_tier": 5,
     "label_score": 100,
-    "spotify_id": "5PlfkPxwCpRRWQJBxCa0By"
+    "spotify_id": "5PlfkPxwCpRRWQJBxCa0By",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Adam Ten",
@@ -8177,7 +8185,15 @@
     "label_best": "Hot Creations",
     "label_tier": 5,
     "label_score": 100,
-    "spotify_id": "05tmGPn4fFdVpnsMt0YW5S"
+    "spotify_id": "05tmGPn4fFdVpnsMt0YW5S",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Sidney Charles",
@@ -8204,7 +8220,15 @@
     "label_best": "Koltrax",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "0J6ZEXmLQfZMeHBoa4JZTH"
+    "spotify_id": "0J6ZEXmLQfZMeHBoa4JZTH",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Brunello",
@@ -8232,7 +8256,15 @@
     "label_best": "Mellow Circus Records",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "7FZIk8RSha4GBa4ZEPuytU"
+    "spotify_id": "7FZIk8RSha4GBa4ZEPuytU",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Rafael",
@@ -8260,7 +8292,15 @@
     "label_best": "Maccabi House",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "3DHC2ZUVADRKLSmqPcqvc6"
+    "spotify_id": "3DHC2ZUVADRKLSmqPcqvc6",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Gorge",
@@ -8289,7 +8329,15 @@
     "label_best": "8Bit",
     "label_tier": 3,
     "label_score": 60,
-    "spotify_id": "643bM79Ki1Ohrq5sSpKKgq"
+    "spotify_id": "643bM79Ki1Ohrq5sSpKKgq",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Ilias Katelanos",
@@ -8316,7 +8364,15 @@
     "label_best": "Hollystone Records",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "1sqLCBbu9hQESkdUn8hpfC"
+    "spotify_id": "1sqLCBbu9hQESkdUn8hpfC",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "LUCH",
@@ -8343,7 +8399,15 @@
     "label_best": "Gozar Records",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "0Jp7EXwEqkmsUO7eu9kbbp"
+    "spotify_id": "0Jp7EXwEqkmsUO7eu9kbbp",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Adam Port",
@@ -8370,7 +8434,15 @@
     "label_best": "Keinemusik",
     "label_tier": 5,
     "label_score": 100,
-    "spotify_id": "2loEsOijJ6XiGzWYFXMIRk"
+    "spotify_id": "2loEsOijJ6XiGzWYFXMIRk",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Keinemusik",
@@ -8395,7 +8467,15 @@
     "label_best": "Keinemusik",
     "label_tier": 5,
     "label_score": 100,
-    "spotify_id": "26WKgv73kRHD0gEDKD1i8j"
+    "spotify_id": "26WKgv73kRHD0gEDKD1i8j",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "OMRI.",
@@ -8424,7 +8504,15 @@
     "label_best": "Crosstown Rebels",
     "label_tier": 5,
     "label_score": 100,
-    "spotify_id": "36jn1T9teX1BHEJYcPoazX"
+    "spotify_id": "36jn1T9teX1BHEJYcPoazX",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Bonafique",
@@ -8452,7 +8540,15 @@
     "label_best": "Crosstown Rebels",
     "label_tier": 5,
     "label_score": 100,
-    "spotify_id": "4iYZQBR8znMgLUEM949803"
+    "spotify_id": "4iYZQBR8znMgLUEM949803",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Volkoder",
@@ -8478,7 +8574,15 @@
     "label_best": "Diynamic",
     "label_tier": 5,
     "label_score": 100,
-    "spotify_id": "5SwGFGfUlV6Dan4ygjF5CU"
+    "spotify_id": "5SwGFGfUlV6Dan4ygjF5CU",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Josh Gigante",
@@ -8505,7 +8609,15 @@
     "label_best": "When Stars Align",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "7dcUWT1KmxjXieEnzFSjeH"
+    "spotify_id": "7dcUWT1KmxjXieEnzFSjeH",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Gai Barone",
@@ -8536,7 +8648,15 @@
     "label_best": "Forensic Records",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "6ITKskiAcS4w9egVKClT7e"
+    "spotify_id": "6ITKskiAcS4w9egVKClT7e",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "HotLap",
@@ -8565,7 +8685,15 @@
     "label_best": "Insomniac Records",
     "label_tier": 3,
     "label_score": 60,
-    "spotify_id": "7fQllKIlkVSl9JD1aJ8XYg"
+    "spotify_id": "7fQllKIlkVSl9JD1aJ8XYg",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "GEØVHÄN",
@@ -8590,7 +8718,15 @@
     "label_best": "The Soundgarden",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "4XRxf0NeUtnYQidZgbwNGs"
+    "spotify_id": "4XRxf0NeUtnYQidZgbwNGs",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "CamelPhat",
@@ -8618,7 +8754,15 @@
     "label_best": "Interstellar Recordings (Insomniac)",
     "label_tier": 3,
     "label_score": 60,
-    "spotify_id": "240wlM8vDrf6S4zCyzGj2W"
+    "spotify_id": "240wlM8vDrf6S4zCyzGj2W",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "&ME",
@@ -8644,7 +8788,15 @@
     "label_best": "Keinemusik",
     "label_tier": 5,
     "label_score": 100,
-    "spotify_id": "5mIowAJMp7RKNheelruV5z"
+    "spotify_id": "5mIowAJMp7RKNheelruV5z",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Jacob Matthews",
@@ -8668,7 +8820,15 @@
     "label_best": "ABODE Records",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "6OLFLlG1W9ihgTCDQt5jaz"
+    "spotify_id": "6OLFLlG1W9ihgTCDQt5jaz",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Kamilo Sanclemente",
@@ -8694,7 +8854,15 @@
     "label_best": "Kling Klong Music",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "2AYLgq9P1arichVXbNbjVy"
+    "spotify_id": "2AYLgq9P1arichVXbNbjVy",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Meduza",
@@ -8722,7 +8890,15 @@
     "label_best": "Armada Music",
     "label_tier": 4,
     "label_score": 80,
-    "spotify_id": "0xRXCcSX89eobfrshSVdyu"
+    "spotify_id": "0xRXCcSX89eobfrshSVdyu",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Vintage Culture",
@@ -8748,7 +8924,15 @@
     "label_best": "AFFAIRS",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "28uJnu5EsrGml2tBd7y8ts"
+    "spotify_id": "28uJnu5EsrGml2tBd7y8ts",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Hardt Antoine",
@@ -8775,7 +8959,15 @@
     "label_best": "Innervisions",
     "label_tier": 5,
     "label_score": 100,
-    "spotify_id": "3nJOVgthGYcDojzO7utIyA"
+    "spotify_id": "3nJOVgthGYcDojzO7utIyA",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Rampa",
@@ -8801,7 +8993,15 @@
     "label_best": "Keinemusik",
     "label_tier": 5,
     "label_score": 100,
-    "spotify_id": "08jywfUS0hp8XYlYs0cvz8"
+    "spotify_id": "08jywfUS0hp8XYlYs0cvz8",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Boss Priester",
@@ -8829,7 +9029,15 @@
     "label_best": "Heavy House Society",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "0aut7mlvs8CZUwZKn5e3ZE"
+    "spotify_id": "0aut7mlvs8CZUwZKn5e3ZE",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Plecta",
@@ -8855,7 +9063,15 @@
     "label_best": "Warung Recordings",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "4vD1wLsCdEuPUWDMg3LBlC"
+    "spotify_id": "4vD1wLsCdEuPUWDMg3LBlC",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Ultra Nate",
@@ -8882,7 +9098,15 @@
     "label_best": "Make The Girls Dance Records",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "1cK2Abwkni7m51wJCSGllN"
+    "spotify_id": "1cK2Abwkni7m51wJCSGllN",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Franc Fala",
@@ -8909,7 +9133,15 @@
     "label_best": "NO ART",
     "label_tier": 4,
     "label_score": 80,
-    "spotify_id": "0FSasrFTs0AQBrJkcFE6vB"
+    "spotify_id": "0FSasrFTs0AQBrJkcFE6vB",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "RÜFÜS DU SOL",
@@ -8937,7 +9169,15 @@
     "label_best": "Sweat It Out",
     "label_tier": 4,
     "label_score": 80,
-    "spotify_id": "5Pb27ujIyYb33zBqVysBkj"
+    "spotify_id": "5Pb27ujIyYb33zBqVysBkj",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Township Rebellion",
@@ -8964,7 +9204,15 @@
     "label_best": "Drumcode",
     "label_tier": 5,
     "label_score": 100,
-    "spotify_id": "4gGD7nrLZRnnCSz3KGEu4R"
+    "spotify_id": "4gGD7nrLZRnnCSz3KGEu4R",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Cam Stockman",
@@ -8990,7 +9238,15 @@
     "label_best": "neXup recz",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "6ZznWCJd9W0TBbLtCK7oFg"
+    "spotify_id": "6ZznWCJd9W0TBbLtCK7oFg",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Antdot",
@@ -9015,7 +9271,15 @@
     "label_best": "Dawn Patrol Records",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "3of9b8iUxyXtfnwwahfUNx"
+    "spotify_id": "3of9b8iUxyXtfnwwahfUNx",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Jordan Brando",
@@ -9041,7 +9305,15 @@
     "label_best": "Defected",
     "label_tier": 5,
     "label_score": 100,
-    "spotify_id": "1LvEV4mvbTOdntchECXeAO"
+    "spotify_id": "1LvEV4mvbTOdntchECXeAO",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Jitwam",
@@ -9064,7 +9336,15 @@
     "label_best": "THRIVE MUSIC",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "3yg8VEfEzpr8T9NkiEsycS"
+    "spotify_id": "3yg8VEfEzpr8T9NkiEsycS",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "GUDFELLA",
@@ -9087,7 +9367,15 @@
     "label_best": "THRIVE MUSIC",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "3KjZMSSy0BaCVdvL0VABRO"
+    "spotify_id": "3KjZMSSy0BaCVdvL0VABRO",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Mason Collective",
@@ -9113,7 +9401,15 @@
     "label_best": "MVSON",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "5v1K4IgzvVs7rFzessYPhS"
+    "spotify_id": "5v1K4IgzvVs7rFzessYPhS",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "RSquared",
@@ -9141,7 +9437,15 @@
     "label_best": "RWorks",
     "label_tier": 2,
     "label_score": 40,
-    "spotify_id": "3uuAdAghYzgytUdLDQUHZ2"
+    "spotify_id": "3uuAdAghYzgytUdLDQUHZ2",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Yuvèe",
@@ -9166,7 +9470,15 @@
     "label_best": "Anjunadeep Explorations",
     "label_tier": 5,
     "label_score": 100,
-    "spotify_id": "2uUpxGX8XaVGhqh398dP2f"
+    "spotify_id": "2uUpxGX8XaVGhqh398dP2f",
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Mochakk",
@@ -9188,10 +9500,19 @@
     "label_best": "Verve",
     "label_tier": 2,
     "label_score": 40,
-    "demand_index": 60,
+    "demand_index": 71,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 1721634,
+    "booking_fee": {
+      "label": "£8K–£18K",
+      "mid": 12000,
+      "tier": 3,
+      "color": "#8b5cf6",
+      "band": "D",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Sonny Fodera",
@@ -9200,10 +9521,19 @@
     "image": "https://i.scdn.co/image/ab6761610000e5ebbc9d0179e9d2f6ca78a03fe7",
     "spotify_id": "39B7ChWwrWDs7zXlsu3MoP",
     "ra_slug": "sonnyfodera",
-    "demand_index": 51,
+    "demand_index": 78,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 8435520,
+    "booking_fee": {
+      "label": "£18K–£40K",
+      "mid": 28000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Layton Giordani",
@@ -9226,10 +9556,19 @@
     "label_best": "Defected",
     "label_tier": 5,
     "label_score": 100,
-    "demand_index": 46,
+    "demand_index": 66,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 2859293,
+    "booking_fee": {
+      "label": "£18K–£40K",
+      "mid": 28000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
+      "basis": "estimate"
+    }
   },
   {
     "name": "I Hate Models",
@@ -9238,10 +9577,19 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb1a0d54ab853f86eba713585b",
     "spotify_id": "0KqSULB80ft2H3aFg6kJmN",
     "ra_slug": "ihatemodels",
-    "demand_index": 58,
+    "demand_index": 70,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 623946,
+    "booking_fee": {
+      "label": "£8K–£18K",
+      "mid": 12000,
+      "tier": 3,
+      "color": "#8b5cf6",
+      "band": "D",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Ben UFO",
@@ -9254,7 +9602,15 @@
     "demand_index": 61,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Groove Armada",
@@ -9263,10 +9619,19 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb922cfaf258406578ccb12bcc",
     "spotify_id": "67tgMwUfnmqzYsNAtnP6YJ",
     "ra_slug": "groovearmada",
-    "demand_index": 63,
+    "demand_index": 79,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 3537765,
+    "booking_fee": {
+      "label": "£18K–£40K",
+      "mid": 28000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
+      "basis": "estimate"
+    }
   },
   {
     "name": "999999999",
@@ -9275,10 +9640,19 @@
     "image": "https://i.scdn.co/image/ab6761610000e5ebecb23a5f80883b6d546f3c96",
     "spotify_id": "6uD2LjPHUjxrpax0se17Nc",
     "ra_slug": "999999999",
-    "demand_index": 56,
+    "demand_index": 68,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 473295,
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "VTSS",
@@ -9287,10 +9661,19 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb2c592ef981e3103fac56b539",
     "spotify_id": "0zo109NM3S7CqHpvlXwqEN",
     "ra_slug": "vtss",
-    "demand_index": 75,
+    "demand_index": 72,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 242742,
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Marlon Hoffstadt",
@@ -9299,10 +9682,19 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb2744c0aa6cccfab6120ef015",
     "spotify_id": "0HHa7ZJZxUQlg5l2mB0N0f",
     "ra_slug": "marlonhoffstadt",
-    "demand_index": 50,
+    "demand_index": 77,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 6623324,
+    "booking_fee": {
+      "label": "£18K–£40K",
+      "mid": 28000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
+      "basis": "estimate"
+    }
   },
   {
     "name": "KAS:ST",
@@ -9311,10 +9703,19 @@
     "image": "https://i.scdn.co/image/ab6761610000e5ebd31231e66c6ad0dad52c8721",
     "spotify_id": "7orlzf5LTqSnCzURkZFebN",
     "ra_slug": "kasst",
-    "demand_index": 52,
+    "demand_index": 66,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 383351,
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Torren Foot",
@@ -9323,10 +9724,19 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb757f9284997fc4d677fbecf0",
     "spotify_id": "7lQOxDl96wmNoqGoW4kgv4",
     "ra_slug": "torrenfoot",
-    "demand_index": 7,
+    "demand_index": 53,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 787010,
+    "booking_fee": {
+      "label": "£8K–£18K",
+      "mid": 12000,
+      "tier": 3,
+      "color": "#8b5cf6",
+      "band": "D",
+      "basis": "estimate"
+    }
   },
   {
     "name": "salute",
@@ -9335,10 +9745,19 @@
     "image": "https://i.scdn.co/image/ab6761610000e5ebf431bdb80cf96cc5a3926e6c",
     "spotify_id": "1np8xozf7ATJZDi9JX8Dx5",
     "ra_slug": "salute",
-    "demand_index": 64,
+    "demand_index": 72,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 541027,
+    "booking_fee": {
+      "label": "£8K–£18K",
+      "mid": 12000,
+      "tier": 3,
+      "color": "#8b5cf6",
+      "band": "D",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Jay de Lys",
@@ -9361,10 +9780,19 @@
     "label_best": "Black Book Records",
     "label_tier": 4,
     "label_score": 80,
-    "demand_index": 44,
+    "demand_index": 57,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 228317,
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Sam Alfred",
@@ -9373,10 +9801,19 @@
     "image": "https://i.scdn.co/image/ab6761610000e5ebb6fe5b843faee3c7d2712448",
     "spotify_id": "4PVzoVUDxey3mxGdkf4HgR",
     "ra_slug": "samalfred",
-    "demand_index": 71,
+    "demand_index": 70,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 178802,
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Arodes",
@@ -9398,10 +9835,19 @@
     "label_best": "Interstellar Recordings (Insomniac)",
     "label_tier": 3,
     "label_score": 60,
-    "demand_index": 77,
+    "demand_index": 78,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 863166,
+    "booking_fee": {
+      "label": "£8K–£18K",
+      "mid": 12000,
+      "tier": 3,
+      "color": "#8b5cf6",
+      "band": "D",
+      "basis": "estimate"
+    }
   },
   {
     "name": "MPH",
@@ -9409,10 +9855,19 @@
     "source": "crssd-fall26",
     "image": "https://i.scdn.co/image/ab6761610000e5eb7e64c67ba432f9223f1acf9f",
     "spotify_id": "62SCu33InHVq97VaWw3eof",
-    "demand_index": null,
+    "demand_index": 80,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 1114751,
+    "booking_fee": {
+      "label": "£8K–£18K",
+      "mid": 12000,
+      "tier": 3,
+      "color": "#8b5cf6",
+      "band": "D",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Son of Son",
@@ -9433,10 +9888,19 @@
     "label_best": "The End Of Genesys",
     "label_tier": 2,
     "label_score": 40,
-    "demand_index": 41,
+    "demand_index": 61,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 1336018,
+    "booking_fee": {
+      "label": "£8K–£18K",
+      "mid": 12000,
+      "tier": 3,
+      "color": "#8b5cf6",
+      "band": "D",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Chasewest",
@@ -9445,10 +9909,19 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb1d048fa1c49b0d0b0cb95ba5",
     "spotify_id": "4770WxUOyJMOJ1CHiZi2d6",
     "ra_slug": "chasewest",
-    "demand_index": 45,
+    "demand_index": 59,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 122363,
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Genesi",
@@ -9457,10 +9930,19 @@
     "image": "https://i.scdn.co/image/ab6761610000e5ebd8ca415eb84795f2fd696dee",
     "spotify_id": "4OG9hOPsfAEziKvOJj2SG7",
     "ra_slug": "genesi",
-    "demand_index": 25,
+    "demand_index": 62,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 1636078,
+    "booking_fee": {
+      "label": "£8K–£18K",
+      "mid": 12000,
+      "tier": 3,
+      "color": "#8b5cf6",
+      "band": "D",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Greg 99",
@@ -9468,10 +9950,19 @@
     "source": "crssd-fall26",
     "image": "https://i.scdn.co/image/ab6761610000e5eb080c895a176068bde1b743ae",
     "spotify_id": "68ocQOFVB9wvLiC1C1WjYp",
-    "demand_index": null,
+    "demand_index": 72,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 286167,
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Jamback",
@@ -9495,10 +9986,19 @@
     "label_best": "Solid Grooves Records",
     "label_tier": 4,
     "label_score": 80,
-    "demand_index": 89,
+    "demand_index": 85,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 1118570,
+    "booking_fee": {
+      "label": "£8K–£18K",
+      "mid": 12000,
+      "tier": 3,
+      "color": "#8b5cf6",
+      "band": "D",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Marco Strous",
@@ -9507,10 +10007,19 @@
     "image": "https://i.scdn.co/image/ab6761610000e5ebdfac350ed96ab20fe683c85f",
     "spotify_id": "56HtyYJoZvYc5aVdqDd94i",
     "ra_slug": "marcostrous",
-    "demand_index": 29,
+    "demand_index": 55,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 195649,
+    "booking_fee": {
+      "label": "£4K–£10K",
+      "mid": 6500,
+      "tier": 2,
+      "color": "var(--accent)",
+      "band": "E",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Dean Turnley",
@@ -9531,10 +10040,19 @@
     "label_best": "ROSSI.HOME//GRXWN.",
     "label_tier": 2,
     "label_score": 40,
-    "demand_index": 26,
+    "demand_index": 54,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 1599430,
+    "booking_fee": {
+      "label": "£8K–£18K",
+      "mid": 12000,
+      "tier": 3,
+      "color": "#8b5cf6",
+      "band": "D",
+      "basis": "estimate"
+    }
   },
   {
     "name": "Notion",
@@ -9543,10 +10061,19 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb8436c7707f218912b3dc25a4",
     "spotify_id": "1uRVM0wBdtyEuU582EeKJM",
     "ra_slug": "notion",
-    "demand_index": 51,
+    "demand_index": 80,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 11578623,
+    "booking_fee": {
+      "label": "£18K–£40K",
+      "mid": 28000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
+      "basis": "estimate"
+    }
   },
   {
     "name": "oskar med k",
@@ -9567,9 +10094,18 @@
     "label_best": "7CULT",
     "label_tier": 2,
     "label_score": 40,
-    "demand_index": 26,
+    "demand_index": 60,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "spotify_monthly_listeners": 10497057,
+    "booking_fee": {
+      "label": "£18K–£40K",
+      "mid": 28000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
+      "basis": "estimate"
+    }
   }
 ]

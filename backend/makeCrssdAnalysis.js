@@ -210,6 +210,22 @@ const PAGE = `<!doctype html><html lang="en"><head><meta charset="utf-8">
     </ul>
   </div>
 
+  <h2>Streaming ≠ tickets</h2>
+  <p>The number a streaming chart hides — RA live-attendance relative to streaming reach. The contrast on this bill is stark:</p>
+  <div class="grid">
+    <div class="box win"><span class="tag win">Converts above its weight</span>
+      <ul>${ACTS.map(a => ({ a, d: actData(a) })).filter(x => x.d.covered && x.d.conv >= 70)
+        .sort((x, y) => y.d.conv - x.d.conv).slice(0, 5)
+        .map(({ a, d }) => `<li><b>${a.name}</b> — conversion ${d.conv}/100${sig(a.members ? a.members[0] : a.name)?.spotify_monthly_listeners ? ` on just ${(sig(a.members ? a.members[0] : a.name).spotify_monthly_listeners / 1e6).toFixed(1)}M listeners` : ""}</li>`).join("")}</ul>
+      <p style="font-size:13px;margin-top:6px">Niche draw &gt; streaming size — the value end of the bill.</p></div>
+    <div class="box warn"><span class="tag warn">Big streams, soft live demand</span>
+      <ul>${ACTS.map(a => ({ a, d: actData(a), ml: sig(a.members ? a.members[0] : a.name)?.spotify_monthly_listeners || 0 }))
+        .filter(x => x.d.covered && x.ml >= 3e6 && x.d.conv >= 0 && x.d.conv < 20)
+        .sort((x, y) => y.ml - x.ml).slice(0, 5)
+        .map(({ a, d, ml }) => `<li><b>${a.name}</b> — ${(ml / 1e6).toFixed(1)}M listeners but conversion ${d.conv}/100</li>`).join("")}</ul>
+      <p style="font-size:13px;margin-top:6px">Great for the on-sale headline, riskier as a room-filling booking.</p></div>
+  </div>
+
   <h2>Who actually drives ticket sales</h2>
   <p>Three different jobs on this bill: the <b>marquee</b> (Chris Lake b2b Disclosure, Skepta, Mochakk, Sonny Fodera) sells the on-sale; the <b>scene-credibility</b> techno block (I Hate Models, Ben UFO, Helena Hauff, 999999999, VTSS — all high RA booking demand) sells the festival's underground bona fides and converts the hardcore; and the <b>value mid-card</b> (Prospa, KETTAMA, Carlita, Jamback) over-delivers relative to spend. The hidden engine is live-conversion: acts like KETTAMA and Helena Hauff turn modest streaming into outsized room demand — exactly what a discerning buyer wants.</p>
 
