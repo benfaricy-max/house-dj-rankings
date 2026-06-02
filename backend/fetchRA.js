@@ -65,7 +65,7 @@ const QUERY = `
       regionsMostPlayed { name country { name } }
       past: events(type: PREVIOUS) {
         date attending isFestival
-        venue { name capacity country { name } }
+        venue { name capacity area { name } country { name } }
         country { name }
       }
     }
@@ -129,6 +129,27 @@ async function getRAData(artistName, overrideSlug) {
     const tierScore    = (median(capacities) / 5) * 100;
     const ra_score     = Math.round(attendScore * 0.40 + densityScore * 0.25 + geoScore * 0.20 + tierScore * 0.15);
 
+    // ── Market saturation: per-city booking frequency + recency ──
+    // "Overbooked" = repeated recent shows in one city. Freshness drops with
+    // both frequency (shows in last 3 months) and recency of the last booking.
+    const cityMap = {};
+    for (const e of events) {
+      const city = e.venue?.area?.name || e.venue?.country?.name || e.country?.name;
+      const t = new Date(e.date).getTime();
+      if (!city || !Number.isFinite(t)) continue;
+      const days = Math.round((now - t) / 864e5);
+      const c = cityMap[city] || (cityMap[city] = { city, country: e.venue?.country?.name || e.country?.name || null, shows: 0, shows_3m: 0, days_since: Infinity });
+      c.shows++;
+      if (days <= 90) c.shows_3m++;
+      if (days < c.days_since) c.days_since = days;
+    }
+    const ra_recent_cities = Object.values(cityMap).map(c => {
+      const freqPts = Math.min(c.shows_3m, 4) * 22;                                   // frequency in last 3mo
+      const recPts  = c.days_since <= 21 ? 30 : c.days_since <= 45 ? 20 : c.days_since <= 90 ? 10 : 0;
+      const saturation = Math.min(100, freqPts + recPts);                             // 0=fresh, 100=overbooked
+      return { city: c.city, country: c.country, shows: c.shows, shows_3m: c.shows_3m, days_since: c.days_since === Infinity ? null : c.days_since, saturation };
+    }).sort((a, b) => b.saturation - a.saturation).slice(0, 8);
+
     return {
       data: {
         ra_slug:          artist.urlSafeName,
@@ -152,6 +173,7 @@ async function getRAData(artistName, overrideSlug) {
           country: v.country?.name,
         })),
         ra_score,
+        ra_recent_cities,
       },
       error: false,
     };

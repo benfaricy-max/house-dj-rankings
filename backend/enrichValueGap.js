@@ -54,6 +54,30 @@ function computeValueGap(A) {
     a.demand_index = w > 0 ? Math.round(sum / w) : null;
   }
 
+  // 1b. Streaming-to-Live Conversion — RA live intent per 100k streaming fans.
+  // The number pure streaming hides: a niche act with 200k listeners + strong RA
+  // attendance converts better than a 2M-listener act with weak live demand.
+  const convVals = [];
+  for (const a of A) {
+    // Use AVG attending (typical headline draw), not peak — peak is often a
+    // shared festival total and over-credits anyone who played that festival.
+    const live = a.ra_avg_attending || 0;   // RA "attending" intent, per typical show
+    const reach = a.spotify_monthly_listeners || 0;
+    if (live > 0 && reach >= 50000) {
+      a.live_conversion = Math.round((live / (reach / 100000)) * 10) / 10;   // attending per 100k listeners
+      convVals.push(a.live_conversion);
+    } else { a.live_conversion = null; }
+  }
+  // percentile-based 0-100 score so "high conversion" is comparable across the field
+  if (convVals.length >= 5) {
+    const sorted = [...convVals].sort((x, y) => x - y);
+    for (const a of A) {
+      if (a.live_conversion == null) { a.live_conversion_score = null; continue; }
+      const below = sorted.filter(v => v < a.live_conversion).length;
+      a.live_conversion_score = Math.round((below / sorted.length) * 100);
+    }
+  }
+
   // 2. Calibrate demand → tier using the real fee-tier distribution.
   // Only judge artists whose fee is actually KNOWN (curated/anchored). A gap
   // against a fallback ESTIMATE just measures the estimate's staleness, not true

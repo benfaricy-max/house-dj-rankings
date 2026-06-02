@@ -18,6 +18,7 @@ function scoreArtists(artists) {
     "wikipedia_pageviews",
     "manual_scene_score",
     "ra_score",
+    "label_score",
   ];
 
   const ranges = {};
@@ -33,12 +34,13 @@ function scoreArtists(artists) {
     beatport_score:               0.10,  // core scene / chart credibility
     google_trends_score:          0.09,
     ra_score:                     0.08,  // RA booking momentum: venue tier, attending, geo spread
-    tiktok_post_count:            0.08,
     youtube_subscribers:          0.08,
-    spotify_playlist_placements:  0.07,
+    tiktok_post_count:            0.07,
     youtube_views_weekly:         0.06,  // delta metric — empty until 2 snapshots exist, then auto-included
-    spotify_avg_track_popularity: 0.04,  // currently blocked by Spotify (403) — auto-excluded below
-    wikipedia_pageviews:          0.03,  // public interest (replaced Spotify followers)
+    label_score:                  0.05,  // label tier (Drumcode/Kompakt/Defected…) — credibility & trajectory
+    spotify_playlist_placements:  0.05,
+    spotify_avg_track_popularity: 0.03,  // currently blocked by Spotify (403) — auto-excluded below
+    wikipedia_pageviews:          0.02,  // public interest (replaced Spotify followers)
   };
   // sum = 1.00
 

@@ -223,8 +223,22 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
 
       {profile.bio && <p className="ap-bio">{profile.bio}</p>}
 
-      {(Number.isFinite(dj.momentum_score) || dj.value_signal) && (
+      {(Number.isFinite(dj.momentum_score) || dj.value_signal || Number.isFinite(dj.live_conversion_score) || dj.label_score != null) && (
         <div className="ap-signals">
+          {Number.isFinite(dj.live_conversion_score) && (
+            <div className={`ap-signal ${dj.live_conversion_score >= 80 ? "ap-signal--buy" : ""}`}>
+              <div className="ap-signal-val">{dj.live_conversion_score}<span>/100</span></div>
+              <div className="ap-signal-key">Live Conversion</div>
+              <div className="ap-signal-sub">{dj.ra_avg_attending} RA attending per typical show vs streaming reach</div>
+            </div>
+          )}
+          {dj.label_score != null && dj.label_best && (
+            <div className="ap-signal">
+              <div className="ap-signal-val" style={{ fontSize: 18 }}>{dj.label_best}</div>
+              <div className="ap-signal-key">Label tier {dj.label_tier}/5{dj.label_trajectory === "ascending" ? " ↑" : ""}</div>
+              <div className="ap-signal-sub">{dj.label_trajectory === "ascending" ? "moving onto bigger labels" : "current charting label"}</div>
+            </div>
+          )}
           {Number.isFinite(dj.momentum_score) && (
             <div className="ap-signal">
               <div className="ap-signal-val" style={{ color: dj.momentum_score >= 65 ? "#C8F750" : "#E9E7DF" }}>

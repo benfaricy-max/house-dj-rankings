@@ -14,7 +14,8 @@ const { getRAData } = require("./fetchRA");
 const RANKINGS   = path.join(__dirname, "..", "frontend", "public", "rankings.json");
 const ARTISTS    = path.join(__dirname, "artists.json");
 const STALE_DAYS = 14;
-const LIMIT      = parseInt(process.argv[2] || "999", 10);
+const FORCE      = process.argv.includes("--force");   // re-fetch even if fresh (e.g. new RA fields)
+const LIMIT      = parseInt(process.argv.find(a => /^\d+$/.test(a)) || "999", 10);
 const DELAY_MS   = 1200;
 
 const d          = JSON.parse(fs.readFileSync(RANKINGS, "utf8"));
@@ -23,6 +24,7 @@ const artistById = Object.fromEntries(artistsRaw.map(a => [a.name, a]));
 
 // Artists with RA data: stale after 14d. Artists not found: retry after 60d (they rarely join RA).
 const isFresh = dj => {
+  if (FORCE) return false;
   if (!dj.ra_updated) return false;
   const age = Date.now() - new Date(dj.ra_updated).getTime();
   const threshold = dj.ra_slug ? STALE_DAYS : 60;

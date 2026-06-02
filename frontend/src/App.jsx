@@ -1281,6 +1281,11 @@ function BookingToolPage({ rankings }) {
           {a.value_signal === "premium" && (
             <div className="bk-value bk-value--prem">Priced ahead of current demand</div>
           )}
+          {Number.isFinite(a.live_conversion_score) && (
+            <div className={`bk-conv ${a.live_conversion_score >= 75 ? "bk-conv--hi" : ""}`}>
+              Live conversion {a.live_conversion_score}/100 · {a.ra_avg_attending} attending / show
+            </div>
+          )}
         </div>
         <div className="bk-quote">
           <span className="bk-stat-l">Your quote {pro ? "(optional)" : "· Pro"}</span>
@@ -1412,15 +1417,104 @@ function BookingToolPage({ rankings }) {
   );
 }
 
+// ---- Market Saturation — per-city freshness for regional buyers ------------
+function MarketSaturationPage({ rankings }) {
+  const { pro } = usePro();
+  const [city, setCity] = useState("All cities");
+
+  const rows = useMemo(() => {
+    const flat = [];
+    for (const a of rankings) {
+      for (const c of (a.ra_recent_cities || [])) {
+        // "Overbooked" = repeat bookings in one market (2+ shows in 3 months).
+        if (c.shows_3m >= 2) {
+          flat.push({ name: a.name, rank: a.rank, image: a.image, ...c });
+        }
+      }
+    }
+    return flat.sort((x, y) => y.saturation - x.saturation || (x.days_since ?? 999) - (y.days_since ?? 999));
+  }, [rankings]);
+
+  const cities = useMemo(
+    () => ["All cities", ...[...new Set(rows.map(r => r.city))].sort()],
+    [rows]
+  );
+  const filtered = city === "All cities" ? rows : rows.filter(r => r.city === city);
+  const PREVIEW = 6;
+  const shown = pro ? filtered : filtered.slice(0, PREVIEW);
+
+  const Row = ({ r }) => {
+    const level = r.saturation >= 70 ? "over" : "heavy";
+    return (
+      <div className="ms-row">
+        <div className="ms-artist"><ArtistLink name={r.name} /><span className="ms-rank">#{r.rank}</span></div>
+        <div className="ms-city">{r.city}{r.country ? <span className="ms-country">, {r.country}</span> : null}</div>
+        <div className="ms-detail">
+          <b>{r.shows_3m}</b> show{r.shows_3m !== 1 ? "s" : ""} / 3mo{r.days_since != null && <> · last {r.days_since}d ago</>}
+        </div>
+        <div className={`ms-badge ms-badge--${level}`}>{level === "over" ? "Overbooked" : "Heavy"} {r.saturation}</div>
+      </div>
+    );
+  };
+
+  return (
+    <div className="page ms-page">
+      <div className="bk-header">
+        <div className="cs-eyebrow">Pro · Market Saturation</div>
+        <h1 className="cs-title">Who's overbooked, and where</h1>
+        <p className="cs-sub">
+          An artist who's played a city four times this quarter is a hard sell there — no matter their global numbers.
+          We score market freshness per city from live booking frequency &amp; recency, so a regional buyer knows who's
+          fresh in their market and who the crowd has already seen.
+        </p>
+      </div>
+
+      <div className="ms-controls">
+        <div className="bk-field">
+          <label>City</label>
+          <select className="bk-select" value={city} onChange={e => setCity(e.target.value)} disabled={!pro}>
+            {(pro ? cities : ["All cities"]).map(c => <option key={c} value={c}>{c}</option>)}
+          </select>
+          {!pro && <span className="ms-lock-note">🔒 City filter is a Pro feature</span>}
+        </div>
+        <div className="ms-count">{filtered.length} saturated artist·city pairs tracked</div>
+      </div>
+
+      <div className="ms-head">
+        <span>Artist</span><span>Market</span><span>Recent activity</span><span>Saturation</span>
+      </div>
+      {shown.map((r, i) => <Row key={r.name + r.city + i} r={r} />)}
+
+      {!pro && filtered.length > PREVIEW && (
+        <div className="bk-upgrade" onClick={() => startCheckout()}>
+          <span className="bk-act-role">Pro</span>
+          <h3>{filtered.length - PREVIEW} more saturated markets + per-city filter</h3>
+          <p>See every overbooked artist·city pairing, filter to your market, and check freshness before you book.</p>
+          <button className="bk-upgrade-btn">Unlock Pro →</button>
+        </div>
+      )}
+
+      <div className="bk-method">
+        <b>How this is computed.</b> From Resident Advisor booking history: saturation (0–100) rises with shows in a
+        city over the last 3 months and how recently the artist last played there. Higher = more overexposed in that
+        market. RA covers club/festival bookings; absence isn't proof an artist hasn't played a market.
+      </div>
+    </div>
+  );
+}
+
 // ---- Price/Demand Gap — the buy signal -------------------------------------
 function ValueGapPage({ rankings }) {
-  const { strong, buy, premium } = useMemo(() => {
+  const { strong, buy, premium, converters } = useMemo(() => {
     const withGap = rankings.filter(a => a.booking_fee && Number.isFinite(a.value_gap));
     const byGap = (x, y) => (y.value_gap - x.value_gap) || ((y.momentum_score || 0) - (x.momentum_score || 0));
     return {
       strong:  withGap.filter(a => a.value_signal === "strong-buy").sort(byGap),
       buy:     withGap.filter(a => a.value_signal === "buy").sort(byGap),
       premium: withGap.filter(a => a.value_signal === "premium").sort((x, y) => x.value_gap - y.value_gap),
+      // Streaming-to-live converters: punch above their streaming weight live.
+      converters: rankings.filter(a => Number.isFinite(a.live_conversion_score) && a.live_conversion_score >= 75)
+        .sort((x, y) => y.live_conversion_score - x.live_conversion_score),
     };
   }, [rankings]);
 
@@ -1463,6 +1557,26 @@ function ValueGapPage({ rankings }) {
         <div className="vg-head">Underpriced · demand-implied tier above current fee</div>
         {buy.slice(0, 25).map(a => <Row key={a.name} a={a} />)}
       </div>
+
+      {converters.length > 0 && (
+        <div className="vg-section">
+          <div className="vg-head vg-head--strong">Best ticket converters · live demand &gt; streaming weight</div>
+          {converters.slice(0, 12).map(a => (
+            <div className="vg-row" key={"conv-" + a.name}>
+              <div className="vg-name"><ArtistLink name={a.name} /><span className="vg-rank">#{a.rank}</span></div>
+              <div className="vg-fee">
+                <span className="vg-now">{fmt(a.spotify_monthly_listeners)} listeners</span>
+                <span className="vg-arrow">→</span>
+                <span className="vg-implied">{a.ra_avg_attending} attending/show</span>
+              </div>
+              <div className="vg-gap">
+                <span className="vg-gap-badge vg-gap--up">Converts {a.live_conversion_score}/100</span>
+              </div>
+            </div>
+          ))}
+          <div className="vg-conv-note">The number streaming hides: these artists turn a modest streaming audience into outsized live demand — often a better booking than a bigger-streaming name.</div>
+        </div>
+      )}
 
       {premium.length > 0 && (
         <div className="vg-section">
@@ -2194,6 +2308,7 @@ export default function App() {
           <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
           <button className={`top-tab ${activeTab === "booking" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking")}>Booking</button>
           <button className={`top-tab ${activeTab === "value" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("value")}>Value Gap</button>
+          <button className={`top-tab ${activeTab === "saturation" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("saturation")}>Market Saturation</button>
           <button className={`top-tab ${activeTab === "city-spotlight" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("city-spotlight")}>City Spotlight</button>
           <button className={`top-tab ${activeTab === "ones-to-watch" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("ones-to-watch")}>Ones to Watch</button>
           <button className={`top-tab ${activeTab === "benchmark"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("benchmark")}>Benchmark</button>
@@ -2207,6 +2322,7 @@ export default function App() {
       {activeTab === "pro" && <ProPage rankings={rankings} />}
       {activeTab === "booking"       && <BookingToolPage rankings={rankings} />}
       {activeTab === "value"         && <ValueGapPage rankings={rankings} />}
+      {activeTab === "saturation"    && <MarketSaturationPage rankings={rankings} />}
       {activeTab === "city-spotlight" && <CitySpotlightPage rankings={rankings} />}
       {activeTab === "ones-to-watch" && <OnestoWatchPage rankings={rankings} />}
       {activeTab === "benchmark"     && <ComparativeBenchmarkingPage rankings={rankings} />}

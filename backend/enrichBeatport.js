@@ -41,6 +41,7 @@ async function scrapeChart(label, slug, id) {
   return results.map((t, i) => ({
     position: i + 1,
     artists: [...(t.artists || []), ...(t.remixers || [])].map(a => a.name).filter(Boolean),
+    label: t.release?.label?.name || null,   // for Label & Release Trajectory
   }));
 }
 
@@ -54,10 +55,11 @@ async function scrapeChart(label, slug, id) {
         for (const name of row.artists) {
           const k = norm(name);
           if (!k) continue;
-          const e = chartMap[k] ?? (chartMap[k] = { best: 101, tracks: 0, charts: new Set(), display: name });
+          const e = chartMap[k] ?? (chartMap[k] = { best: 101, tracks: 0, charts: new Set(), labels: new Set(), display: name });
           e.best = Math.min(e.best, row.position);
           e.tracks += 1;
           e.charts.add(label);
+          if (row.label) e.labels.add(row.label);
         }
       }
       console.log(`  ${label}: ${rows.length} tracks`);
@@ -84,6 +86,7 @@ async function scrapeChart(label, slug, id) {
       beatport_best_position: e.best,
       beatport_charting_tracks: e.tracks,
       beatport_charts: [...e.charts],
+      beatport_labels: [...e.labels],          // labels this artist is currently charting on
     };
     Object.assign(dj, bp);
     if (artistById[dj.name]) Object.assign(artistById[dj.name], bp);

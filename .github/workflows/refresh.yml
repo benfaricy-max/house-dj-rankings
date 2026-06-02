@@ -57,6 +57,11 @@ jobs:
         working-directory: backend
         continue-on-error: true   # never block the refresh if Beatport scrape fails
 
+      - name: Label & Release Trajectory (uses Beatport labels)
+        run: node enrichLabels.js
+        working-directory: backend
+        continue-on-error: true
+
       - name: Tour density signal (Songkick)
         run: node enrichTour.js
         working-directory: backend
