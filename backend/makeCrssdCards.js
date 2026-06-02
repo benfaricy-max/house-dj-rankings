@@ -166,11 +166,12 @@ cards.push(["card-tickets.png", 1080, 1080, `${brand}
   ${foot}`]);
 
 // ---------- 6) Top-10 tracked acts (4:5 table) ----------
-const ACTS = [["Chris Lake b2b Disclosure", 250000, ["Chris Lake", "Disclosure"]], ["Prospa", 42000], ["KETTAMA", 48000], ["AYYBO", 20000], ["Jamback", 16000], ["Layton Giordani", 45000], ["Arodes", 18000], ["Mochakk", 85000], ["Helena Hauff", 45000], ["Rafael", 14000], ["Carlita", 35000], ["Ben UFO", 50000], ["Sonny Fodera", 85000], ["Mathame", 45000]];
-const trows = ACTS.map(([n, fee, mem]) => {
-  const ds = (mem || [n]).map(x => sig(x)).filter(Boolean); if (!ds.length) return null;
+// Derived from the FULL lineup, ranked by this site's overall ranking, top 10.
+const MEMBERS = { "Chris Lake b2b Disclosure": ["Chris Lake", "Disclosure"], "ROSSI. b2b Carlita": ["Rossi.", "Carlita"], "Skepta presents Más Tiempo": ["Skepta"] };
+const trows = Object.keys(FEES).map(n => {
+  const ds = (MEMBERS[n] || [n]).map(x => sig(x)).filter(Boolean); if (!ds.length) return null;
   const rank = Math.min(...ds.map(d => d.rank));
-  return { n, fee, rank, mom: Math.max(...ds.map(d => d.momentum_score ?? -1)), val: ds.map(d => d.value_signal).find(v => v && v !== "fair") || "", conv: Math.max(...ds.map(d => d.live_conversion_score ?? -1)), bp: Math.max(...ds.map(d => d.beatport_score || 0)), ra: Math.max(...ds.map(d => d.ra_score || 0)) };
+  return { n, fee: FEES[n], rank, mom: Math.max(...ds.map(d => d.momentum_score ?? -1)), val: ds.map(d => d.value_signal).find(v => v && v !== "fair") || "", conv: Math.max(...ds.map(d => d.live_conversion_score ?? -1)), bp: Math.max(...ds.map(d => d.beatport_score || 0)), ra: Math.max(...ds.map(d => d.ra_score || 0)) };
 }).filter(Boolean).sort((a, b) => a.rank - b.rank).slice(0, 10);
 const valChip = v => v === "strong-buy" ? '<span style="color:var(--green);font-weight:700">★Buy</span>' : v === "buy" ? '<span style="color:var(--green)">Buy</span>' : v === "premium" ? '<span style="color:var(--magenta)">Ahead</span>' : "—";
 const cell = v => v >= 0 ? v : "—";
@@ -191,7 +192,7 @@ cards.push(["card-table-4x5.png", 1080, 1350, `${brand}
   <div class="panel" style="margin-top:22px;padding:22px 24px">
     <table style="font-size:21px">
       <thead><tr>
-        <th>#</th><th>Artist</th><th style="text-align:right">Fee</th><th style="text-align:center">Mom</th><th style="text-align:center">Value</th><th style="text-align:center">Conv</th><th style="text-align:center">BP</th><th style="text-align:center">RA</th>
+        <th>Rank</th><th>Artist</th><th style="text-align:right">Fee</th><th style="text-align:center">Mom</th><th style="text-align:center">Value</th><th style="text-align:center">Conv</th><th style="text-align:center">BP</th><th style="text-align:center">RA</th>
       </tr></thead><tbody>${tableRows}</tbody>
     </table>
     <div class="mono" style="font-size:15px;color:var(--plum);margin-top:14px;line-height:1.45">Mom = momentum · Conv = live-conversion (RA attendance vs streams) · BP = Beatport · RA = booking demand. Fees est.; live signals from thedjrankings.com.</div>
