@@ -8,6 +8,10 @@ const parseProfileSlug = () => {
   const m = (window.location.hash || "").match(/^#\/artist\/(.+)$/);
   return m ? decodeURIComponent(m[1]) : null;
 };
+const parseMarketSlug = () => {
+  const m = (window.location.hash || "").match(/^#\/market\/(.+)$/);
+  return m ? decodeURIComponent(m[1]) : null;
+};
 
 const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
 const MEDAL = { 1: "🥇", 2: "🥈", 3: "🥉" };
@@ -1406,6 +1410,10 @@ function BookingToolPage({ rankings }) {
             this into a sell-through prediction →</span>
           </div>
 
+          <a className="bk-marketread" href={`#/market/${citySlug(market.city)}`}>
+            ✦ Generate a shareable Market Read for {market.city} — a one-page brief to send a promoter →
+          </a>
+
           {paywall && pro && (
             <div className="bk-account">
               Pro active · <button className="bk-link-btn" onClick={() => startPortal()}>Manage subscription</button>
@@ -1413,6 +1421,105 @@ function BookingToolPage({ rankings }) {
           )}
         </>
       )}
+    </div>
+  );
+}
+
+// ---- Market Read — shareable one-page demand brief per city ----------------
+const citySlug = c => c.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+const cityMatch = (raCity, marketCity) => {
+  const a = (raCity || "").toLowerCase().split("/")[0].trim();
+  const b = marketCity.toLowerCase();
+  return a && (a.includes(b) || b.includes(a));
+};
+
+function MarketReadPage({ rankings, slug }) {
+  const initial = BOOKING_MARKETS.find(m => citySlug(m.city) === slug) || BOOKING_MARKETS[0];
+  const [market, setMarket] = useState(initial);
+  const [copied, setCopied] = useState(false);
+  useEffect(() => { window.location.hash = `#/market/${citySlug(market.city)}`; }, [market]);
+
+  const D = useMemo(() => {
+    const list = rankings.filter(a => a.booking_fee);
+    const buys = list.filter(a => a.value_signal === "buy" || a.value_signal === "strong-buy")
+      .sort((x, y) => (y.value_signal === "strong-buy") - (x.value_signal === "strong-buy") || y.value_gap - x.value_gap || (y.momentum_score || 0) - (x.momentum_score || 0)).slice(0, 6);
+    const breaking = list.filter(a => Number.isFinite(a.momentum_score) && a.momentum_score >= 45)
+      .sort((x, y) => y.momentum_score - x.momentum_score).slice(0, 6);
+    const converters = list.filter(a => Number.isFinite(a.live_conversion_score) && a.live_conversion_score >= 70)
+      .sort((x, y) => y.live_conversion_score - x.live_conversion_score).slice(0, 6);
+    const localDemand = list.filter(a => a.google_trends_countries?.[market.country] > 0)
+      .map(a => ({ a, v: a.google_trends_countries[market.country] }))
+      .sort((x, y) => y.v - x.v).slice(0, 6);
+    const saturated = [];
+    for (const a of rankings) for (const c of (a.ra_recent_cities || []))
+      if (cityMatch(c.city, market.city) && c.shows_3m >= 2) saturated.push({ a, c });
+    saturated.sort((x, y) => y.c.saturation - x.c.saturation);
+    return { buys, breaking, converters, localDemand, saturated };
+  }, [rankings, market]);
+
+  const copyLink = () => {
+    const url = `${window.location.origin}${window.location.pathname}#/market/${citySlug(market.city)}`;
+    navigator.clipboard?.writeText(url).then(() => { setCopied(true); setTimeout(() => setCopied(false), 1800); });
+  };
+
+  const Line = ({ a, right }) => (
+    <div className="mr-line">
+      <div className="mr-line-l"><ArtistLink name={a.name} /><span className="mr-rk">#{a.rank}</span></div>
+      <div className="mr-line-r">{right}</div>
+    </div>
+  );
+
+  return (
+    <div className="page mr-page">
+      <div className="mr-actions">
+        <select className="bk-select" value={market.city} onChange={e => setMarket(BOOKING_MARKETS.find(m => m.city === e.target.value))}>
+          {BOOKING_MARKETS.map(m => <option key={m.city} value={m.city}>{m.city}</option>)}
+        </select>
+        <button className="mr-btn" onClick={copyLink}>{copied ? "✓ Link copied" : "Copy share link"}</button>
+        <button className="mr-btn" onClick={() => window.print()}>Save as PDF</button>
+      </div>
+
+      <div className="mr-sheet">
+        <div className="mr-head">
+          <div className="brand-lockup mr-brand">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="var(--accent)"><rect x="5.5" y="18.5" width="3.6" height="8" rx="1.3" /><rect x="11.2" y="13" width="3.6" height="13.5" rx="1.3" /><rect x="16.9" y="8" width="3.6" height="18.5" rx="1.3" /><rect x="22.6" y="4" width="3.6" height="22.5" rx="1.3" /></g></svg>
+            <span className="brand-word">PEAKTIME</span>
+          </div>
+          <div className="mr-date">{new Date().toLocaleDateString(undefined, { month: "short", year: "numeric" })}</div>
+        </div>
+        <div className="mr-eyebrow">Market Read · Booking intelligence</div>
+        <h1 className="mr-title">{market.city}</h1>
+        <p className="mr-sub">Who to book, who's breaking, and who the {market.city} crowd has already seen — from PEAKTIME's live demand model.</p>
+
+        <div className="mr-grid">
+          <div className="mr-col">
+            <div className="mr-sec-h mr-h-buy">◆ Book now · underpriced &amp; rising</div>
+            {D.buys.map(a => <Line key={a.name} a={a} right={<><b>{a.booking_fee.label}</b> → {a.demand_fee_label}{a.value_signal === "strong-buy" ? " ★" : ""}</>} />)}
+
+            <div className="mr-sec-h">▲ Breaking · momentum leaders</div>
+            {D.breaking.map(a => <Line key={a.name} a={a} right={<>momentum <b>{a.momentum_score}</b></>} />)}
+          </div>
+          <div className="mr-col">
+            <div className="mr-sec-h">◎ Best value live · converts above streaming</div>
+            {D.converters.map(a => <Line key={a.name} a={a} right={<>conv <b>{a.live_conversion_score}</b> · {fmt(a.spotify_monthly_listeners)} list.</>} />)}
+
+            {D.saturated.length > 0 && <>
+              <div className="mr-sec-h mr-h-warn">✕ Already saturated in {market.city}</div>
+              {D.saturated.slice(0, 5).map(({ a, c }) => <Line key={a.name} a={a} right={<><b>{c.shows_3m}</b> shows/3mo{c.days_since != null ? ` · ${c.days_since}d ago` : ""}</>} />)}
+            </>}
+
+            {D.localDemand.length > 0 && <>
+              <div className="mr-sec-h">◈ Strong demand in {market.country}</div>
+              {D.localDemand.map(({ a, v }) => <Line key={a.name} a={a} right={<>local interest <b>{v}/100</b></>} />)}
+            </>}
+          </div>
+        </div>
+
+        <div className="mr-foot">
+          PEAKTIME · the demand index for electronic music · <b>thedjrankings.com</b><br/>
+          <span className="mr-note">Booking fees are curated estimates; demand signals from Spotify, Beatport, Resident Advisor, Google Trends. A directional read, not a quote.</span>
+        </div>
+      </div>
     </div>
   );
 }
@@ -2223,8 +2330,9 @@ export default function App() {
   useEffect(() => { load(); }, []);
 
   const [profileSlug, setProfileSlug] = useState(parseProfileSlug());
+  const [marketSlug, setMarketSlug] = useState(parseMarketSlug());
   useEffect(() => {
-    const onHash = () => setProfileSlug(parseProfileSlug());
+    const onHash = () => { setProfileSlug(parseProfileSlug()); setMarketSlug(parseMarketSlug()); };
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
@@ -2276,6 +2384,13 @@ export default function App() {
           : <div className="loading">Loading…</div>}
       </div>
     );
+  }
+
+  // Market Read route — shareable one-pager like #/market/amsterdam
+  if (marketSlug) {
+    return rankings.length
+      ? <MarketReadPage rankings={rankings} slug={marketSlug} />
+      : <div className="page"><div className="loading">Loading…</div></div>;
   }
 
   return (
