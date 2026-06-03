@@ -1306,7 +1306,7 @@
   {
     "name": "Ben Sterling",
     "spotify_id": "79uJoLQkQ621xZy7MyH4uL",
-    "youtube_channel_id": "Ben Sterling tech house",
+    "youtube_channel_id": "UCUZwJUfD4VR4GNzExHV8rEw",
     "soundcloud_permalink": "ben-sterling",
     "album_count": 30,
     "manual_scene_score": 78,
@@ -1328,7 +1328,9 @@
     "demand_index": 60,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_subscribers": 4910,
+    "youtube_total_views": 899123
   },
   {
     "name": "Disco Lines",
