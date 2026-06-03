@@ -27,7 +27,6 @@ const METRICS = [
   { key: "youtube_subscribers",          label: "YT Subscribers",     weight: 0.08, format: "count"    },
   { key: "spotify_playlist_placements",  label: "Releases",           weight: 0.07, format: "number"   },
   { key: "youtube_views_weekly",         label: "YT Views / wk",      weight: 0.06, format: "count"    },
-  { key: "spotify_avg_track_popularity", label: "Track Popularity",   weight: 0.04, format: "score100" },
   { key: "wikipedia_pageviews",          label: "Wikipedia Views",    weight: 0.03, format: "count"    },
 ];
 
@@ -566,7 +565,6 @@ const METRIC_DETAILS = [
   { key: "youtube_subscribers",          label: "YouTube Subscribers", weight: 0.08, color: "#FF0000", why: "A proxy for dedicated fanbase depth. YouTube audiences tend to convert to ticket buyers at a higher rate." },
   { key: "spotify_playlist_placements",  label: "Releases / Catalog",  weight: 0.07, color: "#1DB954", why: "Depth and recency of catalog. Active release schedules score higher than a single back-catalog hit." },
   { key: "youtube_views_weekly",         label: "YouTube Views/wk",    weight: 0.06, color: "#FF0000", why: "Weekly view count captures upload cadence and video virality alongside raw subscriber size." },
-  { key: "spotify_avg_track_popularity", label: "Track Popularity",    weight: 0.04, color: "#1DB954", why: "Average popularity across the artist's top tracks (0 to 100). Reflects recent stream velocity, not historical totals." },
   { key: "wikipedia_pageviews",          label: "Wikipedia Views",     weight: 0.03, color: "#9aa0a6", why: "Trailing 30-day article pageviews. A clean, independent measure of broad public interest, with reliable history and no platform bias." },
 ];
 
@@ -590,13 +588,13 @@ function HowItWorksPage() {
         <div className="hiw-eyebrow">Methodology</div>
         <h2 className="hiw-title">How we rank the world's hottest DJs</h2>
         <p className="hiw-sub">
-          Every ranking is computed from 10 real-time signals pulled directly from Spotify, YouTube, TikTok, and Google Trends.
+          Every ranking is computed from 11 independent signals pulled from Spotify, Beatport, YouTube, TikTok, Google Trends, Resident Advisor and Wikipedia.
           No editorial bias, no pay-to-play. Refreshed every 6 hours.
         </p>
       </div>
 
       <section className="hiw-section">
-        <h3 className="hiw-section-title">The 10 Signals</h3>
+        <h3 className="hiw-section-title">The 11 Signals</h3>
         <p className="hiw-section-sub">Each artist receives a score from 0–100 on each metric, normalised across the full ranked pool. Weighted scores are summed to produce the final ranking.</p>
         <div className="hiw-metrics">
           {METRIC_DETAILS.map(m => (

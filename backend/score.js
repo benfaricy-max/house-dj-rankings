@@ -20,6 +20,9 @@ function scoreArtists(artists) {
     "ra_score",
     "label_score",
   ];
+  // NOTE: spotify_avg_track_popularity retired — Spotify blocks the endpoint
+  // (403) under Client-Credentials and strips the popularity field, so it was
+  // dead for every artist. Removed rather than shown as a column of zeros.
 
   const ranges = {};
   for (const m of metrics) {
@@ -39,10 +42,11 @@ function scoreArtists(artists) {
     youtube_views_weekly:         0.06,  // delta metric — empty until 2 snapshots exist, then auto-included
     label_score:                  0.05,  // label tier (Drumcode/Kompakt/Defected…) — credibility & trajectory
     spotify_playlist_placements:  0.05,
-    spotify_avg_track_popularity: 0.03,  // currently blocked by Spotify (403) — auto-excluded below
+    spotify_avg_track_popularity: 0.03,  // RETIRED (Spotify-blocked) — kept in map for back-compat; self-heals to 0 weight
     wikipedia_pageviews:          0.02,  // public interest (replaced Spotify followers)
   };
-  // sum = 1.00
+  // Live weights re-normalize below, so the retired track-popularity weight
+  // (always empty) is excluded automatically and scores are unaffected.
 
   // Weights sum to 1.0 by design. But a signal that is EMPTY across the entire
   // field (max === 0 — e.g. Spotify track popularity is API-blocked, or
