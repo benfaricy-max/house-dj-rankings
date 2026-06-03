@@ -54,6 +54,7 @@ const HEAD = `<meta charset="utf-8">
   .panel{background:rgba(255,248,234,.94);border:2px solid rgba(42,20,16,.85);border-radius:20px;padding:28px 30px;box-shadow:0 14px 40px rgba(60,20,40,.28)}
   .mono{font-family:'IBM Plex Mono'}
   .big{font-family:'Anton';color:var(--coral);line-height:.9}
+  .mid{flex:1;display:flex;flex-direction:column;justify-content:center}
   .ftr{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono';font-size:20px;color:var(--ink);font-weight:500;z-index:5;padding-top:18px}
   .chip{display:inline-block;font-family:'IBM Plex Mono';font-weight:600;font-size:16px;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:8px}
   .chip-buy{background:var(--green);color:#eafff0}.chip-warn{background:var(--magenta);color:#fff}
@@ -119,7 +120,8 @@ cards.push(["card-budget-4x5.png", 1080, 1350, `${brand}
   ${foot}`]);
 
 // ---------- 2) Key wins (square) ----------
-cards.push(["card-wins.png", 1080, 1080, `${brand}
+cards.push(["card-wins.png", 1080, 1350, `${brand}
+  <div class="mid">
   <div class="eyebrow">Key wins</div>
   <h1 style="font-size:104px">Smart money<br>on the bill</h1>
   <div class="panel" style="margin-top:26px">
@@ -127,10 +129,12 @@ cards.push(["card-wins.png", 1080, 1080, `${brand}
     <div class="li"><b>KETTAMA &amp; Carlita</b> — underpriced mid-card; KETTAMA's <span class="k">68</span> live-conversion means he overdelivers on stage vs. fee.</div>
     <div class="li"><b>Rossi.</b> — momentum <span class="k">75</span>, among the steepest climbs on the whole lineup. Booked early.</div>
   </div>
+  </div>
   ${foot}`]);
 
 // ---------- 3) Watch-outs (square) ----------
-cards.push(["card-watchouts.png", 1080, 1080, `${brand}
+cards.push(["card-watchouts.png", 1080, 1350, `${brand}
+  <div class="mid">
   <div class="eyebrow">Watch-outs</div>
   <h1 style="font-size:104px">Where the<br>risk sits</h1>
   <div class="panel" style="margin-top:26px">
@@ -138,10 +142,12 @@ cards.push(["card-watchouts.png", 1080, 1080, `${brand}
     <div class="li"><b>The streaming trap</b> — Notion (${(ml("Notion")/1e6).toFixed(1)}M) &amp; oskar med k (${(ml("oskar med k")/1e6).toFixed(1)}M) huge on streams, near-zero live conversion.</div>
     <div class="li"><b>Regional fatigue</b> — KETTAMA &amp; Chris Lake have been worked hard on the West Coast (see: saturation).</div>
   </div>
+  </div>
   ${foot}`]);
 
 // ---------- 4) Market saturation (square) ----------
-cards.push(["card-saturation.png", 1080, 1080, `${brand}
+cards.push(["card-saturation.png", 1080, 1350, `${brand}
+  <div class="mid">
   <div class="eyebrow">Saturation watch</div>
   <h1 style="font-size:96px">Has San Diego<br>seen them?</h1>
   <div class="panel" style="margin-top:24px;border-color:var(--magenta)">
@@ -152,10 +158,11 @@ cards.push(["card-saturation.png", 1080, 1080, `${brand}
     <div class="mono" style="font-size:16px;color:var(--green);font-weight:600;letter-spacing:.06em">FRESH FOR SOCAL</div>
     <div style="font-size:27px;color:var(--ink);margin-top:8px;font-weight:600">Prospa · Carlita · I Hate Models · Ben UFO · Helena Hauff</div>
   </div>
+  </div>
   ${foot}`]);
 
 // ---------- 5) Driving ticket sales (square) ----------
-cards.push(["card-tickets.png", 1080, 1080, `${brand}
+cards.push(["card-tickets.png", 1080, 1350, `${brand}
   <div class="eyebrow">What sells tickets</div>
   <h1 style="font-size:100px">Three jobs,<br>one lineup</h1>
   <div class="panel" style="margin-top:26px">
