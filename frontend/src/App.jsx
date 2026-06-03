@@ -3,6 +3,7 @@ import "./App.css";
 import ProPage from "./ProPage";
 import ArtistProfile, { slugify, ArtistLink } from "./ArtistProfile";
 import { usePro, startCheckout, startPortal } from "./usePro";
+import ClubsPage from "./ClubsPage";
 
 const parseProfileSlug = () => {
   const m = (window.location.hash || "").match(/^#\/artist\/(.+)$/);
@@ -2420,6 +2421,7 @@ export default function App() {
           <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>
           <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
           <button className={`top-tab ${activeTab === "booking" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking")}>Booking</button>
+          <button className={`top-tab ${activeTab === "clubs" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("clubs")}>Club Index</button>
           <button className={`top-tab ${activeTab === "value" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("value")}>Value Gap</button>
           <button className={`top-tab ${activeTab === "saturation" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("saturation")}>Market Saturation</button>
           <button className={`top-tab ${activeTab === "city-spotlight" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("city-spotlight")}>City Spotlight</button>
@@ -2436,6 +2438,7 @@ export default function App() {
 
       {activeTab === "pro" && <ProPage rankings={rankings} />}
       {activeTab === "booking"       && <BookingToolPage rankings={rankings} />}
+      {activeTab === "clubs"         && <ClubsPage />}
       {activeTab === "value"         && <ValueGapPage rankings={rankings} />}
       {activeTab === "saturation"    && <MarketSaturationPage rankings={rankings} />}
       {activeTab === "city-spotlight" && <CitySpotlightPage rankings={rankings} />}
