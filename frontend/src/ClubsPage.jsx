@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import "./ClubsPage.css";
 import { CLUB_PROFILES } from "./clubProfiles";
+import { CLUB_IMAGES } from "./clubImages";
 
 /**
  * PEAKTIME Club Index — the world's most legendary house & techno destinations.
@@ -86,12 +87,15 @@ export const getClubBySlug = slug => RANKED.find(c => clubSlug(c.name) === slug)
 const hueOf = name => { let h = 0; for (const ch of name) h = (h * 31 + ch.charCodeAt(0)) % 360; return h; };
 function ClubCover({ name, city, opened, big }) {
   const h = hueOf(name);
+  const photo = CLUB_IMAGES[name];
+  const style = photo
+    ? { backgroundImage: `linear-gradient(180deg, rgba(12,12,14,0.15), rgba(12,12,14,0.85)), url("${photo}")`, backgroundSize: "cover", backgroundPosition: "center" }
+    : { background: `radial-gradient(120% 140% at 20% 10%, hsl(${h} 55% 22%), hsl(${(h + 40) % 360} 60% 9%) 70%)` };
   return (
-    <div className={`club-cover ${big ? "club-cover--big" : ""}`}
-      style={{ background: `radial-gradient(120% 140% at 20% 10%, hsl(${h} 55% 22%), hsl(${(h + 40) % 360} 60% 9%) 70%)` }}>
-      <div className="club-cover-grain" />
-      <div className="club-cover-mark">◓</div>
-      {big && <div className="club-cover-text"><div className="club-cover-name">{name}</div><div className="club-cover-meta">{city} · est. {opened}</div></div>}
+    <div className={`club-cover ${big ? "club-cover--big" : ""} ${photo ? "club-cover--photo" : ""}`} style={style}>
+      {!photo && <div className="club-cover-grain" />}
+      {!photo && <div className="club-cover-mark">◓</div>}
+      {big && <div className="club-cover-text"><div className="club-cover-name">{name}</div><div className="club-cover-meta">{city} · est. {opened}{photo ? "" : ""}</div></div>}
     </div>
   );
 }
