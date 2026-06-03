@@ -271,26 +271,40 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
         </div>
       )}
 
-      {dj.tour_upcoming > 0 && (
-        <div className="ap-tour">
-          <div className="ap-tour-item">
-            <div className="ap-tour-val">{dj.tour_upcoming}{dj.tour_upcoming_capped ? "+" : ""}</div>
-            <div className="ap-tour-label">Upcoming shows</div>
+      {/* Touring summary — Songkick when matched, otherwise backfilled from RA
+          (RA is the better-covered source; Songkick can't match many names). */}
+      {(dj.tour_upcoming > 0 || dj.ra_upcoming > 0 || dj.ra_events_6m > 0) && (() => {
+        const sk = dj.tour_upcoming > 0;                       // have Songkick upcoming + next-show detail
+        const upcoming = sk ? dj.tour_upcoming : (dj.ra_upcoming || dj.ra_events_6m || 0);
+        const countries = dj.tour_countries || dj.ra_countries || 0;
+        return (
+          <div className="ap-tour">
+            <div className="ap-tour-item">
+              <div className="ap-tour-val">{upcoming}{sk && dj.tour_upcoming_capped ? "+" : ""}</div>
+              <div className="ap-tour-label">{sk ? "Upcoming shows" : "Recent bookings"}</div>
+            </div>
+            <div className="ap-tour-item">
+              <div className="ap-tour-val">{countries || "—"}</div>
+              <div className="ap-tour-label">Countries</div>
+            </div>
+            {sk && dj.tour_next_date ? (
+              <div className="ap-tour-item ap-tour-next">
+                <div className="ap-tour-val">{dj.tour_next_date}</div>
+                <div className="ap-tour-label">Next: {dj.tour_next_city}{dj.tour_next_country ? `, ${dj.tour_next_country}` : ""}</div>
+              </div>
+            ) : dj.ra_avg_attending > 0 ? (
+              <div className="ap-tour-item ap-tour-next">
+                <div className="ap-tour-val">{fmt(dj.ra_avg_attending)}</div>
+                <div className="ap-tour-label">Avg attending / show</div>
+              </div>
+            ) : <div className="ap-tour-item" />}
+            <div className="ap-tour-item">
+              <div className="ap-tour-val" style={{ color: "#f5a623" }}>{dj.tour_score || dj.ra_score || "—"}</div>
+              <div className="ap-tour-label">{dj.tour_score ? "Tour density" : "RA booking score"}</div>
+            </div>
           </div>
-          <div className="ap-tour-item">
-            <div className="ap-tour-val">{dj.tour_countries}</div>
-            <div className="ap-tour-label">Countries</div>
-          </div>
-          <div className="ap-tour-item ap-tour-next">
-            <div className="ap-tour-val">{dj.tour_next_date}</div>
-            <div className="ap-tour-label">Next: {dj.tour_next_city}{dj.tour_next_country ? `, ${dj.tour_next_country}` : ""}</div>
-          </div>
-          <div className="ap-tour-item">
-            <div className="ap-tour-val" style={{ color: "#f5a623" }}>{dj.tour_score}</div>
-            <div className="ap-tour-label">Tour density</div>
-          </div>
-        </div>
-      )}
+        );
+      })()}
 
       {dj.ra_score > 0 && (
         <div className="ap-ra">
