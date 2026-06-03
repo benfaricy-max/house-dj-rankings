@@ -3,18 +3,6 @@ import "./ProPage.css";
 import { openMomentumReport } from "./momentumReport";
 import { ArtistLink } from "./ArtistProfile";
 
-// ── Region defaults for geographic interest ──────────────────────
-const REGION_DEFAULTS = {
-  UK:       { UK: 85, Europe: 60, US: 40, Americas: 20, Oceania: 15, Africa: 10 },
-  Europe:   { UK: 55, Europe: 90, US: 35, Americas: 15, Oceania: 10, Africa: 10 },
-  US:       { UK: 40, Europe: 38, US: 90, Americas: 55, Oceania: 18, Africa: 12 },
-  Americas: { UK: 30, Europe: 35, US: 60, Americas: 85, Oceania: 12, Africa: 10 },
-  Oceania:  { UK: 45, Europe: 40, US: 65, Americas: 20, Oceania: 90, Africa: 8  },
-  Africa:   { UK: 40, Europe: 50, US: 45, Americas: 20, Oceania: 8,  Africa: 88 },
-  Global:   { UK: 55, Europe: 55, US: 55, Americas: 35, Oceania: 25, Africa: 25 },
-};
-const MARKET_REGIONS = ["UK", "Europe", "US", "Americas", "Oceania", "Africa"];
-
 // ── Static enrichment ────────────────────────────────────────────
 const ARTIST_META = {
   "FISHER":                { city: "Sydney",       region: "Oceania",  genres: ["Tech House"],               agency: "WME",           booking: "booking@wmeglobal.com"         },
@@ -97,17 +85,8 @@ function getVenueFit(rank) {
 }
 
 // ── Geographic interest ──────────────────────────────────────────
-function computeMarkets(dj) {
-  const meta = getMeta(dj.name);
-  const base = { ...(REGION_DEFAULTS[meta.region] ?? REGION_DEFAULTS.Global) };
-  const listeners = dj.spotify_monthly_listeners || 0;
-  const tiktok    = dj.tiktok_post_count || 0;
-  const boost = listeners > 2_000_000 ? 18 : listeners > 500_000 ? 10 : listeners > 100_000 ? 4 : 0;
-  if (boost) MARKET_REGIONS.forEach(r => { if (r !== meta.region) base[r] = Math.min(99, (base[r] || 0) + boost); });
-  if (tiktok > 200_000) { base.US = Math.min(99, (base.US || 0) + 20); base.Americas = Math.min(99, (base.Americas || 0) + 12); }
-  else if (tiktok > 50_000) { base.US = Math.min(99, (base.US || 0) + 10); }
-  return base;
-}
+// (computeMarkets / REGION_DEFAULTS removed — geography is now real per-artist
+//  data: Google Trends countries + RA booking markets, see GeographicInterest.)
 
 // ── Momentum scores ──────────────────────────────────────────────
 function computeMomentumScores(rankings) {
@@ -131,7 +110,6 @@ function computeMomentumScores(rankings) {
       ...dj,
       momentum: Number.isFinite(dj.momentum_score) ? dj.momentum_score : fallbackMo,
       meta:     getMeta(dj.name),
-      markets:  computeMarkets(dj),
       feeTier:  dj.booking_fee ?? getFeeTier(dj.rank),
       venueFit: getVenueFit(dj.rank),
     };
@@ -293,15 +271,13 @@ function TrendSparkline({ dj }) {
   );
 }
 
-function GeographicInterest({ markets, dj }) {
-  const sorted = MARKET_REGIONS
-    .map(r => ({ region: r, score: markets[r] || 0 }))
-    .sort((a, b) => b.score - a.score);
-
+function GeographicInterest({ dj }) {
+  // Real, per-artist geography only — no hardcoded regional defaults.
   const countries = dj?.google_trends_countries ?? {};
-  const cities    = dj?.google_trends_cities    ?? {};
+  const raCountries = Array.isArray(dj?.ra_country_list) ? dj.ra_country_list : [];
   const direction = dj?.google_trends_direction ?? "stable";
-  const hasRealData = Object.keys(countries).length > 0;
+  const hasSearch = Object.keys(countries).length > 0;
+  const hasTour   = raCountries.length > 0;
 
   const dirColor = direction === "up" ? "#4caf50" : direction === "down" ? "#e74c3c" : "#888";
   const dirLabel = direction === "up" ? "▲ Rising" : direction === "down" ? "▼ Falling" : "→ Stable";
@@ -310,65 +286,46 @@ function GeographicInterest({ markets, dj }) {
     <div className="geo-interest">
       <div className="geo-title">
         Geographic Demand
-        <span className="geo-direction" style={{ color: dirColor, marginLeft: 10, fontSize: "0.8rem" }}>
-          {dirLabel} this week
-        </span>
+        {hasSearch && (
+          <span className="geo-direction" style={{ color: dirColor, marginLeft: 10, fontSize: "0.8rem" }}>
+            {dirLabel} this week
+          </span>
+        )}
       </div>
 
-      {/* Region-level bars */}
-      {sorted.map(({ region, score }) => (
-        <div key={region} className="geo-row">
-          <span className="geo-region">{region}</span>
-          <div className="geo-bar-track">
-            <div className="geo-bar-fill" style={{
-              width: `${score}%`,
-              background: score >= 70 ? "var(--accent)" : score >= 40 ? "color-mix(in srgb, var(--accent) 55%, var(--muted))" : "var(--muted)",
-            }} />
-          </div>
-          <span className="geo-score">{score}</span>
-        </div>
-      ))}
-
-      {/* Top countries from Google Trends */}
-      {hasRealData && (
+      {hasSearch && (
         <div className="geo-breakdown">
-          <div className="geo-breakdown-title">🌍 Top Countries (Google Trends)</div>
-          {Object.entries(countries)
-            .sort((a, b) => b[1] - a[1])
-            .slice(0, 5)
-            .map(([country, score]) => (
-              <div key={country} className="geo-row geo-row--sm">
-                <span className="geo-region">{country}</span>
-                <div className="geo-bar-track">
-                  <div className="geo-bar-fill" style={{ width: `${score}%`, background: "var(--accent)" }} />
-                </div>
-                <span className="geo-score">{score}</span>
+          <div className="geo-breakdown-title">🌍 Search interest by country</div>
+          {Object.entries(countries).sort((a, b) => b[1] - a[1]).slice(0, 6).map(([country, score]) => (
+            <div key={country} className="geo-row">
+              <span className="geo-region">{country}</span>
+              <div className="geo-bar-track">
+                <div className="geo-bar-fill" style={{
+                  width: `${score}%`,
+                  background: score >= 70 ? "var(--accent)" : score >= 40 ? "color-mix(in srgb, var(--accent) 55%, var(--muted))" : "var(--muted)",
+                }} />
               </div>
-            ))}
+              <span className="geo-score">{score}</span>
+            </div>
+          ))}
         </div>
       )}
 
-      {/* Top US cities from Google Trends */}
-      {Object.keys(cities).length > 0 && (
+      {hasTour && (
         <div className="geo-breakdown">
-          <div className="geo-breakdown-title">🇺🇸 Top US Cities</div>
-          {Object.entries(cities)
-            .sort((a, b) => b[1] - a[1])
-            .slice(0, 5)
-            .map(([city, score]) => (
-              <div key={city} className="geo-row geo-row--sm">
-                <span className="geo-region">{city}</span>
-                <div className="geo-bar-track">
-                  <div className="geo-bar-fill" style={{ width: `${score}%`, background: "#3b9ede" }} />
-                </div>
-                <span className="geo-score">{score}</span>
-              </div>
-            ))}
+          <div className="geo-breakdown-title">🎫 Recent booking markets (Resident Advisor)</div>
+          <div className="geo-chips">
+            {raCountries.slice(0, 12).map(c => <span key={c} className="geo-chip">{c}</span>)}
+          </div>
         </div>
+      )}
+
+      {!hasSearch && !hasTour && (
+        <div className="geo-empty">Geographic demand builds as Google Trends &amp; Resident Advisor data resolve for this artist.</div>
       )}
 
       <div className="geo-note">
-        {hasRealData ? "Live Google Trends data · updated every 6 hours" : "Index 0–100 based on Spotify, TikTok & trend signals"}
+        {hasSearch ? "Live per-artist Google Trends + RA booking data" : hasTour ? "Live Resident Advisor booking markets" : "No fabricated defaults — real data only"}
       </div>
     </div>
   );
@@ -470,7 +427,7 @@ function ArtistDetailPanel({ dj, inShortlist, onToggleShortlist, onClose, allArt
         </div>
 
         <div className="detail-col">
-          <GeographicInterest markets={dj.markets} dj={dj} />
+          <GeographicInterest dj={dj} />
 
           <div className="detail-section" style={{ marginTop: 20 }}>
             <div className="detail-section-title">Key Metrics</div>

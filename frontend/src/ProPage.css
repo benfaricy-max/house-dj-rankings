@@ -509,3 +509,8 @@
 .paywall-why-num, .momentum-bar-fill { color: var(--on-accent) !important; }
 .booker-rank-num, .booker-fee, .booker-momentum, .pricing-amount, .detail-stat-val,
 .fee-amount, .geo-score, .detail-rank, .rising-mo-score { font-family: var(--mono); }
+
+/* geographic demand — real-data chips + empty state */
+.geo-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.geo-chip { font-size: 0.78rem; padding: 4px 10px; border-radius: 999px; background: var(--social-bg, rgba(30,31,35,0.5)); border: 1px solid var(--border, #1e1f23); color: var(--text, #c9c8c2); }
+.geo-empty { font-size: 0.85rem; color: var(--muted, #75767d); padding: 14px 0; line-height: 1.5; }
