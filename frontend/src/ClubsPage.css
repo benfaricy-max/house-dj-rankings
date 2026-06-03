@@ -43,3 +43,6 @@
   .club-crits { grid-template-columns: 1fr; }
   .clubs-title { font-size: 32px; }
 }
+
+.clubs-crit--star { border-color: var(--accent-border); background: var(--accent-bg); }
+.clubs-crit--star .clubs-crit-top span:first-child { color: var(--accent); }
