@@ -37,13 +37,18 @@ export const BLOG_POSTS = [
 
       { type: "h", text: "2015–2017 · Main stages and trance tears" },
       { type: "p", text: "The first couple of years were pure festival maximalism. **EDC 2016** — RL Grime, Markus Schulz, Gareth Emery, TroyBoi. **Escape Halloween 2016** — Tchami, Jauz, Duke Dumont, Armin van Buuren, Kaskade, and Prydz again, always Prydz. **Resolution NYE 2016** brought Above & Beyond and Adventure Club. I cried at trance breakdowns and meant it." },
+      { type: "img", src: "/journal/escape-2016.jpg", caption: "Escape Halloween 2016. Bulls and Michigan jerseys, zero idea what was coming." },
       { type: "p", text: "**Paradiso 2017** was the peak of that era's range — Porter Robinson, Lane 8, Zeds Dead, Griz, Tiësto, Gareth Emery, TroyBoi, and **Oliver Heldens**. I didn't notice it then, but Heldens and Duke Dumont were the first house seeds getting planted in a brain wired for bass and trance." },
+      { type: "img", src: "/journal/paradiso-2017.jpg", caption: "Paradiso 2017, the Gorge. Peak festival-kid era." },
       { type: "p", text: "And then **ABGT250**, September 2017, at the Gorge — the emotional ceiling of the trance years. Above & Beyond on that hillside, then Seven Lions b2b Jason Ross. If you've stood in that amphitheater at sunset you know there's nowhere on earth quite like it. This was the top of the mountain I'd been climbing. I didn't realize I was about to start walking down the other side." },
+      { type: "img", src: "/journal/abgt250-2017.jpg", caption: "ABGT250, September 2017, The Gorge — the top of the trance mountain." },
       { type: "youtube", id: "CMXiCR2gQw0", caption: "Above & Beyond — #ABGT250, The Gorge Amphitheatre (the full set, the exact night)" },
       { type: "youtube", id: "-Ry5w4zb3B4", caption: "Seven Lions b2b Jason Ross — #ABGT250, The Gorge" },
 
       { type: "h", text: "2017–2018 · Ibiza, and the first crack" },
       { type: "p", text: "May 2017, Ibiza. **Pacha**, and **ANTS at Ushuaïa with Andrea Oliva.** It was the first time a dancefloor made more sense to me on a groove than on a drop — no fireworks, no breakdown-and-payoff, just a relentless, rolling pocket that didn't need the catharsis I'd been chasing. The island quietly reframed what a great night could even be." },
+      { type: "p", text: "Back home, this was the era of learning to actually go out — club nights in Seattle, cutting our teeth in dark rooms between the big festival weekends." },
+      { type: "img", src: "/journal/seattle-2018.jpg", caption: "Seattle club nights, 2018 — learning to love a room, not just a main stage." },
       { type: "p", text: "**CRSSD, Spring 2018** is where it actually turned. Cirez D, Charlotte de Witte, ANNA, Gorgon City. Techno and house took the wheel and never gave it back. The trance tears dried up. I didn't make a decision — the music just moved, and I moved with it." },
 
       { type: "h", text: "2019–2020 · The tech-house takeover" },
@@ -57,6 +62,7 @@ export const BLOG_POSTS = [
       { type: "h", text: "2021–2023 · All the way under" },
       { type: "p", text: "When it came back, I came back deeper. **Secret Project at Club Space, Miami** — Michael Bibi, Eric Prydz, Green Velvet, on that legendary terrace as the sun came up. **John Summit on the Academy patio at Day Trip, 2021,** while he was still on the way up. Alesso in DTLA, Beyond Wonderland 2021, **Day Moves at CRSSD San Diego, August 2022.**" },
       { type: "p", text: "By 2023 I was all the way in: **Mau P at the Academy** in February, Skyline, **Charlotte de Witte in downtown Las Vegas,** Cristoph at Academy OTC, Hard Summer. The kid who needed a trance breakdown to feel something now wanted a kick drum, a dark room, and four hours to disappear." },
+      { type: "img", src: "/journal/daytrip-2023.jpg", caption: "Day Trip in the park, LA, summer 2023. The 'Track ID?' era — fully converted." },
       { type: "youtube", id: "QyZyIotYQ-Y", caption: "Mau P — 2023 (a set from the year I caught him at the Academy)" },
       { type: "p", text: "And then London, which felt like a final exam. **Adriatique.** **Ricardo Villalobos at fabric** — the most serious room I'd ever set foot in, the polar opposite of that first night's pyrotechnics, and somehow the exact same feeling underneath. Standing on fabric's bodysonic floor at an hour I won't admit to, I understood that I'd come the whole distance." },
       { type: "soundcloud", url: "https://soundcloud.com/electroniqueunderground/ricardo-villalobos-club-fabric-london-21072008", caption: "Ricardo Villalobos — live at fabric, London (from the fabric vaults)" },
