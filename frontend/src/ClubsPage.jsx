@@ -1,19 +1,18 @@
 import { useMemo, useState } from "react";
 import "./ClubsPage.css";
+import { CLUB_PROFILES } from "./clubProfiles";
 
 /**
  * PEAKTIME Club Index — the world's most legendary house & techno destinations.
- * North star: MUSIC INTEGRITY. This rewards serious, music-first rooms with deep
- * house/techno programming and sound over spectacle — not fame, and not "new and
- * shiny." Booking popular artists earns a club nothing. Bottle-service / EDM
- * tourist models score low; Vegas mega-clubs don't qualify (they don't credibly
- * book the music). Each club is scored 0–100 on five axes; composite is a
- * transparent weighted blend.
+ * North star: MUSIC INTEGRITY. Rewards serious, music-first rooms with deep
+ * house/techno programming and sound over spectacle — not fame, not "new and
+ * shiny." Booking popular artists earns nothing; bottle-service/EDM models score
+ * low; Vegas mega-clubs don't qualify. Each club scored 0–100 on five axes.
  */
 const CRITERIA = [
-  { key: "h",  label: "Heritage",          weight: 0.28, why: "Decades of operation and importance to the music — a legendary house destination is built over time, not opened last season." },
-  { key: "mi", label: "Music integrity",   weight: 0.24, why: "The north star. A music-first room with serious, consistent house/techno programming and sound over spectacle. Bottle-service and EDM-tourist models score low; artist fame is irrelevant." },
-  { key: "s",  label: "Legendary sessions",weight: 0.22, why: "Iconic residencies, marathon all-nighters and sunrise sets — the destination events that define the legend (the sunrise Terrace, Cocoon, Circoloco)." },
+  { key: "h",  label: "Heritage",          weight: 0.28, why: "Decades of operation and importance to the music — built over time, not opened last season." },
+  { key: "mi", label: "Music integrity",   weight: 0.24, why: "The north star. A music-first room with serious, consistent house/techno programming and sound over spectacle. Fame is irrelevant." },
+  { key: "s",  label: "Legendary sessions",weight: 0.22, why: "Iconic residencies, marathon all-nighters and sunrise sets — the destination events that define the legend." },
   { key: "c",  label: "Crowd & vibe",      weight: 0.16, why: "A mature, music-first floor (not under-21 tourists) and the atmosphere that makes the room." },
   { key: "n",  label: "Notoriety",         weight: 0.10, why: "Cultural mystique and the stories people tell — bucket-list status earned over decades." },
 ];
@@ -68,23 +67,38 @@ const CLUBS = [
   ["Bloc", "London", "GB", 2007, [58,83,82,80,74], "London warehouse-rave heritage with a serious sound-system reputation."],
   ["Spazio 900 / Goa Roma", "Rome", "IT", 1995, [80,80,78,77,72], "Rome's enduring outpost for the city's techno faithful."],
   ["Salon zur Wilden Renate", "Berlin", "DE", 2007, [73,90,84,89,85], "A labyrinthine apartment-club of secret rooms — quintessential Berlin vibes-first hedonism."],
-  ["Pacha", "Ibiza", "ES", 1973, [95,55,88,63,89], "Iconic cherries and real history — but a polished, table-service model that the music-integrity north star marks down hard."],
+  ["Pacha", "Ibiza", "ES", 1973, [95,55,88,63,89], "Iconic cherries and real history — but a polished, table-service model the music-integrity north star marks down hard."],
   ["Hï Ibiza", "Ibiza", "ES", 2017, [55,40,78,58,80], "Slick, award-winning and massive — the commercial, spectacle-first model this index is built to discount."],
 ];
 
 const composite = s => CRITERIA.reduce((sum, c, i) => sum + s[i] * c.weight, 0);
+export const clubSlug = name => name.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+
+const RANKED = CLUBS
+  .map(([name, city, country, opened, scores, note]) => ({ name, city, country, opened, scores, note, score: Math.round(composite(scores) * 10) / 10 }))
+  .sort((a, b) => b.score - a.score)
+  .slice(0, 50)
+  .map((c, i) => ({ ...c, rank: i + 1 }));
+
+export const getClubBySlug = slug => RANKED.find(c => clubSlug(c.name) === slug) || null;
+
+// Deterministic moody cover hue from the club name.
+const hueOf = name => { let h = 0; for (const ch of name) h = (h * 31 + ch.charCodeAt(0)) % 360; return h; };
+function ClubCover({ name, city, opened, big }) {
+  const h = hueOf(name);
+  return (
+    <div className={`club-cover ${big ? "club-cover--big" : ""}`}
+      style={{ background: `radial-gradient(120% 140% at 20% 10%, hsl(${h} 55% 22%), hsl(${(h + 40) % 360} 60% 9%) 70%)` }}>
+      <div className="club-cover-grain" />
+      <div className="club-cover-mark">◓</div>
+      {big && <div className="club-cover-text"><div className="club-cover-name">{name}</div><div className="club-cover-meta">{city} · est. {opened}</div></div>}
+    </div>
+  );
+}
 
 export default function ClubsPage() {
-  const [open, setOpen] = useState(null);
-  const ranked = useMemo(() =>
-    CLUBS.map(([name, city, country, opened, scores, note]) =>
-      ({ name, city, country, opened, scores, note, score: Math.round(composite(scores) * 10) / 10 }))
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 50)
-      .map((c, i) => ({ ...c, rank: i + 1 })),
-  []);
+  const ranked = RANKED;
   const max = ranked[0]?.score || 100;
-
   return (
     <div className="page clubs-page">
       <div className="clubs-hero">
@@ -93,9 +107,8 @@ export default function ClubsPage() {
         <p className="clubs-sub">
           Not a popularity contest and not a list of the biggest rooms. We rank the world's house &amp; techno
           venues with <b>music integrity as the north star</b> — serious, music-first programming and sound over
-          spectacle, weighted alongside heritage and legendary sessions. Booking famous artists earns a club nothing;
-          bottle-service and EDM-tourist models score low. Vegas-style mega-clubs don't qualify — they don't credibly
-          book this music.
+          spectacle, alongside heritage and legendary sessions. Booking famous artists earns nothing; bottle-service
+          and EDM-tourist models score low. Tap any club for its full story.
         </p>
       </div>
 
@@ -110,41 +123,85 @@ export default function ClubsPage() {
 
       <div className="clubs-list">
         {ranked.map(c => (
-          <div key={c.name} className={`club-row ${open === c.name ? "club-row--open" : ""}`} onClick={() => setOpen(open === c.name ? null : c.name)}>
-            <div className="club-main">
-              <div className="club-rank">{c.rank <= 3 ? ["🥇","🥈","🥉"][c.rank-1] : <span>#{c.rank}</span>}</div>
-              <div className="club-info">
-                <div className="club-name">{c.name}</div>
-                <div className="club-meta">{c.city} · {c.country} · est. {c.opened}</div>
-              </div>
-              <div className="club-score-wrap">
-                <div className="club-score-bar"><div className="club-score-fill" style={{ width: `${(c.score / max) * 100}%` }} /></div>
-                <div className="club-score">{c.score}</div>
-              </div>
+          <a key={c.name} className="club-row" href={`#/club/${clubSlug(c.name)}`}>
+            <div className="club-rank">{c.rank <= 3 ? ["🥇","🥈","🥉"][c.rank-1] : <span>#{c.rank}</span>}</div>
+            <ClubCover name={c.name} city={c.city} opened={c.opened} />
+            <div className="club-info">
+              <div className="club-name">{c.name}</div>
+              <div className="club-meta">{c.city} · {c.country} · est. {c.opened}</div>
             </div>
-            {open === c.name && (
-              <div className="club-detail">
-                <p className="club-note">{c.note}</p>
-                <div className="club-crits">
-                  {CRITERIA.map((cr, i) => (
-                    <div key={cr.key} className="club-crit-row">
-                      <span className="club-crit-label">{cr.label}</span>
-                      <div className="club-crit-track"><div className="club-crit-fill" style={{ width: `${c.scores[i]}%` }} /></div>
-                      <span className="club-crit-val">{c.scores[i]}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
+            <div className="club-score-wrap">
+              <div className="club-score-bar"><div className="club-score-fill" style={{ width: `${(c.score / max) * 100}%` }} /></div>
+              <div className="club-score">{c.score}</div>
+            </div>
+          </a>
         ))}
       </div>
 
       <div className="clubs-foot">
         Editorial index — scored by PEAKTIME against the published rubric above, with music integrity as the north
-        star. Not driven by ticket sales, capacity or social following. A club's score never rises for booking a
-        popular artist. Corrections and nominations welcome.
+        star. Not driven by ticket sales, capacity or social following. Corrections and nominations welcome.
       </div>
+    </div>
+  );
+}
+
+// ── Club profile page (#/club/<slug>) ──────────────────────────────
+export function ClubProfile({ slug }) {
+  const c = getClubBySlug(slug);
+  if (!c) return <div className="page"><button className="ap-back" onClick={() => { window.location.hash = ""; }}>← Back</button><div className="ap-chart-empty">Club not found.</div></div>;
+  const p = CLUB_PROFILES[c.name] || {};
+  const back = () => { window.location.hash = ""; };
+
+  const Section = ({ title, children }) => children ? <div className="cp-section"><h2 className="cp-h">{title}</h2>{children}</div> : null;
+
+  return (
+    <div className="page cp-page">
+      <button className="ap-back" onClick={back}>← Back to Club Index</button>
+      <ClubCover name={c.name} city={c.city} opened={c.opened} big />
+
+      <div className="cp-head">
+        <div className="cp-rank">#{c.rank}</div>
+        <div>
+          <h1 className="cp-name">{c.name}</h1>
+          <div className="cp-meta">{c.city} · {c.country}</div>
+        </div>
+        <div className="cp-score"><div className="cp-score-n">{c.score}</div><div className="cp-score-l">Index score</div></div>
+      </div>
+
+      <div className="cp-stats">
+        <div className="cp-stat"><div className="cp-stat-v">{c.opened}</div><div className="cp-stat-l">Opened</div></div>
+        {p.capacity && <div className="cp-stat"><div className="cp-stat-v cp-stat-v--sm">{p.capacity}</div><div className="cp-stat-l">Capacity</div></div>}
+        {p.founders && <div className="cp-stat"><div className="cp-stat-v cp-stat-v--sm">{p.founders}</div><div className="cp-stat-l">Founders / origin</div></div>}
+        {p.residencies && <div className="cp-stat"><div className="cp-stat-v cp-stat-v--sm">{p.residencies}</div><div className="cp-stat-l">Signature nights</div></div>}
+      </div>
+
+      <Section title="The lore">{p.lore ? <p className="cp-p">{p.lore}</p> : <p className="cp-p">{c.note}</p>}</Section>
+
+      {p.iconicSets && (
+        <Section title="Most iconic sets">
+          <ul className="cp-list">{p.iconicSets.map((s, i) => <li key={i}>{s}</li>)}</ul>
+        </Section>
+      )}
+      <Section title="What makes it unique">{p.unique && <p className="cp-p">{p.unique}</p>}</Section>
+      <Section title="Reputation">{p.reputation && <p className="cp-p">{p.reputation}</p>}</Section>
+      <Section title="The secrets">{p.secrets && <p className="cp-p cp-p--secret">{p.secrets}</p>}</Section>
+
+      <div className="cp-section">
+        <h2 className="cp-h">Why it ranks #{c.rank}</h2>
+        <div className="cp-crits">
+          {CRITERIA.map((cr, i) => (
+            <div key={cr.key} className="cp-crit-row">
+              <span className="cp-crit-label">{cr.key === "mi" ? "★ " : ""}{cr.label} <span className="cp-crit-w">{Math.round(cr.weight*100)}%</span></span>
+              <div className="cp-crit-track"><div className="cp-crit-fill" style={{ width: `${c.scores[i]}%` }} /></div>
+              <span className="cp-crit-val">{c.scores[i]}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {!p.lore && <div className="cp-foot">Full profile in progress — this club's extended story is being written. Score &amp; criteria are live.</div>}
+      <div className="cp-foot">PEAKTIME Club Index · editorial. A club's score never rises for booking a popular artist.</div>
     </div>
   );
 }

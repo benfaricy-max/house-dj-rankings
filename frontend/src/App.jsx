@@ -3,7 +3,7 @@ import "./App.css";
 import ProPage from "./ProPage";
 import ArtistProfile, { slugify, ArtistLink } from "./ArtistProfile";
 import { usePro, startCheckout, startPortal } from "./usePro";
-import ClubsPage from "./ClubsPage";
+import ClubsPage, { ClubProfile } from "./ClubsPage";
 
 const parseProfileSlug = () => {
   const m = (window.location.hash || "").match(/^#\/artist\/(.+)$/);
@@ -11,6 +11,10 @@ const parseProfileSlug = () => {
 };
 const parseMarketSlug = () => {
   const m = (window.location.hash || "").match(/^#\/market\/(.+)$/);
+  return m ? decodeURIComponent(m[1]) : null;
+};
+const parseClubSlug = () => {
+  const m = (window.location.hash || "").match(/^#\/club\/(.+)$/);
   return m ? decodeURIComponent(m[1]) : null;
 };
 
@@ -2331,8 +2335,9 @@ export default function App() {
 
   const [profileSlug, setProfileSlug] = useState(parseProfileSlug());
   const [marketSlug, setMarketSlug] = useState(parseMarketSlug());
+  const [clubSlugState, setClubSlugState] = useState(parseClubSlug());
   useEffect(() => {
-    const onHash = () => { setProfileSlug(parseProfileSlug()); setMarketSlug(parseMarketSlug()); };
+    const onHash = () => { setProfileSlug(parseProfileSlug()); setMarketSlug(parseMarketSlug()); setClubSlugState(parseClubSlug()); };
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
@@ -2391,6 +2396,11 @@ export default function App() {
     return rankings.length
       ? <MarketReadPage rankings={rankings} slug={marketSlug} />
       : <div className="page"><div className="loading">Loading…</div></div>;
+  }
+
+  // Club profile route — shareable like #/club/berghain-panorama-bar
+  if (clubSlugState) {
+    return <div className="page"><ClubProfile slug={clubSlugState} /></div>;
   }
 
   return (
