@@ -1470,6 +1470,7 @@ function MarketReadPage({ rankings, slug }) {
 
   return (
     <div className="page mr-page">
+      <button className="ap-back mr-back" onClick={() => { window.location.hash = ""; }}>← Back to rankings</button>
       <div className="mr-actions">
         <select className="bk-select" value={market.city} onChange={e => setMarket(BOOKING_MARKETS.find(m => m.city === e.target.value))}>
           {BOOKING_MARKETS.map(m => <option key={m.city} value={m.city}>{m.city}</option>)}
@@ -2424,6 +2425,7 @@ export default function App() {
           <button className={`top-tab ${activeTab === "clubs" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("clubs")}>Club Index</button>
           <button className={`top-tab ${activeTab === "value" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("value")}>Value Gap</button>
           <button className={`top-tab ${activeTab === "saturation" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("saturation")}>Market Saturation</button>
+          <button className="top-tab" onClick={() => { window.location.hash = "#/market/amsterdam"; }}>Market Read</button>
           <button className={`top-tab ${activeTab === "city-spotlight" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("city-spotlight")}>City Spotlight</button>
           <button className={`top-tab ${activeTab === "ones-to-watch" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("ones-to-watch")}>Ones to Watch</button>
           <button className={`top-tab ${activeTab === "benchmark"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("benchmark")}>Benchmark</button>

@@ -1022,3 +1022,5 @@ details[open] .hiw-faq-q::after { content: "–"; }
   .mr-title, .mr-line-l, .mr-line-r b { color: #111 !important; }
   .mr-sec-h { color: #7a4dd0 !important; border-color: #ddd; }
 }
+
+.mr-back { margin-bottom: 14px; }
