@@ -10,6 +10,7 @@ const fs    = require("fs");
 
 const RANKINGS = path.join(__dirname, "..", "frontend", "public", "rankings.json");
 const ARTISTS  = path.join(__dirname, "artists.json");
+const ARCHIVE  = path.join(__dirname, "beatport-archive.json");   // committed weekly Top-100 history (not gitignored data/)
 
 // Beatport genre Top 100 charts relevant to a house / techno roster
 const GENRES = [
@@ -40,17 +41,30 @@ async function scrapeChart(label, slug, id) {
   const results = queries.map(q => q.state?.data?.results).find(x => Array.isArray(x) && x.length) ?? [];
   return results.map((t, i) => ({
     position: i + 1,
+    title: t.name + (t.mix_name && !/^original/i.test(t.mix_name) ? ` (${t.mix_name})` : ""),
     artists: [...(t.artists || []), ...(t.remixers || [])].map(a => a.name).filter(Boolean),
     label: t.release?.label?.name || null,   // for Label & Release Trajectory
   }));
 }
 
+// ISO week key, e.g. "2026-W23" — one archive snapshot per week keeps it bounded.
+function isoWeek(d = new Date()) {
+  const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  const day = t.getUTCDay() || 7;
+  t.setUTCDate(t.getUTCDate() + 4 - day);
+  const yearStart = new Date(Date.UTC(t.getUTCFullYear(), 0, 1));
+  const week = Math.ceil((((t - yearStart) / 864e5) + 1) / 7);
+  return `${t.getUTCFullYear()}-W${String(week).padStart(2, "0")}`;
+}
+
 (async () => {
   // chartMap: normalizedArtist -> { best, tracks, charts:Set }
   const chartMap = {};
+  const genreCharts = {};   // full Top-100 per genre this run, for the archive
   for (const [label, slug, id] of GENRES) {
     try {
       const rows = await scrapeChart(label, slug, id);
+      if (rows.length) genreCharts[label] = rows;
       for (const row of rows) {
         for (const name of row.artists) {
           const k = norm(name);
@@ -98,4 +112,27 @@ async function scrapeChart(label, slug, id) {
   console.log(`\nBeatport: ${hits}/${rankData.rankings.length} artists currently charting.`);
   const top = rankData.rankings.filter(d => d.beatport_score).sort((a,b)=>b.beatport_score-a.beatport_score).slice(0,8);
   top.forEach(d => console.log(`  ${d.name}: score ${d.beatport_score} (best #${d.beatport_best_position}, ${d.beatport_charting_tracks} tracks, ${d.beatport_charts.length} charts)`));
+
+  // ── Beatport chart archive (weekly snapshot, committed) ──
+  // Builds our own queryable Top-100 history over time. One snapshot per ISO
+  // week so it stays bounded; keeps ~26 weeks (6 months). Compact rows:
+  // [position, title, artists(joined), label].
+  if (Object.keys(genreCharts).length) {
+    let archive = { weeks: [] };
+    try { archive = JSON.parse(fs.readFileSync(ARCHIVE, "utf8")); } catch {}
+    if (!Array.isArray(archive.weeks)) archive.weeks = [];
+    const week = isoWeek();
+    const snapshot = {
+      week, date: new Date().toISOString().slice(0, 10),
+      charts: Object.fromEntries(Object.entries(genreCharts).map(([g, rows]) =>
+        [g, rows.map(r => [r.position, r.title, r.artists.join(", "), r.label || ""])])),
+    };
+    const existing = archive.weeks.findIndex(w => w.week === week);
+    if (existing >= 0) archive.weeks[existing] = snapshot;   // refresh this week's snapshot
+    else archive.weeks.push(snapshot);
+    archive.weeks = archive.weeks.slice(-26);                // ~6 months
+    archive.updated = new Date().toISOString();
+    fs.writeFileSync(ARCHIVE, JSON.stringify(archive));
+    console.log(`Archive: ${archive.weeks.length} weekly snapshot(s) (latest ${week}, ${Object.keys(genreCharts).length} genres).`);
+  }
 })();

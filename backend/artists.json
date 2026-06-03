@@ -45,9 +45,9 @@
       "band": "B",
       "basis": "curated"
     },
-    "beatport_score": 75,
-    "beatport_best_position": 10,
-    "beatport_charting_tracks": 2,
+    "beatport_score": 79,
+    "beatport_best_position": 11,
+    "beatport_charting_tracks": 3,
     "beatport_charts": [
       "House",
       "Tech House"
@@ -85,8 +85,8 @@
       "band": "A",
       "basis": "curated"
     },
-    "beatport_score": 64,
-    "beatport_best_position": 27,
+    "beatport_score": 67,
+    "beatport_best_position": 23,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -185,7 +185,7 @@
       "basis": "curated"
     },
     "beatport_score": 69,
-    "beatport_best_position": 19,
+    "beatport_best_position": 20,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "House",
@@ -226,7 +226,7 @@
       "basis": "curated"
     },
     "beatport_score": 56,
-    "beatport_best_position": 25,
+    "beatport_best_position": 24,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
@@ -416,11 +416,12 @@
       "band": "B",
       "basis": "curated"
     },
-    "beatport_score": 38,
-    "beatport_best_position": 55,
-    "beatport_charting_tracks": 1,
+    "beatport_score": 46,
+    "beatport_best_position": 58,
+    "beatport_charting_tracks": 2,
     "beatport_charts": [
-      "Tech House"
+      "Tech House",
+      "Minimal / Deep Tech"
     ],
     "trends_mom_12w": 0,
     "wikipedia_title": "Jamie Jones",
@@ -430,7 +431,8 @@
     "value_gap": -2,
     "value_signal": "premium",
     "beatport_labels": [
-      "DX3N"
+      "DX3N",
+      "Hot Creations"
     ],
     "label_best": "DX3N",
     "label_tier": 2,
@@ -482,9 +484,9 @@
       "band": "B",
       "basis": "curated"
     },
-    "beatport_score": 81,
-    "beatport_best_position": 7,
-    "beatport_charting_tracks": 4,
+    "beatport_score": 75,
+    "beatport_best_position": 10,
+    "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Techno (Peak Time / Driving)"
     ],
@@ -630,7 +632,7 @@
       "basis": "curated"
     },
     "beatport_score": 36,
-    "beatport_best_position": 57,
+    "beatport_best_position": 58,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
@@ -748,9 +750,9 @@
       "band": "C",
       "basis": "curated"
     },
-    "beatport_score": 41,
-    "beatport_best_position": 58,
-    "beatport_charting_tracks": 2,
+    "beatport_score": 36,
+    "beatport_best_position": 57,
+    "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
     ],
@@ -762,8 +764,7 @@
     "value_gap": 0,
     "value_signal": "fair",
     "beatport_labels": [
-      "Hot Creations",
-      "LTF Records"
+      "Hot Creations"
     ],
     "label_best": "Hot Creations",
     "label_tier": 5,
@@ -815,8 +816,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "beatport_score": 66,
-    "beatport_best_position": 8,
+    "beatport_score": 65,
+    "beatport_best_position": 9,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Tech House"
@@ -894,9 +895,9 @@
       "band": "C",
       "basis": "curated"
     },
-    "beatport_score": 74,
-    "beatport_best_position": 19,
-    "beatport_charting_tracks": 4,
+    "beatport_score": 67,
+    "beatport_best_position": 22,
+    "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Tech House"
     ],
@@ -910,8 +911,7 @@
     "beatport_labels": [
       "Black Book Records",
       "Diynamic",
-      "Nervous Records",
-      "Repopulate Mars"
+      "Nervous Records"
     ],
     "label_best": "Diynamic",
     "label_tier": 5,
@@ -974,8 +974,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "beatport_score": 82,
-    "beatport_best_position": 14,
+    "beatport_score": 83,
+    "beatport_best_position": 13,
     "beatport_charting_tracks": 8,
     "beatport_charts": [
       "Deep House"
@@ -1121,9 +1121,9 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 79,
+    "beatport_score": 84,
     "beatport_best_position": 20,
-    "beatport_charting_tracks": 3,
+    "beatport_charting_tracks": 4,
     "beatport_charts": [
       "House",
       "Tech House",
@@ -1162,8 +1162,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 39,
-    "beatport_best_position": 52,
+    "beatport_score": 42,
+    "beatport_best_position": 48,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Minimal / Deep Tech"
@@ -1330,7 +1330,16 @@
     "value_gap": 0,
     "value_signal": "fair",
     "youtube_subscribers": 4910,
-    "youtube_total_views": 899123
+    "youtube_total_views": 899123,
+    "beatport_score": 24,
+    "beatport_best_position": 77,
+    "beatport_charting_tracks": 1,
+    "beatport_charts": [
+      "Indie Dance"
+    ],
+    "beatport_labels": [
+      "PlanetX"
+    ]
   },
   {
     "name": "Disco Lines",
@@ -1377,8 +1386,8 @@
       "band": "C",
       "basis": "estimate"
     },
-    "beatport_score": 86,
-    "beatport_best_position": 8,
+    "beatport_score": 85,
+    "beatport_best_position": 9,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "House",
@@ -1420,8 +1429,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 29,
-    "beatport_best_position": 70,
+    "beatport_score": 26,
+    "beatport_best_position": 74,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -1459,8 +1468,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "beatport_score": 61,
-    "beatport_best_position": 25,
+    "beatport_score": 58,
+    "beatport_best_position": 29,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Minimal / Deep Tech"
@@ -1503,8 +1512,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 31,
-    "beatport_best_position": 66,
+    "beatport_score": 26,
+    "beatport_best_position": 75,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
@@ -1542,8 +1551,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 24,
-    "beatport_best_position": 78,
+    "beatport_score": 34,
+    "beatport_best_position": 61,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Minimal / Deep Tech"
@@ -1691,13 +1700,12 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 98,
+    "beatport_score": 93,
     "beatport_best_position": 4,
-    "beatport_charting_tracks": 6,
+    "beatport_charting_tracks": 5,
     "beatport_charts": [
       "Tech House",
-      "Melodic House & Techno",
-      "Indie Dance"
+      "Melodic House & Techno"
     ],
     "trends_mom_12w": 111.4,
     "ra_slug": "maxstyler",
@@ -1733,8 +1741,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 64,
-    "beatport_best_position": 28,
+    "beatport_score": 61,
+    "beatport_best_position": 33,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "House",
@@ -1825,7 +1833,7 @@
     },
     "beatport_score": 100,
     "beatport_best_position": 1,
-    "beatport_charting_tracks": 11,
+    "beatport_charting_tracks": 12,
     "beatport_charts": [
       "House",
       "Minimal / Deep Tech",
@@ -1840,6 +1848,7 @@
     "value_signal": null,
     "beatport_labels": [
       "Koltrax",
+      "Hot Creations",
       "KOLTERCAMP",
       "PIV"
     ],
@@ -1884,8 +1893,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 86,
-    "beatport_best_position": 16,
+    "beatport_score": 85,
+    "beatport_best_position": 17,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "House",
@@ -1926,8 +1935,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 88,
-    "beatport_best_position": 13,
+    "beatport_score": 89,
+    "beatport_best_position": 11,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Tech House",
@@ -1968,8 +1977,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "beatport_score": 79,
-    "beatport_best_position": 11,
+    "beatport_score": 77,
+    "beatport_best_position": 14,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "House",
@@ -2034,8 +2043,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 16,
-    "beatport_best_position": 91,
+    "beatport_score": 18,
+    "beatport_best_position": 87,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
@@ -2090,8 +2099,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "beatport_score": 47,
-    "beatport_best_position": 47,
+    "beatport_score": 49,
+    "beatport_best_position": 44,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Minimal / Deep Tech"
@@ -2128,8 +2137,8 @@
       "band": "B",
       "basis": "anchored"
     },
-    "beatport_score": 54,
-    "beatport_best_position": 28,
+    "beatport_score": 46,
+    "beatport_best_position": 41,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
@@ -2167,7 +2176,7 @@
       "basis": "curated"
     },
     "beatport_score": 79,
-    "beatport_best_position": 3,
+    "beatport_best_position": 2,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Tech House",
@@ -2275,8 +2284,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "beatport_score": 58,
-    "beatport_best_position": 21,
+    "beatport_score": 57,
+    "beatport_best_position": 23,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Minimal / Deep Tech"
@@ -2543,9 +2552,9 @@
       "band": "D",
       "basis": "estimate"
     },
-    "beatport_score": 65,
-    "beatport_best_position": 18,
-    "beatport_charting_tracks": 2,
+    "beatport_score": 62,
+    "beatport_best_position": 14,
+    "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
     ],
@@ -2635,8 +2644,8 @@
       "band": "C",
       "basis": "estimate"
     },
-    "beatport_score": 33,
-    "beatport_best_position": 63,
+    "beatport_score": 31,
+    "beatport_best_position": 66,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
@@ -2702,7 +2711,7 @@
       "basis": "curated"
     },
     "beatport_score": 40,
-    "beatport_best_position": 59,
+    "beatport_best_position": 60,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "House"
@@ -2741,8 +2750,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 62,
-    "beatport_best_position": 31,
+    "beatport_score": 61,
+    "beatport_best_position": 32,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "House",
@@ -2968,8 +2977,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 46,
-    "beatport_best_position": 41,
+    "beatport_score": 50,
+    "beatport_best_position": 35,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Techno (Peak Time / Driving)"
@@ -3190,8 +3199,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 49,
-    "beatport_best_position": 36,
+    "beatport_score": 47,
+    "beatport_best_position": 39,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
@@ -3228,10 +3237,11 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 35,
-    "beatport_best_position": 59,
-    "beatport_charting_tracks": 1,
+    "beatport_score": 55,
+    "beatport_best_position": 42,
+    "beatport_charting_tracks": 2,
     "beatport_charts": [
+      "Melodic House & Techno",
       "Deep House"
     ],
     "trends_mom_12w": 166.7,
@@ -3293,8 +3303,8 @@
       "band": "C",
       "basis": "estimate"
     },
-    "beatport_score": 65,
-    "beatport_best_position": 26,
+    "beatport_score": 64,
+    "beatport_best_position": 28,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "House",
@@ -3464,8 +3474,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 44,
-    "beatport_best_position": 44,
+    "beatport_score": 43,
+    "beatport_best_position": 46,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -3568,8 +3578,8 @@
       "band": "B",
       "basis": "curated"
     },
-    "beatport_score": 27,
-    "beatport_best_position": 73,
+    "beatport_score": 30,
+    "beatport_best_position": 68,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -4017,7 +4027,7 @@
       "basis": "curated"
     },
     "beatport_score": 60,
-    "beatport_best_position": 34,
+    "beatport_best_position": 35,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Tech House",
@@ -4135,9 +4145,9 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 85,
+    "beatport_score": 90,
     "beatport_best_position": 17,
-    "beatport_charting_tracks": 4,
+    "beatport_charting_tracks": 5,
     "beatport_charts": [
       "Tech House",
       "Melodic House & Techno",
@@ -4627,8 +4637,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "beatport_score": 42,
-    "beatport_best_position": 56,
+    "beatport_score": 46,
+    "beatport_best_position": 50,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -4791,8 +4801,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 77,
-    "beatport_best_position": 15,
+    "beatport_score": 74,
+    "beatport_best_position": 19,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -4830,8 +4840,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 66,
-    "beatport_best_position": 41,
+    "beatport_score": 65,
+    "beatport_best_position": 43,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -4899,8 +4909,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "beatport_score": 57,
-    "beatport_best_position": 23,
+    "beatport_score": 51,
+    "beatport_best_position": 32,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Organic House / Downtempo"
@@ -4938,8 +4948,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "beatport_score": 69,
-    "beatport_best_position": 19,
+    "beatport_score": 67,
+    "beatport_best_position": 22,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -5166,8 +5176,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 27,
-    "beatport_best_position": 73,
+    "beatport_score": 32,
+    "beatport_best_position": 65,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
@@ -5310,8 +5320,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 20,
-    "beatport_best_position": 84,
+    "beatport_score": 16,
+    "beatport_best_position": 91,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -5900,8 +5910,8 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 64,
-    "beatport_best_position": 36,
+    "beatport_score": 66,
+    "beatport_best_position": 33,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Techno (Peak Time / Driving)",
@@ -6181,7 +6191,7 @@
       "basis": "estimate"
     },
     "beatport_score": 86,
-    "beatport_best_position": 7,
+    "beatport_best_position": 8,
     "beatport_charting_tracks": 5,
     "beatport_charts": [
       "Deep House"
@@ -6351,8 +6361,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 55,
-    "beatport_best_position": 42,
+    "beatport_score": 57,
+    "beatport_best_position": 40,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Tech House",
@@ -6418,8 +6428,8 @@
       "band": "F",
       "basis": "estimate"
     },
-    "beatport_score": 32,
-    "beatport_best_position": 64,
+    "beatport_score": 29,
+    "beatport_best_position": 70,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Afro House"
@@ -6641,8 +6651,8 @@
       "band": "B",
       "basis": "curated"
     },
-    "beatport_score": 54,
-    "beatport_best_position": 28,
+    "beatport_score": 52,
+    "beatport_best_position": 31,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -6706,8 +6716,8 @@
       "band": "A",
       "basis": "curated"
     },
-    "beatport_score": 42,
-    "beatport_best_position": 65,
+    "beatport_score": 45,
+    "beatport_best_position": 59,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -6747,8 +6757,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 25,
-    "beatport_best_position": 76,
+    "beatport_score": 26,
+    "beatport_best_position": 75,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
@@ -6786,8 +6796,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 58,
-    "beatport_best_position": 21,
+    "beatport_score": 60,
+    "beatport_best_position": 18,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
@@ -7408,8 +7418,8 @@
       "band": "C",
       "basis": "curated"
     },
-    "beatport_score": 74,
-    "beatport_best_position": 19,
+    "beatport_score": 75,
+    "beatport_best_position": 18,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "House",
@@ -7475,11 +7485,12 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 39,
-    "beatport_best_position": 52,
-    "beatport_charting_tracks": 1,
+    "beatport_score": 57,
+    "beatport_best_position": 40,
+    "beatport_charting_tracks": 2,
     "beatport_charts": [
-      "Deep House"
+      "Deep House",
+      "Afro House"
     ],
     "trends_mom_12w": 0,
     "wikipedia_title": "Route 94 (musician)",
@@ -7490,7 +7501,8 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Rinse"
+      "Rinse",
+      "Positiva"
     ],
     "label_best": "Rinse",
     "label_tier": 2,
@@ -7656,8 +7668,8 @@
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
-    "beatport_score": 51,
-    "beatport_best_position": 33,
+    "beatport_score": 60,
+    "beatport_best_position": 18,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
@@ -7976,8 +7988,8 @@
       "band": "D",
       "basis": "curated"
     },
-    "beatport_score": 68,
-    "beatport_best_position": 5,
+    "beatport_score": 67,
+    "beatport_best_position": 6,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
@@ -8042,9 +8054,9 @@
       "band": "E",
       "basis": "estimate"
     },
-    "beatport_score": 75,
-    "beatport_best_position": 26,
-    "beatport_charting_tracks": 6,
+    "beatport_score": 69,
+    "beatport_best_position": 28,
+    "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
     ],
@@ -8166,8 +8178,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 98,
-    "beatport_best_position": 5,
+    "beatport_score": 99,
+    "beatport_best_position": 3,
     "beatport_charting_tracks": 9,
     "beatport_charts": [
       "House",
@@ -8360,8 +8372,8 @@
     "beatport_labels": [
       "Hollystone Records",
       "Warung Recordings",
-      "Amulanga",
-      "Songuara"
+      "Songuara",
+      "Amulanga"
     ],
     "label_best": "Hollystone Records",
     "label_tier": 2,
@@ -8386,17 +8398,19 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 82,
-    "beatport_best_position": 14,
-    "beatport_charting_tracks": 4,
+    "beatport_score": 93,
+    "beatport_best_position": 13,
+    "beatport_charting_tracks": 5,
     "beatport_charts": [
       "Tech House",
-      "Melodic House & Techno"
+      "Melodic House & Techno",
+      "Afro House"
     ],
     "beatport_labels": [
       "Gozar Records",
       "Human By Default",
-      "Warner Music Central Europe"
+      "Warner Music Central Europe",
+      "Magnifik Music"
     ],
     "label_best": "Gozar Records",
     "label_tier": 2,
@@ -8491,7 +8505,7 @@
     "value_signal": null,
     "beatport_score": 89,
     "beatport_best_position": 19,
-    "beatport_charting_tracks": 5,
+    "beatport_charting_tracks": 6,
     "beatport_charts": [
       "Tech House",
       "Deep House",
@@ -8501,6 +8515,7 @@
       "tszr",
       "Higher Ground",
       "Crosstown Rebels",
+      "AFFAIRS",
       "Hot Creations"
     ],
     "label_best": "Crosstown Rebels",
@@ -8525,9 +8540,9 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 81,
-    "beatport_best_position": 32,
-    "beatport_charting_tracks": 6,
+    "beatport_score": 85,
+    "beatport_best_position": 26,
+    "beatport_charting_tracks": 5,
     "beatport_charts": [
       "Tech House",
       "Deep House",
@@ -8536,8 +8551,7 @@
     "beatport_labels": [
       "Get Physical Music",
       "Crosstown Rebels",
-      "Beat Boutique",
-      "Maccabi House"
+      "Beat Boutique"
     ],
     "label_best": "Crosstown Rebels",
     "label_tier": 5,
@@ -8561,9 +8575,9 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 77,
-    "beatport_best_position": 23,
-    "beatport_charting_tracks": 4,
+    "beatport_score": 80,
+    "beatport_best_position": 10,
+    "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Tech House",
       "Indie Dance"
@@ -8596,17 +8610,17 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 89,
-    "beatport_best_position": 2,
-    "beatport_charting_tracks": 3,
+    "beatport_score": 84,
+    "beatport_best_position": 11,
+    "beatport_charting_tracks": 4,
     "beatport_charts": [
       "House",
-      "Melodic House & Techno",
-      "Indie Dance"
+      "Melodic House & Techno"
     ],
     "beatport_labels": [
       "When Stars Align",
-      "tszr"
+      "tszr",
+      "Nu Moda"
     ],
     "label_best": "When Stars Align",
     "label_tier": 2,
@@ -8631,8 +8645,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 87,
-    "beatport_best_position": 15,
+    "beatport_score": 86,
+    "beatport_best_position": 16,
     "beatport_charting_tracks": 9,
     "beatport_charts": [
       "Progressive House",
@@ -8640,11 +8654,11 @@
     ],
     "beatport_labels": [
       "Forensic Records",
-      "Dreaming Awake",
       "ASTIR Recordings",
       "Music To Die For",
-      "Univack",
+      "Dreaming Awake",
       "Vapour Recordings",
+      "Univack",
       "Polyptych Noir"
     ],
     "label_best": "Forensic Records",
@@ -8706,8 +8720,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 80,
-    "beatport_best_position": 10,
+    "beatport_score": 79,
+    "beatport_best_position": 11,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Progressive House",
@@ -8750,8 +8764,8 @@
     ],
     "beatport_labels": [
       "When Stars Align",
-      "RCA Records Label",
-      "Interstellar Recordings (Insomniac)"
+      "Interstellar Recordings (Insomniac)",
+      "RCA Records Label"
     ],
     "label_best": "Interstellar Recordings (Insomniac)",
     "label_tier": 3,
@@ -8777,8 +8791,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 83,
-    "beatport_best_position": 21,
+    "beatport_score": 85,
+    "beatport_best_position": 18,
     "beatport_charting_tracks": 5,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -8809,8 +8823,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 85,
-    "beatport_best_position": 9,
+    "beatport_score": 86,
+    "beatport_best_position": 7,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Minimal / Deep Tech",
@@ -8842,9 +8856,9 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 85,
-    "beatport_best_position": 9,
-    "beatport_charting_tracks": 4,
+    "beatport_score": 78,
+    "beatport_best_position": 13,
+    "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Progressive House",
       "Organic House / Downtempo"
@@ -8878,7 +8892,7 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_score": 84,
-    "beatport_best_position": 3,
+    "beatport_best_position": 2,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Tech House",
@@ -8913,11 +8927,12 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 71,
-    "beatport_best_position": 7,
-    "beatport_charting_tracks": 2,
+    "beatport_score": 81,
+    "beatport_best_position": 8,
+    "beatport_charting_tracks": 3,
     "beatport_charts": [
-      "Tech House"
+      "Tech House",
+      "Indie Dance"
     ],
     "beatport_labels": [
       "AFFAIRS",
@@ -8947,7 +8962,7 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_score": 83,
-    "beatport_best_position": 4,
+    "beatport_best_position": 5,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -8982,8 +8997,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 83,
-    "beatport_best_position": 21,
+    "beatport_score": 85,
+    "beatport_best_position": 18,
     "beatport_charting_tracks": 5,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -9050,8 +9065,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 82,
-    "beatport_best_position": 14,
+    "beatport_score": 83,
+    "beatport_best_position": 13,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Progressive House",
@@ -9059,8 +9074,8 @@
     ],
     "beatport_labels": [
       "Warung Recordings",
-      "Amulanga",
-      "Songuara"
+      "Songuara",
+      "Amulanga"
     ],
     "label_best": "Warung Recordings",
     "label_tier": 2,
@@ -9120,8 +9135,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 75,
-    "beatport_best_position": 18,
+    "beatport_score": 74,
+    "beatport_best_position": 19,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Tech House",
@@ -9156,8 +9171,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 79,
-    "beatport_best_position": 19,
+    "beatport_score": 77,
+    "beatport_best_position": 22,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Tech House",
@@ -9191,8 +9206,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 80,
-    "beatport_best_position": 9,
+    "beatport_score": 81,
+    "beatport_best_position": 7,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -9423,8 +9438,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 78,
-    "beatport_best_position": 21,
+    "beatport_score": 76,
+    "beatport_best_position": 24,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Tech House",
@@ -9458,8 +9473,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 41,
-    "beatport_best_position": 74,
+    "beatport_score": 42,
+    "beatport_best_position": 73,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Tech House",
@@ -9544,8 +9559,8 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb1c4a89caa76ae4f1d3232f61",
     "spotify_id": "7mC3RkNNTV6p2j9w4F8Ip4",
     "ra_slug": "laytongiordani",
-    "beatport_score": 48,
-    "beatport_best_position": 54,
+    "beatport_score": 46,
+    "beatport_best_position": 58,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Tech House",
@@ -9768,8 +9783,8 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb0d8537d57ae20d107b197b27",
     "spotify_id": "6hr0SehcycxwgYfCgVy32M",
     "ra_slug": "jaydelys",
-    "beatport_score": 39,
-    "beatport_best_position": 70,
+    "beatport_score": 45,
+    "beatport_best_position": 60,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Tech House",
@@ -9824,8 +9839,8 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb19b4f4016d144c4b13b3e058",
     "spotify_id": "4p2f8wUtltMAFuIJB4NR47",
     "ra_slug": "arodes",
-    "beatport_score": 65,
-    "beatport_best_position": 17,
+    "beatport_score": 61,
+    "beatport_best_position": 24,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -9878,8 +9893,8 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb2920a56b02597dfba1c455a4",
     "spotify_id": "4xG5i2Smlt6o5QxuGp9LqM",
     "ra_slug": "sonofson",
-    "beatport_score": 34,
-    "beatport_best_position": 61,
+    "beatport_score": 27,
+    "beatport_best_position": 72,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -10084,8 +10099,8 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb5b20497e2d4858ba2d565f3a",
     "spotify_id": "28ntgpEkMU9Zm7F3gLDMhZ",
     "ra_slug": "oskarmedk",
-    "beatport_score": 23,
-    "beatport_best_position": 80,
+    "beatport_score": 27,
+    "beatport_best_position": 73,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
