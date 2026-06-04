@@ -1024,3 +1024,10 @@ details[open] .hiw-faq-q::after { content: "–"; }
 }
 
 .mr-back { margin-bottom: 14px; }
+
+/* combined Markets tab — sub-nav */
+.mk-page { max-width: 1000px; margin: 0 auto; }
+.mk-subnav { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 22px; }
+.mk-subtab { font-family: var(--mono); font-size: 14px; cursor: pointer; background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: 999px; padding: 9px 18px; transition: all 0.12s; }
+.mk-subtab:hover { color: var(--text-h); border-color: var(--accent-border); }
+.mk-subtab--on { background: var(--accent); color: var(--on-accent); border-color: var(--accent); font-weight: 600; }

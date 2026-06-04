@@ -1441,11 +1441,35 @@ const cityMatch = (raCity, marketCity) => {
   return a && (a.includes(b) || b.includes(a));
 };
 
-function MarketReadPage({ rankings, slug }) {
+// Combines City Spotlight + Market Saturation + Market Read into one tab.
+function CombinedMarketsPage({ rankings }) {
+  const [view, setView] = useState("read");
+  const TABS = [
+    ["read", "City Read", "A shareable one-page brief per market"],
+    ["saturation", "Saturation", "Who's overbooked in which city"],
+    ["spotlight", "City Spotlight", "Where each artist's demand concentrates"],
+  ];
+  return (
+    <div className="mk-page">
+      <div className="mk-subnav">
+        {TABS.map(([k, label]) => (
+          <button key={k} className={`mk-subtab ${view === k ? "mk-subtab--on" : ""}`} onClick={() => setView(k)}>{label}</button>
+        ))}
+      </div>
+      {view === "read" && <MarketReadPage rankings={rankings} embedded />}
+      {view === "saturation" && <MarketSaturationPage rankings={rankings} />}
+      {view === "spotlight" && <CitySpotlightPage rankings={rankings} />}
+    </div>
+  );
+}
+
+function MarketReadPage({ rankings, slug, embedded }) {
   const initial = BOOKING_MARKETS.find(m => citySlug(m.city) === slug) || BOOKING_MARKETS[0];
   const [market, setMarket] = useState(initial);
   const [copied, setCopied] = useState(false);
-  useEffect(() => { window.location.hash = `#/market/${citySlug(market.city)}`; }, [market]);
+  // Keep the URL in sync only on the standalone shareable route, not when
+  // rendered inside the combined Markets tab (would hijack navigation).
+  useEffect(() => { if (!embedded) window.location.hash = `#/market/${citySlug(market.city)}`; }, [market, embedded]);
 
   const D = useMemo(() => {
     const list = rankings.filter(a => a.booking_fee);
@@ -1479,7 +1503,7 @@ function MarketReadPage({ rankings, slug }) {
 
   return (
     <div className="page mr-page">
-      <button className="ap-back mr-back" onClick={() => { window.location.hash = ""; }}>← Back to rankings</button>
+      {!embedded && <button className="ap-back mr-back" onClick={() => { window.location.hash = ""; }}>← Back to rankings</button>}
       <div className="mr-actions">
         <select className="bk-select" value={market.city} onChange={e => setMarket(BOOKING_MARKETS.find(m => m.city === e.target.value))}>
           {BOOKING_MARKETS.map(m => <option key={m.city} value={m.city}>{m.city}</option>)}
@@ -2446,9 +2470,7 @@ export default function App() {
           <button className={`top-tab ${activeTab === "clubs" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("clubs")}>Club Index</button>
           <button className={`top-tab ${activeTab === "journal" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("journal")}>Journal</button>
           <button className={`top-tab ${activeTab === "value" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("value")}>Value Gap</button>
-          <button className={`top-tab ${activeTab === "saturation" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("saturation")}>Market Saturation</button>
-          <button className="top-tab" onClick={() => { window.location.hash = "#/market/amsterdam"; }}>Market Read</button>
-          <button className={`top-tab ${activeTab === "city-spotlight" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("city-spotlight")}>City Spotlight</button>
+          <button className={`top-tab ${activeTab === "markets" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("markets")}>Markets</button>
           <button className={`top-tab ${activeTab === "ones-to-watch" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("ones-to-watch")}>Ones to Watch</button>
           <button className={`top-tab ${activeTab === "benchmark"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("benchmark")}>Benchmark</button>
           <button className={`top-tab ${activeTab === "velocity"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("velocity")}>Velocity</button>
@@ -2465,8 +2487,7 @@ export default function App() {
       {activeTab === "clubs"         && <ClubsPage />}
       {activeTab === "journal"       && <BlogPage />}
       {activeTab === "value"         && <ValueGapPage rankings={rankings} />}
-      {activeTab === "saturation"    && <MarketSaturationPage rankings={rankings} />}
-      {activeTab === "city-spotlight" && <CitySpotlightPage rankings={rankings} />}
+      {activeTab === "markets"       && <CombinedMarketsPage rankings={rankings} />}
       {activeTab === "ones-to-watch" && <OnestoWatchPage rankings={rankings} />}
       {activeTab === "benchmark"     && <ComparativeBenchmarkingPage rankings={rankings} />}
       {activeTab === "velocity"      && <VelocityPage rankings={rankings} />}
