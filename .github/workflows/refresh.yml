@@ -11,6 +11,7 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 90          # hard backstop: never burn the 6h runner limit again
     steps:
       - uses: actions/checkout@v4
         with:
@@ -45,6 +46,8 @@ jobs:
         continue-on-error: true   # roster growth is non-critical
 
       - name: Generate rankings
+        timeout-minutes: 35       # per-step cap; fetches are timeout-bounded so this is slack
+        continue-on-error: true   # a bad fetch day must not skip the enrich + commit steps below
         env:
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}

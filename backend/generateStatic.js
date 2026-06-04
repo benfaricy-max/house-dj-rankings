@@ -39,6 +39,15 @@ const keep = (next, prev) => (next && next > 0) ? next : (prev || 0);
 
 const delay = ms => new Promise(r => setTimeout(r, ms));
 
+// Hard per-fetch timeout. A single stalled socket (no response, never rejects)
+// used to hang the whole Promise.all and burn the 6h job limit. This guarantees
+// every fetch settles, so the loop always finishes and the commit step runs.
+const withTimeout = (promise, ms, fallback) =>
+  Promise.race([
+    Promise.resolve(promise).catch(() => fallback),
+    new Promise(r => setTimeout(() => r(fallback), ms)),
+  ]);
+
 async function main() {
   console.log(`Fetching data for ${artists.length} artists (Spotify from cache, live: YouTube/Trends/TikTok/Mixcloud)…`);
   const enriched = [];
@@ -60,11 +69,11 @@ async function main() {
       };
 
       const [tiktok, youtube, soundcloud, mixcloud, trends] = await Promise.all([
-        getTikTokMentions(artist.tiktok_tag),
-        getYouTubeData(artist, { allowSearch: true }), // accurate search resolution; caches UC id so it's 1u next time. ~90/day fit in quota, completes over a few days.
-        getSoundCloudData(artist.soundcloud_permalink),
-        getMixcloudData(artist.mixcloud_username),
-        getGoogleTrends(artist.search_alias || artist.name), // search_alias disambiguates common names (e.g. "Rebekah techno")
+        withTimeout(getTikTokMentions(artist.tiktok_tag), 15000, {}),
+        withTimeout(getYouTubeData(artist, { allowSearch: true }), 30000, {}), // accurate search resolution; caches UC id so it's 1u next time. ~90/day fit in quota, completes over a few days.
+        withTimeout(getSoundCloudData(artist.soundcloud_permalink), 15000, {}),
+        withTimeout(getMixcloudData(artist.mixcloud_username), 15000, {}),
+        withTimeout(getGoogleTrends(artist.search_alias || artist.name), 25000, {}), // search_alias disambiguates common names (e.g. "Rebekah techno")
       ]);
 
       // Cache resolved YouTube channel ID back to artists.json to save quota
