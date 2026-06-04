@@ -67,6 +67,13 @@ jobs:
         working-directory: backend
         continue-on-error: true   # leading indicator; same plain-HTTP scrape
 
+      - name: 1001Tracklists DJ-support signal
+        run: node enrich1001.js
+        working-directory: backend
+        continue-on-error: true   # local API by default; no-ops cleanly if TL_API_BASE unreachable
+        env:
+          TL_API_BASE: ${{ vars.TL_API_BASE }}
+
       - name: Label & Release Trajectory (uses Beatport labels)
         run: node enrichLabels.js
         working-directory: backend

@@ -16,6 +16,7 @@ function scoreArtists(artists) {
     "google_trends_score",
     "beatport_score",
     "beatport_hype_score",
+    "tl_support_score",
     "wikipedia_pageviews",
     "manual_scene_score",
     "ra_score",
@@ -42,6 +43,7 @@ function scoreArtists(artists) {
     tiktok_post_count:            0.07,
     youtube_views_weekly:         0.06,  // delta metric — empty until 2 snapshots exist, then auto-included
     beatport_hype_score:          0.05,  // EMERGING credibility: Beatport Hype-100 (leading indicator)
+    tl_support_score:             0.05,  // DJ SUPPORT: 1001Tracklists weekly chart — what DJs actually play (hardest to game)
     label_score:                  0.05,  // label tier (Drumcode/Kompakt/Defected…) — credibility & trajectory
     spotify_playlist_placements:  0.05,
     wikipedia_pageviews:          0.02,  // public interest (replaced Spotify followers)

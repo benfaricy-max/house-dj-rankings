@@ -98,6 +98,18 @@ momentum≥40 — underpriced + surging), "buy" (gap≥1 static), "premium" (gap
 "fair". ONLY judges curated/anchored fees (a gap vs a fallback estimate just
 measures the estimate's staleness). UI: "Value Gap" tab + badge on Booking acts.
 
+## 1001Tracklists DJ-Support signal (what DJs actually play)
+`node backend/enrich1001.js` — matches the roster against 1001Tracklists' weekly
+chart (the tracks DJs are PLAYING in sets — hardest signal to game). Reads a local
+API (`TL_API_BASE`, default http://localhost:3001; endpoint /api/1001tracklists/chart/weekly).
+Writes `tl_support_score` 0-100 (chart position 70% + track breadth 30%),
+`tl_chart_best`/`tl_chart_tracks`/`tl_chart_titles`, and cumulative `tl_weeks_charted`
+from a committed weekly archive (`backend/tracklists-archive.json`, ~16 weeks).
+Weight 0.05 in score.js. **Local-only by default** (API not reachable in CI → the
+CI step no-ops gracefully; tl_* persists via generateStatic's `...prev` spread).
+Set repo var `TL_API_BASE` to a hosted URL to run it in CI. UI: "DJ Support · 1001TL"
+signal on artist profiles + How It Works methodology.
+
 ## Scene Score (transparent editorial layer)
 `manual_scene_score` 0-100, weight 0.11 (raised from 0.04). Published rubric in
 How It Works (SCENE_RUBRIC in App.jsx): Boiler Room/HÖR +20, Berghain/fabric/DC10

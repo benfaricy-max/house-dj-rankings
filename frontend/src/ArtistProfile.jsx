@@ -222,8 +222,15 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
 
       {profile.bio && <p className="ap-bio">{profile.bio}</p>}
 
-      {(Number.isFinite(dj.momentum_score) || dj.value_signal || Number.isFinite(dj.live_conversion_score) || dj.label_score != null) && (
+      {(Number.isFinite(dj.momentum_score) || dj.value_signal || Number.isFinite(dj.live_conversion_score) || dj.label_score != null || dj.tl_support_score > 0) && (
         <div className="ap-signals">
+          {dj.tl_support_score > 0 && (
+            <div className="ap-signal ap-signal--buy">
+              <div className="ap-signal-val">{dj.tl_chart_best ? `#${dj.tl_chart_best}` : "★"}</div>
+              <div className="ap-signal-key">DJ Support · 1001TL</div>
+              <div className="ap-signal-sub">{dj.tl_chart_tracks} track{dj.tl_chart_tracks !== 1 ? "s" : ""} in the weekly DJ chart{dj.tl_weeks_charted > 1 ? ` · ${dj.tl_weeks_charted} weeks` : ""}</div>
+            </div>
+          )}
           {Number.isFinite(dj.live_conversion_score) && (
             <div className={`ap-signal ${dj.live_conversion_score >= 80 ? "ap-signal--buy" : ""}`}>
               <div className="ap-signal-val">{dj.live_conversion_score}<span>/100</span></div>

@@ -64,7 +64,15 @@
     ],
     "label_best": "Black Book Records",
     "label_tier": 4,
-    "label_score": 80
+    "label_score": 80,
+    "tl_support_score": 10,
+    "tl_chart_best": null,
+    "tl_chart_tracks": 1,
+    "tl_chart_titles": [
+      "Make You Fight"
+    ],
+    "tl_weeks_charted": 1,
+    "tl_updated": "2026-06-04T14:31:39.629Z"
   },
   {
     "name": "John Summit",
@@ -545,7 +553,15 @@
     ],
     "label_best": "Drumcode",
     "label_tier": 5,
-    "label_score": 100
+    "label_score": 100,
+    "tl_support_score": 45,
+    "tl_chart_best": 11,
+    "tl_chart_tracks": 1,
+    "tl_chart_titles": [
+      "Love Within"
+    ],
+    "tl_weeks_charted": 1,
+    "tl_updated": "2026-06-04T14:31:39.630Z"
   },
   {
     "name": "DJ Koze",
@@ -1225,7 +1241,15 @@
     ],
     "label_best": "CircoLoco Records",
     "label_tier": 3,
-    "label_score": 60
+    "label_score": 60,
+    "tl_support_score": 10,
+    "tl_chart_best": null,
+    "tl_chart_tracks": 1,
+    "tl_chart_titles": [
+      "Free Your Mind"
+    ],
+    "tl_weeks_charted": 1,
+    "tl_updated": "2026-06-04T14:31:39.630Z"
   },
   {
     "name": "Josh Baker",
@@ -1428,7 +1452,15 @@
     ],
     "label_best": "Black Book Records",
     "label_tier": 4,
-    "label_score": 80
+    "label_score": 80,
+    "tl_support_score": 52,
+    "tl_chart_best": 9,
+    "tl_chart_tracks": 1,
+    "tl_chart_titles": [
+      "HOTS 4 U"
+    ],
+    "tl_weeks_charted": 1,
+    "tl_updated": "2026-06-04T14:31:39.630Z"
   },
   {
     "name": "KETTAMA",
@@ -1632,7 +1664,16 @@
     ],
     "label_best": "CircoLoco Records",
     "label_tier": 3,
-    "label_score": 60
+    "label_score": 60,
+    "tl_support_score": 79,
+    "tl_chart_best": 4,
+    "tl_chart_tracks": 2,
+    "tl_chart_titles": [
+      "Baby",
+      "Free Your Mind"
+    ],
+    "tl_weeks_charted": 1,
+    "tl_updated": "2026-06-04T14:31:39.630Z"
   },
   {
     "name": "Roddy Lima",
@@ -1669,7 +1710,15 @@
     ],
     "label_best": "Spectrum (NL)",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "tl_support_score": 21,
+    "tl_chart_best": 18,
+    "tl_chart_tracks": 1,
+    "tl_chart_titles": [
+      "Machine"
+    ],
+    "tl_weeks_charted": 1,
+    "tl_updated": "2026-06-04T14:31:39.631Z"
   },
   {
     "name": "AYYBO",
@@ -2239,7 +2288,15 @@
     ],
     "label_best": "Drumcode",
     "label_tier": 5,
-    "label_score": 100
+    "label_score": 100,
+    "tl_support_score": 80,
+    "tl_chart_best": 1,
+    "tl_chart_tracks": 1,
+    "tl_chart_titles": [
+      "La La Land"
+    ],
+    "tl_weeks_charted": 1,
+    "tl_updated": "2026-06-04T14:31:39.630Z"
   },
   {
     "name": "Dom Dolla",
@@ -2280,7 +2337,15 @@
     ],
     "label_best": "Three Six Zero Recordings",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "tl_support_score": 63,
+    "tl_chart_best": 6,
+    "tl_chart_tracks": 1,
+    "tl_chart_titles": [
+      "Don't Worry Baby"
+    ],
+    "tl_weeks_charted": 1,
+    "tl_updated": "2026-06-04T14:31:39.630Z"
   },
   {
     "name": "James Hype",
@@ -4278,7 +4343,15 @@
     ],
     "label_best": "Armada Music",
     "label_tier": 4,
-    "label_score": 80
+    "label_score": 80,
+    "tl_support_score": 63,
+    "tl_chart_best": 6,
+    "tl_chart_tracks": 1,
+    "tl_chart_titles": [
+      "Don't Worry Baby"
+    ],
+    "tl_weeks_charted": 1,
+    "tl_updated": "2026-06-04T14:31:39.630Z"
   },
   {
     "name": "Floating Points",
@@ -4458,7 +4531,15 @@
     ],
     "label_best": "Spectrum (NL)",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "tl_support_score": 21,
+    "tl_chart_best": 18,
+    "tl_chart_tracks": 1,
+    "tl_chart_titles": [
+      "Machine"
+    ],
+    "tl_weeks_charted": 1,
+    "tl_updated": "2026-06-04T14:31:39.630Z"
   },
   {
     "name": "Victor Calderone",
@@ -8857,7 +8938,15 @@
       "band": "E",
       "basis": "estimate"
     },
-    "youtube_channel_id": "UCy-BYDYjiNq6R17e-JHyBzw"
+    "youtube_channel_id": "UCy-BYDYjiNq6R17e-JHyBzw",
+    "tl_support_score": 56,
+    "tl_chart_best": 8,
+    "tl_chart_tracks": 1,
+    "tl_chart_titles": [
+      "Hands Up"
+    ],
+    "tl_weeks_charted": 1,
+    "tl_updated": "2026-06-04T14:31:39.631Z"
   },
   {
     "name": "Josh Gigante",
@@ -8893,7 +8982,15 @@
       "band": "E",
       "basis": "estimate"
     },
-    "youtube_channel_id": "UCVgvEDdwOmLvZO5kvg1S80Q"
+    "youtube_channel_id": "UCVgvEDdwOmLvZO5kvg1S80Q",
+    "tl_support_score": 77,
+    "tl_chart_best": 2,
+    "tl_chart_tracks": 1,
+    "tl_chart_titles": [
+      "So Good"
+    ],
+    "tl_weeks_charted": 1,
+    "tl_updated": "2026-06-04T14:31:39.631Z"
   },
   {
     "name": "Gai Barone",
@@ -9058,7 +9155,15 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "estimate"
-    }
+    },
+    "tl_support_score": 77,
+    "tl_chart_best": 2,
+    "tl_chart_tracks": 1,
+    "tl_chart_titles": [
+      "So Good"
+    ],
+    "tl_weeks_charted": 1,
+    "tl_updated": "2026-06-04T14:31:39.630Z"
   },
   {
     "name": "&ME",
@@ -9202,7 +9307,15 @@
       "band": "C",
       "basis": "estimate"
     },
-    "youtube_channel_id": "UC65kzmQBQ-hdEIS5THSOUtA"
+    "youtube_channel_id": "UC65kzmQBQ-hdEIS5THSOUtA",
+    "tl_support_score": 80,
+    "tl_chart_best": 1,
+    "tl_chart_tracks": 1,
+    "tl_chart_titles": [
+      "La La Land"
+    ],
+    "tl_weeks_charted": 1,
+    "tl_updated": "2026-06-04T14:31:39.630Z"
   },
   {
     "name": "Vintage Culture",
@@ -9244,7 +9357,15 @@
     "beatport_hype_charts": [
       "Melodic House & Techno"
     ],
-    "youtube_channel_id": "UC4N1snt2b0d83vOkvaWP6mg"
+    "youtube_channel_id": "UC4N1snt2b0d83vOkvaWP6mg",
+    "tl_support_score": 56,
+    "tl_chart_best": 8,
+    "tl_chart_tracks": 1,
+    "tl_chart_titles": [
+      "Hands Up"
+    ],
+    "tl_weeks_charted": 1,
+    "tl_updated": "2026-06-04T14:31:39.630Z"
   },
   {
     "name": "Hardt Antoine",
@@ -10331,7 +10452,15 @@
       "band": "D",
       "basis": "estimate"
     },
-    "wikipedia_title": "Genesi"
+    "wikipedia_title": "Genesi",
+    "tl_support_score": 80,
+    "tl_chart_best": 1,
+    "tl_chart_tracks": 1,
+    "tl_chart_titles": [
+      "La La Land"
+    ],
+    "tl_weeks_charted": 1,
+    "tl_updated": "2026-06-04T14:31:39.631Z"
   },
   {
     "name": "Greg 99",
