@@ -72,3 +72,13 @@
 /* Fair Value report link on artist profile */
 .ap-valuelink { display: block; margin: 4px 0 20px; padding: 14px 18px; background: var(--accent-bg); border: 1px solid var(--accent-border); border-radius: 12px; color: var(--accent); font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: background 0.12s; }
 .ap-valuelink:hover { background: var(--accent); color: var(--on-accent); }
+
+/* Live city demand mini-chart on profile */
+.ap-cities { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+.ap-cities-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.ap-city-row { display: grid; grid-template-columns: 1fr 120px 64px; align-items: center; gap: 10px; padding: 4px 0; }
+.ap-city-name { font-size: 0.88rem; color: var(--text-h); }
+.ap-city-bar { height: 5px; background: #1e1e1e; border-radius: 3px; overflow: hidden; }
+.ap-city-fill { height: 100%; background: var(--accent); border-radius: 3px; }
+.ap-city-shows { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); text-align: right; }
+@media (max-width: 640px) { .ap-city-row { grid-template-columns: 1fr 70px 56px; } }

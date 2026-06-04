@@ -366,6 +366,23 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
               )}
             </div>
           )}
+          {Array.isArray(dj.ra_recent_cities) && dj.ra_recent_cities.length >= 2 && (() => {
+            const cs = [...dj.ra_recent_cities].map(c => ({ city: c.city, shows: c.shows ?? c.shows_3m ?? 1 }))
+              .sort((a, b) => b.shows - a.shows).slice(0, 6);
+            const max = Math.max(...cs.map(c => c.shows), 1);
+            return (
+              <div className="ap-cities">
+                <div className="ap-cities-label">Where live demand concentrates</div>
+                {cs.map((c, i) => (
+                  <div key={i} className="ap-city-row">
+                    <span className="ap-city-name">{c.city}</span>
+                    <div className="ap-city-bar"><div className="ap-city-fill" style={{ width: `${Math.round(c.shows / max * 100)}%` }} /></div>
+                    <span className="ap-city-shows">{c.shows} show{c.shows !== 1 ? "s" : ""}</span>
+                  </div>
+                ))}
+              </div>
+            );
+          })()}
         </div>
       )}
 

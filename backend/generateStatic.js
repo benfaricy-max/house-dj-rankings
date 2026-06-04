@@ -110,7 +110,7 @@ async function main() {
         google_trends_score:     keep(trends.score, prev.google_trends_score),
         google_trends_direction: trends.score > 0 ? trends.direction : (prev.google_trends_direction ?? "stable"),
         google_trends_countries: (trends.top_countries && Object.keys(trends.top_countries).length) ? trends.top_countries : (prev.google_trends_countries ?? {}),
-        google_trends_cities:    (trends.top_us_cities && Object.keys(trends.top_us_cities).length) ? trends.top_us_cities : (prev.google_trends_cities ?? {}),
+        // google_trends_cities retired (all-zeros / noise) — see ra_recent_cities for real city demand.
         spotify_monthly_listeners: keep(spotifyCache.spotify_monthly_listeners ?? spotifyCache.spotify_followers, prev.spotify_monthly_listeners),
         // RA fields: never fetched in CI (requires local enrichRA.js run) — always preserve prev
         ra_slug:          prev.ra_slug          ?? null,

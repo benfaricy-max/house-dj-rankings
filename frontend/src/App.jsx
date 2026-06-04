@@ -980,203 +980,6 @@ function OnestoWatchPage({ rankings }) {
 // Curated city data combining real Google Trends + scene knowledge
 // Real data: John Summit (US/CA), Chris Lake (US/CA), Franky Rizardo (NL/EU), Prospa (UK/Africa)
 // Estimated: based on label, home city, known fan geography
-const CITY_SPOTLIGHT_ARTISTS = [
-  {
-    name: "John Summit",
-    homecity: "Chicago, US",
-    dataType: "live",
-    cities: [
-      { city: "Chicago", country: "🇺🇸", score: 100 },
-      { city: "New York",     country: "🇺🇸", score: 87 },
-      { city: "Los Angeles",  country: "🇺🇸", score: 78 },
-      { city: "Miami",        country: "🇺🇸", score: 71 },
-      { city: "Toronto",      country: "🇨🇦", score: 65 },
-      { city: "London",       country: "🇬🇧", score: 48 },
-    ],
-  },
-  {
-    name: "FISHER",
-    homecity: "Sydney, AU",
-    dataType: "estimated",
-    cities: [
-      { city: "Los Angeles",  country: "🇺🇸", score: 100 },
-      { city: "Sydney",       country: "🇦🇺", score: 92 },
-      { city: "New York",     country: "🇺🇸", score: 81 },
-      { city: "Melbourne",    country: "🇦🇺", score: 74 },
-      { city: "London",       country: "🇬🇧", score: 68 },
-      { city: "Miami",        country: "🇺🇸", score: 60 },
-    ],
-  },
-  {
-    name: "Chris Lake",
-    homecity: "London, UK",
-    dataType: "live",
-    cities: [
-      { city: "Los Angeles",  country: "🇺🇸", score: 100 },
-      { city: "New York",     country: "🇺🇸", score: 85 },
-      { city: "Miami",        country: "🇺🇸", score: 72 },
-      { city: "Chicago",      country: "🇺🇸", score: 64 },
-      { city: "Vancouver",    country: "🇨🇦", score: 55 },
-      { city: "London",       country: "🇬🇧", score: 48 },
-    ],
-  },
-  {
-    name: "Michael Bibi",
-    homecity: "London, UK",
-    dataType: "estimated",
-    cities: [
-      { city: "London",       country: "🇬🇧", score: 100 },
-      { city: "Barcelona",    country: "🇪🇸", score: 84 },
-      { city: "Amsterdam",    country: "🇳🇱", score: 76 },
-      { city: "New York",     country: "🇺🇸", score: 62 },
-      { city: "Berlin",       country: "🇩🇪", score: 58 },
-      { city: "Ibiza",        country: "🇪🇸", score: 52 },
-    ],
-  },
-  {
-    name: "Jamie Jones",
-    homecity: "Barcelona, ES",
-    dataType: "estimated",
-    cities: [
-      { city: "Ibiza",        country: "🇪🇸", score: 100 },
-      { city: "Barcelona",    country: "🇪🇸", score: 91 },
-      { city: "London",       country: "🇬🇧", score: 78 },
-      { city: "Berlin",       country: "🇩🇪", score: 70 },
-      { city: "Amsterdam",    country: "🇳🇱", score: 64 },
-      { city: "New York",     country: "🇺🇸", score: 55 },
-    ],
-  },
-  {
-    name: "Mau P",
-    homecity: "Amsterdam, NL",
-    dataType: "estimated",
-    cities: [
-      { city: "Amsterdam",    country: "🇳🇱", score: 100 },
-      { city: "London",       country: "🇬🇧", score: 82 },
-      { city: "New York",     country: "🇺🇸", score: 75 },
-      { city: "Berlin",       country: "🇩🇪", score: 68 },
-      { city: "Los Angeles",  country: "🇺🇸", score: 60 },
-      { city: "Miami",        country: "🇺🇸", score: 54 },
-    ],
-  },
-  {
-    name: "Franky Rizardo",
-    homecity: "Amsterdam, NL",
-    dataType: "live",
-    cities: [
-      { city: "Amsterdam",    country: "🇳🇱", score: 100 },
-      { city: "Rotterdam",    country: "🇳🇱", score: 88 },
-      { city: "Dublin",       country: "🇮🇪", score: 72 },
-      { city: "Brussels",     country: "🇧🇪", score: 65 },
-      { city: "London",       country: "🇬🇧", score: 58 },
-      { city: "Bucharest",    country: "🇷🇴", score: 48 },
-    ],
-  },
-  {
-    name: "Chris Stussy",
-    homecity: "Amsterdam, NL",
-    dataType: "estimated",
-    cities: [
-      { city: "Amsterdam",    country: "🇳🇱", score: 100 },
-      { city: "London",       country: "🇬🇧", score: 80 },
-      { city: "Berlin",       country: "🇩🇪", score: 72 },
-      { city: "Barcelona",    country: "🇪🇸", score: 65 },
-      { city: "New York",     country: "🇺🇸", score: 54 },
-      { city: "Paris",        country: "🇫🇷", score: 46 },
-    ],
-  },
-  {
-    name: "Ben Sterling",
-    homecity: "London, UK",
-    dataType: "estimated",
-    cities: [
-      { city: "London",       country: "🇬🇧", score: 100 },
-      { city: "Manchester",   country: "🇬🇧", score: 82 },
-      { city: "Amsterdam",    country: "🇳🇱", score: 68 },
-      { city: "New York",     country: "🇺🇸", score: 55 },
-      { city: "Berlin",       country: "🇩🇪", score: 50 },
-      { city: "Ibiza",        country: "🇪🇸", score: 44 },
-    ],
-  },
-  {
-    name: "Josh Baker",
-    homecity: "London, UK",
-    dataType: "estimated",
-    cities: [
-      { city: "London",       country: "🇬🇧", score: 100 },
-      { city: "Manchester",   country: "🇬🇧", score: 78 },
-      { city: "Berlin",       country: "🇩🇪", score: 62 },
-      { city: "Barcelona",    country: "🇪🇸", score: 55 },
-      { city: "Amsterdam",    country: "🇳🇱", score: 50 },
-      { city: "Glasgow",      country: "🇬🇧", score: 44 },
-    ],
-  },
-  {
-    name: "Luke Dean",
-    homecity: "London, UK",
-    dataType: "estimated",
-    cities: [
-      { city: "London",       country: "🇬🇧", score: 100 },
-      { city: "Manchester",   country: "🇬🇧", score: 85 },
-      { city: "Bristol",      country: "🇬🇧", score: 70 },
-      { city: "Amsterdam",    country: "🇳🇱", score: 54 },
-      { city: "Berlin",       country: "🇩🇪", score: 48 },
-      { city: "Leeds",        country: "🇬🇧", score: 44 },
-    ],
-  },
-  {
-    name: "Max Dean",
-    homecity: "London, UK",
-    dataType: "estimated",
-    cities: [
-      { city: "London",       country: "🇬🇧", score: 100 },
-      { city: "Manchester",   country: "🇬🇧", score: 84 },
-      { city: "Birmingham",   country: "🇬🇧", score: 68 },
-      { city: "Bristol",      country: "🇬🇧", score: 60 },
-      { city: "Amsterdam",    country: "🇳🇱", score: 48 },
-      { city: "Berlin",       country: "🇩🇪", score: 42 },
-    ],
-  },
-  {
-    name: "Rossi.",
-    homecity: "London, UK",
-    dataType: "estimated",
-    cities: [
-      { city: "London",       country: "🇬🇧", score: 100 },
-      { city: "Manchester",   country: "🇬🇧", score: 80 },
-      { city: "Amsterdam",    country: "🇳🇱", score: 65 },
-      { city: "Berlin",       country: "🇩🇪", score: 58 },
-      { city: "New York",     country: "🇺🇸", score: 46 },
-      { city: "Ibiza",        country: "🇪🇸", score: 40 },
-    ],
-  },
-  {
-    name: "Prospa",
-    homecity: "London, UK",
-    dataType: "live",
-    cities: [
-      { city: "London",       country: "🇬🇧", score: 100 },
-      { city: "Nairobi",      country: "🇰🇪", score: 88 },
-      { city: "Lagos",        country: "🇳🇬", score: 76 },
-      { city: "Auckland",     country: "🇳🇿", score: 64 },
-      { city: "Sydney",       country: "🇦🇺", score: 58 },
-      { city: "Melbourne",    country: "🇦🇺", score: 50 },
-    ],
-  },
-  {
-    name: "ChaseWest",
-    homecity: "Miami, US",
-    dataType: "estimated",
-    cities: [
-      { city: "Miami",        country: "🇺🇸", score: 100 },
-      { city: "New York",     country: "🇺🇸", score: 82 },
-      { city: "Los Angeles",  country: "🇺🇸", score: 74 },
-      { city: "Atlanta",      country: "🇺🇸", score: 62 },
-      { city: "Chicago",      country: "🇺🇸", score: 55 },
-      { city: "London",       country: "🇬🇧", score: 44 },
-    ],
-  },
-];
 
 // ---- Booking Intelligence -------------------------------------------------
 const BOOKING_MARKETS = [
@@ -1667,9 +1470,37 @@ function MarketSaturationPage({ rankings }) {
 
 // ---- Price/Demand Gap — the buy signal -------------------------------------
 
+const CS_SHORT_COUNTRY = { "United States of America": "USA", "United Kingdom": "UK", "United Arab Emirates": "UAE", "Czech Republic": "Czechia" };
+
+// Builds a per-artist "where their live demand concentrates" view from the real
+// Resident Advisor booking footprint (ra_recent_cities). Returns top cities scored
+// 0-100 by recent show count relative to the artist's busiest market.
+export function citySpotlight(a) {
+  const raw = Array.isArray(a.ra_recent_cities) ? a.ra_recent_cities : [];
+  const cities = raw
+    .map(c => ({ city: c.city, country: CS_SHORT_COUNTRY[c.country] || c.country, shows: c.shows ?? c.shows_3m ?? 1, days_since: c.days_since }))
+    .filter(c => c.city)
+    .sort((x, y) => y.shows - x.shows || (x.days_since ?? 999) - (y.days_since ?? 999))
+    .slice(0, 8);
+  const max = Math.max(...cities.map(c => c.shows), 1);
+  cities.forEach(c => (c.score = Math.round((c.shows / max) * 100)));
+  return cities;
+}
+
 function CitySpotlightPage({ rankings }) {
-  const byName = Object.fromEntries(rankings.map(r => [r.name, r]));
   const [selected, setSelected] = useState(null);
+  const [q, setQ] = useState("");
+
+  const artists = useMemo(() => rankings
+    .map(a => ({ name: a.name, rank: a.rank, image: a.image, cities: citySpotlight(a) }))
+    .filter(a => a.cities.length >= 2)
+    .sort((a, b) => a.rank - b.rank), [rankings]);
+
+  const filtered = useMemo(() => {
+    const needle = q.trim().toLowerCase();
+    const list = needle ? artists.filter(a => a.name.toLowerCase().includes(needle)) : artists;
+    return list.slice(0, needle ? 120 : 60);
+  }, [artists, q]);
 
   return (
     <div className="page cs-page">
@@ -1677,22 +1508,17 @@ function CitySpotlightPage({ rankings }) {
         <div>
           <h1 className="cs-title">City Demand Spotlight</h1>
           <p className="cs-sub">
-            Where is each artist's fanbase most concentrated?
-            Book them in the cities before demand peaks.
+            Where each artist's live demand actually concentrates — from {artists.length} artists'
+            Resident Advisor booking footprint over recent months. Book them where they already pull.
           </p>
-        </div>
-        <div className="cs-legend">
-          <span className="cs-legend-live">● Live data</span>
-          <span className="cs-legend-est">● Estimated</span>
         </div>
       </div>
 
-      <div className="cs-grid">
-        {CITY_SPOTLIGHT_ARTISTS.map(artist => {
-          const rankData = byName[artist.name];
-          const isLive = artist.dataType === "live";
-          const isSelected = selected === artist.name;
+      <input className="cs-search" placeholder="Search an artist…" value={q} onChange={e => setQ(e.target.value)} />
 
+      <div className="cs-grid">
+        {filtered.map(artist => {
+          const isSelected = selected === artist.name;
           return (
             <div
               key={artist.name}
@@ -1702,21 +1528,14 @@ function CitySpotlightPage({ rankings }) {
             >
               <div className="cs-card-header">
                 <div className="cs-card-left">
-                  {rankData?.image && (
-                    <img src={rankData.image} className="cs-avatar" alt="" />
-                  )}
+                  {artist.image && <img src={artist.image} className="cs-avatar" alt="" />}
                   <div>
                     <div className="cs-card-name"><ArtistLink name={artist.name} /></div>
-                    <div className="cs-card-meta">
-                      {artist.homecity}
-                      {rankData && <span> · Rank #{rankData.rank}</span>}
-                    </div>
+                    <div className="cs-card-meta">Rank #{artist.rank} · {artist.cities.length} active markets</div>
                   </div>
                 </div>
                 <div className="cs-card-right">
-                  <span className={`cs-data-badge ${isLive ? "cs-data-badge--live" : "cs-data-badge--est"}`}>
-                    {isLive ? "Live" : "Est."}
-                  </span>
+                  <span className="cs-data-badge cs-data-badge--live">Live</span>
                   <span className="cs-top-city">{artist.cities[0].city}</span>
                   <span className="cs-chevron">{isSelected ? "▲" : "▼"}</span>
                 </div>
@@ -1725,34 +1544,25 @@ function CitySpotlightPage({ rankings }) {
               {isSelected && (
                 <div className="cs-city-list">
                   {artist.cities.map((c, i) => (
-                    <div key={c.city} className="cs-city-row">
+                    <div key={c.city + i} className="cs-city-row">
                       <span className="cs-city-rank">#{i + 1}</span>
-                      <span className="cs-city-flag">{c.country}</span>
-                      <span className="cs-city-name">{c.city}</span>
+                      <span className="cs-city-name">{c.city}<span className="cs-city-country"> · {c.country}</span></span>
                       <div className="cs-city-bar-track">
-                        <div
-                          className="cs-city-bar-fill"
-                          style={{
-                            width: `${c.score}%`,
-                            background: i === 0 ? "var(--accent)"
-                              : i < 3 ? "color-mix(in srgb, var(--accent) 70%, #fff)"
-                              : "#2a2a2a",
-                          }}
-                        />
+                        <div className="cs-city-bar-fill" style={{
+                          width: `${c.score}%`,
+                          background: i === 0 ? "var(--accent)" : i < 3 ? "color-mix(in srgb, var(--accent) 70%, #fff)" : "#2a2a2a",
+                        }} />
                       </div>
-                      <span className="cs-city-score">{c.score}</span>
+                      <span className="cs-city-score">{c.shows} show{c.shows !== 1 ? "s" : ""}</span>
                     </div>
                   ))}
-                  {!isLive && (
-                    <div className="cs-est-note">
-                      ⓘ Estimated from artist home market, label, and listener distribution.
-                    </div>
-                  )}
+                  <div className="cs-est-note">ⓘ Concentration = recent Resident Advisor bookings per city — more shows means stronger live demand there.</div>
                 </div>
               )}
             </div>
           );
         })}
+        {filtered.length === 0 && <div className="cs-empty">No artist matches "{q}".</div>}
       </div>
     </div>
   );

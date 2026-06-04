@@ -89,7 +89,8 @@ async function enrich(a) {
     a.google_trends_score      = tr.score;
     a.google_trends_direction  = tr.direction;
     a.google_trends_countries  = tr.top_countries ?? {};
-    a.google_trends_cities     = tr.top_us_cities ?? {};
+    // google_trends_cities retired — Google Trends city data returned all-zeros /
+    // namesake noise (unusable). City-level demand now comes from ra_recent_cities.
     counts.tr++;
   }
 
