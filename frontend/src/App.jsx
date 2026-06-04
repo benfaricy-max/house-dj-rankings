@@ -2196,6 +2196,28 @@ export default function App() {
   const [activeTab, setActiveTab]     = useState("rankings");
   const cardRefs = useRef({});
 
+  // Weekly Movers, computed client-side from each artist's rank_history (the old
+  // /api/movers needed a server we don't run). Self-activating: a mover only
+  // counts when there's a reference point ≥6 days old, so this stays empty until
+  // the daily cron has accrued a real week of history, then appears on its own.
+  const liveMovers = useMemo(() => {
+    const now = Date.now(), MIN_DAYS = 6;
+    const scored = [];
+    for (const a of rankings) {
+      const rh = (a.rank_history || []).filter(p => p && p.r != null && p.d);
+      if (rh.length < 2) continue;
+      const newest = rh[rh.length - 1];
+      let ref = null;                                  // newest point that is still ≥6 days old
+      for (const p of rh) if ((now - new Date(p.d).getTime()) / 864e5 >= MIN_DAYS) ref = p;
+      if (!ref) continue;
+      const delta = ref.r - newest.r;                  // +ve = climbed the chart
+      if (delta !== 0) scored.push({ ...a, rank_change: delta });
+    }
+    const rising  = scored.filter(x => x.rank_change > 0).sort((a, b) => b.rank_change - a.rank_change).slice(0, 8);
+    const falling = scored.filter(x => x.rank_change < 0).sort((a, b) => a.rank_change - b.rank_change).slice(0, 8);
+    return (rising.length || falling.length) ? { rising, falling } : null;
+  }, [rankings]);
+
   function load() {
     setLoading(true);
     fetch("/rankings.json")
@@ -2351,7 +2373,7 @@ export default function App() {
       {activeTab === "how-it-works"  && <HowItWorksPage />}
 
       {activeTab === "rankings" && <>
-      {movers && <WeeklyMovers movers={movers} onScrollTo={scrollTo} />}
+      {liveMovers && <WeeklyMovers movers={liveMovers} onScrollTo={scrollTo} />}
 
       <div className="sort-bar">
         <span className="sort-label">Sort by</span>
