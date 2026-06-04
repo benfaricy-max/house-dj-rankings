@@ -1262,6 +1262,7 @@ function BookingIntelPage({ rankings }) {
     ["read", "City Read"],
     ["saturation", "Saturation"],
     ["spotlight", "City Spotlight"],
+    ["scout", "City Scout"],
   ];
   return (
     <div className="mk-page">
@@ -1275,6 +1276,7 @@ function BookingIntelPage({ rankings }) {
       {view === "read" && <MarketReadPage rankings={rankings} embedded />}
       {view === "saturation" && <MarketSaturationPage rankings={rankings} />}
       {view === "spotlight" && <CitySpotlightPage rankings={rankings} />}
+      {view === "scout" && <CityScoutPage rankings={rankings} />}
     </div>
   );
 }
@@ -1564,6 +1566,70 @@ function CitySpotlightPage({ rankings }) {
         })}
         {filtered.length === 0 && <div className="cs-empty">No artist matches "{q}".</div>}
       </div>
+    </div>
+  );
+}
+
+// ── City Scout — the inverted view: pick a city, see who draws there ──────────
+function CityScoutPage({ rankings }) {
+  const index = useMemo(() => {
+    const m = {};
+    const JUNK = new Set(["All", "all", "Online", "Various", "TBA"]);   // RA pseudo-buckets, not real cities
+    for (const a of rankings) {
+      for (const c of (a.ra_recent_cities || [])) {
+        if (!c.city || JUNK.has(c.city)) continue;
+        const recent = c.shows_3m ?? 0, days = c.days_since ?? 9999;
+        // "Hot now" = recent booking volume, decayed by how long since they played.
+        const hot = recent * 10 - days / 45;
+        (m[c.city] ??= { city: c.city, country: c.country, artists: [] }).artists.push({
+          name: a.name, rank: a.rank, image: a.image,
+          recent, total: c.shows ?? recent, days_since: c.days_since, saturation: c.saturation, hot,
+        });
+      }
+    }
+    for (const k in m) m[k].artists.sort((x, y) => y.hot - x.hot || (x.days_since ?? 9999) - (y.days_since ?? 9999) || x.rank - y.rank);
+    return m;
+  }, [rankings]);
+
+  const cities = useMemo(() => Object.values(index).sort((a, b) => b.artists.length - a.artists.length), [index]);
+  const [city, setCity] = useState("");
+  const current = (city && index[city]) || cities[0];
+
+  if (!current) return <div className="page cy-page"><div className="cs-empty">No city booking data yet.</div></div>;
+
+  const ago = d => d == null ? "" : d === 0 ? "today" : d < 31 ? `${d}d ago` : d < 365 ? `${Math.round(d / 30)}mo ago` : `${Math.round(d / 365)}y ago`;
+
+  return (
+    <div className="page cy-page">
+      <div className="cs-header">
+        <div>
+          <h1 className="cs-title">City Scout</h1>
+          <p className="cs-sub">Pick a market and see which artists actually draw there — ranked by recent Resident Advisor bookings. The promoter's view: who's hot in your city right now.</p>
+        </div>
+      </div>
+
+      <select className="cs-search cy-select" value={current.city} onChange={e => setCity(e.target.value)}>
+        {cities.map(c => <option key={c.city} value={c.city}>{c.city}{c.country ? `, ${c.country}` : ""} · {c.artists.length} artist{c.artists.length !== 1 ? "s" : ""}</option>)}
+      </select>
+
+      <div className="cy-head">
+        <span className="cy-head-city">{current.city}</span>
+        <span className="cy-head-meta">{current.country} · {current.artists.length} artists with recent bookings</span>
+      </div>
+
+      <div className="cy-list">
+        {current.artists.map((a, i) => (
+          <div className="cy-row" key={a.name + i}>
+            <span className="cy-pos">{i + 1}</span>
+            {a.image ? <img className="cy-avatar" src={a.image} alt="" /> : <span className="cy-avatar cy-avatar--ph">{a.name[0]}</span>}
+            <span className="cy-name"><ArtistLink name={a.name} /><span className="cy-rank">#{a.rank}</span></span>
+            <span className="cy-shows">{a.recent > 0 ? `${a.recent} in 3mo` : `${a.total} all-time`}</span>
+            <span className="cy-last">{ago(a.days_since)}</span>
+            {a.saturation >= 60 && <span className="cy-sat" title="Heavily booked here recently">overbooked</span>}
+          </div>
+        ))}
+      </div>
+      <div className="cs-est-note" style={{ maxWidth: 640 }}>ⓘ Ranked by recent Resident Advisor bookings in this city. "Overbooked" flags artists who've played here repeatedly and lately — diminishing returns for a new date.</div>
     </div>
   );
 }

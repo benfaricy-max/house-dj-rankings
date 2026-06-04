@@ -961,3 +961,21 @@ details[open] .hiw-faq-q::after { content: "–"; }
 .rp-card-dek { color: var(--text); font-size: 0.92rem; line-height: 1.5; }
 
 @media (max-width: 640px) { .rp-feature { grid-template-columns: 1fr; } .rp-feature-img { min-height: 180px; } }
+
+/* ── City Scout (who's hot in a city) ────────────────────────────── */
+.cy-page { max-width: 760px; margin: 0 auto; }
+.cy-select { max-width: 420px; }
+.cy-head { display: flex; align-items: baseline; gap: 12px; margin: 4px 0 16px; flex-wrap: wrap; }
+.cy-head-city { font-size: 1.4rem; font-weight: 800; color: var(--text-h); letter-spacing: -0.5px; }
+.cy-head-meta { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.cy-list { display: flex; flex-direction: column; gap: 6px; }
+.cy-row { display: grid; grid-template-columns: 26px 34px 1fr auto auto auto; align-items: center; gap: 12px; padding: 10px 14px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; }
+.cy-pos { font-family: var(--mono); font-size: 12px; color: var(--muted); text-align: center; }
+.cy-avatar { width: 34px; height: 34px; border-radius: 8px; object-fit: cover; }
+.cy-avatar--ph { display: flex; align-items: center; justify-content: center; background: var(--code-bg); color: var(--muted); font-weight: 700; }
+.cy-name { color: var(--text-h); font-weight: 600; display: flex; align-items: baseline; gap: 8px; min-width: 0; }
+.cy-name .cy-rank { font-family: var(--mono); font-size: 11px; color: var(--muted); font-weight: 400; }
+.cy-shows { font-family: var(--mono); font-size: 12px; color: var(--accent); white-space: nowrap; }
+.cy-last { font-family: var(--mono); font-size: 11px; color: var(--muted); white-space: nowrap; }
+.cy-sat { font-family: var(--mono); font-size: 10px; color: #ff8a5c; background: rgba(255,138,92,0.12); padding: 2px 7px; border-radius: 5px; white-space: nowrap; }
+@media (max-width: 640px) { .cy-row { grid-template-columns: 22px 30px 1fr auto; } .cy-last, .cy-sat { display: none; } }
