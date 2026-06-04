@@ -1294,18 +1294,38 @@ function DJChartPage() {
   if (chart === undefined) return <div className="page"><div className="cs-empty">Loading the DJ chart…</div></div>;
   if (!chart || !chart.entries?.length) return <div className="page"><div className="cs-empty">DJ-support chart isn't available yet. Run the 1001Tracklists enrichment to populate it.</div></div>;
 
+  const top = chart.top_supported || [];
   return (
     <div className="page dj-page">
       <div className="cs-header">
         <div>
           <h1 className="cs-title">What DJs Are Playing</h1>
           <p className="cs-sub">
-            This week's 1001Tracklists chart — the tracks DJs are actually spinning in their sets.
-            The hardest signal to game: it's the scene's tastemakers, not sales or streams.
-            <strong> {chart.roster_hits} of {chart.count}</strong> are our roster.
+            Who the scene's tastemakers are actually spinning, from the 1001Tracklists weekly chart —
+            the hardest signal to game (DJ support, not sales or streams). Ranked over the last
+            <strong> {chart.weeks_archived} weeks</strong>: <strong>{chart.roster_supported}</strong> of our roster have charted.
           </p>
         </div>
       </div>
+
+      {top.length > 0 && (
+        <>
+          <div className="dj-section-h">Most DJ-supported · last {chart.weeks_archived} weeks</div>
+          <div className="dj-board">
+            {top.map((a, i) => (
+              <a key={a.slug} className="dj-board-row" href={`#/artist/${a.slug}`}>
+                <span className="dj-board-pos">{i + 1}</span>
+                <span className="dj-board-name">{a.name}</span>
+                <span className="dj-board-bar"><span className="dj-board-fill" style={{ width: `${a.score}%` }} /></span>
+                <span className="dj-board-meta">{a.weeks}wk · best #{a.best ?? "—"}</span>
+                {a.now ? <span className="dj-badge">on chart now</span> : a.recent ? <span className="dj-badge dj-badge--soft">recent</span> : <span className="dj-board-spacer" />}
+              </a>
+            ))}
+          </div>
+        </>
+      )}
+
+      <div className="dj-section-h">This week's chart · {chart.roster_hits} of {chart.count} are roster</div>
       <div className="dj-meta">Week {chart.week} · updated {chart.date}</div>
       <div className="dj-list">
         {chart.entries.map((e, i) => (
