@@ -32,3 +32,8 @@
 .bl-cap { font-family: var(--mono); font-size: 13px; color: var(--muted); margin-top: 8px; }
 .bl-missing { color: var(--muted); padding: 40px 0; }
 @media (max-width: 640px) { .bl-title, .bl-post-title { font-size: 32px; } .bl-body { font-size: 17px; } }
+
+.bl-seriesnav { display: flex; justify-content: space-between; gap: 14px; margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--border); }
+.bl-seriesnav-link { font-family: var(--mono); font-size: 14px; color: var(--accent); text-decoration: none; padding: 12px 16px; border: 1px solid var(--border); border-radius: 10px; max-width: 48%; }
+.bl-seriesnav-link:hover { border-color: var(--accent-border); }
+.bl-seriesnav-next { text-align: right; margin-left: auto; }

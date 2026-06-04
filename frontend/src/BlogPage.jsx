@@ -74,6 +74,16 @@ export function BlogPost({ slug }) {
         <p className="bl-post-dek">{p.dek}</p>
         <div className="bl-post-meta">{fmtDate(p.date)} · {p.author}{p.readMins ? ` · ${p.readMins} min read` : ""}</div>
         <div className="bl-body">{p.blocks.map((b, i) => <Block key={i} b={b} />)}</div>
+        {p.seriesNav && (
+          <div className="bl-seriesnav">
+            {p.seriesNav.prev
+              ? <a className="bl-seriesnav-link bl-seriesnav-prev" href={`#/blog/${p.seriesNav.prev.slug}`}>← {p.seriesNav.prev.label}</a>
+              : <span />}
+            {p.seriesNav.next
+              ? <a className="bl-seriesnav-link bl-seriesnav-next" href={`#/blog/${p.seriesNav.next.slug}`}>{p.seriesNav.next.label} →</a>
+              : <span />}
+          </div>
+        )}
       </article>
     </div>
   );
