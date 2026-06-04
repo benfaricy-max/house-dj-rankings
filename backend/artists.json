@@ -1262,7 +1262,14 @@
     ],
     "label_best": "Atlantic/Circoloco",
     "label_tier": 3,
-    "label_score": 60
+    "label_score": 60,
+    "beatport_hype_score": 84,
+    "beatport_hype_best": 11,
+    "beatport_hype_tracks": 4,
+    "beatport_hype_charts": [
+      "House",
+      "Deep House"
+    ]
   },
   {
     "name": "Franky Rizardo",
@@ -1342,7 +1349,13 @@
     ],
     "label_best": "PlanetX",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "beatport_hype_score": 70,
+    "beatport_hype_best": 9,
+    "beatport_hype_tracks": 2,
+    "beatport_hype_charts": [
+      "Indie Dance"
+    ]
   },
   {
     "name": "Disco Lines",
@@ -1488,7 +1501,15 @@
     ],
     "label_best": "range.",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "beatport_hype_score": 94,
+    "beatport_hype_best": 3,
+    "beatport_hype_tracks": 4,
+    "beatport_hype_charts": [
+      "House",
+      "Minimal / Deep Tech",
+      "Deep House"
+    ]
   },
   {
     "name": "Beltran",
@@ -2063,7 +2084,13 @@
     ],
     "label_best": "Baker's Dozen",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "beatport_hype_score": 64,
+    "beatport_hype_best": 11,
+    "beatport_hype_tracks": 1,
+    "beatport_hype_charts": [
+      "House"
+    ]
   },
   {
     "name": "Alisha",
@@ -2332,7 +2359,13 @@
     "demand_index": 49,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "beatport_hype_score": 36,
+    "beatport_hype_best": 58,
+    "beatport_hype_tracks": 1,
+    "beatport_hype_charts": [
+      "Tech House"
+    ]
   },
   {
     "name": "Eli Brown",
@@ -2507,7 +2540,13 @@
     "demand_index": 57,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "beatport_hype_score": 17,
+    "beatport_hype_best": 90,
+    "beatport_hype_tracks": 1,
+    "beatport_hype_charts": [
+      "Minimal / Deep Tech"
+    ]
   },
   {
     "name": "Rebüke",
@@ -3156,7 +3195,13 @@
     "demand_index": 50,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "beatport_hype_score": 53,
+    "beatport_hype_best": 29,
+    "beatport_hype_tracks": 1,
+    "beatport_hype_charts": [
+      "Deep House"
+    ]
   },
   {
     "name": "Gerd Janson",
@@ -3534,7 +3579,13 @@
     ],
     "label_best": "SPINNIN' DEEP",
     "label_tier": 4,
-    "label_score": 80
+    "label_score": 80,
+    "beatport_hype_score": 40,
+    "beatport_hype_best": 67,
+    "beatport_hype_tracks": 3,
+    "beatport_hype_charts": [
+      "Melodic House & Techno"
+    ]
   },
   {
     "name": "Colyn",
@@ -5277,7 +5328,13 @@
     "demand_index": 60,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "beatport_hype_score": 68,
+    "beatport_hype_best": 12,
+    "beatport_hype_tracks": 2,
+    "beatport_hype_charts": [
+      "Melodic House & Techno"
+    ]
   },
   {
     "name": "Innellea",
@@ -6213,7 +6270,13 @@
     ],
     "label_best": "Defected",
     "label_tier": 5,
-    "label_score": 100
+    "label_score": 100,
+    "beatport_hype_score": 52,
+    "beatport_hype_best": 31,
+    "beatport_hype_tracks": 1,
+    "beatport_hype_charts": [
+      "Minimal / Deep Tech"
+    ]
   },
   {
     "name": "Sascha Dive",
@@ -7187,7 +7250,13 @@
     ],
     "label_best": "HABITAT Records",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "beatport_hype_score": 56,
+    "beatport_hype_best": 24,
+    "beatport_hype_tracks": 1,
+    "beatport_hype_charts": [
+      "Melodic House & Techno"
+    ]
   },
   {
     "name": "Alan Dixon",
@@ -8354,7 +8423,13 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "beatport_hype_score": 84,
+    "beatport_hype_best": 2,
+    "beatport_hype_tracks": 4,
+    "beatport_hype_charts": [
+      "Organic House / Downtempo"
+    ]
   },
   {
     "name": "Ilias Katelanos",
@@ -8389,7 +8464,14 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "beatport_hype_score": 95,
+    "beatport_hype_best": 1,
+    "beatport_hype_tracks": 6,
+    "beatport_hype_charts": [
+      "Progressive House",
+      "Organic House / Downtempo"
+    ]
   },
   {
     "name": "LUCH",
@@ -8567,7 +8649,13 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "beatport_hype_score": 70,
+    "beatport_hype_best": 1,
+    "beatport_hype_tracks": 1,
+    "beatport_hype_charts": [
+      "Indie Dance"
+    ]
   },
   {
     "name": "Volkoder",
@@ -8675,7 +8763,13 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "beatport_hype_score": 86,
+    "beatport_hype_best": 7,
+    "beatport_hype_tracks": 8,
+    "beatport_hype_charts": [
+      "Progressive House"
+    ]
   },
   {
     "name": "HotLap",
@@ -8712,7 +8806,13 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "beatport_hype_score": 70,
+    "beatport_hype_best": 1,
+    "beatport_hype_tracks": 1,
+    "beatport_hype_charts": [
+      "Melodic House & Techno"
+    ]
   },
   {
     "name": "GEØVHÄN",
@@ -8745,7 +8845,13 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "beatport_hype_score": 65,
+    "beatport_hype_best": 18,
+    "beatport_hype_tracks": 2,
+    "beatport_hype_charts": [
+      "Organic House / Downtempo"
+    ]
   },
   {
     "name": "CamelPhat",
@@ -8881,7 +8987,13 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "beatport_hype_score": 78,
+    "beatport_hype_best": 4,
+    "beatport_hype_tracks": 3,
+    "beatport_hype_charts": [
+      "Progressive House"
+    ]
   },
   {
     "name": "Meduza",
@@ -8952,7 +9064,13 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "estimate"
-    }
+    },
+    "beatport_hype_score": 39,
+    "beatport_hype_best": 52,
+    "beatport_hype_tracks": 1,
+    "beatport_hype_charts": [
+      "Melodic House & Techno"
+    ]
   },
   {
     "name": "Hardt Antoine",
@@ -8987,7 +9105,13 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "beatport_hype_score": 17,
+    "beatport_hype_best": 90,
+    "beatport_hype_tracks": 1,
+    "beatport_hype_charts": [
+      "Melodic House & Techno"
+    ]
   },
   {
     "name": "Rampa",
@@ -9091,7 +9215,14 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "beatport_hype_score": 92,
+    "beatport_hype_best": 6,
+    "beatport_hype_tracks": 5,
+    "beatport_hype_charts": [
+      "Progressive House",
+      "Organic House / Downtempo"
+    ]
   },
   {
     "name": "Ultra Nate",
@@ -9232,7 +9363,13 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "beatport_hype_score": 68,
+    "beatport_hype_best": 4,
+    "beatport_hype_tracks": 1,
+    "beatport_hype_charts": [
+      "Melodic House & Techno"
+    ]
   },
   {
     "name": "Cam Stockman",
@@ -9429,7 +9566,14 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "beatport_hype_score": 79,
+    "beatport_hype_best": 2,
+    "beatport_hype_tracks": 2,
+    "beatport_hype_charts": [
+      "House",
+      "Tech House"
+    ]
   },
   {
     "name": "RSquared",
@@ -9465,7 +9609,13 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "beatport_hype_score": 73,
+    "beatport_hype_best": 5,
+    "beatport_hype_tracks": 2,
+    "beatport_hype_charts": [
+      "Tech House"
+    ]
   },
   {
     "name": "Yuvèe",
@@ -9498,7 +9648,13 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "beatport_hype_score": 48,
+    "beatport_hype_best": 37,
+    "beatport_hype_tracks": 1,
+    "beatport_hype_charts": [
+      "Deep House"
+    ]
   },
   {
     "name": "Mochakk",
@@ -9839,7 +9995,13 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "beatport_hype_score": 12,
+    "beatport_hype_best": 98,
+    "beatport_hype_tracks": 1,
+    "beatport_hype_charts": [
+      "House"
+    ]
   },
   {
     "name": "Arodes",
@@ -9874,7 +10036,13 @@
       "band": "D",
       "basis": "estimate"
     },
-    "wikipedia_title": "Arodes"
+    "wikipedia_title": "Arodes",
+    "beatport_hype_score": 52,
+    "beatport_hype_best": 31,
+    "beatport_hype_tracks": 1,
+    "beatport_hype_charts": [
+      "Melodic House & Techno"
+    ]
   },
   {
     "name": "MPH",
@@ -9949,7 +10117,13 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "beatport_hype_score": 63,
+    "beatport_hype_best": 21,
+    "beatport_hype_tracks": 2,
+    "beatport_hype_charts": [
+      "Indie Dance"
+    ]
   },
   {
     "name": "Genesi",
@@ -9991,7 +10165,13 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "beatport_hype_score": 23,
+    "beatport_hype_best": 80,
+    "beatport_hype_tracks": 1,
+    "beatport_hype_charts": [
+      "Tech House"
+    ]
   },
   {
     "name": "Jamback",

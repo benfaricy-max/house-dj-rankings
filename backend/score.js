@@ -15,6 +15,7 @@ function scoreArtists(artists) {
     "tiktok_post_count",
     "google_trends_score",
     "beatport_score",
+    "beatport_hype_score",
     "wikipedia_pageviews",
     "manual_scene_score",
     "ra_score",
@@ -34,16 +35,17 @@ function scoreArtists(artists) {
     spotify_follower_growth_rate: 0.13,  // GROWTH weighted heavily — acceleration > size
     spotify_monthly_listeners:    0.13,
     manual_scene_score:           0.11,  // editorial scene credibility (transparent rubric — see How It Works)
-    beatport_score:               0.10,  // core scene / chart credibility
+    beatport_score:               0.10,  // core scene / chart credibility (established Top-100)
     google_trends_score:          0.09,
     ra_score:                     0.08,  // RA booking momentum: venue tier, attending, geo spread
     youtube_subscribers:          0.08,
     tiktok_post_count:            0.07,
     youtube_views_weekly:         0.06,  // delta metric — empty until 2 snapshots exist, then auto-included
+    beatport_hype_score:          0.05,  // EMERGING credibility: Beatport Hype-100 (leading indicator)
     label_score:                  0.05,  // label tier (Drumcode/Kompakt/Defected…) — credibility & trajectory
     spotify_playlist_placements:  0.05,
-    spotify_avg_track_popularity: 0.03,  // RETIRED (Spotify-blocked) — kept in map for back-compat; self-heals to 0 weight
     wikipedia_pageviews:          0.02,  // public interest (replaced Spotify followers)
+    spotify_avg_track_popularity: 0.00,  // RETIRED (Spotify blocks the endpoint) — weight removed; replaced by Beatport Hype
   };
   // Live weights re-normalize below, so the retired track-popularity weight
   // (always empty) is excluded automatically and scores are unaffected.

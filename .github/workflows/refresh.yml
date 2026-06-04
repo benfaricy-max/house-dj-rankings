@@ -60,6 +60,11 @@ jobs:
         working-directory: backend
         continue-on-error: true   # never block the refresh if Beatport scrape fails
 
+      - name: Beatport Hype signal (emerging credibility)
+        run: node enrichBeatportHype.js
+        working-directory: backend
+        continue-on-error: true   # leading indicator; same plain-HTTP scrape
+
       - name: Label & Release Trajectory (uses Beatport labels)
         run: node enrichLabels.js
         working-directory: backend
@@ -134,4 +139,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add frontend/public/rankings.json backend/artists.json frontend/public/brand backend/beatport-archive.json
           git diff --staged --quiet || git commit -m "chore: refresh rankings + cache YouTube channel IDs [skip ci]"
+          # Rebase onto any commits pushed while the long refresh ran, so a manual
+          # commit during the job never causes a non-fast-forward push failure.
+          git pull --rebase --autostash origin main || true
           git push
