@@ -270,6 +270,12 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
         </div>
       )}
 
+      {Number.isFinite(dj.value_gap) && (
+        <a className="ap-valuelink" href={`#/value/${slugify(dj.name)}`}>
+          ✦ View {dj.name}'s Fair Value report — the neutral, live-anchored fee benchmark →
+        </a>
+      )}
+
       {/* Touring summary — Songkick when matched, otherwise backfilled from RA
           (RA is the better-covered source; Songkick can't match many names). */}
       {(dj.tour_upcoming > 0 || dj.ra_upcoming > 0 || dj.ra_events_6m > 0) && (() => {
