@@ -1349,7 +1349,6 @@ function BookingToolPage({ rankings }) {
   return (
     <div className="page bk-page">
       <div className="bk-header">
-        <div className="cs-eyebrow">Booking Intelligence</div>
         <h1 className="cs-title">Build a lineup that sells</h1>
         <p className="cs-sub">
           Enter a budget and a market. We propose a lineup, sized to your budget,
@@ -1607,7 +1606,6 @@ function MarketSaturationPage({ rankings }) {
   return (
     <div className="page ms-page">
       <div className="bk-header">
-        <div className="cs-eyebrow">Market Saturation</div>
         <h1 className="cs-title">Who's overbooked, and where</h1>
         <p className="cs-sub">
           An artist who's played a city four times this quarter is a hard sell there — no matter their global numbers.
@@ -1675,7 +1673,6 @@ function ValueGapPage({ rankings }) {
   return (
     <div className="page vg-page">
       <div className="bk-header">
-        <div className="cs-eyebrow">Price vs Demand</div>
         <h1 className="cs-title">The buy signals</h1>
         <p className="cs-sub">
           We estimate where each artist's fee <em>should</em> sit from demand data — reach, live
@@ -1741,7 +1738,6 @@ function CitySpotlightPage({ rankings }) {
     <div className="page cs-page">
       <div className="cs-header">
         <div>
-          <div className="cs-eyebrow">Deep Dive</div>
           <h1 className="cs-title">City Demand Spotlight</h1>
           <p className="cs-sub">
             Where is each artist's fanbase most concentrated?
@@ -1916,7 +1912,6 @@ function ComparativeBenchmarkingPage({ rankings }) {
   return (
     <div className="page cmp-page">
       <div className="cmp-header">
-        <div className="cs-eyebrow">Deep Dive</div>
         <h1 className="cmp-title">Comparative Benchmarking</h1>
         <p className="cmp-sub">
           Cross-metric analysis that exposes hidden signal — who's viral but not streaming,

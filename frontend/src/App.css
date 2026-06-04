@@ -1,9 +1,8 @@
 /* ── City Spotlight Tab ──────────────────────────────────────────── */
 .cs-page { padding: 40px 24px 80px; max-width: 1000px; margin: 0 auto; }
 .cs-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; }
-.cs-eyebrow { font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
 .cs-title { font-size: 1.9rem; font-weight: 800; margin: 0 0 8px; }
-.cs-sub { color: #888; font-size: .9rem; margin: 0; max-width: 500px; line-height: 1.5; }
+.cs-sub { color: var(--muted); font-size: .9rem; margin: 0; max-width: 500px; line-height: 1.5; }
 .cs-legend { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; padding-top: 4px; }
 .cs-legend-live { font-size: .78rem; color: #4caf50; }
 .cs-legend-est  { font-size: .78rem; color: #666; }
@@ -192,10 +191,10 @@
 .top-tab:hover { color: var(--text-h); }
 .top-tab--active { background: var(--bg); color: var(--text-h); box-shadow: 0 1px 4px rgba(0,0,0,0.15); }
 
-/* ── Section eyebrow ─────────────────────────────────────────────── */
+/* ── Section heading (was a kicker; now a real heading via scale + weight) ── */
 .section-eyebrow {
-  font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--muted); margin-bottom: 12px; opacity: 0.7;
+  font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em;
+  color: var(--text-h); margin-bottom: 16px;
 }
 
 /* ── Weekly movers ───────────────────────────────────────────────── */
