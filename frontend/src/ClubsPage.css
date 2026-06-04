@@ -78,7 +78,8 @@
 .cp-section { margin-bottom: 26px; }
 .cp-h { font-size: 19px; font-weight: 700; color: var(--text-h); margin: 0 0 10px; }
 .cp-p { font-size: 16.5px; line-height: 1.62; color: var(--text); }
-.cp-p--secret { color: var(--text-h); border-left: 3px solid var(--accent); padding-left: 16px; }
+.cp-p--secret { color: var(--text-h); background: var(--accent-bg); padding: 14px 18px; border-radius: 10px; }
+.cp-p--secret::before { content: "🔑 "; }
 .cp-list { list-style: none; margin: 0; padding: 0; }
 .cp-list li { font-size: 16px; line-height: 1.5; color: var(--text); padding-left: 22px; position: relative; margin-bottom: 12px; }
 .cp-list li::before { content: "▸"; position: absolute; left: 0; color: var(--accent); }

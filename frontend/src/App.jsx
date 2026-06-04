@@ -5,6 +5,19 @@ import ArtistProfile, { slugify, ArtistLink } from "./ArtistProfile";
 import ClubsPage, { ClubProfile } from "./ClubsPage";
 import BlogPage, { BlogPost } from "./BlogPage";
 
+// a11y helper: make a non-button element behave like a button for keyboard +
+// screen-reader users (Enter/Space activate, focusable, announced as a button).
+// Pass `expanded` for disclosure widgets to emit aria-expanded.
+export const pressable = (handler, expanded) => ({
+  role: "button",
+  tabIndex: 0,
+  onClick: handler,
+  onKeyDown: e => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handler(e); }
+  },
+  ...(expanded !== undefined ? { "aria-expanded": expanded } : {}),
+});
+
 const parseProfileSlug = () => {
   const m = (window.location.hash || "").match(/^#\/artist\/(.+)$/);
   return m ? decodeURIComponent(m[1]) : null;
@@ -394,6 +407,15 @@ function OnesToWatch({ artists, onScrollTo }) {
 function CompareModal({ djs, ranges, onClose }) {
   const [a, b] = djs;
 
+  // Close on Escape and lock background scroll while open (modal a11y baseline).
+  useEffect(() => {
+    const onKey = e => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = prev; };
+  }, [onClose]);
+
   const rows = METRICS.map(metric => {
     const { min, max } = ranges[metric.key] ?? { min: 0, max: 0 };
     const normA = normalize(a[metric.key] ?? 0, min, max);
@@ -406,8 +428,8 @@ function CompareModal({ djs, ranges, onClose }) {
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="compare-modal" onClick={e => e.stopPropagation()}>
-        <button className="modal-close" onClick={onClose}>✕</button>
+      <div className="compare-modal" role="dialog" aria-modal="true" aria-label={`Compare ${a.name} versus ${b.name}`} onClick={e => e.stopPropagation()}>
+        <button className="modal-close" onClick={onClose} aria-label="Close comparison">✕</button>
 
         <div className="cmp-header">
           <div className="cmp-dj cmp-dj--left">
@@ -460,7 +482,7 @@ function CompareModal({ djs, ranges, onClose }) {
 function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved, inCompare, onToggleCompare }) {
   return (
     <div className={`dj-card ${isTop ? "dj-card--top" : ""} ${expanded ? "dj-card--expanded" : ""} ${inCompare ? "dj-card--comparing" : ""}`}>
-      <div className="dj-card-main" onClick={onToggle}>
+      <div className="dj-card-main" {...pressable(onToggle, expanded)} aria-label={`${dj.name}, rank ${dj.rank} — ${expanded ? "collapse" : "expand"} details`}>
         <div className="dj-rank">
           {MEDAL[dj.rank] ?? <span className="rank-num">#{dj.rank}</span>}
           <RankDelta delta={dj.rank_change} />
@@ -1742,7 +1764,8 @@ function CitySpotlightPage({ rankings }) {
             <div
               key={artist.name}
               className={`cs-card ${isSelected ? "cs-card--open" : ""}`}
-              onClick={() => setSelected(isSelected ? null : artist.name)}
+              {...pressable(() => setSelected(isSelected ? null : artist.name), isSelected)}
+              aria-label={`${artist.name} — ${isSelected ? "hide" : "show"} top cities`}
             >
               <div className="cs-card-header">
                 <div className="cs-card-left">

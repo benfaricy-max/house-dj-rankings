@@ -3,6 +3,15 @@ import "./ProPage.css";
 import { openMomentumReport } from "./momentumReport";
 import { ArtistLink } from "./ArtistProfile";
 
+// a11y: make a non-button element keyboard-activatable (Enter/Space) and focusable.
+const pressable = (handler, opts = {}) => ({
+  role: "button",
+  tabIndex: 0,
+  onClick: handler,
+  onKeyDown: e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handler(e); } },
+  ...opts,
+});
+
 // ── Static enrichment ────────────────────────────────────────────
 const ARTIST_META = {
   "FISHER":                { city: "Sydney",       region: "Oceania",  genres: ["Tech House"],               agency: "WME",           booking: "booking@wmeglobal.com"         },
@@ -149,7 +158,7 @@ function MomentumBar({ score }) {
   return (
     <div className="momentum-bar-wrap">
       <div className="momentum-bar-track">
-        <div className="momentum-bar-fill" style={{ width: `${score}%`, background: color }} />
+        <div className="momentum-bar-fill" style={{ transform: `scaleX(${Math.max(0, Math.min(100, score)) / 100})`, background: color }} />
       </div>
       <span className="momentum-score" style={{ color }}>{score}</span>
     </div>
@@ -236,7 +245,7 @@ function GeographicInterest({ dj }) {
               <span className="geo-region">{country}</span>
               <div className="geo-bar-track">
                 <div className="geo-bar-fill" style={{
-                  width: `${score}%`,
+                  transform: `scaleX(${Math.max(0, Math.min(100, score)) / 100})`,
                   background: score >= 70 ? "var(--accent)" : score >= 40 ? "color-mix(in srgb, var(--accent) 55%, var(--muted))" : "var(--muted)",
                 }} />
               </div>
@@ -422,8 +431,13 @@ function BookerArtistRow({ dj, rank, active, inShortlist, onClick, onToggleShort
       </div>
       <div className="booker-fee" style={{ color: dj.feeTier.color }}>{dj.feeTier.label}</div>
       <div className="booker-momentum"><MomentumBar score={dj.momentum} /></div>
-      <div className="booker-star" onClick={e => { e.stopPropagation(); onToggleShortlist(dj); }}>
-        <button className={`star-btn ${inShortlist ? "star-btn--on" : ""}`} title="Shortlist">
+      <div className="booker-star">
+        <button
+          className={`star-btn ${inShortlist ? "star-btn--on" : ""}`}
+          aria-pressed={inShortlist}
+          aria-label={`${inShortlist ? "Remove" : "Add"} ${dj.name} ${inShortlist ? "from" : "to"} shortlist`}
+          onClick={e => { e.stopPropagation(); onToggleShortlist(dj); }}
+        >
           {inShortlist ? "★" : "☆"}
         </button>
       </div>
@@ -509,7 +523,7 @@ function BookerDashboard({ enriched }) {
           <div className="pro-section-eyebrow">Rising Talent Spotlight</div>
           <div className="rising-strip">
             {risingTalent.map(dj => (
-              <div key={dj.name} className="rising-card" onClick={() => setActiveRow(dj.name)}>
+              <div key={dj.name} className="rising-card" {...pressable(() => setActiveRow(dj.name), { "aria-label": `Select ${dj.name}` })}>
                 <div className="rising-avatar">
                   {dj.image ? <img src={dj.image} alt={dj.name} /> : <div className="rising-placeholder">{dj.name[0]}</div>}
                 </div>

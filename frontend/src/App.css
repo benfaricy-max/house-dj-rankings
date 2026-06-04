@@ -36,12 +36,6 @@
 .cs-city-score { font-size: .72rem; color: #555; text-align: right; }
 .cs-est-note { font-size: .72rem; color: #555; margin-top: 10px; padding-top: 10px; border-top: 1px solid #1a1a1a; line-height: 1.5; font-style: italic; }
 
-.cs-upgrade { background: linear-gradient(135deg, #111 0%, #1a1200 100%); border: 1px solid #2a2000; border-radius: 16px; padding: 40px; text-align: center; }
-.cs-upgrade-inner h2 { font-size: 1.3rem; font-weight: 800; margin: 0 0 10px; }
-.cs-upgrade-inner p { color: #888; font-size: .9rem; margin: 0 0 24px; }
-.cs-upgrade-btn { background: var(--accent); color: #000; font-weight: 800; font-size: .95rem; padding: 12px 28px; border-radius: 10px; border: none; cursor: pointer; transition: opacity .15s; }
-.cs-upgrade-btn:hover { opacity: .85; }
-
 /* ── Comparative Benchmarking Tab ────────────────────────────────── */
 .cmp-page { max-width: 920px; margin: 0 auto; padding: 40px 24px 80px; }
 .cmp-header { margin-bottom: 28px; }
@@ -140,50 +134,6 @@
 .brk-score-badge { display: block; font-size: 1.4rem; font-weight: 900; color: #4caf50; }
 .brk-score-label { font-size: .7rem; color: #555; text-transform: uppercase; letter-spacing: .08em; }
 
-/* ── Pro Paywall ─────────────────────────────────────────────────── */
-.paywall { max-width: 860px; margin: 0 auto; padding: 48px 24px 100px; }
-
-.paywall-hero { text-align: center; margin-bottom: 52px; }
-.paywall-badge { background: linear-gradient(135deg,var(--accent),#e07b00); color:#fff; font-size:.7rem; font-weight:800; letter-spacing:.12em; padding:4px 12px; border-radius:20px; text-transform:uppercase; }
-.paywall-title { font-size:2.4rem; font-weight:800; margin:.6rem 0 .8rem; background:linear-gradient(135deg,#fff 40%,var(--accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-.paywall-sub { color:#aaa; font-size:1.05rem; max-width:540px; margin:0 auto; line-height:1.6; }
-
-.paywall-features { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; margin-bottom:52px; }
-.paywall-feature { background:#111; border:1px solid #222; border-radius:12px; padding:20px; display:flex; gap:14px; align-items:flex-start; }
-.paywall-feature-icon { font-size:1.4rem; flex-shrink:0; margin-top:2px; }
-.paywall-feature-title { font-weight:700; font-size:.95rem; margin:0 0 4px; color:#fff; }
-.paywall-feature-desc { font-size:.82rem; color:#888; margin:0; line-height:1.5; }
-
-.paywall-plans { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-bottom:40px; }
-.paywall-plan { background:#111; border:1px solid #2a2a2a; border-radius:16px; padding:32px 40px; text-align:center; min-width:200px; }
-.paywall-plan--featured { border-color:var(--accent); position:relative; }
-.paywall-plan-label { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--accent); color:#000; font-size:.7rem; font-weight:800; padding:3px 12px; border-radius:20px; letter-spacing:.08em; white-space:nowrap; }
-.paywall-plan-price { font-size:2.4rem; font-weight:800; color:#fff; }
-.paywall-plan-price span { font-size:1rem; color:#888; font-weight:400; }
-.paywall-plan-name { color:#888; font-size:.9rem; margin:.4rem 0 1.6rem; }
-.paywall-save { background:#1a3a1a; color:#4caf50; font-size:.75rem; padding:2px 8px; border-radius:10px; margin-left:6px; }
-.paywall-cta { display:block; background:var(--accent); color:#000; font-weight:800; font-size:.95rem; padding:12px 24px; border-radius:10px; text-decoration:none; transition:opacity .15s; }
-.paywall-cta:hover { opacity:.85; }
-.paywall-cta--outline { background:transparent; color:var(--accent); border:2px solid var(--accent); }
-
-.paywall-why { background:#0d0d0d; border:1px solid #1e1e1e; border-radius:16px; padding:36px 40px; margin-bottom:48px; }
-.paywall-why-title { font-size:1.3rem; font-weight:800; margin:0 0 10px; color:#fff; }
-.paywall-why-intro { color:#888; font-size:.92rem; margin:0 0 24px; }
-.paywall-why-list { display:flex; flex-direction:column; gap:18px; margin-bottom:24px; }
-.paywall-why-item { display:flex; gap:16px; align-items:flex-start; }
-.paywall-why-num { background:var(--accent); color:#000; font-weight:900; font-size:.8rem; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
-.paywall-why-item strong { display:block; color:#fff; font-size:.95rem; margin-bottom:4px; }
-.paywall-why-item p { color:#888; font-size:.85rem; margin:0; line-height:1.5; font-style:italic; }
-.paywall-why-footnote { color:#555; font-size:.82rem; margin:0; border-top:1px solid #1e1e1e; padding-top:20px; line-height:1.6; }
-
-.paywall-code { text-align:center; color:#666; font-size:.9rem; }
-.paywall-code p { margin-bottom:10px; }
-.paywall-code-row { display:flex; gap:8px; justify-content:center; }
-.paywall-code-input { background:#111; border:1px solid #333; color:#fff; padding:10px 16px; border-radius:8px; font-size:.9rem; width:180px; }
-.paywall-code-btn { background:#222; color:#fff; border:1px solid #333; padding:10px 20px; border-radius:8px; cursor:pointer; font-size:.9rem; transition:background .15s; }
-.paywall-code-btn:hover { background:#333; }
-.paywall-code-err { color:#e74c3c; font-size:.82rem; margin-top:8px; }
-
 /* ── Layout ──────────────────────────────────────────────────────── */
 .page {
   padding: 48px 24px 120px;
@@ -241,8 +191,6 @@
 }
 .top-tab:hover { color: var(--text-h); }
 .top-tab--active { background: var(--bg); color: var(--text-h); box-shadow: 0 1px 4px rgba(0,0,0,0.15); }
-.top-tab--pro.top-tab--active { background: var(--accent); color: #fff; }
-.top-tab--pro:not(.top-tab--active) { color: var(--accent); }
 
 /* ── Section eyebrow ─────────────────────────────────────────────── */
 .section-eyebrow {
@@ -796,10 +744,6 @@ details[open] .hiw-faq-q::after { content: "–"; }
 
 .vel-spark { width: 96px; height: 24px; display: block; }
 .vel-na { color: var(--muted); opacity: 0.6; }
-
-/* ── Redesign: dark text on bright accent, monospace data ── */
-.top-tab--pro.top-tab--active, .sort-btn--active, .movers-period-btn--active,
-.event-ticket:hover, .score-editor-save, .compare-btn--active { color: var(--on-accent) !important; }
 .dj-score-badge, .rank-num, .rank-delta, .dss-num, .dss-lbl, .qs-pill,
 .vel-table, .cmp-val, .cmp-ratio, .otw-momentum, .breaking-mo-score,
 .watch-mo-score, .mover-rank, .mover-past-rank, .mover-current-rank,
@@ -903,25 +847,6 @@ details[open] .hiw-faq-q::after { content: "–"; }
 .bk-memo-line { font-size: 16px; line-height: 1.6; color: var(--text); margin-bottom: 12px; }
 .bk-memo-line:last-child { margin-bottom: 0; color: var(--muted); font-size: 14px; font-style: italic; }
 
-/* booking — paywall teaser */
-.bk-locked-inline {
-  font-family: var(--mono); font-size: 13px; color: var(--muted); cursor: pointer;
-  border: 1px dashed var(--border); border-radius: 8px; padding: 10px 12px; transition: all 0.12s;
-}
-.bk-locked-inline:hover { color: var(--accent); border-color: var(--accent-border); }
-.bk-upgrade {
-  background: var(--card); border: 1px dashed var(--accent-border); border-radius: 14px;
-  padding: 22px; cursor: pointer; display: flex; flex-direction: column; justify-content: center;
-}
-.bk-upgrade:hover { border-color: var(--accent); }
-.bk-upgrade h3 { font-size: 19px; color: var(--text-h); margin: 8px 0; }
-.bk-upgrade p { font-size: 14px; color: var(--muted); margin-bottom: 16px; }
-.bk-upgrade-btn, .bk-memo-btn--locked {
-  align-self: flex-start; font-family: var(--mono); font-size: 13px; font-weight: 600; cursor: pointer;
-  background: var(--accent); color: var(--on-accent); border: none; border-radius: 8px; padding: 10px 16px;
-}
-.bk-memo-btn--locked { background: var(--social-bg); color: var(--text-h); border: 1px solid var(--border); }
-
 .bk-account { margin-top: 16px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
 .bk-link-btn { background: none; border: none; color: var(--accent); cursor: pointer; font-family: var(--mono); font-size: 13px; text-decoration: underline; padding: 0; }
 
@@ -967,7 +892,6 @@ details[open] .hiw-faq-q::after { content: "–"; }
 /* ---- Market Saturation ---- */
 .ms-page { max-width: 1000px; margin: 0 auto; text-align: left; padding: 0 8px; }
 .ms-controls { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-bottom: 18px; }
-.ms-lock-note { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-left: 10px; }
 .ms-count { font-family: var(--mono); font-size: 12px; color: var(--muted); }
 .ms-head, .ms-row { display: grid; grid-template-columns: 1.1fr 1.1fr 1.5fr auto; gap: 14px; align-items: center; }
 .ms-head { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding: 0 16px 8px; border-bottom: 1px solid var(--border); }
