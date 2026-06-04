@@ -2,7 +2,6 @@ import { useEffect, useState, useMemo, useRef } from "react";
 import "./App.css";
 import ProPage from "./ProPage";
 import ArtistProfile, { slugify, ArtistLink } from "./ArtistProfile";
-import { usePro, startCheckout, startPortal } from "./usePro";
 import ClubsPage, { ClubProfile } from "./ClubsPage";
 import BlogPage, { BlogPost } from "./BlogPage";
 
@@ -721,7 +720,7 @@ function HowItWorksPage() {
             { q: "Why do some artists show zero for certain metrics?", a: "Not every DJ has a YouTube channel or is active on TikTok. Zero values are genuine — they're not data errors. They pull the weighted score for that signal to zero but don't affect others." },
             { q: "How is the Scene Score assigned?", a: "It's an editorial 0–100 score against the published rubric above — Boiler Room/HÖR sets, Berghain/fabric/DC10 bookings, festival closing slots, respected label homes, RA/Mixmag/DJ Mag covers, Ibiza residencies, Essential Mix invitations. It carries 11% weight, and the explicit criteria make it harder to game than pure data signals." },
             { q: "How does the Ones to Watch list differ from the main rankings?", a: "The main rankings weight current standing heavily. Ones to Watch reranks entirely by Momentum Score — so an artist can be #45 in the main chart but #2 in Ones to Watch if they're growing fast." },
-            { q: "Can I get notified when an artist moves?", a: "Pro subscribers receive weekly movement alerts by email. Subscribe under the Pro tab." },
+            { q: "Can I get notified when an artist moves?", a: "Weekly movement alerts are on the roadmap. For now, the Ones to Watch and Velocity tabs surface who's accelerating across every signal we track." },
           ].map(({ q, a }) => (
             <details key={q} className="hiw-faq-item">
               <summary className="hiw-faq-q">{q}</summary>
@@ -1222,7 +1221,6 @@ function BookingToolPage({ rankings }) {
   const [market, setMarket] = useState(BOOKING_MARKETS[0]);
   const [quotes, setQuotes] = useState({});   // artist name -> quoted ask (£)
   const [memoOpen, setMemoOpen] = useState(false);
-  const { pro, paywall } = usePro();   // gates support acts, fair-price check, rationale
 
   const maxScore = useMemo(
     () => Math.max(...rankings.map(r => r.score || 0)) || 1,
@@ -1311,22 +1309,16 @@ function BookingToolPage({ rankings }) {
           )}
         </div>
         <div className="bk-quote">
-          <span className="bk-stat-l">Your quote {pro ? "(optional)" : "· Pro"}</span>
-          {pro ? (
-            <div className="bk-quote-row">
-              <span className="bk-quote-prefix">£</span>
-              <input
-                type="number" className="bk-quote-input" placeholder={String(a.booking_fee.mid)}
-                value={quotes[a.name] ?? ""}
-                onChange={e => setQuotes(q => ({ ...q, [a.name]: e.target.value }))}
-              />
-              {verdict && <span className={`bk-verdict bk-verdict--${verdict.cls}`}>{verdict.label}</span>}
-            </div>
-          ) : (
-            <div className="bk-locked-inline" onClick={() => startCheckout()}>
-              🔒 Benchmark a quote against the market — unlock with Pro
-            </div>
-          )}
+          <span className="bk-stat-l">Your quote (optional)</span>
+          <div className="bk-quote-row">
+            <span className="bk-quote-prefix">£</span>
+            <input
+              type="number" className="bk-quote-input" placeholder={String(a.booking_fee.mid)}
+              value={quotes[a.name] ?? ""}
+              onChange={e => setQuotes(q => ({ ...q, [a.name]: e.target.value }))}
+            />
+            {verdict && <span className={`bk-verdict bk-verdict--${verdict.cls}`}>{verdict.label}</span>}
+          </div>
         </div>
       </div>
     );
@@ -1335,7 +1327,7 @@ function BookingToolPage({ rankings }) {
   return (
     <div className="page bk-page">
       <div className="bk-header">
-        <div className="cs-eyebrow">Pro · Booking Intelligence</div>
+        <div className="cs-eyebrow">Booking Intelligence</div>
         <h1 className="cs-title">Build a lineup that sells</h1>
         <p className="cs-sub">
           Enter a budget and a market. We propose a lineup, sized to your budget,
@@ -1385,30 +1377,15 @@ function BookingToolPage({ rankings }) {
 
           <div className="bk-lineup">
             {ActCard(lineup.head, "head")}
-            {pro
-              ? lineup.support.map(a => ActCard(a, "support"))
-              : lineup.support.length > 0 && (
-                <div className="bk-upgrade" onClick={() => startCheckout()}>
-                  <span className="bk-act-role">Pro</span>
-                  <h3>+ {lineup.support.length} support acts, sized to your budget</h3>
-                  <p>See the full demand-ranked lineup, benchmark every fee, and generate a booking rationale.</p>
-                  <button className="bk-upgrade-btn">Unlock Pro →</button>
-                </div>
-              )}
+            {lineup.support.map(a => ActCard(a, "support"))}
           </div>
 
           <div className="bk-memo-bar">
-            {pro ? (
-              <button className="bk-memo-btn" onClick={() => setMemoOpen(o => !o)}>
-                {memoOpen ? "Hide booking rationale" : "✦ Generate booking rationale"}
-              </button>
-            ) : (
-              <button className="bk-memo-btn bk-memo-btn--locked" onClick={() => startCheckout()}>
-                🔒 Generate booking rationale — Pro
-              </button>
-            )}
+            <button className="bk-memo-btn" onClick={() => setMemoOpen(o => !o)}>
+              {memoOpen ? "Hide booking rationale" : "✦ Generate booking rationale"}
+            </button>
           </div>
-          {pro && memoOpen && (
+          {memoOpen && (
             <div className="bk-memo">
               <div className="bk-memo-head">
                 <span className="bk-act-role">Auto-generated rationale</span>
@@ -1432,12 +1409,6 @@ function BookingToolPage({ rankings }) {
           <a className="bk-marketread" href={`#/market/${citySlug(market.city)}`}>
             ✦ Generate a shareable Market Read for {market.city} — a one-page brief to send a promoter →
           </a>
-
-          {paywall && pro && (
-            <div className="bk-account">
-              Pro active · <button className="bk-link-btn" onClick={() => startPortal()}>Manage subscription</button>
-            </div>
-          )}
         </>
       )}
     </div>
@@ -1575,7 +1546,6 @@ function MarketReadPage({ rankings, slug, embedded }) {
 
 // ---- Market Saturation — per-city freshness for regional buyers ------------
 function MarketSaturationPage({ rankings }) {
-  const { pro } = usePro();
   const [city, setCity] = useState("All cities");
 
   const rows = useMemo(() => {
@@ -1596,8 +1566,7 @@ function MarketSaturationPage({ rankings }) {
     [rows]
   );
   const filtered = city === "All cities" ? rows : rows.filter(r => r.city === city);
-  const PREVIEW = 6;
-  const shown = pro ? filtered : filtered.slice(0, PREVIEW);
+  const shown = filtered;
 
   const Row = ({ r }) => {
     const level = r.saturation >= 70 ? "over" : "heavy";
@@ -1616,7 +1585,7 @@ function MarketSaturationPage({ rankings }) {
   return (
     <div className="page ms-page">
       <div className="bk-header">
-        <div className="cs-eyebrow">Pro · Market Saturation</div>
+        <div className="cs-eyebrow">Market Saturation</div>
         <h1 className="cs-title">Who's overbooked, and where</h1>
         <p className="cs-sub">
           An artist who's played a city four times this quarter is a hard sell there — no matter their global numbers.
@@ -1628,10 +1597,9 @@ function MarketSaturationPage({ rankings }) {
       <div className="ms-controls">
         <div className="bk-field">
           <label>City</label>
-          <select className="bk-select" value={city} onChange={e => setCity(e.target.value)} disabled={!pro}>
-            {(pro ? cities : ["All cities"]).map(c => <option key={c} value={c}>{c}</option>)}
+          <select className="bk-select" value={city} onChange={e => setCity(e.target.value)}>
+            {cities.map(c => <option key={c} value={c}>{c}</option>)}
           </select>
-          {!pro && <span className="ms-lock-note">🔒 City filter is a Pro feature</span>}
         </div>
         <div className="ms-count">{filtered.length} saturated artist·city pairs tracked</div>
       </div>
@@ -1640,15 +1608,6 @@ function MarketSaturationPage({ rankings }) {
         <span>Artist</span><span>Market</span><span>Recent activity</span><span>Saturation</span>
       </div>
       {shown.map((r, i) => <Row key={r.name + r.city + i} r={r} />)}
-
-      {!pro && filtered.length > PREVIEW && (
-        <div className="bk-upgrade" onClick={() => startCheckout()}>
-          <span className="bk-act-role">Pro</span>
-          <h3>{filtered.length - PREVIEW} more saturated markets + per-city filter</h3>
-          <p>See every overbooked artist·city pairing, filter to your market, and check freshness before you book.</p>
-          <button className="bk-upgrade-btn">Unlock Pro →</button>
-        </div>
-      )}
 
       <div className="bk-method">
         <b>How this is computed.</b> From Resident Advisor booking history: saturation (0–100) rises with shows in a
@@ -1694,7 +1653,7 @@ function ValueGapPage({ rankings }) {
   return (
     <div className="page vg-page">
       <div className="bk-header">
-        <div className="cs-eyebrow">Pro · Price vs Demand</div>
+        <div className="cs-eyebrow">Price vs Demand</div>
         <h1 className="cs-title">The buy signals</h1>
         <p className="cs-sub">
           We estimate where each artist's fee <em>should</em> sit from demand data — reach, live
@@ -1760,7 +1719,7 @@ function CitySpotlightPage({ rankings }) {
     <div className="page cs-page">
       <div className="cs-header">
         <div>
-          <div className="cs-eyebrow">Pro Preview</div>
+          <div className="cs-eyebrow">Deep Dive</div>
           <h1 className="cs-title">City Demand Spotlight</h1>
           <p className="cs-sub">
             Where is each artist's fanbase most concentrated?
@@ -1831,7 +1790,6 @@ function CitySpotlightPage({ rankings }) {
                   {!isLive && (
                     <div className="cs-est-note">
                       ⓘ Estimated from artist home market, label, and listener distribution.
-                      Live city data unlocks with Pro.
                     </div>
                   )}
                 </div>
@@ -1839,16 +1797,6 @@ function CitySpotlightPage({ rankings }) {
             </div>
           );
         })}
-      </div>
-
-      <div className="cs-upgrade">
-        <div className="cs-upgrade-inner">
-          <h2>Want live city data for all 264 artists?</h2>
-          <p>Pro subscribers get real-time Google Trends city breakdowns, updated every 6 hours.</p>
-          <button onClick={() => document.querySelector('[data-tab="pro"]')?.click()} className="cs-upgrade-btn">
-            Unlock Pro →
-          </button>
-        </div>
       </div>
     </div>
   );
@@ -1945,7 +1893,7 @@ function ComparativeBenchmarkingPage({ rankings }) {
   return (
     <div className="page cmp-page">
       <div className="cmp-header">
-        <div className="cs-eyebrow">Pro Preview</div>
+        <div className="cs-eyebrow">Deep Dive</div>
         <h1 className="cmp-title">Comparative Benchmarking</h1>
         <p className="cmp-sub">
           Cross-metric analysis that exposes hidden signal — who's viral but not streaming,
@@ -2221,124 +2169,6 @@ function BreakoutsPage({ rankings, breakouts: staticBreakouts, breakoutThreshold
   );
 }
 
-// ── Pro Paywall ────────────────────────────────────────────────────
-
-const PRO_KEY         = "djranks_pro_access";
-const STRIPE_LINK     = "https://buy.stripe.com/thedjrankings"; // replace with real Stripe Payment Link
-const PRO_PRICE_MONTH = 9;
-const PRO_PRICE_YEAR  = 79;
-
-function ProPaywall({ onUnlock }) {
-  const [code, setCode] = useState("");
-  const [err,  setErr]  = useState("");
-
-  // Check for ?pro=ACCESS_TOKEN in URL (Stripe redirect)
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const token  = params.get("pro");
-    if (token) {
-      localStorage.setItem(PRO_KEY, token);
-      window.history.replaceState({}, "", window.location.pathname);
-      onUnlock();
-    }
-  }, []);
-
-  function tryCode() {
-    if (code.trim().toUpperCase() === "DJPRO2024") {
-      localStorage.setItem(PRO_KEY, "promo_" + Date.now());
-      onUnlock();
-    } else {
-      setErr("Invalid code.");
-    }
-  }
-
-  return (
-    <div className="paywall">
-      <div className="paywall-hero">
-        <span className="paywall-badge">PRO</span>
-        <h1 className="paywall-title">The Booker's Edge</h1>
-        <p className="paywall-sub">
-          Real-time data tools built for promoters, bookers, and talent buyers.
-          Stop guessing — start booking with confidence.
-        </p>
-      </div>
-
-      <div className="paywall-features">
-        {[
-          { icon: "📍", title: "Geographic Demand",       desc: "See exactly which cities and countries are buzzing for each artist — down to US city level." },
-          { icon: "💷", title: "Booking Fee Estimates",   desc: "Tier-based fee ranges updated with each ranking cycle. Know before you negotiate." },
-          { icon: "📈", title: "Momentum Scoring",        desc: "Weighted growth metrics surfacing artists breaking before the mainstream catches on." },
-          { icon: "🏟️", title: "Venue Fit Analysis",      desc: "Capacity recommendations matched to current draw based on follower density and trend data." },
-          { icon: "⭐", title: "Shortlist & Budget Planner", desc: "Build a lineup, track total fees, and export to CSV for your team." },
-          { icon: "🌍", title: "Market Penetration",      desc: "Understand which regions an artist hasn't cracked yet — spot opportunity before competitors." },
-        ].map(f => (
-          <div className="paywall-feature" key={f.title}>
-            <span className="paywall-feature-icon">{f.icon}</span>
-            <div>
-              <h3 className="paywall-feature-title">{f.title}</h3>
-              <p className="paywall-feature-desc">{f.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="paywall-why">
-        <h2 className="paywall-why-title">Why industry professionals pay for this</h2>
-        <p className="paywall-why-intro">Raw rankings aren't that valuable to bookers and labels. What they actually pay for is:</p>
-        <div className="paywall-why-list">
-          {[
-            { n: "1", title: "Breakout Detection", desc: "\"This artist is growing 40% week over week in Chicago and Berlin before anyone is talking about them.\"" },
-            { n: "2", title: "Routing Intelligence", desc: "\"This artist has high search concentration in Miami and Detroit — book them there before demand peaks.\"" },
-            { n: "3", title: "Comparative Benchmarking", desc: "\"Artist A has 3× the engagement of Artist B despite similar Spotify numbers — stronger credibility with real fans.\"" },
-            { n: "4", title: "Historical Trajectory", desc: "\"This artist has been on a 12-week growth streak across every signal we track.\"" },
-          ].map(({ n, title, desc }) => (
-            <div key={n} className="paywall-why-item">
-              <span className="paywall-why-num">{n}</span>
-              <div>
-                <strong>{title}</strong>
-                <p>{desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <p className="paywall-why-footnote">
-          Booking agencies and labels pay for data subscriptions in the range of hundreds to thousands per month
-          when it directly informs talent decisions. This is that tool.
-        </p>
-      </div>
-
-      <div className="paywall-plans">
-        <div className="paywall-plan paywall-plan--featured">
-          <div className="paywall-plan-label">Most Popular</div>
-          <div className="paywall-plan-price">£{PRO_PRICE_MONTH}<span>/mo</span></div>
-          <div className="paywall-plan-name">Monthly</div>
-          <a href={STRIPE_LINK + "?plan=monthly"} className="paywall-cta">Get Pro Access</a>
-        </div>
-        <div className="paywall-plan">
-          <div className="paywall-plan-price">£{PRO_PRICE_YEAR}<span>/yr</span></div>
-          <div className="paywall-plan-name">Annual <span className="paywall-save">Save 30%</span></div>
-          <a href={STRIPE_LINK + "?plan=annual"} className="paywall-cta paywall-cta--outline">Get Pro Access</a>
-        </div>
-      </div>
-
-      <div className="paywall-code">
-        <p>Have an access code?</p>
-        <div className="paywall-code-row">
-          <input
-            value={code}
-            onChange={e => { setCode(e.target.value); setErr(""); }}
-            onKeyDown={e => e.key === "Enter" && tryCode()}
-            placeholder="Enter code"
-            className="paywall-code-input"
-          />
-          <button onClick={tryCode} className="paywall-code-btn">Unlock</button>
-        </div>
-        {err && <p className="paywall-code-err">{err}</p>}
-      </div>
-    </div>
-  );
-}
-
 // ── Main App ───────────────────────────────────────────────────────
 
 export default function App() {
@@ -2493,7 +2323,7 @@ export default function App() {
           <button className={`top-tab ${activeTab === "breakouts"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("breakouts")}>Breakouts</button>
           <button className={`top-tab ${activeTab === "movers"        ? "top-tab--active" : ""}`} onClick={() => setActiveTab("movers")}>Movers</button>
           */}
-          <button data-tab="pro" className={`top-tab top-tab--pro ${activeTab === "pro" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("pro")}>Pro</button>
+          <button data-tab="pro" className={`top-tab ${activeTab === "pro" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("pro")}>Deep Dive</button>
         </div>
       </header>
 

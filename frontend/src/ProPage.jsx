@@ -143,71 +143,6 @@ function exportCSV(artists) {
   a.click();
 }
 
-// ── Paywall ──────────────────────────────────────────────────────
-function Paywall({ onDemo }) {
-  return (
-    <div className="paywall">
-      <div className="paywall-hero">
-        <div className="paywall-eyebrow">Pro Access</div>
-        <h2 className="paywall-title">Industry intelligence for the electronic music scene</h2>
-        <p className="paywall-sub">Geographic demand signals, booking fee estimates, shortlisting, and budget planning — built for promoters and bookers.</p>
-      </div>
-      <div className="pricing-grid">
-        <div className="pricing-card">
-          <div className="pricing-badge">Artist / Management</div>
-          <div className="pricing-amount">£29<span>/mo</span></div>
-          <ul className="pricing-features">
-            <li>Claim &amp; verify your artist profile</li>
-            <li>Add booking contact &amp; press kit</li>
-            <li>Upload bio, photos &amp; rider</li>
-            <li>Receive direct booking inquiries</li>
-            <li>Analytics: profile views &amp; contacts</li>
-            <li>Rank history &amp; trend charts</li>
-          </ul>
-          <button className="pricing-cta pricing-cta--artist" onClick={onDemo}>Get Artist Access</button>
-        </div>
-        <div className="pricing-card pricing-card--featured">
-          <div className="pricing-featured-tag">Most Popular</div>
-          <div className="pricing-badge">Booker / Promoter</div>
-          <div className="pricing-amount">£49<span>/mo</span></div>
-          <ul className="pricing-features">
-            <li>Full trending artist dashboard</li>
-            <li>Geographic demand by market</li>
-            <li>Booking fee estimates per show</li>
-            <li>Venue size fit recommendations</li>
-            <li>Shortlist &amp; budget planner</li>
-            <li>Direct booking contacts</li>
-            <li>Export shortlist to CSV</li>
-            <li>Week-over-week movement alerts</li>
-          </ul>
-          <button className="pricing-cta pricing-cta--booker" onClick={onDemo}>Get Booker Access</button>
-        </div>
-      </div>
-
-      <div className="paywall-why">
-        <h3 className="paywall-why-title">Why industry professionals pay for this</h3>
-        <p className="paywall-why-intro">Raw rankings are free. What bookers and labels pay for is the decision layer:</p>
-        <div className="paywall-why-list">
-          {[
-            ["1", "Breakout Detection", "“Growing 40% week-over-week in Chicago & Berlin before anyone's talking about them.”"],
-            ["2", "Routing Intelligence", "“High search concentration in Miami & Detroit — book them there before demand peaks.”"],
-            ["3", "Comparative Benchmarking", "“3× the Beatport credibility of a peer with similar Spotify numbers — stronger with the core scene.”"],
-            ["4", "Historical Trajectory", "“On a 12-week growth streak across every signal we track.”"],
-          ].map(([n, t, d]) => (
-            <div className="paywall-why-item" key={n}>
-              <span className="paywall-why-num">{n}</span>
-              <div><strong>{t}</strong><p>{d}</p></div>
-            </div>
-          ))}
-        </div>
-        <p className="paywall-why-foot">Agencies and labels pay for data that directly informs talent decisions — typically hundreds to thousands per month.</p>
-      </div>
-
-      <button className="paywall-demo-btn" onClick={onDemo}>Preview Pro Dashboard (Demo)</button>
-    </div>
-  );
-}
-
 // ── Momentum bar ─────────────────────────────────────────────────
 function MomentumBar({ score }) {
   const color = score >= 70 ? "#4ade80" : score >= 40 ? "var(--accent)" : "var(--muted)";
@@ -736,14 +671,14 @@ function ArtistPortal({ enriched }) {
           {!claimed && !editMode && (
             <div className="claim-prompt">
               <div className="claim-prompt-title">Claim this profile</div>
-              <p className="claim-prompt-body">Claiming your profile lets bookers find and contact you directly from the Pro Dashboard.</p>
+              <p className="claim-prompt-body">Claiming your profile lets bookers find and contact you directly from the Deep Dive dashboard.</p>
               <ul className="claim-checklist">
                 <li className={form.booking  ? "done" : ""}>Booking contact email</li>
                 <li className={form.bio      ? "done" : ""}>Artist bio</li>
                 <li className={form.presskit ? "done" : ""}>Press kit link</li>
                 <li className={form.rider    ? "done" : ""}>Technical rider</li>
               </ul>
-              <button className="claim-btn" onClick={() => setEditMode(true)}>Claim Profile — £29/mo</button>
+              <button className="claim-btn" onClick={() => setEditMode(true)}>Claim Profile</button>
             </div>
           )}
 
@@ -784,21 +719,14 @@ function ArtistPortal({ enriched }) {
 
 // ── Pro page root ─────────────────────────────────────────────────
 export default function ProPage({ rankings }) {
-  const [unlocked, setUnlocked] = useState(false);
-  const [proTab,   setProTab]   = useState("booker");
+  const [proTab, setProTab] = useState("booker");
 
   const enriched = useMemo(() => computeMomentumScores(rankings), [rankings]);
 
-  if (!unlocked) return <Paywall onDemo={() => setUnlocked(true)} />;
-
   return (
     <div className="pro-page">
-      <div className="demo-banner">
-        Preview mode — <strong>subscribe to unlock full access</strong>
-        <button className="demo-subscribe-btn">Subscribe</button>
-      </div>
       <div className="pro-header">
-        <div className="pro-header-title">Pro Dashboard</div>
+        <div className="pro-header-title">Deep Dive</div>
         <div className="pro-tabs">
           <button className={`pro-tab ${proTab === "booker" ? "pro-tab--active" : ""}`} onClick={() => setProTab("booker")}>
             Booker / Promoter
