@@ -1471,6 +1471,28 @@ function BookingIntelPage({ rankings }) {
   );
 }
 
+// Scouting — talent discovery / trajectory views under one tab.
+function ScoutingPage({ rankings }) {
+  const [view, setView] = useState("watch");
+  const TABS = [
+    ["watch", "Ones to Watch"],
+    ["velocity", "Velocity"],
+    ["benchmark", "Benchmark"],
+  ];
+  return (
+    <div className="mk-page">
+      <div className="mk-subnav">
+        {TABS.map(([k, label]) => (
+          <button key={k} className={`mk-subtab ${view === k ? "mk-subtab--on" : ""}`} onClick={() => setView(k)}>{label}</button>
+        ))}
+      </div>
+      {view === "watch" && <OnestoWatchPage rankings={rankings} />}
+      {view === "velocity" && <VelocityPage rankings={rankings} />}
+      {view === "benchmark" && <ComparativeBenchmarkingPage rankings={rankings} />}
+    </div>
+  );
+}
+
 function MarketReadPage({ rankings, slug, embedded }) {
   const initial = BOOKING_MARKETS.find(m => citySlug(m.city) === slug) || BOOKING_MARKETS[0];
   const [market, setMarket] = useState(initial);
@@ -2334,9 +2356,7 @@ export default function App() {
           <button className={`top-tab ${activeTab === "booking" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking")}>Booking Intelligence</button>
           <button className={`top-tab ${activeTab === "clubs" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("clubs")}>Club Index</button>
           {editor && <button className={`top-tab ${activeTab === "journal" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("journal")}>Journal <span className="tab-private">·private</span></button>}
-          <button className={`top-tab ${activeTab === "ones-to-watch" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("ones-to-watch")}>Ones to Watch</button>
-          <button className={`top-tab ${activeTab === "benchmark"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("benchmark")}>Benchmark</button>
-          <button className={`top-tab ${activeTab === "velocity"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("velocity")}>Velocity</button>
+          <button className={`top-tab ${activeTab === "scouting" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("scouting")}>Scouting</button>
           {/* TEMP: Breakouts & Movers tabs hidden until enough history accrues to populate them
           <button className={`top-tab ${activeTab === "breakouts"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("breakouts")}>Breakouts</button>
           <button className={`top-tab ${activeTab === "movers"        ? "top-tab--active" : ""}`} onClick={() => setActiveTab("movers")}>Movers</button>
@@ -2349,9 +2369,7 @@ export default function App() {
       {activeTab === "booking"       && <BookingIntelPage rankings={rankings} />}
       {activeTab === "clubs"         && <ClubsPage />}
       {activeTab === "journal"       && editor && <BlogPage />}
-      {activeTab === "ones-to-watch" && <OnestoWatchPage rankings={rankings} />}
-      {activeTab === "benchmark"     && <ComparativeBenchmarkingPage rankings={rankings} />}
-      {activeTab === "velocity"      && <VelocityPage rankings={rankings} />}
+      {activeTab === "scouting"      && <ScoutingPage rankings={rankings} />}
       {/* TEMP: hidden until sufficient data
       {activeTab === "breakouts"     && <BreakoutsPage rankings={rankings} breakouts={breakouts} breakoutThreshold={breakoutThreshold} />}
       {activeTab === "movers"        && <MoversPage />}
