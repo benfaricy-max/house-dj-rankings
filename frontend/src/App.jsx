@@ -1441,13 +1441,16 @@ const cityMatch = (raCity, marketCity) => {
   return a && (a.includes(b) || b.includes(a));
 };
 
-// Combines City Spotlight + Market Saturation + Market Read into one tab.
-function CombinedMarketsPage({ rankings }) {
-  const [view, setView] = useState("read");
+// Booking Intelligence — Lineup Builder + Value Gap + the three market views,
+// all under one tab with a single sub-nav.
+function BookingIntelPage({ rankings }) {
+  const [view, setView] = useState("booking");
   const TABS = [
-    ["read", "City Read", "A shareable one-page brief per market"],
-    ["saturation", "Saturation", "Who's overbooked in which city"],
-    ["spotlight", "City Spotlight", "Where each artist's demand concentrates"],
+    ["booking", "Lineup Builder"],
+    ["value", "Value Gap"],
+    ["read", "City Read"],
+    ["saturation", "Saturation"],
+    ["spotlight", "City Spotlight"],
   ];
   return (
     <div className="mk-page">
@@ -1456,6 +1459,8 @@ function CombinedMarketsPage({ rankings }) {
           <button key={k} className={`mk-subtab ${view === k ? "mk-subtab--on" : ""}`} onClick={() => setView(k)}>{label}</button>
         ))}
       </div>
+      {view === "booking" && <BookingToolPage rankings={rankings} />}
+      {view === "value" && <ValueGapPage rankings={rankings} />}
       {view === "read" && <MarketReadPage rankings={rankings} embedded />}
       {view === "saturation" && <MarketSaturationPage rankings={rankings} />}
       {view === "spotlight" && <CitySpotlightPage rankings={rankings} />}
@@ -2466,11 +2471,9 @@ export default function App() {
         <div className="top-tabs">
           <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>
           <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
-          <button className={`top-tab ${activeTab === "booking" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking")}>Booking</button>
+          <button className={`top-tab ${activeTab === "booking" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking")}>Booking Intelligence</button>
           <button className={`top-tab ${activeTab === "clubs" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("clubs")}>Club Index</button>
           <button className={`top-tab ${activeTab === "journal" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("journal")}>Journal</button>
-          <button className={`top-tab ${activeTab === "value" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("value")}>Value Gap</button>
-          <button className={`top-tab ${activeTab === "markets" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("markets")}>Markets</button>
           <button className={`top-tab ${activeTab === "ones-to-watch" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("ones-to-watch")}>Ones to Watch</button>
           <button className={`top-tab ${activeTab === "benchmark"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("benchmark")}>Benchmark</button>
           <button className={`top-tab ${activeTab === "velocity"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("velocity")}>Velocity</button>
@@ -2483,11 +2486,9 @@ export default function App() {
       </header>
 
       {activeTab === "pro" && <ProPage rankings={rankings} />}
-      {activeTab === "booking"       && <BookingToolPage rankings={rankings} />}
+      {activeTab === "booking"       && <BookingIntelPage rankings={rankings} />}
       {activeTab === "clubs"         && <ClubsPage />}
       {activeTab === "journal"       && <BlogPage />}
-      {activeTab === "value"         && <ValueGapPage rankings={rankings} />}
-      {activeTab === "markets"       && <CombinedMarketsPage rankings={rankings} />}
       {activeTab === "ones-to-watch" && <OnestoWatchPage rankings={rankings} />}
       {activeTab === "benchmark"     && <ComparativeBenchmarkingPage rankings={rankings} />}
       {activeTab === "velocity"      && <VelocityPage rankings={rankings} />}
