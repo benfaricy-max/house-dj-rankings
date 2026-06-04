@@ -934,3 +934,27 @@ details[open] .hiw-faq-q::after { content: "–"; }
 
 /* Editor-only Journal tab badge */
 .tab-private { font-family: var(--mono); font-size: 9px; letter-spacing: 0.05em; color: var(--accent); opacity: 0.7; vertical-align: super; margin-left: 2px; }
+
+/* ── Reports tab ─────────────────────────────────────────────────── */
+.rp-page { max-width: 900px; margin: 0 auto; text-align: left; padding: 0 8px 80px; }
+.rp-hero { margin-bottom: 26px; }
+.rp-title { font-size: 2.1rem; font-weight: 800; letter-spacing: -1px; color: var(--text-h); margin: 0 0 10px; }
+.rp-sub { color: var(--text); font-size: 1rem; line-height: 1.55; max-width: 620px; }
+.rp-meta { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.rp-tag { color: var(--accent); }
+.rp-read { display: inline-block; margin-top: 14px; font-family: var(--mono); font-size: 13px; color: var(--accent); }
+
+.rp-feature { display: grid; grid-template-columns: 300px 1fr; gap: 0; background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; text-decoration: none; margin-bottom: 16px; transition: border-color 0.12s; }
+.rp-feature:hover { border-color: var(--accent-border); }
+.rp-feature-img { background-size: cover; background-position: center; min-height: 220px; }
+.rp-feature-body { padding: 26px 28px; }
+.rp-feature-title { font-size: 1.5rem; font-weight: 800; color: var(--text-h); letter-spacing: -0.5px; margin: 4px 0 10px; line-height: 1.12; }
+.rp-feature-dek { color: var(--text); font-size: 0.96rem; line-height: 1.55; }
+
+.rp-list { display: flex; flex-direction: column; gap: 12px; }
+.rp-card { display: block; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; text-decoration: none; transition: border-color 0.12s; }
+.rp-card:hover { border-color: var(--accent-border); }
+.rp-card-title { font-size: 1.25rem; font-weight: 700; color: var(--text-h); margin: 2px 0 6px; letter-spacing: -0.3px; }
+.rp-card-dek { color: var(--text); font-size: 0.92rem; line-height: 1.5; }
+
+@media (max-width: 640px) { .rp-feature { grid-template-columns: 1fr; } .rp-feature-img { min-height: 180px; } }

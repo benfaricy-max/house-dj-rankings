@@ -2124,6 +2124,59 @@ function BreakoutsPage({ rankings, breakouts: staticBreakouts, breakoutThreshold
   );
 }
 
+// ── Reports — published analysis ────────────────────────────────────
+const REPORTS = [
+  {
+    title: "CRSSD Fall 2026 — Lineup Intelligence",
+    dek: "A full demand read on the CRSSD Fall lineup: who's underpriced, who's overbooked in San Diego, ticket-conversion standouts, and the budget math — built from the same live-anchored data the rest of the site runs on.",
+    href: "/reports/crssd-fall-2026/",
+    img: "/reports/crssd-fall-2026/img/card-table-4x5.png",
+    tag: "Festival",
+    date: "2026-06-02",
+  },
+  {
+    title: "Mau P — Momentum Report",
+    dek: "A single-artist deep dive on Mau P's trajectory across every signal — the kind of one-pager you'd send a promoter to make the case.",
+    href: "/reports/mau-p.html",
+    tag: "Artist",
+    date: "2026-05-30",
+  },
+];
+
+function ReportsPage() {
+  const fmtDate = iso => new Date(iso + "T00:00:00").toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+  const [feature, ...rest] = REPORTS;
+  return (
+    <div className="page rp-page">
+      <div className="rp-hero">
+        <h1 className="rp-title">Analysis Reports</h1>
+        <p className="rp-sub">Standalone intelligence briefs — lineups, artists and scenes read through PEAKTIME's demand data. Shareable, and built for industry decisions.</p>
+      </div>
+
+      <a className="rp-feature" href={feature.href}>
+        {feature.img && <div className="rp-feature-img" style={{ backgroundImage: `url(${feature.img})` }} />}
+        <div className="rp-feature-body">
+          <div className="rp-meta"><span className="rp-tag">{feature.tag}</span> · {fmtDate(feature.date)}</div>
+          <div className="rp-feature-title">{feature.title}</div>
+          <div className="rp-feature-dek">{feature.dek}</div>
+          <span className="rp-read">Read the report →</span>
+        </div>
+      </a>
+
+      <div className="rp-list">
+        {rest.map(r => (
+          <a className="rp-card" key={r.href} href={r.href}>
+            <div className="rp-meta"><span className="rp-tag">{r.tag}</span> · {fmtDate(r.date)}</div>
+            <div className="rp-card-title">{r.title}</div>
+            <div className="rp-card-dek">{r.dek}</div>
+            <span className="rp-read">Read →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ── Main App ───────────────────────────────────────────────────────
 
 export default function App() {
@@ -2274,6 +2327,7 @@ export default function App() {
           <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
           <button className={`top-tab ${activeTab === "booking" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking")}>Booking Intelligence</button>
           <button className={`top-tab ${activeTab === "clubs" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("clubs")}>Club Index</button>
+          <button className={`top-tab ${activeTab === "reports" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("reports")}>Reports</button>
           {editor && <button className={`top-tab ${activeTab === "journal" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("journal")}>Journal <span className="tab-private">·private</span></button>}
           <button className={`top-tab ${activeTab === "scouting" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("scouting")}>Scouting</button>
           {/* TEMP: Breakouts & Movers tabs hidden until enough history accrues to populate them
@@ -2287,6 +2341,7 @@ export default function App() {
       {activeTab === "pro" && <ProPage rankings={rankings} />}
       {activeTab === "booking"       && <BookingIntelPage rankings={rankings} />}
       {activeTab === "clubs"         && <ClubsPage />}
+      {activeTab === "reports"       && <ReportsPage />}
       {activeTab === "journal"       && editor && <BlogPage />}
       {activeTab === "scouting"      && <ScoutingPage rankings={rankings} />}
       {/* TEMP: hidden until sufficient data
