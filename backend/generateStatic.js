@@ -165,11 +165,26 @@ async function main() {
     if (ml > 0) lh.push({ d: today, l: ml });
     dj.listeners_history = lh.slice(-90);
     if (lh.length >= 2 && dj.listener_growth_source !== "kworb") {
+      // Compute weekly growth from history (≥2 snapshots available).
       const cur = lh[lh.length - 1].l;
       const target = Date.now() - 7 * 864e5;
       let base = lh[0];
       for (const p of lh) if (new Date(p.d).getTime() <= target) base = p;
-      if (base.l > 0 && cur > 0) dj.spotify_follower_growth_rate = Math.round((cur - base.l) / base.l * 1000) / 10;
+      if (base.l > 0 && cur > 0) {
+        dj.spotify_follower_growth_rate = Math.round((cur - base.l) / base.l * 1000) / 10;
+        dj.listener_growth_source = "history";
+      }
+    } else if (dj.listener_growth_source !== "kworb") {
+      // Fallback: fewer than 2 history snapshots — derive growth from kworb's
+      // listener_daily_delta if present in prev (merge-safe: never wipes kworb data).
+      const prevDelta = prevRankings[dj.name]?.listener_daily_delta;
+      const prevListeners = prevRankings[dj.name]?.spotify_monthly_listeners || ml;
+      if (Number.isFinite(prevDelta) && prevListeners > 0) {
+        const weeklyPct = Math.round((prevDelta / prevListeners) * 7 * 1000) / 10;
+        dj.spotify_follower_growth_rate = weeklyPct;
+        dj.listener_daily_delta = prevDelta;
+        dj.listener_growth_source = "kworb";
+      }
     }
   }
 

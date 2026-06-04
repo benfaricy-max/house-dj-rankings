@@ -87,29 +87,56 @@ function isoWeek(d = new Date()) {
   const artists  = JSON.parse(fs.readFileSync(ARTISTS, "utf8"));
   const artistById = Object.fromEntries(artists.map(a => [a.name, a]));
 
-  let hits = 0;
+  // Scrape succeeded if we got at least one genre chart.
+  const scrapeSucceeded = Object.keys(genreCharts).length > 0;
+
+  let hits = 0, decayed = 0;
+  const now = new Date().toISOString();
+  const TTL_MS = 14 * 24 * 60 * 60 * 1000; // 14 days
+
   for (const dj of rankData.rankings) {
     const e = chartMap[norm(dj.name)];
-    if (!e) continue;
-    const positionScore = 101 - e.best;
-    const breadth = Math.min(e.tracks, 5) / 5 * 100;
-    const reach   = Math.min(e.charts.size, 3) / 3 * 100;
-    const score   = Math.round(positionScore * 0.60 + breadth * 0.25 + reach * 0.15);
-    const bp = {
-      beatport_score: score,
-      beatport_best_position: e.best,
-      beatport_charting_tracks: e.tracks,
-      beatport_charts: [...e.charts],
-      beatport_labels: [...e.labels],          // labels this artist is currently charting on
-    };
-    Object.assign(dj, bp);
-    if (artistById[dj.name]) Object.assign(artistById[dj.name], bp);
-    hits++;
+    if (e) {
+      // Artist is currently charting — write fresh data + timestamp.
+      const positionScore = 101 - e.best;
+      const breadth = Math.min(e.tracks, 5) / 5 * 100;
+      const reach   = Math.min(e.charts.size, 3) / 3 * 100;
+      const score   = Math.round(positionScore * 0.60 + breadth * 0.25 + reach * 0.15);
+      const bp = {
+        beatport_score: score,
+        beatport_best_position: e.best,
+        beatport_charting_tracks: e.tracks,
+        beatport_charts: [...e.charts],
+        beatport_labels: [...e.labels],          // labels this artist is currently charting on
+        beatport_updated: now,
+      };
+      Object.assign(dj, bp);
+      if (artistById[dj.name]) Object.assign(artistById[dj.name], bp);
+      hits++;
+    } else if (scrapeSucceeded && dj.beatport_updated) {
+      // Artist not on any chart this run. Only apply TTL when the scrape itself
+      // succeeded — never zero scores on a failed/empty scrape (merge-safety rule).
+      const age = Date.now() - new Date(dj.beatport_updated).getTime();
+      if (age > TTL_MS) {
+        // Score expired: artist has been off charts >14 days.
+        const decay = {
+          beatport_score: 0,
+          beatport_best_position: null,
+          beatport_charting_tracks: 0,
+          beatport_charts: [],
+          beatport_labels: [],
+          beatport_updated: dj.beatport_updated,  // keep timestamp (shows when they last charted)
+        };
+        Object.assign(dj, decay);
+        if (artistById[dj.name]) Object.assign(artistById[dj.name], decay);
+        decayed++;
+      }
+    }
   }
 
   fs.writeFileSync(RANKINGS, JSON.stringify(rankData));
   fs.writeFileSync(ARTISTS, JSON.stringify(artists, null, 2));
-  console.log(`\nBeatport: ${hits}/${rankData.rankings.length} artists currently charting.`);
+  console.log(`\nBeatport: ${hits}/${rankData.rankings.length} artists currently charting, ${decayed} expired (>14d off charts).`);
   const top = rankData.rankings.filter(d => d.beatport_score).sort((a,b)=>b.beatport_score-a.beatport_score).slice(0,8);
   top.forEach(d => console.log(`  ${d.name}: score ${d.beatport_score} (best #${d.beatport_best_position}, ${d.beatport_charting_tracks} tracks, ${d.beatport_charts.length} charts)`));
 
