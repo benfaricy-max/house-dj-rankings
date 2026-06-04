@@ -112,6 +112,21 @@ async function main() {
     }
   }
 
+  // ── Public chart file for the frontend "What DJs Are Playing" surface ──
+  // Resolve each track's credited artists to roster matches (name + slug) so the
+  // UI can link them; non-roster acts render plain (and double as expansion leads).
+  const slugify = s => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  const PUBLIC_TL = path.join(__dirname, "..", "frontend", "public", "tracklists.json");
+  const publicChart = {
+    week, date: snapshot.date, count: entries.length,
+    roster_hits: hits,
+    entries: entries.map(e => ({
+      rank: e.rank, artist: e.artist, title: e.title, url: e.url,
+      roster: splitArtists(e.artist).filter(w => rosterByNorm[norm(w)]).map(w => ({ name: rosterByNorm[norm(w)].name, slug: slugify(rosterByNorm[norm(w)].name) })),
+    })),
+  };
+  fs.writeFileSync(PUBLIC_TL, JSON.stringify(publicChart));
+
   fs.writeFileSync(RANKINGS, JSON.stringify(data));
   fs.writeFileSync(ARTISTS, JSON.stringify(artists, null, 2));
   console.log(`1001Tracklists: ${entries.length} chart tracks → ${hits} roster artists charting this week (${week}). Archive: ${archive.weeks.length} week(s).`);

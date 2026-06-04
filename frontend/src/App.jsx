@@ -1283,11 +1283,60 @@ function BookingIntelPage({ rankings }) {
 }
 
 // Scouting — talent discovery / trajectory views under one tab.
+// "What DJs Are Playing" — the weekly 1001Tracklists DJ-support chart, with our
+// roster artists linked and non-roster acts shown plain (scene context + leads).
+function DJChartPage() {
+  const [chart, setChart] = useState(undefined);
+  useEffect(() => {
+    fetch("/tracklists.json").then(r => (r.ok ? r.json() : null)).then(setChart).catch(() => setChart(null));
+  }, []);
+
+  if (chart === undefined) return <div className="page"><div className="cs-empty">Loading the DJ chart…</div></div>;
+  if (!chart || !chart.entries?.length) return <div className="page"><div className="cs-empty">DJ-support chart isn't available yet. Run the 1001Tracklists enrichment to populate it.</div></div>;
+
+  return (
+    <div className="page dj-page">
+      <div className="cs-header">
+        <div>
+          <h1 className="cs-title">What DJs Are Playing</h1>
+          <p className="cs-sub">
+            This week's 1001Tracklists chart — the tracks DJs are actually spinning in their sets.
+            The hardest signal to game: it's the scene's tastemakers, not sales or streams.
+            <strong> {chart.roster_hits} of {chart.count}</strong> are our roster.
+          </p>
+        </div>
+      </div>
+      <div className="dj-meta">Week {chart.week} · updated {chart.date}</div>
+      <div className="dj-list">
+        {chart.entries.map((e, i) => (
+          <div key={i} className={`dj-row ${e.roster.length ? "dj-row--hit" : ""}`}>
+            <span className="dj-rank">{e.rank ? `#${e.rank}` : "—"}</span>
+            <div className="dj-track">
+              <div className="dj-title">{e.title}</div>
+              <div className="dj-artist">
+                {e.roster.length
+                  ? e.artist.split(/(\s+(?:vs\.?|&|x|ft\.?|feat\.?|featuring|with|\+|,|\/)\s+)/i).map((part, j) => {
+                      const hit = e.roster.find(r => r.name.toLowerCase() === part.trim().toLowerCase());
+                      return hit ? <a key={j} className="dj-link" href={`#/artist/${hit.slug}`}>{part}</a> : <span key={j}>{part}</span>;
+                    })
+                  : <span className="dj-artist--plain">{e.artist}</span>}
+              </div>
+            </div>
+            {e.roster.length > 0 && <span className="dj-badge">tracked</span>}
+          </div>
+        ))}
+      </div>
+      <div className="cs-est-note" style={{ maxWidth: 640 }}>ⓘ Source: 1001Tracklists weekly chart. Roster acts are linked; un-linked acts are charting names we don't track yet — useful expansion leads.</div>
+    </div>
+  );
+}
+
 function ScoutingPage({ rankings }) {
   const [view, setView] = useState("watch");
   const TABS = [
     ["watch", "Ones to Watch"],
     ["velocity", "Velocity"],
+    ["djchart", "DJ Chart"],
     ["benchmark", "Benchmark"],
   ];
   return (
@@ -1299,6 +1348,7 @@ function ScoutingPage({ rankings }) {
       </div>
       {view === "watch" && <OnestoWatchPage rankings={rankings} />}
       {view === "velocity" && <VelocityPage rankings={rankings} />}
+      {view === "djchart" && <DJChartPage />}
       {view === "benchmark" && <ComparativeBenchmarkingPage rankings={rankings} />}
     </div>
   );
