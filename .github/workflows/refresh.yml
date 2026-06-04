@@ -20,6 +20,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
 
       - uses: actions/setup-python@v5
         with:
@@ -29,7 +31,7 @@ jobs:
         run: pip install pytrends
 
       - name: Install backend deps
-        run: npm install
+        run: npm ci
         working-directory: backend
 
       - name: Resolve missing Spotify IDs (new/discovered artists)
@@ -138,8 +140,14 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add frontend/public/rankings.json backend/artists.json frontend/public/brand backend/beatport-archive.json
-          git diff --staged --quiet || git commit -m "chore: refresh rankings + cache YouTube channel IDs [skip ci]"
-          # Rebase onto any commits pushed while the long refresh ran, so a manual
-          # commit during the job never causes a non-fast-forward push failure.
-          git pull --rebase --autostash origin main || true
-          git push
+          git diff --staged --quiet && { echo "no changes"; exit 0; }
+          git commit -m "chore: refresh rankings + cache YouTube channel IDs [skip ci]"
+          # Push with rebase-and-retry: if a commit landed during the long refresh,
+          # rebase onto it and try again rather than losing the day's data to a
+          # non-fast-forward rejection.
+          for i in 1 2 3 4 5; do
+            git pull --rebase --autostash origin main || true
+            git push && { echo "pushed on attempt $i"; exit 0; }
+            echo "push attempt $i failed — retrying"; sleep $((i * 3))
+          done
+          echo "::error::could not push refreshed data after 5 attempts"; exit 1
