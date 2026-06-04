@@ -169,18 +169,17 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
   const profile = ARTIST_PROFILES[dj.name] || {};
   const genres = profile.genres || dj.genres || [];
 
+  // Plain PNG download — deliberately NOT using navigator.share(), which on iOS
+  // surfaces a "wants to access other apps and services" prompt that reads as
+  // sketchy to first-time visitors. A download has no permission surface at all.
   async function share() {
     if (cardBusy.current) return; cardBusy.current = true;
     try {
       const blob = await generateCard(dj, profile);
-      const file = new File([blob], `${slugify(dj.name)}-rank.png`, { type: "image/png" });
-      if (navigator.canShare && navigator.canShare({ files: [file] })) {
-        await navigator.share({ files: [file], title: `${dj.name} — #${dj.rank}`, text: `${dj.name} is #${dj.rank} on The DJ Rankings` });
-      } else {
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a"); a.href = url; a.download = file.name; a.click();
-        URL.revokeObjectURL(url);
-      }
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url; a.download = `${slugify(dj.name)}-rank.png`; a.click();
+      URL.revokeObjectURL(url);
     } catch (e) { console.warn("card failed", e); }
     cardBusy.current = false;
   }
@@ -218,7 +217,7 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
           </div>
           <div className="ap-genres">{genres.map(g => <span key={g} className="ap-genre">{g}</span>)}</div>
         </div>
-        <button className="ap-share" onClick={share}>↗ Share ranking card</button>
+        <button className="ap-share" onClick={share}>↓ Download ranking card</button>
       </div>
 
       {profile.bio && <p className="ap-bio">{profile.bio}</p>}
