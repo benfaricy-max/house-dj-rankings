@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo, useRef } from "react";
 import "./App.css";
 import ProPage from "./ProPage";
 import ArtistProfile, { slugify, ArtistLink } from "./ArtistProfile";
+import { ValueGapPage, ValueReport, valueSlug } from "./ValueGap";
 import ClubsPage, { ClubProfile } from "./ClubsPage";
 import BlogPage, { BlogPost } from "./BlogPage";
 
@@ -32,6 +33,10 @@ const parseClubSlug = () => {
 };
 const parseBlogSlug = () => {
   const m = (window.location.hash || "").match(/^#\/blog\/(.+)$/);
+  return m ? decodeURIComponent(m[1]) : null;
+};
+const parseValueSlug = () => {
+  const m = (window.location.hash || "").match(/^#\/value\/(.+)$/);
   return m ? decodeURIComponent(m[1]) : null;
 };
 // Editor-only gate: the Journal stays hidden from the public until it's ready.
@@ -1661,96 +1666,6 @@ function MarketSaturationPage({ rankings }) {
 }
 
 // ---- Price/Demand Gap — the buy signal -------------------------------------
-function ValueGapPage({ rankings }) {
-  const { strong, buy, premium, converters } = useMemo(() => {
-    const withGap = rankings.filter(a => a.booking_fee && Number.isFinite(a.value_gap));
-    const byGap = (x, y) => (y.value_gap - x.value_gap) || ((y.momentum_score || 0) - (x.momentum_score || 0));
-    return {
-      strong:  withGap.filter(a => a.value_signal === "strong-buy").sort(byGap),
-      buy:     withGap.filter(a => a.value_signal === "buy").sort(byGap),
-      premium: withGap.filter(a => a.value_signal === "premium").sort((x, y) => x.value_gap - y.value_gap),
-      // Streaming-to-live converters: punch above their streaming weight live.
-      converters: rankings.filter(a => Number.isFinite(a.live_conversion_score) && a.live_conversion_score >= 75)
-        .sort((x, y) => y.live_conversion_score - x.live_conversion_score),
-    };
-  }, [rankings]);
-
-  const Row = ({ a }) => (
-    <div className="vg-row">
-      <div className="vg-name"><ArtistLink name={a.name} /><span className="vg-rank">#{a.rank}</span></div>
-      <div className="vg-fee">
-        <span className="vg-now">{a.booking_fee.label}</span>
-        <span className="vg-arrow">→</span>
-        <span className="vg-implied">{a.demand_fee_label}</span>
-      </div>
-      <div className="vg-gap">
-        <span className={`vg-gap-badge vg-gap--${a.value_gap > 0 ? "up" : "down"}`}>
-          {a.value_gap > 0 ? "+" : ""}{a.value_gap} tier{Math.abs(a.value_gap) !== 1 ? "s" : ""}
-        </span>
-        {Number.isFinite(a.momentum_score) && <span className="vg-mo">▲ {a.momentum_score}</span>}
-      </div>
-    </div>
-  );
-
-  return (
-    <div className="page vg-page">
-      <div className="bk-header">
-        <h1 className="cs-title">The buy signals</h1>
-        <p className="cs-sub">
-          We estimate where each artist's fee <em>should</em> sit from demand data — reach, live
-          booking demand (RA venue tier &amp; attendance), Beatport credibility, search — then flag
-          where demand has outpaced the known fee tier. Underpriced + accelerating = book before the price catches up.
-        </p>
-      </div>
-
-      <div className="vg-section">
-        <div className="vg-head vg-head--strong">Strong buy · underpriced &amp; demand surging</div>
-        {strong.length ? strong.map(a => <Row key={a.name} a={a} />)
-          : <div className="vg-empty">No strong buys right now — none are both underpriced and surging on momentum.</div>}
-      </div>
-
-      <div className="vg-section">
-        <div className="vg-head">Underpriced · demand-implied tier above current fee</div>
-        {buy.slice(0, 25).map(a => <Row key={a.name} a={a} />)}
-      </div>
-
-      {converters.length > 0 && (
-        <div className="vg-section">
-          <div className="vg-head vg-head--strong">Best ticket converters · live demand &gt; streaming weight</div>
-          {converters.slice(0, 12).map(a => (
-            <div className="vg-row" key={"conv-" + a.name}>
-              <div className="vg-name"><ArtistLink name={a.name} /><span className="vg-rank">#{a.rank}</span></div>
-              <div className="vg-fee">
-                <span className="vg-now">{fmt(a.spotify_monthly_listeners)} listeners</span>
-                <span className="vg-arrow">→</span>
-                <span className="vg-implied">{a.ra_avg_attending} attending/show</span>
-              </div>
-              <div className="vg-gap">
-                <span className="vg-gap-badge vg-gap--up">Converts {a.live_conversion_score}/100</span>
-              </div>
-            </div>
-          ))}
-          <div className="vg-conv-note">The number streaming hides: these artists turn a modest streaming audience into outsized live demand — often a better booking than a bigger-streaming name.</div>
-        </div>
-      )}
-
-      {premium.length > 0 && (
-        <div className="vg-section">
-          <div className="vg-head vg-head--prem">Priced ahead · fee runs hotter than current demand</div>
-          {premium.slice(0, 8).map(a => <Row key={a.name} a={a} />)}
-        </div>
-      )}
-
-      <div className="bk-method">
-        <b>How this is computed.</b> A 0–100 demand index (40% reach · 22% RA booking demand ·
-        18% Beatport · 10% YouTube · 10% search) is calibrated to fee tiers using the real fee
-        distribution, so a gap means demand ranks an artist higher than their fee — not a scale
-        artefact. "Strong buy" additionally requires positive Momentum. Fee bands are curated
-        estimates; treat this as a directional buy signal, not a quote.
-      </div>
-    </div>
-  );
-}
 
 function CitySpotlightPage({ rankings }) {
   const byName = Object.fromEntries(rankings.map(r => [r.name, r]));
@@ -2252,9 +2167,10 @@ export default function App() {
   const [marketSlug, setMarketSlug] = useState(parseMarketSlug());
   const [clubSlugState, setClubSlugState] = useState(parseClubSlug());
   const [blogSlugState, setBlogSlugState] = useState(parseBlogSlug());
+  const [valueSlugState, setValueSlugState] = useState(parseValueSlug());
   const [editor] = useState(isEditor());
   useEffect(() => {
-    const onHash = () => { setProfileSlug(parseProfileSlug()); setMarketSlug(parseMarketSlug()); setClubSlugState(parseClubSlug()); setBlogSlugState(parseBlogSlug()); };
+    const onHash = () => { setProfileSlug(parseProfileSlug()); setMarketSlug(parseMarketSlug()); setClubSlugState(parseClubSlug()); setBlogSlugState(parseBlogSlug()); setValueSlugState(parseValueSlug()); };
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
@@ -2321,6 +2237,9 @@ export default function App() {
   }
 
   // Journal post route — shareable like #/blog/notes-from-the-floor (editor-only for now)
+  if (valueSlugState) {
+    return <div className="page"><ValueReport rankings={rankings} slug={valueSlugState} /></div>;
+  }
   if (blogSlugState && editor) {
     return <div className="page"><BlogPost slug={blogSlugState} /></div>;
   }

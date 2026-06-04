@@ -861,28 +861,6 @@ details[open] .hiw-faq-q::after { content: "–"; }
 @media (max-width: 640px) { .hiw-rubric-row { grid-template-columns: 48px 1fr; } .hiw-rubric-note { display: none; } }
 
 /* ---- Price/Demand Gap ---- */
-.vg-page { max-width: 1000px; margin: 0 auto; text-align: left; padding: 0 8px; }
-.vg-section { margin-bottom: 26px; }
-.vg-head { font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
-.vg-head--strong { color: var(--accent); }
-.vg-head--prem { color: #df7a5c; }
-.vg-row { display: grid; grid-template-columns: 1.1fr 1.4fr auto; gap: 16px; align-items: center; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; margin-bottom: 8px; }
-.vg-name { font-size: 17px; font-weight: 600; color: var(--text-h); display: flex; align-items: baseline; gap: 8px; }
-.vg-rank { font-family: var(--mono); font-size: 12px; color: var(--muted); }
-.vg-fee { display: flex; align-items: center; gap: 12px; font-family: var(--mono); font-size: 14px; }
-.vg-now { color: var(--muted); }
-.vg-arrow { color: var(--accent); }
-.vg-implied { color: var(--text-h); font-weight: 600; }
-.vg-gap { display: flex; align-items: center; gap: 10px; justify-content: flex-end; }
-.vg-gap-badge { font-family: var(--mono); font-size: 13px; font-weight: 600; padding: 4px 9px; border-radius: 7px; }
-.vg-gap--up { background: var(--accent-bg); color: var(--accent); }
-.vg-gap--down { background: rgba(223,122,92,0.14); color: #df7a5c; }
-.vg-mo { font-family: var(--mono); font-size: 13px; color: var(--accent); }
-.vg-empty { color: var(--muted); font-size: 14px; padding: 14px 18px; border: 1px dashed var(--border); border-radius: 10px; }
-@media (max-width: 680px) {
-  .vg-row { grid-template-columns: 1fr; gap: 8px; }
-  .vg-fee, .vg-gap { justify-content: flex-start; }
-}
 /* value badge on booking act cards */
 .bk-value { margin-top: 12px; font-family: var(--mono); font-size: 12.5px; font-weight: 600; padding: 6px 10px; border-radius: 7px; display: inline-block; }
 .bk-value--buy { background: var(--accent-bg); color: var(--accent); }
@@ -909,7 +887,6 @@ details[open] .hiw-faq-q::after { content: "–"; }
 /* live conversion */
 .bk-conv { margin-top: 10px; font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
 .bk-conv--hi { color: var(--accent); }
-.vg-conv-note { font-size: 13px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
 
 /* ---- Market Read (shareable one-pager) ---- */
 .mr-page { max-width: 940px; margin: 0 auto; padding: 0 8px; }
