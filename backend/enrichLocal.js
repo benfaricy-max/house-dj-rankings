@@ -115,6 +115,14 @@ async function worker(queue) {
   const queue = [...rankings];
   await Promise.all(Array.from({ length: CONCURRENCY }, () => worker(queue)));
   save();
+  // De-noise the freshly-fetched geographic interest (drops namesake/common-word
+  // keyword collisions like "Black Coffee"→Albania that Trends regional data invents).
+  try {
+    const { clean } = require("./cleanGeoTrends");
+    const res = clean(data);
+    fs.writeFileSync(RANKINGS, JSON.stringify(data));
+    console.log(`Geo de-noise: ${res.cleaned} cleaned · ${res.dropped} noise countries dropped.`);
+  } catch (e) { console.warn("geo de-noise skipped:", e.message); }
   if (ytChannelUpdates > 0) {
     fs.writeFileSync(ARTISTS, JSON.stringify(artistsFile, null, 2));
     console.log(`\nCached ${ytChannelUpdates} YouTube channel IDs → artists.json`);
