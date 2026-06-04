@@ -327,7 +327,7 @@
   {
     "name": "Tale Of Us",
     "spotify_id": "1UL813H5aj3e8ekE5RqWqc",
-    "youtube_channel_id": "Tale Of Us official",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "taleofus",
     "album_count": 17,
     "manual_scene_score": 82,
@@ -349,12 +349,13 @@
     "demand_index": 61,
     "demand_tier": 3,
     "value_gap": -2,
-    "value_signal": "premium"
+    "value_signal": "premium",
+    "youtube_search_alias": "Tale Of Us official"
   },
   {
     "name": "Bicep",
     "spotify_id": "73A3bLnfnz5BoQjb4gNCga",
-    "youtube_channel_id": "Bicep music official",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "bicepmusic",
     "album_count": 44,
     "manual_scene_score": 83,
@@ -369,7 +370,8 @@
       "color": "#f59e0b",
       "band": "B",
       "basis": "club/festival est."
-    }
+    },
+    "youtube_search_alias": "Bicep music official"
   },
   {
     "name": "Honey Dijon",
@@ -441,7 +443,7 @@
   {
     "name": "Amelie Lens",
     "spotify_id": "5Ho1vKl1Uz8bJlk4vbmvmf",
-    "youtube_channel_id": "Amelie Lens DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "amelie-lens",
     "album_count": 39,
     "manual_scene_score": 80,
@@ -463,7 +465,8 @@
     "demand_index": 62,
     "demand_tier": 3,
     "value_gap": -2,
-    "value_signal": "premium"
+    "value_signal": "premium",
+    "youtube_search_alias": "Amelie Lens DJ"
   },
   {
     "name": "Charlotte de Witte",
@@ -1039,7 +1042,7 @@
   {
     "name": "Carlita",
     "spotify_id": "1GVbOnrND8b3eh2JZ4opw8",
-    "youtube_channel_id": "Carlita DJ music",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "carlita",
     "album_count": 20,
     "manual_scene_score": 80,
@@ -1061,7 +1064,8 @@
     "demand_index": 64,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Carlita DJ music"
   },
   {
     "name": "East End Dubs",
@@ -1514,7 +1518,7 @@
   {
     "name": "Beltran",
     "spotify_id": "1jgSqmZTBltb5O2L7ErmEP",
-    "youtube_channel_id": "Beltran DJ tech house",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "beltran",
     "album_count": 20,
     "manual_scene_score": 76,
@@ -1547,12 +1551,13 @@
     ],
     "label_best": "Turbo Recordings",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "youtube_search_alias": "Beltran DJ tech house"
   },
   {
     "name": "Rossi.",
     "spotify_id": "7itMGcVGRKS43LcTQvJitf",
-    "youtube_channel_id": "Rossi DJ music",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "rossimusic",
     "album_count": 15,
     "manual_scene_score": 76,
@@ -1586,7 +1591,8 @@
     ],
     "label_best": "ROSSI.HOME//GRXWN.",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "youtube_search_alias": "Rossi DJ music"
   },
   {
     "name": "Prospa",
@@ -1790,7 +1796,7 @@
   {
     "name": "Locklead",
     "spotify_id": "14X4Rn0s4EuGtizL0l8IIw",
-    "youtube_channel_id": "Locklead tech house",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "locklead",
     "album_count": 15,
     "manual_scene_score": 74,
@@ -1810,12 +1816,13 @@
     "demand_index": 57,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Locklead tech house"
   },
   {
     "name": "Obskür",
     "spotify_id": "29MTNlaVntQaQiDyj8KGwx",
-    "youtube_channel_id": "Obskur DJ music",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "obskur",
     "album_count": 15,
     "manual_scene_score": 74,
@@ -1835,7 +1842,8 @@
     "demand_index": 81,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Obskur DJ music"
   },
   {
     "name": "Kolter",
@@ -1883,7 +1891,7 @@
   {
     "name": "Murphy's Law",
     "spotify_id": "1q85MRE0aEF6NfZQdlMrl1",
-    "youtube_channel_id": "Murphys Law DJ UK",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "murphyslaw",
     "album_count": 15,
     "manual_scene_score": 73,
@@ -1897,7 +1905,8 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "club/festival est."
-    }
+    },
+    "youtube_search_alias": "Murphys Law DJ UK"
   },
   {
     "name": "Luke Dean",
@@ -2026,7 +2035,7 @@
   {
     "name": "MALUGI",
     "spotify_id": "50udUOTR7dQUgyPwPuCLM6",
-    "youtube_channel_id": "MALUGI tech house",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "malugi",
     "album_count": 10,
     "manual_scene_score": 72,
@@ -2046,12 +2055,13 @@
     "demand_index": 59,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "MALUGI tech house"
   },
   {
     "name": "Silva Bumpa",
     "spotify_id": "2dPLkqesvPXpIlP65JoLrf",
-    "youtube_channel_id": "Silva Bumpa DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "silvabumpa",
     "album_count": 10,
     "manual_scene_score": 72,
@@ -2090,12 +2100,13 @@
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "House"
-    ]
+    ],
+    "youtube_search_alias": "Silva Bumpa DJ"
   },
   {
     "name": "Alisha",
     "spotify_id": "1zUgvtlUR6jXtCUCF0j3fe",
-    "youtube_channel_id": "Alisha DJ tech house",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "alisha",
     "album_count": 15,
     "manual_scene_score": 76,
@@ -2109,12 +2120,13 @@
       "color": "var(--muted)",
       "band": "F",
       "basis": "club/festival est."
-    }
+    },
+    "youtube_search_alias": "Alisha DJ tech house"
   },
   {
     "name": "Discip",
     "spotify_id": "6K16NRv0isbkftsv5lmlMT",
-    "youtube_channel_id": "Discip DJ tech house",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "discip",
     "album_count": 10,
     "manual_scene_score": 72,
@@ -2146,7 +2158,8 @@
     ],
     "label_best": "Solid Grooves Records",
     "label_tier": 4,
-    "label_score": 80
+    "label_score": 80,
+    "youtube_search_alias": "Discip DJ tech house"
   },
   {
     "name": "Carl Cox",
@@ -2338,7 +2351,7 @@
   {
     "name": "Shiba San",
     "spotify_id": "7Hr9bE0u9Rl5n6QahVNRnc",
-    "youtube_channel_id": "Shiba San DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "shiba-san",
     "album_count": 35,
     "manual_scene_score": 79,
@@ -2365,7 +2378,8 @@
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Tech House"
-    ]
+    ],
+    "youtube_search_alias": "Shiba San DJ"
   },
   {
     "name": "Eli Brown",
@@ -2410,7 +2424,7 @@
   {
     "name": "HoneyLuv",
     "spotify_id": "1sl3gVNz3Nxd4poA8f76sl",
-    "youtube_channel_id": "HoneyLuv DJ official",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "honeyluv",
     "album_count": 20,
     "manual_scene_score": 79,
@@ -2431,12 +2445,13 @@
     "demand_index": 57,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "HoneyLuv DJ official"
   },
   {
     "name": "Biscits",
     "spotify_id": "052B9SONfhoScw7dgYWw5o",
-    "youtube_channel_id": "Biscits DJ tech house",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "biscits",
     "album_count": 25,
     "manual_scene_score": 77,
@@ -2458,12 +2473,13 @@
     "demand_index": 53,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Biscits DJ tech house"
   },
   {
     "name": "Patrick Topping",
     "spotify_id": "7yRimuQSC5Ks3T2Ts0iyZa",
-    "youtube_channel_id": "Patrick Topping Trick",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "patrick-topping",
     "album_count": 50,
     "manual_scene_score": 80,
@@ -2485,12 +2501,13 @@
     "demand_index": 58,
     "demand_tier": 3,
     "value_gap": -1,
-    "value_signal": "premium"
+    "value_signal": "premium",
+    "youtube_search_alias": "Patrick Topping Trick"
   },
   {
     "name": "Richy Ahmed",
     "spotify_id": "1ac5NUFh98sMs0DGX4xlSt",
-    "youtube_channel_id": "Richy Ahmed DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "richy-ahmed",
     "album_count": 35,
     "manual_scene_score": 76,
@@ -2512,12 +2529,13 @@
     "demand_index": 58,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Richy Ahmed DJ"
   },
   {
     "name": "Hannah Wants",
     "spotify_id": "7sK4hnuUOXw6VStDw0q8NI",
-    "youtube_channel_id": "Hannah Wants DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "hannah-wants",
     "album_count": 30,
     "manual_scene_score": 76,
@@ -2546,12 +2564,13 @@
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Minimal / Deep Tech"
-    ]
+    ],
+    "youtube_search_alias": "Hannah Wants DJ"
   },
   {
     "name": "Rebüke",
     "spotify_id": "113reBz1jA6rVxbXl55mlj",
-    "youtube_channel_id": "Rebuke DJ music",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "rebuke",
     "album_count": 25,
     "manual_scene_score": 77,
@@ -2573,7 +2592,8 @@
     "demand_index": 71,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Rebuke DJ music"
   },
   {
     "name": "Âme",
@@ -2844,7 +2864,7 @@
   {
     "name": "Steve Lawler",
     "spotify_id": "0NDuRCSLSH0Ii5An4U6HME",
-    "youtube_channel_id": "Steve Lawler DJ VIVa",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "steve-lawler",
     "album_count": 60,
     "manual_scene_score": 79,
@@ -2867,12 +2887,13 @@
     "demand_index": 47,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Steve Lawler DJ VIVa"
   },
   {
     "name": "Lee Foss",
     "spotify_id": "44T94QQEc60Jf7kqGY6Rip",
-    "youtube_channel_id": "Lee Foss Hot Creations",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "lee-foss",
     "album_count": 45,
     "manual_scene_score": 75,
@@ -2894,12 +2915,13 @@
     "demand_index": 80,
     "demand_tier": 6,
     "value_gap": 3,
-    "value_signal": "strong-buy"
+    "value_signal": "strong-buy",
+    "youtube_search_alias": "Lee Foss Hot Creations"
   },
   {
     "name": "Walker & Royce",
     "spotify_id": "1lAwVq9MxNJkB0dEY6xNoV",
-    "youtube_channel_id": "Walker and Royce Dirtybird",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "walker-royce",
     "album_count": 35,
     "manual_scene_score": 77,
@@ -2920,7 +2942,8 @@
     "demand_index": 23,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Walker and Royce Dirtybird"
   },
   {
     "name": "Kyle Watson",
@@ -2952,7 +2975,7 @@
   {
     "name": "Wehbba",
     "spotify_id": "2UzAShzs3DO53bSZqvf8Ri",
-    "youtube_channel_id": "Wehbba DJ Drumcode",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "wehbba",
     "album_count": 35,
     "manual_scene_score": 75,
@@ -2973,12 +2996,13 @@
     "demand_index": 50,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Wehbba DJ Drumcode"
   },
   {
     "name": "Paco Osuna",
     "spotify_id": "6vdIozDDsH4uJEAHN8tyS3",
-    "youtube_channel_id": "Paco Osuna DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "paco-osuna",
     "album_count": 50,
     "manual_scene_score": 78,
@@ -2999,7 +3023,8 @@
     "demand_index": 54,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Paco Osuna DJ"
   },
   {
     "name": "Alan Fitzpatrick",
@@ -3042,7 +3067,7 @@
   {
     "name": "Archie Hamilton",
     "spotify_id": "0DfYCARYRJ4vlSWlief3jv",
-    "youtube_channel_id": "Archie Hamilton Robin Hood",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "archie-hamilton",
     "album_count": 30,
     "manual_scene_score": 74,
@@ -3064,12 +3089,13 @@
     "demand_index": 57,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Archie Hamilton Robin Hood"
   },
   {
     "name": "Cristoph",
     "spotify_id": "532SqCIYmJyXEdEiCJLgYG",
-    "youtube_channel_id": "Cristoph DJ music",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "cristoph",
     "album_count": 25,
     "manual_scene_score": 74,
@@ -3090,12 +3116,13 @@
     "demand_index": 72,
     "demand_tier": 5,
     "value_gap": 2,
-    "value_signal": "buy"
+    "value_signal": "buy",
+    "youtube_search_alias": "Cristoph DJ music"
   },
   {
     "name": "Dense & Pika",
     "spotify_id": "3tlt5onLwIKTuaOAyI6ytC",
-    "youtube_channel_id": "Dense and Pika DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "dense-pika",
     "album_count": 30,
     "manual_scene_score": 73,
@@ -3116,12 +3143,13 @@
     "demand_index": 62,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Dense and Pika DJ"
   },
   {
     "name": "Sacha Robotti",
     "spotify_id": "5zheoDzRTIhWzE1j1DttZf",
-    "youtube_channel_id": "Sacha Robotti DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "sacha-robotti",
     "album_count": 25,
     "manual_scene_score": 72,
@@ -3142,12 +3170,13 @@
     "demand_index": 49,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Sacha Robotti DJ"
   },
   {
     "name": "WEISS",
     "spotify_id": "0FBRY66KVaAiddGVefikLB",
-    "youtube_channel_id": "WEISS DJ tech house",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "weiss-uk",
     "album_count": 35,
     "manual_scene_score": 76,
@@ -3169,12 +3198,13 @@
     "demand_index": 61,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "WEISS DJ tech house"
   },
   {
     "name": "Simon Doty",
     "spotify_id": "0NznnEmGCRqungT5a57GG3",
-    "youtube_channel_id": "Simon Doty DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "simondoty",
     "album_count": 20,
     "manual_scene_score": 72,
@@ -3201,12 +3231,13 @@
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Deep House"
-    ]
+    ],
+    "youtube_search_alias": "Simon Doty DJ"
   },
   {
     "name": "Gerd Janson",
     "spotify_id": "4jLpm91Tyk2TRgv43bMfZO",
-    "youtube_channel_id": "Gerd Janson Running Back",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "gerd-janson",
     "album_count": 45,
     "manual_scene_score": 75,
@@ -3227,12 +3258,13 @@
     "demand_index": 67,
     "demand_tier": 4,
     "value_gap": 1,
-    "value_signal": "buy"
+    "value_signal": "buy",
+    "youtube_search_alias": "Gerd Janson Running Back"
   },
   {
     "name": "Roman Flügel",
     "spotify_id": "2GvwZbDjH1DbQpodGKENDw",
-    "youtube_channel_id": "Roman Flugel DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "roman-flugel",
     "album_count": 40,
     "manual_scene_score": 73,
@@ -3265,7 +3297,8 @@
     ],
     "label_best": "Cocoon Recordings",
     "label_tier": 5,
-    "label_score": 100
+    "label_score": 100,
+    "youtube_search_alias": "Roman Flugel DJ"
   },
   {
     "name": "Booka Shade",
@@ -3310,7 +3343,7 @@
   {
     "name": "DJ Boring",
     "spotify_id": "3MkIU5jhXTMK9pYQTRVI6p",
-    "youtube_channel_id": "DJ Boring music",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "djboring",
     "album_count": 20,
     "manual_scene_score": 70,
@@ -3331,7 +3364,8 @@
     "demand_index": 70,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "DJ Boring music"
   },
   {
     "name": "BLOND:ISH",
@@ -3377,7 +3411,7 @@
   {
     "name": "Latmun",
     "spotify_id": "2z9DWWfNONyl2nyy1GNSi0",
-    "youtube_channel_id": "Latmun DJ Knee Deep",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "latmun",
     "album_count": 25,
     "manual_scene_score": 74,
@@ -3398,12 +3432,13 @@
     "demand_index": 51,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Latmun DJ Knee Deep"
   },
   {
     "name": "Danny Daze",
     "spotify_id": "6xYBrFTJUOzyzMvhUiFHuB",
-    "youtube_channel_id": "Danny Daze DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "danny-daze",
     "album_count": 20,
     "manual_scene_score": 70,
@@ -3424,12 +3459,13 @@
     "demand_index": 56,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Danny Daze DJ"
   },
   {
     "name": "Pleasurekraft",
     "spotify_id": "4ipS3ZbqP46bs124yqp9N4",
-    "youtube_channel_id": "Pleasurekraft DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "pleasurekraft",
     "album_count": 25,
     "manual_scene_score": 72,
@@ -3450,12 +3486,13 @@
     "demand_index": 52,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Pleasurekraft DJ"
   },
   {
     "name": "Octave One",
     "spotify_id": "0CRfAs5qmkRgw9x9etNGqH",
-    "youtube_channel_id": "Octave One 430 West",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "octave-one",
     "album_count": 50,
     "manual_scene_score": 75,
@@ -3477,12 +3514,13 @@
     "demand_index": 66,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Octave One 430 West"
   },
   {
     "name": "Pig&Dan",
     "spotify_id": "04jj7dljPI0ixtNsz2pXWK",
-    "youtube_channel_id": "Pig and Dan Cocoon",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "pig-dan",
     "album_count": 45,
     "manual_scene_score": 73,
@@ -3502,7 +3540,8 @@
     "demand_index": 69,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Pig and Dan Cocoon"
   },
   {
     "name": "Jimi Jules",
@@ -3590,7 +3629,7 @@
   {
     "name": "Colyn",
     "spotify_id": "5vr1GvUstxr6nwxniKqLOh",
-    "youtube_channel_id": "Colyn DJ music",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "colyn",
     "album_count": 15,
     "manual_scene_score": 72,
@@ -3612,7 +3651,8 @@
     "demand_index": 84,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Colyn DJ music"
   },
   {
     "name": "Anyma",
@@ -3656,7 +3696,7 @@
   {
     "name": "Enoo Napa",
     "spotify_id": "5KPid3HkjjnBN4PeUqllHC",
-    "youtube_channel_id": "Enoo Napa DJ Africa",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "enoo-napa",
     "album_count": 30,
     "manual_scene_score": 70,
@@ -3677,7 +3717,8 @@
     "demand_index": 58,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Enoo Napa DJ Africa"
   },
   {
     "name": "Pablo Fierro",
@@ -3720,7 +3761,7 @@
   {
     "name": "Edu Imbernon",
     "spotify_id": "0Vr0xxcbllx4JWHHxio088",
-    "youtube_channel_id": "Edu Imbernon Moog",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "edu-imbernon",
     "album_count": 25,
     "manual_scene_score": 72,
@@ -3741,12 +3782,13 @@
     "demand_index": 53,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Edu Imbernon Moog"
   },
   {
     "name": "Re.You",
     "spotify_id": "3AE5c8fBFJYdxXHCSXAyVx",
-    "youtube_channel_id": "Re.You DJ Get Physical",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "re-you",
     "album_count": 25,
     "manual_scene_score": 70,
@@ -3766,12 +3808,13 @@
     "demand_index": 64,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Re.You DJ Get Physical"
   },
   {
     "name": "Justin Martin",
     "spotify_id": "4FN8WHqUbwkd97WEjoCu7B",
-    "youtube_channel_id": "Justin Martin Dirtybird",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "justin-martin",
     "album_count": 35,
     "manual_scene_score": 73,
@@ -3793,12 +3836,13 @@
     "demand_index": 48,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Justin Martin Dirtybird"
   },
   {
     "name": "HVOB",
     "spotify_id": "6RAx8RRxoHeJIqD2d0EjOa",
-    "youtube_channel_id": "HVOB official music",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "hvob",
     "album_count": 20,
     "manual_scene_score": 70,
@@ -3820,12 +3864,13 @@
     "demand_index": 62,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "HVOB official music"
   },
   {
     "name": "Chelina Manuhutu",
     "spotify_id": "4IoT1ZwtqNYn1u7q9r62Sy",
-    "youtube_channel_id": "Chelina Manuhutu DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "chelina-manuhutu",
     "album_count": 15,
     "manual_scene_score": 72,
@@ -3846,12 +3891,13 @@
     "demand_index": 41,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Chelina Manuhutu DJ"
   },
   {
     "name": "Skream",
     "spotify_id": "2jbP92oFLWqPqogflK1wlW",
-    "youtube_channel_id": "Skream DJ official",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "skream",
     "album_count": 50,
     "manual_scene_score": 79,
@@ -3873,7 +3919,8 @@
     "demand_index": 75,
     "demand_tier": 5,
     "value_gap": 1,
-    "value_signal": "buy"
+    "value_signal": "buy",
+    "youtube_search_alias": "Skream DJ official"
   },
   {
     "name": "David Morales",
@@ -3905,7 +3952,7 @@
   {
     "name": "Mark Farina",
     "spotify_id": "3Nk2T3DZVBvPRO5BBSrklE",
-    "youtube_channel_id": "Mark Farina DJ mushroom jazz",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "mark-farina",
     "album_count": 70,
     "manual_scene_score": 78,
@@ -3927,12 +3974,13 @@
     "demand_index": 54,
     "demand_tier": 3,
     "value_gap": -1,
-    "value_signal": "premium"
+    "value_signal": "premium",
+    "youtube_search_alias": "Mark Farina DJ mushroom jazz"
   },
   {
     "name": "Gene Farris",
     "spotify_id": "49qOEODA3n8HiVUY4uwJbU",
-    "youtube_channel_id": "Gene Farris DJ Chicago",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "gene-farris",
     "album_count": 45,
     "manual_scene_score": 72,
@@ -3953,12 +4001,13 @@
     "demand_index": 57,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Gene Farris DJ Chicago"
   },
   {
     "name": "DJ T.",
     "spotify_id": "3gkLqGRDA19txXCSKXq6Gx",
-    "youtube_channel_id": "DJ T. Get Physical",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "djt",
     "album_count": 50,
     "manual_scene_score": 73,
@@ -3979,12 +4028,13 @@
     "demand_index": 52,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "DJ T. Get Physical"
   },
   {
     "name": "Michael Mayer",
     "spotify_id": "5R9d1YP5jtBw2IrQItGzQI",
-    "youtube_channel_id": "Michael Mayer Kompakt",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "michael-mayer",
     "album_count": 45,
     "manual_scene_score": 76,
@@ -4006,12 +4056,13 @@
     "demand_index": 52,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Michael Mayer Kompakt"
   },
   {
     "name": "Gui Boratto",
     "spotify_id": "27LGatz1m8aJ7ZaVVWEphc",
-    "youtube_channel_id": "Gui Boratto Kompakt",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "gui-boratto",
     "album_count": 35,
     "manual_scene_score": 75,
@@ -4033,12 +4084,13 @@
     "demand_index": 48,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Gui Boratto Kompakt"
   },
   {
     "name": "Oxia",
     "spotify_id": "2zgFYHwSEYOc1KnldGsBXK",
-    "youtube_channel_id": "Oxia DJ Systematic",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "oxia",
     "album_count": 35,
     "manual_scene_score": 75,
@@ -4060,7 +4112,8 @@
     "demand_index": 63,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Oxia DJ Systematic"
   },
   {
     "name": "Marco Faraone",
@@ -4105,7 +4158,7 @@
   {
     "name": "Objekt",
     "spotify_id": "44z1nVVXZE8d4njcQmQLWc",
-    "youtube_channel_id": "Objekt TJ Hertz music",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "objekt",
     "album_count": 25,
     "manual_scene_score": 73,
@@ -4126,12 +4179,13 @@
     "demand_index": 73,
     "demand_tier": 5,
     "value_gap": 2,
-    "value_signal": "buy"
+    "value_signal": "buy",
+    "youtube_search_alias": "Objekt TJ Hertz music"
   },
   {
     "name": "Special Request",
     "spotify_id": "59xdAObFYuaKO2phzzz07H",
-    "youtube_channel_id": "Special Request Fabric",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "special-request",
     "album_count": 20,
     "manual_scene_score": 72,
@@ -4152,12 +4206,13 @@
     "demand_index": 72,
     "demand_tier": 5,
     "value_gap": 2,
-    "value_signal": "buy"
+    "value_signal": "buy",
+    "youtube_search_alias": "Special Request Fabric"
   },
   {
     "name": "TSHA",
     "spotify_id": "2kLa7JZu4Ijdz1Gle2khZh",
-    "youtube_channel_id": "TSHA DJ official",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "tsha",
     "album_count": 15,
     "manual_scene_score": 74,
@@ -4179,7 +4234,8 @@
     "demand_index": 60,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "TSHA DJ official"
   },
   {
     "name": "Tiga",
@@ -4227,7 +4283,7 @@
   {
     "name": "Floating Points",
     "spotify_id": "2AR42Ur9PcchQDtEdwkv4L",
-    "youtube_channel_id": "Floating Points official",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "floating-points",
     "album_count": 25,
     "manual_scene_score": 78,
@@ -4249,12 +4305,13 @@
     "demand_index": 68,
     "demand_tier": 4,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Floating Points official"
   },
   {
     "name": "Mount Kimbie",
     "spotify_id": "3NUtpWpGDoffm3RCGhSHtl",
-    "youtube_channel_id": "Mount Kimbie official",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "mount-kimbie",
     "album_count": 30,
     "manual_scene_score": 74,
@@ -4276,12 +4333,13 @@
     "demand_index": 70,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Mount Kimbie official"
   },
   {
     "name": "HAAi",
     "spotify_id": "0pkLgeB9j465x1QB2kRoy4",
-    "youtube_channel_id": "HAAi DJ official",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "haai",
     "album_count": 15,
     "manual_scene_score": 74,
@@ -4303,12 +4361,13 @@
     "demand_index": 75,
     "demand_tier": 5,
     "value_gap": 2,
-    "value_signal": "buy"
+    "value_signal": "buy",
+    "youtube_search_alias": "HAAi DJ official"
   },
   {
     "name": "Floorplan",
     "spotify_id": "0RBnTX5xoVa1bDYt9Qbies",
-    "youtube_channel_id": "Floorplan Robert Hood",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "floorplan",
     "album_count": 30,
     "manual_scene_score": 75,
@@ -4330,12 +4389,13 @@
     "demand_index": 79,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Floorplan Robert Hood"
   },
   {
     "name": "Jayda G",
     "spotify_id": "3NKVm2Jedcf6ibJr6pMUVx",
-    "youtube_channel_id": "Jayda G DJ official",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "jayda-g",
     "album_count": 20,
     "manual_scene_score": 74,
@@ -4357,7 +4417,8 @@
     "demand_index": 74,
     "demand_tier": 5,
     "value_gap": 2,
-    "value_signal": "strong-buy"
+    "value_signal": "strong-buy",
+    "youtube_search_alias": "Jayda G DJ official"
   },
   {
     "name": "Joris Voorn",
@@ -4402,7 +4463,7 @@
   {
     "name": "Victor Calderone",
     "spotify_id": "2vSlQJ6UWFVWZQPzUaaMGI",
-    "youtube_channel_id": "Victor Calderone DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "victor-calderone",
     "album_count": 45,
     "manual_scene_score": 72,
@@ -4424,7 +4485,8 @@
     "demand_index": 42,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Victor Calderone DJ"
   },
   {
     "name": "Laurent Garnier",
@@ -4456,7 +4518,7 @@
   {
     "name": "Levon Vincent",
     "spotify_id": "5NvCz2qTmLDV9I5J8szc6r",
-    "youtube_channel_id": "Levon Vincent Novel Sound",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "levon-vincent",
     "album_count": 30,
     "manual_scene_score": 73,
@@ -4477,12 +4539,13 @@
     "demand_index": 50,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Levon Vincent Novel Sound"
   },
   {
     "name": "Hunee",
     "spotify_id": "6uElH4moADg7AGB3DCGOwy",
-    "youtube_channel_id": "Hunee DJ Rush Hour",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "hunee",
     "album_count": 25,
     "manual_scene_score": 74,
@@ -4503,12 +4566,13 @@
     "demand_index": 65,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Hunee DJ Rush Hour"
   },
   {
     "name": "Helena Hauff",
     "spotify_id": "1JcefSOP7bcWEluL0iEIaN",
-    "youtube_channel_id": "Helena Hauff DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "helena-hauff",
     "album_count": 20,
     "manual_scene_score": 76,
@@ -4530,7 +4594,8 @@
     "demand_index": 62,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Helena Hauff DJ"
   },
   {
     "name": "Sven Väth",
@@ -4589,7 +4654,7 @@
   {
     "name": "Joseph Capriati",
     "spotify_id": "7onsqSWPufMm5ZnUCECDpf",
-    "youtube_channel_id": "Joseph Capriati Drumcode",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "joseph-capriati",
     "album_count": 40,
     "manual_scene_score": 78,
@@ -4611,12 +4676,13 @@
     "demand_index": 59,
     "demand_tier": 3,
     "value_gap": -1,
-    "value_signal": "premium"
+    "value_signal": "premium",
+    "youtube_search_alias": "Joseph Capriati Drumcode"
   },
   {
     "name": "Sam Paganini",
     "spotify_id": "50ZyjIaVHOy5Xt7FLJ7RZl",
-    "youtube_channel_id": "Sam Paganini Drumcode",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "sam-paganini",
     "album_count": 35,
     "manual_scene_score": 74,
@@ -4644,12 +4710,13 @@
     "demand_index": 48,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Sam Paganini Drumcode"
   },
   {
     "name": "Maceo Plex",
     "spotify_id": "3TXQ1ddouwQAI78hV4hXDj",
-    "youtube_channel_id": "Maceo Plex Ellum",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "maceo-plex",
     "album_count": 45,
     "manual_scene_score": 80,
@@ -4671,12 +4738,13 @@
     "demand_index": 60,
     "demand_tier": 3,
     "value_gap": -2,
-    "value_signal": "premium"
+    "value_signal": "premium",
+    "youtube_search_alias": "Maceo Plex Ellum"
   },
   {
     "name": "Mind Against",
     "spotify_id": "48LWLoeY0dhwaiX1FRsn72",
-    "youtube_channel_id": "Mind Against Life And Death",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "mind-against",
     "album_count": 25,
     "manual_scene_score": 77,
@@ -4710,12 +4778,13 @@
     ],
     "label_best": "HABITAT Records",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "youtube_search_alias": "Mind Against Life And Death"
   },
   {
     "name": "WhoMadeWho",
     "spotify_id": "50Lr1puweM1hFsF1LpIZLM",
-    "youtube_channel_id": "WhoMadeWho official",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "whomadewho",
     "album_count": 35,
     "manual_scene_score": 76,
@@ -4743,12 +4812,13 @@
     "demand_index": 54,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "WhoMadeWho official"
   },
   {
     "name": "Stephan Bodzin",
     "spotify_id": "2nq2BeSbzExGAv3Y4HgUf7",
-    "youtube_channel_id": "Stephan Bodzin Heart Wichser",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "stephan-bodzin",
     "album_count": 30,
     "manual_scene_score": 80,
@@ -4770,7 +4840,8 @@
     "demand_index": 61,
     "demand_tier": 3,
     "value_gap": -1,
-    "value_signal": "premium"
+    "value_signal": "premium",
+    "youtube_search_alias": "Stephan Bodzin Heart Wichser"
   },
   {
     "name": "Trentemøller",
@@ -4801,7 +4872,7 @@
   {
     "name": "Monolink",
     "spotify_id": "2I4hRNCYkPKJQlkoEZKjYx",
-    "youtube_channel_id": "Monolink official music",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "monolink",
     "album_count": 20,
     "manual_scene_score": 76,
@@ -4835,7 +4906,8 @@
     ],
     "label_best": "Embassy One",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "youtube_search_alias": "Monolink official music"
   },
   {
     "name": "Massano",
@@ -4921,7 +4993,7 @@
   {
     "name": "Ben Böhmer",
     "spotify_id": "5tDjiBYUsTqzd0RkTZxK7u",
-    "youtube_channel_id": "Ben Bohmer official",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "ben-bohmer",
     "album_count": 20,
     "manual_scene_score": 78,
@@ -4943,7 +5015,8 @@
     "demand_index": 69,
     "demand_tier": 4,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Ben Bohmer official"
   },
   {
     "name": "Nora En Pure",
@@ -5027,7 +5100,7 @@
   {
     "name": "Kollektiv Turmstrasse",
     "spotify_id": "1oXiuCd5F0DcnmXH5KaM6N",
-    "youtube_channel_id": "Kollektiv Turmstrasse Systematic",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "kollektiv-turmstrasse",
     "album_count": 40,
     "manual_scene_score": 76,
@@ -5048,12 +5121,13 @@
     "demand_index": 60,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Kollektiv Turmstrasse Systematic"
   },
   {
     "name": "Huxley",
     "spotify_id": "6fJvW51nWhRImJyos6O7sT",
-    "youtube_channel_id": "Huxley DJ Aus Music",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "huxley",
     "album_count": 30,
     "manual_scene_score": 73,
@@ -5075,12 +5149,13 @@
     "demand_index": 74,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Huxley DJ Aus Music"
   },
   {
     "name": "Maya Jane Coles",
     "spotify_id": "6TshTCYwh9ySzOO6Jy4Ux2",
-    "youtube_channel_id": "Maya Jane Coles What We Play",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "maya-jane-coles",
     "album_count": 35,
     "manual_scene_score": 76,
@@ -5102,12 +5177,13 @@
     "demand_index": 64,
     "demand_tier": 3,
     "value_gap": -1,
-    "value_signal": "premium"
+    "value_signal": "premium",
+    "youtube_search_alias": "Maya Jane Coles What We Play"
   },
   {
     "name": "John Talabot",
     "spotify_id": "1YvN5uOGQkHVUUlZUcnotD",
-    "youtube_channel_id": "John Talabot DJ Hivern",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "john-talabot",
     "album_count": 25,
     "manual_scene_score": 73,
@@ -5129,12 +5205,13 @@
     "demand_index": 63,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "John Talabot DJ Hivern"
   },
   {
     "name": "Secondcity",
     "spotify_id": "2ew9JvyyuOGkhahuwdovDq",
-    "youtube_channel_id": "Secondcity DJ Dirtybird",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "secondcity",
     "album_count": 25,
     "manual_scene_score": 74,
@@ -5156,7 +5233,8 @@
     "demand_index": 67,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Secondcity DJ Dirtybird"
   },
   {
     "name": "Surgeon",
@@ -5188,7 +5266,7 @@
   {
     "name": "Blawan",
     "spotify_id": "64kN9EkSTHYhda2FupL0KI",
-    "youtube_channel_id": "Blawan official music",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "blawan",
     "album_count": 25,
     "manual_scene_score": 73,
@@ -5210,7 +5288,8 @@
     "demand_index": 61,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Blawan official music"
   },
   {
     "name": "DJ Rush",
@@ -5254,7 +5333,7 @@
   {
     "name": "Dax J",
     "spotify_id": "2zJJIWKT0LiwdxcwW9RajQ",
-    "youtube_channel_id": "Dax J DJ official",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "dax-j",
     "album_count": 25,
     "manual_scene_score": 74,
@@ -5275,12 +5354,13 @@
     "demand_index": 63,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Dax J DJ official"
   },
   {
     "name": "Luigi Madonna",
     "spotify_id": "16LyZ7r3rzPJqljgvz0fvq",
-    "youtube_channel_id": "Luigi Madonna Drumcode",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "luigi-madonna",
     "album_count": 30,
     "manual_scene_score": 73,
@@ -5301,12 +5381,13 @@
     "demand_index": 42,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Luigi Madonna Drumcode"
   },
   {
     "name": "Mathame",
     "spotify_id": "6QSwQEz8CDMg8Rqk8dEkxS",
-    "youtube_channel_id": "Mathame Tale Of Us",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "mathame",
     "album_count": 15,
     "manual_scene_score": 74,
@@ -5334,12 +5415,13 @@
     "beatport_hype_tracks": 2,
     "beatport_hype_charts": [
       "Melodic House & Techno"
-    ]
+    ],
+    "youtube_search_alias": "Mathame Tale Of Us"
   },
   {
     "name": "Innellea",
     "spotify_id": "71rqI5HtraA3qXBwatyG6e",
-    "youtube_channel_id": "Innellea DJ official",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "innellea",
     "album_count": 15,
     "manual_scene_score": 72,
@@ -5360,12 +5442,13 @@
     "demand_index": 65,
     "demand_tier": 4,
     "value_gap": 1,
-    "value_signal": "buy"
+    "value_signal": "buy",
+    "youtube_search_alias": "Innellea DJ official"
   },
   {
     "name": "Agents Of Time",
     "spotify_id": "6Jbyd4qzEtbFtswZP1o6Ht",
-    "youtube_channel_id": "Agents Of Time Life And Death",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "agents-of-time",
     "album_count": 15,
     "manual_scene_score": 73,
@@ -5398,12 +5481,13 @@
     ],
     "label_best": "Tomorrowland Music",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "youtube_search_alias": "Agents Of Time Life And Death"
   },
   {
     "name": "Tiefschwarz",
     "spotify_id": "6f2k5CwVLvTy0rgw6Q8B4Q",
-    "youtube_channel_id": "Tiefschwarz DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "tiefschwarz",
     "album_count": 35,
     "manual_scene_score": 73,
@@ -5425,12 +5509,13 @@
     "demand_index": 35,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Tiefschwarz DJ"
   },
   {
     "name": "Recondite",
     "spotify_id": "1doQgXssRfKnLx70adszbK",
-    "youtube_channel_id": "Recondite Ghostly",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "recondite",
     "album_count": 20,
     "manual_scene_score": 70,
@@ -5452,12 +5537,13 @@
     "demand_index": 59,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Recondite Ghostly"
   },
   {
     "name": "DJ Tennis",
     "spotify_id": "6vJvFV1A2CpT8s5B1oUN6t",
-    "youtube_channel_id": "DJ Tennis Life And Death",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "dj-tennis",
     "album_count": 25,
     "manual_scene_score": 73,
@@ -5479,12 +5565,13 @@
     "demand_index": 64,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "DJ Tennis Life And Death"
   },
   {
     "name": "Dario D'Attis",
     "spotify_id": "0BSNfFPlI0efsuZljJtknX",
-    "youtube_channel_id": "Dario D'Attis DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "dario-dattis",
     "album_count": 20,
     "manual_scene_score": 72,
@@ -5505,12 +5592,13 @@
     "demand_index": 64,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Dario D'Attis DJ"
   },
   {
     "name": "Henry Saiz",
     "spotify_id": "1f5QPXLfjlzlG77lCkdl0W",
-    "youtube_channel_id": "Henry Saiz Nature",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "henry-saiz",
     "album_count": 25,
     "manual_scene_score": 72,
@@ -5532,12 +5620,13 @@
     "demand_index": 53,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Henry Saiz Nature"
   },
   {
     "name": "Pional",
     "spotify_id": "49mZfy9v5oNXAxp8FadWwI",
-    "youtube_channel_id": "Pional Hivern Discs",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "pional",
     "album_count": 20,
     "manual_scene_score": 70,
@@ -5559,12 +5648,13 @@
     "demand_index": 62,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Pional Hivern Discs"
   },
   {
     "name": "Ryan Crosson",
     "spotify_id": "5ZJEkLV6krzRy59l6dlYJx",
-    "youtube_channel_id": "Ryan Crosson Visionquest",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "ryan-crosson",
     "album_count": 25,
     "manual_scene_score": 70,
@@ -5585,12 +5675,13 @@
     "demand_index": 44,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Ryan Crosson Visionquest"
   },
   {
     "name": "Woo York",
     "spotify_id": "3F4cmqlG4wCV3aEZlHHO8p",
-    "youtube_channel_id": "Woo York Afterlife",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "woo-york",
     "album_count": 20,
     "manual_scene_score": 68,
@@ -5611,12 +5702,13 @@
     "demand_index": 58,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Woo York Afterlife"
   },
   {
     "name": "Burnski",
     "spotify_id": "4aOxcso0VF2zuORd93J32L",
-    "youtube_channel_id": "Burnski DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "burnski",
     "album_count": 20,
     "manual_scene_score": 65,
@@ -5637,12 +5729,13 @@
     "demand_index": 61,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Burnski DJ"
   },
   {
     "name": "Alinka",
     "spotify_id": "3qBqW8kIRZbPxbSgAyP7ls",
-    "youtube_channel_id": "Alinka DJ HYTE",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "alinka",
     "album_count": 15,
     "manual_scene_score": 68,
@@ -5663,12 +5756,13 @@
     "demand_index": 54,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Alinka DJ HYTE"
   },
   {
     "name": "Answer Code Request",
     "spotify_id": "52NOZYgYNsmv3nS0me6cqO",
-    "youtube_channel_id": "Answer Code Request Ostgut Ton",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "answer-code-request",
     "album_count": 20,
     "manual_scene_score": 68,
@@ -5689,12 +5783,13 @@
     "demand_index": 48,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Answer Code Request Ostgut Ton"
   },
   {
     "name": "DJ Stingray 313",
     "spotify_id": "7vZgYqMEApgWpMpXMSJj1o",
-    "youtube_channel_id": "DJ Stingray 313 Tresor",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "dj-stingray",
     "album_count": 25,
     "manual_scene_score": 72,
@@ -5714,12 +5809,13 @@
     "demand_index": 53,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "DJ Stingray 313 Tresor"
   },
   {
     "name": "Pangaea",
     "spotify_id": "08Z0yhWGksNk3wceqlCeGE",
-    "youtube_channel_id": "Pangaea Hessle Audio",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "pangaea",
     "album_count": 20,
     "manual_scene_score": 68,
@@ -5741,12 +5837,13 @@
     "demand_index": 49,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Pangaea Hessle Audio"
   },
   {
     "name": "Andre Crom",
     "spotify_id": "0Qz30d7mkqvt8G8NQa2Us8",
-    "youtube_channel_id": "Andre Crom OFF Recordings",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "andrecrom",
     "album_count": 25,
     "manual_scene_score": 72,
@@ -5767,12 +5864,13 @@
     "demand_index": 59,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Andre Crom OFF Recordings"
   },
   {
     "name": "Angelo Ferreri",
     "spotify_id": "3tT2XX9qEVivLCYGoqkRkZ",
-    "youtube_channel_id": "Angelo Ferreri DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "angelo-ferreri",
     "album_count": 20,
     "manual_scene_score": 68,
@@ -5793,12 +5891,13 @@
     "demand_index": 52,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Angelo Ferreri DJ"
   },
   {
     "name": "Kastis Torrau",
     "spotify_id": "1KDezZmDSr7pT6dh6EGIfF",
-    "youtube_channel_id": "Kastis Torrau Innervisions",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "kastis-torrau",
     "album_count": 20,
     "manual_scene_score": 68,
@@ -5819,7 +5918,8 @@
     "demand_index": 54,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Kastis Torrau Innervisions"
   },
   {
     "name": "Robert Babicz",
@@ -5864,7 +5964,7 @@
   {
     "name": "Trikk",
     "spotify_id": "4wPR8PhvdOB0vksHMUWDZY",
-    "youtube_channel_id": "Trikk Innervisions",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "trikk",
     "album_count": 15,
     "manual_scene_score": 68,
@@ -5898,12 +5998,13 @@
     ],
     "label_best": "Innervisions",
     "label_tier": 5,
-    "label_score": 100
+    "label_score": 100,
+    "youtube_search_alias": "Trikk Innervisions"
   },
   {
     "name": "Tornado Wallace",
     "spotify_id": "6GNWPphcJ5CtIwCJVV1lLT",
-    "youtube_channel_id": "Tornado Wallace Efficient Space",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "tornado-wallace",
     "album_count": 15,
     "manual_scene_score": 68,
@@ -5924,12 +6025,13 @@
     "demand_index": 59,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Tornado Wallace Efficient Space"
   },
   {
     "name": "Spektre",
     "spotify_id": "2jop7P9uKGHVtQAv59lDxT",
-    "youtube_channel_id": "Spektre Respekt",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "spektre",
     "album_count": 25,
     "manual_scene_score": 68,
@@ -5950,7 +6052,8 @@
     "demand_index": 67,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Spektre Respekt"
   },
   {
     "name": "Jay Lumen",
@@ -5996,7 +6099,7 @@
   {
     "name": "Pearson Sound",
     "spotify_id": "3lN70MoiO9u6b95CsTeB1J",
-    "youtube_channel_id": "Pearson Sound Hessle Audio",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "pearson-sound",
     "album_count": 15,
     "manual_scene_score": 70,
@@ -6018,12 +6121,13 @@
     "demand_index": 56,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Pearson Sound Hessle Audio"
   },
   {
     "name": "Palms Trax",
     "spotify_id": "52XSRQqTAfZ8ZrIqkQvQyA",
-    "youtube_channel_id": "Palms Trax Dekmantel",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "palms-trax",
     "album_count": 15,
     "manual_scene_score": 68,
@@ -6044,12 +6148,13 @@
     "demand_index": 66,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Palms Trax Dekmantel"
   },
   {
     "name": "Lauer",
     "spotify_id": "36rey1TxHa81Az8CqZpsJ4",
-    "youtube_channel_id": "Lauer Running Back",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "lauer",
     "album_count": 15,
     "manual_scene_score": 70,
@@ -6071,12 +6176,13 @@
     "demand_index": 63,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Lauer Running Back"
   },
   {
     "name": "Simian Mobile Disco",
     "spotify_id": "31DXlldabwPHwu6dYevuzK",
-    "youtube_channel_id": "Simian Mobile Disco Delicacies",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "simian-mobile-disco",
     "album_count": 25,
     "manual_scene_score": 74,
@@ -6098,12 +6204,13 @@
     "demand_index": 57,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Simian Mobile Disco Delicacies"
   },
   {
     "name": "Actress",
     "spotify_id": "3bg5rmICvmA8dmYVAdKGYH",
-    "youtube_channel_id": "Actress Werkdiscs Ninja",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "actress",
     "album_count": 20,
     "manual_scene_score": 72,
@@ -6124,12 +6231,13 @@
     "demand_index": 76,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Actress Werkdiscs Ninja"
   },
   {
     "name": "DJ Holographic",
     "spotify_id": "4PRhpvNBYt7YURb5VhEDox",
-    "youtube_channel_id": "DJ Holographic Detroit",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "dj-holographic",
     "album_count": 15,
     "manual_scene_score": 70,
@@ -6151,12 +6259,13 @@
     "demand_index": 42,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "DJ Holographic Detroit"
   },
   {
     "name": "David Mayer",
     "spotify_id": "7Mf7RKErlQ5maEdHTXNexf",
-    "youtube_channel_id": "David Mayer Desolat",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "david-mayer",
     "album_count": 20,
     "manual_scene_score": 72,
@@ -6178,12 +6287,13 @@
     "demand_index": 57,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "David Mayer Desolat"
   },
   {
     "name": "Lee Curtiss",
     "spotify_id": "5qCdmZXBkJc15PLLbFadVV",
-    "youtube_channel_id": "Lee Curtiss Visionquest",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "lee-curtiss",
     "album_count": 20,
     "manual_scene_score": 70,
@@ -6204,12 +6314,13 @@
     "demand_index": 39,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Lee Curtiss Visionquest"
   },
   {
     "name": "Wolf + Lamb",
     "spotify_id": "6HGrNLNAYp8B1B84tLNKH0",
-    "youtube_channel_id": "Wolf and Lamb Visionquest",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "wolf-lamb",
     "album_count": 25,
     "manual_scene_score": 72,
@@ -6230,7 +6341,8 @@
     "demand_index": 54,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Wolf and Lamb Visionquest"
   },
   {
     "name": "Nick Curly",
@@ -6281,7 +6393,7 @@
   {
     "name": "Sascha Dive",
     "spotify_id": "4xSSlzl6vHXCXN2uJBgYsm",
-    "youtube_channel_id": "Sascha Dive Deep Vibes",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "sascha-dive",
     "album_count": 25,
     "manual_scene_score": 72,
@@ -6302,12 +6414,13 @@
     "demand_index": 35,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Sascha Dive Deep Vibes"
   },
   {
     "name": "Hector Romero",
     "spotify_id": "3nREpplfyj6E4SluZP5kFy",
-    "youtube_channel_id": "Hector Romero Nervous",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "hector-romero",
     "album_count": 30,
     "manual_scene_score": 70,
@@ -6329,12 +6442,13 @@
     "demand_index": 32,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Hector Romero Nervous"
   },
   {
     "name": "Mathew Jonson",
     "spotify_id": "6PTy8QkZxHr7Thp8SPYE71",
-    "youtube_channel_id": "Mathew Jonson Wagon Repair",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "mathew-jonson",
     "album_count": 25,
     "manual_scene_score": 72,
@@ -6355,12 +6469,13 @@
     "demand_index": 53,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Mathew Jonson Wagon Repair"
   },
   {
     "name": "Christian Burkhardt",
     "spotify_id": "56zXrFfXFtRh11ChpytOiw",
-    "youtube_channel_id": "Christian Burkhardt Ongaku",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "christian-burkhardt",
     "album_count": 20,
     "manual_scene_score": 70,
@@ -6381,12 +6496,13 @@
     "demand_index": 35,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Christian Burkhardt Ongaku"
   },
   {
     "name": "Inigo Kennedy",
     "spotify_id": "4UiRPifoPfW3sozAElsHYe",
-    "youtube_channel_id": "Inigo Kennedy Token Records",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "inigo-kennedy",
     "album_count": 20,
     "manual_scene_score": 68,
@@ -6407,7 +6523,8 @@
     "demand_index": 46,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Inigo Kennedy Token Records"
   },
   {
     "name": "Marshall Jefferson",
@@ -6453,7 +6570,7 @@
   {
     "name": "GW Harrison",
     "spotify_id": "4SLEjYifqonlEHnZHLXnI4",
-    "youtube_channel_id": "GW Harrison DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "gw-harrison",
     "album_count": 15,
     "manual_scene_score": 70,
@@ -6474,12 +6591,13 @@
     "demand_index": 51,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "GW Harrison DJ"
   },
   {
     "name": "AMÉMÉ",
     "spotify_id": "1txb9Qg5lJ3KATxPcIYyvO",
-    "youtube_channel_id": "AMEME DJ Stamina Records",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "ameme",
     "album_count": 15,
     "manual_scene_score": 70,
@@ -6511,12 +6629,13 @@
     ],
     "label_best": "Insomniac Records",
     "label_tier": 3,
-    "label_score": 60
+    "label_score": 60,
+    "youtube_search_alias": "AMEME DJ Stamina Records"
   },
   {
     "name": "Nicholas Van Orton",
     "spotify_id": "0z9QG2nBkTjwy6w60xjX5u",
-    "youtube_channel_id": "Nicholas Van Orton Elrow",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "nicholas-van-orton",
     "album_count": 15,
     "manual_scene_score": 68,
@@ -6537,12 +6656,13 @@
     "demand_index": 50,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Nicholas Van Orton Elrow"
   },
   {
     "name": "Alec Araujo",
     "spotify_id": "2sG6APgIsmkGa5Ej0r7fus",
-    "youtube_channel_id": "Alec Araujo DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "alec-araujo",
     "album_count": 10,
     "manual_scene_score": 65,
@@ -6563,12 +6683,13 @@
     "demand_index": 0,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Alec Araujo DJ"
   },
   {
     "name": "Leo Lukas",
     "spotify_id": "2iqXKfIa85oUss6d2YCOcQ",
-    "youtube_channel_id": "Leo Lukas DJ music",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "leo-lukas",
     "album_count": 10,
     "manual_scene_score": 65,
@@ -6588,12 +6709,13 @@
     "demand_index": 25,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Leo Lukas DJ music"
   },
   {
     "name": "Nino Bua",
     "spotify_id": "5118o9SklddoEYFvSni6d0",
-    "youtube_channel_id": "Nino Bua DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "nino-bua",
     "album_count": 10,
     "manual_scene_score": 65,
@@ -6613,12 +6735,13 @@
     "demand_index": 24,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Nino Bua DJ"
   },
   {
     "name": "Bas Ibellini",
     "spotify_id": "1wA3a5XIFvVLkOnv47OYuS",
-    "youtube_channel_id": "Bas Ibellini DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "bas-ibellini",
     "album_count": 10,
     "manual_scene_score": 65,
@@ -6638,7 +6761,8 @@
     "demand_index": 47,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Bas Ibellini DJ"
   },
   {
     "name": "Ricardo Villalobos",
@@ -6670,7 +6794,7 @@
   {
     "name": "MK",
     "spotify_id": "7dGJo4pcD2V31Q5Fk2yUSP",
-    "youtube_channel_id": "MK Marc Kinchen Area 10",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "mk",
     "album_count": 50,
     "manual_scene_score": 83,
@@ -6697,7 +6821,8 @@
     "demand_index": 32,
     "demand_tier": 3,
     "value_gap": -2,
-    "value_signal": "premium"
+    "value_signal": "premium",
+    "youtube_search_alias": "MK Marc Kinchen Area 10"
   },
   {
     "name": "Sasha",
@@ -6741,7 +6866,7 @@
   {
     "name": "John Digweed",
     "spotify_id": "5PQWFPv0ULvqJCwWqUAlSQ",
-    "youtube_channel_id": "John Digweed Bedrock",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "john-digweed",
     "album_count": 50,
     "manual_scene_score": 82,
@@ -6762,7 +6887,8 @@
     "demand_index": 6,
     "demand_tier": 3,
     "value_gap": -2,
-    "value_signal": "premium"
+    "value_signal": "premium",
+    "youtube_search_alias": "John Digweed Bedrock"
   },
   {
     "name": "Eric Prydz",
@@ -6808,7 +6934,7 @@
   {
     "name": "Midland",
     "spotify_id": "6rTdP5TF5e5YP7K3BELIqt",
-    "youtube_channel_id": "Midland Meander",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "midland",
     "album_count": 20,
     "manual_scene_score": 77,
@@ -6842,7 +6968,8 @@
     ],
     "label_best": "GRD LTD",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "youtube_search_alias": "Midland Meander"
   },
   {
     "name": "Mano Le Tough",
@@ -6885,7 +7012,7 @@
   {
     "name": "Job Jobse",
     "spotify_id": "7oa6qvGZJfOmIhODuRdFg9",
-    "youtube_channel_id": "Job Jobse Rush Hour Dekmantel",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "job-jobse",
     "album_count": 15,
     "manual_scene_score": 74,
@@ -6905,12 +7032,13 @@
     "demand_index": 66,
     "demand_tier": 4,
     "value_gap": 1,
-    "value_signal": "buy"
+    "value_signal": "buy",
+    "youtube_search_alias": "Job Jobse Rush Hour Dekmantel"
   },
   {
     "name": "San Soda",
     "spotify_id": "7kWnE754s87BRkpXNXNpOG",
-    "youtube_channel_id": "San Soda Rush Hour",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "san-soda",
     "album_count": 15,
     "manual_scene_score": 73,
@@ -6931,12 +7059,13 @@
     "demand_index": 14,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "San Soda Rush Hour"
   },
   {
     "name": "Move D",
     "spotify_id": "3iKSMlZ5g87PbxkHtFmrVN",
-    "youtube_channel_id": "Move D Deep Space",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "move-d",
     "album_count": 30,
     "manual_scene_score": 73,
@@ -6957,12 +7086,13 @@
     "demand_index": 49,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Move D Deep Space"
   },
   {
     "name": "Axel Boman",
     "spotify_id": "0dZXloBJjhvBmOlDG2oAGb",
-    "youtube_channel_id": "Axel Boman Studio Barnhus",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "axel-boman",
     "album_count": 20,
     "manual_scene_score": 73,
@@ -6984,7 +7114,8 @@
     "demand_index": 66,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Axel Boman Studio Barnhus"
   },
   {
     "name": "Guy Gerber",
@@ -7055,7 +7186,7 @@
   {
     "name": "Danny Tenaglia",
     "spotify_id": "1QzZ0JjFrI2Epu0DWbgW3q",
-    "youtube_channel_id": "Danny Tenaglia DJ NYC",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "danny-tenaglia",
     "album_count": 45,
     "manual_scene_score": 80,
@@ -7077,12 +7208,13 @@
     "demand_index": 83,
     "demand_tier": 6,
     "value_gap": 3,
-    "value_signal": "buy"
+    "value_signal": "buy",
+    "youtube_search_alias": "Danny Tenaglia DJ NYC"
   },
   {
     "name": "DJ Sneak",
     "spotify_id": "79M7OaFE2SzHlM3gzJUaeN",
-    "youtube_channel_id": "DJ Sneak Chicago house",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "dj-sneak",
     "album_count": 50,
     "manual_scene_score": 79,
@@ -7104,12 +7236,13 @@
     "demand_index": 31,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "DJ Sneak Chicago house"
   },
   {
     "name": "Kevin Saunderson",
     "spotify_id": "1k8VhCjHQVDHQ7o7P2TlXo",
-    "youtube_channel_id": "Kevin Saunderson KMS Detroit",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "kevin-saunderson",
     "album_count": 55,
     "manual_scene_score": 84,
@@ -7131,7 +7264,8 @@
     "demand_index": 29,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Kevin Saunderson KMS Detroit"
   },
   {
     "name": "Frankie Knuckles",
@@ -7163,7 +7297,7 @@
   {
     "name": "Larry Heard",
     "spotify_id": "4w3lHWL3w9Q5uLiDZhg8B5",
-    "youtube_channel_id": "Larry Heard Mr Fingers deep house",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "larry-heard",
     "album_count": 40,
     "manual_scene_score": 85,
@@ -7185,12 +7319,13 @@
     "demand_index": 3,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Larry Heard Mr Fingers deep house"
   },
   {
     "name": "Deborah De Luca",
     "spotify_id": "4cC8OhT9sNnNtXj3j8tDHi",
-    "youtube_channel_id": "Deborah De Luca DJ Italy",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "deborah-de-luca",
     "album_count": 20,
     "manual_scene_score": 76,
@@ -7211,7 +7346,8 @@
     "demand_index": 49,
     "demand_tier": 3,
     "value_gap": -1,
-    "value_signal": "premium"
+    "value_signal": "premium",
+    "youtube_search_alias": "Deborah De Luca DJ Italy"
   },
   {
     "name": "Andrea Oliva",
@@ -7261,7 +7397,7 @@
   {
     "name": "Alan Dixon",
     "spotify_id": "4w2QpZQV2jkJgH3fLm8QNB",
-    "youtube_channel_id": "Alan Dixon Defected",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "alan-dixon",
     "album_count": 20,
     "manual_scene_score": 73,
@@ -7283,12 +7419,13 @@
     "demand_index": 35,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Alan Dixon Defected"
   },
   {
     "name": "Harvey McKay",
     "spotify_id": "6gScJZHRGzC78ViHqhTN7z",
-    "youtube_channel_id": "Harvey McKay Drumcode",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "harvey-mckay",
     "album_count": 20,
     "manual_scene_score": 73,
@@ -7309,12 +7446,13 @@
     "demand_index": 12,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Harvey McKay Drumcode"
   },
   {
     "name": "Mr. G",
     "spotify_id": "4TpZyLmqr7v8yZKe1l8XN3",
-    "youtube_channel_id": "Mr G DJ Phoenix G",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "mr-g",
     "album_count": 30,
     "manual_scene_score": 72,
@@ -7335,12 +7473,13 @@
     "demand_index": 23,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Mr G DJ Phoenix G"
   },
   {
     "name": "Call Super",
     "spotify_id": "4rYIaP8EqXJiNHq1LgAIKr",
-    "youtube_channel_id": "Call Super Hessle Audio",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "call-super",
     "album_count": 15,
     "manual_scene_score": 70,
@@ -7362,12 +7501,13 @@
     "demand_index": 93,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Call Super Hessle Audio"
   },
   {
     "name": "Themba",
     "spotify_id": "7mSz2HuUwuHePPrT3vGHMR",
-    "youtube_channel_id": "Themba DJ Afro house",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "thembadj",
     "album_count": 20,
     "manual_scene_score": 74,
@@ -7389,12 +7529,13 @@
     "demand_index": 58,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Themba DJ Afro house"
   },
   {
     "name": "Culoe De Song",
     "spotify_id": "7zDvEFpjSJtnkaMaRVxbLB",
-    "youtube_channel_id": "Culoe De Song DJ Africa",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "culoe-de-song",
     "album_count": 20,
     "manual_scene_score": 73,
@@ -7416,7 +7557,8 @@
     "demand_index": 24,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Culoe De Song DJ Africa"
   },
   {
     "name": "Luciano",
@@ -7448,7 +7590,7 @@
   {
     "name": "Dimitri From Paris",
     "spotify_id": "7pzKMcCq2RWTV0n9JOOlAf",
-    "youtube_channel_id": "Dimitri From Paris Defected",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "dimitri-from-paris",
     "album_count": 40,
     "manual_scene_score": 78,
@@ -7470,7 +7612,8 @@
     "demand_index": 58,
     "demand_tier": 3,
     "value_gap": -1,
-    "value_signal": "premium"
+    "value_signal": "premium",
+    "youtube_search_alias": "Dimitri From Paris Defected"
   },
   {
     "name": "Bob Sinclar",
@@ -7515,7 +7658,7 @@
   {
     "name": "Duke Dumont",
     "spotify_id": "4PtM5dLlLMlGiMvFE9xLLH",
-    "youtube_channel_id": "Duke Dumont official",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "duke-dumont",
     "album_count": 30,
     "manual_scene_score": 80,
@@ -7537,12 +7680,13 @@
     "demand_index": 31,
     "demand_tier": 3,
     "value_gap": -2,
-    "value_signal": "premium"
+    "value_signal": "premium",
+    "youtube_search_alias": "Duke Dumont official"
   },
   {
     "name": "Route 94",
     "spotify_id": "4FXNEbZ8MnqBVQPHVLBuVr",
-    "youtube_channel_id": "Route 94 UK house",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "route-94",
     "album_count": 20,
     "manual_scene_score": 74,
@@ -7578,12 +7722,13 @@
     ],
     "label_best": "Rinse",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "youtube_search_alias": "Route 94 UK house"
   },
   {
     "name": "Maxxi Soundsystem",
     "spotify_id": "3kzFl4i8iRnJc0u9aTXniS",
-    "youtube_channel_id": "Maxxi Soundsystem DJ",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "maxxi-soundsystem",
     "album_count": 15,
     "manual_scene_score": 72,
@@ -7604,12 +7749,13 @@
     "demand_index": null,
     "value_gap": null,
     "value_signal": null,
-    "demand_tier": null
+    "demand_tier": null,
+    "youtube_search_alias": "Maxxi Soundsystem DJ"
   },
   {
     "name": "DJ Pierre",
     "spotify_id": "2kHw7RHxk9pUqEa5OcJLFp",
-    "youtube_channel_id": "DJ Pierre Acid house",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "dj-pierre",
     "album_count": 35,
     "manual_scene_score": 80,
@@ -7631,12 +7777,13 @@
     "demand_index": 45,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "DJ Pierre Acid house"
   },
   {
     "name": "Stacey Pullen",
     "spotify_id": "5w9qX4JvVLrNQN8RgFkk9o",
-    "youtube_channel_id": "Stacey Pullen Blackflag Detroit",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "stacey-pullen",
     "album_count": 30,
     "manual_scene_score": 75,
@@ -7658,12 +7805,13 @@
     "demand_index": 67,
     "demand_tier": 4,
     "value_gap": 1,
-    "value_signal": "buy"
+    "value_signal": "buy",
+    "youtube_search_alias": "Stacey Pullen Blackflag Detroit"
   },
   {
     "name": "Kenny Larkin",
     "spotify_id": "3vJHibwZ2G7GxJLbJmD8lx",
-    "youtube_channel_id": "Kenny Larkin Plus 8 Detroit",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "kenny-larkin",
     "album_count": 25,
     "manual_scene_score": 73,
@@ -7685,12 +7833,13 @@
     "demand_index": 36,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Kenny Larkin Plus 8 Detroit"
   },
   {
     "name": "Maya",
     "spotify_id": "4OKj6YpXHmvDYlJuiB4kFe",
-    "youtube_channel_id": "Maya DJ Plus 8 techno",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "maya",
     "album_count": 20,
     "manual_scene_score": 72,
@@ -7712,12 +7861,13 @@
     "demand_index": 69,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Maya DJ Plus 8 techno"
   },
   {
     "name": "Slam",
     "spotify_id": "3mMLUbCnlRAlxoCMNiERf8",
-    "youtube_channel_id": "Slam Soma Records Glasgow",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "slam",
     "album_count": 40,
     "manual_scene_score": 74,
@@ -7751,12 +7901,13 @@
     ],
     "label_best": "Soma Records",
     "label_tier": 4,
-    "label_score": 80
+    "label_score": 80,
+    "youtube_search_alias": "Slam Soma Records Glasgow"
   },
   {
     "name": "Steve Bug",
     "spotify_id": "5c0oYJpzTfJJF2LobI4hDz",
-    "youtube_channel_id": "Steve Bug Poker Flat",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "steve-bug",
     "album_count": 50,
     "manual_scene_score": 76,
@@ -7789,12 +7940,13 @@
     ],
     "label_best": "Bondage Music",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "youtube_search_alias": "Steve Bug Poker Flat"
   },
   {
     "name": "Akufen",
     "spotify_id": "6cXtfDolHH4gWBVAnkOqlt",
-    "youtube_channel_id": "Akufen Force Inc microhouse",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "akufen",
     "album_count": 15,
     "manual_scene_score": 70,
@@ -7816,12 +7968,13 @@
     "demand_index": 10,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Akufen Force Inc microhouse"
   },
   {
     "name": "Miss Kittin",
     "spotify_id": "3oI1Y5nJNEOPijQRqHiUiE",
-    "youtube_channel_id": "Miss Kittin DJ electroclash",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "miss-kittin",
     "album_count": 25,
     "manual_scene_score": 72,
@@ -7843,12 +7996,13 @@
     "demand_index": 44,
     "demand_tier": 3,
     "value_gap": 0,
-    "value_signal": "fair"
+    "value_signal": "fair",
+    "youtube_search_alias": "Miss Kittin DJ electroclash"
   },
   {
     "name": "The Hacker",
     "spotify_id": "7aVuq7QQjyBWeTqDmxNaH7",
-    "youtube_channel_id": "The Hacker Gigolo Records",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "the-hacker",
     "album_count": 25,
     "manual_scene_score": 70,
@@ -7870,12 +8024,13 @@
     "demand_index": 67,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "The Hacker Gigolo Records"
   },
   {
     "name": "Joeski",
     "spotify_id": "3pHHyOLBYx4eBlQSFMiSVP",
-    "youtube_channel_id": "Joeski Maya Recordings",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "joeski",
     "album_count": 30,
     "manual_scene_score": 72,
@@ -7908,12 +8063,13 @@
     ],
     "label_best": "Maya Records",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "youtube_search_alias": "Joeski Maya Recordings"
   },
   {
     "name": "Deetron",
     "spotify_id": "2U4VjSpC1yNTbMiJH7FkQK",
-    "youtube_channel_id": "Deetron Cocoon",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "deetron",
     "album_count": 25,
     "manual_scene_score": 72,
@@ -7934,12 +8090,13 @@
     "demand_index": 48,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Deetron Cocoon"
   },
   {
     "name": "Marika Rossa",
     "spotify_id": "0mvjz5EDmGNiVpYJPSSgPN",
-    "youtube_channel_id": "Marika Rossa Fresh Cut techno",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "marika-rossa",
     "album_count": 20,
     "manual_scene_score": 70,
@@ -7960,12 +8117,13 @@
     "demand_index": 20,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Marika Rossa Fresh Cut techno"
   },
   {
     "name": "SPFDJ",
     "spotify_id": "2dOJmAkKgF8WFEV0TwXDYT",
-    "youtube_channel_id": "SPFDJ Drumcode Tresor",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "spfdj",
     "album_count": 15,
     "manual_scene_score": 72,
@@ -7986,12 +8144,13 @@
     "demand_index": 47,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "SPFDJ Drumcode Tresor"
   },
   {
     "name": "Rebekah",
     "spotify_id": "6kiqIr9Zx4Bq2LnZ6JKLHv",
-    "youtube_channel_id": "Rebekah Soma techno",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "rebekah",
     "album_count": 15,
     "manual_scene_score": 70,
@@ -8013,7 +8172,8 @@
     "demand_index": 69,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Rebekah Soma techno"
   },
   {
     "name": "Alignment",
@@ -8084,7 +8244,7 @@
   {
     "name": "Truncate",
     "spotify_id": "5gT4JTAlKhBNqZkzHXHvB3",
-    "youtube_channel_id": "Truncate Audio Injected",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "truncate",
     "album_count": 20,
     "manual_scene_score": 70,
@@ -8106,7 +8266,8 @@
     "demand_index": 73,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Truncate Audio Injected"
   },
   {
     "name": "Planetary Assault Systems",
@@ -8149,7 +8310,7 @@
   {
     "name": "Regis",
     "spotify_id": "78k5cXpDU0vItIc4RkBGhT",
-    "youtube_channel_id": "Regis Surgeon Downwards",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "regis",
     "album_count": 20,
     "manual_scene_score": 68,
@@ -8171,12 +8332,13 @@
     "demand_index": 64,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Regis Surgeon Downwards"
   },
   {
     "name": "Phase Fatale",
     "spotify_id": "7KsJmHNLrb5HQh8ftnDgJY",
-    "youtube_channel_id": "Phase Fatale Berghain",
+    "youtube_channel_id": null,
     "soundcloud_permalink": "phase-fatale",
     "album_count": 10,
     "manual_scene_score": 68,
@@ -8197,7 +8359,8 @@
     "demand_index": 49,
     "demand_tier": null,
     "value_gap": null,
-    "value_signal": null
+    "value_signal": null,
+    "youtube_search_alias": "Phase Fatale Berghain"
   },
   {
     "name": "Hugel",
