@@ -128,3 +128,10 @@
   .vr-ev { flex-wrap: wrap; }
   .vr-ev-label { min-width: 0; }
 }
+
+/* live anchor vs supporting signals in the report */
+.vr-section-tag { font-family: var(--mono); font-size: 9.5px; font-weight: 500; letter-spacing: 0.04em; color: var(--muted); text-transform: none; margin-left: 8px; }
+.vr-evidence--live { background: var(--accent-bg); border: 1px solid var(--accent-border); border-radius: 10px; padding: 4px 16px; margin-bottom: 22px; }
+.vr-evidence--live .vr-ev { border-bottom-color: rgba(200,247,80,0.18); }
+.vr-ev-dot--support { background: var(--muted); }
+.vr-ev-note { font-size: 0.82rem; color: var(--accent); padding: 10px 0 4px; line-height: 1.5; }

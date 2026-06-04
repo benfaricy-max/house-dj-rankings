@@ -10,30 +10,36 @@ import { ArtistLink, slugify } from "./ArtistProfile";
 const fmt = n => (!n ? "—" : n >= 1e6 ? (n / 1e6).toFixed(1) + "M" : n >= 1e3 ? Math.round(n / 1e3) + "K" : String(n));
 export const valueSlug = name => slugify(name);
 
-// The evidence that builds (or fails to build) the demand case. Transparent on
-// purpose — the methodology being inspectable is what makes the verdict neutral.
-const EVIDENCE = [
-  { key: "reach",      label: "Streaming reach",            has: a => a.spotify_monthly_listeners > 0,            val: a => `${fmt(a.spotify_monthly_listeners)} monthly listeners` },
-  { key: "ra",         label: "Live booking demand (RA)",   has: a => a.ra_score > 0,                             val: a => `RA ${a.ra_score}/100${a.ra_avg_attending ? ` · ${a.ra_avg_attending} avg attending` : ""}${a.ra_venue_tier ? ` · venue tier ${a.ra_venue_tier}/5` : ""}` },
-  { key: "beatport",   label: "Scene / chart credibility",  has: a => a.beatport_score > 0,                       val: a => `Beatport ${a.beatport_score}/100` },
-  { key: "conversion", label: "Streaming→live conversion",  has: a => Number.isFinite(a.live_conversion_score),  val: a => `${a.live_conversion_score}/100 (live demand vs streaming size)` },
-  { key: "trends",     label: "Search interest",            has: a => a.google_trends_score > 0,                  val: a => `${Math.round(a.google_trends_score)}/100` },
-  { key: "youtube",    label: "YouTube audience",           has: a => a.youtube_subscribers > 0,                  val: a => `${fmt(a.youtube_subscribers)} subscribers` },
+// LIVE & LOCAL anchor — what bookers actually trust: the rooms you fill, the
+// tickets you move, the routing you sustain. The whole verdict rests on these.
+const LIVE = [
+  { key: "venue",      label: "Venue size commanded",      has: a => a.value_anchor?.venue_tier > 0,             val: a => `Tier ${a.value_anchor.venue_tier}/5${a.value_anchor.venue_label ? ` · ${a.value_anchor.venue_label} cap` : ""}` },
+  { key: "draw",       label: "Live draw per show",        has: a => a.value_anchor?.avg_attending > 0,          val: a => `${a.value_anchor.avg_attending} avg attending (RA)` },
+  { key: "conversion", label: "Streaming→live conversion", has: a => Number.isFinite(a.value_anchor?.conversion),val: a => `${a.value_anchor.conversion}/100 vs streaming size` },
+  { key: "routing",    label: "Tour routing breadth",      has: a => a.value_anchor?.routing_countries > 0,      val: a => `${a.value_anchor.routing_countries} countries` },
 ];
+// Supporting digital signals — used only to corroborate the live picture, never
+// to drive a verdict on their own (the booker objection these answers).
+const SUPPORT = [
+  { key: "reach",    label: "Streaming reach",           has: a => a.spotify_monthly_listeners > 0, val: a => `${fmt(a.spotify_monthly_listeners)} monthly listeners` },
+  { key: "beatport", label: "Scene / chart credibility", has: a => a.beatport_score > 0,            val: a => `Beatport ${a.beatport_score}/100` },
+  { key: "trends",   label: "Search interest",           has: a => a.google_trends_score > 0,       val: a => `${Math.round(a.google_trends_score)}/100` },
+  { key: "youtube",  label: "YouTube audience",          has: a => a.youtube_subscribers > 0,       val: a => `${fmt(a.youtube_subscribers)} subscribers` },
+];
+const EVIDENCE = [...LIVE, ...SUPPORT];
 
-// Confidence = how much independent evidence corroborates the gap. This is the
-// guardrail against false positives (e.g. a pre-streaming legend whose demand
-// index rests on a single signal). A neutral benchmark must say "we don't have
-// enough to prove this" when that's true.
+// Confidence = how well the LIVE anchor holds + how much digital corroborates it.
+// A verdict with no live anchor isn't published at all (the backend requires venue
+// tier + attendance), so here we grade the depth of corroboration.
 export function valueConfidence(a) {
-  const present = EVIDENCE.filter(s => s.has(a));
-  const n = present.length;
-  const hasLive = a.ra_score > 0;        // a fee is built on live demand above all
+  const live = LIVE.filter(s => s.has(a));
+  const support = SUPPORT.filter(s => s.has(a));
+  const anchored = a.value_anchor?.venue_tier > 0 && a.value_anchor?.avg_attending > 0;
   let level;
-  if (n >= 4 && hasLive) level = "High";
-  else if (n >= 3 || (n >= 2 && hasLive)) level = "Medium";
+  if (anchored && live.length >= 3 && support.length >= 2) level = "High";
+  else if (anchored && support.length >= 1) level = "Medium";
   else level = "Low";
-  return { level, dots: level === "High" ? 3 : level === "Medium" ? 2 : 1, present, n };
+  return { level, dots: level === "High" ? 3 : level === "Medium" ? 2 : 1, live, support, present: [...live, ...support], n: live.length + support.length };
 }
 
 const verdictText = (a, conf) => {
@@ -132,11 +138,32 @@ export function ValueReport({ rankings, slug }) {
           </div>
         </div>
 
-        <div className="vr-section-h">The evidence</div>
-        <div className="vr-evidence">
-          {conf.present.map(s => (
+        <div className="vr-section-h">Live &amp; local anchor <span className="vr-section-tag">the basis bookers trust</span></div>
+        <div className="vr-evidence vr-evidence--live">
+          {conf.live.map(s => (
             <div className="vr-ev" key={s.key}>
               <span className="vr-ev-dot" />
+              <span className="vr-ev-label">{s.label}</span>
+              <span className="vr-ev-val">{s.val(a)}</span>
+            </div>
+          ))}
+          {a.value_anchor?.top_regions?.length > 0 && (
+            <div className="vr-ev">
+              <span className="vr-ev-dot" />
+              <span className="vr-ev-label">Strongest regions</span>
+              <span className="vr-ev-val">{a.value_anchor.top_regions.join(", ")}</span>
+            </div>
+          )}
+          {a.value_anchor?.capped_by_venue && (
+            <div className="vr-ev-note">⛓ Implied fee capped at the venue size this artist actually fills — no arena-fee inflation from digital reach.</div>
+          )}
+        </div>
+
+        <div className="vr-section-h">Supporting signals <span className="vr-section-tag">corroboration only</span></div>
+        <div className="vr-evidence">
+          {conf.support.map(s => (
+            <div className="vr-ev" key={s.key}>
+              <span className="vr-ev-dot vr-ev-dot--support" />
               <span className="vr-ev-label">{s.label}</span>
               <span className="vr-ev-val">{s.val(a)}</span>
             </div>
@@ -148,9 +175,7 @@ export function ValueReport({ rankings, slug }) {
               <span className="vr-ev-val">▲ {a.momentum_score}/100 — demand accelerating</span>
             </div>
           )}
-          {EVIDENCE.filter(s => !s.has(a)).length > 0 && (
-            <div className="vr-ev-missing">No signal yet from: {EVIDENCE.filter(s => !s.has(a)).map(s => s.label).join(", ")}.</div>
-          )}
+          {conf.support.length === 0 && <div className="vr-ev-missing">No supporting digital signals yet — verdict rests on the live anchor alone.</div>}
         </div>
 
         <div className="vr-section-h">What this means</div>
@@ -227,9 +252,11 @@ export function ValueGapPage({ rankings }) {
         <h1 className="vg-h1">The Value Gap</h1>
         <p className="vg-lead">
           Booking fees are negotiated blind: the agent knows the artist's demand, the buyer doesn't, and
-          there's no neutral number either side can point to. Value Gap is that number — it estimates the
-          fee an artist's <em>demand</em> supports, from observable data only, and shows the gap to the fee
-          they're actually asking. One benchmark, two sides of the table.
+          there's no neutral number either side can point to. Value Gap is that number. It's anchored to
+          what bookers actually trust — <em>the venue size an artist fills, their live draw per show, and
+          their tour routing</em> — with streaming and search used only to corroborate, never to drive it.
+          The implied fee is capped at the rooms they really play, so it never inflates a club act into an
+          arena fee. One live-anchored benchmark, two sides of the table.
         </p>
       </div>
 
@@ -286,10 +313,11 @@ export function ValueGapPage({ rankings }) {
         </button>
         {showMethod && (
           <div className="vg-method-body">
-            <p><strong>It uses no party's input.</strong> The demand-implied fee comes only from observable signals: streaming reach, live booking demand (Resident Advisor venue tier &amp; attendance), Beatport chart credibility, streaming-to-live conversion, search interest, and YouTube audience. Neither the artist nor the buyer feeds it anything.</p>
-            <p><strong>It's a relative re-pricing, not an absolute claim.</strong> We rank every artist by a 0–100 demand index, then map that onto the <em>actual</em> distribution of booking-fee tiers in the market. So a gap means the data ranks an artist's demand above (or below) where their fee sits — not that a fee is "wrong" against some invented scale. Across the whole field the gaps net to roughly zero.</p>
-            <p><strong>It only judges known fees.</strong> A verdict is published only when an artist has a curated or anchored fee to compare against. Comparing demand to a wild guess would just measure the guess.</p>
-            <p><strong>It states its confidence.</strong> Every verdict carries a confidence level from how many independent signals corroborate it. Low-confidence cases (e.g. a legend with little streaming footprint) are held back rather than presented as proof — a neutral benchmark has to admit when it can't prove something.</p>
+            <p><strong>It's anchored to live demand, not digital vanity metrics.</strong> The demand index is led (≈two-thirds of its weight) by the signals bookers price on: the venue tier an artist commands, their average live draw per show, streaming-to-live conversion, and tour-routing breadth. Streaming reach, Beatport, search and YouTube only corroborate — they can't drive a verdict on their own. This is the direct answer to "global metrics are noise until they line up with local ticket velocity and routing."</p>
+            <p><strong>The implied fee is capped by venue size.</strong> A fee can't outrun the rooms you fill, so the demand-implied tier is capped at the venue tier an artist actually plays (plus a notch of headroom). No arena fee gets pinned on a 500-capacity club act because their Spotify is big.</p>
+            <p><strong>No verdict without a live anchor.</strong> We publish a gap only for artists with a real venue tier <em>and</em> attendance figure to stand on. No live data, no verdict — the global-digital-only cases are excluded rather than guessed at.</p>
+            <p><strong>It's a relative re-pricing.</strong> Every anchored artist is ranked by a 0–100 demand index, then mapped onto the <em>actual</em> distribution of booking-fee tiers. A gap means the data ranks an artist above (or below) where their fee sits — not a fee "wrong" against an invented scale. Across the field the gaps net to roughly zero.</p>
+            <p><strong>It states its confidence and uses no party's input.</strong> Every verdict carries a confidence level from how well the live anchor holds and how much corroborates it; thin cases are held back. Neither the artist nor the buyer feeds it anything.</p>
           </div>
         )}
       </div>

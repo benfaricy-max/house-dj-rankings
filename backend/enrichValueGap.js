@@ -25,15 +25,26 @@ const TIER_BAND = { 6: "A", 5: "B", 4: "C", 3: "D", 2: "E", 1: "F" };
 const BAND_LABEL = { A: "£70K–£150K", B: "£35K–£70K", C: "£18K–£40K", D: "£8K–£18K", E: "£4K–£10K", F: "£1.5K–£5K" };
 const TIER_MID = { 6: 100000, 5: 50000, 4: 28000, 3: 12000, 2: 6500, 1: 3000 };
 
-// Booking-relevant demand signals and their weight in the demand index.
-// (Reach + live booking demand dominate what a fee is actually built on.)
+// LIVE-LED demand index. Bookers told us global digital metrics are noise until
+// they line up with local ticket velocity, venue size and tour routing — so the
+// index is anchored to live demand (venue tier the artist commands, actual draw
+// per show, streaming→live conversion, routing breadth), with digital reach as a
+// supporting tiebreaker, not the driver. Live/local signals carry ~0.66 of weight.
 const SIGNALS = [
-  { key: "reach",    weight: 0.40, get: a => a.spotify_monthly_listeners > 0 ? Math.log10(1 + a.spotify_monthly_listeners) : null },
-  { key: "ra",       weight: 0.22, get: a => a.ra_score > 0 ? a.ra_score : null },          // venue tier, attendance, geo spread
-  { key: "beatport", weight: 0.18, get: a => a.beatport_score > 0 ? a.beatport_score : null },
-  { key: "youtube",  weight: 0.10, get: a => a.youtube_subscribers > 0 ? Math.log10(1 + a.youtube_subscribers) : null },
-  { key: "trends",   weight: 0.10, get: a => a.google_trends_score > 0 ? a.google_trends_score : null },
+  { key: "venue",      weight: 0.24, get: a => a.ra_venue_tier > 0 ? (a.ra_venue_tier / 5) * 100 : null },                 // room size they command = the fee anchor
+  { key: "attendance", weight: 0.22, get: a => a.ra_avg_attending > 0 ? Math.log10(1 + a.ra_avg_attending) : null },        // actual draw/show = local ticket velocity
+  { key: "conversion", weight: 0.12, get: a => Number.isFinite(a.live_conversion_score) ? a.live_conversion_score : null },  // streaming→live conversion
+  { key: "routing",    weight: 0.08, get: a => (a.tour_countries || a.ra_countries) > 0 ? (a.tour_countries || a.ra_countries) : null }, // tour routing breadth
+  { key: "reach",      weight: 0.16, get: a => a.spotify_monthly_listeners > 0 ? Math.log10(1 + a.spotify_monthly_listeners) : null },   // global reach, supporting
+  { key: "beatport",   weight: 0.12, get: a => a.beatport_score > 0 ? a.beatport_score : null },                            // scene credibility
+  { key: "trends",     weight: 0.03, get: a => a.google_trends_score > 0 ? a.google_trends_score : null },
+  { key: "youtube",    weight: 0.03, get: a => a.youtube_subscribers > 0 ? Math.log10(1 + a.youtube_subscribers) : null },
 ];
+
+// A fee is bounded by the rooms you fill. Cap the demand-implied tier at the
+// venue tier the artist actually commands (+1 for headroom) so we never claim
+// arena fees for a club act — the #1 reason a booker stops trusting the number.
+const venueCeiling = vt => (vt > 0 ? Math.min(6, Math.round(vt) + 1) : 6);
 
 function computeValueGap(A) {
   // 1. demand_index, self-healing per-artist over signals it has.
@@ -79,11 +90,13 @@ function computeValueGap(A) {
   }
 
   // 2. Calibrate demand → tier using the real fee-tier distribution.
-  // Only judge artists whose fee is actually KNOWN (curated/anchored). A gap
-  // against a fallback ESTIMATE just measures the estimate's staleness, not true
-  // underpricing — so those are excluded to keep the buy signal honest.
+  // Only judge artists whose fee is actually KNOWN (curated/anchored) AND who have
+  // a LIVE ANCHOR — a venue tier they command and a real attendance figure. Without
+  // live data the verdict is just global-digital noise, which is exactly what
+  // bookers don't trust. No live anchor → no published verdict.
   const withFee = A.filter(a => a.booking_fee?.tier && a.demand_index != null
-    && (a.booking_fee.basis === "curated" || a.booking_fee.basis === "anchored"));
+    && (a.booking_fee.basis === "curated" || a.booking_fee.basis === "anchored")
+    && a.ra_venue_tier > 0 && a.ra_avg_attending > 0);
   const tierCounts = {};
   for (const a of withFee) tierCounts[a.booking_fee.tier] = (tierCounts[a.booking_fee.tier] || 0) + 1;
   const ranked = [...withFee].sort((x, y) => y.demand_index - x.demand_index);
@@ -94,14 +107,30 @@ function computeValueGap(A) {
   }
   while (i < ranked.length) ranked[i++].demand_tier = 1; // safety
 
+  // 2b. VENUE CAP — a fee can't outrun the rooms you fill. Cap the demand-implied
+  // tier at the artist's venue ceiling so we never claim arena fees for a club act.
+  for (const a of withFee) a.demand_tier = Math.min(a.demand_tier, venueCeiling(a.ra_venue_tier));
+
   // 3. Gap + labels.
   let buys = 0;
+  const VENUE_LABEL = { 5: "5,000+", 4: "1,500–5,000", 3: "700–1,500", 2: "300–700", 1: "<300" };
   for (const a of withFee) {
     const gap = a.demand_tier - a.booking_fee.tier;     // +ve = underpriced
     a.value_gap = gap;
     a.demand_band = TIER_BAND[a.demand_tier];
     a.demand_fee_label = BAND_LABEL[a.demand_band];
     a.value_gap_pct = Math.round(((TIER_MID[a.demand_tier] - TIER_MID[a.booking_fee.tier]) / TIER_MID[a.booking_fee.tier]) * 100);
+    // The live/local anchor the verdict rests on — surfaced in the Fair Value Report
+    // so a booker sees ticket velocity + venue size + routing, not vanity metrics.
+    a.value_anchor = {
+      venue_tier: a.ra_venue_tier,
+      venue_label: VENUE_LABEL[Math.round(a.ra_venue_tier)] || null,
+      avg_attending: a.ra_avg_attending || null,
+      conversion: Number.isFinite(a.live_conversion_score) ? a.live_conversion_score : null,
+      routing_countries: a.tour_countries || a.ra_countries || null,
+      top_regions: Array.isArray(a.ra_top_regions) ? a.ra_top_regions.slice(0, 4).map(r => r.name) : [],
+      capped_by_venue: a.demand_tier === venueCeiling(a.ra_venue_tier),
+    };
     const surging = Number.isFinite(a.momentum_score) && a.momentum_score >= 40;
     // The TRUE buy signal = underpriced AND demand surging (momentum). A gap with
     // no momentum is "underpriced on static demand" (often a stale fee estimate).
@@ -116,7 +145,7 @@ function computeValueGap(A) {
   const judged = new Set(withFee);
   for (const a of A) if (!judged.has(a)) {
     a.value_gap = null; a.value_signal = null; a.demand_band = null;
-    a.demand_fee_label = null; a.value_gap_pct = null; a.demand_tier = null;
+    a.demand_fee_label = null; a.value_gap_pct = null; a.demand_tier = null; a.value_anchor = null;
   }
   return { withFee, buys };
 }
@@ -135,7 +164,7 @@ if (require.main === module) {
   console.log(`Value gap computed for ${withFee.length} artists. ${buys} buy signals.`);
   const top = withFee.filter(a => a.value_gap > 0).sort((x, y) => (y.value_gap - x.value_gap) || (y.momentum_score || 0) - (x.momentum_score || 0)).slice(0, 14);
   console.log("\nMost underpriced (demand-implied tier vs actual fee):");
-  top.forEach(a => console.log(`  +${a.value_gap} | ${a.name.padEnd(22)} fee ${a.booking_fee.label.padEnd(11)} → demand ${a.demand_fee_label.padEnd(11)} | mom ${a.momentum_score ?? "—"} | ${a.value_signal}`));
+  top.forEach(a => console.log(`  +${a.value_gap} | ${a.name.padEnd(22)} fee ${(a.booking_fee.label||"?").padEnd(11)} → demand ${(a.demand_fee_label||"?").padEnd(11)} | venue T${a.value_anchor?.venue_tier} ${a.value_anchor?.avg_attending}/show | mom ${a.momentum_score ?? "—"} | ${a.value_signal}`));
 }
 
 module.exports = { computeValueGap };
