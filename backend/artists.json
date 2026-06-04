@@ -55,10 +55,10 @@
     "trends_mom_12w": 13.3,
     "wikipedia_title": "Chris Lake",
     "ra_slug": "chrislake",
-    "demand_index": 69,
-    "demand_tier": 4,
-    "value_gap": -1,
-    "value_signal": "premium",
+    "demand_index": 74,
+    "demand_tier": 5,
+    "value_gap": 0,
+    "value_signal": "fair",
     "beatport_labels": [
       "Black Book Records"
     ],
@@ -95,9 +95,9 @@
     "trends_mom_12w": 35,
     "wikipedia_title": "John Summit",
     "ra_slug": "johnsummit",
-    "demand_index": 67,
-    "demand_tier": 4,
-    "value_gap": -2,
+    "demand_index": 70,
+    "demand_tier": 5,
+    "value_gap": -1,
     "value_signal": "premium",
     "beatport_labels": [
       "Experts Only",
@@ -110,7 +110,7 @@
   {
     "name": "Fred Again",
     "spotify_id": "4oLeXFyACqeem2VImYeBFe",
-    "youtube_channel_id": "Fred Again music",
+    "youtube_channel_id": "UCvA7ExlBsBUb5XQEYzJC1ww",
     "soundcloud_permalink": "fredagain",
     "album_count": 100,
     "manual_scene_score": 95,
@@ -235,8 +235,8 @@
     "wikipedia_title": "Peggy Gou",
     "ra_slug": "peggygou",
     "demand_index": 70,
-    "demand_tier": 4,
-    "value_gap": -2,
+    "demand_tier": 5,
+    "value_gap": -1,
     "value_signal": "premium",
     "beatport_labels": [
       "Gudu Records"
@@ -273,7 +273,7 @@
     "trends_mom_12w": 96.5,
     "wikipedia_title": "Black Coffee (DJ)",
     "ra_slug": "blackcoffee",
-    "demand_index": 73,
+    "demand_index": 72,
     "demand_tier": 5,
     "value_gap": -1,
     "value_signal": "premium",
@@ -392,7 +392,7 @@
     },
     "trends_mom_12w": 14.6,
     "wikipedia_title": "Honey Dijon",
-    "demand_index": 68,
+    "demand_index": 67,
     "demand_tier": 4,
     "value_gap": -1,
     "value_signal": "premium"
@@ -426,7 +426,7 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Jamie Jones",
     "ra_slug": "jamiejones",
-    "demand_index": 60,
+    "demand_index": 61,
     "demand_tier": 3,
     "value_gap": -2,
     "value_signal": "premium",
@@ -434,9 +434,9 @@
       "DX3N",
       "Hot Creations"
     ],
-    "label_best": "DX3N",
-    "label_tier": 2,
-    "label_score": 40
+    "label_best": "Hot Creations",
+    "label_tier": 5,
+    "label_score": 100
   },
   {
     "name": "Amelie Lens",
@@ -460,7 +460,7 @@
     "trends_mom_12w": 15.3,
     "wikipedia_title": "Amelie Lens",
     "ra_slug": "amelielens",
-    "demand_index": 63,
+    "demand_index": 62,
     "demand_tier": 3,
     "value_gap": -2,
     "value_signal": "premium"
@@ -493,7 +493,7 @@
     "trends_mom_12w": 15.7,
     "wikipedia_title": "Charlotte de Witte",
     "ra_slug": "charlottedewitte",
-    "demand_index": 74,
+    "demand_index": 72,
     "demand_tier": 5,
     "value_gap": 0,
     "value_signal": "fair",
@@ -533,10 +533,10 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Adam Beyer",
     "ra_slug": "adambeyer",
-    "demand_index": 77,
-    "demand_tier": 5,
-    "value_gap": 0,
-    "value_signal": "fair",
+    "demand_index": 70,
+    "demand_tier": 4,
+    "value_gap": -1,
+    "value_signal": "premium",
     "beatport_labels": [
       "Drumcode"
     ],
@@ -573,7 +573,7 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "DJ Koze",
     "ra_slug": "djkoze",
-    "demand_index": 72,
+    "demand_index": 65,
     "demand_tier": 4,
     "value_gap": 0,
     "value_signal": "fair",
@@ -607,10 +607,10 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Bonobo",
     "ra_slug": "bonobo",
-    "demand_index": 79,
-    "demand_tier": 5,
-    "value_gap": 0,
-    "value_signal": "fair"
+    "demand_index": 68,
+    "demand_tier": 4,
+    "value_gap": -1,
+    "value_signal": "premium"
   },
   {
     "name": "Mall Grab",
@@ -654,7 +654,7 @@
   {
     "name": "DJ Harvey",
     "spotify_id": "4LSAINMy65w69vnT4xUq1b",
-    "youtube_channel_id": "DJ Harvey music",
+    "youtube_channel_id": "UCYVnPrAdnmL-tlqmOqDexsw",
     "soundcloud_permalink": "djharvey",
     "album_count": 11,
     "manual_scene_score": 70,
@@ -673,7 +673,7 @@
     "trends_mom_12w": 15.6,
     "wikipedia_title": "DJ Harvey",
     "ra_slug": "djharvey",
-    "demand_index": 42,
+    "demand_index": 41,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -759,7 +759,7 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Hot Since 82",
     "ra_slug": "hotsince82",
-    "demand_index": 69,
+    "demand_index": 68,
     "demand_tier": 4,
     "value_gap": 0,
     "value_signal": "fair",
@@ -773,7 +773,7 @@
   {
     "name": "Seth Troxler",
     "spotify_id": "3JkLFcTej6tdwZoQT6Nx4B",
-    "youtube_channel_id": "Seth Troxler DJ",
+    "youtube_channel_id": "UCLomjWeo7aBxvrTKCn9zrTw",
     "soundcloud_permalink": "sethtroxler",
     "album_count": 45,
     "manual_scene_score": 85,
@@ -904,10 +904,10 @@
     "trends_mom_12w": 22.8,
     "wikipedia_title": "Mau P",
     "ra_slug": "maup",
-    "demand_index": 72,
-    "demand_tier": 5,
-    "value_gap": 1,
-    "value_signal": "buy",
+    "demand_index": 68,
+    "demand_tier": 4,
+    "value_gap": 0,
+    "value_signal": "fair",
     "beatport_labels": [
       "Black Book Records",
       "Diynamic",
@@ -1025,7 +1025,7 @@
     "trends_mom_12w": 23.1,
     "wikipedia_title": "PAWSA",
     "ra_slug": "pawsa",
-    "demand_index": 77,
+    "demand_index": 76,
     "demand_tier": 5,
     "value_gap": 2,
     "value_signal": "strong-buy",
@@ -1058,10 +1058,10 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Carlita (musician)",
     "ra_slug": "carlita",
-    "demand_index": 65,
-    "demand_tier": 4,
-    "value_gap": 1,
-    "value_signal": "buy"
+    "demand_index": 64,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair"
   },
   {
     "name": "East End Dubs",
@@ -1130,7 +1130,7 @@
       "Deep House"
     ],
     "trends_mom_12w": -14.1,
-    "demand_index": 75,
+    "demand_index": 76,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -1171,7 +1171,7 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Dennis Cruz",
     "ra_slug": "denniscruz",
-    "demand_index": 61,
+    "demand_index": 62,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
@@ -1210,7 +1210,7 @@
     ],
     "trends_mom_12w": 38.5,
     "ra_slug": "cloonee",
-    "demand_index": 72,
+    "demand_index": 71,
     "demand_tier": 5,
     "value_gap": 1,
     "value_signal": "strong-buy",
@@ -1325,7 +1325,7 @@
     "trends_mom_12w": 57.3,
     "wikipedia_title": "Ben Sterling",
     "ra_slug": "bensterling",
-    "demand_index": 60,
+    "demand_index": 51,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
@@ -1339,7 +1339,10 @@
     ],
     "beatport_labels": [
       "PlanetX"
-    ]
+    ],
+    "label_best": "PlanetX",
+    "label_tier": 2,
+    "label_score": 40
   },
   {
     "name": "Disco Lines",
@@ -1362,7 +1365,7 @@
     },
     "trends_mom_12w": -27.8,
     "wikipedia_title": "Disco Lines",
-    "demand_index": 82,
+    "demand_index": 81,
     "demand_tier": 6,
     "value_gap": 2,
     "value_signal": "buy"
@@ -1438,7 +1441,7 @@
     "trends_mom_12w": 23.7,
     "wikipedia_title": "Kettama",
     "ra_slug": "kettama",
-    "demand_index": 69,
+    "demand_index": 68,
     "demand_tier": 4,
     "value_gap": 1,
     "value_signal": "buy",
@@ -1476,7 +1479,7 @@
     ],
     "trends_mom_12w": 66.7,
     "ra_slug": "rangertrucco",
-    "demand_index": 52,
+    "demand_index": 51,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -1508,7 +1511,7 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Beltrán",
     "ra_slug": "beltran",
-    "demand_index": 64,
+    "demand_index": 63,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -1547,7 +1550,7 @@
     "trends_mom_12w": 20,
     "wikipedia_title": "Rossi",
     "ra_slug": "rossi",
-    "demand_index": 53,
+    "demand_index": 55,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -1709,7 +1712,7 @@
     ],
     "trends_mom_12w": 111.4,
     "ra_slug": "maxstyler",
-    "demand_index": 72,
+    "demand_index": 71,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -1751,7 +1754,7 @@
     "trends_mom_12w": -6.2,
     "wikipedia_title": "Riordan",
     "ra_slug": "riordan",
-    "demand_index": 65,
+    "demand_index": 64,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -1842,7 +1845,7 @@
     "trends_mom_12w": 10,
     "wikipedia_title": "Kolter",
     "ra_slug": "kolter",
-    "demand_index": 81,
+    "demand_index": 80,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -1852,9 +1855,9 @@
       "KOLTERCAMP",
       "PIV"
     ],
-    "label_best": "Koltrax",
-    "label_tier": 2,
-    "label_score": 40
+    "label_best": "Hot Creations",
+    "label_tier": 5,
+    "label_score": 100
   },
   {
     "name": "Murphy's Law",
@@ -1903,7 +1906,7 @@
     ],
     "trends_mom_12w": -4,
     "wikipedia_title": "Luke Dean",
-    "demand_index": 71,
+    "demand_index": 70,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -1945,7 +1948,7 @@
     ],
     "trends_mom_12w": 50.6,
     "wikipedia_title": "Max Dean",
-    "demand_index": 80,
+    "demand_index": 79,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -2019,7 +2022,7 @@
     },
     "trends_mom_12w": -16.3,
     "ra_slug": "malugi",
-    "demand_index": 60,
+    "demand_index": 59,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -2146,9 +2149,9 @@
     "wikipedia_title": "Carl Cox",
     "image": "https://cdn-images.dzcdn.net/images/artist/d3d9f5bf4750e23c5a2e879327c2d446/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "carlcox",
-    "demand_index": 64,
-    "demand_tier": 4,
-    "value_gap": -1,
+    "demand_index": 62,
+    "demand_tier": 3,
+    "value_gap": -2,
     "value_signal": "premium",
     "beatport_labels": [
       "Kling Klong Records"
@@ -2227,7 +2230,7 @@
     "wikipedia_title": "Dom Dolla",
     "image": "https://cdn-images.dzcdn.net/images/artist/64e51b9c69e898c15cf61e200e277a17/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "domdolla",
-    "demand_index": 75,
+    "demand_index": 74,
     "demand_tier": 5,
     "value_gap": -1,
     "value_signal": "premium",
@@ -2326,7 +2329,7 @@
     "trends_mom_12w": -6.5,
     "image": "https://cdn-images.dzcdn.net/images/artist/54fee0825c4366a615e5b28756e5e1d6/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "shibasan",
-    "demand_index": 50,
+    "demand_index": 49,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -2392,7 +2395,7 @@
     "trends_mom_12w": 33.3,
     "image": "https://cdn-images.dzcdn.net/images/artist/eee6e3042fb3d2056d91c356902c596f/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "honeyluv",
-    "demand_index": 58,
+    "demand_index": 57,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -2501,7 +2504,7 @@
     "wikipedia_title": "Hannah Wants",
     "image": "https://cdn-images.dzcdn.net/images/artist/526257ab17ab4487ef8659fee7e6eb59/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "hannahwants",
-    "demand_index": 58,
+    "demand_index": 57,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair"
@@ -2562,7 +2565,7 @@
     "wikipedia_title": "Âme",
     "image": "https://cdn-images.dzcdn.net/images/artist/5381f9f67e6b7cef61861a59d0c19ed2/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "ame",
-    "demand_index": 72,
+    "demand_index": 71,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -2654,7 +2657,7 @@
     "wikipedia_title": "Dennis Ferrer",
     "image": "https://cdn-images.dzcdn.net/images/artist/fd6111c16b3e08ca0ef8ba19b88e514f/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "dennisferrer",
-    "demand_index": 54,
+    "demand_index": 53,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -2687,7 +2690,7 @@
     "wikipedia_title": "Roger Sanchez",
     "image": "https://cdn-images.dzcdn.net/images/artist/b7dfca93bf80433e50010850aab555c8/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "rogersanchez",
-    "demand_index": 67,
+    "demand_index": 66,
     "demand_tier": 4,
     "value_gap": 1,
     "value_signal": "buy"
@@ -2720,10 +2723,10 @@
     "wikipedia_title": "Armand van Helden",
     "image": "https://cdn-images.dzcdn.net/images/artist/5fed9ea5ac6c97c12b098be3f6c019b1/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "armandvanhelden",
-    "demand_index": 66,
+    "demand_index": 65,
     "demand_tier": 4,
     "value_gap": 1,
-    "value_signal": "buy",
+    "value_signal": "strong-buy",
     "beatport_labels": [
       "Southern Fried Records",
       "X-Mix Productions"
@@ -2761,7 +2764,7 @@
     "wikipedia_title": "Mark Knight",
     "image": "https://cdn-images.dzcdn.net/images/artist/61c7a3b9e83879a5683ef76d285aa230/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "markknight",
-    "demand_index": 68,
+    "demand_index": 67,
     "demand_tier": 4,
     "value_gap": 1,
     "value_signal": "buy",
@@ -2850,9 +2853,9 @@
     "wikipedia_title": "Lee Foss",
     "ra_slug": "leefoss",
     "demand_index": 80,
-    "demand_tier": 5,
-    "value_gap": 2,
-    "value_signal": "buy"
+    "demand_tier": 6,
+    "value_gap": 3,
+    "value_signal": "strong-buy"
   },
   {
     "name": "Walker & Royce",
@@ -2883,7 +2886,7 @@
   {
     "name": "Kyle Watson",
     "spotify_id": "7LJSAfWhO7jhjnewy6pKyZ",
-    "youtube_channel_id": "Kyle Watson DJ",
+    "youtube_channel_id": "UCW6mak57HjigCDq5EJio6cw",
     "soundcloud_permalink": "kyle-watson",
     "album_count": 30,
     "manual_scene_score": 76,
@@ -2902,7 +2905,7 @@
     "wikipedia_title": "Kyle Watson",
     "image": "https://cdn-images.dzcdn.net/images/artist/7477a88887bb1e4b9c9870a3a46e60bb/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "kylewatson",
-    "demand_index": 47,
+    "demand_index": 49,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -2986,10 +2989,10 @@
     "trends_mom_12w": 61.9,
     "image": "https://cdn-images.dzcdn.net/images/artist/48e01e35f4064f6fdf0ebc4774bdd41d/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "alanfitzpatrick",
-    "demand_index": 63,
-    "demand_tier": 3,
-    "value_gap": 0,
-    "value_signal": "fair",
+    "demand_index": 64,
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "strong-buy",
     "beatport_labels": [
       "We Are The Brave"
     ],
@@ -3046,8 +3049,8 @@
     "image": "https://cdn-images.dzcdn.net/images/artist/ff27f3c85580e715218626aa78af1647/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "cristoph",
     "demand_index": 72,
-    "demand_tier": 4,
-    "value_gap": 1,
+    "demand_tier": 5,
+    "value_gap": 2,
     "value_signal": "buy"
   },
   {
@@ -3208,7 +3211,7 @@
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/d0af8aec32bc8103af060a84a7aae0bb/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "romanflugel",
-    "demand_index": 52,
+    "demand_index": 51,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
@@ -3248,7 +3251,7 @@
     "wikipedia_title": "Booka Shade",
     "image": "https://cdn-images.dzcdn.net/images/artist/f6d1bcd168ed940ac97943f470a2b6f3/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "bookashade",
-    "demand_index": 55,
+    "demand_index": 59,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
@@ -3314,7 +3317,7 @@
     "wikipedia_title": "Blond:ish",
     "image": "https://cdn-images.dzcdn.net/images/artist/acc95cb78870eaffb0b737bf83e5578a/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "blondish",
-    "demand_index": 66,
+    "demand_index": 65,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -3347,7 +3350,7 @@
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/b12f62174c15418fa1f0b10f13815ed1/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "Latmun",
-    "demand_index": 52,
+    "demand_index": 51,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair"
@@ -3484,7 +3487,7 @@
     "wikipedia_title": "Jimi Jules",
     "image": "https://cdn-images.dzcdn.net/images/artist/92d282558d7dd99f90945765e904ac41/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "jimijules",
-    "demand_index": 60,
+    "demand_index": 59,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -3555,7 +3558,7 @@
     "wikipedia_title": "Colyn",
     "image": "https://cdn-images.dzcdn.net/images/artist/a25b208534aaf17c8ec2fa4cb0460ce5/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "colyn",
-    "demand_index": 85,
+    "demand_index": 84,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -3620,7 +3623,7 @@
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/c39121f135ebd6a180d5d1f64b2af2e6/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "enoonapa",
-    "demand_index": 59,
+    "demand_index": 58,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -3652,7 +3655,7 @@
     "trends_mom_12w": 6.7,
     "image": "https://cdn-images.dzcdn.net/images/artist/187368e58dbd7abe70a2fe7e0b6dfdea/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "pablofierro",
-    "demand_index": 62,
+    "demand_index": 61,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -3684,7 +3687,7 @@
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/927dcaaa6ee1fd9fe42fa3c4a972d718/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "eduimbernon",
-    "demand_index": 54,
+    "demand_index": 53,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -3709,7 +3712,7 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/0647d1aba014eebb0dbd0c106983d7d9/1000x1000-000000-80-0-0.jpg",
-    "demand_index": 65,
+    "demand_index": 64,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -3789,7 +3792,7 @@
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/1f76c6e10b69d562df4b8ec21cea2ff4/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "chelinamanuhutu",
-    "demand_index": 42,
+    "demand_index": 41,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -3816,7 +3819,7 @@
     "wikipedia_title": "Skream",
     "image": "https://cdn-images.dzcdn.net/images/artist/9bff92c37ccb03ceec7ea841efbd0840/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "skream",
-    "demand_index": 76,
+    "demand_index": 75,
     "demand_tier": 5,
     "value_gap": 1,
     "value_signal": "buy"
@@ -3843,7 +3846,7 @@
     "wikipedia_title": "David Morales",
     "image": "https://cdn-images.dzcdn.net/images/artist/e7755d91844651e22e380af8f3130d2a/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "davidmorales",
-    "demand_index": 62,
+    "demand_index": 61,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair"
@@ -3870,7 +3873,7 @@
     "wikipedia_title": "Mark Farina",
     "image": "https://cdn-images.dzcdn.net/images/artist/1d6e23155d69190a712ba0f308f3829c/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "markfarina",
-    "demand_index": 55,
+    "demand_index": 54,
     "demand_tier": 3,
     "value_gap": -1,
     "value_signal": "premium"
@@ -3949,7 +3952,7 @@
     "image": "https://cdn-images.dzcdn.net/images/artist/623c0d8a9306d60397e896158f92b780/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Michael Mayer",
     "ra_slug": "michaelmayer",
-    "demand_index": 53,
+    "demand_index": 52,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair"
@@ -3976,7 +3979,7 @@
     "wikipedia_title": "Gui Boratto",
     "image": "https://cdn-images.dzcdn.net/images/artist/f413b8a08bc6b2d2cc0ad14fff3dd5bd/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "guiboratto",
-    "demand_index": 49,
+    "demand_index": 48,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair"
@@ -4069,7 +4072,7 @@
     "trends_mom_12w": 1.1,
     "image": "https://cdn-images.dzcdn.net/images/artist/b3bc5e2fa9c9a62dc77adea71c09ec61/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "objekt",
-    "demand_index": 74,
+    "demand_index": 73,
     "demand_tier": 5,
     "value_gap": 2,
     "value_signal": "buy"
@@ -4095,7 +4098,7 @@
     "trends_mom_12w": -3.8,
     "image": "https://cdn-images.dzcdn.net/images/artist/4d61d4c0fd2c912ca76c16968ce32e1c/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "specialrequest",
-    "demand_index": 73,
+    "demand_index": 72,
     "demand_tier": 5,
     "value_gap": 2,
     "value_signal": "buy"
@@ -4122,7 +4125,7 @@
     "wikipedia_title": "TSHA",
     "image": "https://cdn-images.dzcdn.net/images/artist/eb22effcb6b2e4dad765bbfcce30fd7b/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "tsha",
-    "demand_index": 61,
+    "demand_index": 60,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair"
@@ -4157,7 +4160,7 @@
     "wikipedia_title": "Tiga",
     "image": "https://cdn-images.dzcdn.net/images/artist/bac70428661be07d87075b37eef1a263/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "tiga",
-    "demand_index": 72,
+    "demand_index": 73,
     "demand_tier": 5,
     "value_gap": 2,
     "value_signal": "buy",
@@ -4300,10 +4303,10 @@
     "wikipedia_title": "Jayda G",
     "image": "https://cdn-images.dzcdn.net/images/artist/86e20a3f7118a0e333e2785725baa796/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "jaydag",
-    "demand_index": 75,
+    "demand_index": 74,
     "demand_tier": 5,
     "value_gap": 2,
-    "value_signal": "buy"
+    "value_signal": "strong-buy"
   },
   {
     "name": "Joris Voorn",
@@ -4420,7 +4423,7 @@
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/ad287c3501277b4453e0050de8392420/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "levonvincent",
-    "demand_index": 51,
+    "demand_index": 50,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -4500,7 +4503,7 @@
     "wikipedia_title": "Sven Väth",
     "image": "https://cdn-images.dzcdn.net/images/artist/03e76fd7db150f6a5f147fffe0d12c0a/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "svenvath",
-    "demand_index": 67,
+    "demand_index": 66,
     "demand_tier": 4,
     "value_gap": -1,
     "value_signal": "premium"
@@ -4646,10 +4649,10 @@
     "trends_mom_12w": 7.4,
     "image": "https://cdn-images.dzcdn.net/images/artist/cf7f06ad142154b0750193bbf1d2c0c1/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "mindagainst",
-    "demand_index": 64,
-    "demand_tier": 3,
-    "value_gap": -1,
-    "value_signal": "premium",
+    "demand_index": 65,
+    "demand_tier": 4,
+    "value_gap": 0,
+    "value_signal": "fair",
     "beatport_labels": [
       "HABITAT Records",
       "CORE Records"
@@ -4721,7 +4724,7 @@
   {
     "name": "Trentemøller",
     "spotify_id": "4O71i7ke5iIBX6RNSFoZbS",
-    "youtube_channel_id": "Trentemoller official",
+    "youtube_channel_id": "UCF5FI-ATbiOxuM0Wpr_1juA",
     "soundcloud_permalink": "trentemoller",
     "album_count": 35,
     "manual_scene_score": 79,
@@ -4772,7 +4775,7 @@
     "wikipedia_title": "Monolink",
     "image": "https://cdn-images.dzcdn.net/images/artist/d6ede7f36d1b0bdaf8753263afcb5324/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "monolink",
-    "demand_index": 58,
+    "demand_index": 57,
     "demand_tier": 3,
     "value_gap": -1,
     "value_signal": "premium",
@@ -4810,7 +4813,7 @@
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/06a41e2ec0c3a373af5db2b85763f00e/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "massano",
-    "demand_index": 67,
+    "demand_index": 66,
     "demand_tier": 4,
     "value_gap": 1,
     "value_signal": "buy",
@@ -4919,7 +4922,7 @@
     "wikipedia_title": "Nora En Pure",
     "image": "https://cdn-images.dzcdn.net/images/artist/43249d304342f9e467f80e9a61a5d782/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "noraenpure",
-    "demand_index": 63,
+    "demand_index": 62,
     "demand_tier": 3,
     "value_gap": -1,
     "value_signal": "premium",
@@ -5072,7 +5075,7 @@
     "wikipedia_title": "John Talabot",
     "image": "https://cdn-images.dzcdn.net/images/artist/668c61c240e55fa1e1fcfd4534561424/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "johntalabot",
-    "demand_index": 64,
+    "demand_index": 63,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -5126,7 +5129,7 @@
     "wikipedia_title": "Surgeon",
     "image": "https://cdn-images.dzcdn.net/images/artist/cbb8855d3aec037618667a16bffe1735/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "surgeon",
-    "demand_index": 69,
+    "demand_index": 68,
     "demand_tier": 4,
     "value_gap": 1,
     "value_signal": "buy"
@@ -5153,7 +5156,7 @@
     "wikipedia_title": "Blawan",
     "image": "https://cdn-images.dzcdn.net/images/artist/e99669dc042127b16026dc45dfd7c568/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "blawan",
-    "demand_index": 62,
+    "demand_index": 61,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair"
@@ -5218,7 +5221,7 @@
     "trends_mom_12w": 3.1,
     "image": "https://cdn-images.dzcdn.net/images/artist/3653b5878e761cdd7b1239ea58b4bf49/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "daxj",
-    "demand_index": 64,
+    "demand_index": 63,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair"
@@ -5329,7 +5332,7 @@
     "trends_mom_12w": -6,
     "image": "https://cdn-images.dzcdn.net/images/artist/0334b3c65ba31b1e01491589309346be/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "agentsoftime",
-    "demand_index": 65,
+    "demand_index": 64,
     "demand_tier": 4,
     "value_gap": 1,
     "value_signal": "buy",
@@ -5362,7 +5365,7 @@
     "wikipedia_title": "Tiefschwarz",
     "image": "https://cdn-images.dzcdn.net/images/artist/b1ac13a1a4ec47854fe2ac573804dc51/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "tiefschwarz",
-    "demand_index": 36,
+    "demand_index": 35,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair"
@@ -5416,7 +5419,7 @@
     "wikipedia_title": "DJ Tennis",
     "image": "https://cdn-images.dzcdn.net/images/artist/8644271f3e3fca07f5475138213868cb/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "djtennis",
-    "demand_index": 65,
+    "demand_index": 64,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -5442,7 +5445,7 @@
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/c7be615a7d6959a14fa68c693a0df1a5/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "dariodattis",
-    "demand_index": 65,
+    "demand_index": 64,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -5469,7 +5472,7 @@
     "wikipedia_title": "Henry Saiz",
     "image": "https://cdn-images.dzcdn.net/images/artist/f64cb40ad5bb763ee098c54f588fbd7e/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "henrysaiz",
-    "demand_index": 54,
+    "demand_index": 53,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair"
@@ -5496,7 +5499,7 @@
     "wikipedia_title": "Pional",
     "image": "https://cdn-images.dzcdn.net/images/artist/c2e63c9541c963df261821ab03bceff0/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "pional",
-    "demand_index": 63,
+    "demand_index": 62,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -5548,7 +5551,7 @@
     "trends_mom_12w": 5.1,
     "image": "https://cdn-images.dzcdn.net/images/artist/c77cecc48eed7461338505261612b6d6/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "wooyork",
-    "demand_index": 59,
+    "demand_index": 58,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -5678,7 +5681,7 @@
     "wikipedia_title": "Pangaea",
     "image": "https://cdn-images.dzcdn.net/images/artist/28a8b35032e077ccfd4a4b785c5419ba/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "pangaea",
-    "demand_index": 50,
+    "demand_index": 49,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -5730,7 +5733,7 @@
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/76fffa6bd9060bde9e8816c96a9f24cd/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "angeloferreri",
-    "demand_index": 53,
+    "demand_index": 52,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -5756,7 +5759,7 @@
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/0b914a75d771eb12a6f6007ad132403e/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "kastistorrau",
-    "demand_index": 55,
+    "demand_index": 54,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -5955,7 +5958,7 @@
     "wikipedia_title": "Pearson Sound",
     "image": "https://cdn-images.dzcdn.net/images/artist/20d8d38a49056f30aa3460933dbdeac3/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "pearsonsound",
-    "demand_index": 57,
+    "demand_index": 56,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -6008,7 +6011,7 @@
     "wikipedia_title": "Lauer",
     "image": "https://cdn-images.dzcdn.net/images/artist/ecf6a2e5d88fbb596c6bc6ab8523fe36/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "lauer",
-    "demand_index": 64,
+    "demand_index": 63,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -6035,7 +6038,7 @@
     "wikipedia_title": "Simian Mobile Disco",
     "image": "https://cdn-images.dzcdn.net/images/artist/1213e4ee80f388bc81d4e0a6c152af17/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "simianmobiledisco",
-    "demand_index": 58,
+    "demand_index": 57,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -6088,7 +6091,7 @@
     "wikipedia_title": "DJ Holographic",
     "image": "https://cdn-images.dzcdn.net/images/artist/024194e917a0ea3f1f4c4d34e409e3d2/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "djholographic",
-    "demand_index": 43,
+    "demand_index": 42,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -6115,7 +6118,7 @@
     "wikipedia_title": "David Mayer",
     "image": "https://cdn-images.dzcdn.net/images/artist/f91ec3dc80a8400dd9ddf19dc64a4004/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "davidmayer",
-    "demand_index": 58,
+    "demand_index": 57,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -6141,7 +6144,7 @@
     "trends_mom_12w": 50,
     "image": "https://cdn-images.dzcdn.net/images/artist/870fbf17a3d1c92e6a71bfe7864d321e/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "leecurtiss",
-    "demand_index": 40,
+    "demand_index": 39,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -6167,7 +6170,7 @@
     "trends_mom_12w": 4.4,
     "image": "https://cdn-images.dzcdn.net/images/artist/60253c6f2bdccb13749410393c77cb66/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "wolflamb",
-    "demand_index": 55,
+    "demand_index": 54,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -6286,7 +6289,7 @@
     "trends_mom_12w": 300,
     "image": "https://cdn-images.dzcdn.net/images/artist/c8f52b9377b77abf452d2614a9d19139/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "mathewjonson",
-    "demand_index": 54,
+    "demand_index": 53,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -6436,7 +6439,7 @@
     ],
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/f093e2d256619597a2c3a54d26ff74b7/1000x1000-000000-80-0-0.jpg",
-    "demand_index": 60,
+    "demand_index": 59,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -6569,7 +6572,7 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/4e231667dda230cbe23c614610bb35ee/1000x1000-000000-80-0-0.jpg",
-    "demand_index": 48,
+    "demand_index": 47,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null
@@ -6661,7 +6664,7 @@
     "wikipedia_title": "Sasha",
     "image": "https://cdn-images.dzcdn.net/images/artist/5856ea0878199627363194d3513fea36/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "sasha",
-    "demand_index": 61,
+    "demand_index": 60,
     "demand_tier": 3,
     "value_gap": -2,
     "value_signal": "premium",
@@ -6727,7 +6730,7 @@
     "wikipedia_title": "Eric Prydz",
     "image": "https://cdn-images.dzcdn.net/images/artist/0adb6d9882303b2429a5ec930fbbd2f5/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "ericprydz",
-    "demand_index": 49,
+    "demand_index": 50,
     "demand_tier": 3,
     "value_gap": -3,
     "value_signal": "premium",
@@ -6805,7 +6808,7 @@
     "trends_mom_12w": 100,
     "image": "https://cdn-images.dzcdn.net/images/artist/128965928fd06bd47dae4cdde78d1d82/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "manoletough",
-    "demand_index": 42,
+    "demand_index": 43,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
@@ -7429,7 +7432,7 @@
     "wikipedia_title": "Bob Sinclar",
     "image": "https://cdn-images.dzcdn.net/images/artist/6f5b029c7a977b6ccdc8f5843208f04c/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "bobsinclar",
-    "demand_index": 56,
+    "demand_index": 57,
     "demand_tier": 3,
     "value_gap": -1,
     "value_signal": "premium",
@@ -7496,7 +7499,7 @@
     "wikipedia_title": "Route 94 (musician)",
     "image": "https://cdn-images.dzcdn.net/images/artist/69da2bc61d1624fc3837cad12b12dd4f/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "route94",
-    "demand_index": 25,
+    "demand_index": 34,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -7664,7 +7667,7 @@
     "wikipedia_title": "Slam",
     "image": "https://cdn-images.dzcdn.net/images/artist/29b5d13239bcfee2e86fd3b162cf0203/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "slam",
-    "demand_index": 50,
+    "demand_index": 54,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
@@ -8063,7 +8066,7 @@
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/e60eb9108935c07342dce6f2f2faede3/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "planetaryassaultsystems",
-    "demand_index": 57,
+    "demand_index": 55,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -8134,7 +8137,7 @@
     "image": "https://i.scdn.co/image/ab6761610000e5ebb02f6c6948dd082ff04b2a86",
     "ra_slug": "hugel",
     "wikipedia_title": "Hugel (DJ)",
-    "demand_index": 98,
+    "demand_index": 99,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -8160,11 +8163,11 @@
     "label_score": 100,
     "spotify_id": "5PlfkPxwCpRRWQJBxCa0By",
     "booking_fee": {
-      "label": "£4K–£10K",
-      "mid": 6500,
-      "tier": 2,
-      "color": "var(--accent)",
-      "band": "E",
+      "label": "£18K–£40K",
+      "mid": 28000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
       "basis": "estimate"
     }
   },
@@ -8174,7 +8177,7 @@
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb124d9ef54fb1a032b951518e",
     "ra_slug": "adamten",
-    "demand_index": 71,
+    "demand_index": 72,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -8394,7 +8397,7 @@
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5ebdf64bb4f8dffa3f27ec389f7",
     "wikipedia_title": "Luch",
-    "demand_index": 80,
+    "demand_index": 92,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -8432,7 +8435,7 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb561389a1adf5f4c8631e45f0",
     "wikipedia_title": "Adam Port",
     "ra_slug": "adamport",
-    "demand_index": 66,
+    "demand_index": 81,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -8452,11 +8455,11 @@
     "label_score": 100,
     "spotify_id": "2loEsOijJ6XiGzWYFXMIRk",
     "booking_fee": {
-      "label": "£4K–£10K",
-      "mid": 6500,
-      "tier": 2,
-      "color": "var(--accent)",
-      "band": "E",
+      "label": "£18K–£40K",
+      "mid": 28000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
       "basis": "estimate"
     }
   },
@@ -8466,7 +8469,7 @@
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5ebc24a9a329a26cbdfabfd73e2",
     "wikipedia_title": "Keinemusik",
-    "demand_index": 91,
+    "demand_index": 94,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -8485,11 +8488,11 @@
     "label_score": 100,
     "spotify_id": "26WKgv73kRHD0gEDKD1i8j",
     "booking_fee": {
-      "label": "£4K–£10K",
-      "mid": 6500,
-      "tier": 2,
-      "color": "var(--accent)",
-      "band": "E",
+      "label": "£18K–£40K",
+      "mid": 28000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
       "basis": "estimate"
     }
   },
@@ -8536,7 +8539,7 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb6d46eba60972d0ce0f5e6544",
-    "demand_index": 79,
+    "demand_index": 83,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -8571,7 +8574,7 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb28eb3ef8ecd29ca04527dd20",
-    "demand_index": 74,
+    "demand_index": 78,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -8606,7 +8609,7 @@
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5ebc38a3a42d7d8e4864085e350",
     "ra_slug": "joshgigante",
-    "demand_index": 51,
+    "demand_index": 49,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -8641,7 +8644,7 @@
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb4f92eae7b45fe3da4be1ea1b",
     "ra_slug": "gaibarone",
-    "demand_index": 50,
+    "demand_index": 49,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -8716,7 +8719,7 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5ebc3c7d97a38752e1d911511b9",
-    "demand_index": 78,
+    "demand_index": 76,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -8751,7 +8754,7 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb85bc993b6a738f94ef4df7cf",
     "wikipedia_title": "CamelPhat",
     "ra_slug": "camelphat",
-    "demand_index": 64,
+    "demand_index": 78,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -8772,11 +8775,11 @@
     "label_score": 60,
     "spotify_id": "240wlM8vDrf6S4zCyzGj2W",
     "booking_fee": {
-      "label": "£4K–£10K",
-      "mid": 6500,
-      "tier": 2,
-      "color": "var(--accent)",
-      "band": "E",
+      "label": "£18K–£40K",
+      "mid": 28000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
       "basis": "estimate"
     }
   },
@@ -8787,7 +8790,7 @@
     "image": "https://i.scdn.co/image/ab6761610000e5ebbf5cac401f8b25cda35221e9",
     "wikipedia_title": "&Me",
     "ra_slug": "me",
-    "demand_index": 67,
+    "demand_index": 68,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -8819,7 +8822,7 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb8d9d05dcd3e3179d41a18c94",
-    "demand_index": 83,
+    "demand_index": 84,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -8852,7 +8855,7 @@
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb3abf59b9626af670673af263",
     "ra_slug": "kamilosanclemente",
-    "demand_index": 61,
+    "demand_index": 57,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -8887,7 +8890,7 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb1b3b3325a43e81577b03b9c9",
     "wikipedia_title": "Meduza",
     "ra_slug": "meduza",
-    "demand_index": 70,
+    "demand_index": 83,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -8908,11 +8911,11 @@
     "label_score": 80,
     "spotify_id": "0xRXCcSX89eobfrshSVdyu",
     "booking_fee": {
-      "label": "£4K–£10K",
-      "mid": 6500,
-      "tier": 2,
-      "color": "var(--accent)",
-      "band": "E",
+      "label": "£18K–£40K",
+      "mid": 28000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
       "basis": "estimate"
     }
   },
@@ -8923,7 +8926,7 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb0041f76b2e740b535b6919a3",
     "wikipedia_title": "Vintage Culture",
     "ra_slug": "vintageculture",
-    "demand_index": 81,
+    "demand_index": 89,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -8943,11 +8946,11 @@
     "label_score": 40,
     "spotify_id": "28uJnu5EsrGml2tBd7y8ts",
     "booking_fee": {
-      "label": "£4K–£10K",
-      "mid": 6500,
-      "tier": 2,
-      "color": "var(--accent)",
-      "band": "E",
+      "label": "£18K–£40K",
+      "mid": 28000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
       "basis": "estimate"
     }
   },
@@ -8993,7 +8996,7 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb350efff32f3a579155fe40d2",
     "wikipedia_title": "Rampa",
     "ra_slug": "rampa",
-    "demand_index": 74,
+    "demand_index": 75,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -9061,7 +9064,7 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb691028dd734c7fe4c299341d",
-    "demand_index": 80,
+    "demand_index": 81,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -9131,7 +9134,7 @@
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb2681f2534f7827ab3f7d696e",
     "ra_slug": "francfala",
-    "demand_index": 64,
+    "demand_index": 77,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -9152,11 +9155,11 @@
     "label_score": 80,
     "spotify_id": "0FSasrFTs0AQBrJkcFE6vB",
     "booking_fee": {
-      "label": "£4K–£10K",
-      "mid": 6500,
-      "tier": 2,
-      "color": "var(--accent)",
-      "band": "E",
+      "label": "£18K–£40K",
+      "mid": 28000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
       "basis": "estimate"
     }
   },
@@ -9167,7 +9170,7 @@
     "image": "https://i.scdn.co/image/ab6761610000e5ebdbe0d58f538b7d18e324af5e",
     "wikipedia_title": "Rüfüs Du Sol",
     "ra_slug": "rufusdusol",
-    "demand_index": 57,
+    "demand_index": 75,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -9188,11 +9191,11 @@
     "label_score": 80,
     "spotify_id": "5Pb27ujIyYb33zBqVysBkj",
     "booking_fee": {
-      "label": "£4K–£10K",
-      "mid": 6500,
-      "tier": 2,
-      "color": "var(--accent)",
-      "band": "E",
+      "label": "£18K–£40K",
+      "mid": 28000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
       "basis": "estimate"
     }
   },
@@ -9434,7 +9437,7 @@
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb2b985aba58c784f6ea58c9c4",
     "ra_slug": "rsquared",
-    "demand_index": 67,
+    "demand_index": 66,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -9469,7 +9472,7 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5ebebdd74a5194a9d19b666376f",
-    "demand_index": 34,
+    "demand_index": 35,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -9529,7 +9532,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "estimate"
-    }
+    },
+    "wikipedia_title": "Mochakk"
   },
   {
     "name": "Sonny Fodera",
@@ -9550,7 +9554,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "estimate"
-    }
+    },
+    "wikipedia_title": "Sonny Fodera"
   },
   {
     "name": "Layton Giordani",
@@ -9573,7 +9578,7 @@
     "label_best": "Defected",
     "label_tier": 5,
     "label_score": 100,
-    "demand_index": 66,
+    "demand_index": 65,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -9627,7 +9632,8 @@
       "color": "var(--accent)",
       "band": "E",
       "basis": "estimate"
-    }
+    },
+    "wikipedia_title": "Ben UFO"
   },
   {
     "name": "Groove Armada",
@@ -9636,7 +9642,7 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb922cfaf258406578ccb12bcc",
     "spotify_id": "67tgMwUfnmqzYsNAtnP6YJ",
     "ra_slug": "groovearmada",
-    "demand_index": 79,
+    "demand_index": 78,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -9648,7 +9654,8 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "estimate"
-    }
+    },
+    "wikipedia_title": "Groove Armada"
   },
   {
     "name": "999999999",
@@ -9699,7 +9706,7 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb2744c0aa6cccfab6120ef015",
     "spotify_id": "0HHa7ZJZxUQlg5l2mB0N0f",
     "ra_slug": "marlonhoffstadt",
-    "demand_index": 77,
+    "demand_index": 76,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -9753,7 +9760,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "estimate"
-    }
+    },
+    "wikipedia_title": "Torren Foot"
   },
   {
     "name": "salute",
@@ -9762,7 +9770,7 @@
     "image": "https://i.scdn.co/image/ab6761610000e5ebf431bdb80cf96cc5a3926e6c",
     "spotify_id": "1np8xozf7ATJZDi9JX8Dx5",
     "ra_slug": "salute",
-    "demand_index": 72,
+    "demand_index": 71,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -9774,7 +9782,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "estimate"
-    }
+    },
+    "wikipedia_title": "Salute"
   },
   {
     "name": "Jay de Lys",
@@ -9797,7 +9806,7 @@
     "label_best": "Black Book Records",
     "label_tier": 4,
     "label_score": 80,
-    "demand_index": 57,
+    "demand_index": 58,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -9818,7 +9827,7 @@
     "image": "https://i.scdn.co/image/ab6761610000e5ebb6fe5b843faee3c7d2712448",
     "spotify_id": "4PVzoVUDxey3mxGdkf4HgR",
     "ra_slug": "samalfred",
-    "demand_index": 70,
+    "demand_index": 69,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -9852,7 +9861,7 @@
     "label_best": "Interstellar Recordings (Insomniac)",
     "label_tier": 3,
     "label_score": 60,
-    "demand_index": 78,
+    "demand_index": 77,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -9864,7 +9873,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "estimate"
-    }
+    },
+    "wikipedia_title": "Arodes"
   },
   {
     "name": "MPH",
@@ -9884,7 +9894,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "estimate"
-    }
+    },
+    "wikipedia_title": "MPH"
   },
   {
     "name": "Son of Son",
@@ -9905,7 +9916,7 @@
     "label_best": "The End Of Genesys",
     "label_tier": 2,
     "label_score": 40,
-    "demand_index": 61,
+    "demand_index": 59,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -9959,7 +9970,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "estimate"
-    }
+    },
+    "wikipedia_title": "Genesi"
   },
   {
     "name": "Greg 99",
@@ -9967,7 +9979,7 @@
     "source": "crssd-fall26",
     "image": "https://i.scdn.co/image/ab6761610000e5eb080c895a176068bde1b743ae",
     "spotify_id": "68ocQOFVB9wvLiC1C1WjYp",
-    "demand_index": 72,
+    "demand_index": 71,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -10003,7 +10015,7 @@
     "label_best": "Solid Grooves Records",
     "label_tier": 4,
     "label_score": 80,
-    "demand_index": 85,
+    "demand_index": 84,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -10069,7 +10081,8 @@
       "color": "#8b5cf6",
       "band": "D",
       "basis": "estimate"
-    }
+    },
+    "wikipedia_title": "Dean Turnley"
   },
   {
     "name": "Notion",
@@ -10078,7 +10091,7 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb8436c7707f218912b3dc25a4",
     "spotify_id": "1uRVM0wBdtyEuU582EeKJM",
     "ra_slug": "notion",
-    "demand_index": 80,
+    "demand_index": 79,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -10111,7 +10124,7 @@
     "label_best": "7CULT",
     "label_tier": 2,
     "label_score": 40,
-    "demand_index": 60,
+    "demand_index": 61,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -10123,6 +10136,7 @@
       "color": "#3b82f6",
       "band": "C",
       "basis": "estimate"
-    }
+    },
+    "wikipedia_title": "Oskar med k"
   }
 ]
