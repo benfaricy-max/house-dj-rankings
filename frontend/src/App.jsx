@@ -22,6 +22,17 @@ const parseBlogSlug = () => {
   const m = (window.location.hash || "").match(/^#\/blog\/(.+)$/);
   return m ? decodeURIComponent(m[1]) : null;
 };
+// Editor-only gate: the Journal stays hidden from the public until it's ready.
+// Visit the site once with ?editor=1 (or #editor) on this device to unlock it;
+// the flag is remembered in localStorage. Use ?editor=0 to lock it again.
+const isEditor = () => {
+  try {
+    const s = (window.location.search + " " + window.location.hash);
+    if (/[?&#]editor=1\b/.test(s) || /#editor\b/.test(s)) localStorage.setItem("pt_editor", "1");
+    if (/[?&#]editor=0\b/.test(s)) localStorage.removeItem("pt_editor");
+    return localStorage.getItem("pt_editor") === "1";
+  } catch { return false; }
+};
 
 const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
 const MEDAL = { 1: "🥇", 2: "🥈", 3: "🥉" };
@@ -2371,6 +2382,7 @@ export default function App() {
   const [marketSlug, setMarketSlug] = useState(parseMarketSlug());
   const [clubSlugState, setClubSlugState] = useState(parseClubSlug());
   const [blogSlugState, setBlogSlugState] = useState(parseBlogSlug());
+  const [editor] = useState(isEditor());
   useEffect(() => {
     const onHash = () => { setProfileSlug(parseProfileSlug()); setMarketSlug(parseMarketSlug()); setClubSlugState(parseClubSlug()); setBlogSlugState(parseBlogSlug()); };
     window.addEventListener("hashchange", onHash);
@@ -2438,8 +2450,8 @@ export default function App() {
     return <div className="page"><ClubProfile slug={clubSlugState} /></div>;
   }
 
-  // Journal post route — shareable like #/blog/notes-from-the-floor
-  if (blogSlugState) {
+  // Journal post route — shareable like #/blog/notes-from-the-floor (editor-only for now)
+  if (blogSlugState && editor) {
     return <div className="page"><BlogPost slug={blogSlugState} /></div>;
   }
 
@@ -2473,7 +2485,7 @@ export default function App() {
           <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
           <button className={`top-tab ${activeTab === "booking" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking")}>Booking Intelligence</button>
           <button className={`top-tab ${activeTab === "clubs" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("clubs")}>Club Index</button>
-          <button className={`top-tab ${activeTab === "journal" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("journal")}>Journal</button>
+          {editor && <button className={`top-tab ${activeTab === "journal" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("journal")}>Journal <span className="tab-private">·private</span></button>}
           <button className={`top-tab ${activeTab === "ones-to-watch" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("ones-to-watch")}>Ones to Watch</button>
           <button className={`top-tab ${activeTab === "benchmark"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("benchmark")}>Benchmark</button>
           <button className={`top-tab ${activeTab === "velocity"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("velocity")}>Velocity</button>
@@ -2488,7 +2500,7 @@ export default function App() {
       {activeTab === "pro" && <ProPage rankings={rankings} />}
       {activeTab === "booking"       && <BookingIntelPage rankings={rankings} />}
       {activeTab === "clubs"         && <ClubsPage />}
-      {activeTab === "journal"       && <BlogPage />}
+      {activeTab === "journal"       && editor && <BlogPage />}
       {activeTab === "ones-to-watch" && <OnestoWatchPage rankings={rankings} />}
       {activeTab === "benchmark"     && <ComparativeBenchmarkingPage rankings={rankings} />}
       {activeTab === "velocity"      && <VelocityPage rankings={rankings} />}
