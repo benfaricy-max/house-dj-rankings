@@ -250,8 +250,11 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
               <div className="ap-signal-val" style={{ color: dj.momentum_score >= 65 ? "#C8F750" : "#E9E7DF" }}>
                 {dj.momentum_score}<span>/100</span>
               </div>
-              <div className="ap-signal-key">Momentum</div>
-              <div className="ap-signal-sub">acceleration vs. own baseline</div>
+              <div className="ap-signal-key">
+                Momentum
+                {dj.momentum_confidence && <span className={`ap-conf ap-conf--${dj.momentum_confidence}`} title={`${dj.momentum_signal_count} of 5 signals corroborate`}>{dj.momentum_confidence}</span>}
+              </div>
+              <div className="ap-signal-sub">acceleration vs. own baseline{Number.isFinite(dj.momentum_signal_count) ? ` · ${dj.momentum_signal_count} signal${dj.momentum_signal_count !== 1 ? "s" : ""}` : ""}</div>
             </div>
           )}
           {dj.booking_fee && (
