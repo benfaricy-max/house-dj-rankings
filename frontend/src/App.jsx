@@ -3,8 +3,10 @@ import "./App.css";
 const ProPage = lazy(() => import("./ProPage"));   // code-split: the ~750-line tab loads in its own chunk
 import ArtistProfile, { slugify, ArtistLink } from "./ArtistProfile";
 import { ValueGapPage, ValueReport, valueSlug } from "./ValueGap";
-import ClubsPage, { ClubProfile } from "./ClubsPage";
-import BlogPage, { BlogPost } from "./BlogPage";
+const ClubsPage   = lazy(() => import("./ClubsPage"));                                  // splits ~750 lines of club lore/images out of the main chunk
+const ClubProfile = lazy(() => import("./ClubsPage").then(m => ({ default: m.ClubProfile })));
+const BlogPage    = lazy(() => import("./BlogPage"));                                   // editor-only tab — rarely loaded
+const BlogPost    = lazy(() => import("./BlogPage").then(m => ({ default: m.BlogPost })));
 
 // a11y helper: make a non-button element behave like a button for keyboard +
 // screen-reader users (Enter/Space activate, focusable, announced as a button).
@@ -2255,7 +2257,7 @@ export default function App() {
 
   // Club profile route — shareable like #/club/berghain-panorama-bar
   if (clubSlugState) {
-    return <div className="page"><ClubProfile slug={clubSlugState} /></div>;
+    return <div className="page"><Suspense fallback={<div className="loading">Loading…</div>}><ClubProfile slug={clubSlugState} /></Suspense></div>;
   }
 
   // Journal post route — shareable like #/blog/notes-from-the-floor (editor-only for now)
@@ -2263,7 +2265,7 @@ export default function App() {
     return <div className="page"><ValueReport rankings={rankings} slug={valueSlugState} /></div>;
   }
   if (blogSlugState && editor) {
-    return <div className="page"><BlogPost slug={blogSlugState} /></div>;
+    return <div className="page"><Suspense fallback={<div className="loading">Loading…</div>}><BlogPost slug={blogSlugState} /></Suspense></div>;
   }
 
   return (
@@ -2309,9 +2311,9 @@ export default function App() {
 
       {activeTab === "pro" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ProPage rankings={rankings} /></Suspense>}
       {activeTab === "booking"       && <BookingIntelPage rankings={rankings} />}
-      {activeTab === "clubs"         && <ClubsPage />}
+      {activeTab === "clubs"         && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ClubsPage /></Suspense>}
       {activeTab === "reports"       && <ReportsPage />}
-      {activeTab === "journal"       && editor && <BlogPage />}
+      {activeTab === "journal"       && editor && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><BlogPage /></Suspense>}
       {activeTab === "scouting"      && <ScoutingPage rankings={rankings} />}
       {/* TEMP: hidden until sufficient data
       {activeTab === "breakouts"     && <BreakoutsPage rankings={rankings} breakouts={breakouts} breakoutThreshold={breakoutThreshold} />}
