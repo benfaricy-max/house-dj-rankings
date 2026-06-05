@@ -1290,7 +1290,7 @@ function BookingIntelPage({ rankings }) {
 function DJChartPage() {
   const [chart, setChart] = useState(undefined);
   useEffect(() => {
-    fetch("/tracklists.json").then(r => (r.ok ? r.json() : null)).then(setChart).catch(() => setChart(null));
+    fetch("/tracklists.json", { cache: "no-cache" }).then(r => (r.ok ? r.json() : null)).then(setChart).catch(() => setChart(null));
   }, []);
 
   if (chart === undefined) return <div className="page"><div className="cs-empty">Loading the DJ chart…</div></div>;
@@ -2169,7 +2169,11 @@ export default function App() {
 
   function load() {
     setLoading(true);
-    fetch("/rankings.json")
+    // no-cache = always revalidate against the server's ETag. A returning visitor
+    // gets a cheap 304 when unchanged, but fresh data the moment it updates —
+    // otherwise GitHub Pages can serve a stale rankings.json and newly-added
+    // fields (e.g. Beatport) look "missing".
+    fetch("/rankings.json", { cache: "no-cache" })
       .then(r => { if (!r.ok) throw new Error("Data not available"); return r.json(); })
       .then(data => {
         const list = Array.isArray(data) ? data : (data.rankings ?? []);
