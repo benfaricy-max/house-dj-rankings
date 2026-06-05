@@ -29,10 +29,13 @@
     "tl_chart_best": 2,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 80,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_support_score": 73,
+    "tl_updated": "2026-06-05T08:06:48.171Z",
     "tl_chart_now": null,
-    "tl_chart_recent": true
+    "tl_chart_recent": true,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Chris Lake",
@@ -72,19 +75,22 @@
     "label_best": "Black Book Records",
     "label_tier": 4,
     "label_score": 80,
-    "tl_support_score": 50,
-    "tl_chart_best": 11,
+    "tl_support_score": 61,
+    "tl_chart_best": 5,
     "tl_chart_tracks": 1,
     "tl_chart_titles": [
       "Make You Fight"
     ],
-    "tl_weeks_charted": 4,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_weeks_charted": 5,
+    "tl_updated": "2026-06-05T08:06:48.171Z",
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_chart_now": null,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "John Summit",
@@ -131,8 +137,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.942Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.171Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Fred Again",
@@ -196,7 +207,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.945Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Disclosure",
@@ -243,8 +259,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.938Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.171Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Peggy Gou",
@@ -289,8 +310,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.944Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.172Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Black Coffee",
@@ -336,8 +362,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.943Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.171Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Solomun",
@@ -382,7 +413,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.943Z"
+    "tl_updated": "2026-06-05T08:06:48.172Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Tale Of Us",
@@ -416,7 +452,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Bicep",
@@ -469,7 +510,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Jamie Jones",
@@ -516,8 +562,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.944Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.172Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Amelie Lens",
@@ -551,7 +602,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Charlotte de Witte",
@@ -596,8 +652,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.944Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.172Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Adam Beyer",
@@ -638,19 +699,22 @@
     "label_best": "Drumcode",
     "label_tier": 5,
     "label_score": 100,
-    "tl_support_score": 71,
+    "tl_support_score": 67,
     "tl_chart_best": 3,
     "tl_chart_tracks": 1,
     "tl_chart_titles": [
       "Love Within"
     ],
     "tl_weeks_charted": 6,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_updated": "2026-06-05T08:06:48.171Z",
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_chart_now": 11,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "DJ Koze",
@@ -697,8 +761,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.944Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.173Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Bonobo",
@@ -731,7 +800,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.178Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Mall Grab",
@@ -776,8 +850,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "DJ Harvey",
@@ -810,7 +889,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Gorgon City",
@@ -843,7 +927,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.177Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "The Martinez Brothers",
@@ -875,7 +964,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Hot Since 82",
@@ -920,8 +1014,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.944Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.173Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Seth Troxler",
@@ -954,7 +1053,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.178Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Michael Bibi",
@@ -1001,8 +1105,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.945Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.173Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "ANOTR",
@@ -1047,11 +1156,14 @@
     "tl_chart_best": 2,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 74,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_support_score": 68,
+    "tl_updated": "2026-06-05T08:06:48.171Z",
     "tl_chart_now": null,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Mau P",
@@ -1097,11 +1209,14 @@
     "tl_chart_best": 1,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 70,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_support_score": 64,
+    "tl_updated": "2026-06-05T08:06:48.171Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "SIDEPIECE",
@@ -1140,14 +1255,17 @@
     "label_best": "Experts Only",
     "label_tier": 2,
     "label_score": 40,
-    "tl_weeks_charted": 2,
+    "tl_weeks_charted": 3,
     "tl_chart_best": 11,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 33,
-    "tl_updated": "2026-06-04T14:57:08.006Z",
+    "tl_support_score": 34,
+    "tl_updated": "2026-06-05T08:06:48.179Z",
     "tl_chart_now": null,
-    "tl_chart_recent": false
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Chris Stussy",
@@ -1194,8 +1312,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.944Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.172Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "PAWSA",
@@ -1241,8 +1364,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.944Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.172Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Carlita",
@@ -1276,7 +1404,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "East End Dubs",
@@ -1321,8 +1454,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.945Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Omar+",
@@ -1369,8 +1507,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.945Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Dennis Cruz",
@@ -1415,8 +1558,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.947Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.177Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Cloonee",
@@ -1458,19 +1606,22 @@
     "label_best": "CircoLoco Records",
     "label_tier": 3,
     "label_score": 60,
-    "tl_support_score": 82,
+    "tl_support_score": 76,
     "tl_chart_best": 2,
     "tl_chart_tracks": 1,
     "tl_chart_titles": [
       "Free Your Mind"
     ],
     "tl_weeks_charted": 9,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_updated": "2026-06-05T08:06:48.172Z",
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_chart_now": null,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Josh Baker",
@@ -1524,8 +1675,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.943Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.171Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Franky Rizardo",
@@ -1569,11 +1725,14 @@
     "tl_chart_best": 4,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 61,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_support_score": 57,
+    "tl_updated": "2026-06-05T08:06:48.172Z",
     "tl_chart_now": null,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Ben Sterling",
@@ -1626,8 +1785,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Disco Lines",
@@ -1659,7 +1823,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.947Z"
+    "tl_updated": "2026-06-05T08:06:48.177Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Chris Lorenzo",
@@ -1703,19 +1872,22 @@
     "label_best": "Black Book Records",
     "label_tier": 4,
     "label_score": 80,
-    "tl_support_score": 52,
+    "tl_support_score": 50,
     "tl_chart_best": 8,
     "tl_chart_tracks": 1,
     "tl_chart_titles": [
       "HOTS 4 U"
     ],
     "tl_weeks_charted": 3,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_updated": "2026-06-05T08:06:48.172Z",
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_chart_now": 9,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "KETTAMA",
@@ -1760,8 +1932,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.944Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.173Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Ranger Trucco",
@@ -1813,8 +1990,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Beltran",
@@ -1859,8 +2041,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.945Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.173Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Rossi.",
@@ -1906,8 +2093,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Prospa",
@@ -1948,20 +2140,23 @@
     "label_best": "CircoLoco Records",
     "label_tier": 3,
     "label_score": 60,
-    "tl_support_score": 92,
+    "tl_support_score": 88,
     "tl_chart_best": 2,
     "tl_chart_tracks": 2,
     "tl_chart_titles": [
       "Baby",
       "Free Your Mind"
     ],
-    "tl_weeks_charted": 12,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_weeks_charted": 14,
+    "tl_updated": "2026-06-05T08:06:48.171Z",
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_chart_now": 4,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Roddy Lima",
@@ -2008,12 +2203,15 @@
       "Machine"
     ],
     "tl_weeks_charted": 1,
-    "tl_updated": "2026-06-04T14:57:08.006Z",
+    "tl_updated": "2026-06-05T08:06:48.179Z",
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_chart_now": 18,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "AYYBO",
@@ -2060,8 +2258,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.176Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Max Styler",
@@ -2103,15 +2306,18 @@
     "label_best": "Diynamic",
     "label_tier": 5,
     "label_score": 100,
-    "tl_weeks_charted": 13,
+    "tl_weeks_charted": 15,
     "tl_chart_best": 1,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 97,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_support_score": 93,
+    "tl_updated": "2026-06-05T08:06:48.172Z",
     "tl_chart_now": null,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Riordan",
@@ -2157,8 +2363,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Locklead",
@@ -2190,7 +2401,7 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z",
+    "tl_updated": "2026-06-05T08:06:48.181Z",
     "beatport_score": 17,
     "beatport_best_position": 90,
     "beatport_charting_tracks": 1,
@@ -2203,7 +2414,12 @@
     "beatport_updated": "2026-06-04T15:22:19.744Z",
     "label_best": "Up The Stuss",
     "label_tier": 4,
-    "label_score": 80
+    "label_score": 80,
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Obskür",
@@ -2235,7 +2451,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Kolter",
@@ -2285,8 +2506,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.944Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.172Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Murphy's Law",
@@ -2354,8 +2580,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Max Dean",
@@ -2402,8 +2633,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.944Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.173Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Julian Fijma",
@@ -2450,8 +2686,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.947Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.176Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "MALUGI",
@@ -2483,7 +2724,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Silva Bumpa",
@@ -2534,8 +2780,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.947Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.176Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Alisha",
@@ -2599,8 +2850,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Carl Cox",
@@ -2645,8 +2901,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.944Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.172Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Green Velvet",
@@ -2688,19 +2949,22 @@
     "label_best": "Drumcode",
     "label_tier": 5,
     "label_score": 100,
-    "tl_support_score": 74,
+    "tl_support_score": 70,
     "tl_chart_best": 1,
     "tl_chart_tracks": 1,
     "tl_chart_titles": [
       "La La Land"
     ],
     "tl_weeks_charted": 6,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_updated": "2026-06-05T08:06:48.172Z",
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_chart_now": 1,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Dom Dolla",
@@ -2742,19 +3006,22 @@
     "label_best": "Three Six Zero Recordings",
     "label_tier": 2,
     "label_score": 40,
-    "tl_support_score": 56,
+    "tl_support_score": 54,
     "tl_chart_best": 6,
     "tl_chart_tracks": 1,
     "tl_chart_titles": [
       "Don't Worry Baby"
     ],
     "tl_weeks_charted": 3,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_updated": "2026-06-05T08:06:48.172Z",
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_chart_now": 6,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "James Hype",
@@ -2781,14 +3048,17 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "tl_weeks_charted": 4,
+    "tl_weeks_charted": 6,
     "tl_chart_best": 2,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 50,
-    "tl_updated": "2026-06-04T14:57:08.005Z",
+    "tl_support_score": 52,
+    "tl_updated": "2026-06-05T08:06:48.174Z",
     "tl_chart_now": null,
-    "tl_chart_recent": false
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Claude VonStroke",
@@ -2834,8 +3104,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Shiba San",
@@ -2874,7 +3149,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Eli Brown",
@@ -2919,11 +3199,14 @@
     "tl_chart_best": 16,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 19,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_support_score": 18,
+    "tl_updated": "2026-06-05T08:06:48.173Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "HoneyLuv",
@@ -2956,7 +3239,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Biscits",
@@ -2990,7 +3278,7 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z",
+    "tl_updated": "2026-06-05T08:06:48.181Z",
     "beatport_score": 14,
     "beatport_best_position": 94,
     "beatport_charting_tracks": 1,
@@ -3003,7 +3291,12 @@
     "beatport_updated": "2026-06-04T15:22:19.744Z",
     "label_best": "WRONG.",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Patrick Topping",
@@ -3037,7 +3330,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Richy Ahmed",
@@ -3071,7 +3369,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.952Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Hannah Wants",
@@ -3112,7 +3415,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Rebüke",
@@ -3146,7 +3454,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Âme",
@@ -3192,8 +3505,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.943Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.172Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Kerri Chandler",
@@ -3226,7 +3544,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.177Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Louie Vega",
@@ -3258,7 +3581,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Dennis Ferrer",
@@ -3303,8 +3631,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Roger Sanchez",
@@ -3337,7 +3670,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Armand Van Helden",
@@ -3382,11 +3720,14 @@
     "tl_chart_best": 2,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 62,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_support_score": 57,
+    "tl_updated": "2026-06-05T08:06:48.172Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Mark Knight",
@@ -3427,15 +3768,18 @@
     "label_best": "Toolroom",
     "label_tier": 4,
     "label_score": 80,
-    "tl_weeks_charted": 14,
+    "tl_weeks_charted": 15,
     "tl_chart_best": 2,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 93,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_support_score": 86,
+    "tl_updated": "2026-06-05T08:06:48.171Z",
     "tl_chart_now": null,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Loco Dice",
@@ -3468,7 +3812,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.950Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Steve Lawler",
@@ -3503,7 +3852,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Lee Foss",
@@ -3537,7 +3891,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Walker & Royce",
@@ -3570,7 +3929,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Kyle Watson",
@@ -3603,7 +3967,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Wehbba",
@@ -3636,7 +4005,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Paco Osuna",
@@ -3669,7 +4043,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Alan Fitzpatrick",
@@ -3713,8 +4092,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Archie Hamilton",
@@ -3748,7 +4132,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Cristoph",
@@ -3780,10 +4169,13 @@
     "tl_chart_best": 8,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 45,
-    "tl_updated": "2026-06-04T14:57:08.006Z",
+    "tl_support_score": 42,
+    "tl_updated": "2026-06-05T08:06:48.179Z",
     "tl_chart_now": null,
-    "tl_chart_recent": false
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Dense & Pika",
@@ -3816,7 +4208,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Sacha Robotti",
@@ -3849,7 +4246,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "WEISS",
@@ -3883,7 +4285,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Simon Doty",
@@ -3922,7 +4329,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.952Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Gerd Janson",
@@ -3955,7 +4367,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.952Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Roman Flügel",
@@ -4000,8 +4417,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.176Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Booka Shade",
@@ -4046,8 +4468,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "DJ Boring",
@@ -4080,7 +4507,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "BLOND:ISH",
@@ -4122,15 +4554,18 @@
     "label_best": "Maison Arts",
     "label_tier": 2,
     "label_score": 40,
-    "tl_weeks_charted": 2,
+    "tl_weeks_charted": 3,
     "tl_chart_best": 10,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 30,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_support_score": 31,
+    "tl_updated": "2026-06-05T08:06:48.174Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Latmun",
@@ -4163,7 +4598,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Danny Daze",
@@ -4196,7 +4636,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Pleasurekraft",
@@ -4229,7 +4674,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Octave One",
@@ -4263,7 +4713,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Pig&Dan",
@@ -4295,7 +4750,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Jimi Jules",
@@ -4340,8 +4800,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Tim Engelhardt",
@@ -4391,8 +4856,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Colyn",
@@ -4426,7 +4896,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Anyma",
@@ -4466,15 +4941,18 @@
     "label_best": "Atlantic Records UK",
     "label_tier": 2,
     "label_score": 40,
-    "tl_weeks_charted": 6,
-    "tl_chart_best": 2,
+    "tl_weeks_charted": 9,
+    "tl_chart_best": 1,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 68,
-    "tl_updated": "2026-06-04T14:57:08.004Z",
+    "tl_support_score": 73,
+    "tl_updated": "2026-06-05T08:06:48.174Z",
     "tl_chart_now": null,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Enoo Napa",
@@ -4507,7 +4985,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.952Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Pablo Fierro",
@@ -4551,8 +5034,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.947Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.176Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Edu Imbernon",
@@ -4585,7 +5073,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Re.You",
@@ -4617,7 +5110,7 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z",
+    "tl_updated": "2026-06-05T08:06:48.183Z",
     "beatport_score": 11,
     "beatport_best_position": 100,
     "beatport_charting_tracks": 1,
@@ -4630,7 +5123,12 @@
     "beatport_updated": "2026-06-04T15:22:19.744Z",
     "label_best": "Younion",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Justin Martin",
@@ -4664,7 +5162,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "HVOB",
@@ -4698,7 +5201,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Chelina Manuhutu",
@@ -4731,7 +5239,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Skream",
@@ -4765,7 +5278,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "David Morales",
@@ -4798,7 +5316,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Mark Farina",
@@ -4832,7 +5355,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Gene Farris",
@@ -4864,10 +5392,13 @@
     "tl_chart_best": 17,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 17,
-    "tl_updated": "2026-06-04T14:57:08.007Z",
+    "tl_support_score": 16,
+    "tl_updated": "2026-06-05T08:06:48.182Z",
     "tl_chart_now": null,
-    "tl_chart_recent": false
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "DJ T.",
@@ -4900,7 +5431,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Michael Mayer",
@@ -4934,7 +5470,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Gui Boratto",
@@ -4968,7 +5509,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Oxia",
@@ -5002,7 +5548,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Marco Faraone",
@@ -5048,8 +5599,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Objekt",
@@ -5082,7 +5638,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Special Request",
@@ -5115,7 +5676,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.177Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "TSHA",
@@ -5149,7 +5715,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.952Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Tiga",
@@ -5193,19 +5764,22 @@
     "label_best": "Armada Music",
     "label_tier": 4,
     "label_score": 80,
-    "tl_support_score": 94,
+    "tl_support_score": 90,
     "tl_chart_best": 1,
     "tl_chart_tracks": 1,
     "tl_chart_titles": [
       "Don't Worry Baby"
     ],
-    "tl_weeks_charted": 12,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_weeks_charted": 14,
+    "tl_updated": "2026-06-05T08:06:48.171Z",
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_chart_now": 6,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Floating Points",
@@ -5239,7 +5813,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.950Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Mount Kimbie",
@@ -5273,7 +5852,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "HAAi",
@@ -5307,7 +5891,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Floorplan",
@@ -5341,7 +5930,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.945Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Jayda G",
@@ -5375,7 +5969,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Joris Voorn",
@@ -5416,19 +6015,22 @@
     "label_best": "Spectrum (NL)",
     "label_tier": 2,
     "label_score": 40,
-    "tl_support_score": 72,
+    "tl_support_score": 66,
     "tl_chart_best": 6,
     "tl_chart_tracks": 1,
     "tl_chart_titles": [
       "Machine"
     ],
     "tl_weeks_charted": 8,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_updated": "2026-06-05T08:06:48.172Z",
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_chart_now": 18,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Victor Calderone",
@@ -5462,7 +6064,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Laurent Garnier",
@@ -5495,7 +6102,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.947Z"
+    "tl_updated": "2026-06-05T08:06:48.176Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Levon Vincent",
@@ -5528,7 +6140,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Hunee",
@@ -5561,7 +6178,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Helena Hauff",
@@ -5595,7 +6217,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Sven Väth",
@@ -5628,7 +6255,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Richie Hawtin",
@@ -5661,7 +6293,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.178Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Joseph Capriati",
@@ -5695,7 +6332,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Sam Paganini",
@@ -5735,7 +6377,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Maceo Plex",
@@ -5769,7 +6416,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Mind Against",
@@ -5815,8 +6467,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "WhoMadeWho",
@@ -5856,7 +6513,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.950Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Stephan Bodzin",
@@ -5890,7 +6552,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Trentemøller",
@@ -5922,7 +6589,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Monolink",
@@ -5968,7 +6640,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.948Z"
+    "tl_updated": "2026-06-05T08:06:48.177Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Massano",
@@ -6013,8 +6690,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.944Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Yotto",
@@ -6057,15 +6739,18 @@
     "label_best": "Afterlife Records",
     "label_tier": 5,
     "label_score": 100,
-    "tl_weeks_charted": 5,
+    "tl_weeks_charted": 9,
     "tl_chart_best": 1,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 55,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_support_score": 62,
+    "tl_updated": "2026-06-05T08:06:48.172Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Ben Böhmer",
@@ -6099,7 +6784,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Nora En Pure",
@@ -6144,8 +6834,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.947Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.176Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Adriatique",
@@ -6186,15 +6881,18 @@
     "label_best": "Rose Avenue/Reprise",
     "label_tier": 2,
     "label_score": 40,
-    "tl_weeks_charted": 7,
+    "tl_weeks_charted": 9,
     "tl_chart_best": 7,
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 62,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_updated": "2026-06-05T08:06:48.172Z",
     "tl_chart_now": null,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Kollektiv Turmstrasse",
@@ -6227,7 +6925,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Huxley",
@@ -6261,7 +6964,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Maya Jane Coles",
@@ -6295,7 +7003,7 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z",
+    "tl_updated": "2026-06-05T08:06:48.180Z",
     "beatport_score": 16,
     "beatport_best_position": 91,
     "beatport_charting_tracks": 1,
@@ -6308,7 +7016,12 @@
     "beatport_updated": "2026-06-04T15:22:19.744Z",
     "label_best": "I/AM/ME (back catalogue)",
     "label_tier": 2,
-    "label_score": 40
+    "label_score": 40,
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "John Talabot",
@@ -6342,7 +7055,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Secondcity",
@@ -6376,7 +7094,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Surgeon",
@@ -6409,7 +7132,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Blawan",
@@ -6443,7 +7171,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "DJ Rush",
@@ -6488,8 +7221,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.178Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Dax J",
@@ -6522,7 +7260,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Luigi Madonna",
@@ -6555,7 +7298,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Mathame",
@@ -6594,10 +7342,13 @@
     "tl_chart_best": 19,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 14,
-    "tl_updated": "2026-06-04T14:57:08.006Z",
+    "tl_support_score": 13,
+    "tl_updated": "2026-06-05T08:06:48.180Z",
     "tl_chart_now": null,
-    "tl_chart_recent": false
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Innellea",
@@ -6630,7 +7381,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.952Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Agents Of Time",
@@ -6674,10 +7430,13 @@
     "tl_chart_best": 11,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 36,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_support_score": 34,
+    "tl_updated": "2026-06-05T08:06:48.174Z",
     "tl_chart_now": null,
-    "tl_chart_recent": false
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Tiefschwarz",
@@ -6711,7 +7470,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Recondite",
@@ -6745,7 +7509,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "DJ Tennis",
@@ -6779,7 +7548,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Dario D'Attis",
@@ -6812,7 +7586,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Henry Saiz",
@@ -6846,7 +7625,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Pional",
@@ -6880,7 +7664,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Ryan Crosson",
@@ -6913,7 +7702,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Woo York",
@@ -6946,7 +7740,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Burnski",
@@ -6979,7 +7778,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Alinka",
@@ -7012,7 +7816,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.952Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Answer Code Request",
@@ -7045,7 +7854,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "DJ Stingray 313",
@@ -7077,7 +7891,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Pangaea",
@@ -7111,7 +7930,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Andre Crom",
@@ -7144,7 +7968,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Angelo Ferreri",
@@ -7177,7 +8006,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Kastis Torrau",
@@ -7210,7 +8044,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Robert Babicz",
@@ -7256,8 +8095,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.177Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Trikk",
@@ -7303,7 +8147,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Tornado Wallace",
@@ -7336,7 +8185,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Spektre",
@@ -7369,7 +8223,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Jay Lumen",
@@ -7416,8 +8275,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Pearson Sound",
@@ -7451,7 +8315,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.952Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Palms Trax",
@@ -7484,7 +8353,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Lauer",
@@ -7518,7 +8392,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Simian Mobile Disco",
@@ -7552,7 +8431,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Actress",
@@ -7585,7 +8469,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.947Z"
+    "tl_updated": "2026-06-05T08:06:48.176Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "DJ Holographic",
@@ -7619,7 +8508,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "David Mayer",
@@ -7653,7 +8547,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Lee Curtiss",
@@ -7686,7 +8585,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Wolf + Lamb",
@@ -7719,7 +8623,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Nick Curly",
@@ -7771,8 +8680,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.944Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.173Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Sascha Dive",
@@ -7805,7 +8719,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Hector Romero",
@@ -7839,7 +8758,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Mathew Jonson",
@@ -7872,7 +8796,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Christian Burkhardt",
@@ -7905,7 +8834,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Inigo Kennedy",
@@ -7938,7 +8872,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Marshall Jefferson",
@@ -7985,8 +8924,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.175Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "GW Harrison",
@@ -8019,7 +8963,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "AMÉMÉ",
@@ -8063,8 +9012,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Nicholas Van Orton",
@@ -8097,7 +9051,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Alec Araujo",
@@ -8130,7 +9089,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Leo Lukas",
@@ -8162,7 +9126,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Nino Bua",
@@ -8194,7 +9163,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Bas Ibellini",
@@ -8226,7 +9200,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.954Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Ricardo Villalobos",
@@ -8259,7 +9238,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "MK",
@@ -8298,7 +9282,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.944Z"
+    "tl_updated": "2026-06-05T08:06:48.173Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Sasha",
@@ -8343,8 +9332,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.944Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.172Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "John Digweed",
@@ -8377,7 +9371,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Eric Prydz",
@@ -8424,8 +9423,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.945Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Midland",
@@ -8471,8 +9475,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.944Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Mano Le Tough",
@@ -8516,8 +9525,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.947Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.176Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Job Jobse",
@@ -8549,7 +9563,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "San Soda",
@@ -8582,7 +9601,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Move D",
@@ -8615,7 +9639,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Axel Boman",
@@ -8649,7 +9678,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Guy Gerber",
@@ -8694,7 +9728,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Todd Terry",
@@ -8727,7 +9766,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Danny Tenaglia",
@@ -8761,7 +9805,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.950Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "DJ Sneak",
@@ -8795,7 +9844,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Kevin Saunderson",
@@ -8829,7 +9883,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Frankie Knuckles",
@@ -8862,7 +9921,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Larry Heard",
@@ -8896,7 +9960,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Deborah De Luca",
@@ -8929,7 +9998,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Andrea Oliva",
@@ -8980,8 +10054,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Alan Dixon",
@@ -9015,7 +10094,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Harvey McKay",
@@ -9048,7 +10132,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Mr. G",
@@ -9081,7 +10170,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Call Super",
@@ -9115,7 +10209,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Themba",
@@ -9149,7 +10248,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.950Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Culoe De Song",
@@ -9183,7 +10287,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Luciano",
@@ -9216,7 +10325,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Dimitri From Paris",
@@ -9250,7 +10364,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Bob Sinclar",
@@ -9296,8 +10415,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.944Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.173Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Duke Dumont",
@@ -9331,7 +10455,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Route 94",
@@ -9379,8 +10508,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Maxxi Soundsystem",
@@ -9413,7 +10547,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "DJ Pierre",
@@ -9447,7 +10586,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Stacey Pullen",
@@ -9481,7 +10625,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Kenny Larkin",
@@ -9515,7 +10664,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Maya",
@@ -9549,7 +10703,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.952Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Slam",
@@ -9595,8 +10754,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.945Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Steve Bug",
@@ -9641,7 +10805,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.950Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Akufen",
@@ -9675,7 +10844,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Miss Kittin",
@@ -9709,7 +10883,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "The Hacker",
@@ -9743,7 +10922,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.948Z"
+    "tl_updated": "2026-06-05T08:06:48.177Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Joeski",
@@ -9788,7 +10972,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Deetron",
@@ -9821,7 +11010,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.952Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Marika Rossa",
@@ -9854,7 +11048,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "SPFDJ",
@@ -9887,7 +11086,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Rebekah",
@@ -9921,7 +11125,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Alignment",
@@ -9954,7 +11163,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Len Faki",
@@ -9999,8 +11213,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.176Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Truncate",
@@ -10034,7 +11253,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.178Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Planetary Assault Systems",
@@ -10078,8 +11302,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Regis",
@@ -10113,7 +11342,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Phase Fatale",
@@ -10146,7 +11380,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Hugel",
@@ -10188,15 +11427,18 @@
       "band": "C",
       "basis": "estimate"
     },
-    "tl_weeks_charted": 3,
-    "tl_chart_best": 20,
+    "tl_weeks_charted": 5,
+    "tl_chart_best": 9,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 15,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_support_score": 38,
+    "tl_updated": "2026-06-05T08:06:48.171Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Adam Ten",
@@ -10245,10 +11487,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 17,
-    "tl_updated": "2026-06-04T14:57:08.004Z",
+    "tl_updated": "2026-06-05T08:06:48.176Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Sidney Charles",
@@ -10289,8 +11534,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Brunello",
@@ -10332,8 +11582,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.952Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Rafael",
@@ -10375,8 +11630,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Gorge",
@@ -10425,8 +11685,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.177Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Ilias Katelanos",
@@ -10474,8 +11739,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "LUCH",
@@ -10517,8 +11787,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Adam Port",
@@ -10560,8 +11835,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.944Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.173Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Keinemusik",
@@ -10601,8 +11881,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "OMRI.",
@@ -10647,8 +11932,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Bonafique",
@@ -10696,8 +11986,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Volkoder",
@@ -10733,19 +12028,22 @@
       "basis": "estimate"
     },
     "youtube_channel_id": "UCy-BYDYjiNq6R17e-JHyBzw",
-    "tl_support_score": 52,
+    "tl_support_score": 50,
     "tl_chart_best": 8,
     "tl_chart_tracks": 1,
     "tl_chart_titles": [
       "Hands Up"
     ],
     "tl_weeks_charted": 3,
-    "tl_updated": "2026-06-04T14:57:08.006Z",
+    "tl_updated": "2026-06-05T08:06:48.179Z",
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_chart_now": 8,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Josh Gigante",
@@ -10781,19 +12079,22 @@
       "basis": "estimate"
     },
     "youtube_channel_id": "UCVgvEDdwOmLvZO5kvg1S80Q",
-    "tl_support_score": 69,
+    "tl_support_score": 68,
     "tl_chart_best": 2,
     "tl_chart_tracks": 1,
     "tl_chart_titles": [
       "So Good"
     ],
-    "tl_weeks_charted": 5,
-    "tl_updated": "2026-06-04T14:57:08.006Z",
+    "tl_weeks_charted": 6,
+    "tl_updated": "2026-06-05T08:06:48.180Z",
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_chart_now": 2,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Gai Barone",
@@ -10844,8 +12145,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "HotLap",
@@ -10895,8 +12201,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.947Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.177Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "GEØVHÄN",
@@ -10941,8 +12252,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "CamelPhat",
@@ -10978,19 +12294,22 @@
       "band": "C",
       "basis": "estimate"
     },
-    "tl_support_score": 76,
+    "tl_support_score": 73,
     "tl_chart_best": 2,
     "tl_chart_tracks": 1,
     "tl_chart_titles": [
       "So Good"
     ],
-    "tl_weeks_charted": 7,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_weeks_charted": 8,
+    "tl_updated": "2026-06-05T08:06:48.173Z",
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_chart_now": 2,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "&ME",
@@ -11031,8 +12350,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.178Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Jacob Matthews",
@@ -11070,8 +12394,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Kamilo Sanclemente",
@@ -11117,8 +12446,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Meduza",
@@ -11156,19 +12490,22 @@
       "basis": "estimate"
     },
     "youtube_channel_id": "UC65kzmQBQ-hdEIS5THSOUtA",
-    "tl_support_score": 87,
+    "tl_support_score": 83,
     "tl_chart_best": 1,
     "tl_chart_tracks": 1,
     "tl_chart_titles": [
       "La La Land"
     ],
-    "tl_weeks_charted": 10,
-    "tl_updated": "2026-06-04T14:57:08.003Z",
+    "tl_weeks_charted": 11,
+    "tl_updated": "2026-06-05T08:06:48.172Z",
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_chart_now": 1,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Vintage Culture",
@@ -11217,13 +12554,16 @@
     "tl_chart_titles": [
       "Hands Up"
     ],
-    "tl_weeks_charted": 14,
-    "tl_updated": "2026-06-04T14:57:08.004Z",
+    "tl_weeks_charted": 18,
+    "tl_updated": "2026-06-05T08:06:48.174Z",
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_chart_now": 8,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Hardt Antoine",
@@ -11270,8 +12610,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.947Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.177Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Rampa",
@@ -11312,8 +12657,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.948Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.177Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Boss Priester",
@@ -11355,8 +12705,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Plecta",
@@ -11403,8 +12758,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Ultra Nate",
@@ -11440,15 +12800,18 @@
       "band": "E",
       "basis": "estimate"
     },
-    "tl_weeks_charted": 1,
-    "tl_chart_best": 20,
+    "tl_weeks_charted": 2,
+    "tl_chart_best": 9,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 9,
-    "tl_updated": "2026-06-04T14:57:08.006Z",
+    "tl_support_score": 30,
+    "tl_updated": "2026-06-05T08:06:48.181Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Franc Fala",
@@ -11489,8 +12852,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.177Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "RÜFÜS DU SOL",
@@ -11533,8 +12901,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Township Rebellion",
@@ -11581,8 +12954,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.946Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.174Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Cam Stockman",
@@ -11622,8 +13000,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.179Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Antdot",
@@ -11663,8 +13046,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Jordan Brando",
@@ -11704,8 +13092,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.950Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Jitwam",
@@ -11742,11 +13135,14 @@
     "tl_chart_best": 8,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 41,
-    "tl_updated": "2026-06-04T14:57:08.007Z",
+    "tl_support_score": 39,
+    "tl_updated": "2026-06-05T08:06:48.182Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "GUDFELLA",
@@ -11783,11 +13179,14 @@
     "tl_chart_best": 8,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 41,
-    "tl_updated": "2026-06-04T14:57:08.007Z",
+    "tl_support_score": 39,
+    "tl_updated": "2026-06-05T08:06:48.182Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Mason Collective",
@@ -11834,8 +13233,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.947Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.176Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "RSquared",
@@ -11884,8 +13288,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.177Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Yuvèe",
@@ -11931,8 +13340,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.952Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Mochakk",
@@ -11974,8 +13388,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.949Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.178Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Sonny Fodera",
@@ -12003,10 +13422,13 @@
     "tl_chart_best": 15,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 18,
-    "tl_updated": "2026-06-04T14:57:08.006Z",
+    "tl_support_score": 17,
+    "tl_updated": "2026-06-05T08:06:48.179Z",
     "tl_chart_now": null,
-    "tl_chart_recent": false
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Layton Giordani",
@@ -12046,11 +13468,14 @@
     "tl_chart_best": 1,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 63,
-    "tl_updated": "2026-06-04T14:57:08.006Z",
+    "tl_support_score": 59,
+    "tl_updated": "2026-06-05T08:06:48.174Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "I Hate Models",
@@ -12078,7 +13503,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Ben UFO",
@@ -12106,7 +13536,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Groove Armada",
@@ -12134,7 +13569,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "999999999",
@@ -12161,7 +13601,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "VTSS",
@@ -12188,7 +13633,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.182Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Marlon Hoffstadt",
@@ -12216,7 +13666,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "KAS:ST",
@@ -12243,7 +13698,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Torren Foot",
@@ -12271,7 +13731,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.954Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "salute",
@@ -12299,7 +13764,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Jay de Lys",
@@ -12340,8 +13810,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Sam Alfred",
@@ -12374,7 +13849,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Arodes",
@@ -12420,8 +13900,13 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.947Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.176Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "MPH",
@@ -12448,7 +13933,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.954Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Son of Son",
@@ -12486,11 +13976,14 @@
     "tl_chart_best": 19,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 14,
-    "tl_updated": "2026-06-04T14:57:08.007Z",
+    "tl_support_score": 13,
+    "tl_updated": "2026-06-05T08:06:48.182Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Chasewest",
@@ -12523,7 +14016,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.953Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Genesi",
@@ -12546,18 +14044,21 @@
       "basis": "estimate"
     },
     "wikipedia_title": "Genesi",
-    "tl_support_score": 84,
+    "tl_support_score": 78,
     "tl_chart_best": 1,
     "tl_chart_tracks": 1,
     "tl_chart_titles": [
       "La La Land"
     ],
     "tl_weeks_charted": 9,
-    "tl_updated": "2026-06-04T14:57:08.007Z",
+    "tl_updated": "2026-06-05T08:06:48.183Z",
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_chart_now": 1,
-    "tl_chart_recent": true
+    "tl_chart_recent": true,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Greg 99",
@@ -12590,7 +14091,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.954Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Jamback",
@@ -12626,15 +14132,18 @@
       "band": "D",
       "basis": "estimate"
     },
-    "tl_weeks_charted": 4,
-    "tl_chart_best": 11,
+    "tl_weeks_charted": 7,
+    "tl_chart_best": 6,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 34,
-    "tl_updated": "2026-06-04T14:57:08.004Z",
+    "tl_support_score": 48,
+    "tl_updated": "2026-06-05T08:06:48.174Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Marco Strous",
@@ -12661,7 +14170,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.954Z"
+    "tl_updated": "2026-06-05T08:06:48.183Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Dean Turnley",
@@ -12700,11 +14214,14 @@
     "tl_chart_best": 13,
     "tl_plays": 0,
     "tl_djs": 0,
-    "tl_support_score": 45,
-    "tl_updated": "2026-06-04T14:57:08.007Z",
+    "tl_support_score": 42,
+    "tl_updated": "2026-06-05T08:06:48.182Z",
     "tl_chart_now": null,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "Notion",
@@ -12733,7 +14250,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z"
+    "tl_updated": "2026-06-05T08:06:48.181Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   },
   {
     "name": "oskar med k",
@@ -12774,7 +14296,12 @@
     "tl_plays": 0,
     "tl_djs": 0,
     "tl_support_score": 0,
-    "tl_updated": "2026-06-04T14:49:54.951Z",
-    "beatport_updated": "2026-06-04T15:22:19.744Z"
+    "tl_updated": "2026-06-05T08:06:48.180Z",
+    "beatport_updated": "2026-06-04T15:22:19.744Z",
+    "tl_chart_now": null,
+    "tl_chart_recent": false,
+    "tl_setplays_recent": 0,
+    "tl_setplays_total": 0,
+    "tl_set_recent": false
   }
 ]
