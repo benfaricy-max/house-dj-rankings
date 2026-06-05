@@ -85,7 +85,12 @@ async function setCrawl(inRoster) {
       cursor = page.nextCursor;
       await delay(120);
     }
-  } catch (e) { if (e instanceof Blocked) blocked = true; /* else: feed seed failed → nothing new to crawl */ }
+  } catch (e) {
+    if (e instanceof Blocked) blocked = true;
+    // Non-block feed failure (transient/timeout): no new sets this run, but the
+    // chart data still applies. Log it so an unattended nightly run isn't opaque.
+    else console.log(`1001TL set-crawl: feed seed failed (${e.code || e.message}) — no new sets this run; chart data still applied.`);
+  }
 
   // 2) Crawl each NEW set's tracklist; record roster plays. Mark every fetched id
   //    crawled (even empty/404) so we never re-spend on it. Back off on 503.
