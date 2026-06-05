@@ -1,6 +1,6 @@
-import { useEffect, useState, useMemo, useRef } from "react";
+import { useEffect, useState, useMemo, useRef, lazy, Suspense } from "react";
 import "./App.css";
-import ProPage from "./ProPage";
+const ProPage = lazy(() => import("./ProPage"));   // code-split: the ~750-line tab loads in its own chunk
 import ArtistProfile, { slugify, ArtistLink } from "./ArtistProfile";
 import { ValueGapPage, ValueReport, valueSlug } from "./ValueGap";
 import ClubsPage, { ClubProfile } from "./ClubsPage";
@@ -2307,7 +2307,7 @@ export default function App() {
         </div>
       </header>
 
-      {activeTab === "pro" && <ProPage rankings={rankings} />}
+      {activeTab === "pro" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ProPage rankings={rankings} /></Suspense>}
       {activeTab === "booking"       && <BookingIntelPage rankings={rankings} />}
       {activeTab === "clubs"         && <ClubsPage />}
       {activeTab === "reports"       && <ReportsPage />}
