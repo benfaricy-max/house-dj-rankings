@@ -164,7 +164,11 @@ async function main() {
     const ml = dj.spotify_monthly_listeners || 0;
     if (ml > 0) lh.push({ d: today, l: ml });
     dj.listeners_history = lh.slice(-90);
-    if (lh.length >= 2 && dj.listener_growth_source !== "kworb") {
+    // Intercept-sourced listeners (../intercept pipeline) are reliable enough to
+    // trust history-based growth even over a stale kworb flag — they drive both
+    // the number and its growth. Otherwise keep a fresh kworb value if present.
+    const interceptSourced = dj.listener_source === "intercept";
+    if (lh.length >= 2 && (interceptSourced || dj.listener_growth_source !== "kworb")) {
       // Compute weekly growth from history (≥2 snapshots available).
       const cur = lh[lh.length - 1].l;
       const target = Date.now() - 7 * 864e5;
