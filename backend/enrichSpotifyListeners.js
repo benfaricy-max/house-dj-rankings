@@ -24,6 +24,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { acquireLock } = require("./scriptLock");
 
 const RANKINGS = path.join(__dirname, "..", "frontend", "public", "rankings.json");
 const API = process.env.INTERCEPT_API ?? "http://localhost:3001";
@@ -52,6 +53,7 @@ async function fetchArtist(id) {
     process.exit(1);
   }
 
+  acquireLock("rankings-write");   // refuse to run if another data writer is active (prevents racing writes)
   const data = JSON.parse(fs.readFileSync(RANKINGS, "utf8"));
   const today = new Date().toISOString().slice(0, 10);
   const eligible = data.rankings.filter((a) => /^[A-Za-z0-9]{22}$/.test(a.spotify_id || ""));

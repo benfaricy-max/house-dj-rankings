@@ -30,6 +30,7 @@
 const fs = require("fs");
 const path = require("path");
 const axios = require("axios");
+const { acquireLock } = require("./scriptLock");
 
 const RANKINGS = path.join(__dirname, "..", "frontend", "public", "rankings.json");
 const ARTISTS  = path.join(__dirname, "artists.json");
@@ -155,6 +156,7 @@ async function main() {
     console.log(`1001Tracklists API reachable but IP soft-blocked — proceeding with back-off; existing data preserved.`);
   }
 
+  acquireLock("rankings-write");   // refuse to run if another data writer is active (prevents racing writes)
   const data = JSON.parse(fs.readFileSync(RANKINGS, "utf8"));
   const artists = JSON.parse(fs.readFileSync(ARTISTS, "utf8"));
   const rosterByNorm = {};
