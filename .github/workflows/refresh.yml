@@ -74,10 +74,11 @@ jobs:
         env:
           TL_API_BASE: ${{ vars.TL_API_BASE }}
 
-      - name: Label & Release Trajectory (uses Beatport labels)
-        run: node enrichLabels.js
+      - name: Label & Release Trajectory (full Beatport artist-page release history)
+        run: node enrichArtistLabels.js
         working-directory: backend
-        continue-on-error: true
+        timeout-minutes: 25       # ~327 artists × 1-2 plain-HTTP requests; resumable (caches beatport_artist_id)
+        continue-on-error: true   # never block the refresh on label sourcing
 
       - name: Tour density signal (Songkick)
         run: node enrichTour.js
