@@ -182,7 +182,8 @@
 
 /* ── Top nav tabs ────────────────────────────────────────────────── */
 .top-tabs {
-  display: inline-flex; gap: 4px; margin-top: 20px;
+  display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 4px; margin-top: 20px;
+  max-width: 100%;
   background: var(--card); border: 1px solid var(--border);
   border-radius: 10px; padding: 4px;
 }
@@ -1009,3 +1010,9 @@ details[open] .hiw-faq-q::after { content: "–"; }
 .dj-badge--soft { background: var(--accent-bg); color: var(--accent); }
 .dj-board-spacer { width: 1px; }
 @media (max-width: 640px) { .dj-board-row { grid-template-columns: 24px 1fr auto; } .dj-board-bar, .dj-board-meta { display: none; } }
+
+/* ── Mobile: keep the page within the viewport (no horizontal scroll) ── */
+@media (max-width: 640px) {
+  .page { padding: 28px 14px 90px; }
+  .top-tab { padding: 7px 13px; font-size: 12px; }
+}
