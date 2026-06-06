@@ -187,6 +187,7 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
   const stats = [
     { label: "Overall Score", value: dj.score ?? "—" },
     { label: "Spotify Listeners", value: fmt(dj.spotify_monthly_listeners) },
+    { label: "Spotify World Rank", value: Number.isFinite(dj.spotify_world_rank) && dj.spotify_world_rank > 0 ? `#${dj.spotify_world_rank.toLocaleString()}` : "—" },
     { label: "Beatport Score", value: dj.beatport_score ? `${dj.beatport_score}/100` : "—" },
     { label: "RA Score", value: dj.ra_score ? `${dj.ra_score}/100` : "—" },
     { label: "TikTok Posts", value: fmt(dj.tiktok_post_count) },
