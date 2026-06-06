@@ -53,8 +53,16 @@ async function fetchArtist(id) {
   }
 
   const data = JSON.parse(fs.readFileSync(RANKINGS, "utf8"));
-  const artists = data.rankings.filter((a) => /^[A-Za-z0-9]{22}$/.test(a.spotify_id || ""));
+  const today = new Date().toISOString().slice(0, 10);
+  const eligible = data.rankings.filter((a) => /^[A-Za-z0-9]{22}$/.test(a.spotify_id || ""));
+  // Resumable: skip artists already refreshed from intercept today (set FORCE=1 to
+  // re-pull everyone). Lets a crashed run be re-run cheaply for just the remainder.
+  const force = process.env.FORCE === "1";
+  const artists = force
+    ? eligible
+    : eligible.filter((a) => !(a.listener_source === "intercept" && a.listener_intercept_at === today));
   const targets = artists.slice(0, LIMIT === Infinity ? artists.length : LIMIT);
+  console.log(`${targets.length} to fetch (${eligible.length - artists.length} already fresh today).`);
 
   let ok = 0;
   let kept = 0;
@@ -67,6 +75,7 @@ async function fetchArtist(id) {
       if (o.monthlyListeners > 0) {
         a.spotify_monthly_listeners = o.monthlyListeners;
         a.listener_source = "intercept";
+        a.listener_intercept_at = today; // resume marker
         ok++;
       } else {
         kept++;
