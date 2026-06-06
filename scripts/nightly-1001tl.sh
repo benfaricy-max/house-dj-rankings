@@ -124,8 +124,17 @@ Automated DJ-support data (weekly chart backfill + set-crawl). Files: $CHANGED
 Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>" \
   && log "committed: $CHANGED"
 
-# Rebase past the daily refresh (autostash protects any other WIP), then push.
+# Rebase past the daily refresh. --autostash temporarily shelves any live WIP;
+# if upstream conflicts with that WIP the autostash can fail to reapply and get
+# ORPHANED in the stash list. Detect that and shout, so unattended runs never
+# silently strand the user's uncommitted work.
+STASH_BEFORE=$(git stash list | wc -l | tr -d ' ')
 if git pull --rebase --autostash origin main >>"$LOG" 2>&1; then
+  STASH_AFTER=$(git stash list | wc -l | tr -d ' ')
+  if [ "$STASH_AFTER" -gt "$STASH_BEFORE" ]; then
+    log "WARNING: autostash left an orphaned stash (uncommitted WIP could not be reapplied)."
+    log "WARNING: recover it manually with:  git stash list  &&  git stash apply stash@{0}"
+  fi
   if git push origin main >>"$LOG" 2>&1; then
     log "pushed to origin/main. Done."
   else
