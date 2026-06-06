@@ -117,10 +117,11 @@ How It Works (SCENE_RUBRIC in App.jsx): Boiler Room/HÖR +20, Berghain/fabric/DC
 residency +10, Essential Mix +10. Explicit criteria = credible + hard to game.
 
 ## Composite weights (score.js, sum=1.00)
-listeners .15, scene .11→.12, beatport .10, ra .10, trends .09, growth .08,
-yt_subs .08, tiktok .06, beatport_hype .05, tl_support (1001TL DJ-support) .05,
-label .05, releases .05, wikipedia .02. RETIRED (0): track_pop (Spotify-blocked),
-yt_views_weekly (delta metric, 0% coverage — dropped & reallocated).
+listeners .15, beatport .13, scene .12, ra .12, trends .09, growth .08,
+yt_subs .08, tiktok .06, tl_support (1001TL DJ-support) .05, label .05,
+releases .05, wikipedia .02. RETIRED (0): track_pop (Spotify-blocked),
+yt_views_weekly (delta metric, 0% coverage), beatport_hype (one Beatport metric
+in primary rankings — Hype still collected for emerging views, not in composite).
 Self-healing: empty-field signals redistribute their weight per-artist over the
 signals present. Rebalanced toward the reliable high-coverage / booker-trusted
 core (listeners, scene, RA); listener growth reduced from .13 (volatile + thin
