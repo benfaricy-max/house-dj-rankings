@@ -37,6 +37,16 @@ try {
 } catch {}
 const keep = (next, prev) => (next && next > 0) ? next : (prev || 0);
 
+// Sanity-gate weekly listener growth. A jump computed across a measurement-basis
+// change (old scrape value → fresh Interceptor value) or off a tiny denominator
+// produces fabricated spikes (e.g. Blawan 54,866→530,781 = +867%). For a "data,
+// not hype" product, publish NOTHING rather than a glitch: return null so it
+// self-heals in the composite and shows "—" in the UI. Real weekly listener moves
+// almost never exceed ±60%; bases under 1k blow up the percentage.
+const GROWTH_CAP = 60, GROWTH_BASE_MIN = 1000;
+const sanitizeGrowth = (pct, base) =>
+  (Number.isFinite(pct) && Math.abs(pct) <= GROWTH_CAP && base >= GROWTH_BASE_MIN) ? pct : null;
+
 const delay = ms => new Promise(r => setTimeout(r, ms));
 
 // Hard per-fetch timeout. A single stalled socket (no response, never rejects)
@@ -103,12 +113,15 @@ async function main() {
         tiktok_post_count:    artist.tiktok_tag ? keep(tiktok.tiktok_post_count, prev.tiktok_post_count) : 0,
         youtube_subscribers:  keep(youtube.youtube_subscribers, prev.youtube_subscribers),
         youtube_total_views:  keep(youtube.youtube_total_views, prev.youtube_total_views),
+        // Freshness stamp: refresh only when THIS run fetched a real value (else keep prev).
+        youtube_updated:      youtube.youtube_subscribers > 0 ? new Date().toISOString() : (prev.youtube_updated ?? null),
         youtube_views_weekly: keep(youtube_views_weekly, prev.youtube_views_weekly),
         mixcloud_followers:        keep(mixcloud.mixcloud_followers, prev.mixcloud_followers),
         mixcloud_play_count_total: keep(mixcloud.mixcloud_play_count_total, prev.mixcloud_play_count_total),
         spotify_playlist_placements: artist.album_count ?? 0,
         google_trends_score:     keep(trends.score, prev.google_trends_score),
         google_trends_direction: trends.score > 0 ? trends.direction : (prev.google_trends_direction ?? "stable"),
+        google_trends_updated:   trends.score > 0 ? new Date().toISOString() : (prev.google_trends_updated ?? null),
         google_trends_countries: (trends.top_countries && Object.keys(trends.top_countries).length) ? trends.top_countries : (prev.google_trends_countries ?? {}),
         // google_trends_cities retired (all-zeros / noise) — see ra_recent_cities for real city demand.
         spotify_monthly_listeners: keep(spotifyCache.spotify_monthly_listeners ?? spotifyCache.spotify_followers, prev.spotify_monthly_listeners),
@@ -175,8 +188,10 @@ async function main() {
       let base = lh[0];
       for (const p of lh) if (new Date(p.d).getTime() <= target) base = p;
       if (base.l > 0 && cur > 0) {
-        dj.spotify_follower_growth_rate = Math.round((cur - base.l) / base.l * 1000) / 10;
-        dj.listener_growth_source = "history";
+        const raw = Math.round((cur - base.l) / base.l * 1000) / 10;
+        const safe = sanitizeGrowth(raw, base.l);
+        if (safe != null) { dj.spotify_follower_growth_rate = safe; dj.listener_growth_source = "history"; }
+        else { dj.spotify_follower_growth_rate = null; dj.listener_growth_source = null; }   // glitch/basis-change → no number
       }
     } else if (dj.listener_growth_source !== "kworb") {
       // Fallback: fewer than 2 history snapshots — derive growth from kworb's
@@ -184,10 +199,12 @@ async function main() {
       const prevDelta = prevRankings[dj.name]?.listener_daily_delta;
       const prevListeners = prevRankings[dj.name]?.spotify_monthly_listeners || ml;
       if (Number.isFinite(prevDelta) && prevListeners > 0) {
-        const weeklyPct = Math.round((prevDelta / prevListeners) * 7 * 1000) / 10;
-        dj.spotify_follower_growth_rate = weeklyPct;
-        dj.listener_daily_delta = prevDelta;
-        dj.listener_growth_source = "kworb";
+        const weeklyPct = sanitizeGrowth(Math.round((prevDelta / prevListeners) * 7 * 1000) / 10, prevListeners);
+        if (weeklyPct != null) {
+          dj.spotify_follower_growth_rate = weeklyPct;
+          dj.listener_daily_delta = prevDelta;
+          dj.listener_growth_source = "kworb";
+        }
       }
     }
   }
