@@ -116,11 +116,15 @@ How It Works (SCENE_RUBRIC in App.jsx): Boiler Room/HÖR +20, Berghain/fabric/DC
 +20, festival closing +15, respected label +15, RA/Mixmag/DJ Mag cover +10, Ibiza
 residency +10, Essential Mix +10. Explicit criteria = credible + hard to game.
 
-## Composite weights (score.js, sum=1.0)
-growth .13, listeners .13, scene .11, beatport .10, trends .09, ra .08, tiktok .08,
-yt_subs .08, releases .07, yt_views .06, track_pop .04, wikipedia .03. Self-healing:
-empty-field signals redistribute their weight. Listener GROWTH weighted heavily on
-purpose (acceleration > size).
+## Composite weights (score.js, sum=1.00)
+listeners .15, scene .11→.12, beatport .10, ra .10, trends .09, growth .08,
+yt_subs .08, tiktok .06, beatport_hype .05, tl_support (1001TL DJ-support) .05,
+label .05, releases .05, wikipedia .02. RETIRED (0): track_pop (Spotify-blocked),
+yt_views_weekly (delta metric, 0% coverage — dropped & reallocated).
+Self-healing: empty-field signals redistribute their weight per-artist over the
+signals present. Rebalanced toward the reliable high-coverage / booker-trusted
+core (listeners, scene, RA); listener growth reduced from .13 (volatile + thin
+coverage). Keep score.js + the frontend METRICS / METRIC_DETAILS arrays in sync.
 
 ## Key per-artist fields (in artists.json, persisted)
 - `emerging` (bool) — reputation-based; drives "Ones to Watch" (excludes legends).

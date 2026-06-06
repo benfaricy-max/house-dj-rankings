@@ -32,22 +32,27 @@ function scoreArtists(artists) {
     ranges[m] = { min: Math.min(...values), max: Math.max(...values) };
   }
 
+  // Weights sum to 1.00. Rebalanced: dropped youtube_views_weekly (delta metric,
+  // 0% coverage until 2 snapshots exist) and reduced listener growth (volatile +
+  // thin coverage); freed weight went to the reliable high-coverage signals
+  // (listeners, scene, RA — the booker-trusted core). Self-healing still applies:
+  // empty signals' weight redistributes per-artist over the signals they do have.
   const weights = {
-    spotify_follower_growth_rate: 0.13,  // GROWTH weighted heavily — acceleration > size
-    spotify_monthly_listeners:    0.13,
-    manual_scene_score:           0.11,  // editorial scene credibility (transparent rubric — see How It Works)
+    spotify_monthly_listeners:    0.15,  // strongest single proxy for active fanbase (84% coverage)
+    manual_scene_score:           0.12,  // editorial scene credibility (transparent rubric — see How It Works)
     beatport_score:               0.10,  // core scene / chart credibility (established Top-100)
+    ra_score:                     0.10,  // RA live booking demand: venue tier, attending, geo spread
     google_trends_score:          0.09,
-    ra_score:                     0.08,  // RA booking momentum: venue tier, attending, geo spread
+    spotify_follower_growth_rate: 0.08,  // growth still matters (acceleration), but thin coverage — reduced from 0.13
     youtube_subscribers:          0.08,
-    tiktok_post_count:            0.07,
-    youtube_views_weekly:         0.06,  // delta metric — empty until 2 snapshots exist, then auto-included
+    tiktok_post_count:            0.06,
     beatport_hype_score:          0.05,  // EMERGING credibility: Beatport Hype-100 (leading indicator)
     tl_support_score:             0.05,  // DJ SUPPORT: 1001Tracklists weekly chart — what DJs actually play (hardest to game)
     label_score:                  0.05,  // label tier (Drumcode/Kompakt/Defected…) — credibility & trajectory
-    spotify_playlist_placements:  0.05,
-    wikipedia_pageviews:          0.02,  // public interest (replaced Spotify followers)
-    spotify_avg_track_popularity: 0.00,  // RETIRED (Spotify blocks the endpoint) — weight removed; replaced by Beatport Hype
+    spotify_playlist_placements:  0.05,  // catalog depth / release cadence
+    wikipedia_pageviews:          0.02,  // public interest
+    spotify_avg_track_popularity: 0.00,  // RETIRED (Spotify blocks the endpoint)
+    youtube_views_weekly:         0.00,  // REMOVED for now (delta metric, 0% coverage) — weight reallocated
   };
   // Live weights re-normalize below, so the retired track-popularity weight
   // (always empty) is excluded automatically and scores are unaffected.

@@ -57,17 +57,19 @@ const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
 const MEDAL = { 1: "🥇", 2: "🥈", 3: "🥉" };
 
 const METRICS = [
-  { key: "spotify_follower_growth_rate", label: "Listener Growth",    weight: 0.13, format: "pct"      },
-  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",  weight: 0.13, format: "count"    },
-  { key: "manual_scene_score",           label: "Scene Score",        weight: 0.11, format: "score100" },
+  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",  weight: 0.15, format: "count"    },
+  { key: "manual_scene_score",           label: "Scene Score",        weight: 0.12, format: "score100" },
   { key: "beatport_score",               label: "Beatport Chart",     weight: 0.10, format: "score100" },
+  { key: "ra_score",                     label: "RA Booking",         weight: 0.10, format: "score100" },
   { key: "google_trends_score",          label: "Google Trends",      weight: 0.09, format: "score100" },
-  { key: "ra_score",                     label: "RA Booking",         weight: 0.08, format: "score100" },
-  { key: "tiktok_post_count",            label: "TikTok Posts",       weight: 0.08, format: "posts"    },
+  { key: "spotify_follower_growth_rate", label: "Listener Growth",    weight: 0.08, format: "pct"      },
   { key: "youtube_subscribers",          label: "YT Subscribers",     weight: 0.08, format: "count"    },
-  { key: "spotify_playlist_placements",  label: "Releases",           weight: 0.07, format: "number"   },
-  { key: "youtube_views_weekly",         label: "YT Views / wk",      weight: 0.06, format: "count"    },
-  { key: "wikipedia_pageviews",          label: "Wikipedia Views",    weight: 0.03, format: "count"    },
+  { key: "tiktok_post_count",            label: "TikTok Posts",       weight: 0.06, format: "posts"    },
+  { key: "beatport_hype_score",          label: "Beatport Hype",      weight: 0.05, format: "score100" },
+  { key: "tl_support_score",             label: "DJ Support (1001TL)",weight: 0.05, format: "score100" },
+  { key: "label_score",                  label: "Label Trajectory",   weight: 0.05, format: "score100" },
+  { key: "spotify_playlist_placements",  label: "Releases",           weight: 0.05, format: "number"   },
+  { key: "wikipedia_pageviews",          label: "Wikipedia Views",    weight: 0.02, format: "count"    },
 ];
 
 const SORT_OPTIONS = [
@@ -604,18 +606,19 @@ const DATA_SOURCES = [
 ];
 
 const METRIC_DETAILS = [
-  { key: "spotify_follower_growth_rate", label: "Listener Growth",     weight: 0.13, color: "#C8F750", why: "Rate of change in audience — weighted heavily because acceleration predicts demand better than size. Today's growth is tomorrow's headline fee." },
-  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",   weight: 0.13, color: "#1DB954", why: "The strongest single proxy for active fanbase size, scraped directly from Spotify artist pages rather than the rate-limited API." },
-  { key: "manual_scene_score",           label: "Scene Score",         weight: 0.11, color: "#8b5cf6", why: "Editorial credibility for what algorithms miss — Boiler Room, Berghain/fabric bookings, festival closing slots, press covers. Scored against a published, transparent rubric (below)." },
+  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",   weight: 0.15, color: "#1DB954", why: "The strongest single proxy for active fanbase size, read from the live Spotify session." },
+  { key: "manual_scene_score",           label: "Scene Score",         weight: 0.12, color: "#8b5cf6", why: "Editorial credibility for what algorithms miss — Boiler Room, Berghain/fabric bookings, festival closing slots, press covers. Scored against a published, transparent rubric (below)." },
   { key: "beatport_score",               label: "Beatport Chart",      weight: 0.10, color: "#a8e00f", why: "Position across genre Top 100 charts. The DJ retail store, so charting signals credibility with the core scene rather than the mainstream." },
-  { key: "tl_support_score",             label: "DJ Support (1001TL)", weight: 0.05, color: "#00b8d4", why: "Where the artist's tracks land on 1001Tracklists' weekly chart of what DJs are actually PLAYING in their sets. The hardest signal to game — it's the scene's tastemakers spinning your music, not sales or streams." },
+  { key: "ra_score",                     label: "RA Booking",          weight: 0.10, color: "#FF5C00", why: "Resident Advisor live-booking signal: venue-capacity tier, attendance, and geographic spread of recent and upcoming shows. Direct demand from the touring market." },
   { key: "google_trends_score",          label: "Google Trends",       weight: 0.09, color: "#4285F4", why: "Search interest normalized to the artist's own peak. Rising search frequently precedes booking-fee increases." },
-  { key: "ra_score",                     label: "RA Booking",          weight: 0.08, color: "#FF5C00", why: "Resident Advisor booking signal: venue-capacity tier, attendance, and geographic spread of upcoming and recent shows. Direct demand from the touring market." },
-  { key: "tiktok_post_count",            label: "TikTok Posts",        weight: 0.08, color: "#E9E7DF", why: "Posts using the artist's hashtag. Measures grassroots cultural spread, often the earliest breakout indicator." },
+  { key: "spotify_follower_growth_rate", label: "Listener Growth",     weight: 0.08, color: "#C8F750", why: "Rate of change in audience — acceleration often predicts demand before size does. Weighted modestly while its coverage builds." },
   { key: "youtube_subscribers",          label: "YouTube Subscribers", weight: 0.08, color: "#FF0000", why: "A proxy for dedicated fanbase depth. YouTube audiences tend to convert to ticket buyers at a higher rate." },
-  { key: "spotify_playlist_placements",  label: "Releases / Catalog",  weight: 0.07, color: "#1DB954", why: "Depth and recency of catalog. Active release schedules score higher than a single back-catalog hit." },
-  { key: "youtube_views_weekly",         label: "YouTube Views/wk",    weight: 0.06, color: "#FF0000", why: "Weekly view count captures upload cadence and video virality alongside raw subscriber size." },
-  { key: "wikipedia_pageviews",          label: "Wikipedia Views",     weight: 0.03, color: "#9aa0a6", why: "Trailing 30-day article pageviews. A clean, independent measure of broad public interest, with reliable history and no platform bias." },
+  { key: "tiktok_post_count",            label: "TikTok Posts",        weight: 0.06, color: "#E9E7DF", why: "Posts using the artist's hashtag. Measures grassroots cultural spread, often an early breakout indicator." },
+  { key: "beatport_hype_score",          label: "Beatport Hype",       weight: 0.05, color: "#a8e00f", why: "Placement on Beatport's per-genre Hype-100 — the pre-breakout board. Charting here means the scene is picking you up early." },
+  { key: "tl_support_score",             label: "DJ Support (1001TL)", weight: 0.05, color: "#00b8d4", why: "Where the artist's tracks land on 1001Tracklists' weekly chart of what DJs actually PLAY in their sets. The hardest signal to game — tastemakers spinning your music, not sales or streams." },
+  { key: "label_score",                  label: "Label Trajectory",    weight: 0.05, color: "#8b5cf6", why: "Tier and trajectory of the labels an artist releases on (Drumcode/Kompakt/Defected…) — credibility, and whether they're moving onto bigger homes." },
+  { key: "spotify_playlist_placements",  label: "Releases / Catalog",  weight: 0.05, color: "#1DB954", why: "Depth and recency of catalog. Active release schedules score higher than a single back-catalog hit." },
+  { key: "wikipedia_pageviews",          label: "Wikipedia Views",     weight: 0.02, color: "#9aa0a6", why: "Trailing 30-day article pageviews. A clean, independent measure of broad public interest." },
 ];
 
 // Published, transparent Scene Score rubric — explicit so it's a credible
