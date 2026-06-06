@@ -73,6 +73,7 @@ function computeMomentum(artists) {
     }
     const signalCount = Object.keys(parts).length;
     a.momentum_score        = weightSum > 0 ? Math.round(scoreSum / weightSum) : null;
+    a.momentum_updated      = weightSum > 0 ? new Date().toISOString() : a.momentum_updated ?? null;
     a.momentum_parts        = weightSum > 0 ? parts : null;
     a.momentum_signal_count = weightSum > 0 ? signalCount : null;
     a.momentum_confidence   = weightSum > 0

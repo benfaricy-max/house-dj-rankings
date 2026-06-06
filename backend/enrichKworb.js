@@ -31,6 +31,7 @@ const int = s => parseInt((s || "0").replace(/,/g, ""), 10) || 0;
     dj.listener_daily_delta = daily;
     dj.spotify_follower_growth_rate = weeklyPct;         // repurposed: now Listener Growth (%/wk)
     dj.listener_growth_source = "kworb";
+    dj.spotify_listeners_updated = new Date().toISOString();
     hits++;
   }
 

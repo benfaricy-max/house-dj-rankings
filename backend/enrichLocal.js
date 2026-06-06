@@ -51,6 +51,7 @@ async function enrich(a) {
     if (yt && yt.youtube_subscribers > 0) {
       a.youtube_subscribers = yt.youtube_subscribers;
       a.youtube_total_views = yt.youtube_total_views;
+      a.youtube_updated = new Date().toISOString();
       counts.yt++;
       if (yt.resolved_channel_id && yt.resolved_channel_id !== ytId) {
         a.youtube_channel_id = yt.resolved_channel_id;
@@ -79,6 +80,7 @@ async function enrich(a) {
     const tt = await withTimeout(getTikTokMentions(a.tiktok_tag), 14000, null);
     if (tt && tt.tiktok_post_count > 0) {
       a.tiktok_post_count = tt.tiktok_post_count;
+      a.tiktok_updated = new Date().toISOString();
       counts.tt++;
     }
   }
@@ -89,6 +91,7 @@ async function enrich(a) {
     a.google_trends_score      = tr.score;
     a.google_trends_direction  = tr.direction;
     a.google_trends_countries  = tr.top_countries ?? {};
+    a.google_trends_updated    = new Date().toISOString();
     // google_trends_cities retired — Google Trends city data returned all-zeros /
     // namesake noise (unusable). City-level demand now comes from ra_recent_cities.
     counts.tr++;
@@ -97,7 +100,7 @@ async function enrich(a) {
   // --- Spotify monthly listeners (puppeteer scrape; null on fail) ---
   if (a.spotify_id) {
     const ml = await withTimeout(scrapeMonthlyListeners(a.spotify_id), 20000, 0);
-    if (ml > 0) { a.spotify_monthly_listeners = ml; counts.sp++; }
+    if (ml > 0) { a.spotify_monthly_listeners = ml; a.spotify_listeners_updated = new Date().toISOString(); counts.sp++; }
   }
 
   done++;

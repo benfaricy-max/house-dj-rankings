@@ -28,6 +28,7 @@ const delay = ms => new Promise(r => setTimeout(r, ms));
     if (yt && yt.youtube_subscribers > 0) {
       dj.youtube_subscribers = yt.youtube_subscribers;
       dj.youtube_total_views = yt.youtube_total_views;
+      dj.youtube_updated = new Date().toISOString();
       if (yt.resolved_channel_id && yt.resolved_channel_id !== dj.youtube_channel_id) {
         dj.youtube_channel_id = yt.resolved_channel_id;
         if (byName[dj.name]) byName[dj.name].youtube_channel_id = yt.resolved_channel_id;

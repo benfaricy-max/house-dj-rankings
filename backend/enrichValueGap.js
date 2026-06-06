@@ -117,6 +117,7 @@ function computeValueGap(A) {
   for (const a of withFee) {
     const gap = a.demand_tier - a.booking_fee.tier;     // +ve = underpriced
     a.value_gap = gap;
+    a.value_gap_updated = new Date().toISOString();
     a.demand_band = TIER_BAND[a.demand_tier];
     a.demand_fee_label = BAND_LABEL[a.demand_band];
     a.value_gap_pct = Math.round(((TIER_MID[a.demand_tier] - TIER_MID[a.booking_fee.tier]) / TIER_MID[a.booking_fee.tier]) * 100);
@@ -146,6 +147,7 @@ function computeValueGap(A) {
   for (const a of A) if (!judged.has(a)) {
     a.value_gap = null; a.value_signal = null; a.demand_band = null;
     a.demand_fee_label = null; a.value_gap_pct = null; a.demand_tier = null; a.value_anchor = null;
+    a.value_gap_updated = null;
   }
   return { withFee, buys };
 }

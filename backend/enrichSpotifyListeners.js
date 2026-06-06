@@ -78,6 +78,7 @@ async function fetchArtist(id) {
         a.spotify_monthly_listeners = o.monthlyListeners;
         a.listener_source = "intercept";
         a.listener_intercept_at = today; // resume marker
+        a.spotify_listeners_updated = new Date().toISOString();
         ok++;
       } else {
         kept++;
