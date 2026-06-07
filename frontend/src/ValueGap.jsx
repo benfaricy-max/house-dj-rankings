@@ -97,6 +97,46 @@ function bothSides(a) {
   };
 }
 
+// Local fee comps — the anchor a promoter actually wants: not a global index, but
+// "what do acts who fill the SAME rooms (and tour the same regions) actually
+// charge?" Bookers (Cookiy AI) said a demand number only lands when it's grounded
+// in comparable local fees. Peers = same venue tier (room size they command) with
+// a known fee; we prefer peers sharing this act's strongest regions for a true
+// regional read, and fall back to same-room-size acts everywhere.
+const feeShort = m => (!m ? null : m >= 1e6 ? `£${(m / 1e6).toFixed(1)}M` : m >= 1e3 ? `£${Math.round(m / 1e3)}K` : `£${m}`);
+function peerFeeComps(a, rankings) {
+  const vt = Math.round(a?.value_anchor?.venue_tier || a?.ra_venue_tier || 0);
+  if (!vt || !Array.isArray(rankings)) return null;
+  const myRegions = new Set((a.value_anchor?.top_regions || a.ra_country_list || []).map(String));
+  const pool = rankings.filter(p =>
+    p.name !== a.name &&
+    p.booking_fee?.tier && Number.isFinite(p.booking_fee.mid) &&
+    (p.booking_fee.basis === "curated" || p.booking_fee.basis === "anchored") &&
+    Math.round(p.ra_venue_tier || 0) === vt);
+  if (pool.length < 3) return null;
+  const shareRegion = p => (p.value_anchor?.top_regions || p.ra_country_list || []).some(r => myRegions.has(String(r)));
+  const regional = pool.filter(shareRegion);
+  let basis = regional.length >= 4 ? regional : pool;
+  const regionalUsed = basis === regional;
+  // Narrow to genuinely comparable demand so the band isn't "the whole tier".
+  // Same room size + similar measured demand = a real peer set, not a market dump.
+  const di = a.demand_index;
+  if (Number.isFinite(di)) {
+    const near = basis.filter(p => Number.isFinite(p.demand_index) && Math.abs(p.demand_index - di) <= 15);
+    if (near.length >= 4) basis = near;
+  }
+  const mids = basis.map(p => p.booking_fee.mid).sort((x, y) => x - y);
+  // Interquartile band (25th–75th pct) — robust to a single outlier fee.
+  const q = f => mids[Math.min(mids.length - 1, Math.max(0, Math.round(f * (mids.length - 1))))];
+  const lo = q(0.25), hi = q(0.75);
+  const median = q(0.5);
+  const examples = [...basis]
+    .sort((x, y) => Math.abs((x.demand_index || 0) - (di || 0)) - Math.abs((y.demand_index || 0) - (di || 0)))
+    .slice(0, 3)
+    .map(p => ({ name: p.name, fee: p.booking_fee.label }));
+  return { count: basis.length, regional: regionalUsed, lo, hi, median, examples, venueLabel: a.value_anchor?.venue_label };
+}
+
 // ── Shareable proof artifact: #/value/<slug> ─────────────────────────────────
 export function ValueReport({ rankings, slug }) {
   const a = useMemo(() => rankings.find(r => valueSlug(r.name) === slug), [rankings, slug]);
@@ -104,6 +144,7 @@ export function ValueReport({ rankings, slug }) {
   const [lineCopied, setLineCopied] = useState("");
   const [pitchOpen, setPitchOpen] = useState(false);
   const { pro } = usePro();
+  const comps = useMemo(() => (a ? peerFeeComps(a, rankings) : null), [a, rankings]);
   const back = () => { window.location.hash = ""; };
 
   const copyLine = (side) => {
@@ -130,9 +171,10 @@ export function ValueReport({ rankings, slug }) {
       `PEAKTIME — Fair Value Report: ${a.name}`,
       verdictText(a, conf),
       `Current fee band: ${a.booking_fee.label}  →  Demand-implied: ${a.demand_fee_label}  (confidence: ${conf.level})`,
+      comps ? `Comparable fees (${comps.regional ? "same rooms, this artist's regions" : "same-size rooms"}): ${feeShort(comps.lo)}–${feeShort(comps.hi)} across ${comps.count} acts.` : null,
       `Evidence: ${conf.present.map(s => `${s.label} (${s.val(a)})`).join("; ")}.`,
       `Neutral demand benchmark · thedjrankings.com`,
-    ];
+    ].filter(Boolean);
     navigator.clipboard?.writeText(lines.join("\n")).then(() => { setCopied(true); setTimeout(() => setCopied(false), 1900); });
   };
 
@@ -182,6 +224,27 @@ export function ValueReport({ rankings, slug }) {
             <div className="vr-band-s">{a.value_gap > 0 ? "+" : ""}{a.value_gap} tier{Math.abs(a.value_gap) !== 1 ? "s" : ""}{Number.isFinite(a.value_gap_pct) ? ` · ${a.value_gap_pct > 0 ? "+" : ""}${a.value_gap_pct}%` : ""}</div>
           </div>
         </div>
+
+        {comps && (
+          <div className="vr-comps">
+            <div className="vr-comps-h">
+              <span className="vr-comps-title">Comparable fees</span>
+              <span className="vr-comps-tag">{comps.regional ? "acts who fill the same rooms in this artist's regions" : "acts who fill the same-size rooms"}</span>
+            </div>
+            <div className="vr-comps-band">
+              <span className="vr-comps-range">{feeShort(comps.lo)}–{feeShort(comps.hi)}</span>
+              <span className="vr-comps-sub">
+                across {comps.count} comparable act{comps.count !== 1 ? "s" : ""}{comps.venueLabel ? ` · ${comps.venueLabel} cap rooms` : ""}
+              </span>
+            </div>
+            <div className="vr-comps-ex">
+              {comps.examples.map(e => (
+                <span className="vr-comp" key={e.name}><span className="vr-comp-n">{e.name}</span><span className="vr-comp-f">{e.fee}</span></span>
+              ))}
+            </div>
+            <div className="vr-comps-note">The neutral local anchor: {a.name}'s demand-implied {a.demand_fee_label} band sits against what acts filling the same rooms actually command — not a global index.</div>
+          </div>
+        )}
 
         <div className="vr-section-h">Live &amp; local anchor <span className="vr-section-tag">the basis bookers trust</span></div>
         <div className="vr-evidence vr-evidence--live">

@@ -62,12 +62,18 @@ export function MomentumTip({ dj }) {
 }
 
 // Single source of truth for the demand index behind the Price/Demand Gap.
+// LIVE-LED (mirrors backend enrichValueGap.js SIGNALS): bookers told us global
+// digital metrics are noise until they line up with the rooms you fill and the
+// tickets you move, so live/local signals carry ~0.66 of the weight and digital
+// reach only corroborates.
 export const DEMAND_BLEND = [
-  { signal: "Streaming reach (monthly listeners)", weight: "40%", color: "#1DB954" },
-  { signal: "RA booking strength",                 weight: "22%", color: "#FF5C00" },
-  { signal: "Beatport chart credibility",          weight: "18%", color: "#a8e00f" },
-  { signal: "YouTube audience",                     weight: "10%", color: "#FF0000" },
-  { signal: "Search interest (Google Trends)",      weight: "10%", color: "#4285F4" },
+  { signal: "Venue size commanded (room tier)",     weight: "24%", color: "#FF5C00" },
+  { signal: "Live draw per show (RA attendance)",   weight: "22%", color: "#FF5C00" },
+  { signal: "Streaming reach (monthly listeners)",  weight: "16%", color: "#1DB954" },
+  { signal: "Streaming→live conversion",            weight: "12%", color: "#C8F750" },
+  { signal: "Beatport chart credibility",           weight: "12%", color: "#a8e00f" },
+  { signal: "Tour routing breadth",                 weight: "8%",  color: "#4fd6e8" },
+  { signal: "Search interest + YouTube",            weight: "6%",  color: "#4285F4" },
 ];
 
 // The Value Gap tooltip — explains the buy/sell signal in plain language so

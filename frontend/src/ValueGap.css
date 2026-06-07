@@ -117,6 +117,20 @@
 
 .vr-section-h { font-size: 0.8rem; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 0 0 12px; }
 .vr-evidence { margin-bottom: 26px; }
+
+/* Local fee comps (#4 — the regional anchor) */
+.vr-comps { margin: 0 0 26px; padding: 16px 18px; border-radius: 12px; background: color-mix(in srgb, var(--accent) 5%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 14%, transparent); }
+.vr-comps-h { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.vr-comps-title { font-size: 0.8rem; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--text); }
+.vr-comps-tag { font-size: 0.72rem; color: var(--muted); }
+.vr-comps-band { display: flex; align-items: baseline; gap: 10px; margin: 10px 0 4px; flex-wrap: wrap; }
+.vr-comps-range { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.01em; color: var(--accent); font-variant-numeric: tabular-nums; }
+.vr-comps-sub { font-size: 0.78rem; color: var(--muted); }
+.vr-comps-ex { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 10px; }
+.vr-comp { display: inline-flex; align-items: center; gap: 7px; padding: 4px 10px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 9%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent); font-size: 0.78rem; }
+.vr-comp-n { font-weight: 600; color: var(--text); }
+.vr-comp-f { color: var(--accent); font-variant-numeric: tabular-nums; }
+.vr-comps-note { font-size: 0.76rem; line-height: 1.45; color: var(--muted); margin-top: 4px; }
 .vr-ev { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); }
 .vr-ev:last-of-type { border-bottom: none; }
 .vr-ev-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
