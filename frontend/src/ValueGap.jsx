@@ -1,6 +1,9 @@
 import { useState, useMemo } from "react";
 import "./ValueGap.css";
 import { ArtistLink, slugify } from "./ArtistProfile";
+import { PitchLinkModal } from "./Pitch";
+import RoutingSaturation from "./RoutingSaturation";
+import { usePro } from "./usePro";
 
 // The wedge: a NEUTRAL third-party benchmark for booking fees. Today fee talks are
 // information-asymmetric — the agent knows the artist's demand, the promoter doesn't,
@@ -49,6 +52,34 @@ const verdictText = (a, conf) => {
   return `${a.name}'s fee is aligned with measured demand — a clean deal at the current rate.`;
 };
 
+// A ready-to-paste negotiation line — the exact gap the research surfaced: a
+// manager who "just sounded like I was bragging, not negotiating" needs a neutral
+// sentence they can drop into an email to justify the fee. Built only from the
+// live anchor + the neutral benchmark, so it reads as evidence, not spin.
+export function negotiationLine(a, side = "seller") {
+  const anchor = a.value_anchor || {};
+  const proof = [
+    anchor.venue_tier > 0 && `tier ${anchor.venue_tier}/5 rooms`,
+    anchor.avg_attending > 0 && `~${anchor.avg_attending} attending per show`,
+    (anchor.routing_countries || a.ra_countries) > 0 && `${anchor.routing_countries || a.ra_countries} countries on the routing`,
+  ].filter(Boolean).join(", ");
+  const evidence = proof ? ` — ${proof}` : "";
+  const surging = Number.isFinite(a.momentum_score) && a.momentum_score >= 40
+    ? `, with momentum still climbing (${a.momentum_score}/100)` : "";
+  const src = "Source: PEAKTIME neutral demand benchmark (thedjrankings.com), built from live booking data — no input from either side.";
+  const g = a.value_gap;
+
+  if (side === "buyer") {
+    if (g >= 1) return `${a.name}'s measured demand${evidence} already supports ${a.demand_fee_label}${surging}, yet the act is still bookable around ${a.booking_fee.label}. Worth locking in at today's rate before the fee catches up. ${src}`;
+    if (g <= -1) return `The ask for ${a.name} sits at ${a.booking_fee.label}, but measured live demand${evidence} only supports about ${a.demand_fee_label}. A fee nearer that band is the fair number, or expect to carry more ticket-sales risk. ${src}`;
+    return `${a.name}'s fee (${a.booking_fee.label}) lines up with measured live demand${evidence} — a clean deal at the current rate. ${src}`;
+  }
+  // seller / manager / agent
+  if (g >= 1) return `${a.name}'s live demand${evidence}${surging} supports a fee around ${a.demand_fee_label} — about ${g} tier${g > 1 ? "s" : ""} above the current ${a.booking_fee.label} band. ${src}`;
+  if (g <= -1) return `${a.name}'s fee (${a.booking_fee.label}) currently sits ahead of independently measured demand${evidence}. Defensible with private sell-through data, but a data-led buyer will likely cite the gap. ${src}`;
+  return `${a.name}'s ${a.booking_fee.label} fee is backed by independently measured live demand${evidence} — useful proof if a buyer tries to talk it down. ${src}`;
+}
+
 // Same data, two negotiating positions. This is why both audiences pay.
 function bothSides(a) {
   const g = a.value_gap;
@@ -70,7 +101,16 @@ function bothSides(a) {
 export function ValueReport({ rankings, slug }) {
   const a = useMemo(() => rankings.find(r => valueSlug(r.name) === slug), [rankings, slug]);
   const [copied, setCopied] = useState(false);
+  const [lineCopied, setLineCopied] = useState("");
+  const [pitchOpen, setPitchOpen] = useState(false);
+  const { pro } = usePro();
   const back = () => { window.location.hash = ""; };
+
+  const copyLine = (side) => {
+    navigator.clipboard?.writeText(negotiationLine(a, side)).then(() => {
+      setLineCopied(side); setTimeout(() => setLineCopied(""), 1900);
+    });
+  };
 
   if (!a || !Number.isFinite(a.value_gap) || !a.booking_fee) {
     return (
@@ -102,7 +142,12 @@ export function ValueReport({ rankings, slug }) {
       <div className="vr-sheet">
         <div className="vr-top">
           <div className="vr-brand">PEAKTIME · Neutral demand benchmark</div>
-          <button className="vr-copy" onClick={copySummary}>{copied ? "✓ Copied" : "Copy report"}</button>
+          <div className="vr-top-actions">
+            <button className="vr-copy" onClick={copySummary}>{copied ? "✓ Copied" : "Copy report"}</button>
+            <button className="vr-copy vr-copy--primary" onClick={() => setPitchOpen(true)}>
+              ↗ Private pitch link{pro ? "" : " · Pro"}
+            </button>
+          </div>
         </div>
 
         <h1 className="vr-title">Fair Value Report</h1>
@@ -159,6 +204,13 @@ export function ValueReport({ rankings, slug }) {
           )}
         </div>
 
+        {Array.isArray(a.ra_recent_cities) && a.ra_recent_cities.length > 0 && (
+          <>
+            <div className="vr-section-h">Recent routing <span className="vr-section-tag">how fresh a date will feel in your market</span></div>
+            <RoutingSaturation dj={a} compact max={5} />
+          </>
+        )}
+
         <div className="vr-section-h">Supporting signals <span className="vr-section-tag">corroboration only</span></div>
         <div className="vr-evidence">
           {conf.support.map(s => (
@@ -183,10 +235,16 @@ export function ValueReport({ rankings, slug }) {
           <div className="vr-side">
             <div className="vr-side-h">For the buyer / promoter</div>
             <p>{sides.buyer}</p>
+            <button className="vr-line-copy" onClick={() => copyLine("buyer")}>
+              {lineCopied === "buyer" ? "✓ Copied — paste into your offer" : "Copy the negotiation line ↗"}
+            </button>
           </div>
           <div className="vr-side">
             <div className="vr-side-h">For the artist / manager</div>
             <p>{sides.seller}</p>
+            <button className="vr-line-copy" onClick={() => copyLine("seller")}>
+              {lineCopied === "seller" ? "✓ Copied — paste into your pitch" : "Copy the negotiation line ↗"}
+            </button>
           </div>
         </div>
 
@@ -194,6 +252,7 @@ export function ValueReport({ rankings, slug }) {
           Generated {new Date().toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric" })} · demand-data only, no party's input · <a href="#/value-method" onClick={e => { e.preventDefault(); window.location.hash = "#/value"; }}>methodology</a>
         </div>
       </div>
+      {pitchOpen && <PitchLinkModal artist={a} onClose={() => setPitchOpen(false)} />}
     </div>
   );
 }
@@ -249,6 +308,7 @@ export function ValueGapPage({ rankings }) {
   return (
     <div className="page vg-page">
       <div className="vg-hero">
+        <div className="vg-kicker">Justify a fee increase · spot underpriced talent · with a number you didn't make up</div>
         <h1 className="vg-h1">The Value Gap</h1>
         <p className="vg-lead">
           Booking fees are negotiated blind: the agent knows the artist's demand, the buyer doesn't, and
@@ -256,7 +316,7 @@ export function ValueGapPage({ rankings }) {
           what bookers actually trust — <em>the venue size an artist fills, their live draw per show, and
           their tour routing</em> — with streaming and search used only to corroborate, never to drive it.
           The implied fee is capped at the rooms they really play, so it never inflates a club act into an
-          arena fee. One live-anchored benchmark, two sides of the table.
+          arena fee. Open any artist for a ready-to-send negotiation line and a private pitch link.
         </p>
       </div>
 

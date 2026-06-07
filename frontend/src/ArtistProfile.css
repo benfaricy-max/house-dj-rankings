@@ -14,6 +14,10 @@
 .ap-genre { background: #1a1a1a; border: 1px solid #2a2a2a; color: #bbb; font-size: .72rem; padding: 3px 10px; border-radius: 8px; }
 .ap-share { background: #a8e00f; color: #000; border: none; font-weight: 700; font-size: .88rem; padding: 11px 18px; border-radius: 10px; cursor: pointer; align-self: flex-start; }
 .ap-share:hover { opacity: .88; }
+.ap-head-actions { display: flex; flex-direction: column; gap: 9px; align-self: flex-start; }
+.ap-watch { background: none; color: #c4c8cc; border: 1px solid #2e2e38; font-weight: 600; font-size: .82rem; padding: 9px 16px; border-radius: 10px; cursor: pointer; white-space: nowrap; transition: border-color .15s, color .15s; }
+.ap-watch:hover { border-color: #a8e00f; color: #a8e00f; }
+.ap-watch--on { color: #f5c518; border-color: color-mix(in srgb, #f5c518 50%, transparent); }
 
 .ap-bio { color: #ccc; font-size: 1rem; line-height: 1.65; margin: 26px 0 8px; }
 

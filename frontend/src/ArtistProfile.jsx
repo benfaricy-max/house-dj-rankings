@@ -1,5 +1,7 @@
 import { useRef } from "react";
 import { ARTIST_PROFILES } from "./artistProfiles";
+import { useWatchlist } from "./watchlist";
+import { MomentumTip, ValueGapTip } from "./methodology";
 import "./ArtistProfile.css";
 
 export const slugify = s => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "")
@@ -202,6 +204,7 @@ function VibeCheck({ dj }) {
 
 export default function ArtistProfile({ rankings, slug, onBack }) {
   const cardBusy = useRef(false);
+  const { isWatched, toggle: toggleWatch } = useWatchlist();
   const dj = rankings.find(a => slugify(a.name) === slug);
   if (!dj) {
     return (
@@ -261,7 +264,12 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
           </div>
           <div className="ap-genres">{genres.map(g => <span key={g} className="ap-genre">{g}</span>)}</div>
         </div>
-        <button className="ap-share" onClick={share}>↓ Download ranking card</button>
+        <div className="ap-head-actions">
+          <button className={`ap-watch ${isWatched(dj.name) ? "ap-watch--on" : ""}`} onClick={() => toggleWatch(dj.name)} aria-pressed={isWatched(dj.name)}>
+            {isWatched(dj.name) ? "★ Watching" : "☆ Watch momentum"}
+          </button>
+          <button className="ap-share" onClick={share}>↓ Download ranking card</button>
+        </div>
       </div>
 
       {profile.bio && <p className="ap-bio">{profile.bio}</p>}
@@ -295,7 +303,7 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
                 {dj.momentum_score}<span>/100</span>
               </div>
               <div className="ap-signal-key">
-                Momentum
+                Momentum<MomentumTip dj={dj} />
                 {dj.momentum_confidence && <span className={`ap-conf ap-conf--${dj.momentum_confidence}`} title={`${dj.momentum_signal_count} of 5 signals corroborate`}>{dj.momentum_confidence}</span>}
               </div>
               <div className="ap-signal-sub">acceleration vs. own baseline{Number.isFinite(dj.momentum_signal_count) ? ` · ${dj.momentum_signal_count} signal${dj.momentum_signal_count !== 1 ? "s" : ""}` : ""}</div>
@@ -314,7 +322,7 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
                 {dj.value_signal === "premium" ? "Priced ahead" : `${dj.value_gap > 0 ? "+" : ""}${dj.value_gap} tier${Math.abs(dj.value_gap) !== 1 ? "s" : ""}`}
               </div>
               <div className="ap-signal-key">
-                {dj.value_signal === "strong-buy" ? "Strong buy" : dj.value_signal === "buy" ? "Underpriced" : "Price vs demand"}
+                {dj.value_signal === "strong-buy" ? "Strong buy" : dj.value_signal === "buy" ? "Underpriced" : "Price vs demand"}<ValueGapTip dj={dj} />
               </div>
               <div className="ap-signal-sub">
                 {dj.value_signal === "premium" ? "fee runs hotter than demand" : `demand implies ${dj.demand_fee_label}`}

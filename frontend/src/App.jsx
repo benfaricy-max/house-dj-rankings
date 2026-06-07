@@ -3,6 +3,10 @@ import "./App.css";
 const ProPage = lazy(() => import("./ProPage"));   // code-split: the ~750-line tab loads in its own chunk
 import ArtistProfile, { slugify, ArtistLink } from "./ArtistProfile";
 import { ValueGapPage, ValueReport, valueSlug } from "./ValueGap";
+import RoutingSaturation from "./RoutingSaturation";
+import { useWatchlist, useMomentumAlerts } from "./watchlist";
+import { InfoTip, MomentumTip, MOMENTUM_BLEND } from "./methodology";
+import PitchPage from "./Pitch";   // read-only private brief route (also pulled by ValueGap)
 const ClubsPage   = lazy(() => import("./ClubsPage"));                                  // splits ~750 lines of club lore/images out of the main chunk
 const ClubProfile = lazy(() => import("./ClubsPage").then(m => ({ default: m.ClubProfile })));
 const BlogPage    = lazy(() => import("./BlogPage"));                                   // editor-only tab — rarely loaded
@@ -79,6 +83,9 @@ const SORT_OPTIONS = [
   { key: "youtube_subscribers",         label: "YouTube"    },
   { key: "beatport_score",              label: "Beatport"   },
 ];
+
+// MOMENTUM_BLEND, InfoTip and MomentumTip are imported from ./methodology so the
+// published weights live in one place (rankings, profile, How It Works).
 
 // ── Utilities ─────────────────────────────────────────────────────
 
@@ -344,6 +351,31 @@ function ScoreBreakdown({ dj, ranges }) {
   );
 }
 
+// ── Methodology tooltip (point-of-score transparency) ──────────────────────
+// Research finding #2: a "black-box" score is a dealbreaker. The Score badge
+// tooltip shows this artist's top contributing signals with weights — computed
+// from the same ranges the full breakdown uses, so it's the real drivers. InfoTip
+// + MomentumTip come from ./methodology (shared with the profile + How It Works).
+function ScoreTip({ dj, ranges }) {
+  const rows = METRICS.map(metric => {
+    const { min, max } = ranges[metric.key] ?? { min: 0, max: 0 };
+    const contribution = normalize(dj[metric.key] ?? 0, min, max) * metric.weight;
+    return { metric, contribution };
+  }).sort((a, b) => b.contribution - a.contribution).slice(0, 4);
+  return (
+    <InfoTip label="How this score is built">
+      <span className="itip-h">Top signals driving this score</span>
+      {rows.map(({ metric, contribution }) => (
+        <span className="itip-row" key={metric.key}>
+          <span className="itip-row-l">{metric.label}</span>
+          <span className="itip-row-w">{Math.round(metric.weight * 100)}% · +{contribution.toFixed(1)}</span>
+        </span>
+      ))}
+      <span className="itip-foot">Expand the row for the full 12-signal breakdown, or see How It Works for every weight.</span>
+    </InfoTip>
+  );
+}
+
 // Surfaces the rubric inputs BEHIND the Scene Score so the editorial layer is
 // transparent — a booker sees the actual credentials (Berghain, Defected,
 // Essential Mix…), not just a number. Tags are editorial, stored per artist.
@@ -508,7 +540,7 @@ function CompareModal({ djs, ranges, onClose }) {
 
 // ── DJ Card ────────────────────────────────────────────────────────
 
-function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved, inCompare, onToggleCompare }) {
+function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved, inCompare, onToggleCompare, isWatched, onToggleWatch }) {
   return (
     <div className={`dj-card ${isTop ? "dj-card--top" : ""} ${expanded ? "dj-card--expanded" : ""} ${inCompare ? "dj-card--comparing" : ""}`}>
       <div className="dj-card-main" {...pressable(onToggle, expanded)} aria-label={`${dj.name}, rank ${dj.rank} — ${expanded ? "collapse" : "expand"} details`}>
@@ -527,13 +559,13 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
         <div className="dj-info">
           <div className="dj-name-row">
             <span className="dj-name"><ArtistLink name={dj.name} /></span>
-            <span className="dj-score-badge">{dj.score} pts</span>
+            <span className="dj-score-badge">{dj.score} pts<ScoreTip dj={dj} ranges={ranges} /></span>
           </div>
           <ScoreBar score={dj.score} maxScore={maxScore} />
           <div className="dj-quick-stats">
             {Number.isFinite(dj.momentum_score) && (
               <span className={`qs-pill qs-pill--mo ${dj.momentum_score >= 65 ? "qs-mo--hot" : ""}`}>
-                ▲ Momentum {dj.momentum_score}
+                ▲ Momentum {dj.momentum_score}<MomentumTip dj={dj} />
               </span>
             )}
             {dj.spotify_monthly_listeners > 0 && <span className="qs-pill">{fmt(dj.spotify_monthly_listeners)} listeners</span>}
@@ -562,6 +594,14 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
               <a href={dj.youtube_url} target="_blank" rel="noreferrer" className="link-btn link-btn--youtube"><YouTubeIcon /></a>
             )}
             <button
+              className={`watch-btn ${isWatched ? "watch-btn--on" : ""}`}
+              onClick={() => onToggleWatch(dj.name)}
+              title={isWatched ? "Watching — you'll see momentum spikes on return visits" : "Watch for momentum spikes"}
+              aria-pressed={isWatched}
+            >
+              {isWatched ? "★" : "☆"}
+            </button>
+            <button
               className={`compare-btn ${inCompare ? "compare-btn--active" : ""}`}
               onClick={() => onToggleCompare(dj.name)}
               title={inCompare ? "Remove from compare" : "Add to compare"}
@@ -582,6 +622,7 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
             <ScoreBreakdown dj={dj} ranges={ranges} />
             <div className="detail-right">
               <TrendChart name={dj.name} />
+              <RoutingSaturation dj={dj} />
               <UpcomingEvents name={dj.name} />
             </div>
           </div>
@@ -726,13 +767,7 @@ function HowItWorksPage() {
         <h3 className="hiw-section-title">Momentum Score</h3>
         <p className="hiw-section-sub">Our core differentiator. The Momentum Score (0–100) ranks who is <em>accelerating</em> relative to their own baseline — not who is biggest. An artist climbing 50k→150k monthly listeners outscores one sitting flat at 2M. It blends only rate-of-change signals, and an artist is scored on whichever of these it has data for (no fabricated acceleration from a static snapshot).</p>
         <div className="hiw-momentum-formula">
-          {[
-            { signal: "Google Trends slope (search acceleration)", weight: "42%", color: "#4285F4" },
-            { signal: "Listener growth rate",                      weight: "25%", color: "#1DB954" },
-            { signal: "Wikipedia views trend (30d vs prior 30d)",  weight: "15%", color: "#9aa0a6" },
-            { signal: "Beatport position change (week/week)",      weight: "12%", color: "#a8e00f" },
-            { signal: "Touring velocity (cities & shows growth)",  weight: "6%",  color: "#FF5C00" },
-          ].map((f, i, arr) => (
+          {MOMENTUM_BLEND.map((f, i, arr) => (
             <div key={f.signal} className="hiw-formula-row">
               <div className="hiw-formula-bar" style={{ background: f.color, width: f.weight }} />
               <span className="hiw-formula-label">{f.signal}</span>
@@ -2148,6 +2183,36 @@ function ReportsPage() {
   );
 }
 
+// ── Momentum spike alerts banner ───────────────────────────────────
+// Research finding #3 / P3: the data felt "static" — managers need to know WHEN
+// an artist moves to time a negotiation. This surfaces watched artists whose
+// momentum jumped since the last visit, turning the dashboard into a timing tool.
+function MomentumAlertsBanner({ alerts, onDismiss, onOpen }) {
+  if (!alerts.length) return null;
+  return (
+    <div className="mo-alert" role="status">
+      <div className="mo-alert-head">
+        <span className="mo-alert-icon">▲</span>
+        <span className="mo-alert-title">
+          {alerts.length === 1 ? "An artist you watch is moving" : `${alerts.length} artists you watch are moving`}
+        </span>
+        <button className="mo-alert-x" onClick={onDismiss} aria-label="Dismiss alerts">✕</button>
+      </div>
+      <div className="mo-alert-list">
+        {alerts.slice(0, 6).map(s => (
+          <button key={s.name} className="mo-alert-item" onClick={() => onOpen(s.name)}>
+            <span className="mo-alert-name">{s.name}</span>
+            <span className="mo-alert-move">
+              {s.crossedHot ? "now hot · " : ""}{s.from}→{s.to}{s.delta > 0 ? ` (+${s.delta})` : ""}
+            </span>
+          </button>
+        ))}
+      </div>
+      <div className="mo-alert-foot">Momentum since your last visit · the moment to revisit a fee conversation</div>
+    </div>
+  );
+}
+
 // ── Main App ───────────────────────────────────────────────────────
 
 export default function App() {
@@ -2165,6 +2230,7 @@ export default function App() {
   const [compareList, setCompareList] = useState([]);
   const [showCompare, setShowCompare] = useState(false);
   const [activeTab, setActiveTab]     = useState("rankings");
+  const { watched, isWatched, toggle: toggleWatch } = useWatchlist();
   const cardRefs = useRef({});
 
   function load() {
@@ -2217,6 +2283,7 @@ export default function App() {
 
   const ranges   = useMemo(() => computeRanges(rankings), [rankings]);
   const maxScore = rankings[0]?.score ?? 1;
+  const { alerts: momentumAlerts, dismiss: dismissAlerts } = useMomentumAlerts(rankings, watched);
 
   const sorted = useMemo(() => {
     if (sortKey === "score") return rankings;
@@ -2240,6 +2307,12 @@ export default function App() {
   }
 
   const compareDJs = compareList.map(n => rankings.find(r => r.name === n)).filter(Boolean);
+
+  // Private pitch link route — read-only single-artist brief at #/pitch/<token>.
+  // Standalone (no site chrome), Pro-generated, expiring. See Pitch.jsx.
+  if (/^#\/pitch\//.test(window.location.hash)) {
+    return <PitchPage rankings={rankings} />;
+  }
 
   // Profile page route — shareable URL like #/artist/john-summit (after all hooks)
   if (profileSlug) {
@@ -2326,6 +2399,7 @@ export default function App() {
       {activeTab === "how-it-works"  && <HowItWorksPage />}
 
       {activeTab === "rankings" && <>
+      <MomentumAlertsBanner alerts={momentumAlerts} onDismiss={dismissAlerts} onOpen={name => { window.location.hash = `#/artist/${slugify(name)}`; }} />
       <div className="sort-bar">
         <span className="sort-label">Sort by</span>
         {SORT_OPTIONS.map(opt => (
@@ -2354,6 +2428,8 @@ export default function App() {
               onScoreSaved={load}
               inCompare={compareList.includes(dj.name)}
               onToggleCompare={toggleCompare}
+              isWatched={isWatched(dj.name)}
+              onToggleWatch={toggleWatch}
             />
           </div>
         ))}
