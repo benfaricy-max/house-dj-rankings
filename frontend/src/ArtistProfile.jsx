@@ -157,6 +157,49 @@ async function generateCard(dj, profile) {
   return new Promise(res => c.toBlob(res, "image/png"));
 }
 
+// ── Vibe Check ───────────────────────────────────────────────────────
+// Fans treat Momentum as a curiosity spark, then leave the platform to
+// confirm the sound on Spotify/SoundCloud/Boiler Room before they trust it
+// (Cookiy fan research, Jun 2026). Embedding an instant audio preview + the
+// exact verification deep-links keeps that workflow on-profile.
+function VibeCheck({ dj }) {
+  const q = encodeURIComponent(dj.name);
+  const yt = dj.youtube_channel_id?.startsWith("UC")
+    ? `https://www.youtube.com/channel/${dj.youtube_channel_id}/videos`
+    : `https://www.youtube.com/results?search_query=${encodeURIComponent(dj.name + " dj set")}`;
+  const links = [
+    dj.soundcloud_permalink && { label: "SoundCloud", href: `https://soundcloud.com/${dj.soundcloud_permalink}` },
+    { label: "Latest set ▶", href: yt },
+    { label: "Boiler Room", href: `https://boilerroom.tv/?s=${q}` },
+    { label: "Beatport", href: `https://www.beatport.com/search?q=${q}` },
+  ].filter(Boolean);
+
+  if (!dj.spotify_id && links.length === 0) return null;
+
+  return (
+    <div className="ap-vibe">
+      <div className="ap-vibe-head">
+        <span className="ap-vibe-label">Vibe check</span>
+        <span className="ap-vibe-sub">Hear it before you trust the signal</span>
+      </div>
+      {dj.spotify_id && (
+        <iframe
+          className="ap-vibe-player"
+          title={`${dj.name} on Spotify`}
+          src={`https://open.spotify.com/embed/artist/${dj.spotify_id}?utm_source=thedjrankings`}
+          width="100%" height="152" frameBorder="0" loading="lazy"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        />
+      )}
+      <div className="ap-vibe-links">
+        {links.map(l => (
+          <a key={l.label} className="ap-vibe-link" href={l.href} target="_blank" rel="noreferrer">{l.label} ↗</a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function ArtistProfile({ rankings, slug, onBack }) {
   const cardBusy = useRef(false);
   const dj = rankings.find(a => slugify(a.name) === slug);
@@ -286,6 +329,8 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
           ✦ View {dj.name}'s Fair Value report — the neutral, live-anchored fee benchmark →
         </a>
       )}
+
+      <VibeCheck dj={dj} />
 
       {/* Touring summary — Songkick when matched, otherwise backfilled from RA
           (RA is the better-covered source; Songkick can't match many names). */}

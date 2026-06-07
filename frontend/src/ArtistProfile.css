@@ -73,6 +73,16 @@
 .ap-valuelink { display: block; margin: 4px 0 20px; padding: 14px 18px; background: var(--accent-bg); border: 1px solid var(--accent-border); border-radius: 12px; color: var(--accent); font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: background 0.12s; }
 .ap-valuelink:hover { background: var(--accent); color: var(--on-accent); }
 
+/* Vibe check — instant audio preview + verification deep-links */
+.ap-vibe { background: var(--card, #111114); border: 1px solid var(--border, #1e1f23); border-radius: 12px; padding: 16px 18px; margin: 4px 0 20px; }
+.ap-vibe-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+.ap-vibe-label { font-family: var(--mono, monospace); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-h, #E9E7DF); }
+.ap-vibe-sub { font-size: 12.5px; color: var(--muted, #75767d); }
+.ap-vibe-player { border-radius: 12px; display: block; }
+.ap-vibe-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.ap-vibe-link { font-size: 0.82rem; color: var(--muted, #75767d); text-decoration: none; padding: 6px 12px; border: 1px solid var(--border, #1e1f23); border-radius: 999px; transition: color 0.12s, border-color 0.12s; }
+.ap-vibe-link:hover { color: var(--accent, #C8F750); border-color: var(--accent-border, rgba(200,247,80,0.45)); }
+
 /* Live city demand mini-chart on profile */
 .ap-cities { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
 .ap-cities-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
