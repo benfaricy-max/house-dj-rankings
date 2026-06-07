@@ -2267,7 +2267,7 @@ export default function App() {
           <span className="brand-word">PEAKTIME</span>
         </a>
         <div className="header-eyebrow">The demand index for electronic music</div>
-        <h1 className="header-title">House DJ Rankings</h1>
+        <h1 className="header-title">Hottest House DJ Rankings</h1>
         <div className="header-platforms">
           <span className="plat-pill"><span className="plat-dot" style={{ background: "#1DB954" }} />Spotify</span>
           <span className="plat-pill"><span className="plat-dot" style={{ background: "#a8e00f" }} />Beatport</span>
