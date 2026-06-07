@@ -1,0 +1,25 @@
+.pricing-overlay { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 20px; background: color-mix(in srgb, #000 62%, transparent); backdrop-filter: blur(4px); }
+.pricing-modal { position: relative; width: 100%; max-width: 760px; max-height: 90vh; overflow-y: auto; padding: 30px 30px 22px; border-radius: 18px; background: var(--card, #14141a); border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent); box-shadow: 0 30px 80px rgba(0,0,0,.5); }
+.pricing-close { position: absolute; top: 14px; right: 14px; width: 30px; height: 30px; border-radius: 50%; border: none; cursor: pointer; background: color-mix(in srgb, var(--muted) 16%, transparent); color: var(--text); font-size: 14px; }
+.pricing-eyebrow { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.pricing-h { margin: 6px 0 6px; font-size: 1.5rem; letter-spacing: -0.01em; color: var(--text); }
+.pricing-sub { margin: 0 0 22px; max-width: 56ch; font-size: 0.9rem; line-height: 1.5; color: var(--muted); }
+
+.pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.pricing-card { position: relative; padding: 22px 20px; border-radius: 14px; background: color-mix(in srgb, var(--accent) 4%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 14%, transparent); display: flex; flex-direction: column; }
+.pricing-card--hl { border-color: color-mix(in srgb, var(--accent) 45%, transparent); background: color-mix(in srgb, var(--accent) 8%, transparent); }
+.pricing-ribbon { position: absolute; top: -10px; right: 16px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; background: var(--accent); color: #0a0a0a; }
+.pricing-name { font-size: 0.82rem; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.pricing-price { margin: 6px 0 2px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text); }
+.pricing-cadence { font-size: 1rem; font-weight: 500; color: var(--muted); margin-left: 3px; }
+.pricing-who { font-size: 0.82rem; color: var(--muted); margin-bottom: 14px; }
+.pricing-feats { list-style: none; margin: 0 0 18px; padding: 0; display: flex; flex-direction: column; gap: 9px; flex: 1; }
+.pricing-feats li { display: flex; gap: 9px; font-size: 0.84rem; line-height: 1.4; color: var(--text); }
+.pricing-check { color: var(--accent); font-weight: 800; flex-shrink: 0; }
+.pricing-cta { width: 100%; padding: 11px; border-radius: 10px; border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); background: transparent; color: var(--text); font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: background .15s; }
+.pricing-cta:hover { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.pricing-cta--hl { background: var(--accent); color: #0a0a0a; border-color: var(--accent); }
+.pricing-cta--hl:hover { filter: brightness(1.08); background: var(--accent); }
+.pricing-foot { margin-top: 16px; text-align: center; font-size: 0.74rem; color: var(--muted); }
+
+@media (max-width: 620px) { .pricing-grid { grid-template-columns: 1fr; } .pricing-modal { padding: 26px 18px 18px; } }

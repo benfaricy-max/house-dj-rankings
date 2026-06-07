@@ -53,7 +53,9 @@ signed cookie, so the stub still runs.
    Set up a webhook endpoint → `https://api.thedjrankings.com/api/webhook` for
    `checkout.session.completed`, `customer.subscription.deleted`.
 3. **Env vars (API):**
-   - `STRIPE_SECRET_KEY`, `STRIPE_PRICE_PRO` (and `STRIPE_PRICE_TEAM` for the agency tier)
+   - `STRIPE_SECRET_KEY`, `STRIPE_PRICE_SOLO` (£75/mo), `STRIPE_PRICE_TEAM` (£300/mo).
+     The frontend `startCheckout(plan)` sends `plan: "solo" | "team"` — map each to
+     its price id in `api/checkout.js`.
    - `STRIPE_WEBHOOK_SECRET`
    - `SESSION_SECRET` (random 32+ chars)
    - `FRONTEND_URL=https://thedjrankings.com`
@@ -80,11 +82,14 @@ signed cookie, so the stub still runs.
 
 ## Pricing (starting point)
 
-| Tier | Price | Who | Unlocks |
-|------|-------|-----|---------|
-| Free | £0 | Fans, funnel | Rankings, discovery, headliner teaser |
-| **Pro** | **£49–99/mo** | Promoters, buyers | Full lineup builder, fair-price check, rationale |
-| **Team / Agency** | **£299–499/mo** | Agencies, festivals | Seats + roadmap: routing, alerts, competitive intel, calibrated sell-through |
+Live pricing tiers (in `frontend/src/Pricing.jsx` → `PLANS`; shown via the gated
+upgrade modal only when the paywall is ON):
+
+| Tier | Price | plan id | Who | Unlocks |
+|------|-------|---------|-----|---------|
+| Free | £0 | — | Fans, funnel | Rankings, discovery, headliner teaser |
+| **Solo** | **£75/mo** | `solo` | Independent promoters & buyers | Full lineup, Fair Value Reports + negotiation scripts, private pitch links, routing & club-vs-viral reads |
+| **Team** | **£300/mo** | `team` | Agencies & festivals | Everything in Solo across seats + roster routing, competitive intel, calibrated sell-through, priority refresh |
 
 ## Cost to run (early)
 

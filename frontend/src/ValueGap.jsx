@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import "./ValueGap.css";
 import { ArtistLink, slugify } from "./ArtistProfile";
 import { PitchLinkModal } from "./Pitch";
+import PricingModal from "./Pricing";
 import RoutingSaturation from "./RoutingSaturation";
 import { usePro } from "./usePro";
 
@@ -143,7 +144,8 @@ export function ValueReport({ rankings, slug }) {
   const [copied, setCopied] = useState(false);
   const [lineCopied, setLineCopied] = useState("");
   const [pitchOpen, setPitchOpen] = useState(false);
-  const { pro } = usePro();
+  const [payOpen, setPayOpen] = useState(false);
+  const { pro, paywall } = usePro();
   const comps = useMemo(() => (a ? peerFeeComps(a, rankings) : null), [a, rankings]);
   const back = () => { window.location.hash = ""; };
 
@@ -186,8 +188,8 @@ export function ValueReport({ rankings, slug }) {
           <div className="vr-brand">PEAKTIME · Neutral demand benchmark</div>
           <div className="vr-top-actions">
             <button className="vr-copy" onClick={copySummary}>{copied ? "✓ Copied" : "Copy report"}</button>
-            <button className="vr-copy vr-copy--primary" onClick={() => setPitchOpen(true)}>
-              ↗ Private pitch link{pro ? "" : " · Pro"}
+            <button className="vr-copy vr-copy--primary" onClick={() => (paywall && !pro ? setPayOpen(true) : setPitchOpen(true))}>
+              ↗ Private pitch link{paywall && !pro ? " · Pro" : ""}
             </button>
           </div>
         </div>
@@ -316,6 +318,7 @@ export function ValueReport({ rankings, slug }) {
         </div>
       </div>
       {pitchOpen && <PitchLinkModal artist={a} onClose={() => setPitchOpen(false)} />}
+      <PricingModal open={payOpen} onClose={() => setPayOpen(false)} reason="Share this as a private pitch link" />
     </div>
   );
 }
