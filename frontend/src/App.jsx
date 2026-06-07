@@ -339,6 +339,27 @@ function ScoreBreakdown({ dj, ranges }) {
           <MetricRow key={metric.key} metric={metric} value={value} normalized={normalized} contribution={contribution} maxContrib={maxContrib} />
         ))}
       </div>
+      <SceneCredentials dj={dj} />
+    </div>
+  );
+}
+
+// Surfaces the rubric inputs BEHIND the Scene Score so the editorial layer is
+// transparent — a booker sees the actual credentials (Berghain, Defected,
+// Essential Mix…), not just a number. Tags are editorial, stored per artist.
+function SceneCredentials({ dj }) {
+  const tags = Array.isArray(dj.scene_tags) ? dj.scene_tags : [];
+  if (!tags.length) return null;
+  return (
+    <div className="scene-creds">
+      <div className="scene-creds-head">
+        <span className="scene-creds-dot" />
+        Scene credentials
+        <span className="scene-creds-score">{dj.manual_scene_score ?? "—"}/100</span>
+      </div>
+      <div className="scene-creds-tags">
+        {tags.map(t => <span key={t} className="scene-cred">{t}</span>)}
+      </div>
     </div>
   );
 }
@@ -669,7 +690,7 @@ function HowItWorksPage() {
       <section className="hiw-section">
         <h3 className="hiw-section-title">Scene Score — the published rubric</h3>
         <p className="hiw-section-sub">
-          Scene Score (11% of the rank) is the one editorial layer in the model — the industry credibility that pure data misses.
+          Scene Score (18% of the rank — the single highest-weighted signal) is the one editorial layer in the model — the industry credibility that pure data misses.
           To keep it honest, the criteria are public. Points accrue toward a 0–100 score; it's deliberately harder to game than a follower count.
         </p>
         <div className="hiw-rubric">
@@ -749,7 +770,7 @@ function HowItWorksPage() {
           {[
             { q: "Why isn't SoundCloud included?", a: "SoundCloud's public API no longer exposes follower or play counts at scale. We include it in data collection but weight it at 0% until reliable data is available." },
             { q: "Why do some artists show zero for certain metrics?", a: "Not every DJ has a YouTube channel or is active on TikTok. Zero values are genuine — they're not data errors. They pull the weighted score for that signal to zero but don't affect others." },
-            { q: "How is the Scene Score assigned?", a: "It's an editorial 0–100 score against the published rubric above — Boiler Room/HÖR sets, Berghain/fabric/DC10 bookings, festival closing slots, respected label homes, RA/Mixmag/DJ Mag covers, Ibiza residencies, Essential Mix invitations. It carries 11% weight, and the explicit criteria make it harder to game than pure data signals." },
+            { q: "How is the Scene Score assigned?", a: "It's an editorial 0–100 score against the published rubric above — Boiler Room/HÖR sets, Berghain/fabric/DC10 bookings, festival closing slots, respected label homes, RA/Mixmag/DJ Mag covers, Ibiza residencies, Essential Mix invitations. It carries 18% weight — the highest of any single signal — and the explicit criteria make it harder to game than pure data signals." },
             { q: "How does the Ones to Watch list differ from the main rankings?", a: "The main rankings weight current standing heavily. Ones to Watch reranks entirely by Momentum Score — so an artist can be #45 in the main chart but #2 in Ones to Watch if they're growing fast." },
             { q: "Can I get notified when an artist moves?", a: "Weekly movement alerts are on the roadmap. For now, the Ones to Watch and Velocity tabs surface who's accelerating across every signal we track." },
           ].map(({ q, a }) => (

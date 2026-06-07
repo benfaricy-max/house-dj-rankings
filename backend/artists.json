@@ -61,7 +61,13 @@
         "t": 2
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:26:03.438Z"
+    "artist_labels_updated": "2026-06-06T14:26:03.438Z",
+    "scene_tags": [
+      "Catch & Release",
+      "Coachella",
+      "Ibiza residency",
+      "Festival headliner"
+    ]
   },
   {
     "name": "Chris Lake",
@@ -146,7 +152,12 @@
         "t": 4
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:24:25.076Z"
+    "artist_labels_updated": "2026-06-06T14:24:25.076Z",
+    "scene_tags": [
+      "Black Book (own label)",
+      "Coachella",
+      "Festival headliner"
+    ]
   },
   {
     "name": "John Summit",
@@ -223,7 +234,13 @@
         "t": 4
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:24:17.072Z"
+    "artist_labels_updated": "2026-06-06T14:24:17.072Z",
+    "scene_tags": [
+      "Off The Grid (own label)",
+      "Coachella",
+      "Festival headliner",
+      "Press cover"
+    ]
   },
   {
     "name": "Fred Again",
@@ -402,7 +419,13 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:24:13.774Z"
+    "artist_labels_updated": "2026-06-06T14:24:13.774Z",
+    "scene_tags": [
+      "Wildlife (own label)",
+      "Coachella headliner",
+      "Essential Mix",
+      "Glastonbury"
+    ]
   },
   {
     "name": "Peggy Gou",
@@ -483,7 +506,13 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:25:47.192Z"
+    "artist_labels_updated": "2026-06-06T14:25:47.192Z",
+    "scene_tags": [
+      "Ninja Tune / Gudu",
+      "Boiler Room",
+      "Coachella",
+      "Press cover"
+    ]
   },
   {
     "name": "Black Coffee",
@@ -572,7 +601,13 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:25:38.755Z"
+    "artist_labels_updated": "2026-06-06T14:25:38.755Z",
+    "scene_tags": [
+      "Hï Ibiza residency",
+      "Grammy winner",
+      "Essential Mix",
+      "Festival headliner"
+    ]
   },
   {
     "name": "Solomun",
@@ -655,7 +690,13 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:25:58.234Z"
+    "artist_labels_updated": "2026-06-06T14:25:58.234Z",
+    "scene_tags": [
+      "Diynamic (own label)",
+      "Ibiza residency (Pacha)",
+      "Essential Mix",
+      "Awakenings headliner"
+    ]
   },
   {
     "name": "Tale Of Us",
@@ -721,7 +762,12 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:36:27.252Z"
+    "artist_labels_updated": "2026-06-06T14:36:27.252Z",
+    "scene_tags": [
+      "Afterlife (own label)",
+      "Festival headliner",
+      "Essential Mix"
+    ]
   },
   {
     "name": "Bicep",
@@ -886,7 +932,13 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:26:21.061Z"
+    "artist_labels_updated": "2026-06-06T14:26:21.061Z",
+    "scene_tags": [
+      "Hot Creations (own label)",
+      "DC10 Paradise residency",
+      "Essential Mix",
+      "Boiler Room"
+    ]
   },
   {
     "name": "Amelie Lens",
@@ -1024,7 +1076,13 @@
         "t": 4
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:26:13.758Z"
+    "artist_labels_updated": "2026-06-06T14:26:13.758Z",
+    "scene_tags": [
+      "KNTXT (own label)",
+      "Awakenings closing",
+      "Boiler Room",
+      "Tomorrowland mainstage"
+    ]
   },
   {
     "name": "Adam Beyer",
@@ -1106,7 +1164,13 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:25:29.000Z"
+    "artist_labels_updated": "2026-06-06T14:25:29.000Z",
+    "scene_tags": [
+      "Drumcode (own label)",
+      "Essential Mix",
+      "Time Warp",
+      "Festival headliner"
+    ]
   },
   {
     "name": "DJ Koze",
@@ -1191,7 +1255,12 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:27:04.688Z"
+    "artist_labels_updated": "2026-06-06T14:27:04.688Z",
+    "scene_tags": [
+      "Pampa (own label)",
+      "Essential Mix",
+      "Press cover"
+    ]
   },
   {
     "name": "Bonobo",
@@ -1757,7 +1826,13 @@
         "t": 4
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:26:39.509Z"
+    "artist_labels_updated": "2026-06-06T14:26:39.509Z",
+    "scene_tags": [
+      "Solid Grooves (own label)",
+      "DC10 residency",
+      "Boiler Room",
+      "Festival headliner"
+    ]
   },
   {
     "name": "ANOTR",
@@ -1838,7 +1913,12 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:24:11.254Z"
+    "artist_labels_updated": "2026-06-06T14:24:11.254Z",
+    "scene_tags": [
+      "No Art (own label)",
+      "Boiler Room",
+      "Festival headliner"
+    ]
   },
   {
     "name": "Mau P",
@@ -1921,7 +2001,12 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:25:31.916Z"
+    "artist_labels_updated": "2026-06-06T14:25:31.916Z",
+    "scene_tags": [
+      "Boiler Room",
+      "Festival headliner",
+      "Press cover"
+    ]
   },
   {
     "name": "SIDEPIECE",
@@ -2081,7 +2166,13 @@
         "t": 4
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:26:05.877Z"
+    "artist_labels_updated": "2026-06-06T14:26:05.877Z",
+    "scene_tags": [
+      "PIV / Up The Stuss",
+      "Boiler Room",
+      "fabric",
+      "Festival headliner"
+    ]
   },
   {
     "name": "PAWSA",
@@ -2159,7 +2250,12 @@
         "t": 4
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:26:16.149Z"
+    "artist_labels_updated": "2026-06-06T14:26:16.149Z",
+    "scene_tags": [
+      "Solä (own label)",
+      "Boiler Room",
+      "Festival headliner"
+    ]
   },
   {
     "name": "Carlita",
@@ -2563,7 +2659,12 @@
         "t": 4
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:25:55.883Z"
+    "artist_labels_updated": "2026-06-06T14:25:55.883Z",
+    "scene_tags": [
+      "Hot Cakes (own label)",
+      "Boiler Room",
+      "Festival headliner"
+    ]
   },
   {
     "name": "Josh Baker",
@@ -2655,7 +2756,12 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:26:10.757Z"
+    "artist_labels_updated": "2026-06-06T14:26:10.757Z",
+    "scene_tags": [
+      "fabric",
+      "Boiler Room",
+      "Festival sets"
+    ]
   },
   {
     "name": "Franky Rizardo",
@@ -3052,7 +3158,12 @@
         "t": 3
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:26:56.271Z"
+    "artist_labels_updated": "2026-06-06T14:26:56.271Z",
+    "scene_tags": [
+      "G-Town / Steel City Dance Discs",
+      "Boiler Room",
+      "fabric"
+    ]
   },
   {
     "name": "Ranger Trucco",
@@ -3396,7 +3507,12 @@
         "t": 3
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:24:19.711Z"
+    "artist_labels_updated": "2026-06-06T14:24:19.711Z",
+    "scene_tags": [
+      "Ninja Tune",
+      "Boiler Room",
+      "Festival headliner"
+    ]
   },
   {
     "name": "Roddy Lima",
@@ -3968,7 +4084,11 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:25:44.682Z"
+    "artist_labels_updated": "2026-06-06T14:25:44.682Z",
+    "scene_tags": [
+      "Shall Not Fade / 16 Bit",
+      "Boiler Room"
+    ]
   },
   {
     "name": "Murphy's Law",
@@ -4586,7 +4706,13 @@
         "t": 2
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:26:08.294Z"
+    "artist_labels_updated": "2026-06-06T14:26:08.294Z",
+    "scene_tags": [
+      "Drumcode mainstay",
+      "Space Ibiza residency",
+      "Essential Mix",
+      "Festival headliner"
+    ]
   },
   {
     "name": "Green Velvet",
@@ -4675,7 +4801,13 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:25:53.500Z"
+    "artist_labels_updated": "2026-06-06T14:25:53.500Z",
+    "scene_tags": [
+      "Relief / Cajual",
+      "La La Land",
+      "Essential Mix",
+      "Festival headliner"
+    ]
   },
   {
     "name": "Dom Dolla",
@@ -4756,7 +4888,12 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:24:30.922Z"
+    "artist_labels_updated": "2026-06-06T14:24:30.922Z",
+    "scene_tags": [
+      "Coachella",
+      "Festival headliner",
+      "Press cover"
+    ]
   },
   {
     "name": "James Hype",
@@ -4899,7 +5036,12 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:27:47.450Z"
+    "artist_labels_updated": "2026-06-06T14:27:47.450Z",
+    "scene_tags": [
+      "Dirtybird (own label)",
+      "Festival headliner",
+      "Essential Mix"
+    ]
   },
   {
     "name": "Shiba San",
@@ -5052,7 +5194,12 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:26:51.275Z"
+    "artist_labels_updated": "2026-06-06T14:26:51.275Z",
+    "scene_tags": [
+      "Drumcode releases",
+      "Boiler Room",
+      "Festival headliner"
+    ]
   },
   {
     "name": "HoneyLuv",
@@ -5549,7 +5696,12 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:25:35.175Z"
+    "artist_labels_updated": "2026-06-06T14:25:35.175Z",
+    "scene_tags": [
+      "Innervisions",
+      "Boiler Room",
+      "Awakenings"
+    ]
   },
   {
     "name": "Kerri Chandler",
@@ -5982,7 +6134,12 @@
         "t": 4
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:26:01.143Z"
+    "artist_labels_updated": "2026-06-06T14:26:01.143Z",
+    "scene_tags": [
+      "Toolroom (own label)",
+      "Essential Mix",
+      "Festival headliner"
+    ]
   },
   {
     "name": "Loco Dice",
@@ -7931,7 +8088,12 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:26:31.844Z"
+    "artist_labels_updated": "2026-06-06T14:26:31.844Z",
+    "scene_tags": [
+      "Afterlife",
+      "Sphere Las Vegas residency",
+      "Festival headliner"
+    ]
   },
   {
     "name": "Enoo Napa",
@@ -9511,7 +9673,12 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:27:36.832Z"
+    "artist_labels_updated": "2026-06-06T14:27:36.832Z",
+    "scene_tags": [
+      "Robert Hood / Aril Brikha lineage",
+      "Movement Detroit",
+      "Essential Mix"
+    ]
   },
   {
     "name": "Jayda G",
@@ -9657,7 +9824,12 @@
         "t": 4
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:26:45.858Z"
+    "artist_labels_updated": "2026-06-06T14:26:45.858Z",
+    "scene_tags": [
+      "Spectrum / Green",
+      "Awakenings",
+      "Essential Mix"
+    ]
   },
   {
     "name": "Victor Calderone",
@@ -10295,7 +10467,13 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:33:30.566Z"
+    "artist_labels_updated": "2026-06-06T14:33:30.566Z",
+    "scene_tags": [
+      "Lone Romantic / Ellum",
+      "DC10",
+      "Essential Mix",
+      "Awakenings"
+    ]
   },
   {
     "name": "Mind Against",
@@ -10379,7 +10557,12 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:27:31.236Z"
+    "artist_labels_updated": "2026-06-06T14:27:31.236Z",
+    "scene_tags": [
+      "Afterlife",
+      "Boiler Room",
+      "Festival headliner"
+    ]
   },
   {
     "name": "WhoMadeWho",
@@ -10795,7 +10978,11 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:26:29.137Z"
+    "artist_labels_updated": "2026-06-06T14:26:29.137Z",
+    "scene_tags": [
+      "Anjunadeep",
+      "Festival headliner"
+    ]
   },
   {
     "name": "Ben Böhmer",
@@ -11018,7 +11205,12 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:26:34.419Z"
+    "artist_labels_updated": "2026-06-06T14:26:34.419Z",
+    "scene_tags": [
+      "Siamese (own label)",
+      "Afterlife",
+      "Festival headliner"
+    ]
   },
   {
     "name": "Kollektiv Turmstrasse",
@@ -15106,7 +15298,12 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:26:48.316Z"
+    "artist_labels_updated": "2026-06-06T14:26:48.316Z",
+    "scene_tags": [
+      "Last Night On Earth",
+      "Essential Mix",
+      "fabric"
+    ]
   },
   {
     "name": "John Digweed",
@@ -15342,7 +15539,13 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:27:39.431Z"
+    "artist_labels_updated": "2026-06-06T14:27:39.431Z",
+    "scene_tags": [
+      "Graded (own label)",
+      "fabric",
+      "Essential Mix",
+      "Boiler Room"
+    ]
   },
   {
     "name": "Mano Le Tough",
@@ -18607,7 +18810,12 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:24:22.365Z"
+    "artist_labels_updated": "2026-06-06T14:24:22.365Z",
+    "scene_tags": [
+      "Defected releases",
+      "Festival sets",
+      "Ibiza dates"
+    ]
   },
   {
     "name": "Adam Ten",
@@ -18773,7 +18981,11 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:30:17.547Z"
+    "artist_labels_updated": "2026-06-06T14:30:17.547Z",
+    "scene_tags": [
+      "Drumcode / Moon Harbour",
+      "Boiler Room"
+    ]
   },
   {
     "name": "Brunello",
@@ -19264,7 +19476,12 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:26:59.534Z"
+    "artist_labels_updated": "2026-06-06T14:26:59.534Z",
+    "scene_tags": [
+      "Keinemusik",
+      "Festival headliner",
+      "Boiler Room"
+    ]
   },
   {
     "name": "Keinemusik",
@@ -19336,7 +19553,13 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:29:00.747Z"
+    "artist_labels_updated": "2026-06-06T14:29:00.747Z",
+    "scene_tags": [
+      "Keinemusik (own label)",
+      "Boiler Room",
+      "Festival headliner",
+      "Pyramids of Giza set"
+    ]
   },
   {
     "name": "OMRI.",
@@ -20077,7 +20300,12 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:28:26.446Z"
+    "artist_labels_updated": "2026-06-06T14:28:26.446Z",
+    "scene_tags": [
+      "Keinemusik",
+      "Awakenings",
+      "Festival headliner"
+    ]
   },
   {
     "name": "Jacob Matthews",
@@ -20417,7 +20645,11 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:26:42.232Z"
+    "artist_labels_updated": "2026-06-06T14:26:42.232Z",
+    "scene_tags": [
+      "Tomorrowland mainstage",
+      "Festival headliner"
+    ]
   },
   {
     "name": "Hardt Antoine",
@@ -20582,7 +20814,12 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:28:02.963Z"
+    "artist_labels_updated": "2026-06-06T14:28:02.963Z",
+    "scene_tags": [
+      "Keinemusik",
+      "Festival headliner",
+      "Boiler Room"
+    ]
   },
   {
     "name": "Boss Priester",
@@ -21064,7 +21301,11 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:28:15.752Z"
+    "artist_labels_updated": "2026-06-06T14:28:15.752Z",
+    "scene_tags": [
+      "Watergate / Afterlife",
+      "Boiler Room"
+    ]
   },
   {
     "name": "Cam Stockman",
@@ -21535,7 +21776,11 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:30:56.477Z"
+    "artist_labels_updated": "2026-06-06T14:30:56.477Z",
+    "scene_tags": [
+      "Under No Illusion",
+      "Boiler Room"
+    ]
   },
   {
     "name": "RSquared",
