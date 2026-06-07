@@ -110,22 +110,26 @@ CI step no-ops gracefully; tl_* persists via generateStatic's `...prev` spread).
 Set repo var `TL_API_BASE` to a hosted URL to run it in CI. UI: "DJ Support · 1001TL"
 signal on artist profiles + How It Works methodology.
 
-## Scene Score (transparent editorial layer)
-`manual_scene_score` 0-100, weight 0.11 (raised from 0.04). Published rubric in
-How It Works (SCENE_RUBRIC in App.jsx): Boiler Room/HÖR +20, Berghain/fabric/DC10
-+20, festival closing +15, respected label +15, RA/Mixmag/DJ Mag cover +10, Ibiza
-residency +10, Essential Mix +10. Explicit criteria = credible + hard to game.
+## Scene Score (transparent editorial layer — LEADS the composite)
+`manual_scene_score` 0-100, weight **0.18** (now the single highest-weighted signal).
+Published rubric in How It Works (SCENE_RUBRIC in App.jsx): Boiler Room/HÖR +20,
+Berghain/fabric/DC10 +20, festival closing +15, respected label +15, RA/Mixmag/DJ
+Mag cover +10, Ibiza residency +10, Essential Mix +10. Explicit criteria = credible
++ hard to game. Most of the roster is now hand-scored (editorial pass Jun 2026 over
+the 43 artists still on the un-scored 50 default — commercial-pop acts down, scene
+acts up). Bookers (Cookiy AI research) said scene credibility strictly outweighs
+mainstream reach, so Scene leads and reach signals were cut.
 
 ## Composite weights (score.js, sum=1.00)
-listeners .15, beatport .13, scene .12, ra .12, trends .09, growth .08,
-yt_subs .08, tiktok .06, tl_support (1001TL DJ-support) .05, label .05,
+scene .18 (LEADS), beatport .13, ra .12, listeners .11, trends .09, growth .08,
+yt_subs .06, tiktok .06, tl_support (1001TL DJ-support) .05, label .05,
 releases .05, wikipedia .02. RETIRED (0): track_pop (Spotify-blocked),
 yt_views_weekly (delta metric, 0% coverage), beatport_hype (one Beatport metric
 in primary rankings — Hype still collected for emerging views, not in composite).
 Self-healing: empty-field signals redistribute their weight per-artist over the
-signals present. Rebalanced toward the reliable high-coverage / booker-trusted
-core (listeners, scene, RA); listener growth reduced from .13 (volatile + thin
-coverage). Keep score.js + the frontend METRICS / METRIC_DETAILS arrays in sync.
+signals present. Jun 2026 booker-research reweight: scene .12→.18 (now leads),
+listeners .15→.11 and yt_subs .08→.06 (reach = "noise" per bookers, demoted below
+the scene signals). Keep score.js + the frontend METRICS / METRIC_DETAILS arrays in sync.
 
 ## Key per-artist fields (in artists.json, persisted)
 - `emerging` (bool) — reputation-based; drives "Ones to Watch" (excludes legends).

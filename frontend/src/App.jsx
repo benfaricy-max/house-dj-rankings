@@ -57,13 +57,13 @@ const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
 const MEDAL = { 1: "🥇", 2: "🥈", 3: "🥉" };
 
 const METRICS = [
-  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",  weight: 0.15, format: "count"    },
-  { key: "manual_scene_score",           label: "Scene Score",        weight: 0.12, format: "score100" },
+  { key: "manual_scene_score",           label: "Scene Score",        weight: 0.18, format: "score100" },
   { key: "beatport_score",               label: "Beatport Chart",     weight: 0.13, format: "score100" },
   { key: "ra_score",                     label: "RA Booking",         weight: 0.12, format: "score100" },
+  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",  weight: 0.11, format: "count"    },
   { key: "google_trends_score",          label: "Google Trends",      weight: 0.09, format: "score100" },
   { key: "spotify_follower_growth_rate", label: "Listener Growth",    weight: 0.08, format: "pct"      },
-  { key: "youtube_subscribers",          label: "YT Subscribers",     weight: 0.08, format: "count"    },
+  { key: "youtube_subscribers",          label: "YT Subscribers",     weight: 0.06, format: "count"    },
   { key: "tiktok_post_count",            label: "TikTok Posts",       weight: 0.06, format: "posts"    },
   { key: "tl_support_score",             label: "DJ Support (1001TL)",weight: 0.05, format: "score100" },
   { key: "label_score",                  label: "Label Trajectory",   weight: 0.05, format: "score100" },
@@ -605,13 +605,13 @@ const DATA_SOURCES = [
 ];
 
 const METRIC_DETAILS = [
-  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",   weight: 0.15, color: "#1DB954", why: "The strongest single proxy for active fanbase size, read from the live Spotify session." },
-  { key: "manual_scene_score",           label: "Scene Score",         weight: 0.12, color: "#8b5cf6", why: "Editorial credibility for what algorithms miss — Boiler Room, Berghain/fabric bookings, festival closing slots, press covers. Scored against a published, transparent rubric (below)." },
+  { key: "manual_scene_score",           label: "Scene Score",         weight: 0.18, color: "#8b5cf6", why: "Editorial credibility for what algorithms miss — Boiler Room, Berghain/fabric bookings, festival closing slots, press covers. Scored against a published, transparent rubric (below). Leads the composite: bookers told us scene credibility strictly outweighs mainstream reach." },
   { key: "beatport_score",               label: "Beatport Chart",      weight: 0.13, color: "#a8e00f", why: "Position across genre Top 100 charts. The DJ retail store, so charting signals credibility with the core scene rather than the mainstream." },
   { key: "ra_score",                     label: "RA Booking",          weight: 0.12, color: "#FF5C00", why: "Resident Advisor live-booking signal: venue-capacity tier, attendance, and geographic spread of recent and upcoming shows. Direct demand from the touring market." },
+  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",   weight: 0.11, color: "#1DB954", why: "A proxy for active fanbase size, read from the live Spotify session. Useful, but reach alone is the weakest booking predictor — so it sits below the scene signals." },
   { key: "google_trends_score",          label: "Google Trends",       weight: 0.09, color: "#4285F4", why: "Search interest normalized to the artist's own peak. Rising search frequently precedes booking-fee increases." },
   { key: "spotify_follower_growth_rate", label: "Listener Growth",     weight: 0.08, color: "#C8F750", why: "Rate of change in audience — acceleration often predicts demand before size does. Weighted modestly while its coverage builds." },
-  { key: "youtube_subscribers",          label: "YouTube Subscribers", weight: 0.08, color: "#FF0000", why: "A proxy for dedicated fanbase depth. YouTube audiences tend to convert to ticket buyers at a higher rate." },
+  { key: "youtube_subscribers",          label: "YouTube Subscribers", weight: 0.06, color: "#FF0000", why: "A proxy for dedicated fanbase depth. YouTube audiences tend to convert to ticket buyers at a higher rate." },
   { key: "tiktok_post_count",            label: "TikTok Posts",        weight: 0.06, color: "#E9E7DF", why: "Posts using the artist's hashtag. Measures grassroots cultural spread, often an early breakout indicator." },
   { key: "tl_support_score",             label: "DJ Support (1001TL)", weight: 0.05, color: "#00b8d4", why: "Where the artist's tracks land on 1001Tracklists' weekly chart of what DJs actually PLAY in their sets. The hardest signal to game — tastemakers spinning your music, not sales or streams." },
   { key: "label_score",                  label: "Label Trajectory",    weight: 0.05, color: "#8b5cf6", why: "Tier and trajectory of the labels an artist releases on (Drumcode/Kompakt/Defected…) — credibility, and whether they're moving onto bigger homes." },

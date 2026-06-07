@@ -37,14 +37,18 @@ function scoreArtists(artists) {
   // thin coverage); freed weight went to the reliable high-coverage signals
   // (listeners, scene, RA — the booker-trusted core). Self-healing still applies:
   // empty signals' weight redistributes per-artist over the signals they do have.
+  // Booker research (Cookiy AI, Jun 2026): "scene credibility strictly outweighs
+  // mainstream reach"; reach/streams = "noise". So Scene Score leads the composite
+  // and the reach signals (listeners, YT subs) were cut. Pairs with a proper
+  // editorial Scene Score pass — most artists now hand-scored, not the 50 default.
   const weights = {
-    spotify_monthly_listeners:    0.15,  // strongest single proxy for active fanbase (84% coverage)
-    manual_scene_score:           0.12,  // editorial scene credibility (transparent rubric — see How It Works)
-    beatport_score:               0.13,  // core scene / chart credibility (one Beatport metric — absorbed Hype's weight)
+    manual_scene_score:           0.18,  // LEADS — editorial scene credibility (rubric in How It Works); what bookers trust most
+    beatport_score:               0.13,  // core scene / chart credibility (one Beatport metric)
     ra_score:                     0.12,  // RA live booking demand: venue tier, attending, geo spread
+    spotify_monthly_listeners:    0.11,  // reach — useful but "noise" per bookers; reduced from 0.15
     google_trends_score:          0.09,
-    spotify_follower_growth_rate: 0.08,  // growth still matters (acceleration), but thin coverage — reduced from 0.13
-    youtube_subscribers:          0.08,
+    spotify_follower_growth_rate: 0.08,  // growth (acceleration), thin coverage
+    youtube_subscribers:          0.06,  // reach proxy — reduced from 0.08
     tiktok_post_count:            0.06,
     tl_support_score:             0.05,  // DJ SUPPORT: 1001Tracklists weekly chart — what DJs actually play (hardest to game)
     label_score:                  0.05,  // label tier (Drumcode/Kompakt/Defected…) — credibility & trajectory
