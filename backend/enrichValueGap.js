@@ -46,6 +46,29 @@ const SIGNALS = [
 // arena fees for a club act — the #1 reason a booker stops trusting the number.
 const venueCeiling = vt => (vt > 0 ? Math.min(6, Math.round(vt) + 1) : 6);
 
+// RA "attending" is an RSVP count that skews underground — it structurally
+// UNDER-represents festival/commercial acts whose crowd isn't on RA. Judging an
+// artist off an unrepresentative sample produces false "overpriced" calls on famous
+// acts (e.g. a tier-4 venue act showing 16 RSVPs) — the single fastest way to lose a
+// booker's trust, and exactly what PERMANENT RULE #1 forbids. So we only publish a
+// verdict when the RA draw is substantial enough to represent the rooms the act commands.
+const attendFloor = vt => (vt >= 5 ? 120 : vt >= 4 ? 60 : vt >= 3 ? 30 : 0);
+const liveAnchorOk = a => {
+  if (!(a.ra_venue_tier > 0) || !(a.ra_avg_attending > 0)) return false;
+  // attendance must be plausible for the venue tier the act commands
+  if (a.ra_avg_attending < attendFloor(a.ra_venue_tier)) return false;
+  // a top-fee act (curated A/B, £35k+) with a thin RA draw = RA simply doesn't see
+  // their audience — its demand reading is noise, not evidence of weak demand.
+  if (a.booking_fee.tier >= 5 && a.ra_avg_attending < 120) return false;
+  // REACH MISMATCH — a big-reach act (≥1M monthly listeners) whose RA draw is a
+  // negligible slice of its real audience (<4 attending per 100k listeners) is the
+  // same under-coverage problem even when RA also depresses its venue tier. This
+  // catches the festival/commercial acts the venue-tier floor misses because RA
+  // logs them in small rooms (e.g. a 1M+ act at venue T3 with ~34 RSVPs).
+  if (a.spotify_monthly_listeners >= 1e6 && Number.isFinite(a.live_conversion) && a.live_conversion < 4) return false;
+  return true;
+};
+
 function computeValueGap(A) {
   // 1. demand_index, self-healing per-artist over signals it has.
   const ranges = {};
@@ -96,7 +119,7 @@ function computeValueGap(A) {
   // bookers don't trust. No live anchor → no published verdict.
   const withFee = A.filter(a => a.booking_fee?.tier && a.demand_index != null
     && (a.booking_fee.basis === "curated" || a.booking_fee.basis === "anchored")
-    && a.ra_venue_tier > 0 && a.ra_avg_attending > 0);
+    && liveAnchorOk(a));
   const tierCounts = {};
   for (const a of withFee) tierCounts[a.booking_fee.tier] = (tierCounts[a.booking_fee.tier] || 0) + 1;
   const ranked = [...withFee].sort((x, y) => y.demand_index - x.demand_index);
