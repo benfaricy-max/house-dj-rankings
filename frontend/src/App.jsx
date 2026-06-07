@@ -4,6 +4,7 @@ const ProPage = lazy(() => import("./ProPage"));   // code-split: the ~750-line 
 import ArtistProfile, { slugify, ArtistLink } from "./ArtistProfile";
 import { ValueGapPage, ValueReport, valueSlug } from "./ValueGap";
 import RoutingSaturation from "./RoutingSaturation";
+import ClubViral from "./ClubViral";
 import { useWatchlist, useMomentumAlerts } from "./watchlist";
 import { InfoTip, MomentumTip, MOMENTUM_BLEND } from "./methodology";
 import PitchPage from "./Pitch";   // read-only private brief route (also pulled by ValueGap)
@@ -347,6 +348,7 @@ function ScoreBreakdown({ dj, ranges }) {
         ))}
       </div>
       <SceneCredentials dj={dj} />
+      <ClubViral dj={dj} ranges={ranges} />
     </div>
   );
 }
