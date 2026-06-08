@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { ARTIST_PROFILES } from "./artistProfiles";
 import { useWatchlist } from "./watchlist";
-import { MomentumTip, ValueGapTip } from "./methodology";
+import { MomentumTip, ValueGapTip, sceneGeography } from "./methodology";
 import "./ArtistProfile.css";
 
 export const slugify = s => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "")
@@ -449,6 +449,39 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
           })()}
         </div>
       )}
+
+      {(() => {
+        const geo = sceneGeography(dj);
+        if (!geo) return null;
+        const axis = (label, data, pending) => (
+          <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, letterSpacing: "0.04em", textTransform: "uppercase", color: "#75767d", minWidth: 96 }}>{label}</span>
+              {data
+                ? <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, fontWeight: 600, color: data.color, border: `1px solid ${data.color}55`, borderRadius: 999, padding: "2px 10px" }}>{data.category}</span>
+                : <span style={{ fontSize: 12, color: "#75767d", fontStyle: "italic" }}>{pending}</span>}
+            </div>
+            {data && (data.top || data.hits)?.length > 0 && (
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6, paddingLeft: 0 }}>
+                {(data.top || data.hits).slice(0, 5).map((m, i) => {
+                  const core = data.hits.includes(m);
+                  return <span key={i} style={{ fontSize: 12, color: core ? data.color : "#a9a8a2", border: `1px solid ${core ? data.color + "55" : "#1e1f23"}`, borderRadius: 6, padding: "2px 8px" }}>{m}</span>;
+                })}
+              </div>
+            )}
+          </div>
+        );
+        return (
+          <div style={{ background: "#111114", border: "1px solid #1e1f23", borderRadius: 12, padding: "16px 18px", margin: "0 0 6px", display: "flex", flexDirection: "column", gap: 14 }}>
+            <div style={{ display: "flex", alignItems: "baseline", gap: 10, flexWrap: "wrap" }}>
+              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 13, fontWeight: 600, letterSpacing: "0.03em", color: "#E9E7DF", textTransform: "uppercase" }}>Scene Geography</span>
+              <span style={{ fontSize: 12, color: "#75767d" }}>where they're booked vs. where they're heard</span>
+            </div>
+            {axis("Booked across", geo.booking, "no RA routing data")}
+            {axis(`Audience${geo.audience?.source ? ` · ${geo.audience.source}` : ""}`, geo.audience, "Spotify city data pending")}
+          </div>
+        );
+      })()}
 
       <div className="ap-grid">
         <div className="ap-card">

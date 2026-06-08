@@ -112,6 +112,59 @@ export function FormTip({ dj }) {
   );
 }
 
+// ── Scene geography (international appeal) ────────────────────────────────────
+// Two genuinely different axes, kept separate on purpose:
+//   • BOOKING footprint — where an act is actually booked (RA top regions). A
+//     European tech-house act tours Ibiza/Berlin/Amsterdam even if huge in the US.
+//   • AUDIENCE geography — where the listeners are (Spotify top cities, the real
+//     "international appeal" read; Google Trends countries as a sparse fallback).
+// An act can be Euro-booked but US-listened — that gap is the insight, so we never
+// collapse the two into one number. Core = the electronic-music credibility markets.
+const CORE_COUNTRIES = new Set(["Spain","Germany","Netherlands","United Kingdom","Italy","France","Belgium","Croatia","Switzerland","Austria","Georgia","Serbia","Czechia","Czech Republic","Portugal","Greece","Poland","Ireland"]);
+const CORE_CITIES = new Set(["Ibiza","Berlin","Amsterdam","London","Barcelona","Milan","Paris","Brussels","Manchester","Naples","Rome","Cologne","Frankfurt","Hamburg","Munich","Tbilisi","Belgrade","Zurich","Vienna","Madrid","Rotterdam","Bristol","Glasgow","Leeds","Lisbon","Athens","Warsaw","Prague","Lyon","Valencia","Sheffield","Nottingham","Dublin"]);
+
+const geoCategory = s => s >= 60 ? "Euro-core" : s >= 38 ? "Global" : "US / Anglo-led";
+const GEO_COLOR = { "Euro-core": "#C8F750", "Global": "#9aa0a6", "US / Anglo-led": "#e0894a" };
+
+// Booking footprint from RA top regions (city-level). Returns null if no data.
+function bookingGeo(dj) {
+  const regs = Array.isArray(dj?.ra_top_regions) ? dj.ra_top_regions : [];
+  if (!regs.length) return null;
+  const hits = regs.filter(r => CORE_CITIES.has(r.name) || CORE_COUNTRIES.has(r.country)).map(r => r.name);
+  const score = Math.round((hits.length / regs.length) * 100);
+  return { score, category: geoCategory(score), hits, color: GEO_COLOR[geoCategory(score)] };
+}
+
+// Audience geography — prefer Spotify top cities (populated by enrichSpotifyGeo via
+// the Interceptor); fall back to the sparser/noisier Trends-by-country data.
+function audienceGeo(dj) {
+  const cities = Array.isArray(dj?.spotify_top_cities) ? dj.spotify_top_cities : [];
+  if (cities.length) {
+    let core = 0, tot = 0; const hits = [];
+    for (const c of cities) {
+      const n = c.listeners || c.numberOfListeners || 1; tot += n;
+      if (CORE_CITIES.has(c.city) || CORE_COUNTRIES.has(c.country)) { core += n; hits.push(c.city); }
+    }
+    const score = Math.round(tot ? (core / tot) * 100 : 0);
+    return { score, category: geoCategory(score), hits, color: GEO_COLOR[geoCategory(score)], source: "Spotify cities", top: cities.slice(0, 5).map(c => c.city) };
+  }
+  const tr = dj?.google_trends_countries_raw || {};
+  const ent = Object.entries(tr);
+  if (!ent.length) return null;
+  let core = 0, tot = 0; const hits = [];
+  for (const [c, v] of ent) { tot += v; if (CORE_COUNTRIES.has(c)) { core += v; hits.push(c); } }
+  const score = Math.round(tot ? (core / tot) * 100 : 0);
+  return { score, category: geoCategory(score), hits, color: GEO_COLOR[geoCategory(score)], source: "search interest", top: ent.sort((a,b)=>b[1]-a[1]).slice(0,5).map(([c])=>c) };
+}
+
+// Combined read for the markets strip + (later) a weighted scene_geography signal.
+export function sceneGeography(dj) {
+  const booking = bookingGeo(dj);
+  const audience = audienceGeo(dj);
+  if (!booking && !audience) return null;
+  return { booking, audience };
+}
+
 // Single source of truth for the demand index behind the Price/Demand Gap.
 // LIVE-LED (mirrors backend enrichValueGap.js SIGNALS): bookers told us global
 // digital metrics are noise until they line up with the rooms you fill and the

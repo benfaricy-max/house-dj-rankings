@@ -124,6 +124,21 @@ moved Hugel, scene 28, from #3 to #17). Validated against a labeled act set (89%
 pairwise agreement). Keep the factor in sync with the How It Works "Credibility
 floor" note.
 
+## Scene Geography / international appeal (audience-based)
+`node backend/enrichSpotifyGeo.js [limit]` — pulls each artist's Spotify top listener
+cities ("where people listen") via the Interceptor (`/api/spotify/artist/:id` now
+returns `topCities`), stores `spotify_top_cities` [{city,country,listeners}] and a
+`scene_geography` score 0-100 = share of top-city listeners in the core EM credibility
+markets (Ibiza/Spain, Berlin/Germany, Amsterdam/NL, UK, Italy, France… — set lives in
+both this script and `methodology.jsx`). Local-only (Interceptor), merge-safe, scriptLock,
+resumable (`geo_intercept_at`). **Two axes, deliberately separate:** booking footprint
+(RA `ra_top_regions` — where they're booked) vs audience geography (Spotify cities —
+where they're heard). An act can be Euro-booked but US-listened; that gap is the point.
+UI: the artist-profile "Scene Geography" strip (`sceneGeography` in methodology.jsx)
+shows both — audience axis falls back to Google Trends countries until Spotify cities
+populate. **Not yet weighted in score.js** — surfaced for review first ("see before
+weight"); weight ~.05-.08 once real city data is validated against the labeled set.
+
 ## Composite weights (score.js, sum=1.00)
 ra .17 (LEADS), beatport .14, scene .14, listeners .12, tl_support (1001TL) .09,
 trends .08, growth .06, yt_subs .05, label .05, tiktok .04, releases .04,
