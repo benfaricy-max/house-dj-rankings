@@ -32,20 +32,18 @@ function scoreArtists(artists) {
     ranges[m] = { min: Math.min(...values), max: Math.max(...values) };
   }
 
-  // Weights sum to 1.00. Rebalanced: dropped youtube_views_weekly (delta metric,
-  // 0% coverage until 2 snapshots exist) and reduced listener growth (volatile +
-  // thin coverage); freed weight went to the reliable high-coverage signals
-  // (listeners, scene, RA — the booker-trusted core). Self-healing still applies:
-  // empty signals' weight redistributes per-artist over the signals they do have.
-  // Booker research (Cookiy AI, Jun 2026): "scene credibility strictly outweighs
-  // mainstream reach"; reach/streams = "noise". So Scene Score leads the composite
-  // and the reach signals (listeners, YT subs) were cut. Pairs with a proper
-  // editorial Scene Score pass — most artists now hand-scored, not the 50 default.
+  // Weights sum to 1.00. Self-healing still applies: empty signals' weight
+  // redistributes per-artist over the signals they do have.
+  // Jun 2026 reweight: Monthly Listeners (reach) now LEADS the composite (0.19),
+  // ahead of the credibility signals (Beatport, RA). Scene Score — a hand-scored
+  // editorial layer — was reduced to a supporting 0.10 so the index leans on
+  // measurable, third-party reach rather than editorial judgement. Keep this in
+  // sync with the frontend METRICS / METRIC_DETAILS arrays and CLAUDE.md.
   const weights = {
-    manual_scene_score:           0.18,  // LEADS — editorial scene credibility (rubric in How It Works); what bookers trust most
+    spotify_monthly_listeners:    0.19,  // LEADS — active fanbase reach, read from the live Spotify session
     beatport_score:               0.13,  // core scene / chart credibility (one Beatport metric)
     ra_score:                     0.12,  // RA live booking demand: venue tier, attending, geo spread
-    spotify_monthly_listeners:    0.11,  // reach — useful but "noise" per bookers; reduced from 0.15
+    manual_scene_score:           0.10,  // editorial scene credibility (rubric in How It Works) — supporting layer
     google_trends_score:          0.09,
     spotify_follower_growth_rate: 0.08,  // growth (acceleration), thin coverage
     youtube_subscribers:          0.06,  // reach proxy — reduced from 0.08

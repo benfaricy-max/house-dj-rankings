@@ -62,10 +62,10 @@ const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
 const MEDAL = { 1: "🥇", 2: "🥈", 3: "🥉" };
 
 const METRICS = [
-  { key: "manual_scene_score",           label: "Scene Score",        weight: 0.18, format: "score100" },
+  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",  weight: 0.19, format: "count"    },
   { key: "beatport_score",               label: "Beatport Chart",     weight: 0.13, format: "score100" },
   { key: "ra_score",                     label: "RA Booking",         weight: 0.12, format: "score100" },
-  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",  weight: 0.11, format: "count"    },
+  { key: "manual_scene_score",           label: "Scene Score",        weight: 0.10, format: "score100" },
   { key: "google_trends_score",          label: "Google Trends",      weight: 0.09, format: "score100" },
   { key: "spotify_follower_growth_rate", label: "Listener Growth",    weight: 0.08, format: "pct"      },
   { key: "youtube_subscribers",          label: "YT Subscribers",     weight: 0.06, format: "count"    },
@@ -669,10 +669,10 @@ const DATA_SOURCES = [
 ];
 
 const METRIC_DETAILS = [
-  { key: "manual_scene_score",           label: "Scene Score",         weight: 0.18, color: "#8b5cf6", why: "Editorial credibility for what algorithms miss — Boiler Room, Berghain/fabric bookings, festival closing slots, press covers. Scored against a published, transparent rubric (below). Leads the composite: bookers told us scene credibility strictly outweighs mainstream reach." },
+  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",   weight: 0.19, color: "#1DB954", why: "Active fanbase reach, read from the live Spotify session. The single highest-weighted signal — a measurable, third-party read on how many people are actually listening right now." },
   { key: "beatport_score",               label: "Beatport Chart",      weight: 0.13, color: "#a8e00f", why: "Position across genre Top 100 charts. The DJ retail store, so charting signals credibility with the core scene rather than the mainstream." },
   { key: "ra_score",                     label: "RA Booking",          weight: 0.12, color: "#FF5C00", why: "Resident Advisor live-booking signal: venue-capacity tier, attendance, and geographic spread of recent and upcoming shows. Direct demand from the touring market." },
-  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",   weight: 0.11, color: "#1DB954", why: "A proxy for active fanbase size, read from the live Spotify session. Useful, but reach alone is the weakest booking predictor — so it sits below the scene signals." },
+  { key: "manual_scene_score",           label: "Scene Score",         weight: 0.10, color: "#8b5cf6", why: "An editorial layer for what algorithms miss — Boiler Room, Berghain/fabric bookings, festival closing slots, press covers. Scored against a published, transparent rubric (below). A supporting signal: it adds scene context on top of the measurable reach and chart data, rather than driving the ranking." },
   { key: "google_trends_score",          label: "Google Trends",       weight: 0.09, color: "#4285F4", why: "Search interest normalized to the artist's own peak. Rising search frequently precedes booking-fee increases." },
   { key: "spotify_follower_growth_rate", label: "Listener Growth",     weight: 0.08, color: "#C8F750", why: "Rate of change in audience — acceleration often predicts demand before size does. Weighted modestly while its coverage builds." },
   { key: "youtube_subscribers",          label: "YouTube Subscribers", weight: 0.06, color: "#FF0000", why: "A proxy for dedicated fanbase depth. YouTube audiences tend to convert to ticket buyers at a higher rate." },
@@ -733,7 +733,7 @@ function HowItWorksPage() {
       <section className="hiw-section">
         <h3 className="hiw-section-title">Scene Score — the published rubric</h3>
         <p className="hiw-section-sub">
-          Scene Score (18% of the rank — the single highest-weighted signal) is the one editorial layer in the model — the industry credibility that pure data misses.
+          Scene Score (10% of the rank) is the one editorial layer in the model — a supporting read on the industry credibility that pure data misses, sitting on top of the measurable reach and chart signals.
           To keep it honest, the criteria are public. Points accrue toward a 0–100 score; it's deliberately harder to game than a follower count.
         </p>
         <div className="hiw-rubric">
@@ -2371,6 +2371,18 @@ export default function App() {
           <span className="plat-pill"><span className="plat-dot" style={{ background: "#FF0000" }} />YouTube</span>
           <span className="plat-pill"><span className="plat-dot" style={{ background: "#4285F4" }} />Trends</span>
         </div>
+        <button
+          className="header-booker-cta"
+          onClick={() => { setActiveTab("booking"); window.scrollTo({ top: 0 }); }}
+          style={{
+            margin: "14px auto 2px", display: "inline-flex", alignItems: "center", gap: 8,
+            background: "#C8F750", color: "#0c0c0e", border: "none", borderRadius: 999,
+            padding: "9px 18px", fontFamily: "'IBM Plex Mono', monospace", fontWeight: 600,
+            fontSize: 13, letterSpacing: "0.01em", cursor: "pointer",
+          }}
+        >
+          Booking or buying talent? See what an artist should cost →
+        </button>
         {lastUpdated && <p className="header-updated">Updated {new Date(lastUpdated).toLocaleString()}</p>}
         <div className="top-tabs">
           <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>

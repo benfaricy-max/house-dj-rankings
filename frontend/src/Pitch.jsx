@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import "./Pitch.css";
 import { slugify } from "./ArtistProfile";
 import { valueConfidence, negotiationLine } from "./ValueGap";
@@ -44,6 +44,21 @@ export function decodePitch(token) {
 
 const fmtDate = ts => new Date(ts).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
 
+// Funnel instrumentation — same shape as UpgradeCTA's track(). Pitch-link
+// activation lands in localStorage.peaktime_funnel alongside the upgrade funnel,
+// so the whole picture is in one log. The core question this answers: do the
+// private pitch links bookers generate actually get opened by the recipient?
+// Inspect: JSON.parse(localStorage.peaktime_funnel).
+function track(event, props) {
+  try {
+    window.plausible?.(event, { props });
+    window.gtag?.("event", event, props);
+    const log = JSON.parse(localStorage.getItem("peaktime_funnel") || "[]");
+    log.push({ event, ...props, t: new Date().toISOString() });
+    localStorage.setItem("peaktime_funnel", JSON.stringify(log));
+  } catch { /* storage disabled — ignore */ }
+}
+
 // ── Generator modal (Pro-gated by the caller) ────────────────────────────────
 export function PitchLinkModal({ artist, onClose }) {
   const [side, setSide] = useState("seller");
@@ -58,6 +73,7 @@ export function PitchLinkModal({ artist, onClose }) {
 
   const copy = () => navigator.clipboard?.writeText(url).then(() => {
     setCopied(true); setTimeout(() => setCopied(false), 1900);
+    track("pitch_link_copied", { artist: artist.name, side, days });
   });
 
   return (
@@ -119,6 +135,19 @@ export default function PitchPage({ rankings }) {
     document.head.appendChild(meta);
     return () => { document.head.removeChild(meta); };
   }, []);
+
+  // Recipient-activation signal: did a generated pitch link actually get opened?
+  // Fires once per token, waiting for rankings to load before resolving the artist.
+  const firedRef = useRef(false);
+  useEffect(() => {
+    if (firedRef.current) return;
+    if (decoded.error) { firedRef.current = true; track("pitch_dead", { reason: decoded.error }); return; }
+    if (!rankings.length) return; // data still loading — resolve on the next run
+    firedRef.current = true;
+    const a = rankings.find(r => slugify(r.name) === decoded.slug);
+    track(a ? "pitch_opened" : "pitch_dead",
+      a ? { artist: a.name, side: decoded.side } : { reason: "missing-artist", slug: decoded.slug });
+  }, [token, rankings.length, decoded]);
 
   const back = () => { window.location.hash = ""; };
 
