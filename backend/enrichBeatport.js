@@ -95,7 +95,10 @@ function isoWeek(d = new Date()) {
   const TTL_MS = 14 * 24 * 60 * 60 * 1000; // 14 days
 
   for (const dj of rankData.rankings) {
-    const e = chartMap[norm(dj.name)];
+    // Match on the roster name, falling back to a curated beatport_alias for
+    // artists Beatport lists under a disambiguated name (e.g. "FISHER (OZ)").
+    const alias = artistById[dj.name]?.beatport_alias;
+    const e = chartMap[norm(dj.name)] || (alias ? chartMap[norm(alias)] : null);
     if (e) {
       // Artist is currently charting — write fresh data + timestamp.
       const positionScore = 101 - e.best;
