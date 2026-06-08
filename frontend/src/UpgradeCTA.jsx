@@ -13,8 +13,8 @@
 import { useState } from "react";
 
 const LINKS = {
-  solo: import.meta.env.VITE_STRIPE_LINK_SOLO || "",
-  team: import.meta.env.VITE_STRIPE_LINK_TEAM || "",
+  solo: import.meta.env.VITE_STRIPE_LINK_SOLO || "https://buy.stripe.com/00w3cx2yhdLi9zwcPD8IU00",
+  team: import.meta.env.VITE_STRIPE_LINK_TEAM || "https://buy.stripe.com/cNi4gB6OxfTqfXU6rf8IU01",
 };
 const COPY = {
   solo: { price: "£75/mo", label: "Unlock full Fair Value Reports",
