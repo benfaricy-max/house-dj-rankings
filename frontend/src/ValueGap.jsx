@@ -5,6 +5,7 @@ import { PitchLinkModal } from "./Pitch";
 import PricingModal from "./Pricing";
 import RoutingSaturation from "./RoutingSaturation";
 import { usePro } from "./usePro";
+import UpgradeCTA from "./UpgradeCTA";
 
 // The wedge: a NEUTRAL third-party benchmark for booking fees. Today fee talks are
 // information-asymmetric — the agent knows the artist's demand, the promoter doesn't,
@@ -394,6 +395,10 @@ export function ValueGapPage({ rankings }) {
           I'm selling <span className="vg-tog-sub">artist / manager / agent</span>
         </button>
       </div>
+
+      {audience === "buyer"
+        ? <UpgradeCTA tier="solo" surface="value_gap_buyer" />
+        : <UpgradeCTA tier="team" surface="value_gap_seller" />}
 
       {audience === "buyer" ? (
         <>
