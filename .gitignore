@@ -7,3 +7,6 @@ frontend/.env
 .DS_Store
 .vercel
 .claude/
+
+# Local experiment tooling + outreach contacts — never publish (public repo)
+backend/experiments/
