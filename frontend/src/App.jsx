@@ -6,7 +6,7 @@ import { ValueGapPage, ValueReport, valueSlug } from "./ValueGap";
 import RoutingSaturation from "./RoutingSaturation";
 import ClubViral from "./ClubViral";
 import { useWatchlist, useMomentumAlerts } from "./watchlist";
-import { InfoTip, MomentumTip, MOMENTUM_BLEND } from "./methodology";
+import { InfoTip, MomentumTip, MOMENTUM_BLEND, artistForm, FORM_META, FormTip } from "./methodology";
 import PitchPage from "./Pitch";   // read-only private brief route (also pulled by ValueGap)
 const ClubsPage   = lazy(() => import("./ClubsPage"));                                  // splits ~750 lines of club lore/images out of the main chunk
 const ClubProfile = lazy(() => import("./ClubsPage").then(m => ({ default: m.ClubProfile })));
@@ -565,6 +565,11 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
           </div>
           <ScoreBar score={dj.score} maxScore={maxScore} />
           <div className="dj-quick-stats">
+            {(() => { const form = artistForm(dj); return form ? (
+              <span className="qs-pill qs-pill--form" style={{ color: FORM_META[form].color, borderColor: `${FORM_META[form].color}55` }}>
+                {FORM_META[form].tag} {FORM_META[form].label}<FormTip dj={dj} />
+              </span>
+            ) : null; })()}
             {Number.isFinite(dj.momentum_score) && (
               <span className={`qs-pill qs-pill--mo ${dj.momentum_score >= 65 ? "qs-mo--hot" : ""}`}>
                 ▲ Momentum {dj.momentum_score}<MomentumTip dj={dj} />
@@ -780,6 +785,9 @@ function HowItWorksPage() {
               {i < arr.length - 1 && <span className="hiw-formula-plus">+</span>}
             </div>
           ))}
+        </div>
+        <div className="hiw-weight-note" style={{ marginTop: 14 }}>
+          <strong>Form (▲ Rising / ▬ Steady / ▼ Cooling).</strong> The pill on each row is an at-a-glance read of <em>direction</em>, not size. Rising = clearly accelerating (high Momentum); Cooling = a real decline across the signed rate-of-change signals (12-week search, listener growth, Wikipedia trend, Beatport movement); Steady = everything in between, including big acts holding their level. It's context — it never moves the ranking.
         </div>
       </section>
 

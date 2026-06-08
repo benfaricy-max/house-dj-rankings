@@ -61,6 +61,57 @@ export function MomentumTip({ dj }) {
   );
 }
 
+// ── Form / trajectory ────────────────────────────────────────────────────────
+// A categorical, at-a-glance read of an act's DIRECTION (rising / steady / cooling)
+// — distinct from Momentum's magnitude. Brand belief #3: "movement, not position;
+// who's accelerating is the alpha." Built only from signals that can go NEGATIVE,
+// so "cooling" means real decline, not merely a low momentum score. Conservative by
+// design: defaults to steady unless the signal is clear, so it never makes a bold
+// wrong call on a mixed-signal act. Changes nothing in the ranking — it's context.
+const clipDir = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+
+// Net direction in [-1, +1] from the signed rate-of-change signals an act has data
+// for (self-healing: averages whichever are present).
+export function trajectoryDirection(a) {
+  const p = [];
+  if (Number.isFinite(a.trends_mom_12w))               p.push(clipDir(a.trends_mom_12w / 50, -1, 1));
+  if (Number.isFinite(a.spotify_follower_growth_rate)) p.push(clipDir(a.spotify_follower_growth_rate / 12, -1, 1));
+  if (Number.isFinite(a.wikipedia_trend))              p.push(clipDir(a.wikipedia_trend / 50, -1, 1));
+  if (Number.isFinite(a.beatport_pos_change))          p.push(clipDir(a.beatport_pos_change / 6, -1, 1));
+  return p.length ? p.reduce((s, x) => s + x, 0) / p.length : null;
+}
+
+export const FORM_META = {
+  rising:  { tag: "▲", label: "Rising",  color: "#C8F750" },
+  steady:  { tag: "▬", label: "Steady",  color: "#9aa0a6" },
+  cooling: { tag: "▼", label: "Cooling", color: "#e0894a" },
+};
+
+// Classify an act's form. Momentum (the purpose-built acceleration composite) is the
+// spine for "rising"; direction supplies "cooling", since momentum can't go negative.
+// Thresholds tuned against a labeled act set (rising ~17%, cooling ~9% of the field).
+export function artistForm(a) {
+  if (!a) return null;
+  const M = Number.isFinite(a.momentum_score) ? a.momentum_score : null;
+  const D = trajectoryDirection(a);
+  if (M === null && D === null) return null;                                  // no signal → no chip
+  if (M !== null && M >= 58) return "rising";                                 // clearly accelerating
+  if ((M !== null && M <= 12) || (D !== null && D <= -0.25 && (M === null || M < 45))) return "cooling";
+  if (D !== null && D >= 0.45 && (M === null || M >= 45)) return "rising";     // strong warming w/o high momentum
+  return "steady";
+}
+
+// The Form tooltip — explains the read so ▲/▬/▼ never looks like an opaque verdict.
+export function FormTip({ dj }) {
+  if (!artistForm(dj)) return null;
+  return (
+    <InfoTip label="What 'form' means">
+      <span className="itip-h">Form = direction, not size</span>
+      <span className="itip-note">Whether booking demand is accelerating (▲ Rising), holding (▬ Steady) or fading (▼ Cooling) — read from the rate-of-change signals (12-week search trend, listener growth, Wikipedia trend, Beatport movement) plus the Momentum score. It's context only; it doesn't move the ranking.</span>
+    </InfoTip>
+  );
+}
+
 // Single source of truth for the demand index behind the Price/Demand Gap.
 // LIVE-LED (mirrors backend enrichValueGap.js SIGNALS): bookers told us global
 // digital metrics are noise until they line up with the rooms you fill and the
