@@ -105,31 +105,38 @@ API (`TL_API_BASE`, default http://localhost:3001; endpoint /api/1001tracklists/
 Writes `tl_support_score` 0-100 (chart position 70% + track breadth 30%),
 `tl_chart_best`/`tl_chart_tracks`/`tl_chart_titles`, and cumulative `tl_weeks_charted`
 from a committed weekly archive (`backend/tracklists-archive.json`, ~16 weeks).
-Weight 0.05 in score.js. **Local-only by default** (API not reachable in CI → the
+Weight 0.09 in score.js. **Local-only by default** (API not reachable in CI → the
 CI step no-ops gracefully; tl_* persists via generateStatic's `...prev` spread).
 Set repo var `TL_API_BASE` to a hosted URL to run it in CI. UI: "DJ Support · 1001TL"
 signal on artist profiles + How It Works methodology.
 
-## Scene Score (transparent editorial layer — supporting signal)
-`manual_scene_score` 0-100, weight **0.10** (a supporting layer, not the lead).
-Published rubric in How It Works (SCENE_RUBRIC in App.jsx): Boiler Room/HÖR +20,
-Berghain/fabric/DC10 +20, festival closing +15, respected label +15, RA/Mixmag/DJ
-Mag cover +10, Ibiza residency +10, Essential Mix +10. Explicit criteria = credible
-+ hard to game. Most of the roster is hand-scored (editorial pass Jun 2026). It adds
-scene context on top of the measurable reach/chart signals rather than driving the
-ranking — the index leans on third-party data over editorial judgement.
+## Scene Score (editorial credibility layer + credibility floor)
+`manual_scene_score` 0-100, weight **0.14**. Published rubric in How It Works
+(SCENE_RUBRIC in App.jsx): Boiler Room/HÖR +20, Berghain/fabric/DC10 +20, festival
+closing +15, respected label +15, RA/Mixmag/DJ Mag cover +10, Ibiza residency +10,
+Essential Mix +10. Explicit criteria = credible + hard to game. Most of the roster
+is hand-scored (editorial pass Jun 2026). Default for unscored artists = 50.
+**Credibility floor (score.js return map):** the final composite is multiplied by
+`0.75 + 0.25*min(scene,50)/50` — acts below scene 50 are scaled down (max 25% cut at
+scene 0, no penalty at scene≥50; unscored=50 → unaffected). This is what stops a
+streaming-huge / scene-thin crossover act from topping a booking index (e.g. it
+moved Hugel, scene 28, from #3 to #17). Validated against a labeled act set (89%
+pairwise agreement). Keep the factor in sync with the How It Works "Credibility
+floor" note.
 
 ## Composite weights (score.js, sum=1.00)
-listeners .19 (LEADS), beatport .13, ra .12, scene .10, trends .09, growth .08,
-yt_subs .06, tiktok .06, tl_support (1001TL DJ-support) .05, label .05,
-releases .05, wikipedia .02. RETIRED (0): track_pop (Spotify-blocked),
-yt_views_weekly (delta metric, 0% coverage), beatport_hype (one Beatport metric
-in primary rankings — Hype still collected for emerging views, not in composite).
+ra .17 (LEADS), beatport .14, scene .14, listeners .12, tl_support (1001TL) .09,
+trends .08, growth .06, yt_subs .05, label .05, tiktok .04, releases .04,
+wikipedia .02. Then the **credibility floor** multiplies the final score (see Scene
+Score section). RETIRED (0): track_pop (Spotify-blocked), yt_views_weekly (delta
+metric, 0% coverage), beatport_hype (one Beatport metric in primary rankings — Hype
+still collected for emerging views, not in composite).
 Self-healing: empty-field signals redistribute their weight per-artist over the
-signals present. Jun 2026 reweight: Monthly Listeners now leads (.19, ahead of
-Beatport .13 and RA .12); Scene reduced .18→.10 to a supporting editorial layer so
-the index leans on measurable reach. Keep score.js + the frontend METRICS /
-METRIC_DETAILS arrays in sync.
+signals present. Jun 2026 reweight v2 (booking-led): RA live-booking demand leads
+(.17); raw reach demoted to .12 (a brief .19-leads experiment over-crowned streaming
+giants); Scene .14 + the credibility floor handle the "huge streams, no scene"
+case. Validated against a labeled act set (89%). Keep score.js + the frontend
+METRICS / METRIC_DETAILS arrays + the How It Works credibility-floor note in sync.
 
 ## Key per-artist fields (in artists.json, persisted)
 - `emerging` (bool) — reputation-based; drives "Ones to Watch" (excludes legends).

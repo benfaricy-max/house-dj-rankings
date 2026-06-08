@@ -34,23 +34,24 @@ function scoreArtists(artists) {
 
   // Weights sum to 1.00. Self-healing still applies: empty signals' weight
   // redistributes per-artist over the signals they do have.
-  // Jun 2026 reweight: Monthly Listeners (reach) now LEADS the composite (0.19),
-  // ahead of the credibility signals (Beatport, RA). Scene Score — a hand-scored
-  // editorial layer — was reduced to a supporting 0.10 so the index leans on
-  // measurable, third-party reach rather than editorial judgement. Keep this in
+  // Jun 2026 reweight (v2): this is a BOOKING index, so live booking demand (RA —
+  // venue tier, attendance, geo spread) LEADS, with Beatport + Scene credibility
+  // alongside it. Raw Spotify reach is the weakest booking predictor, so it sits
+  // at a supporting 0.12 (down from 0.19, which over-crowned streaming giants).
+  // Paired with the credibility floor below (see the return map). Keep this in
   // sync with the frontend METRICS / METRIC_DETAILS arrays and CLAUDE.md.
   const weights = {
-    spotify_monthly_listeners:    0.19,  // LEADS — active fanbase reach, read from the live Spotify session
-    beatport_score:               0.13,  // core scene / chart credibility (one Beatport metric)
-    ra_score:                     0.12,  // RA live booking demand: venue tier, attending, geo spread
-    manual_scene_score:           0.10,  // editorial scene credibility (rubric in How It Works) — supporting layer
-    google_trends_score:          0.09,
-    spotify_follower_growth_rate: 0.08,  // growth (acceleration), thin coverage
-    youtube_subscribers:          0.06,  // reach proxy — reduced from 0.08
-    tiktok_post_count:            0.06,
-    tl_support_score:             0.05,  // DJ SUPPORT: 1001Tracklists weekly chart — what DJs actually play (hardest to game)
+    ra_score:                     0.17,  // LEADS — RA live booking demand: venue tier, attending, geo spread
+    beatport_score:               0.14,  // core scene / chart credibility (one Beatport metric)
+    manual_scene_score:           0.14,  // editorial scene credibility (rubric in How It Works)
+    spotify_monthly_listeners:    0.12,  // reach — supporting; raw streams are the weakest booking predictor
+    tl_support_score:             0.09,  // DJ SUPPORT: 1001Tracklists weekly chart — what DJs actually play (hardest to game)
+    google_trends_score:          0.08,
+    spotify_follower_growth_rate: 0.06,  // growth (acceleration), thin coverage
+    youtube_subscribers:          0.05,  // reach proxy
     label_score:                  0.05,  // label tier (Drumcode/Kompakt/Defected…) — credibility & trajectory
-    spotify_playlist_placements:  0.05,  // catalog depth / release cadence
+    tiktok_post_count:            0.04,
+    spotify_playlist_placements:  0.04,  // catalog depth / release cadence
     wikipedia_pageviews:          0.02,  // public interest
     spotify_avg_track_popularity: 0.00,  // RETIRED (Spotify blocks the endpoint)
     youtube_views_weekly:         0.00,  // REMOVED (delta metric, 0% coverage)
@@ -80,7 +81,15 @@ function scoreArtists(artists) {
         );
         score += norm * (weights[metric] / liveWeightSum); // renormalized to 1.0
       }
-      return { ...artist, score: Math.round(score * 10) / 10 };
+      // Credibility floor: a demand index for a credibility-driven scene shouldn't
+      // crown an act with near-zero scene standing on reach + charts alone. Acts
+      // below 50 on Scene have their composite scaled down — at most a 25% cut at
+      // scene 0, tapering linearly to no penalty at scene >= 50. Unscored acts (the
+      // 50 default) are unaffected. This is the lever that stops a streaming-huge /
+      // scene-thin act (e.g. a chart-pop crossover) from topping a booking index.
+      const sceneVal = Number.isFinite(artist.manual_scene_score) ? artist.manual_scene_score : 50;
+      const credibility = 0.75 + 0.25 * (Math.min(sceneVal, 50) / 50);
+      return { ...artist, score: Math.round(score * credibility * 10) / 10 };
     })
     .sort((a, b) => b.score - a.score)
     .map((artist, i) => ({ ...artist, rank: i + 1 }));
