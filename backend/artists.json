@@ -566,7 +566,8 @@
       "Grammy winner",
       "Essential Mix",
       "Festival headliner"
-    ]
+    ],
+    "genre_lean": "house"
   },
   {
     "name": "Solomun",
@@ -2956,7 +2957,8 @@
       "G-Town / Steel City Dance Discs",
       "Boiler Room",
       "fabric"
-    ]
+    ],
+    "genre_lean": "house"
   },
   {
     "name": "Ranger Trucco",
@@ -4630,7 +4632,8 @@
       "Dirtybird (own label)",
       "Festival headliner",
       "Essential Mix"
-    ]
+    ],
+    "genre_lean": "house"
   },
   {
     "name": "Shiba San",
@@ -7190,7 +7193,8 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:32:20.212Z"
+    "artist_labels_updated": "2026-06-06T14:32:20.212Z",
+    "genre_lean": "techno"
   },
   {
     "name": "Pig&Dan",
@@ -7548,7 +7552,8 @@
       "Afterlife",
       "Sphere Las Vegas residency",
       "Festival headliner"
-    ]
+    ],
+    "genre_lean": "techno"
   },
   {
     "name": "Enoo Napa",
@@ -9962,7 +9967,8 @@
       "Afterlife",
       "Boiler Room",
       "Festival headliner"
-    ]
+    ],
+    "genre_lean": "techno"
   },
   {
     "name": "WhoMadeWho",
@@ -10293,7 +10299,8 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:27:15.627Z"
+    "artist_labels_updated": "2026-06-06T14:27:15.627Z",
+    "genre_lean": "techno"
   },
   {
     "name": "Yotto",
@@ -10584,7 +10591,8 @@
       "Siamese (own label)",
       "Afterlife",
       "Festival headliner"
-    ]
+    ],
+    "genre_lean": "techno"
   },
   {
     "name": "Kollektiv Turmstrasse",
@@ -10988,7 +10996,8 @@
         "t": 5
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:28:11.882Z"
+    "artist_labels_updated": "2026-06-06T14:28:11.882Z",
+    "genre_lean": "techno"
   },
   {
     "name": "Blawan",
@@ -11471,7 +11480,8 @@
         "t": 4
       }
     ],
-    "artist_labels_updated": "2026-06-06T14:27:25.763Z"
+    "artist_labels_updated": "2026-06-06T14:27:25.763Z",
+    "genre_lean": "techno"
   },
   {
     "name": "Tiefschwarz",
@@ -14592,7 +14602,8 @@
       "Last Night On Earth",
       "Essential Mix",
       "fabric"
-    ]
+    ],
+    "genre_lean": "house"
   },
   {
     "name": "John Digweed",
