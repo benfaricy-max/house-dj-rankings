@@ -101,7 +101,7 @@ function scoreArtists(artists) {
     spotify_follower_growth_rate: 0.06,  // growth (acceleration), thin coverage
     label_score:                  0.05,  // label tier (Drumcode/Kompakt/Defected…) — credibility & trajectory
     youtube_subscribers:          0.04,  // reach proxy
-    tiktok_post_count:            0.03,
+    tiktok_post_count:            0.03,  // social spread (hashtag post volume). Kept at LOW weight: it's the gameable one, but it's the only TikTok signal with real coverage (~75%). Roadmap: swap to tiktok_follower_growth_rate once a follower scraper accrues >50% coverage (growth is less gameable but is 0% covered today).
     spotify_playlist_placements:  0.03,  // catalog depth / release cadence
     wikipedia_pageviews:          0.02,  // public interest
     spotify_avg_track_popularity: 0.00,  // RETIRED (Spotify blocks the endpoint)

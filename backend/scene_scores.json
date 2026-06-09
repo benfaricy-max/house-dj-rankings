@@ -1,0 +1,2171 @@
+{
+  "version": "2026.06.1",
+  "generated": "2026-06-09",
+  "method": "Editorial rubric, single rater. Reliability checked against an automated independent rubric re-score (see sceneReliability.js).",
+  "scores": {
+    "999999999": {
+      "hand": 68,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "FISHER": {
+      "hand": 90,
+      "version": "2026.06.1",
+      "rubric": 69,
+      "credits": [
+        "label",
+        "festival",
+        "ibiza"
+      ]
+    },
+    "Chris Lake": {
+      "hand": 85,
+      "version": "2026.06.1",
+      "rubric": 58,
+      "credits": [
+        "label",
+        "festival"
+      ]
+    },
+    "John Summit": {
+      "hand": 88,
+      "version": "2026.06.1",
+      "rubric": 69,
+      "credits": [
+        "label",
+        "festival",
+        "press"
+      ]
+    },
+    "Fred Again": {
+      "hand": 95,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Four Tet": {
+      "hand": 92,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Disclosure": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": 69,
+      "credits": [
+        "label",
+        "festival",
+        "mix"
+      ]
+    },
+    "Peggy Gou": {
+      "hand": 87,
+      "version": "2026.06.1",
+      "rubric": 82,
+      "credits": [
+        "label",
+        "tastemaker",
+        "festival",
+        "press"
+      ]
+    },
+    "Black Coffee": {
+      "hand": 85,
+      "version": "2026.06.1",
+      "rubric": 64,
+      "credits": [
+        "ibiza",
+        "mix",
+        "festival"
+      ]
+    },
+    "Solomun": {
+      "hand": 90,
+      "version": "2026.06.1",
+      "rubric": 77,
+      "credits": [
+        "label",
+        "ibiza",
+        "mix",
+        "festival"
+      ]
+    },
+    "Tale Of Us": {
+      "hand": 82,
+      "version": "2026.06.1",
+      "rubric": 69,
+      "credits": [
+        "label",
+        "festival",
+        "mix"
+      ]
+    },
+    "Bicep": {
+      "hand": 83,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Honey Dijon": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Jamie Jones": {
+      "hand": 82,
+      "version": "2026.06.1",
+      "rubric": 89,
+      "credits": [
+        "label",
+        "institution",
+        "ibiza",
+        "mix",
+        "tastemaker"
+      ]
+    },
+    "Amelie Lens": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Charlotte de Witte": {
+      "hand": 85,
+      "version": "2026.06.1",
+      "rubric": 77,
+      "credits": [
+        "label",
+        "festival",
+        "tastemaker"
+      ]
+    },
+    "Adam Beyer": {
+      "hand": 82,
+      "version": "2026.06.1",
+      "rubric": 69,
+      "credits": [
+        "label",
+        "mix",
+        "festival"
+      ]
+    },
+    "DJ Koze": {
+      "hand": 75,
+      "version": "2026.06.1",
+      "rubric": 64,
+      "credits": [
+        "label",
+        "mix",
+        "press"
+      ]
+    },
+    "Bonobo": {
+      "hand": 78,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Mall Grab": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "DJ Harvey": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Gorgon City": {
+      "hand": 88,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "The Martinez Brothers": {
+      "hand": 87,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Hot Since 82": {
+      "hand": 85,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Seth Troxler": {
+      "hand": 85,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Michael Bibi": {
+      "hand": 84,
+      "version": "2026.06.1",
+      "rubric": 90,
+      "credits": [
+        "label",
+        "institution",
+        "ibiza",
+        "tastemaker",
+        "festival"
+      ]
+    },
+    "ANOTR": {
+      "hand": 83,
+      "version": "2026.06.1",
+      "rubric": 77,
+      "credits": [
+        "label",
+        "tastemaker",
+        "festival"
+      ]
+    },
+    "Mau P": {
+      "hand": 82,
+      "version": "2026.06.1",
+      "rubric": 73,
+      "credits": [
+        "tastemaker",
+        "festival",
+        "press"
+      ]
+    },
+    "SIDEPIECE": {
+      "hand": 82,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Chris Stussy": {
+      "hand": 82,
+      "version": "2026.06.1",
+      "rubric": 80,
+      "credits": [
+        "tastemaker",
+        "institution",
+        "festival"
+      ]
+    },
+    "PAWSA": {
+      "hand": 81,
+      "version": "2026.06.1",
+      "rubric": 77,
+      "credits": [
+        "label",
+        "tastemaker",
+        "festival"
+      ]
+    },
+    "Carlita": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "East End Dubs": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Omar+": {
+      "hand": 79,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Dennis Cruz": {
+      "hand": 79,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Cloonee": {
+      "hand": 79,
+      "version": "2026.06.1",
+      "rubric": 77,
+      "credits": [
+        "label",
+        "tastemaker",
+        "festival"
+      ]
+    },
+    "Josh Baker": {
+      "hand": 78,
+      "version": "2026.06.1",
+      "rubric": 80,
+      "credits": [
+        "institution",
+        "tastemaker",
+        "festival"
+      ]
+    },
+    "Franky Rizardo": {
+      "hand": 78,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Ben Sterling": {
+      "hand": 78,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Disco Lines": {
+      "hand": 77,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Chris Lorenzo": {
+      "hand": 77,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "KETTAMA": {
+      "hand": 77,
+      "version": "2026.06.1",
+      "rubric": 69,
+      "credits": [
+        "tastemaker",
+        "institution"
+      ]
+    },
+    "Ranger Trucco": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Beltran": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Rossi.": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Prospa": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": 77,
+      "credits": [
+        "label",
+        "tastemaker",
+        "festival"
+      ]
+    },
+    "Roddy Lima": {
+      "hand": 75,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "AYYBO": {
+      "hand": 75,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Max Styler": {
+      "hand": 75,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Riordan": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Locklead": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Obskür": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Kolter": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": 44,
+      "credits": [
+        "tastemaker"
+      ]
+    },
+    "Murphy's Law": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Luke Dean": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Max Dean": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Julian Fijma": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "MALUGI": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Silva Bumpa": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Alisha": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Discip": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Carl Cox": {
+      "hand": 92,
+      "version": "2026.06.1",
+      "rubric": 77,
+      "credits": [
+        "label",
+        "ibiza",
+        "mix",
+        "festival"
+      ]
+    },
+    "Green Velvet": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": 69,
+      "credits": [
+        "label",
+        "mix",
+        "festival"
+      ]
+    },
+    "Dom Dolla": {
+      "hand": 83,
+      "version": "2026.06.1",
+      "rubric": 52,
+      "credits": [
+        "festival",
+        "press"
+      ]
+    },
+    "James Hype": {
+      "hand": 82,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Claude VonStroke": {
+      "hand": 81,
+      "version": "2026.06.1",
+      "rubric": 69,
+      "credits": [
+        "label",
+        "festival",
+        "mix"
+      ]
+    },
+    "Shiba San": {
+      "hand": 79,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Eli Brown": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": 77,
+      "credits": [
+        "label",
+        "tastemaker",
+        "festival"
+      ]
+    },
+    "HoneyLuv": {
+      "hand": 79,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Biscits": {
+      "hand": 77,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Patrick Topping": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Richy Ahmed": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Hannah Wants": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Rebüke": {
+      "hand": 77,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Âme": {
+      "hand": 81,
+      "version": "2026.06.1",
+      "rubric": 77,
+      "credits": [
+        "label",
+        "tastemaker",
+        "festival"
+      ]
+    },
+    "Kerri Chandler": {
+      "hand": 82,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Louie Vega": {
+      "hand": 81,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Dennis Ferrer": {
+      "hand": 79,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Roger Sanchez": {
+      "hand": 79,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Armand Van Helden": {
+      "hand": 81,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Mark Knight": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": 69,
+      "credits": [
+        "label",
+        "mix",
+        "festival"
+      ]
+    },
+    "Loco Dice": {
+      "hand": 79,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Steve Lawler": {
+      "hand": 79,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Lee Foss": {
+      "hand": 75,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Walker & Royce": {
+      "hand": 77,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Kyle Watson": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Wehbba": {
+      "hand": 75,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Paco Osuna": {
+      "hand": 78,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Alan Fitzpatrick": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Archie Hamilton": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Cristoph": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Dense & Pika": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Sacha Robotti": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "WEISS": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Simon Doty": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Gerd Janson": {
+      "hand": 75,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Roman Flügel": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Booka Shade": {
+      "hand": 77,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "DJ Boring": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "BLOND:ISH": {
+      "hand": 75,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Latmun": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Danny Daze": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Pleasurekraft": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Octave One": {
+      "hand": 75,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Pig&Dan": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Jimi Jules": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Tim Engelhardt": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Colyn": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Anyma": {
+      "hand": 77,
+      "version": "2026.06.1",
+      "rubric": 69,
+      "credits": [
+        "label",
+        "ibiza",
+        "festival"
+      ]
+    },
+    "Enoo Napa": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Pablo Fierro": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Edu Imbernon": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Re.You": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Justin Martin": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "HVOB": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Chelina Manuhutu": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Skream": {
+      "hand": 79,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "David Morales": {
+      "hand": 83,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Mark Farina": {
+      "hand": 78,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Gene Farris": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "DJ T.": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Michael Mayer": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Gui Boratto": {
+      "hand": 75,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Oxia": {
+      "hand": 75,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Marco Faraone": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Objekt": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Special Request": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "TSHA": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Tiga": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Floating Points": {
+      "hand": 78,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Mount Kimbie": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "HAAi": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Floorplan": {
+      "hand": 75,
+      "version": "2026.06.1",
+      "rubric": 52,
+      "credits": [
+        "festival",
+        "mix"
+      ]
+    },
+    "Jayda G": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Joris Voorn": {
+      "hand": 78,
+      "version": "2026.06.1",
+      "rubric": 52,
+      "credits": [
+        "festival",
+        "mix"
+      ]
+    },
+    "Victor Calderone": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Laurent Garnier": {
+      "hand": 88,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Levon Vincent": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Hunee": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Helena Hauff": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Sven Väth": {
+      "hand": 88,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Richie Hawtin": {
+      "hand": 88,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Joseph Capriati": {
+      "hand": 78,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Sam Paganini": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Maceo Plex": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": 73,
+      "credits": [
+        "institution",
+        "mix",
+        "festival"
+      ]
+    },
+    "Mind Against": {
+      "hand": 77,
+      "version": "2026.06.1",
+      "rubric": 77,
+      "credits": [
+        "label",
+        "tastemaker",
+        "festival"
+      ]
+    },
+    "WhoMadeWho": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Stephan Bodzin": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Trentemøller": {
+      "hand": 79,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Monolink": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Massano": {
+      "hand": 75,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Yotto": {
+      "hand": 75,
+      "version": "2026.06.1",
+      "rubric": 35,
+      "credits": [
+        "festival"
+      ]
+    },
+    "Ben Böhmer": {
+      "hand": 78,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Nora En Pure": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Adriatique": {
+      "hand": 77,
+      "version": "2026.06.1",
+      "rubric": 58,
+      "credits": [
+        "label",
+        "festival"
+      ]
+    },
+    "Kollektiv Turmstrasse": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Huxley": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Maya Jane Coles": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "John Talabot": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Secondcity": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Surgeon": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Blawan": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "DJ Rush": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Dax J": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Luigi Madonna": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Mathame": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Innellea": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Agents Of Time": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Tiefschwarz": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Recondite": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "DJ Tennis": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Dario D'Attis": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Henry Saiz": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Pional": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Ryan Crosson": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Woo York": {
+      "hand": 68,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Burnski": {
+      "hand": 65,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Alinka": {
+      "hand": 68,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Answer Code Request": {
+      "hand": 68,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "DJ Stingray 313": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Pangaea": {
+      "hand": 68,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Andre Crom": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Angelo Ferreri": {
+      "hand": 68,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Kastis Torrau": {
+      "hand": 68,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Robert Babicz": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Trikk": {
+      "hand": 68,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Tornado Wallace": {
+      "hand": 68,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Spektre": {
+      "hand": 68,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Jay Lumen": {
+      "hand": 68,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Pearson Sound": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Palms Trax": {
+      "hand": 68,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Lauer": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Simian Mobile Disco": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Actress": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "DJ Holographic": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "David Mayer": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Lee Curtiss": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Wolf + Lamb": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Nick Curly": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Sascha Dive": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Hector Romero": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Mathew Jonson": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Christian Burkhardt": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Inigo Kennedy": {
+      "hand": 68,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Marshall Jefferson": {
+      "hand": 82,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "GW Harrison": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "AMÉMÉ": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Nicholas Van Orton": {
+      "hand": 68,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Alec Araujo": {
+      "hand": 65,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Leo Lukas": {
+      "hand": 65,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Nino Bua": {
+      "hand": 65,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Bas Ibellini": {
+      "hand": 65,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Ricardo Villalobos": {
+      "hand": 85,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "MK": {
+      "hand": 83,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Sasha": {
+      "hand": 82,
+      "version": "2026.06.1",
+      "rubric": 58,
+      "credits": [
+        "mix",
+        "institution"
+      ]
+    },
+    "John Digweed": {
+      "hand": 82,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Eric Prydz": {
+      "hand": 84,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Midland": {
+      "hand": 77,
+      "version": "2026.06.1",
+      "rubric": 85,
+      "credits": [
+        "label",
+        "institution",
+        "mix",
+        "tastemaker"
+      ]
+    },
+    "Mano Le Tough": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Job Jobse": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "San Soda": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Move D": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Axel Boman": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Guy Gerber": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Todd Terry": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Danny Tenaglia": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "DJ Sneak": {
+      "hand": 79,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Kevin Saunderson": {
+      "hand": 84,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Frankie Knuckles": {
+      "hand": 90,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Larry Heard": {
+      "hand": 85,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Deborah De Luca": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Andrea Oliva": {
+      "hand": 75,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Alan Dixon": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Harvey McKay": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Mr. G": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Call Super": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Themba": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Culoe De Song": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Luciano": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Dimitri From Paris": {
+      "hand": 78,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Bob Sinclar": {
+      "hand": 77,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Duke Dumont": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Route 94": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Maxxi Soundsystem": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "DJ Pierre": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Stacey Pullen": {
+      "hand": 75,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Kenny Larkin": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Maya": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Slam": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Steve Bug": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Akufen": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Miss Kittin": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "The Hacker": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Joeski": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Deetron": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Marika Rossa": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "SPFDJ": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Rebekah": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Alignment": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Len Faki": {
+      "hand": 73,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Truncate": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Planetary Assault Systems": {
+      "hand": 68,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Regis": {
+      "hand": 68,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Phase Fatale": {
+      "hand": 68,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Hugel": {
+      "hand": 28,
+      "version": "2026.06.1",
+      "rubric": 58,
+      "credits": [
+        "label",
+        "festival"
+      ]
+    },
+    "Adam Ten": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Sidney Charles": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": 64,
+      "credits": [
+        "label",
+        "tastemaker"
+      ]
+    },
+    "Brunello": {
+      "hand": 50,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Rafael": {
+      "hand": 50,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Gorge": {
+      "hand": 74,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Ilias Katelanos": {
+      "hand": 50,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "LUCH": {
+      "hand": 50,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Adam Port": {
+      "hand": 88,
+      "version": "2026.06.1",
+      "rubric": 64,
+      "credits": [
+        "festival",
+        "tastemaker"
+      ]
+    },
+    "Keinemusik": {
+      "hand": 90,
+      "version": "2026.06.1",
+      "rubric": 77,
+      "credits": [
+        "label",
+        "tastemaker",
+        "festival"
+      ]
+    },
+    "OMRI.": {
+      "hand": 50,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Bonafique": {
+      "hand": 50,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Volkoder": {
+      "hand": 50,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Josh Gigante": {
+      "hand": 50,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Gai Barone": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "HotLap": {
+      "hand": 50,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "GEØVHÄN": {
+      "hand": 50,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "CamelPhat": {
+      "hand": 48,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "&ME": {
+      "hand": 88,
+      "version": "2026.06.1",
+      "rubric": 35,
+      "credits": [
+        "festival"
+      ]
+    },
+    "Jacob Matthews": {
+      "hand": 50,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Kamilo Sanclemente": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Meduza": {
+      "hand": 20,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Vintage Culture": {
+      "hand": 40,
+      "version": "2026.06.1",
+      "rubric": 35,
+      "credits": [
+        "festival"
+      ]
+    },
+    "Hardt Antoine": {
+      "hand": 50,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Rampa": {
+      "hand": 88,
+      "version": "2026.06.1",
+      "rubric": 64,
+      "credits": [
+        "festival",
+        "tastemaker"
+      ]
+    },
+    "Boss Priester": {
+      "hand": 50,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Plecta": {
+      "hand": 50,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Ultra Nate": {
+      "hand": 62,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Franc Fala": {
+      "hand": 44,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "RÜFÜS DU SOL": {
+      "hand": 55,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Township Rebellion": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": 64,
+      "credits": [
+        "label",
+        "tastemaker"
+      ]
+    },
+    "Cam Stockman": {
+      "hand": 42,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Antdot": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Jordan Brando": {
+      "hand": 50,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Jitwam": {
+      "hand": 76,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "GUDFELLA": {
+      "hand": 38,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Mason Collective": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": 44,
+      "credits": [
+        "tastemaker"
+      ]
+    },
+    "RSquared": {
+      "hand": 50,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Yuvèe": {
+      "hand": 50,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Mochakk": {
+      "hand": 66,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Sonny Fodera": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Layton Giordani": {
+      "hand": 65,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "I Hate Models": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Ben UFO": {
+      "hand": 78,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Groove Armada": {
+      "hand": 75,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "VTSS": {
+      "hand": 62,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Marlon Hoffstadt": {
+      "hand": 60,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "KAS:ST": {
+      "hand": 60,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Torren Foot": {
+      "hand": 55,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "salute": {
+      "hand": 58,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Jay de Lys": {
+      "hand": 52,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Sam Alfred": {
+      "hand": 70,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Arodes": {
+      "hand": 54,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "MPH": {
+      "hand": 50,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Son of Son": {
+      "hand": 46,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Chasewest": {
+      "hand": 46,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Genesi": {
+      "hand": 46,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Greg 99": {
+      "hand": 46,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Jamback": {
+      "hand": 35,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Marco Strous": {
+      "hand": 48,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Dean Turnley": {
+      "hand": 46,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Notion": {
+      "hand": 30,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "oskar med k": {
+      "hand": 46,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Oden & Fatzo": {
+      "hand": 72,
+      "version": "2026.06.1",
+      "rubric": 77,
+      "credits": [
+        "label",
+        "tastemaker",
+        "festival"
+      ]
+    },
+    "Saoirse": {
+      "hand": 85,
+      "version": "2026.06.1",
+      "rubric": 80,
+      "credits": [
+        "festival",
+        "institution",
+        "tastemaker"
+      ]
+    },
+    "D.O.D": {
+      "hand": 65,
+      "version": "2026.06.1",
+      "rubric": 35,
+      "credits": [
+        "festival"
+      ]
+    }
+  }
+}

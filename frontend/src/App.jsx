@@ -748,7 +748,7 @@ const METRIC_DETAILS = [
   { key: "spotify_follower_growth_rate", label: "Listener Growth",     weight: 0.06, color: "#C8F750", why: "Rate of change in audience — acceleration often predicts demand before size does. Weighted modestly while its coverage builds." },
   { key: "label_score",                  label: "Label Trajectory",    weight: 0.05, color: "#8b5cf6", why: "Tier and trajectory of the labels an artist releases on (Drumcode/Kompakt/Defected…) — credibility, and whether they're moving onto bigger homes." },
   { key: "youtube_subscribers",          label: "YouTube Subscribers", weight: 0.04, color: "#FF0000", why: "A proxy for dedicated fanbase depth. YouTube audiences tend to convert to ticket buyers at a higher rate." },
-  { key: "tiktok_post_count",            label: "TikTok Posts",        weight: 0.03, color: "#E9E7DF", why: "Posts using the artist's hashtag. Measures grassroots cultural spread, often an early breakout indicator." },
+  { key: "tiktok_post_count",            label: "TikTok Posts",        weight: 0.03, color: "#E9E7DF", why: "Posts using the artist's hashtag — grassroots cultural spread, often an early breakout indicator. Kept at a deliberately low weight: hashtag volume is the easiest signal to inflate, so it informs without driving. A less-gameable follower-growth metric is on the roadmap to replace it once coverage exists." },
   { key: "spotify_playlist_placements",  label: "Releases / Catalog",  weight: 0.03, color: "#1DB954", why: "Depth and recency of catalog. Active release schedules score higher than a single back-catalog hit." },
   { key: "wikipedia_pageviews",          label: "Wikipedia Views",     weight: 0.02, color: "#9aa0a6", why: "Trailing 30-day article pageviews. A clean, independent measure of broad public interest." },
 ];
@@ -773,11 +773,14 @@ function HowItWorksPage() {
         <div className="hiw-eyebrow">Methodology</div>
         <h2 className="hiw-title">How we rank the world's hottest DJs</h2>
         <p className="hiw-sub">
-          Every ranking is computed from 11 independent signals pulled from Spotify, Beatport, YouTube, TikTok, Google Trends, Resident Advisor and Wikipedia.
-          No editorial bias, no pay-to-play. Refreshed every 6 hours.
+          Every ranking is computed from 11 independent signals pulled from Spotify, Beatport, 1001Tracklists, YouTube, TikTok, Google Trends, Resident Advisor and Wikipedia.
+          No editorial bias, no pay-to-play. Refreshed daily.
         </p>
         <p className="hiw-sub" style={{ marginTop: 10 }}>
           <strong style={{ color: "#E9E7DF" }}>House &amp; techno.</strong> The roster is house-anchored — house, tech house, and the techno acts that share its festival and club stages. The house/techno line is genuinely blurred and nobody agrees on it, so we don't adjudicate it: the <em>House / Techno</em> filter leans on where <strong>Beatport</strong> charts an act (and their primary label when they're not currently charting). "Crossover" is the honest label for the melodic middle — those acts sit under House, the anchor, while Techno stays a precise view of the genuinely-techno acts. It's a lens on the index, not a verdict — and not a comprehensive techno chart.
+        </p>
+        <p className="hiw-sub" style={{ marginTop: 10 }}>
+          <strong style={{ color: "#E9E7DF" }}>A point-in-time reading.</strong> Booking demand in this scene is seasonal — Ibiza season, festival summer and ADE all lift the live signals. This index is a snapshot, refreshed daily: a summer reading and a winter one aren't directly comparable, and live-demand signals run higher in season. Read a rank as where an act sits relative to the field <em>today</em>, not as an absolute that holds across the calendar.
         </p>
       </div>
 
@@ -809,7 +812,7 @@ function HowItWorksPage() {
       <section className="hiw-section">
         <h3 className="hiw-section-title">Scene Score — the published rubric</h3>
         <p className="hiw-section-sub">
-          Scene Score (14% of the rank) is the one editorial layer in the model — a read on the industry credibility that pure data misses, alongside the live-booking and chart signals.
+          Scene Score (18% of the rank, co-leading) is the one editorial layer in the model — a read on the industry credibility that pure data misses, alongside the live-booking and chart signals.
           To keep it honest, the criteria are public. Points accrue toward a 0–100 score; it's deliberately harder to game than a follower count.
         </p>
         <div className="hiw-weight-note" style={{ marginBottom: 14 }}>
@@ -824,7 +827,7 @@ function HowItWorksPage() {
             </div>
           ))}
         </div>
-        <div className="hiw-weight-note">Capped at 100. Reviewed editorially; corrections welcome. This makes the scene layer a transparent, defensible signal rather than a black box.</div>
+        <div className="hiw-weight-note"><strong>Versioned and dated</strong> (v2026.06.1, reviewed June 2026). To keep a single-rater layer honest, scores are audited against an independent, automated re-score from this same rubric, and we're moving the rubric from a hard cap to a diminishing-returns curve so an extra credential still counts for an already-elite act rather than vanishing at 100. Reviewed editorially; corrections welcome. This makes the scene layer a transparent, defensible signal rather than a black box.</div>
       </section>
 
       <section className="hiw-section">

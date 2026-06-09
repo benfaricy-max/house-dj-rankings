@@ -207,6 +207,35 @@ freeze the call at date T (value_call_history), then read fee_history/venue_hist
 T+6–12mo. NOTE: grade outcomes against the FEE/VENUE movement, not against the current
 model's own re-scored signal (that would be circular).
 
+## Methodology hardening (Jun 2026 external review)
+Four review findings on the index, and how each was handled:
+- **Seasonality.** Booking demand is seasonal (Ibiza season, festival summer, ADE) and
+  the leading signal (live_demand) is the seasonal one. No seasonal model yet; for now
+  the How It Works page carries a "point-in-time reading" note (the index is a snapshot,
+  refreshed daily; a summer vs winter reading isn't directly comparable, live signals run
+  higher in season). Roadmap: normalise live signals against a trailing 12-mo seasonal curve.
+- **Scene Score single-rater + additive-to-cap.** (1) Versioned + dated — `backend/scene_scores.json`
+  is a dated ledger (version `2026.06.1`), surfaced in How It Works. (2) Reliability —
+  `backend/sceneReliability.js` re-scores the credentialed acts independently from the
+  published rubric using a SATURATING (diminishing-returns) curve `100*(1-e^(-0.029*S))`
+  instead of an additive hard cap, and reports agreement vs the hand scores (Pearson r,
+  MAE, % within ±15). Current r≈0.41 / MAE≈15 is tag-coverage-limited (only ~50 acts carry
+  `scene_tags`), NOT published on-site until tag coverage is filled out. Live hand scores
+  are NOT yet recomputed from the curve (can't — most acts lack tags); the curve is the
+  audit + go-forward method. How It Works states scores are "moving from a hard cap to
+  diminishing returns," which is accurate (not yet applied to live values).
+- **Genre split.** Verified the headline index normalises FIELD-WIDE (one 1st–99th
+  winsorised range, score.js), not per-genre — so a Beatport misclassification does NOT
+  shuffle acts between renormalising pools in the main rank. The House/Techno split is a
+  pure display filter (a "lens, not a verdict," already stated in How It Works). No fix needed.
+- **Gameable signals.** `tiktok_post_count` (hashtag volume, gameable) was reviewed for
+  removal but KEPT at low weight (0.03) because it's the only TikTok signal with real
+  coverage (~75% in rankings.json; followers/engagement = 0%, not collected). Decision:
+  coverage beats purity at this weight, and low weight caps the gaming damage. ROADMAP:
+  build a TikTok follower scraper into fetchTikTok.js, accrue snapshots, then swap the 0.03
+  weight to `tiktok_follower_growth_rate` once it clears ~50% coverage (less gameable, but
+  0% covered today — weighting it now would silently zero out TikTok via self-healing).
+
 ## Key per-artist fields (in artists.json, persisted)
 - `emerging` (bool) — reputation-based; drives "Ones to Watch" (excludes legends).
 - `booking_fee` {label, mid, tier, color} — curated club/festival estimate.
