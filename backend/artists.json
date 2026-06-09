@@ -66,7 +66,9 @@
       "House",
       "Tech House"
     ],
-    "beatport_updated": "2026-06-08T23:35:52.139Z"
+    "beatport_updated": "2026-06-08T23:35:52.139Z",
+    "instagram_handle": "followthefishtv",
+    "tiktok_handle": "fisher"
   },
   {
     "name": "Chris Lake",
@@ -147,7 +149,9 @@
       "Black Book (own label)",
       "Coachella",
       "Festival headliner"
-    ]
+    ],
+    "instagram_handle": "chrislake",
+    "tiktok_handle": "chrislake"
   },
   {
     "name": "John Summit",
@@ -227,7 +231,9 @@
       "Coachella",
       "Festival headliner",
       "Press cover"
-    ]
+    ],
+    "instagram_handle": "johnsummit",
+    "tiktok_handle": "johnsummit"
   },
   {
     "name": "Fred Again",
@@ -406,7 +412,9 @@
       "Coachella headliner",
       "Essential Mix",
       "Glastonbury"
-    ]
+    ],
+    "instagram_handle": "disclosure",
+    "tiktok_handle": "disclosuremusic"
   },
   {
     "name": "Peggy Gou",
@@ -487,7 +495,9 @@
       "Boiler Room",
       "Coachella",
       "Press cover"
-    ]
+    ],
+    "instagram_handle": "peggygou_",
+    "tiktok_handle": "peggygou_official"
   },
   {
     "name": "Black Coffee",
@@ -567,7 +577,9 @@
       "Essential Mix",
       "Festival headliner"
     ],
-    "genre_lean": "house"
+    "genre_lean": "house",
+    "instagram_handle": "realblackcoffee",
+    "tiktok_handle": "realblackcoffee"
   },
   {
     "name": "Solomun",
@@ -656,7 +668,9 @@
       "Ibiza residency (Pacha)",
       "Essential Mix",
       "Awakenings headliner"
-    ]
+    ],
+    "instagram_handle": "solomun",
+    "tiktok_handle": "solomun"
   },
   {
     "name": "Tale Of Us",
@@ -1028,7 +1042,9 @@
       "Awakenings closing",
       "Boiler Room",
       "Tomorrowland mainstage"
-    ]
+    ],
+    "instagram_handle": "charlottedewittemusic",
+    "tiktok_handle": "charlottedewittemusic"
   },
   {
     "name": "Adam Beyer",
@@ -1111,7 +1127,9 @@
       "Essential Mix",
       "Time Warp",
       "Festival headliner"
-    ]
+    ],
+    "instagram_handle": "realadambeyer",
+    "tiktok_handle": "adamdrumcodebeyer"
   },
   {
     "name": "DJ Koze",
@@ -1822,7 +1840,9 @@
       "No Art (own label)",
       "Boiler Room",
       "Festival headliner"
-    ]
+    ],
+    "instagram_handle": "anotr.music",
+    "tiktok_handle": "anotrmusic"
   },
   {
     "name": "Mau P",
@@ -1901,7 +1921,8 @@
       "Boiler Room",
       "Festival headliner",
       "Press cover"
-    ]
+    ],
+    "tiktok_handle": "maup"
   },
   {
     "name": "SIDEPIECE",
@@ -2504,7 +2525,9 @@
       "Hot Cakes (own label)",
       "Boiler Room",
       "Festival headliner"
-    ]
+    ],
+    "instagram_handle": "cloonee",
+    "tiktok_handle": "clooneeuk"
   },
   {
     "name": "Josh Baker",
@@ -4329,7 +4352,9 @@
       "Space Ibiza residency",
       "Essential Mix",
       "Festival headliner"
-    ]
+    ],
+    "instagram_handle": "carlcoxofficial",
+    "tiktok_handle": "carlcox"
   },
   {
     "name": "Green Velvet",
@@ -4413,7 +4438,8 @@
       "La La Land",
       "Essential Mix",
       "Festival headliner"
-    ]
+    ],
+    "instagram_handle": "officialgreenvelvet"
   },
   {
     "name": "Dom Dolla",
@@ -4496,7 +4522,9 @@
       "Coachella",
       "Festival headliner",
       "Press cover"
-    ]
+    ],
+    "instagram_handle": "domdolla",
+    "tiktok_handle": "domdolla"
   },
   {
     "name": "James Hype",
