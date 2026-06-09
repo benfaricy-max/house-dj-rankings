@@ -73,7 +73,22 @@ function scoreArtists(artists) {
   return artists
     .map(artist => {
       let score = 0;
+      // Coverage accounting: how much of the (renormalized) weight is actually
+      // backed by real data for THIS artist. Without this, the self-healing
+      // reweight silently scores each artist on a different weight vector — a
+      // sparse act's score concentrates on its few present signals (a missing
+      // signal is treated as "doesn't count against you," not zero), so thin-data
+      // acts can float up and rank beside fully-covered acts as if comparable.
+      let coverageWeight = 0;   // sum of renormalized weight on present signals (0–1)
+      let signalsPresent = 0;
+      let signalsTotal = 0;     // weighted signals only (excludes retired 0-weight)
       for (const metric of liveMetrics) {
+        const carriesWeight = weights[metric] > 0;
+        if (carriesWeight) signalsTotal += 1;
+        if (carriesWeight && Number.isFinite(artist[metric]) && artist[metric] > 0) {
+          coverageWeight += weights[metric] / liveWeightSum;
+          signalsPresent += 1;
+        }
         const norm = normalize(
           artist[metric] || 0,
           ranges[metric].min,
@@ -89,7 +104,23 @@ function scoreArtists(artists) {
       // scene-thin act (e.g. a chart-pop crossover) from topping a booking index.
       const sceneVal = Number.isFinite(artist.manual_scene_score) ? artist.manual_scene_score : 50;
       const credibility = 0.75 + 0.25 * (Math.min(sceneVal, 50) / 50);
-      return { ...artist, score: Math.round(score * credibility * 10) / 10 };
+
+      // Coverage penalty: a score built on a fraction of the signals isn't as
+      // trustworthy as one on the full panel, and the self-healing reweight would
+      // otherwise let a thin-data act outrank a well-covered one on a technicality.
+      // Acts whose present signals back < 75% of the weight are scaled down — at
+      // most a 20% cut at 0% coverage, tapering linearly to no penalty at >= 75%.
+      // coverage_score (0–100) + signals_present are surfaced so the cut is legible.
+      const coverageScore = Math.round(coverageWeight * 100);
+      const coverageFactor = 0.80 + 0.20 * Math.min(coverageWeight / 0.75, 1);
+
+      return {
+        ...artist,
+        score: Math.round(score * credibility * coverageFactor * 10) / 10,
+        coverage_score: coverageScore,
+        signals_present: signalsPresent,
+        signals_total: signalsTotal,
+      };
     })
     .sort((a, b) => b.score - a.score)
     .map((artist, i) => ({ ...artist, rank: i + 1 }));

@@ -933,6 +933,14 @@ details[open] .hiw-faq-q::after { content: "–"; }
 /* momentum pill on ranking rows */
 .qs-pill--mo { color: var(--muted); border-color: var(--border); }
 .qs-pill--mo.qs-mo--hot { color: var(--on-accent); background: var(--accent); border-color: var(--accent); font-weight: 600; }
+/* data-confidence pill — colour comes inline from coverage level */
+.qs-pill--conf { border: 1px solid; background: transparent; font-weight: 600; font-variant-numeric: tabular-nums; }
+/* data-confidence row in the score breakdown */
+.breakdown-coverage { display: flex; align-items: center; gap: 10px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+.bcov-l { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; white-space: nowrap; }
+.bcov-track { flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; min-width: 40px; }
+.bcov-fill { display: block; height: 100%; border-radius: 2px; }
+.bcov-v { font-size: 11px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
 /* scene rubric (How It Works) */
 .hiw-rubric { display: flex; flex-direction: column; gap: 8px; margin: 16px 0; }
 .hiw-rubric-row { display: grid; grid-template-columns: 56px 1fr auto; gap: 14px; align-items: baseline; padding: 11px 16px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; }

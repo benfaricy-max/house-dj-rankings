@@ -347,6 +347,13 @@ function ScoreBreakdown({ dj, ranges }) {
           <MetricRow key={metric.key} metric={metric} value={value} normalized={normalized} contribution={contribution} maxContrib={maxContrib} />
         ))}
       </div>
+      {Number.isFinite(dj.coverage_score) && (
+        <div className="breakdown-coverage" title="Share of the model's weight backed by real signals for this artist. Below 75% applies a coverage penalty (up to −20% at 0%), so a thin-data act can't outrank a fully-covered one on a technicality.">
+          <span className="bcov-l">Data confidence</span>
+          <span className="bcov-track"><span className="bcov-fill" style={{ width: `${dj.coverage_score}%`, background: dj.coverage_score >= 75 ? "#7CE38B" : dj.coverage_score >= 50 ? "#E2B53E" : "#E2683E" }} /></span>
+          <span className="bcov-v">{dj.coverage_score}%{Number.isFinite(dj.signals_present) ? ` · ${dj.signals_present}/${dj.signals_total} signals` : ""}{dj.coverage_score < 75 ? " · penalty applied" : ""}</span>
+        </div>
+      )}
       <SceneCredentials dj={dj} />
       <ClubViral dj={dj} ranges={ranges} />
     </div>
@@ -540,6 +547,26 @@ function CompareModal({ djs, ranges, onClose }) {
   );
 }
 
+// Data-confidence pill — how much of the model's weight is backed by real
+// signals for this artist (vs filled-in by the self-healing reweight). A high
+// rank on thin data is less trustworthy than the same rank on the full panel;
+// this makes that legible instead of hidden. Reads coverage_score (0–100) from
+// score.js; degrades gracefully if older data lacks the field.
+function Confidence({ dj }) {
+  const cov = dj.coverage_score;
+  if (!Number.isFinite(cov)) return null;
+  const level = cov >= 75 ? "high" : cov >= 50 ? "med" : "low";
+  const color = level === "high" ? "#7CE38B" : level === "med" ? "#E2B53E" : "#E2683E";
+  const sp = dj.signals_present, st = dj.signals_total;
+  const tip = `Data confidence ${cov}%${Number.isFinite(sp) && Number.isFinite(st) ? ` — ${sp}/${st} signals present` : ""}. `
+    + (level === "high" ? "Built on the full signal panel." : level === "med" ? "Some signals missing — score leans on what's present." : "Thin data — score concentrates on a few signals; read the rank with caution.");
+  return (
+    <span className="qs-pill qs-pill--conf" style={{ color, borderColor: `${color}55` }} title={tip}>
+      ◓ Data {cov}%
+    </span>
+  );
+}
+
 // ── DJ Card ────────────────────────────────────────────────────────
 
 function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved, inCompare, onToggleCompare, isWatched, onToggleWatch }) {
@@ -584,6 +611,7 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
             {dj.spotify_monthly_listeners > 0 && <span className="qs-pill">{fmt(dj.spotify_monthly_listeners)} listeners</span>}
             {dj.tiktok_post_count > 0 && <span className="qs-pill">{fmt(dj.tiktok_post_count)} TikTok posts</span>}
             {dj.google_trends_score > 0 && <span className="qs-pill">Trends {dj.google_trends_score}/100</span>}
+            <Confidence dj={dj} />
           </div>
         </div>
 
@@ -742,6 +770,9 @@ function HowItWorksPage() {
           ))}
         </div>
         <div className="hiw-weight-note">Weights sum to 100%. Min-max normalisation ensures no single outlier distorts the rankings.</div>
+        <div className="hiw-weight-note" style={{ marginTop: 14 }}>
+          <strong>Data confidence.</strong> Not every artist has every signal. When a signal is missing we redistribute its weight across the ones present — but a score built on a fraction of the panel is less reliable than one built on all of it. So each artist carries a <strong>Data confidence</strong> figure: the share of the model's weight backed by real signals. Acts under 75% take a coverage penalty (up to −20% at zero), so a thin-data act can't outrank a fully-covered one on a technicality. The figure is shown on every artist card and in the score breakdown — a high rank on thin data is labelled, not hidden.
+        </div>
       </section>
 
       <section className="hiw-section">
