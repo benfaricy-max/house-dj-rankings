@@ -38,6 +38,22 @@ try {
 } catch {}
 const keep = (next, prev) => (next && next > 0) ? next : (prev || 0);
 
+// Change-compressed history accrual for slow-moving signals (fee tier, venue tier,
+// value-signal calls). Unlike rank_history (one point/day for a 90-day chart), these
+// record ONE point per actual change and preserve the first-seen date — so months
+// later we can prove a "strong-buy" act's fee tier or room size actually rose. The
+// `sig` is the comparison key; ride-along fields (mid, attendance) snapshot at the
+// moment of change. Merge-safe: a null/empty reading today leaves history untouched
+// (never wipes a prior real reading); same-day re-runs replace, never duplicate.
+const MAX_HIST = 180; // change-points; tiers move slowly → effectively unbounded horizon
+function accrueChange(prevHist, today, point, sig) {
+  if (point == null) return Array.isArray(prevHist) ? prevHist : []; // no real reading → preserve
+  const hist = (Array.isArray(prevHist) ? prevHist : []).filter(p => p.d !== today);
+  const last = hist[hist.length - 1];
+  if (!last || last.sig !== sig) hist.push({ d: today, sig, ...point });
+  return hist.slice(-MAX_HIST);
+}
+
 // Sanity-gate weekly listener growth. A jump computed across a measurement-basis
 // change (old scrape value → fresh Interceptor value) or off a tiny denominator
 // produces fabricated spikes (e.g. Blawan 54,866→530,781 = +867%). For a "data,
@@ -212,6 +228,39 @@ async function main() {
         }
       }
     }
+
+    // ── Predictive-validation history ──────────────────────────────────────
+    // Snapshot the slow-moving OUTCOMES (fee tier, room size) and the CALL
+    // (value-signal) so a future "our calls, scored" backtest can show that a
+    // strong-buy act's fee/venue actually rose after we flagged it. Change-
+    // compressed + merge-safe (see accrueChange): records only real movement,
+    // never fabricates, never wipes. Snapshotted here because generateStatic is
+    // the only daily-cadence writer; fee/venue/value fields ride in via ...prev.
+    const prevDj = prevRankings[dj.name] ?? {};
+
+    // Fee outcome — tier is the claim ("fee rose"); mid/basis ride along.
+    const feeTier = dj.booking_fee?.tier;
+    dj.fee_history = accrueChange(
+      prevDj.fee_history, today,
+      feeTier != null ? { t: feeTier, m: dj.booking_fee?.mid ?? null, b: dj.booking_fee?.basis ?? null } : null,
+      feeTier != null ? `${feeTier}|${dj.booking_fee?.basis ?? ""}` : null,
+    );
+
+    // Room-size outcome — venue tier (1-5) is the discrete claim; attendance snapshots at each move.
+    const vt = dj.ra_venue_tier;
+    dj.venue_history = accrueChange(
+      prevDj.venue_history, today,
+      vt > 0 ? { vt, aa: dj.ra_avg_attending ?? 0, ta: dj.ra_top_attending ?? 0 } : null,
+      vt > 0 ? String(vt) : null,
+    );
+
+    // The CALL we're grading later — value signal + gap (+ demand tier for context).
+    const vs = dj.value_signal;
+    dj.value_call_history = accrueChange(
+      prevDj.value_call_history, today,
+      vs ? { s: vs, g: dj.value_gap ?? null, dt: dj.demand_tier ?? null } : null,
+      vs ? `${vs}|${dj.value_gap ?? ""}` : null,
+    );
   }
 
   const onesToWatch = ranked

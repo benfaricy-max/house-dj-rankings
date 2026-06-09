@@ -179,6 +179,27 @@ giants); Scene .14 + the credibility floor handle the "huge streams, no scene"
 case. Validated against a labeled act set (89%). Keep score.js + the frontend
 METRICS / METRIC_DETAILS arrays + the How It Works credibility-floor note in sync.
 
+## Predictive-validation history (the "our calls, scored" backtest data)
+Three change-compressed time-series accrued in `generateStatic.js` (after rank/listeners
+history, inside the `ranked` loop) so we can later PROVE the index was right — that a
+"strong-buy" act's fee tier or room size actually rose after we flagged it. A ranking
+that can show it was right is a different product than one that only looks plausible.
+- `fee_history` [{d, sig, t, m, b}] — fee-tier OUTCOME (t=tier, m=mid, b=basis).
+- `venue_history` [{d, sig, vt, aa, ta}] — room-size OUTCOME (vt=ra_venue_tier 1-5,
+  aa=avg_attending, ta=top_attending snapshotted at each tier move).
+- `value_call_history` [{d, sig, s, g, dt}] — the CALL being graded (s=value_signal,
+  g=value_gap, dt=demand_tier).
+Mechanics (`accrueChange` helper): records ONE point per real change with the **first-seen
+date preserved** (not one/day — these move slowly, so a 90-day window would lose the
+horizon; cap `MAX_HIST`=180 change-points ≈ unbounded). Merge-safe & sacred-rule compliant:
+a null/empty reading leaves history untouched (never wipes a prior real reading), same-day
+re-runs replace not duplicate. Snapshotted in generateStatic because it's the only
+daily-cadence writer; fee/venue/value fields ride in via the `...prev` spread (they're
+local-sourced — computeFees/enrichRA/enrichValueGap don't run in CI). Backtest grading:
+freeze the call at date T (value_call_history), then read fee_history/venue_history at
+T+6–12mo. NOTE: grade outcomes against the FEE/VENUE movement, not against the current
+model's own re-scored signal (that would be circular).
+
 ## Key per-artist fields (in artists.json, persisted)
 - `emerging` (bool) — reputation-based; drives "Ones to Watch" (excludes legends).
 - `booking_fee` {label, mid, tier, color} — curated club/festival estimate.
