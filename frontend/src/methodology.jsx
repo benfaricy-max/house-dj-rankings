@@ -121,6 +121,8 @@ export function FormTip({ dj }) {
 // An act can be Euro-booked but US-listened — that gap is the insight, so we never
 // collapse the two into one number. Core = the electronic-music credibility markets.
 const CORE_COUNTRIES = new Set(["Spain","Germany","Netherlands","United Kingdom","Italy","France","Belgium","Croatia","Switzerland","Austria","Georgia","Serbia","Czechia","Czech Republic","Portugal","Greece","Poland","Ireland"]);
+// Spotify top-cities use ISO-3166 alpha-2 country codes; Trends/RA use full names.
+const CORE_COUNTRY_CODES = new Set(["GB","DE","NL","IT","FR","ES","BE","HR","CH","AT","GE","RS","CZ","PT","GR","PL","IE"]);
 const CORE_CITIES = new Set(["Ibiza","Berlin","Amsterdam","London","Barcelona","Milan","Paris","Brussels","Manchester","Naples","Rome","Cologne","Frankfurt","Hamburg","Munich","Tbilisi","Belgrade","Zurich","Vienna","Madrid","Rotterdam","Bristol","Glasgow","Leeds","Lisbon","Athens","Warsaw","Prague","Lyon","Valencia","Sheffield","Nottingham","Dublin"]);
 
 const geoCategory = s => s >= 60 ? "Euro-core" : s >= 38 ? "Global" : "US / Anglo-led";
@@ -143,7 +145,7 @@ function audienceGeo(dj) {
     let core = 0, tot = 0; const hits = [];
     for (const c of cities) {
       const n = c.listeners || c.numberOfListeners || 1; tot += n;
-      if (CORE_CITIES.has(c.city) || CORE_COUNTRIES.has(c.country)) { core += n; hits.push(c.city); }
+      if (CORE_CITIES.has(c.city) || CORE_COUNTRY_CODES.has(c.country) || CORE_COUNTRIES.has(c.country)) { core += n; hits.push(c.city); }
     }
     const score = Math.round(tot ? (core / tot) * 100 : 0);
     return { score, category: geoCategory(score), hits, color: GEO_COLOR[geoCategory(score)], source: "Spotify cities", top: cities.slice(0, 5).map(c => c.city) };

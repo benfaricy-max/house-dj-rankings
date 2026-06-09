@@ -35,8 +35,13 @@ const SAVE_EVERY = 20;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // Core electronic-music credibility markets (mirror of methodology.jsx).
+// Spotify's topCities country field is an ISO-3166 alpha-2 code (GB, DE, NL…), so
+// match on codes; full names + cities kept for robustness across data sources.
+const CORE_COUNTRY_CODES = new Set(["GB", "DE", "NL", "IT", "FR", "ES", "BE", "HR", "CH", "AT", "GE", "RS", "CZ", "PT", "GR", "PL", "IE"]);
 const CORE_COUNTRIES = new Set(["Spain", "Germany", "Netherlands", "United Kingdom", "Italy", "France", "Belgium", "Croatia", "Switzerland", "Austria", "Georgia", "Serbia", "Czechia", "Czech Republic", "Portugal", "Greece", "Poland", "Ireland"]);
 const CORE_CITIES = new Set(["Ibiza", "Berlin", "Amsterdam", "London", "Barcelona", "Milan", "Paris", "Brussels", "Manchester", "Naples", "Rome", "Cologne", "Frankfurt", "Hamburg", "Munich", "Tbilisi", "Belgrade", "Zurich", "Vienna", "Madrid", "Rotterdam", "Bristol", "Glasgow", "Leeds", "Lisbon", "Athens", "Warsaw", "Prague", "Lyon", "Valencia", "Sheffield", "Nottingham", "Dublin"]);
+
+const isCore = c => CORE_COUNTRY_CODES.has(c.country) || CORE_COUNTRIES.has(c.country) || CORE_CITIES.has(c.city);
 
 // Audience core-market share, 0-100, weighted by listeners per city.
 function sceneGeographyScore(cities) {
@@ -46,7 +51,7 @@ function sceneGeographyScore(cities) {
     const n = c.listeners || 0;
     if (n <= 0) continue;
     total += n;
-    if (CORE_CITIES.has(c.city) || CORE_COUNTRIES.has(c.country)) core += n;
+    if (isCore(c)) core += n;
   }
   return total > 0 ? Math.round((core / total) * 100) : null;
 }
