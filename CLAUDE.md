@@ -67,7 +67,22 @@ to artists.json to override for ambiguous names (e.g. "fisher" → Mike Fisher).
 Fetches: ra_followers, ra_upcoming, ra_events_6m, ra_avg_attending, ra_top_attending,
 ra_attending_h1/h2 (trajectory), ra_venue_tier (1-5 capacity buckets), ra_countries,
 ra_country_list, ra_top_regions, ra_top_venues → composite ra_score 0-100.
-Stale threshold: 14 days. Runs in CI (plain HTTP, no puppeteer). Weight: 0.08 in score.
+Stale threshold: 14 days. Runs in CI (plain HTTP, no puppeteer). NOTE: ra_score is
+NOT weighted directly anymore — it feeds `live_demand_score` (see below).
+
+## Live-demand blend (RA not single-sourced) — `live_demand_score`, weight 0.17 (LEADS)
+`backend/computeLiveDemand.js` (run in `generateStatic.js` BEFORE scoreArtists).
+RA's event coverage skews underground/Europe and UNDER-logs US/commercial/festival
+acts — so RA alone scores a real touring act as low-demand just because RA can't see
+its shows. So the leading booking signal is a blend: RA (venue tier/attendance/geo)
++ Songkick `tour_score`. The blend only **corroborates upward** — tour can lift an
+act RA under-sees, but a thin/low tour score never drags down a solid RA reading
+(`live = max(ra, blend)`; Songkick has its own gaps). `ra_coverage_thin` flags acts
+RA structurally under-logs (reach ≥750k & <3 RA events, or RA-blind while touring) —
+there tour is weighted more (0.65 vs 0.35) and the UI shows a "RA-thin · tour-led"
+pill. Coverage 84%→92%. score.js weights `live_demand_score` (falls back to ra_score
+if the blend hasn't been computed). Keep in sync: score.js, frontend METRICS /
+METRIC_DETAILS, this file.
 
 ## Beatport signal (core credibility)
 `beatport_score` 0-100 from genre Top-100 charts: positionScore(101−best)·0.6 +
@@ -140,7 +155,7 @@ populate. **Not yet weighted in score.js** — surfaced for review first ("see b
 weight"); weight ~.05-.08 once real city data is validated against the labeled set.
 
 ## Composite weights (score.js, sum=1.00)
-ra .17 (LEADS), beatport .14, scene .14, listeners .12, tl_support (1001TL) .09,
+live_demand (RA+tour blend) .17 (LEADS), beatport .14, scene .14, listeners .12, tl_support (1001TL) .09,
 trends .08, growth .06, yt_subs .05, label .05, tiktok .04, releases .04,
 wikipedia .02. Then the **credibility floor** multiplies the final score (see Scene
 Score section). RETIRED (0): track_pop (Spotify-blocked), yt_views_weekly (delta

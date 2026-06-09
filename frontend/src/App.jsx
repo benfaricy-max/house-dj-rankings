@@ -62,7 +62,7 @@ const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
 const MEDAL = { 1: "🥇", 2: "🥈", 3: "🥉" };
 
 const METRICS = [
-  { key: "ra_score",                     label: "RA Booking",         weight: 0.17, format: "score100" },
+  { key: "live_demand_score",            label: "Live Booking",       weight: 0.17, format: "score100" },
   { key: "beatport_score",               label: "Beatport Chart",     weight: 0.14, format: "score100" },
   { key: "manual_scene_score",           label: "Scene Score",        weight: 0.14, format: "score100" },
   { key: "spotify_monthly_listeners",    label: "Monthly Listeners",  weight: 0.12, format: "count"    },
@@ -611,6 +611,11 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
             {dj.spotify_monthly_listeners > 0 && <span className="qs-pill">{fmt(dj.spotify_monthly_listeners)} listeners</span>}
             {dj.tiktok_post_count > 0 && <span className="qs-pill">{fmt(dj.tiktok_post_count)} TikTok posts</span>}
             {dj.google_trends_score > 0 && <span className="qs-pill">Trends {dj.google_trends_score}/100</span>}
+            {dj.ra_coverage_thin && (
+              <span className="qs-pill qs-pill--rathin" title="Resident Advisor structurally under-logs this act (real reach, few/no RA events) — typical of US / commercial / festival acts. Live-booking demand here leans on Songkick tour density instead of RA, so the act isn't scored as low-demand just because RA can't see its shows.">
+                ⚑ RA-thin · tour-led
+              </span>
+            )}
             <Confidence dj={dj} />
           </div>
         </div>
@@ -708,7 +713,7 @@ const DATA_SOURCES = [
 ];
 
 const METRIC_DETAILS = [
-  { key: "ra_score",                     label: "RA Booking",          weight: 0.17, color: "#FF5C00", why: "Resident Advisor live-booking signal: venue-capacity tier, attendance, and geographic spread of recent and upcoming shows. The highest-weighted signal — direct demand from the touring market, because this is a booking index, not a streaming chart." },
+  { key: "live_demand_score",            label: "Live Booking",        weight: 0.17, color: "#FF5C00", why: "Live booking demand, blended from two sources so it isn't single-sourced: Resident Advisor (venue-capacity tier, attendance, geographic spread) plus Songkick tour density. RA under-logs US/commercial/festival acts, so where its coverage is structurally thin the tour signal leads — acts aren't scored as low-demand just because RA can't see their shows. The highest-weighted signal, because this is a booking index, not a streaming chart." },
   { key: "beatport_score",               label: "Beatport Chart",      weight: 0.14, color: "#a8e00f", why: "Position across genre Top 100 charts. The DJ retail store, so charting signals credibility with the core scene rather than the mainstream." },
   { key: "manual_scene_score",           label: "Scene Score",         weight: 0.14, color: "#8b5cf6", why: "An editorial layer for what algorithms miss — Boiler Room, Berghain/fabric bookings, festival closing slots, press covers. Scored against a published, transparent rubric (below). Also acts as a credibility floor: an act with near-zero scene standing can't top the index on reach alone (see the note under the rubric)." },
   { key: "spotify_monthly_listeners",    label: "Monthly Listeners",   weight: 0.12, color: "#1DB954", why: "Active fanbase reach, read from the live Spotify session. A supporting signal — raw streaming is the weakest predictor of who actually fills rooms, so it informs the ranking without driving it." },

@@ -935,6 +935,8 @@ details[open] .hiw-faq-q::after { content: "–"; }
 .qs-pill--mo.qs-mo--hot { color: var(--on-accent); background: var(--accent); border-color: var(--accent); font-weight: 600; }
 /* data-confidence pill — colour comes inline from coverage level */
 .qs-pill--conf { border: 1px solid; background: transparent; font-weight: 600; font-variant-numeric: tabular-nums; }
+/* RA-under-coverage flag — live demand leaned on tour data, not RA */
+.qs-pill--rathin { color: #E2B53E; border: 1px solid #E2B53E55; background: transparent; font-weight: 600; }
 /* data-confidence row in the score breakdown */
 .breakdown-coverage { display: flex; align-items: center; gap: 10px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
 .bcov-l { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; white-space: nowrap; }

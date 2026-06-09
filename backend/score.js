@@ -19,9 +19,18 @@ function scoreArtists(artists) {
     "tl_support_score",
     "wikipedia_pageviews",
     "manual_scene_score",
-    "ra_score",
+    "live_demand_score",
     "label_score",
   ];
+  // live_demand_score blends RA (venue tier/attendance/geo) with Songkick tour
+  // density (computeLiveDemand.js) so the leading booking signal isn't single-
+  // sourced on RA — RA under-logs US/commercial/festival acts. Fall back to bare
+  // ra_score if the blend hasn't been computed (e.g. an older data snapshot).
+  for (const a of artists) {
+    if (!Number.isFinite(a.live_demand_score) && Number.isFinite(a.ra_score)) {
+      a.live_demand_score = a.ra_score;
+    }
+  }
   // NOTE: spotify_avg_track_popularity retired — Spotify blocks the endpoint
   // (403) under Client-Credentials and strips the popularity field, so it was
   // dead for every artist. Removed rather than shown as a column of zeros.
@@ -41,7 +50,7 @@ function scoreArtists(artists) {
   // Paired with the credibility floor below (see the return map). Keep this in
   // sync with the frontend METRICS / METRIC_DETAILS arrays and CLAUDE.md.
   const weights = {
-    ra_score:                     0.17,  // LEADS — RA live booking demand: venue tier, attending, geo spread
+    live_demand_score:            0.17,  // LEADS — live booking demand: RA (venue tier/attendance/geo) blended with Songkick tour density
     beatport_score:               0.14,  // core scene / chart credibility (one Beatport metric)
     manual_scene_score:           0.14,  // editorial scene credibility (rubric in How It Works)
     spotify_monthly_listeners:    0.12,  // reach — supporting; raw streams are the weakest booking predictor
