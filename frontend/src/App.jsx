@@ -6,7 +6,7 @@ import { ValueGapPage, ValueReport, valueSlug } from "./ValueGap";
 import RoutingSaturation from "./RoutingSaturation";
 import ClubViral from "./ClubViral";
 import { useWatchlist, useMomentumAlerts } from "./watchlist";
-import { InfoTip, MomentumTip, MOMENTUM_BLEND, artistForm, FORM_META, FormTip } from "./methodology";
+import { InfoTip, MomentumTip, MOMENTUM_BLEND, artistForm, FORM_META, FormTip, genreLean, GENRE_META, matchesGenre } from "./methodology";
 import PitchPage from "./Pitch";   // read-only private brief route (also pulled by ValueGap)
 const ClubsPage   = lazy(() => import("./ClubsPage"));                                  // splits ~750 lines of club lore/images out of the main chunk
 const ClubProfile = lazy(() => import("./ClubsPage").then(m => ({ default: m.ClubProfile })));
@@ -565,6 +565,12 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
           </div>
           <ScoreBar score={dj.score} maxScore={maxScore} />
           <div className="dj-quick-stats">
+            {(() => { const g = genreLean(dj); return g ? (
+              <span className="qs-pill" style={{ color: GENRE_META[g].color, borderColor: `${GENRE_META[g].color}55` }}
+                title="Genre lean from Beatport charts + label — cited, not adjudicated">
+                {GENRE_META[g].label}
+              </span>
+            ) : null; })()}
             {(() => { const form = artistForm(dj); return form ? (
               <span className="qs-pill qs-pill--form" style={{ color: FORM_META[form].color, borderColor: `${FORM_META[form].color}55` }}>
                 {FORM_META[form].tag} {FORM_META[form].label}<FormTip dj={dj} />
@@ -710,6 +716,9 @@ function HowItWorksPage() {
         <p className="hiw-sub">
           Every ranking is computed from 11 independent signals pulled from Spotify, Beatport, YouTube, TikTok, Google Trends, Resident Advisor and Wikipedia.
           No editorial bias, no pay-to-play. Refreshed every 6 hours.
+        </p>
+        <p className="hiw-sub" style={{ marginTop: 10 }}>
+          <strong style={{ color: "#E9E7DF" }}>House &amp; techno.</strong> The roster is house-anchored — house, tech house, and the techno acts that share its festival and club stages. The house/techno line is genuinely blurred and nobody agrees on it, so we don't adjudicate it: the <em>House / Techno</em> filter leans on where <strong>Beatport</strong> charts an act (and their primary label when they're not currently charting). "Crossover" is the honest label for the melodic middle — those acts sit under House, the anchor, while Techno stays a precise view of the genuinely-techno acts. It's a lens on the index, not a verdict — and not a comprehensive techno chart.
         </p>
       </div>
 
@@ -2303,6 +2312,10 @@ export default function App() {
     return [...rankings].sort((a, b) => (b[sortKey] || 0) - (a[sortKey] || 0));
   }, [rankings, sortKey]);
 
+  // Genre lean filter (house / techno / all) — derived from Beatport, never adjudicated.
+  const [genreFilter, setGenreFilter] = useState("all");
+  const visible = useMemo(() => sorted.filter(dj => matchesGenre(dj, genreFilter)), [sorted, genreFilter]);
+
   function scrollTo(name) {
     setExpanded(name);
     setTimeout(() => {
@@ -2373,8 +2386,11 @@ export default function App() {
           </svg>
           <span className="brand-word">PEAKTIME</span>
         </a>
-        <div className="header-eyebrow">The demand index for electronic music</div>
-        <h1 className="header-title">Hottest House DJ Rankings</h1>
+        <div className="header-eyebrow">PEAKTIME · the demand index for electronic music</div>
+        <h1 className="header-title">House DJ Rankings</h1>
+        <p className="header-scope" style={{ margin: "6px auto 0", maxWidth: 560, fontSize: 13, color: "#a9a8a2", lineHeight: 1.5 }}>
+          House, tech house &amp; the techno that shares its stages — ranked by booking demand, not hype.
+        </p>
         <div className="header-platforms">
           <span className="plat-pill"><span className="plat-dot" style={{ background: "#1DB954" }} />Spotify</span>
           <span className="plat-pill"><span className="plat-dot" style={{ background: "#a8e00f" }} />Beatport</span>
@@ -2436,12 +2452,28 @@ export default function App() {
             {opt.label}
           </button>
         ))}
+        <span className="sort-label" style={{ marginLeft: "auto" }}>Genre</span>
+        {[["all", "All"], ["house", "House"], ["techno", "Techno"]].map(([key, label]) => (
+          <button
+            key={key}
+            className={`sort-btn ${genreFilter === key ? "sort-btn--active" : ""}`}
+            onClick={() => setGenreFilter(key)}
+            title={key === "techno" ? "Techno-leaning & crossover acts on the house circuit (Beatport-derived) — not a comprehensive techno chart" : key === "house" ? "House, tech house & crossover acts" : "The full index"}
+          >
+            {label}
+          </button>
+        ))}
       </div>
+      {genreFilter !== "all" && (
+        <div className="sort-label" style={{ padding: "0 0 8px", fontSize: 12, color: "#75767d" }}>
+          {visible.length} {genreFilter}-leaning act{visible.length !== 1 ? "s" : ""} · genre from Beatport charts + label, never adjudicated{genreFilter === "house" ? " · includes tech house & melodic crossover" : " · the techno acts on the circuit, not a comprehensive techno chart"}
+        </div>
+      )}
 
       <main className="rankings-list">
         {loading && <div className="state-msg"><div className="spinner" />Loading rankings…</div>}
         {error   && <div className="state-msg state-msg--error">⚠ {error}</div>}
-        {!loading && !error && sorted.map(dj => (
+        {!loading && !error && visible.map(dj => (
           <div key={dj.name} ref={el => { cardRefs.current[dj.name] = el; }}>
             <DJCard
               dj={dj}
