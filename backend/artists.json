@@ -22,7 +22,7 @@
     "wikipedia_title": "Fisher",
     "ra_slug": "fisheroz",
     "beatport_alias": "FISHER (OZ)",
-    "demand_index": 62,
+    "demand_index": 54,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -1232,7 +1232,7 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Bonobo",
     "ra_slug": "bonobo",
-    "demand_index": 65,
+    "demand_index": 66,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -1794,7 +1794,7 @@
     ],
     "trends_mom_12w": 140,
     "ra_slug": "anotr",
-    "demand_index": 72,
+    "demand_index": 71,
     "demand_tier": 5,
     "value_gap": 1,
     "value_signal": "strong-buy",
@@ -1873,7 +1873,7 @@
     "trends_mom_12w": 22.8,
     "wikipedia_title": "Mau P",
     "ra_slug": "maup",
-    "demand_index": 62,
+    "demand_index": 63,
     "demand_tier": 4,
     "value_gap": 0,
     "value_signal": "fair",
@@ -1952,7 +1952,7 @@
     ],
     "trends_mom_12w": 0,
     "wikipedia_title": "Sidepiece (EDM Duo)",
-    "demand_index": 41,
+    "demand_index": 39,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -2937,7 +2937,7 @@
     "demand_index": 62,
     "demand_tier": 4,
     "value_gap": 1,
-    "value_signal": "buy",
+    "value_signal": "strong-buy",
     "beatport_labels": [
       "Steel City Dance Discs"
     ],
@@ -4294,7 +4294,7 @@
       "tier": 5,
       "color": "#f59e0b",
       "band": "B",
-      "basis": "anchored"
+      "basis": "curated"
     },
     "beatport_score": 56,
     "beatport_best_position": 25,
@@ -12249,7 +12249,7 @@
     },
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/a445205b673358dce351a606f02d0202/1000x1000-000000-80-0-0.jpg",
-    "demand_index": 54,
+    "demand_index": 48,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -12576,7 +12576,7 @@
     "wikipedia_title": "Robert Babicz",
     "image": "https://cdn-images.dzcdn.net/images/artist/86daafd37da4b89d74c4dfbb9a69bb06/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "robertbabicz",
-    "demand_index": 38,
+    "demand_index": 37,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -14513,7 +14513,7 @@
     "trends_mom_12w": 9.9,
     "wikipedia_title": "MK",
     "image": "https://cdn-images.dzcdn.net/images/artist/ce42df7d498a54a4045511554561183d/1000x1000-000000-80-0-0.jpg",
-    "demand_index": 48,
+    "demand_index": 60,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -22292,14 +22292,14 @@
     ],
     "beatport_updated": "2026-06-08T23:35:52.139Z",
     "booking_fee": {
-      "label": "£1.5K–£5K",
-      "mid": 3000,
-      "tier": 1,
-      "color": "var(--muted)",
-      "band": "F",
+      "label": "£8K–£18K",
+      "mid": 12000,
+      "tier": 3,
+      "color": "#8b5cf6",
+      "band": "D",
       "basis": "estimate"
     },
-    "demand_index": 52,
+    "demand_index": 59,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -22311,7 +22311,9 @@
     "tl_setplays_recent": 0,
     "tl_setplays_total": 0,
     "tl_set_recent": false,
-    "tl_updated": "2026-06-09T08:21:28.294Z"
+    "tl_updated": "2026-06-09T08:21:28.294Z",
+    "youtube_channel_id": "UCHTGQSVEIvSRmq_NFqnUrHw",
+    "image": "https://cdn-images.dzcdn.net/images/artist/5d900dc3e33310a8dd3da89941f3099a/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "Saoirse",
@@ -22333,7 +22335,7 @@
       "band": "F",
       "basis": "estimate"
     },
-    "demand_index": 70,
+    "demand_index": 65,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -22345,7 +22347,10 @@
     "tl_setplays_recent": 0,
     "tl_setplays_total": 0,
     "tl_set_recent": false,
-    "tl_updated": "2026-06-09T08:21:28.295Z"
+    "tl_updated": "2026-06-09T08:21:28.295Z",
+    "youtube_channel_id": "UCiel2KxMTox4ZJJLHkzRaow",
+    "wikipedia_title": "Saoirse",
+    "image": "https://cdn-images.dzcdn.net/images/artist/51b20415792fd778fcef423f4999c4a2/1000x1000-000000-80-0-0.jpg"
   },
   {
     "name": "D.O.D",
@@ -22358,14 +22363,14 @@
     ],
     "emerging": false,
     "booking_fee": {
-      "label": "£4K–£10K",
-      "mid": 6500,
-      "tier": 2,
-      "color": "var(--accent)",
-      "band": "E",
+      "label": "£18K–£40K",
+      "mid": 28000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
       "basis": "estimate"
     },
-    "demand_index": 53,
+    "demand_index": 62,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -22377,6 +22382,9 @@
     "tl_setplays_recent": 0,
     "tl_setplays_total": 0,
     "tl_set_recent": false,
-    "tl_updated": "2026-06-09T08:21:28.297Z"
+    "tl_updated": "2026-06-09T08:21:28.297Z",
+    "youtube_channel_id": "UCYu_eYB3mccIMkg_Bx3Joog",
+    "wikipedia_title": "D.O.D. (DJ)",
+    "image": "https://cdn-images.dzcdn.net/images/artist/56400bb2f4fd6997fe9e01bf0b9df677/1000x1000-000000-80-0-0.jpg"
   }
 ]
