@@ -33,11 +33,19 @@ const suspects = d.rankings
   .map(dj => {
     const prominent = (dj.spotify_monthly_listeners || 0) >= LISTENERS_HINT
                    || (dj.manual_scene_score || 0) >= SCENE_HINT;
+    // No real booking footprint on the resolved profile: no score AND no recent
+    // events. A small profile that still has live bookings (e.g. an emerging act
+    // with few followers but real gigs) is genuine, NOT a namesake collision —
+    // so the low-follower flag only fires when there's also zero activity.
+    const noBookings = !dj.ra_score && !dj.ra_events_6m;
     const reasons = [];
-    if ((dj.ra_followers || 0) < FOLLOWER_FLOOR) reasons.push(`only ${dj.ra_followers || 0} RA followers`);
-    if (!dj.ra_score && prominent)               reasons.push(`ra_score 0 but prominent`);
-    // High confidence: a prominent act sitting on a near-empty RA profile.
-    const hot = prominent && (dj.ra_followers || 0) < FOLLOWER_FLOOR;
+    if ((dj.ra_followers || 0) < FOLLOWER_FLOOR && noBookings)
+      reasons.push(`only ${dj.ra_followers || 0} RA followers + no recent bookings`);
+    if (!dj.ra_score && prominent)
+      reasons.push(`ra_score 0 but prominent`);
+    // High confidence: a prominent act on a near-empty, inactive RA profile —
+    // the FISHER → "Mike Fisher" signature (20 followers, 0 events, 19M listeners).
+    const hot = prominent && noBookings && (dj.ra_followers || 0) < FOLLOWER_FLOOR;
     return reasons.length ? { dj, reasons, hot } : null;
   })
   .filter(Boolean)
