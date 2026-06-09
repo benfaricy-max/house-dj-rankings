@@ -7,6 +7,7 @@ import RoutingSaturation from "./RoutingSaturation";
 import ClubViral from "./ClubViral";
 import { useWatchlist, useMomentumAlerts } from "./watchlist";
 import { InfoTip, MomentumTip, MOMENTUM_BLEND, artistForm, FORM_META, FormTip, genreLean, GENRE_META, matchesGenre } from "./methodology";
+import { rankWithinCohort, withRankIntervals, deriveRegions, inRegion, isRising, PERSONAS } from "./cohort";
 import PitchPage from "./Pitch";   // read-only private brief route (also pulled by ValueGap)
 const ClubsPage   = lazy(() => import("./ClubsPage"));                                  // splits ~750 lines of club lore/images out of the main chunk
 const ClubProfile = lazy(() => import("./ClubsPage").then(m => ({ default: m.ClubProfile })));
@@ -569,13 +570,18 @@ function Confidence({ dj }) {
 
 // ── DJ Card ────────────────────────────────────────────────────────
 
-function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved, inCompare, onToggleCompare, isWatched, onToggleWatch }) {
+function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved, inCompare, onToggleCompare, isWatched, onToggleWatch, displayRank, interval, cohortMode }) {
+  const shownRank = displayRank ?? dj.rank;
   return (
     <div className={`dj-card ${isTop ? "dj-card--top" : ""} ${expanded ? "dj-card--expanded" : ""} ${inCompare ? "dj-card--comparing" : ""}`}>
-      <div className="dj-card-main" {...pressable(onToggle, expanded)} aria-label={`${dj.name}, rank ${dj.rank} — ${expanded ? "collapse" : "expand"} details`}>
+      <div className="dj-card-main" {...pressable(onToggle, expanded)} aria-label={`${dj.name}, rank ${shownRank} — ${expanded ? "collapse" : "expand"} details`}>
         <div className="dj-rank">
-          {MEDAL[dj.rank] ?? <span className="rank-num">#{dj.rank}</span>}
-          <RankDelta delta={dj.rank_change} />
+          {(!cohortMode && MEDAL[shownRank]) ?? null}
+          {(cohortMode || !MEDAL[shownRank]) && <span className="rank-num">#{shownRank}</span>}
+          {interval && (
+            <span className="rank-ci" title={`Ranks ${interval.lo}–${interval.hi} are within scoring noise — treat this position as approximate, not exact.`}>±{interval.pm}</span>
+          )}
+          {!cohortMode && <RankDelta delta={dj.rank_change} />}
         </div>
 
         <div className="dj-avatar-wrap">
@@ -2343,14 +2349,49 @@ export default function App() {
   const maxScore = rankings[0]?.score ?? 1;
   const { alerts: momentumAlerts, dismiss: dismissAlerts } = useMomentumAlerts(rankings, watched);
 
-  const sorted = useMemo(() => {
-    if (sortKey === "score") return rankings;
-    return [...rankings].sort((a, b) => (b[sortKey] || 0) - (a[sortKey] || 0));
-  }, [rankings, sortKey]);
-
   // Genre lean filter (house / techno / all) — derived from Beatport, never adjudicated.
   const [genreFilter, setGenreFilter] = useState("all");
-  const visible = useMemo(() => sorted.filter(dj => matchesGenre(dj, genreFilter)), [sorted, genreFilter]);
+  // Stakeholder lens + cohort index. Persona reframes the same data (Agent/Promoter/
+  // Festival); cohort re-normalises within a sub-pool (emerging / rising / region)
+  // so global outliers don't compress the scale. See cohort.js.
+  const [persona, setPersona] = useState("all");
+  const [cohort, setCohort]   = useState("full"); // full | emerging | rising | region
+  const [region, setRegion]   = useState("");
+  const regions = useMemo(() => deriveRegions(rankings), [rankings]);
+
+  function pickPersona(key) {
+    const p = PERSONAS[key];
+    setPersona(key);
+    setSortKey(p.sort);
+    setCohort(p.cohort);
+    if (p.cohort !== "region") setRegion("");
+  }
+
+  // Subset for the active cohort (genre filter always applies).
+  const cohortFiltered = useMemo(() => {
+    let list = rankings.filter(dj => matchesGenre(dj, genreFilter));
+    if (cohort === "emerging")      list = list.filter(d => d.emerging === true);
+    else if (cohort === "rising")   list = list.filter(isRising);
+    else if (cohort === "region" && region) list = list.filter(d => inRegion(d, region));
+    return list;
+  }, [rankings, genreFilter, cohort, region]);
+
+  const cohortMode = cohort !== "full";
+
+  // The displayed list: in cohort mode we RE-SCORE within the cohort (cohort_rank);
+  // otherwise the global ranking. Rank-uncertainty bands are attached when the list
+  // is shown in score order (they're meaningless under a non-score sort).
+  const visible = useMemo(() => {
+    if (cohortMode) {
+      const ranked = rankWithinCohort(cohortFiltered, METRICS);
+      if (sortKey === "score") return withRankIntervals(ranked, "cohort_score");
+      return [...ranked].sort((a, b) => (b[sortKey] || 0) - (a[sortKey] || 0));
+    }
+    if (sortKey === "score") return withRankIntervals([...cohortFiltered], "score");
+    return [...cohortFiltered].sort((a, b) => (b[sortKey] || 0) - (a[sortKey] || 0));
+  }, [cohortFiltered, cohortMode, sortKey]);
+
+  const showIntervals = sortKey === "score";
 
   function scrollTo(name) {
     setExpanded(name);
@@ -2477,6 +2518,48 @@ export default function App() {
 
       {activeTab === "rankings" && <>
       <MomentumAlertsBanner alerts={momentumAlerts} onDismiss={dismissAlerts} onOpen={name => { window.location.hash = `#/artist/${slugify(name)}`; }} />
+
+      {/* Stakeholder lens — same index, three jobs-to-be-done */}
+      <div className="lens-bar">
+        <span className="sort-label">Lens</span>
+        {Object.entries(PERSONAS).map(([key, p]) => (
+          <button
+            key={key}
+            className={`lens-btn ${persona === key ? "lens-btn--active" : ""}`}
+            onClick={() => pickPersona(key)}
+            title={p.question || "The full index, no persona framing"}
+          >
+            {p.label}
+          </button>
+        ))}
+        <span className="sort-label" style={{ marginLeft: "auto" }}>Cohort</span>
+        {[["full", "Full index"], ["emerging", "Emerging"], ["rising", "Rising tier"], ["region", "By region"]].map(([key, label]) => (
+          <button
+            key={key}
+            className={`lens-btn ${cohort === key ? "lens-btn--active" : ""}`}
+            onClick={() => { setCohort(key); if (key !== "region") setRegion(""); else if (!region && regions[0]) setRegion(regions[0]); }}
+            title="Re-rank within this cohort — scores re-normalised over the sub-pool, not the global 330"
+          >
+            {label}
+          </button>
+        ))}
+        {cohort === "region" && (
+          <select className="lens-select" value={region} onChange={e => setRegion(e.target.value)}>
+            {regions.map(r => <option key={r} value={r}>{r}</option>)}
+          </select>
+        )}
+      </div>
+      {(persona !== "all" || cohortMode) && (
+        <div className="lens-note">
+          {persona !== "all" && PERSONAS[persona].question && <strong className="lens-q">{PERSONAS[persona].question} </strong>}
+          {persona !== "all" && PERSONAS[persona].blurb}
+          {cohortMode && <span className="lens-cohort-tag"> · Re-ranked within {cohort === "region" ? region : cohort === "rising" ? "the rising tier" : "emerging acts"} ({visible.length}) — scores normalised over this cohort, not the global pool.</span>}
+          {persona !== "all" && PERSONAS[persona].cta && (
+            <button className="lens-cta" onClick={() => { setActiveTab(PERSONAS[persona].cta.tab); window.scrollTo({ top: 0 }); }}>{PERSONAS[persona].cta.label}</button>
+          )}
+        </div>
+      )}
+
       <div className="sort-bar">
         <span className="sort-label">Sort by</span>
         {SORT_OPTIONS.map(opt => (
@@ -2509,12 +2592,19 @@ export default function App() {
       <main className="rankings-list">
         {loading && <div className="state-msg"><div className="spinner" />Loading rankings…</div>}
         {error   && <div className="state-msg state-msg--error">⚠ {error}</div>}
-        {!loading && !error && visible.map(dj => (
+        {!loading && !error && visible.map(dj => {
+          const displayRank = cohortMode ? dj.cohort_rank : dj.rank;
+          const interval = showIntervals && Number.isFinite(dj.rank_pm) && dj.rank_pm >= 2
+            ? { lo: dj.rank_lo, hi: dj.rank_hi, pm: dj.rank_pm } : null;
+          return (
           <div key={dj.name} ref={el => { cardRefs.current[dj.name] = el; }}>
             <DJCard
               dj={dj}
               maxScore={maxScore}
-              isTop={dj.rank <= 3}
+              isTop={displayRank <= 3}
+              displayRank={displayRank}
+              interval={interval}
+              cohortMode={cohortMode}
               expanded={expanded === dj.name}
               onToggle={() => setExpanded(prev => prev === dj.name ? null : dj.name)}
               ranges={ranges}
@@ -2525,7 +2615,8 @@ export default function App() {
               onToggleWatch={toggleWatch}
             />
           </div>
-        ))}
+          );
+        })}
       </main>
 
       </>}
