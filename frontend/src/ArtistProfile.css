@@ -21,6 +21,22 @@
 
 .ap-bio { color: #ccc; font-size: 1rem; line-height: 1.65; margin: 26px 0 8px; }
 
+/* Direct social links for promoters/buyers */
+.ap-socials { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
+.ap-socials-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-right: 2px; }
+.ap-social {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 1px solid var(--border); border-radius: 999px;
+  padding: 6px 13px; font-size: 13px; font-weight: 600; color: #E9E7DF;
+  text-decoration: none; transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+.ap-social:hover { border-color: #C8F750; color: #C8F750; }
+.ap-social--ig:hover { border-color: #E1306C; color: #E1306C; }
+.ap-social--tt:hover { border-color: #00f2ea; color: #00f2ea; }
+.ap-social-ico { font-size: 14px; }
+.ap-social-mark { color: var(--muted); font-size: 12px; }
+.ap-social:hover .ap-social-mark { color: inherit; }
+
 .ap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 22px 0; }
 @media (max-width: 720px) { .ap-grid { grid-template-columns: 1fr; } .ap-name { font-size: 1.8rem; } }
 .ap-card { background: #0e0e0e; border: 1px solid #222; border-radius: 14px; padding: 18px; }

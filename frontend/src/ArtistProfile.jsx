@@ -202,6 +202,35 @@ function VibeCheck({ dj }) {
   );
 }
 
+// Direct social links for promoters/talent buyers. We only hold VERIFIED handles
+// for some acts (curated in backend/socials.json) — guessing a handle risks
+// linking to an impostor/fan account, which for a booker is worse than no link.
+// So: a verified handle → direct profile (↗); otherwise → a pre-filled platform
+// search (⌕) that reliably lands on the right account in one click. Full coverage,
+// zero wrong-link risk.
+function SocialLinks({ dj }) {
+  const q = encodeURIComponent(dj.name);
+  const ig = dj.instagram_handle
+    ? { href: `https://instagram.com/${dj.instagram_handle}`, verified: true }
+    : { href: `https://www.google.com/search?q=${q}+instagram`, verified: false };
+  const tt = dj.tiktok_handle
+    ? { href: `https://www.tiktok.com/@${dj.tiktok_handle}`, verified: true }
+    : { href: `https://www.tiktok.com/search?q=${q}`, verified: false };
+  return (
+    <div className="ap-socials">
+      <span className="ap-socials-label">Socials</span>
+      <a className="ap-social ap-social--ig" href={ig.href} target="_blank" rel="noreferrer"
+         title={ig.verified ? `@${dj.instagram_handle} · verified profile` : "Find on Instagram"}>
+        <span className="ap-social-ico">⌾</span> Instagram <span className="ap-social-mark">{ig.verified ? "↗" : "⌕"}</span>
+      </a>
+      <a className="ap-social ap-social--tt" href={tt.href} target="_blank" rel="noreferrer"
+         title={tt.verified ? `@${dj.tiktok_handle} · verified profile` : "Find on TikTok"}>
+        <span className="ap-social-ico">♪</span> TikTok <span className="ap-social-mark">{tt.verified ? "↗" : "⌕"}</span>
+      </a>
+    </div>
+  );
+}
+
 export default function ArtistProfile({ rankings, slug, onBack }) {
   const cardBusy = useRef(false);
   const { isWatched, toggle: toggleWatch } = useWatchlist();
@@ -273,6 +302,8 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
       </div>
 
       {profile.bio && <p className="ap-bio">{profile.bio}</p>}
+
+      <SocialLinks dj={dj} />
 
       {(Number.isFinite(dj.momentum_score) || dj.value_signal || Number.isFinite(dj.live_conversion_score) || dj.label_score != null || dj.tl_support_score > 0) && (
         <div className="ap-signals">

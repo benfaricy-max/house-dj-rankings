@@ -1,0 +1,21 @@
+{
+  "_README": "VERIFIED Instagram / TikTok profile handles (no @). Applied by applySocials.js onto rankings.json + artists.json; the artist profile renders a direct link when a handle is present and a platform-search fallback when it isn't. ONLY add a handle you've confirmed is the artist's official account — a wrong handle links a booker to an impostor/fan page, worse than the search fallback. Omit a platform when its handle is ambiguous (it falls back to search). Name keys must match rankings.json exactly.",
+  "handles": {
+    "ANOTR":              { "instagram": "anotr.music",        "tiktok": "anotrmusic" },
+    "FISHER":             { "instagram": "followthefishtv",    "tiktok": "fisher" },
+    "Adam Beyer":         { "instagram": "realadambeyer",      "tiktok": "adamdrumcodebeyer" },
+    "Green Velvet":       { "instagram": "officialgreenvelvet" },
+    "Chris Lake":         { "instagram": "chrislake",          "tiktok": "chrislake" },
+    "Mau P":              { "tiktok": "maup" },
+    "Dom Dolla":          { "instagram": "domdolla",           "tiktok": "domdolla" },
+    "John Summit":        { "instagram": "johnsummit",         "tiktok": "johnsummit" },
+    "Peggy Gou":          { "instagram": "peggygou_",          "tiktok": "peggygou_official" },
+    "Solomun":            { "instagram": "solomun",            "tiktok": "solomun" },
+    "Fred again..":       { "instagram": "fredagainagainagainagainagain", "tiktok": "fredagainagain" },
+    "Charlotte de Witte": { "instagram": "charlottedewittemusic", "tiktok": "charlottedewittemusic" },
+    "Black Coffee":       { "instagram": "realblackcoffee",    "tiktok": "realblackcoffee" },
+    "Cloonee":            { "instagram": "cloonee",            "tiktok": "clooneeuk" },
+    "Carl Cox":           { "instagram": "carlcoxofficial",    "tiktok": "carlcox" },
+    "Disclosure":         { "instagram": "disclosure",         "tiktok": "disclosuremusic" }
+  }
+}
