@@ -1,0 +1,7926 @@
+[
+  {
+    "name": "ANOTR",
+    "rank": 1,
+    "hand_scene": 83,
+    "existing_tags": [
+      "No Art (own label)",
+      "Boiler Room",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "DC-10",
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Prospa",
+    "rank": 2,
+    "hand_scene": 76,
+    "existing_tags": [
+      "Ninja Tune",
+      "Boiler Room",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "institution",
+      "festival",
+      "ibiza"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "festival": [
+        "The Warehouse Project",
+        "Brooklyn Storehouse",
+        "Factory Town"
+      ],
+      "ibiza": [
+        "DC-10"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "FISHER",
+    "rank": 3,
+    "hand_scene": 90,
+    "existing_tags": [
+      "Catch & Release",
+      "Coachella",
+      "Ibiza residency",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "ibiza"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza",
+        "[UNVRS]"
+      ]
+    },
+    "proposed_rubric_score": 25,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Adam Beyer",
+    "rank": 4,
+    "hand_scene": 82,
+    "existing_tags": [
+      "Drumcode (own label)",
+      "Essential Mix",
+      "Time Warp",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric",
+        "Berghain | Panorama Bar | Säule"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza",
+        "Privilege"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Green Velvet",
+    "rank": 5,
+    "hand_scene": 80,
+    "existing_tags": [
+      "Relief / Cajual",
+      "La La Land",
+      "Essential Mix",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Chris Lake",
+    "rank": 6,
+    "hand_scene": 85,
+    "existing_tags": [
+      "Black Book (own label)",
+      "Coachella",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "festival",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "festival": [
+        "venue tier 5/5 (5,000+ cap)"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza",
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 69,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "John Summit",
+    "rank": 7,
+    "hand_scene": 88,
+    "existing_tags": [
+      "Off The Grid (own label)",
+      "Coachella",
+      "Festival headliner",
+      "Press cover"
+    ],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "[UNVRS]",
+        "Ushuaïa Ibiza",
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Dom Dolla",
+    "rank": 8,
+    "hand_scene": 83,
+    "existing_tags": [
+      "Coachella",
+      "Festival headliner",
+      "Press cover"
+    ],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza",
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Mau P",
+    "rank": 9,
+    "hand_scene": 82,
+    "existing_tags": [
+      "Boiler Room",
+      "Festival headliner",
+      "Press cover"
+    ],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Pacha Ibiza",
+        "Amnesia Ibiza",
+        "Ushuaïa Ibiza",
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Peggy Gou",
+    "rank": 10,
+    "hand_scene": 87,
+    "existing_tags": [
+      "Ninja Tune / Gudu",
+      "Boiler Room",
+      "Coachella",
+      "Press cover"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "DC-10"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Max Styler",
+    "rank": 11,
+    "hand_scene": 75,
+    "existing_tags": [],
+    "proposed_credits": [
+      "festival",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "festival": [
+        "Factory Town"
+      ],
+      "ibiza": [
+        "[UNVRS]"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 69,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Solomun",
+    "rank": 12,
+    "hand_scene": 90,
+    "existing_tags": [
+      "Diynamic (own label)",
+      "Ibiza residency (Pacha)",
+      "Essential Mix",
+      "Awakenings headliner"
+    ],
+    "proposed_credits": [
+      "institution",
+      "festival",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate"
+      ],
+      "festival": [
+        "venue tier 5/5 (5,000+ cap)"
+      ],
+      "ibiza": [
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 82,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Fred again..",
+    "rank": 13,
+    "hand_scene": 95,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "Corsica Studios"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Charlotte de Witte",
+    "rank": 14,
+    "hand_scene": 85,
+    "existing_tags": [
+      "KNTXT (own label)",
+      "Awakenings closing",
+      "Boiler Room",
+      "Tomorrowland mainstage"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza",
+        "Privilege"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Adriatique",
+    "rank": 15,
+    "hand_scene": 77,
+    "existing_tags": [
+      "Siamese (own label)",
+      "Afterlife",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "DC-10"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Black Coffee",
+    "rank": 16,
+    "hand_scene": 85,
+    "existing_tags": [
+      "Hï Ibiza residency",
+      "Grammy winner",
+      "Essential Mix",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "Hï Ibiza",
+        "DC-10"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Cloonee",
+    "rank": 17,
+    "hand_scene": 79,
+    "existing_tags": [
+      "Hot Cakes (own label)",
+      "Boiler Room",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "[UNVRS]"
+      ],
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Josh Baker",
+    "rank": 18,
+    "hand_scene": 78,
+    "existing_tags": [
+      "fabric",
+      "Boiler Room",
+      "Festival sets"
+    ],
+    "proposed_credits": [
+      "institution",
+      "festival",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "festival": [
+        "Factory Town"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 82,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Chris Stussy",
+    "rank": 19,
+    "hand_scene": 82,
+    "existing_tags": [
+      "PIV / Up The Stuss",
+      "Boiler Room",
+      "fabric",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "DC-10",
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Disclosure",
+    "rank": 20,
+    "hand_scene": 80,
+    "existing_tags": [
+      "Wildlife (own label)",
+      "Coachella headliner",
+      "Essential Mix",
+      "Glastonbury"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "DC-10"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Tiga",
+    "rank": 21,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 90/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "PAWSA",
+    "rank": 22,
+    "hand_scene": 81,
+    "existing_tags": [
+      "Solä (own label)",
+      "Boiler Room",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "DC-10"
+      ],
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Mark Knight",
+    "rank": 23,
+    "hand_scene": 80,
+    "existing_tags": [
+      "Toolroom (own label)",
+      "Essential Mix",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Eden",
+        "Amnesia Ibiza",
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Armand Van Helden",
+    "rank": 24,
+    "hand_scene": 81,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Pacha Ibiza",
+        "Hï Ibiza",
+        "Amnesia Ibiza",
+        "Eden"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Adam Port",
+    "rank": 25,
+    "hand_scene": 88,
+    "existing_tags": [
+      "Keinemusik",
+      "Festival headliner",
+      "Boiler Room"
+    ],
+    "proposed_credits": [
+      "institution",
+      "festival",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate",
+        "DC-10"
+      ],
+      "festival": [
+        "venue tier 5/5 (5,000+ cap)"
+      ],
+      "ibiza": [
+        "DC-10"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 82,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Franky Rizardo",
+    "rank": 26,
+    "hand_scene": 78,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Pacha Ibiza",
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Kolter",
+    "rank": 27,
+    "hand_scene": 73,
+    "existing_tags": [
+      "Shall Not Fade / 16 Bit",
+      "Boiler Room"
+    ],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Carl Cox",
+    "rank": 28,
+    "hand_scene": 92,
+    "existing_tags": [
+      "Drumcode mainstay",
+      "Space Ibiza residency",
+      "Essential Mix",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "institution",
+      "festival",
+      "ibiza"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10",
+        "fabric"
+      ],
+      "festival": [
+        "venue tier 5/5 (5,000+ cap)"
+      ],
+      "ibiza": [
+        "[UNVRS]",
+        "DC-10"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Yotto",
+    "rank": 29,
+    "hand_scene": 75,
+    "existing_tags": [
+      "Anjunadeep",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Anyma",
+    "rank": 30,
+    "hand_scene": 77,
+    "existing_tags": [
+      "Afterlife",
+      "Sphere Las Vegas residency",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "[UNVRS]"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Âme",
+    "rank": 31,
+    "hand_scene": 81,
+    "existing_tags": [
+      "Innervisions",
+      "Boiler Room",
+      "Awakenings"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "Robert Johnson",
+        "DC-10",
+        "Watergate"
+      ],
+      "ibiza": [
+        "DC-10",
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Chris Lorenzo",
+    "rank": 32,
+    "hand_scene": 77,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "&ME",
+    "rank": 33,
+    "hand_scene": 88,
+    "existing_tags": [
+      "Keinemusik",
+      "Awakenings",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10",
+        "Watergate"
+      ],
+      "ibiza": [
+        "DC-10",
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Joris Voorn",
+    "rank": 34,
+    "hand_scene": 78,
+    "existing_tags": [
+      "Spectrum / Green",
+      "Awakenings",
+      "Essential Mix"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "ibiza": [
+        "Ushuaïa Ibiza",
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Michael Bibi",
+    "rank": 35,
+    "hand_scene": 84,
+    "existing_tags": [
+      "Solid Grooves (own label)",
+      "DC10 residency",
+      "Boiler Room",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "DC-10"
+      ],
+      "label": [
+        "label_score 90/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Rampa",
+    "rank": 36,
+    "hand_scene": 88,
+    "existing_tags": [
+      "Keinemusik",
+      "Festival headliner",
+      "Boiler Room"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10",
+        "Watergate"
+      ],
+      "ibiza": [
+        "DC-10"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Max Dean",
+    "rank": 37,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "James Hype",
+    "rank": 38,
+    "hand_scene": 82,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 90/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Eli Brown",
+    "rank": 39,
+    "hand_scene": 80,
+    "existing_tags": [
+      "Drumcode releases",
+      "Boiler Room",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza",
+        "Eden",
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Four Tet",
+    "rank": 40,
+    "hand_scene": 92,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric",
+        "Nowadays"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Jamie Jones",
+    "rank": 41,
+    "hand_scene": 82,
+    "existing_tags": [
+      "Hot Creations (own label)",
+      "DC10 Paradise residency",
+      "Essential Mix",
+      "Boiler Room"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10",
+        "fabric"
+      ],
+      "ibiza": [
+        "DC-10",
+        "Amnesia Ibiza",
+        "[UNVRS]"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Keinemusik",
+    "rank": 42,
+    "hand_scene": 90,
+    "existing_tags": [
+      "Keinemusik (own label)",
+      "Boiler Room",
+      "Festival headliner",
+      "Pyramids of Giza set"
+    ],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "KETTAMA",
+    "rank": 43,
+    "hand_scene": 77,
+    "existing_tags": [
+      "G-Town / Steel City Dance Discs",
+      "Boiler Room",
+      "fabric"
+    ],
+    "proposed_credits": [
+      "festival",
+      "ibiza"
+    ],
+    "evidence": {
+      "festival": [
+        "The Warehouse Project"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Omar+",
+    "rank": 44,
+    "hand_scene": 79,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Hot Since 82",
+    "rank": 45,
+    "hand_scene": 85,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Pacha Ibiza",
+        "Amnesia Ibiza",
+        "Ushuaïa Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Gorgon City",
+    "rank": 46,
+    "hand_scene": 88,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Amnesia Ibiza",
+        "Ushuaïa Ibiza",
+        "Eden"
+      ],
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Township Rebellion",
+    "rank": 47,
+    "hand_scene": 80,
+    "existing_tags": [
+      "Watergate / Afterlife",
+      "Boiler Room"
+    ],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "BLOND:ISH",
+    "rank": 48,
+    "hand_scene": 75,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "Pacha Ibiza",
+        "DC-10"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Agents Of Time",
+    "rank": 49,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate"
+      ],
+      "ibiza": [
+        "Hï Ibiza",
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Sidney Charles",
+    "rank": 50,
+    "hand_scene": 80,
+    "existing_tags": [
+      "Drumcode / Moon Harbour",
+      "Boiler Room"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Claude VonStroke",
+    "rank": 51,
+    "hand_scene": 81,
+    "existing_tags": [
+      "Dirtybird (own label)",
+      "Festival headliner",
+      "Essential Mix"
+    ],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Sasha",
+    "rank": 52,
+    "hand_scene": 82,
+    "existing_tags": [
+      "Last Night On Earth",
+      "Essential Mix",
+      "fabric"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "ibiza": [
+        "Ushuaïa Ibiza",
+        "Privilege"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Sven Väth",
+    "rank": 53,
+    "hand_scene": 88,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza",
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Honey Dijon",
+    "rank": 54,
+    "hand_scene": 80,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "WhoMadeWho",
+    "rank": 55,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Pacha Ibiza",
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Adam Ten",
+    "rank": 56,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Beltran",
+    "rank": 57,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "DC-10"
+      ]
+    },
+    "proposed_rubric_score": 58,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Mind Against",
+    "rank": 58,
+    "hand_scene": 77,
+    "existing_tags": [
+      "Afterlife",
+      "Boiler Room",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "DJ Koze",
+    "rank": 59,
+    "hand_scene": 75,
+    "existing_tags": [
+      "Pampa (own label)",
+      "Essential Mix",
+      "Press cover"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Robert Johnson",
+        "DC-10"
+      ],
+      "ibiza": [
+        "Pacha Ibiza",
+        "Amnesia Ibiza",
+        "DC-10"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Floorplan",
+    "rank": 60,
+    "hand_scene": 75,
+    "existing_tags": [
+      "Robert Hood / Aril Brikha lineage",
+      "Movement Detroit",
+      "Essential Mix"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza",
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "East End Dubs",
+    "rank": 61,
+    "hand_scene": 80,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Amnesia Ibiza",
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Seth Troxler",
+    "rank": 62,
+    "hand_scene": 85,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10",
+        "fabric",
+        "Watergate"
+      ],
+      "ibiza": [
+        "DC-10",
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Ben Böhmer",
+    "rank": 63,
+    "hand_scene": 78,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Bob Sinclar",
+    "rank": 64,
+    "hand_scene": 77,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Pacha Ibiza",
+        "Hï Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 25,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Roddy Lima",
+    "rank": 65,
+    "hand_scene": 75,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Laurent Garnier",
+    "rank": 66,
+    "hand_scene": 88,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Rex Club",
+        "Berghain | Panorama Bar | Säule"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Luke Dean",
+    "rank": 67,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Booka Shade",
+    "rank": 68,
+    "hand_scene": 77,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Dennis Cruz",
+    "rank": 69,
+    "hand_scene": 79,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "DC-10",
+        "Amnesia Ibiza",
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Massano",
+    "rank": 70,
+    "hand_scene": 75,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza",
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Dennis Ferrer",
+    "rank": 71,
+    "hand_scene": 79,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Pacha Ibiza",
+        "Amnesia Ibiza",
+        "Ushuaïa Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Riordan",
+    "rank": 72,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "festival",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "festival": [
+        "Factory Town"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza",
+        "[UNVRS]"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 69,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Nick Curly",
+    "rank": 73,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate"
+      ],
+      "ibiza": [
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Eric Prydz",
+    "rank": 74,
+    "hand_scene": 84,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza",
+        "Amnesia Ibiza",
+        "[UNVRS]"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Surgeon",
+    "rank": 75,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "Tresor / Globus",
+        "fabric",
+        "Corsica Studios"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Mall Grab",
+    "rank": 76,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Vintage Culture",
+    "rank": 77,
+    "hand_scene": 40,
+    "existing_tags": [
+      "Tomorrowland mainstage",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza",
+        "Ushuaïa Ibiza",
+        "Pacha Ibiza",
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Marco Faraone",
+    "rank": 78,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "AYYBO",
+    "rank": 79,
+    "hand_scene": 75,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Nora En Pure",
+    "rank": 80,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Privilege",
+        "Hï Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 25,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "ALISHA",
+    "rank": 81,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "festival",
+      "ibiza"
+    ],
+    "evidence": {
+      "festival": [
+        "The Warehouse Project"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Cristoph",
+    "rank": 82,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "SIDEPIECE",
+    "rank": 83,
+    "hand_scene": 82,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "David Morales",
+    "rank": 84,
+    "hand_scene": 83,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Pacha Ibiza",
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Ben Sterling",
+    "rank": 85,
+    "hand_scene": 78,
+    "existing_tags": [],
+    "proposed_credits": [
+      "festival",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "festival": [
+        "Factory Town"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza",
+        "Hï Ibiza",
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 69,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "MK",
+    "rank": 86,
+    "hand_scene": 83,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Ushuaïa Ibiza",
+        "Pacha Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 25,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Midland",
+    "rank": 87,
+    "hand_scene": 77,
+    "existing_tags": [
+      "Graded (own label)",
+      "fabric",
+      "Essential Mix",
+      "Boiler Room"
+    ],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "Corsica Studios",
+        "fabric"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Alan Fitzpatrick",
+    "rank": 88,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric",
+        "DC-10",
+        "Watergate"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza",
+        "DC-10"
+      ]
+    },
+    "proposed_rubric_score": 58,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Kerri Chandler",
+    "rank": 89,
+    "hand_scene": 82,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10",
+        "Watergate"
+      ],
+      "ibiza": [
+        "DC-10"
+      ],
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Amelie Lens",
+    "rank": 90,
+    "hand_scene": 80,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10",
+        "fabric"
+      ],
+      "ibiza": [
+        "DC-10"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Monolink",
+    "rank": 91,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Joseph Capriati",
+    "rank": 92,
+    "hand_scene": 78,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10",
+        "fabric"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza",
+        "DC-10"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Mochakk",
+    "rank": 93,
+    "hand_scene": 66,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "DC-10"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Jimi Jules",
+    "rank": 94,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Sam Paganini",
+    "rank": 95,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Amnesia Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 25,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Huxley",
+    "rank": 96,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "ibiza": [
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Mason Collective",
+    "rank": 97,
+    "hand_scene": 72,
+    "existing_tags": [
+      "Under No Illusion",
+      "Boiler Room"
+    ],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Amnesia Ibiza",
+        "Hï Ibiza",
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "CamelPhat",
+    "rank": 98,
+    "hand_scene": 48,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza",
+        "Pacha Ibiza",
+        "Ushuaïa Ibiza",
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Actress",
+    "rank": 99,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Corsica Studios",
+        "Berghain | Panorama Bar | Säule"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Julian Fijma",
+    "rank": 100,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Amnesia Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 25,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Lee Foss",
+    "rank": 101,
+    "hand_scene": 75,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Marshall Jefferson",
+    "rank": 102,
+    "hand_scene": 82,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "://about blank"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Stephan Bodzin",
+    "rank": 103,
+    "hand_scene": 80,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Rex Club"
+      ],
+      "ibiza": [
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Michael Mayer",
+    "rank": 104,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric",
+        "Berghain | Panorama Bar | Säule"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Jayda G",
+    "rank": 105,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "festival",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "festival": [
+        "The Warehouse Project"
+      ],
+      "ibiza": [
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 69,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Disco Lines",
+    "rank": 106,
+    "hand_scene": 77,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Antdot",
+    "rank": 107,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 25,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Carlita",
+    "rank": 108,
+    "hand_scene": 80,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "festival",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "festival": [
+        "Factory Town"
+      ],
+      "ibiza": [
+        "DC-10",
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 82,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Roger Sanchez",
+    "rank": 109,
+    "hand_scene": 79,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Pacha Ibiza",
+        "Hï Ibiza",
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Richie Hawtin",
+    "rank": 110,
+    "hand_scene": 88,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 58,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Maceo Plex",
+    "rank": 111,
+    "hand_scene": 80,
+    "existing_tags": [
+      "Lone Romantic / Ellum",
+      "DC10",
+      "Essential Mix",
+      "Awakenings"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "Pacha Ibiza",
+        "DC-10",
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "DJ Rush",
+    "rank": 112,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Tresor / Globus",
+        "Berghain | Panorama Bar | Säule"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Floating Points",
+    "rank": 113,
+    "hand_scene": 78,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Corsica Studios",
+        "Berghain | Panorama Bar | Säule"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Mount Kimbie",
+    "rank": 114,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric",
+        "Sub Club"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Rossi.",
+    "rank": 115,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "DJ Tennis",
+    "rank": 116,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10",
+        "fabric",
+        "Berghain | Panorama Bar | Säule"
+      ],
+      "ibiza": [
+        "DC-10",
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Slam",
+    "rank": 117,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Sub Club",
+        "fabric"
+      ],
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Maya Jane Coles",
+    "rank": 118,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric",
+        "Watergate"
+      ],
+      "ibiza": [
+        "Ushuaïa Ibiza",
+        "Pacha Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 58,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Loco Dice",
+    "rank": 119,
+    "hand_scene": 79,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza",
+        "DC-10",
+        "Ushuaïa Ibiza"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "HAAi",
+    "rank": 120,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "festival"
+    ],
+    "evidence": {
+      "institution": [
+        "Rex Club",
+        "fabric"
+      ],
+      "festival": [
+        "The Warehouse Project"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Ultra Nate",
+    "rank": 121,
+    "hand_scene": 62,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Special Request",
+    "rank": 122,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "festival",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric",
+        "Berghain | Panorama Bar | Säule"
+      ],
+      "festival": [
+        "The Warehouse Project"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 77,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Pablo Fierro",
+    "rank": 123,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Patrick Topping",
+    "rank": 124,
+    "hand_scene": 80,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "DC-10",
+        "Hï Ibiza",
+        "Amnesia Ibiza",
+        "Ushuaïa Ibiza"
+      ],
+      "label": [
+        "label_score 90/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Layton Giordani",
+    "rank": 125,
+    "hand_scene": 65,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Colyn",
+    "rank": 126,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Hugel",
+    "rank": 127,
+    "hand_scene": 28,
+    "existing_tags": [
+      "Defected releases",
+      "Festival sets",
+      "Ibiza dates"
+    ],
+    "proposed_credits": [
+      "festival",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "festival": [
+        "Factory Town"
+      ],
+      "ibiza": [
+        "Hï Ibiza",
+        "Ushuaïa Ibiza",
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 69,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Objekt",
+    "rank": 128,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "fabric",
+        "Corsica Studios"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Octave One",
+    "rank": 129,
+    "hand_scene": 75,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Tresor / Globus",
+        "Rex Club",
+        "fabric",
+        "Berghain | Panorama Bar | Säule"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Louie Vega",
+    "rank": 130,
+    "hand_scene": 81,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 25,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Meduza",
+    "rank": 131,
+    "hand_scene": 20,
+    "existing_tags": [],
+    "proposed_credits": [
+      "festival",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "festival": [
+        "Factory Town"
+      ],
+      "ibiza": [
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 69,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "RÜFÜS DU SOL",
+    "rank": 132,
+    "hand_scene": 55,
+    "existing_tags": [],
+    "proposed_credits": [
+      "festival",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "festival": [
+        "venue tier 5/5 (5,000+ cap)"
+      ],
+      "ibiza": [
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 69,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Ranger Trucco",
+    "rank": 133,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "festival"
+    ],
+    "evidence": {
+      "festival": [
+        "Factory Town"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Len Faki",
+    "rank": 134,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Tim Engelhardt",
+    "rank": 135,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate"
+      ],
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Silva Bumpa",
+    "rank": 136,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Skream",
+    "rank": 137,
+    "hand_scene": 79,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric",
+        "DC-10"
+      ],
+      "ibiza": [
+        "DC-10",
+        "Amnesia Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 58,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Locklead",
+    "rank": 138,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Helena Hauff",
+    "rank": 139,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "://about blank",
+        "Berghain | Panorama Bar | Säule",
+        "Tresor / Globus",
+        "fabric"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Andrea Oliva",
+    "rank": 140,
+    "hand_scene": 75,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Ushuaïa Ibiza",
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Discip",
+    "rank": 141,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Kamilo Sanclemente",
+    "rank": 142,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Bonobo",
+    "rank": 143,
+    "hand_scene": 78,
+    "existing_tags": [],
+    "proposed_credits": [
+      "festival"
+    ],
+    "evidence": {
+      "festival": [
+        "venue tier 5/5 (5,000+ cap)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Steve Lawler",
+    "rank": 144,
+    "hand_scene": 79,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Planetary Assault Systems",
+    "rank": 145,
+    "hand_scene": 68,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "fabric"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "John Talabot",
+    "rank": 146,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "Corsica Studios",
+        "Rex Club"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Blawan",
+    "rank": 147,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "fabric"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Mano Le Tough",
+    "rank": 148,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "DC-10"
+      ],
+      "ibiza": [
+        "DC-10",
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Palms Trax",
+    "rank": 149,
+    "hand_scene": 68,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "DC-10"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Roman Flügel",
+    "rank": 150,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Robert Johnson",
+        "Berghain | Panorama Bar | Säule",
+        "fabric"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "HoneyLuv",
+    "rank": 151,
+    "hand_scene": 79,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza",
+        "Amnesia Ibiza",
+        "Ushuaïa Ibiza"
+      ],
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Paco Osuna",
+    "rank": 152,
+    "hand_scene": 78,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza",
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 90/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Luciano",
+    "rank": 153,
+    "hand_scene": 80,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "Ushuaïa Ibiza",
+        "Pacha Ibiza",
+        "Amnesia Ibiza",
+        "DC-10"
+      ]
+    },
+    "proposed_rubric_score": 58,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Mathew Jonson",
+    "rank": 154,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric",
+        "Watergate",
+        "Berghain | Panorama Bar | Säule",
+        "DC-10"
+      ],
+      "ibiza": [
+        "DC-10"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "TSHA",
+    "rank": 155,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "festival",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "festival": [
+        "The Warehouse Project"
+      ],
+      "ibiza": [
+        "Hï Ibiza",
+        "DC-10",
+        "Ushuaïa Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 82,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "The Hacker",
+    "rank": 156,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "Rex Club"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Gorge",
+    "rank": 157,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Lauer",
+    "rank": 158,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Robert Johnson",
+        "Berghain | Panorama Bar | Säule"
+      ],
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Kevin Saunderson",
+    "rank": 159,
+    "hand_scene": 84,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "label": [
+        "label_score 90/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Dax J",
+    "rank": 160,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "Corsica Studios",
+        "Bassiani",
+        "fabric"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Archie Hamilton",
+    "rank": 161,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Rebüke",
+    "rank": 162,
+    "hand_scene": 77,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "DJ Boring",
+    "rank": 163,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Jamback",
+    "rank": 164,
+    "hand_scene": 35,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "John Digweed",
+    "rank": 165,
+    "hand_scene": 82,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Obskür",
+    "rank": 166,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Ben UFO",
+    "rank": 167,
+    "hand_scene": 78,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric",
+        "DC-10",
+        "Berghain | Panorama Bar | Säule"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Recondite",
+    "rank": 168,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule"
+      ],
+      "ibiza": [
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Hannah Wants",
+    "rank": 169,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Amnesia Ibiza",
+        "Pacha Ibiza",
+        "Eden"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Richy Ahmed",
+    "rank": 170,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10",
+        "Watergate",
+        "fabric"
+      ],
+      "ibiza": [
+        "DC-10",
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 90/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "I Hate Models",
+    "rank": 171,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Gerd Janson",
+    "rank": 172,
+    "hand_scene": 75,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "Robert Johnson",
+        "DC-10"
+      ],
+      "ibiza": [
+        "DC-10"
+      ],
+      "label": [
+        "label_score 90/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Hunee",
+    "rank": 173,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "De School"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Secondcity",
+    "rank": 174,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "ibiza": [
+        "Ushuaïa Ibiza",
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 90/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Sonny Fodera",
+    "rank": 175,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Amnesia Ibiza",
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Call Super",
+    "rank": 176,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "fabric",
+        "DC-10",
+        "De School"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Josh Gigante",
+    "rank": 177,
+    "hand_scene": 50,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Wolf + Lamb",
+    "rank": 178,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Groove Armada",
+    "rank": 179,
+    "hand_scene": 75,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "ibiza": [
+        "Pacha Ibiza",
+        "Ushuaïa Ibiza",
+        "Eden"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Trikk",
+    "rank": 180,
+    "hand_scene": 68,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Corsica Studios"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Enoo Napa",
+    "rank": 181,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza",
+        "Eden"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Biscits",
+    "rank": 182,
+    "hand_scene": 77,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 90/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Truncate",
+    "rank": 183,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Kollektiv Turmstrasse",
+    "rank": 184,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "BICEP",
+    "rank": 185,
+    "hand_scene": 83,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "Corsica Studios"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Arodes",
+    "rank": 186,
+    "hand_scene": 54,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza",
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Ricardo Villalobos",
+    "rank": 187,
+    "hand_scene": 85,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric",
+        "Robert Johnson",
+        "Berghain | Panorama Bar | Säule",
+        "Watergate"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Pearson Sound",
+    "rank": 188,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric",
+        "Berghain | Panorama Bar | Säule",
+        "Corsica Studios"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Danny Tenaglia",
+    "rank": 189,
+    "hand_scene": 80,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Axel Boman",
+    "rank": 190,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Todd Terry",
+    "rank": 191,
+    "hand_scene": 80,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza",
+        "Pacha Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 25,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Innellea",
+    "rank": 192,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 25,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "DJ Stingray 313",
+    "rank": 193,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "Tresor / Globus",
+        "fabric",
+        "://about blank",
+        "BASEMENT"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Woo York",
+    "rank": 194,
+    "hand_scene": 68,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "HotLap",
+    "rank": 195,
+    "hand_scene": 50,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Gai Barone",
+    "rank": 196,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Deborah De Luca",
+    "rank": 197,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Oxia",
+    "rank": 198,
+    "hand_scene": 75,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Rex Club"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "WEISS",
+    "rank": 199,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Hardt Antoine",
+    "rank": 200,
+    "hand_scene": 50,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "DJ Pierre",
+    "rank": 201,
+    "hand_scene": 80,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Rex Club"
+      ],
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Rafael",
+    "rank": 202,
+    "hand_scene": 50,
+    "existing_tags": [],
+    "proposed_credits": [
+      "festival",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "festival": [
+        "Factory Town"
+      ],
+      "ibiza": [
+        "[UNVRS]"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 69,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Pangaea",
+    "rank": 203,
+    "hand_scene": 68,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric",
+        "Corsica Studios"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Shiba San",
+    "rank": 204,
+    "hand_scene": 79,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Mathame",
+    "rank": 205,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Amnesia Ibiza",
+        "Hï Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 25,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Jay Lumen",
+    "rank": 206,
+    "hand_scene": 68,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Jitwam",
+    "rank": 207,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Duke Dumont",
+    "rank": 208,
+    "hand_scene": 80,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "RSquared",
+    "rank": 209,
+    "hand_scene": 50,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "ibiza": [
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Guy Gerber",
+    "rank": 210,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "HVOB",
+    "rank": 211,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Steve Bug",
+    "rank": 212,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric",
+        "Watergate",
+        "Rex Club"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "MALUGI",
+    "rank": 213,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "LUCH",
+    "rank": 214,
+    "hand_scene": 50,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Mark Farina",
+    "rank": 215,
+    "hand_scene": 78,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Answer Code Request",
+    "rank": 216,
+    "hand_scene": 68,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "fabric"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Chelina Manuhutu",
+    "rank": 217,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Ushuaïa Ibiza",
+        "Hï Ibiza",
+        "[UNVRS]",
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Tornado Wallace",
+    "rank": 218,
+    "hand_scene": 68,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "The Mercat Basement",
+        "Berghain | Panorama Bar | Säule",
+        "Corsica Studios"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Kenny Larkin",
+    "rank": 219,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "fabric",
+        "Watergate"
+      ],
+      "label": [
+        "label_score 90/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Alinka",
+    "rank": 220,
+    "hand_scene": 68,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "The Martinez Brothers",
+    "rank": 221,
+    "hand_scene": 87,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Cam Stockman",
+    "rank": 222,
+    "hand_scene": 42,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Themba",
+    "rank": 223,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 25,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Gene Farris",
+    "rank": 224,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Brunello",
+    "rank": 225,
+    "hand_scene": 50,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Move D",
+    "rank": 226,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "://about blank",
+        "Corsica Studios",
+        "Robert Johnson"
+      ],
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Tale Of Us",
+    "rank": 227,
+    "hand_scene": 82,
+    "existing_tags": [
+      "Afterlife (own label)",
+      "Festival headliner",
+      "Essential Mix"
+    ],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "Hï Ibiza",
+        "DC-10",
+        "Privilege"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Regis",
+    "rank": 228,
+    "hand_scene": 68,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Tresor / Globus",
+        "Berghain | Panorama Bar | Säule",
+        "fabric",
+        "Corsica Studios"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Route 94",
+    "rank": 229,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric",
+        "DC-10"
+      ],
+      "ibiza": [
+        "Eden",
+        "DC-10"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Volkoder",
+    "rank": 230,
+    "hand_scene": 50,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "DJ Harvey",
+    "rank": 231,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule"
+      ],
+      "ibiza": [
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Justin Martin",
+    "rank": 232,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Alignment",
+    "rank": 233,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Walker & Royce",
+    "rank": 234,
+    "hand_scene": 77,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Gui Boratto",
+    "rank": 235,
+    "hand_scene": 75,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Kyle Watson",
+    "rank": 236,
+    "hand_scene": 76,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 90/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "999999999",
+    "rank": 237,
+    "hand_scene": 68,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "KHIDI"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Robert Babicz",
+    "rank": 238,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Dense & Pika",
+    "rank": 239,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Miss Kittin",
+    "rank": 240,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "fabric"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Simon Doty",
+    "rank": 241,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Wehbba",
+    "rank": 242,
+    "hand_scene": 75,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Pional",
+    "rank": 243,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "DC-10"
+      ],
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Dimitri From Paris",
+    "rank": 244,
+    "hand_scene": 78,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 25,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Boss Priester",
+    "rank": 245,
+    "hand_scene": 50,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "VTSS",
+    "rank": 246,
+    "hand_scene": 62,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Deetron",
+    "rank": 247,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "fabric"
+      ],
+      "ibiza": [
+        "Ushuaïa Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Son of Son",
+    "rank": 248,
+    "hand_scene": 46,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "[UNVRS]"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Pleasurekraft",
+    "rank": 249,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Danny Daze",
+    "rank": 250,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Victor Calderone",
+    "rank": 251,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Luigi Madonna",
+    "rank": 252,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric",
+        "Watergate"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Franc Fala",
+    "rank": 253,
+    "hand_scene": 44,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 90/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "DJ Holographic",
+    "rank": 254,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Jordan Brando",
+    "rank": 255,
+    "hand_scene": 50,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Edu Imbernon",
+    "rank": 256,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Alan Dixon",
+    "rank": 257,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Culoe De Song",
+    "rank": 258,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate"
+      ],
+      "ibiza": [
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Burnski",
+    "rank": 259,
+    "hand_scene": 65,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "DJ Sneak",
+    "rank": 260,
+    "hand_scene": 79,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Ushuaïa Ibiza",
+        "Pacha Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 25,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Tiefschwarz",
+    "rank": 261,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate",
+        "fabric",
+        "Robert Johnson"
+      ],
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "KAS:ST",
+    "rank": 262,
+    "hand_scene": 60,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Concrete"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Latmun",
+    "rank": 263,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "DC-10"
+      ],
+      "ibiza": [
+        "Eden",
+        "Amnesia Ibiza",
+        "DC-10"
+      ],
+      "label": [
+        "label_score 90/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Henry Saiz",
+    "rank": 264,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Job Jobse",
+    "rank": 265,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "De School",
+        "DC-10",
+        "Berghain | Panorama Bar | Säule"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Trentemøller",
+    "rank": 266,
+    "hand_scene": 79,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "MPH",
+    "rank": 267,
+    "hand_scene": 50,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Bonafique",
+    "rank": 268,
+    "hand_scene": 50,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "DJ T.",
+    "rank": 269,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate",
+        "Berghain | Panorama Bar | Säule",
+        "fabric"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Dean Turnley",
+    "rank": 270,
+    "hand_scene": 46,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Lee Curtiss",
+    "rank": 271,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate",
+        "fabric"
+      ],
+      "label": [
+        "label_score 90/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Sam Alfred",
+    "rank": 272,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Stacey Pullen",
+    "rank": 273,
+    "hand_scene": 75,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 58,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Frankie Knuckles",
+    "rank": 274,
+    "hand_scene": 90,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Pacha Ibiza"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Jay de Lys",
+    "rank": 275,
+    "hand_scene": 52,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Ushuaïa Ibiza"
+      ],
+      "label": [
+        "label_score 90/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Saoirse",
+    "rank": 276,
+    "hand_scene": 85,
+    "existing_tags": [
+      "trUst",
+      "Body Movements",
+      "fabric",
+      "Boiler Room"
+    ],
+    "proposed_credits": [
+      "institution",
+      "festival",
+      "ibiza"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric",
+        "DC-10",
+        "Corsica Studios"
+      ],
+      "festival": [
+        "The Warehouse Project"
+      ],
+      "ibiza": [
+        "DC-10",
+        "Amnesia Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Marlon Hoffstadt",
+    "rank": 277,
+    "hand_scene": 60,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "://about blank"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Genesi",
+    "rank": 278,
+    "hand_scene": 46,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Hï Ibiza"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "OMRI.",
+    "rank": 279,
+    "hand_scene": 50,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Joeski",
+    "rank": 280,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "salute",
+    "rank": 281,
+    "hand_scene": 58,
+    "existing_tags": [],
+    "proposed_credits": [
+      "festival",
+      "label"
+    ],
+    "evidence": {
+      "festival": [
+        "The Warehouse Project"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 58,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Sacha Robotti",
+    "rank": 282,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Oden & Fatzo",
+    "rank": 283,
+    "hand_scene": 72,
+    "existing_tags": [
+      "Defected",
+      "Cercle",
+      "EDC"
+    ],
+    "proposed_credits": [
+      "ibiza"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Eden",
+        "Ushuaïa Ibiza",
+        "Amnesia Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 25,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Re.You",
+    "rank": 284,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "GUDFELLA",
+    "rank": 285,
+    "hand_scene": 38,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Ryan Crosson",
+    "rank": 286,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate",
+        "DC-10",
+        "fabric"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Larry Heard",
+    "rank": 287,
+    "hand_scene": 85,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "Sub Club"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Phase Fatale",
+    "rank": 288,
+    "hand_scene": 68,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "KHIDI",
+        "BASEMENT"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Rebekah",
+    "rank": 289,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "Tresor / Globus",
+        "://about blank"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "SPFDJ",
+    "rank": 290,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "Tresor / Globus",
+        "Berghain | Panorama Bar | Säule",
+        "Bassiani"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Marika Rossa",
+    "rank": 291,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Angelo Ferreri",
+    "rank": 292,
+    "hand_scene": 68,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "oskar med k",
+    "rank": 293,
+    "hand_scene": 46,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Inigo Kennedy",
+    "rank": 294,
+    "hand_scene": 68,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "Tresor / Globus",
+        "Berghain | Panorama Bar | Säule",
+        "Corsica Studios",
+        "://about blank",
+        "Rex Club"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Simian Mobile Disco",
+    "rank": 295,
+    "hand_scene": 74,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "fabric"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Hector Romero",
+    "rank": 296,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Pacha Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 25,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "San Soda",
+    "rank": 297,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "://about blank",
+        "Corsica Studios"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "AMÉMÉ",
+    "rank": 298,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 90/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "GW Harrison",
+    "rank": 299,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Eden",
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 52,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Maya",
+    "rank": 300,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Yuvèe",
+    "rank": 301,
+    "hand_scene": 50,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Akufen",
+    "rank": 302,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "fabric",
+        "DC-10"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Ilias Katelanos",
+    "rank": 303,
+    "hand_scene": 50,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Harvey McKay",
+    "rank": 304,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Sascha Dive",
+    "rank": 305,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate",
+        "Robert Johnson",
+        "fabric"
+      ]
+    },
+    "proposed_rubric_score": 44,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Levon Vincent",
+    "rank": 306,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Berghain | Panorama Bar | Säule",
+        "fabric",
+        "Rex Club",
+        "Tresor / Globus"
+      ],
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Pig&Dan",
+    "rank": 307,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Christian Burkhardt",
+    "rank": 308,
+    "hand_scene": 70,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "ibiza",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate",
+        "Robert Johnson"
+      ],
+      "ibiza": [
+        "Amnesia Ibiza"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 73,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Kastis Torrau",
+    "rank": 309,
+    "hand_scene": 68,
+    "existing_tags": [],
+    "proposed_credits": [
+      "festival"
+    ],
+    "evidence": {
+      "festival": [
+        "Club Exit"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Marco Strous",
+    "rank": 310,
+    "hand_scene": 48,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Spektre",
+    "rank": 311,
+    "hand_scene": 68,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Plecta",
+    "rank": 312,
+    "hand_scene": 50,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Mr. G",
+    "rank": 313,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Andre Crom",
+    "rank": 314,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "David Mayer",
+    "rank": 315,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "institution",
+      "label"
+    ],
+    "evidence": {
+      "institution": [
+        "Watergate"
+      ],
+      "label": [
+        "label_score 85/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 64,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Jacob Matthews",
+    "rank": 316,
+    "hand_scene": 50,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Notion",
+    "rank": 317,
+    "hand_scene": 30,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Murphy's Law (UK)",
+    "rank": 318,
+    "hand_scene": 73,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Dario D'Attis",
+    "rank": 319,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Torren Foot",
+    "rank": 320,
+    "hand_scene": 55,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "D.O.D",
+    "rank": 321,
+    "hand_scene": 65,
+    "existing_tags": [
+      "Sweat It Out",
+      "Festival headliner"
+    ],
+    "proposed_credits": [
+      "ibiza"
+    ],
+    "evidence": {
+      "ibiza": [
+        "Pacha Ibiza"
+      ]
+    },
+    "proposed_rubric_score": 25,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Maxxi Soundsystem",
+    "rank": 322,
+    "hand_scene": 72,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Chasewest",
+    "rank": 323,
+    "hand_scene": 46,
+    "existing_tags": [],
+    "proposed_credits": [
+      "festival",
+      "label"
+    ],
+    "evidence": {
+      "festival": [
+        "Factory Town"
+      ],
+      "label": [
+        "label_score 80/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 58,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Greg 99",
+    "rank": 324,
+    "hand_scene": 46,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Bas Ibellini",
+    "rank": 325,
+    "hand_scene": 65,
+    "existing_tags": [],
+    "proposed_credits": [
+      "label"
+    ],
+    "evidence": {
+      "label": [
+        "label_score 100/100 (name not stored — confirm)"
+      ]
+    },
+    "proposed_rubric_score": 35,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Nicholas Van Orton",
+    "rank": 326,
+    "hand_scene": 68,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "GEØVHÄN",
+    "rank": 327,
+    "hand_scene": 50,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Leo Lukas",
+    "rank": 328,
+    "hand_scene": 65,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Nino Bua",
+    "rank": 329,
+    "hand_scene": 65,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  },
+  {
+    "name": "Alec Araujo",
+    "rank": 330,
+    "hand_scene": 65,
+    "existing_tags": [],
+    "proposed_credits": [],
+    "evidence": {},
+    "proposed_rubric_score": null,
+    "needs_human": [
+      "tastemaker (Boiler Room/HÖR/Cercle)",
+      "press cover",
+      "Essential Mix / podcast"
+    ]
+  }
+]
