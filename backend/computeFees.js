@@ -31,19 +31,60 @@ function fallbackBand(a) {
   if (L > 2_000_000) return "C"; if (L > 500_000) return "D"; return "E";
 }
 
+// Map a real fee (GBP) to the closest band by mid-point — so a verified anchor
+// still slots into the same tier scale the demand model is calibrated against.
+function bandFromFee(gbp) {
+  let best = "F", bestD = Infinity;
+  for (const [k, b] of Object.entries(BANDS)) {
+    const d = Math.abs(b.mid - gbp);
+    if (d < bestD) { bestD = d; best = k; }
+  }
+  return best;
+}
+
+// Real, sourced fee anchors (actual quoted/contracted/published fees). These
+// OVERRIDE the curated/listener estimates and are surfaced as verified, not
+// modelled — the one thing in the fee model that isn't demand-derived. Optional
+// file; absent or empty = pure estimates (today's state). Never seed with guesses.
+let ANCHORS = {};
+try {
+  const raw = JSON.parse(fs.readFileSync(path.join(__dirname, "fee_anchors.json"), "utf8"));
+  for (const e of (raw.anchors || [])) {
+    if (e && e.name && Number.isFinite(e.fee_gbp)) ANCHORS[e.name] = e;
+  }
+} catch { /* no anchors file yet — estimates only */ }
+
 const rankData = JSON.parse(fs.readFileSync(RANKINGS, "utf8"));
 const artists  = JSON.parse(fs.readFileSync(ARTISTS, "utf8"));
 const byName   = Object.fromEntries(artists.map(a => [a.name, a]));
 
-let changed = 0;
+let changed = 0, anchored = 0;
 for (const dj of rankData.rankings) {
-  const band = CURATED[dj.name] || fallbackBand(dj);
-  const fee = { ...BANDS[band], band, basis: dj.name === "Carl Cox" ? "anchored" : (CURATED[dj.name] ? "curated" : "estimate") };
+  const anchor = ANCHORS[dj.name];
+  let fee;
+  if (anchor) {
+    // Verified real fee — overrides the estimate, carries its provenance.
+    const band = bandFromFee(anchor.fee_gbp);
+    fee = {
+      ...BANDS[band], band,
+      label: anchor.fee_label || BANDS[band].label,
+      mid: anchor.fee_gbp,
+      basis: "anchored",
+      fee_source: anchor.source || "anchor",
+      fee_source_url: anchor.source_url || null,
+      fee_date: anchor.date || null,
+    };
+    anchored++;
+  } else {
+    const band = CURATED[dj.name] || fallbackBand(dj);
+    fee = { ...BANDS[band], band, basis: CURATED[dj.name] ? "curated" : "estimate" };
+  }
   const before = dj.booking_fee?.label;
   dj.booking_fee = fee;
   if (byName[dj.name]) byName[dj.name].booking_fee = fee;
   if (before !== fee.label) changed++;
 }
+console.log(`Fee anchors applied: ${anchored} verified, ${rankData.rankings.length - anchored} estimated.`);
 
 fs.writeFileSync(RANKINGS, JSON.stringify(rankData));
 fs.writeFileSync(ARTISTS, JSON.stringify(artists, null, 2));

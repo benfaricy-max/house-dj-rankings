@@ -40,11 +40,34 @@ export function valueConfidence(a) {
   const live = LIVE.filter(s => s.has(a));
   const support = SUPPORT.filter(s => s.has(a));
   const anchored = a.value_anchor?.venue_tier > 0 && a.value_anchor?.avg_attending > 0;
+  const feeVerified = a.booking_fee?.basis === "anchored" && !!a.booking_fee?.fee_source;
   let level;
   if (anchored && live.length >= 3 && support.length >= 2) level = "High";
   else if (anchored && support.length >= 1) level = "Medium";
   else level = "Low";
-  return { level, dots: level === "High" ? 3 : level === "Medium" ? 2 : 1, live, support, present: [...live, ...support], n: live.length + support.length };
+  // The benchmark fee is itself a model-implied estimate unless it's a verified
+  // anchor. You can't be HIGH-confidence about an under/over-pricing call when you
+  // don't actually know the fee — so cap unverified-fee verdicts at Medium.
+  if (!feeVerified && level === "High") level = "Medium";
+  return { level, feeVerified, dots: level === "High" ? 3 : level === "Medium" ? 2 : 1, live, support, present: [...live, ...support], n: live.length + support.length };
+}
+
+// Fee-basis honesty. The current fee is a MODEL-IMPLIED estimate (a curated tier
+// or a listener-derived band) unless it's a verified anchor — a real quoted/
+// contracted fee from fee_anchors.json. We never imply we know a fee we don't:
+// a booker who actually knows fees would spot it in one click, and that kills trust.
+export function feeBasis(a) {
+  const bf = a.booking_fee || {};
+  if (bf.basis === "anchored" && bf.fee_source) {
+    return { verified: true, label: `verified fee · ${bf.fee_source}`,
+      note: `Real, sourced fee${bf.fee_date ? ` (${bf.fee_date})` : ""} — not modelled.` };
+  }
+  if (bf.basis === "curated") {
+    return { verified: false, label: "estimated tier · curated",
+      note: "Hand-tiered estimate, not a transacted fee. The gap below is demand vs this estimate." };
+  }
+  return { verified: false, label: "estimated tier · model",
+    note: "Listener-derived estimate, not a transacted fee. The gap below is demand vs this estimate." };
 }
 
 const verdictText = (a, conf) => {
@@ -160,7 +183,7 @@ export function ValueReport({ rankings, slug }) {
     return (
       <div className="page vr-page">
         <button className="ap-back" onClick={back}>← Back</button>
-        <div className="vr-missing">No fair-value report for this artist yet — we only publish a verdict when there's a known fee anchor and enough demand data to be neutral about it.</div>
+        <div className="vr-missing">No fair-value report for this artist yet — we only publish a verdict when there's a fee benchmark and enough live demand data to be neutral about it.</div>
       </div>
     );
   }
@@ -218,7 +241,7 @@ export function ValueReport({ rankings, slug }) {
           <div className="vr-band">
             <div className="vr-band-l">Current fee band</div>
             <div className="vr-band-v">{a.booking_fee.label}</div>
-            <div className="vr-band-s">{a.booking_fee.basis === "curated" ? "curated benchmark" : "anchored estimate"}</div>
+            <div className={`vr-band-s${feeBasis(a).verified ? " vr-band-s--verified" : ""}`}>{feeBasis(a).verified ? "✓ " : ""}{feeBasis(a).label}</div>
           </div>
           <div className="vr-band-arrow">→</div>
           <div className="vr-band vr-band--implied">
@@ -227,6 +250,13 @@ export function ValueReport({ rankings, slug }) {
             <div className="vr-band-s">{a.value_gap > 0 ? "+" : ""}{a.value_gap} tier{Math.abs(a.value_gap) !== 1 ? "s" : ""}{Number.isFinite(a.value_gap_pct) ? ` · ${a.value_gap_pct > 0 ? "+" : ""}${a.value_gap_pct}%` : ""}</div>
           </div>
         </div>
+
+        {!feeBasis(a).verified && (
+          <div className="vr-feenote">
+            <strong>On the fee number:</strong> {feeBasis(a).note} We don't hold this act's transacted fee, so the benchmark is model-implied — read the gap as a demand signal, not a quoted price.{" "}
+            <a href={`mailto:hello@thedjranks.com?subject=${encodeURIComponent(`Fee anchor: ${a.name}`)}&body=${encodeURIComponent(`Real fee for ${a.name} (quote/contract/published):\nFee (GBP): \nSource (promoter-quote / agency-ratecard / contract / press): \nDate: \nRegion: \nNotes: `)}`}>Know the real fee? Send it →</a> Verified fees override the estimate and raise confidence.
+          </div>
+        )}
 
         {comps && (
           <div className="vr-comps">

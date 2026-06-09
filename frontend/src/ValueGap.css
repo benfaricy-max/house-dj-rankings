@@ -115,6 +115,12 @@
 
 .vr-lowconf { background: rgba(255, 138, 92, 0.1); border: 1px solid rgba(255, 138, 92, 0.3); border-radius: 10px; padding: 12px 16px; font-size: 0.86rem; color: var(--text-h); line-height: 1.5; margin-bottom: 18px; }
 
+/* honest fee-basis note: the benchmark fee is model-implied unless verified */
+.vr-feenote { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; font-size: 0.84rem; color: var(--muted); line-height: 1.55; margin: -8px 0 24px; }
+.vr-feenote strong { color: var(--text-h); }
+.vr-feenote a { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.vr-band-s--verified { color: #7CE38B; font-weight: 600; }
+
 .vr-bands { display: flex; align-items: stretch; gap: 12px; margin-bottom: 24px; }
 .vr-band { flex: 1; background: var(--code-bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
 .vr-band--implied { border-color: var(--accent-border); }

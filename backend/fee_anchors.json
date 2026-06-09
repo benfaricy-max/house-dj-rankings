@@ -1,0 +1,14 @@
+{
+  "_README": "REAL booking-fee anchors only — actual quoted, contracted, or credibly-published fees. NOT model estimates and NOT guesses. Each anchor here OVERRIDES the curated/listener-derived estimate in computeFees.js, is labelled to bookers as a VERIFIED fee (not 'estimated'), and earns higher Value Gap confidence. Goal: 30-40 real data points to calibrate AND validate the demand model against ground truth. PERMANENT RULE: never put a modelled/guessed number in here — a fabricated 'anchor' is worse than an honest estimate and breaks the whole point of this file. Leave 'anchors' empty until you have real ones.",
+  "_schema": {
+    "name": "exact artist name, must match rankings.json",
+    "fee_gbp": "number — the fee (or mid-point of the quoted range) in GBP",
+    "fee_label": "optional display band, e.g. '£35K–£70K' (else derived from fee_gbp)",
+    "source": "one of: promoter-quote | agency-ratecard | contract | press",
+    "source_url": "optional citation / link",
+    "date": "YYYY-MM-DD the fee was quoted, paid, or published",
+    "region": "optional, e.g. 'EU-club', 'US-festival' — fees vary by market",
+    "note": "optional context, e.g. '2hr set, EU club, ex-travel'"
+  },
+  "anchors": []
+}

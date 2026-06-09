@@ -113,6 +113,17 @@ momentum≥40 — underpriced + surging), "buy" (gap≥1 static), "premium" (gap
 "fair". ONLY judges curated/anchored fees (a gap vs a fallback estimate just
 measures the estimate's staleness). UI: "Value Gap" tab + badge on Booking acts.
 
+**Fee honesty (important).** We hold NO transacted fees — `booking_fee.basis` is
+"curated" (hand-tiered) or "estimate" (listener-derived), both model-implied, so
+the gap is demand vs an estimate, NOT vs a real price. The Fair Value Report says
+this plainly: bands labelled "estimated tier", a fee-basis note, and confidence
+CAPPED at Medium unless the fee is verified. Real anchors go in
+`backend/fee_anchors.json` (actual quoted/contracted/published fees — schema in
+the file; NEVER seed guesses). computeFees.js applies them → basis "anchored" +
+`fee_source`/`fee_date`, overriding the estimate and labelled "✓ verified fee"
+(uncaps confidence). Goal: 30-40 real anchors to calibrate + validate the model.
+Promoters can submit fees via the "Send it" mailto in the report.
+
 ## 1001Tracklists DJ-Support signal (what DJs actually play)
 `node backend/enrich1001.js` — matches the roster against 1001Tracklists' weekly
 chart (the tracks DJs are PLAYING in sets — hardest signal to game). Reads a local
