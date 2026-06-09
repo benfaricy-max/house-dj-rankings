@@ -12,16 +12,26 @@
 // by the published METRICS weights, self-heal empty-in-cohort signals, and apply
 // the same scene credibility floor the global model uses. Returns the subset
 // sorted by cohort_score with a 1..N cohort_rank.
+// Conditioning, mirrored from backend/score.js so cohort scores use the same
+// model as the global index (log-compress heavy-tailed reach, winsorise to the
+// 1st–99th percentile band, two-sided scene credibility multiplier).
+const C_HEAVY = new Set([
+  "spotify_monthly_listeners", "youtube_subscribers", "tiktok_post_count",
+  "spotify_playlist_placements", "wikipedia_pageviews",
+]);
+const cPrep = (key, v) => { const x = Number.isFinite(v) ? v : 0; return C_HEAVY.has(key) ? Math.log10(1 + Math.max(0, x)) : x; };
+const cPct = (s, p) => (s.length ? s[Math.min(s.length - 1, Math.max(0, Math.round((p / 100) * (s.length - 1))))] : 0);
+
 export function rankWithinCohort(subset, metricDefs) {
   if (!subset || subset.length === 0) return [];
   const ranges = {};
   for (const m of metricDefs) {
-    const vals = subset.map(a => a[m.key] || 0);
-    ranges[m.key] = { min: Math.min(...vals), max: Math.max(...vals) };
+    const vals = subset.map(a => cPrep(m.key, a[m.key])).sort((x, y) => x - y);
+    ranges[m.key] = { min: cPct(vals, 1), max: cPct(vals, 99) };
   }
-  const live = metricDefs.filter(m => ranges[m.key].max > 0);
+  const live = metricDefs.filter(m => ranges[m.key].max > ranges[m.key].min);
   const liveW = live.reduce((t, m) => t + m.weight, 0) || 1;
-  const norm = (v, mn, mx) => (mx <= mn ? 0 : ((v - mn) / (mx - mn)) * 100);
+  const norm = (v, mn, mx) => (mx <= mn ? 0 : ((Math.max(mn, Math.min(mx, v)) - mn) / (mx - mn)) * 100);
 
   return subset
     .map(a => {
@@ -29,10 +39,10 @@ export function rankWithinCohort(subset, metricDefs) {
       let covW = 0;
       for (const m of live) {
         if (Number.isFinite(a[m.key]) && a[m.key] > 0) covW += m.weight / liveW;
-        s += norm(a[m.key] || 0, ranges[m.key].min, ranges[m.key].max) * (m.weight / liveW);
+        s += norm(cPrep(m.key, a[m.key]), ranges[m.key].min, ranges[m.key].max) * (m.weight / liveW);
       }
       const scene = Number.isFinite(a.manual_scene_score) ? a.manual_scene_score : 50;
-      const cred = 0.75 + 0.25 * (Math.min(scene, 50) / 50);
+      const cred = 0.80 + 0.35 * (scene / 100); // two-sided: lifts high scene, scales down low
       const covFactor = 0.8 + 0.2 * Math.min(covW / 0.75, 1);
       return { ...a, cohort_score: Math.round(s * cred * covFactor * 10) / 10, cohort_coverage: Math.round(covW * 100) };
     })

@@ -137,18 +137,20 @@ Set repo var `TL_API_BASE` to a hosted URL to run it in CI. UI: "DJ Support · 1
 signal on artist profiles + How It Works methodology.
 
 ## Scene Score (editorial credibility layer + credibility floor)
-`manual_scene_score` 0-100, weight **0.14**. Published rubric in How It Works
+`manual_scene_score` 0-100, weight **0.18** (co-leads with live_demand). Published rubric in How It Works
 (SCENE_RUBRIC in App.jsx): Boiler Room/HÖR +20, Berghain/fabric/DC10 +20, festival
 closing +15, respected label +15, RA/Mixmag/DJ Mag cover +10, Ibiza residency +10,
 Essential Mix +10. Explicit criteria = credible + hard to game. Most of the roster
 is hand-scored (editorial pass Jun 2026). Default for unscored artists = 50.
-**Credibility floor (score.js return map):** the final composite is multiplied by
-`0.75 + 0.25*min(scene,50)/50` — acts below scene 50 are scaled down (max 25% cut at
-scene 0, no penalty at scene≥50; unscored=50 → unaffected). This is what stops a
-streaming-huge / scene-thin crossover act from topping a booking index (e.g. it
-moved Hugel, scene 28, from #3 to #17). Validated against a labeled act set (89%
-pairwise agreement). Keep the factor in sync with the How It Works "Credibility
-floor" note.
+**Credibility multiplier — TWO-SIDED (score.js return map):** the final composite is
+multiplied by `0.80 + 0.35*(scene/100)` — 0.80 at scene 0, ~0.98 at the unscored-50
+default, 1.15 at scene 100. It both PENALISES near-zero scene AND REWARDS genuine
+credibility. The two-sided form (v3) replaced the old one-sided floor
+(`0.75 + 0.25*min(scene,50)/50`) because once conditioning made reach discriminate,
+a scene-revered but streaming-invisible act (Ben UFO, Villalobos) was getting buried
+by reach — the floor only punished low scene, it didn't lift high scene. Still demotes
+the streaming-pop crossover hard (Hugel, scene 28, sits ~#127). Keep the factor in
+sync with the How It Works "Credibility multiplier" note.
 
 ## Scene Geography / international appeal (audience-based)
 `node backend/enrichSpotifyGeo.js [limit]` — pulls each artist's Spotify top listener
@@ -166,18 +168,23 @@ populate. **Not yet weighted in score.js** — surfaced for review first ("see b
 weight"); weight ~.05-.08 once real city data is validated against the labeled set.
 
 ## Composite weights (score.js, sum=1.00)
-live_demand (RA+tour blend) .17 (LEADS), beatport .14, scene .14, listeners .12, tl_support (1001TL) .09,
-trends .08, growth .06, yt_subs .05, label .05, tiktok .04, releases .04,
-wikipedia .02. Then the **credibility floor** multiplies the final score (see Scene
-Score section). RETIRED (0): track_pop (Spotify-blocked), yt_views_weekly (delta
-metric, 0% coverage), beatport_hype (one Beatport metric in primary rankings — Hype
-still collected for emerging views, not in composite).
-Self-healing: empty-field signals redistribute their weight per-artist over the
-signals present. Jun 2026 reweight v2 (booking-led): RA live-booking demand leads
-(.17); raw reach demoted to .12 (a brief .19-leads experiment over-crowned streaming
-giants); Scene .14 + the credibility floor handle the "huge streams, no scene"
-case. Validated against a labeled act set (89%). Keep score.js + the frontend
-METRICS / METRIC_DETAILS arrays + the How It Works credibility-floor note in sync.
+live_demand (RA+tour blend) .18 (CO-LEADS), scene .18 (CO-LEADS), beatport .15,
+tl_support (1001TL) .10, listeners .08, trends .08, growth .06, label .05, yt_subs .04,
+tiktok .03, releases .03, wikipedia .02. Then the **two-sided credibility multiplier**
+scales the final score (see Scene Score section). RETIRED (0): track_pop
+(Spotify-blocked), yt_views_weekly (delta metric, 0% coverage), beatport_hype (one
+Beatport metric in primary rankings — Hype still collected for emerging views).
+NORMALISATION (v3): heavy-tailed reach signals (listeners/yt/tiktok/releases/wiki) are
+log-compressed and every signal is winsorised to its 1st–99th-percentile band before
+min-max — so one streaming giant no longer compresses the field, and scores are stable
+snapshot-to-snapshot. Mirrored in the frontend (computeRanges/normalize + cohort.js).
+Self-healing: empty-field signals redistribute weight per-artist over signals present.
+**Jun 2026 reweight v3 (post-conditioning):** once log+winsorize made reach actually
+discriminate, its effective influence jumped, so reach was pulled DOWN (listeners
+.12→.08, yt/tiktok/releases trimmed) and that weight moved to scene (.14→.18, now
+co-leading), live_demand (→.18), beatport (→.15), 1001TL (→.10). The credibility
+multiplier went two-sided so credible/low-reach acts aren't buried (Hugel still ~#127).
+Keep score.js + frontend METRICS / METRIC_DETAILS + the How It Works note in sync.
 
 ## Predictive-validation history (the "our calls, scored" backtest data)
 Three change-compressed time-series accrued in `generateStatic.js` (after rank/listeners

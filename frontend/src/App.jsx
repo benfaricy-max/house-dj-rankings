@@ -63,17 +63,17 @@ const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
 const MEDAL = { 1: "🥇", 2: "🥈", 3: "🥉" };
 
 const METRICS = [
-  { key: "live_demand_score",            label: "Live Booking",       weight: 0.17, format: "score100" },
-  { key: "beatport_score",               label: "Beatport Chart",     weight: 0.14, format: "score100" },
-  { key: "manual_scene_score",           label: "Scene Score",        weight: 0.14, format: "score100" },
-  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",  weight: 0.12, format: "count"    },
-  { key: "tl_support_score",             label: "DJ Support (1001TL)",weight: 0.09, format: "score100" },
+  { key: "live_demand_score",            label: "Live Booking",       weight: 0.18, format: "score100" },
+  { key: "manual_scene_score",           label: "Scene Score",        weight: 0.18, format: "score100" },
+  { key: "beatport_score",               label: "Beatport Chart",     weight: 0.15, format: "score100" },
+  { key: "tl_support_score",             label: "DJ Support (1001TL)",weight: 0.10, format: "score100" },
+  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",  weight: 0.08, format: "count"    },
   { key: "google_trends_score",          label: "Google Trends",      weight: 0.08, format: "score100" },
   { key: "spotify_follower_growth_rate", label: "Listener Growth",    weight: 0.06, format: "pct"      },
-  { key: "youtube_subscribers",          label: "YT Subscribers",     weight: 0.05, format: "count"    },
   { key: "label_score",                  label: "Label Trajectory",   weight: 0.05, format: "score100" },
-  { key: "tiktok_post_count",            label: "TikTok Posts",       weight: 0.04, format: "posts"    },
-  { key: "spotify_playlist_placements",  label: "Releases",           weight: 0.04, format: "number"   },
+  { key: "youtube_subscribers",          label: "YT Subscribers",     weight: 0.04, format: "count"    },
+  { key: "tiktok_post_count",            label: "TikTok Posts",       weight: 0.03, format: "posts"    },
+  { key: "spotify_playlist_placements",  label: "Releases",           weight: 0.03, format: "number"   },
   { key: "wikipedia_pageviews",          label: "Wikipedia Views",    weight: 0.02, format: "count"    },
 ];
 
@@ -116,18 +116,38 @@ function fmtDate(iso) {
   return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 }
 
+// Mirror of backend/score.js conditioning so the on-screen Score Breakdown,
+// ScoreTip and Compare show the SAME normalised contributions the real score is
+// built from: heavy-tailed reach signals are log-compressed, and every metric's
+// scale is its 1st–99th percentile band (winsorised) rather than raw min/max,
+// so one mega-act can't compress the field or swing scores via pool drift.
+const HEAVY_TAILED = new Set([
+  "spotify_monthly_listeners", "youtube_subscribers", "tiktok_post_count",
+  "spotify_playlist_placements", "wikipedia_pageviews",
+]);
+const prep = (key, value) => {
+  const v = Number.isFinite(value) ? value : 0;
+  return HEAVY_TAILED.has(key) ? Math.log10(1 + Math.max(0, v)) : v;
+};
+const percentile = (sortedAsc, p) => {
+  if (!sortedAsc.length) return 0;
+  const idx = Math.min(sortedAsc.length - 1, Math.max(0, Math.round((p / 100) * (sortedAsc.length - 1))));
+  return sortedAsc[idx];
+};
+
 function computeRanges(rankings) {
   const ranges = {};
   for (const { key } of METRICS) {
-    const vals = rankings.map(a => a[key] || 0);
-    ranges[key] = { min: Math.min(...vals), max: Math.max(...vals) };
+    const vals = rankings.map(a => prep(key, a[key])).sort((x, y) => x - y);
+    ranges[key] = { min: percentile(vals, 1), max: percentile(vals, 99) };
   }
   return ranges;
 }
 
 function normalize(value, min, max) {
-  if (max === min) return 0;
-  return ((value - min) / (max - min)) * 100;
+  if (max <= min) return 0;
+  const clamped = Math.max(min, Math.min(max, value));
+  return ((clamped - min) / (max - min)) * 100;
 }
 
 // ── Icons ─────────────────────────────────────────────────────────
@@ -319,7 +339,7 @@ function ScoreBreakdown({ dj, ranges }) {
   const rows = METRICS.map(metric => {
     const { min, max } = ranges[metric.key] ?? { min: 0, max: 0 };
     const value        = dj[metric.key] ?? 0;
-    const normalized   = normalize(value, min, max);
+    const normalized   = normalize(prep(metric.key, value), min, max);
     const contribution = normalized * metric.weight;
     return { metric, value, normalized, contribution };
   }).sort((a, b) => b.contribution - a.contribution);
@@ -369,7 +389,7 @@ function ScoreBreakdown({ dj, ranges }) {
 function ScoreTip({ dj, ranges }) {
   const rows = METRICS.map(metric => {
     const { min, max } = ranges[metric.key] ?? { min: 0, max: 0 };
-    const contribution = normalize(dj[metric.key] ?? 0, min, max) * metric.weight;
+    const contribution = normalize(prep(metric.key, dj[metric.key] ?? 0), min, max) * metric.weight;
     return { metric, contribution };
   }).sort((a, b) => b.contribution - a.contribution).slice(0, 4);
   return (
@@ -489,8 +509,8 @@ function CompareModal({ djs, ranges, onClose }) {
 
   const rows = METRICS.map(metric => {
     const { min, max } = ranges[metric.key] ?? { min: 0, max: 0 };
-    const normA = normalize(a[metric.key] ?? 0, min, max);
-    const normB = normalize(b[metric.key] ?? 0, min, max);
+    const normA = normalize(prep(metric.key, a[metric.key] ?? 0), min, max);
+    const normB = normalize(prep(metric.key, b[metric.key] ?? 0), min, max);
     return { metric, normA, normB, valA: a[metric.key] ?? 0, valB: b[metric.key] ?? 0, winA: normA >= normB };
   });
 
@@ -719,17 +739,17 @@ const DATA_SOURCES = [
 ];
 
 const METRIC_DETAILS = [
-  { key: "live_demand_score",            label: "Live Booking",        weight: 0.17, color: "#FF5C00", why: "Live booking demand, blended from two sources so it isn't single-sourced: Resident Advisor (venue-capacity tier, attendance, geographic spread) plus Songkick tour density. RA under-logs US/commercial/festival acts, so where its coverage is structurally thin the tour signal leads — acts aren't scored as low-demand just because RA can't see their shows. The highest-weighted signal, because this is a booking index, not a streaming chart." },
-  { key: "beatport_score",               label: "Beatport Chart",      weight: 0.14, color: "#a8e00f", why: "Position across genre Top 100 charts. The DJ retail store, so charting signals credibility with the core scene rather than the mainstream." },
-  { key: "manual_scene_score",           label: "Scene Score",         weight: 0.14, color: "#8b5cf6", why: "An editorial layer for what algorithms miss — Boiler Room, Berghain/fabric bookings, festival closing slots, press covers. Scored against a published, transparent rubric (below). Also acts as a credibility floor: an act with near-zero scene standing can't top the index on reach alone (see the note under the rubric)." },
-  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",   weight: 0.12, color: "#1DB954", why: "Active fanbase reach, read from the live Spotify session. A supporting signal — raw streaming is the weakest predictor of who actually fills rooms, so it informs the ranking without driving it." },
-  { key: "tl_support_score",             label: "DJ Support (1001TL)", weight: 0.09, color: "#00b8d4", why: "Where the artist's tracks land on 1001Tracklists' weekly chart of what DJs actually PLAY in their sets. The hardest signal to game — tastemakers spinning your music, not sales or streams." },
+  { key: "live_demand_score",            label: "Live Booking",        weight: 0.18, color: "#FF5C00", why: "Live booking demand, blended from two sources so it isn't single-sourced: Resident Advisor (venue-capacity tier, attendance, geographic spread) plus Songkick tour density. RA under-logs US/commercial/festival acts, so where its coverage is structurally thin the tour signal leads — acts aren't scored as low-demand just because RA can't see their shows. Co-leads the index, because this is a booking index, not a streaming chart." },
+  { key: "manual_scene_score",           label: "Scene Score",         weight: 0.18, color: "#8b5cf6", why: "An editorial layer for what algorithms miss — Boiler Room, Berghain/fabric bookings, festival closing slots, press covers. Scored against a published, transparent rubric (below). Also a two-sided credibility multiplier: it lifts genuine scene standing and scales down an act with near-zero credibility, so neither a streaming-pop crossover tops the index nor a revered DJ's-DJ gets buried by reach (see the note under the rubric)." },
+  { key: "beatport_score",               label: "Beatport Chart",      weight: 0.15, color: "#a8e00f", why: "Position across genre Top 100 charts. The DJ retail store, so charting signals credibility with the core scene rather than the mainstream." },
+  { key: "tl_support_score",             label: "DJ Support (1001TL)", weight: 0.10, color: "#00b8d4", why: "Where the artist's tracks land on 1001Tracklists' weekly chart of what DJs actually PLAY in their sets. The hardest signal to game — tastemakers spinning your music, not sales or streams." },
+  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",   weight: 0.08, color: "#1DB954", why: "Active fanbase reach, read from the live Spotify session. A supporting signal, demoted hard — raw streaming is the weakest predictor of who actually fills rooms, so it informs the ranking without driving it." },
   { key: "google_trends_score",          label: "Google Trends",       weight: 0.08, color: "#4285F4", why: "Search interest normalized to the artist's own peak. Rising search frequently precedes booking-fee increases." },
   { key: "spotify_follower_growth_rate", label: "Listener Growth",     weight: 0.06, color: "#C8F750", why: "Rate of change in audience — acceleration often predicts demand before size does. Weighted modestly while its coverage builds." },
-  { key: "youtube_subscribers",          label: "YouTube Subscribers", weight: 0.05, color: "#FF0000", why: "A proxy for dedicated fanbase depth. YouTube audiences tend to convert to ticket buyers at a higher rate." },
   { key: "label_score",                  label: "Label Trajectory",    weight: 0.05, color: "#8b5cf6", why: "Tier and trajectory of the labels an artist releases on (Drumcode/Kompakt/Defected…) — credibility, and whether they're moving onto bigger homes." },
-  { key: "tiktok_post_count",            label: "TikTok Posts",        weight: 0.04, color: "#E9E7DF", why: "Posts using the artist's hashtag. Measures grassroots cultural spread, often an early breakout indicator." },
-  { key: "spotify_playlist_placements",  label: "Releases / Catalog",  weight: 0.04, color: "#1DB954", why: "Depth and recency of catalog. Active release schedules score higher than a single back-catalog hit." },
+  { key: "youtube_subscribers",          label: "YouTube Subscribers", weight: 0.04, color: "#FF0000", why: "A proxy for dedicated fanbase depth. YouTube audiences tend to convert to ticket buyers at a higher rate." },
+  { key: "tiktok_post_count",            label: "TikTok Posts",        weight: 0.03, color: "#E9E7DF", why: "Posts using the artist's hashtag. Measures grassroots cultural spread, often an early breakout indicator." },
+  { key: "spotify_playlist_placements",  label: "Releases / Catalog",  weight: 0.03, color: "#1DB954", why: "Depth and recency of catalog. Active release schedules score higher than a single back-catalog hit." },
   { key: "wikipedia_pageviews",          label: "Wikipedia Views",     weight: 0.02, color: "#9aa0a6", why: "Trailing 30-day article pageviews. A clean, independent measure of broad public interest." },
 ];
 
@@ -793,7 +813,7 @@ function HowItWorksPage() {
           To keep it honest, the criteria are public. Points accrue toward a 0–100 score; it's deliberately harder to game than a follower count.
         </p>
         <div className="hiw-weight-note" style={{ marginBottom: 14 }}>
-          <strong>Credibility floor.</strong> Scene Score also caps reach-only acts. An act below 50 here has its final score scaled down — up to a 25% reduction at zero, tapering to no penalty by 50. A booking index for a credibility-driven scene shouldn't crown an act with no scene standing on streaming numbers alone.
+          <strong>Credibility multiplier (two-sided).</strong> Scene Score also scales the whole composite, both ways: an act's final score is multiplied by roughly 0.80 at scene 0, rising through ~0.98 for an unscored act to 1.15 at scene 100. So a streaming-huge but scene-thin crossover can't top a booking index on reach alone — and, just as important, a scene-revered act with a small streaming footprint isn't buried beneath it. A booking index should reward credibility, not just punish its absence.
         </div>
         <div className="hiw-rubric">
           {SCENE_RUBRIC.map(r => (

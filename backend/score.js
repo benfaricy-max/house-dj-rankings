@@ -1,6 +1,43 @@
+// Count-based, heavy-tailed signals: one FISHER/Disclosure-sized act otherwise
+// stretches the raw min-max range so far that everyone else compresses into the
+// bottom and the signal stops discriminating among ranks ~5–50. Log-compress
+// them first (same transform Value Gap uses on listeners/attendance) so the
+// conditioning matches the multiplicative way reach grows. The 0–100 "score"
+// signals (live_demand/beatport/scene/trends/tl/label) are already bounded, so
+// they're left linear.
+const HEAVY_TAILED = new Set([
+  "spotify_followers",
+  "spotify_monthly_listeners",
+  "youtube_subscribers",
+  "youtube_views_weekly",
+  "wikipedia_pageviews",
+  "tiktok_post_count",
+  "spotify_playlist_placements",
+]);
+
+function prep(metric, value) {
+  const v = Number.isFinite(value) ? value : 0;
+  return HEAVY_TAILED.has(metric) ? Math.log10(1 + Math.max(0, v)) : v;
+}
+
+// Percentile over an ascending-sorted array (nearest-rank).
+function percentile(sortedAsc, p) {
+  if (!sortedAsc.length) return 0;
+  const idx = Math.min(sortedAsc.length - 1,
+    Math.max(0, Math.round((p / 100) * (sortedAsc.length - 1))));
+  return sortedAsc[idx];
+}
+
+// Winsorizing min-max: the range is the 1st–99th percentile (set in ranges
+// below), and values outside it are clamped to the band before scaling. This
+// caps the influence of a single outlier and — crucially — makes scores far
+// more stable snapshot-to-snapshot: the top of the scale is a p99, not whatever
+// one mega-act happens to register this week, so a score moving is real movement
+// rather than pool drift from one act entering or leaving the roster.
 function normalize(value, min, max) {
-  if (max === min) return 0;
-  return ((value - min) / (max - min)) * 100;
+  if (max <= min) return 0;
+  const clamped = Math.max(min, Math.min(max, value));
+  return ((clamped - min) / (max - min)) * 100;
 }
 
 function scoreArtists(artists) {
@@ -35,32 +72,37 @@ function scoreArtists(artists) {
   // (403) under Client-Credentials and strips the popularity field, so it was
   // dead for every artist. Removed rather than shown as a column of zeros.
 
+  // Build each metric's scale on CONDITIONED values: log-compress the heavy-
+  // tailed signals, then take the 1st/99th percentile as the [min,max] band so
+  // the top and bottom 1% are winsorized rather than allowed to define the scale.
   const ranges = {};
   for (const m of metrics) {
-    const values = artists.map(a => a[m] || 0);
-    ranges[m] = { min: Math.min(...values), max: Math.max(...values) };
+    const values = artists.map(a => prep(m, a[m])).sort((x, y) => x - y);
+    ranges[m] = { min: percentile(values, 1), max: percentile(values, 99) };
   }
 
   // Weights sum to 1.00. Self-healing still applies: empty signals' weight
   // redistributes per-artist over the signals they do have.
-  // Jun 2026 reweight (v2): this is a BOOKING index, so live booking demand (RA —
-  // venue tier, attendance, geo spread) LEADS, with Beatport + Scene credibility
-  // alongside it. Raw Spotify reach is the weakest booking predictor, so it sits
-  // at a supporting 0.12 (down from 0.19, which over-crowned streaming giants).
-  // Paired with the credibility floor below (see the return map). Keep this in
-  // sync with the frontend METRICS / METRIC_DETAILS arrays and CLAUDE.md.
+  // Jun 2026 reweight (v3, post-conditioning): with log+winsorize normalisation
+  // (above), reach signals finally DISCRIMINATE instead of compressing flat — so
+  // their effective influence jumped. To keep this a BOOKING index (live demand +
+  // scene credibility lead, not streaming reach), reach is pulled DOWN: listeners
+  // 0.12→0.08, yt/tiktok/releases trimmed, and that weight moved to scene (0.14→
+  // 0.18, now co-leading) + live_demand (→0.18) + beatport (→0.15) + 1001TL (→0.10).
+  // Paired with the TWO-SIDED credibility multiplier below (rewards high scene,
+  // penalises low). Keep in sync with frontend METRICS / METRIC_DETAILS + CLAUDE.md.
   const weights = {
-    live_demand_score:            0.17,  // LEADS — live booking demand: RA (venue tier/attendance/geo) blended with Songkick tour density
-    beatport_score:               0.14,  // core scene / chart credibility (one Beatport metric)
-    manual_scene_score:           0.14,  // editorial scene credibility (rubric in How It Works)
-    spotify_monthly_listeners:    0.12,  // reach — supporting; raw streams are the weakest booking predictor
-    tl_support_score:             0.09,  // DJ SUPPORT: 1001Tracklists weekly chart — what DJs actually play (hardest to game)
+    live_demand_score:            0.18,  // LEADS — live booking demand: RA (venue tier/attendance/geo) blended with Songkick tour density
+    manual_scene_score:           0.18,  // CO-LEADS — editorial scene credibility (rubric in How It Works)
+    beatport_score:               0.15,  // core scene / chart credibility (one Beatport metric)
+    tl_support_score:             0.10,  // DJ SUPPORT: 1001Tracklists weekly chart — what DJs actually play (hardest to game)
+    spotify_monthly_listeners:    0.08,  // reach — demoted hard: with conditioning, raw streams over-discriminate
     google_trends_score:          0.08,
     spotify_follower_growth_rate: 0.06,  // growth (acceleration), thin coverage
-    youtube_subscribers:          0.05,  // reach proxy
     label_score:                  0.05,  // label tier (Drumcode/Kompakt/Defected…) — credibility & trajectory
-    tiktok_post_count:            0.04,
-    spotify_playlist_placements:  0.04,  // catalog depth / release cadence
+    youtube_subscribers:          0.04,  // reach proxy
+    tiktok_post_count:            0.03,
+    spotify_playlist_placements:  0.03,  // catalog depth / release cadence
     wikipedia_pageviews:          0.02,  // public interest
     spotify_avg_track_popularity: 0.00,  // RETIRED (Spotify blocks the endpoint)
     youtube_views_weekly:         0.00,  // REMOVED (delta metric, 0% coverage)
@@ -99,20 +141,21 @@ function scoreArtists(artists) {
           signalsPresent += 1;
         }
         const norm = normalize(
-          artist[metric] || 0,
+          prep(metric, artist[metric]),
           ranges[metric].min,
           ranges[metric].max
         );
         score += norm * (weights[metric] / liveWeightSum); // renormalized to 1.0
       }
-      // Credibility floor: a demand index for a credibility-driven scene shouldn't
-      // crown an act with near-zero scene standing on reach + charts alone. Acts
-      // below 50 on Scene have their composite scaled down — at most a 25% cut at
-      // scene 0, tapering linearly to no penalty at scene >= 50. Unscored acts (the
-      // 50 default) are unaffected. This is the lever that stops a streaming-huge /
-      // scene-thin act (e.g. a chart-pop crossover) from topping a booking index.
+      // Two-sided credibility multiplier. A booking index for a credibility-driven
+      // scene should do BOTH: penalise an act with near-zero scene standing AND
+      // reward genuine scene credibility — otherwise (now that conditioning makes
+      // reach discriminate) a scene-revered but streaming-invisible act gets buried
+      // by the reach signals. Scales the composite by 0.80 (scene 0) → ~0.98 (the
+      // unscored 50 default) → 1.15 (scene 100). This is the lever that both demotes
+      // a chart-pop crossover (low scene) and lifts a DJ's-DJ (high scene, low reach).
       const sceneVal = Number.isFinite(artist.manual_scene_score) ? artist.manual_scene_score : 50;
-      const credibility = 0.75 + 0.25 * (Math.min(sceneVal, 50) / 50);
+      const credibility = 0.80 + 0.35 * (sceneVal / 100);
 
       // Coverage penalty: a score built on a fraction of the signals isn't as
       // trustworthy as one on the full panel, and the self-healing reweight would
