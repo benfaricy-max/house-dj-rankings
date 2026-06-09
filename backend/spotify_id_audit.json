@@ -1,0 +1,220 @@
+{
+  "generated": "2026-06-09",
+  "counts": {
+    "BAD_ID": 51,
+    "WRONG_ARTIST": 0,
+    "OK_ID": 0,
+    "NO_ID": 0
+  },
+  "buckets": {
+    "BAD_ID": [
+      {
+        "name": "Sasha",
+        "id": "2YNT6k6FQMKU1MjKj1JE72"
+      },
+      {
+        "name": "Bob Sinclar",
+        "id": "3e5Ts2T5CezFivfSN7Hj3k"
+      },
+      {
+        "name": "Eric Prydz",
+        "id": "6kAVR5c1IhXCy0sQJUWp3r"
+      },
+      {
+        "name": "Midland",
+        "id": "6rTdP5TF5e5YP7K3BELIqt"
+      },
+      {
+        "name": "Slam",
+        "id": "3mMLUbCnlRAlxoCMNiERf8"
+      },
+      {
+        "name": "Len Faki",
+        "id": "7oVEtyuMEJh8v0h4H3YJuG"
+      },
+      {
+        "name": "Andrea Oliva",
+        "id": "7l0vPpT5gJc3c8F5c7OoGa"
+      },
+      {
+        "name": "Planetary Assault Systems",
+        "id": "0q4RVHvBSxjCjR2hmVpAP5"
+      },
+      {
+        "name": "Mano Le Tough",
+        "id": "2l4t1SxJJtjCgMCTxMwnJm"
+      },
+      {
+        "name": "Luciano",
+        "id": "3Mj6M2DVfxiPToxQxULkxU"
+      },
+      {
+        "name": "The Hacker",
+        "id": "7aVuq7QQjyBWeTqDmxNaH7"
+      },
+      {
+        "name": "Kevin Saunderson",
+        "id": "1k8VhCjHQVDHQ7o7P2TlXo"
+      },
+      {
+        "name": "John Digweed",
+        "id": "5PQWFPv0ULvqJCwWqUAlSQ"
+      },
+      {
+        "name": "Call Super",
+        "id": "4rYIaP8EqXJiNHq1LgAIKr"
+      },
+      {
+        "name": "Truncate",
+        "id": "5gT4JTAlKhBNqZkzHXHvB3"
+      },
+      {
+        "name": "Ricardo Villalobos",
+        "id": "2I61lClmFpJvvdWMPHRHy9"
+      },
+      {
+        "name": "Danny Tenaglia",
+        "id": "1QzZ0JjFrI2Epu0DWbgW3q"
+      },
+      {
+        "name": "Axel Boman",
+        "id": "0dZXloBJjhvBmOlDG2oAGb"
+      },
+      {
+        "name": "Todd Terry",
+        "id": "3jGV4HGTiDYFWqUfSi7OGA"
+      },
+      {
+        "name": "Deborah De Luca",
+        "id": "4cC8OhT9sNnNtXj3j8tDHi"
+      },
+      {
+        "name": "DJ Pierre",
+        "id": "2kHw7RHxk9pUqEa5OcJLFp"
+      },
+      {
+        "name": "Duke Dumont",
+        "id": "4PtM5dLlLMlGiMvFE9xLLH"
+      },
+      {
+        "name": "Guy Gerber",
+        "id": "3qJoQP44S7y3ZXqeJuBEDy"
+      },
+      {
+        "name": "Steve Bug",
+        "id": "5c0oYJpzTfJJF2LobI4hDz"
+      },
+      {
+        "name": "Kenny Larkin",
+        "id": "3vJHibwZ2G7GxJLbJmD8lx"
+      },
+      {
+        "name": "Themba",
+        "id": "7mSz2HuUwuHePPrT3vGHMR"
+      },
+      {
+        "name": "Move D",
+        "id": "3iKSMlZ5g87PbxkHtFmrVN"
+      },
+      {
+        "name": "Regis",
+        "id": "78k5cXpDU0vItIc4RkBGhT"
+      },
+      {
+        "name": "Route 94",
+        "id": "4FXNEbZ8MnqBVQPHVLBuVr"
+      },
+      {
+        "name": "Alignment",
+        "id": "3Q7FoLqp9t8vZBR67TGZjN"
+      },
+      {
+        "name": "Miss Kittin",
+        "id": "3oI1Y5nJNEOPijQRqHiUiE"
+      },
+      {
+        "name": "Dimitri From Paris",
+        "id": "7pzKMcCq2RWTV0n9JOOlAf"
+      },
+      {
+        "name": "Deetron",
+        "id": "2U4VjSpC1yNTbMiJH7FkQK"
+      },
+      {
+        "name": "Alan Dixon",
+        "id": "4w2QpZQV2jkJgH3fLm8QNB"
+      },
+      {
+        "name": "Culoe De Song",
+        "id": "7zDvEFpjSJtnkaMaRVxbLB"
+      },
+      {
+        "name": "DJ Sneak",
+        "id": "79M7OaFE2SzHlM3gzJUaeN"
+      },
+      {
+        "name": "Job Jobse",
+        "id": "7oa6qvGZJfOmIhODuRdFg9"
+      },
+      {
+        "name": "Stacey Pullen",
+        "id": "5w9qX4JvVLrNQN8RgFkk9o"
+      },
+      {
+        "name": "Frankie Knuckles",
+        "id": "4P5c7BFZB8xdqY3hGFDvMk"
+      },
+      {
+        "name": "Joeski",
+        "id": "3pHHyOLBYx4eBlQSFMiSVP"
+      },
+      {
+        "name": "Larry Heard",
+        "id": "4w3lHWL3w9Q5uLiDZhg8B5"
+      },
+      {
+        "name": "Phase Fatale",
+        "id": "7KsJmHNLrb5HQh8ftnDgJY"
+      },
+      {
+        "name": "Rebekah",
+        "id": "6kiqIr9Zx4Bq2LnZ6JKLHv"
+      },
+      {
+        "name": "SPFDJ",
+        "id": "2dOJmAkKgF8WFEV0TwXDYT"
+      },
+      {
+        "name": "Marika Rossa",
+        "id": "0mvjz5EDmGNiVpYJPSSgPN"
+      },
+      {
+        "name": "San Soda",
+        "id": "7kWnE754s87BRkpXNXNpOG"
+      },
+      {
+        "name": "Maya",
+        "id": "4OKj6YpXHmvDYlJuiB4kFe"
+      },
+      {
+        "name": "Akufen",
+        "id": "6cXtfDolHH4gWBVAnkOqlt"
+      },
+      {
+        "name": "Harvey McKay",
+        "id": "6gScJZHRGzC78ViHqhTN7z"
+      },
+      {
+        "name": "Mr. G",
+        "id": "4TpZyLmqr7v8yZKe1l8XN3"
+      },
+      {
+        "name": "Maxxi Soundsystem",
+        "id": "3kzFl4i8iRnJc0u9aTXniS"
+      }
+    ],
+    "WRONG_ARTIST": [],
+    "OK_ID": [],
+    "NO_ID": []
+  }
+}
