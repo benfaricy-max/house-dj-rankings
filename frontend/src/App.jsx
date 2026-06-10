@@ -63,15 +63,16 @@ const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
 const MEDAL = { 1: "🥇", 2: "🥈", 3: "🥉" };
 
 const METRICS = [
-  { key: "live_demand_score",            label: "Live Booking",       weight: 0.18, format: "score100" },
-  { key: "manual_scene_score",           label: "Scene Score",        weight: 0.18, format: "score100" },
-  { key: "beatport_score",               label: "Beatport Chart",     weight: 0.15, format: "score100" },
+  { key: "live_demand_score",            label: "Live Booking",       weight: 0.21, format: "score100" },
+  { key: "manual_scene_score",           label: "Scene Score",        weight: 0.20, format: "score100" },
+  { key: "beatport_score",               label: "Beatport Chart",     weight: 0.12, format: "score100" },
   { key: "tl_support_score",             label: "DJ Support (1001TL)",weight: 0.10, format: "score100" },
-  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",  weight: 0.08, format: "count"    },
-  { key: "google_trends_score",          label: "Google Trends",      weight: 0.08, format: "score100" },
+  { key: "google_trends_score",          label: "Google Trends",      weight: 0.07, format: "score100" },
   { key: "spotify_follower_growth_rate", label: "Listener Growth",    weight: 0.06, format: "pct"      },
+  { key: "scene_geography",              label: "International Appeal",weight: 0.03, format: "score100" },
   { key: "label_score",                  label: "Label Trajectory",   weight: 0.05, format: "score100" },
-  { key: "youtube_subscribers",          label: "YT Subscribers",     weight: 0.04, format: "count"    },
+  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",  weight: 0.05, format: "count"    },
+  { key: "youtube_subscribers",          label: "YT Subscribers",     weight: 0.03, format: "count"    },
   { key: "tiktok_post_count",            label: "TikTok Posts",       weight: 0.03, format: "posts"    },
   { key: "spotify_playlist_placements",  label: "Releases",           weight: 0.03, format: "number"   },
   { key: "wikipedia_pageviews",          label: "Wikipedia Views",    weight: 0.02, format: "count"    },
@@ -739,15 +740,16 @@ const DATA_SOURCES = [
 ];
 
 const METRIC_DETAILS = [
-  { key: "live_demand_score",            label: "Live Booking",        weight: 0.18, color: "#FF5C00", why: "Live booking demand, blended from two sources so it isn't single-sourced: Resident Advisor (venue-capacity tier, attendance, geographic spread) plus Songkick tour density. RA under-logs US/commercial/festival acts, so where its coverage is structurally thin the tour signal leads — acts aren't scored as low-demand just because RA can't see their shows. Co-leads the index, because this is a booking index, not a streaming chart." },
-  { key: "manual_scene_score",           label: "Scene Score",         weight: 0.18, color: "#8b5cf6", why: "An editorial layer for what algorithms miss — Boiler Room, Berghain/fabric bookings, festival closing slots, press covers. Scored against a published, transparent rubric (below). Also a two-sided credibility multiplier: it lifts genuine scene standing and scales down an act with near-zero credibility, so neither a streaming-pop crossover tops the index nor a revered DJ's-DJ gets buried by reach (see the note under the rubric)." },
-  { key: "beatport_score",               label: "Beatport Chart",      weight: 0.15, color: "#a8e00f", why: "Position across genre Top 100 charts. The DJ retail store, so charting signals credibility with the core scene rather than the mainstream." },
-  { key: "tl_support_score",             label: "DJ Support (1001TL)", weight: 0.10, color: "#00b8d4", why: "Where the artist's tracks land on 1001Tracklists' weekly chart of what DJs actually PLAY in their sets. The hardest signal to game — tastemakers spinning your music, not sales or streams." },
-  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",   weight: 0.08, color: "#1DB954", why: "Active fanbase reach, read from the live Spotify session. A supporting signal, demoted hard — raw streaming is the weakest predictor of who actually fills rooms, so it informs the ranking without driving it." },
-  { key: "google_trends_score",          label: "Google Trends",       weight: 0.08, color: "#4285F4", why: "Search interest normalized to the artist's own peak. Rising search frequently precedes booking-fee increases." },
+  { key: "live_demand_score",            label: "Live Booking",        weight: 0.21, color: "#FF5C00", why: "Live booking demand, blended from two sources so it isn't single-sourced: Resident Advisor (venue-capacity tier, attendance, geographic spread) plus Songkick tour density. RA under-logs US/commercial/festival acts, so where its coverage is structurally thin the tour signal leads — acts aren't scored as low-demand just because RA can't see their shows. Leads the index, because this is a booking index, not a streaming chart." },
+  { key: "manual_scene_score",           label: "Scene Score",         weight: 0.20, color: "#8b5cf6", why: "An editorial layer for what algorithms miss — Boiler Room, Berghain/fabric bookings, festival closing slots, press covers. Scored against a published, transparent rubric (below). Also a two-sided credibility multiplier: it lifts genuine scene standing and scales down an act with near-zero credibility, so neither a streaming-pop crossover tops the index nor a revered DJ's-DJ gets buried by reach (see the note under the rubric)." },
+  { key: "beatport_score",               label: "Beatport Chart",      weight: 0.12, color: "#a8e00f", why: "Position across genre Top 100 charts — the DJ retail store, so charting signals credibility with the core scene rather than the mainstream. A producer/track-sales signal, so weighted below live demand: it shows who's releasing strong records, not who's filling rooms." },
+  { key: "tl_support_score",             label: "DJ Support (1001TL)", weight: 0.10, color: "#00b8d4", why: "Where the artist's tracks land on 1001Tracklists' weekly chart of what DJs actually PLAY in their sets. The hardest signal to game — tastemakers spinning your music, not sales or streams. It's a single-week sample, so an act not on this week's chart is treated as unmeasured (its weight redistributes), never scored as zero support." },
+  { key: "google_trends_score",          label: "Google Trends",       weight: 0.07, color: "#4285F4", why: "Search interest normalized to the artist's own peak. Rising search frequently precedes booking-fee increases." },
   { key: "spotify_follower_growth_rate", label: "Listener Growth",     weight: 0.06, color: "#C8F750", why: "Rate of change in audience — acceleration often predicts demand before size does. Weighted modestly while its coverage builds." },
+  { key: "scene_geography",              label: "International Appeal", weight: 0.03, color: "#4fd6e8", why: "Share of an artist's listeners that sit in the core electronic-music credibility markets (Ibiza/Spain, Berlin, Amsterdam, the UK, Italy, France…). Distinguishes a true international touring act from one whose audience is concentrated in a single home market. Weighted lightly so it nudges rather than dominates, and an act not yet measured is treated as unmeasured rather than scored as zero appeal." },
   { key: "label_score",                  label: "Label Trajectory",    weight: 0.05, color: "#8b5cf6", why: "Tier and trajectory of the labels an artist releases on (Drumcode/Kompakt/Defected…) — credibility, and whether they're moving onto bigger homes." },
-  { key: "youtube_subscribers",          label: "YouTube Subscribers", weight: 0.04, color: "#FF0000", why: "A proxy for dedicated fanbase depth. YouTube audiences tend to convert to ticket buyers at a higher rate." },
+  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",   weight: 0.05, color: "#1DB954", why: "Active fanbase reach, read from the live Spotify session. A supporting signal, demoted hard — raw streaming is the weakest predictor of who actually fills rooms, so it informs the ranking without driving it." },
+  { key: "youtube_subscribers",          label: "YouTube Subscribers", weight: 0.03, color: "#FF0000", why: "A proxy for dedicated fanbase depth. YouTube audiences tend to convert to ticket buyers at a higher rate." },
   { key: "tiktok_post_count",            label: "TikTok Posts",        weight: 0.03, color: "#E9E7DF", why: "Posts using the artist's hashtag — grassroots cultural spread, often an early breakout indicator. Kept at a deliberately low weight: hashtag volume is the easiest signal to inflate, so it informs without driving. A less-gameable follower-growth metric is on the roadmap to replace it once coverage exists." },
   { key: "spotify_playlist_placements",  label: "Releases / Catalog",  weight: 0.03, color: "#1DB954", why: "Depth and recency of catalog. Active release schedules score higher than a single back-catalog hit." },
   { key: "wikipedia_pageviews",          label: "Wikipedia Views",     weight: 0.02, color: "#9aa0a6", why: "Trailing 30-day article pageviews. A clean, independent measure of broad public interest." },
@@ -2600,23 +2602,33 @@ export default function App() {
             key={key}
             className={`sort-btn ${genreFilter === key ? "sort-btn--active" : ""}`}
             onClick={() => setGenreFilter(key)}
-            title={key === "techno" ? "Techno-leaning & crossover acts on the house circuit (Beatport-derived) — not a comprehensive techno chart" : key === "house" ? "House, tech house & crossover acts" : "The full index"}
+            title={key === "techno" ? "Techno-leaning & crossover acts — plus the pure-techno acts pulled from the house-anchored main ranking" : key === "house" ? "House, tech house & crossover acts" : "House-anchored main ranking — pure-techno acts live under the Techno filter"}
           >
             {label}
           </button>
         ))}
       </div>
+      {genreFilter === "all" && (
+        <div className="sort-label" style={{ padding: "0 0 8px", fontSize: 12, color: "#75767d" }}>
+          House-anchored ranking · pure-techno acts (Charlotte de Witte, Adam Beyer, Amelie Lens…) are kept in the database under the <strong style={{ color: "#b388ff" }}>Techno</strong> filter, not the main list.
+        </div>
+      )}
       {genreFilter !== "all" && (
         <div className="sort-label" style={{ padding: "0 0 8px", fontSize: 12, color: "#75767d" }}>
-          {visible.length} {genreFilter}-leaning act{visible.length !== 1 ? "s" : ""} · genre from Beatport charts + label, never adjudicated{genreFilter === "house" ? " · includes tech house & melodic crossover" : " · the techno acts on the circuit, not a comprehensive techno chart"}
+          {visible.length} {genreFilter}-leaning act{visible.length !== 1 ? "s" : ""} · genre from Beatport charts + label, never adjudicated{genreFilter === "house" ? " · includes tech house & melodic crossover" : " · includes the pure-techno acts removed from the main ranking"}
         </div>
       )}
 
       <main className="rankings-list">
         {loading && <div className="state-msg"><div className="spinner" />Loading rankings…</div>}
         {error   && <div className="state-msg state-msg--error">⚠ {error}</div>}
-        {!loading && !error && visible.map(dj => {
-          const displayRank = cohortMode ? dj.cohort_rank : dj.rank;
+        {!loading && !error && visible.map((dj, i) => {
+          // Main/house view is a house-anchored ranking with pure-techno removed, so
+          // it's renumbered 1..N (no gaps, and consistent with the uncertainty bands,
+          // which are already computed relative to this filtered list). Cohort mode
+          // uses cohort_rank; a non-score sort keeps the global rank (it's a re-sort,
+          // not a ranking).
+          const displayRank = cohortMode ? dj.cohort_rank : (showIntervals ? i + 1 : dj.rank);
           const interval = showIntervals && Number.isFinite(dj.rank_pm) && dj.rank_pm >= 2
             ? { lo: dj.rank_lo, hi: dj.rank_hi, pm: dj.rank_pm } : null;
           return (

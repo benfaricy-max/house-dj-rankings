@@ -217,16 +217,42 @@ export function genreLean(dj) {
   return leanFromLabel(dj?.label_best);
 }
 
-// Filter predicate for a house-anchored index. House is the broad anchor: house +
-// the melodic "crossover" middle + unclassified acts. Techno is precise: only the
-// acts whose Beatport evidence is genuinely techno — so a promoter filtering Techno
-// gets the techno acts, not melodic-house acts that merely chart in the combined
-// "Melodic House & Techno" bucket.
+// PURE techno — editorial. This is a HOUSE-anchored index ("House DJ Rankings"),
+// so acts who are genuinely pure techno with no house overlap don't belong in the
+// main ranking; they stay in the database and surface under the Techno filter.
+// This is deliberately NARROWER than genreLean === "techno": that bucket sweeps in
+// melodic/Afterlife acts (Tale Of Us, Anyma, Adriatique, Mind Against, Recondite,
+// Massano, Colyn, KAS:ST…) who share festival/club stages WITH house — those keep
+// their place in the main ranking. Only the peak-time/driving/raw/hard/industrial
+// techno acts with no house crossover are listed here. A per-artist `pure_techno:
+// true` in the data also flags one without editing this set. Curated Jun 2026 —
+// add/remove names as the call gets refined.
+const PURE_TECHNO = new Set([
+  "Charlotte de Witte", "Adam Beyer", "Amelie Lens", "Sven Väth", "Surgeon",
+  "Sam Paganini", "Slam", "DJ Rush", "Planetary Assault Systems", "Len Faki",
+  "Answer Code Request", "Jay Lumen", "999999999", "Wehbba", "Luigi Madonna",
+  "Harvey McKay", "Spektre", "Dense & Pika", "Chelina Manuhutu",
+  "Township Rebellion", "Alan Fitzpatrick", "Joseph Capriati",
+]);
+
+export function isPureTechno(dj) {
+  if (!dj) return false;
+  if (dj.pure_techno === true) return true;
+  if (dj.pure_techno === false) return false; // explicit editorial keep
+  return PURE_TECHNO.has(dj.name);
+}
+
+// Filter predicate for a house-anchored index. The default ("all") is the
+// house-anchored main ranking: everything EXCEPT pure-techno outliers. House is
+// the broad anchor: house + the melodic "crossover" middle + unclassified acts.
+// Techno is the home for the genuinely-techno acts — INCLUDING the pure-techno
+// names removed from the main view, so they're never lost, just relocated.
 export function matchesGenre(dj, filter) {
+  if (filter === "techno") return genreLean(dj) === "techno" || isPureTechno(dj);
+  if (isPureTechno(dj)) return false; // pure techno is excluded from "all" and "house"
   if (filter === "all") return true;
   const lean = genreLean(dj);
   if (filter === "house") return lean === "house" || lean === "crossover" || lean === null;
-  if (filter === "techno") return lean === "techno";
   return true;
 }
 
