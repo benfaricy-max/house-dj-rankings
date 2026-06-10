@@ -10,6 +10,7 @@ import { InfoTip, MomentumTip, MOMENTUM_BLEND, artistForm, FORM_META, FormTip, g
 import { rankWithinCohort, withRankIntervals, deriveRegions, inRegion, isRising, PERSONAS } from "./cohort";
 import PitchPage from "./Pitch";   // read-only private brief route (also pulled by ValueGap)
 import HeroHooks from "./HeroHooks";   // rotating audience call-out at top of front page
+import DayInLifePage from "./DayInLife";   // "A Booking Day" — day-in-the-life + direct answers
 const ClubsPage   = lazy(() => import("./ClubsPage"));                                  // splits ~750 lines of club lore/images out of the main chunk
 const ClubProfile = lazy(() => import("./ClubsPage").then(m => ({ default: m.ClubProfile })));
 const BlogPage    = lazy(() => import("./BlogPage"));                                   // editor-only tab — rarely loaded
@@ -2519,6 +2520,7 @@ export default function App() {
           <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>
           <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
           <button className={`top-tab ${activeTab === "booking" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking")}>Booking Intelligence</button>
+          <button className={`top-tab ${activeTab === "booking-day" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking-day")}>A Booking Day</button>
           <button className={`top-tab ${activeTab === "clubs" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("clubs")}>Club Index</button>
           <button className={`top-tab ${activeTab === "reports" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("reports")}>Reports</button>
           {editor && <button className={`top-tab ${activeTab === "journal" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("journal")}>Journal <span className="tab-private">·private</span></button>}
@@ -2533,6 +2535,7 @@ export default function App() {
 
       {activeTab === "pro" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ProPage rankings={rankings} /></Suspense>}
       {activeTab === "booking"       && <BookingIntelPage rankings={rankings} />}
+      {activeTab === "booking-day"   && <DayInLifePage onCta={(tab) => { setActiveTab(tab); window.scrollTo({ top: 0 }); }} />}
       {activeTab === "clubs"         && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ClubsPage /></Suspense>}
       {activeTab === "reports"       && <ReportsPage />}
       {activeTab === "journal"       && editor && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><BlogPage /></Suspense>}
