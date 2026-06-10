@@ -54,6 +54,42 @@
 .dil-a { font-size: 15px; line-height: 1.7; color: var(--text); margin: 0; }
 .dil-a strong { color: var(--text-h); font-weight: 600; }
 
+/* Level switcher — same product at three buyer altitudes */
+.dil-levels { margin-bottom: 56px; }
+.dil-levels-title { font-size: 26px; font-weight: 700; color: var(--text-h); margin: 0 0 8px; text-align: center; }
+.dil-levels-sub { font-size: 15px; color: var(--text); margin: 0 0 22px; text-align: center; }
+.dil-level-nav { display: flex; gap: 10px; margin-bottom: 22px; }
+.dil-level-tab {
+  flex: 1; display: flex; flex-direction: column; gap: 4px; text-align: left;
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 14px 16px; cursor: pointer; transition: border-color 0.12s, background 0.12s;
+}
+.dil-level-tab:hover { border-color: var(--accent-border); }
+.dil-level-tab--on { border-color: var(--accent); background: var(--accent-bg); }
+.dil-level-label { font-size: 14px; font-weight: 700; color: var(--text-h); }
+.dil-level-blurb { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.02em; }
+.dil-level-tab--on .dil-level-blurb { color: var(--accent); }
+.dil-level-body {
+  background: var(--card); border: 1px solid var(--border);
+  border-left: 3px solid var(--accent); border-radius: 14px; padding: 26px 30px;
+}
+.dil-level-body p { font-size: 16px; line-height: 1.7; color: var(--text-h); margin: 0 0 16px; }
+.dil-level-body p:last-child { margin-bottom: 0; }
+.dil-level-body ul { margin: 0 0 16px; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.dil-level-body li { font-size: 15px; line-height: 1.6; color: var(--text); padding-left: 18px; position: relative; }
+.dil-level-body li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 600; }
+.dil-level-body strong { color: var(--text-h); font-weight: 600; }
+.dil-level-body em { color: var(--text-h); font-style: italic; }
+.dil-level-body code {
+  font-family: var(--mono); font-size: 13px; background: var(--bg);
+  border: 1px solid var(--border); border-radius: 5px; padding: 1px 6px; color: var(--accent);
+}
+
+@media (max-width: 560px) {
+  .dil-level-nav { flex-direction: column; }
+  .dil-level-body { padding: 20px 18px; }
+}
+
 /* Closing CTA */
 .dil-cta-wrap {
   text-align: center; background: var(--accent-bg);
