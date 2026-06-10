@@ -9,6 +9,7 @@ import { useWatchlist, useMomentumAlerts } from "./watchlist";
 import { InfoTip, MomentumTip, MOMENTUM_BLEND, artistForm, FORM_META, FormTip, genreLean, GENRE_META, matchesGenre } from "./methodology";
 import { rankWithinCohort, withRankIntervals, deriveRegions, inRegion, isRising, PERSONAS } from "./cohort";
 import PitchPage from "./Pitch";   // read-only private brief route (also pulled by ValueGap)
+import HeroHooks from "./HeroHooks";   // rotating audience call-out at top of front page
 const ClubsPage   = lazy(() => import("./ClubsPage"));                                  // splits ~750 lines of club lore/images out of the main chunk
 const ClubProfile = lazy(() => import("./ClubsPage").then(m => ({ default: m.ClubProfile })));
 const BlogPage    = lazy(() => import("./BlogPage"));                                   // editor-only tab — rarely loaded
@@ -2493,6 +2494,7 @@ export default function App() {
         <p className="header-scope" style={{ margin: "6px auto 0", maxWidth: 560, fontSize: 13, color: "#a9a8a2", lineHeight: 1.5 }}>
           House, tech house &amp; the techno that shares its stages — ranked by booking demand, not hype.
         </p>
+        <HeroHooks onSelect={(tab) => { setActiveTab(tab); window.scrollTo({ top: 0 }); }} />
         <div className="header-platforms">
           <span className="plat-pill"><span className="plat-dot" style={{ background: "#1DB954" }} />Spotify</span>
           <span className="plat-pill"><span className="plat-dot" style={{ background: "#a8e00f" }} />Beatport</span>
