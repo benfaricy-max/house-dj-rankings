@@ -70,7 +70,7 @@ ra_country_list, ra_top_regions, ra_top_venues → composite ra_score 0-100.
 Stale threshold: 14 days. Runs in CI (plain HTTP, no puppeteer). NOTE: ra_score is
 NOT weighted directly anymore — it feeds `live_demand_score` (see below).
 
-## Live-demand blend (RA not single-sourced) — `live_demand_score`, weight 0.17 (LEADS)
+## Live-demand blend (RA not single-sourced) — `live_demand_score`, weight 0.21 (LEADS)
 `backend/computeLiveDemand.js` (run in `generateStatic.js` BEFORE scoreArtists).
 RA's event coverage skews underground/Europe and UNDER-logs US/commercial/festival
 acts — so RA alone scores a real touring act as low-demand just because RA can't see
@@ -131,13 +131,19 @@ API (`TL_API_BASE`, default http://localhost:3001; endpoint /api/1001tracklists/
 Writes `tl_support_score` 0-100 (chart position 70% + track breadth 30%),
 `tl_chart_best`/`tl_chart_tracks`/`tl_chart_titles`, and cumulative `tl_weeks_charted`
 from a committed weekly archive (`backend/tracklists-archive.json`, ~16 weeks).
-Weight 0.09 in score.js. **Local-only by default** (API not reachable in CI → the
-CI step no-ops gracefully; tl_* persists via generateStatic's `...prev` spread).
+Weight 0.10 in score.js, and it SELF-HEALS ON ABSENCE (v4): it's a single-WEEK
+chart, so 250/330 acts read 0 (not on this week's chart ≠ no DJ support). A 0 is
+treated as unmeasured — its weight redistributes over the act's present signals
+(`SELF_HEAL_ABSENT` in score.js) instead of scoring a structural 0 and docking
+coverage. This was burying live-headliner DJ's-DJs who don't chart a track every
+week (Jamie Jones, Capriati, the Martinez Brothers). **Local-only by default**
+(API not reachable in CI → the CI step no-ops gracefully; tl_* persists via
+generateStatic's `...prev` spread).
 Set repo var `TL_API_BASE` to a hosted URL to run it in CI. UI: "DJ Support · 1001TL"
 signal on artist profiles + How It Works methodology.
 
 ## Scene Score (editorial credibility layer + credibility floor)
-`manual_scene_score` 0-100, weight **0.18** (co-leads with live_demand). Published rubric in How It Works
+`manual_scene_score` 0-100, weight **0.20** (co-leads with live_demand). Published rubric in How It Works
 (SCENE_RUBRIC in App.jsx): Boiler Room/HÖR +20, Berghain/fabric/DC10 +20, festival
 closing +15, respected label +15, RA/Mixmag/DJ Mag cover +10, Ibiza residency +10,
 Essential Mix +10. Explicit criteria = credible + hard to game. Most of the roster
@@ -164,27 +170,44 @@ resumable (`geo_intercept_at`). **Two axes, deliberately separate:** booking foo
 where they're heard). An act can be Euro-booked but US-listened; that gap is the point.
 UI: the artist-profile "Scene Geography" strip (`sceneGeography` in methodology.jsx)
 shows both — audience axis falls back to Google Trends countries until Spotify cities
-populate. **Not yet weighted in score.js** — surfaced for review first ("see before
-weight"); weight ~.05-.08 once real city data is validated against the labeled set.
+populate. **Weighted 0.03 in score.js (v4)** — a deliberately small nudge: enough to
+demote a single-market act (Mau P) without over-punishing non-European acts the
+labelled set rates (Mochakk, Beltran). SELF-HEALS ON ABSENCE (same `SELF_HEAL_ABSENT`
+mechanic as 1001TL): the 67/330 acts without a Spotify-cities pull are treated as
+unmeasured (weight redistributes) rather than scored as zero international appeal.
 
-## Composite weights (score.js, sum=1.00)
-live_demand (RA+tour blend) .18 (CO-LEADS), scene .18 (CO-LEADS), beatport .15,
-tl_support (1001TL) .10, listeners .08, trends .08, growth .06, label .05, yt_subs .04,
-tiktok .03, releases .03, wikipedia .02. Then the **two-sided credibility multiplier**
-scales the final score (see Scene Score section). RETIRED (0): track_pop
-(Spotify-blocked), yt_views_weekly (delta metric, 0% coverage), beatport_hype (one
-Beatport metric in primary rankings — Hype still collected for emerging views).
-NORMALISATION (v3): heavy-tailed reach signals (listeners/yt/tiktok/releases/wiki) are
-log-compressed and every signal is winsorised to its 1st–99th-percentile band before
-min-max — so one streaming giant no longer compresses the field, and scores are stable
-snapshot-to-snapshot. Mirrored in the frontend (computeRanges/normalize + cohort.js).
-Self-healing: empty-field signals redistribute weight per-artist over signals present.
+## Composite weights (score.js, sum=1.00) — v4
+live_demand (RA+tour blend) .21 (LEADS), scene .20 (CO-LEADS), beatport .12,
+tl_support (1001TL) .10, trends .07, growth .06, scene_geography .03, label .05,
+listeners .05, yt_subs .03, tiktok .03, releases .03, wikipedia .02. Then the
+**two-sided credibility multiplier** scales the final score (see Scene Score section).
+RETIRED (0): track_pop (Spotify-blocked), yt_views_weekly (delta metric, 0% coverage),
+beatport_hype (one Beatport metric in primary rankings — Hype still collected for
+emerging views). NORMALISATION (v3): heavy-tailed reach signals
+(listeners/yt/tiktok/releases/wiki) are log-compressed and every signal is winsorised
+to its 1st–99th-percentile band before min-max — so one streaming giant no longer
+compresses the field, and scores are stable snapshot-to-snapshot. Mirrored in the
+frontend (computeRanges/normalize + cohort.js). Self-healing has TWO forms: (a)
+empty-FIELD signals redistribute weight field-wide; (b) `SELF_HEAL_ABSENT` signals
+(tl_support, scene_geography) redistribute PER-ARTIST when absent for that act — a
+per-artist denominator, so a structurally-sparse signal's 0 never scores as a real low.
 **Jun 2026 reweight v3 (post-conditioning):** once log+winsorize made reach actually
 discriminate, its effective influence jumped, so reach was pulled DOWN (listeners
-.12→.08, yt/tiktok/releases trimmed) and that weight moved to scene (.14→.18, now
-co-leading), live_demand (→.18), beatport (→.15), 1001TL (→.10). The credibility
-multiplier went two-sided so credible/low-reach acts aren't buried (Hugel still ~#127).
-Keep score.js + frontend METRICS / METRIC_DETAILS + the How It Works note in sync.
+.12→.08, yt/tiktok/releases trimmed) and that weight moved to scene (.14→.18),
+live_demand (→.18), beatport (→.15), 1001TL (→.10). The credibility multiplier went
+two-sided so credible/low-reach acts aren't buried (Hugel still ~#127).
+**Jun 2026 reweight v4 (sniff-test pass):** a manual review of the labelled set found
+two mechanical biases. (1) beatport (a PRODUCER/track-sales signal) over-ranked chart
+producers while live headliners sank → beatport .15→.12, weight to live_demand (→.21,
+the clear lead) + scene (→.20). (2) scene_geography turned ON at .03 (reach trimmed to
+fund it: listeners .08→.05, yt .04→.03, trends .08→.07). (3) tl_support + scene_geography
+now self-heal on absence (above) — fixed a coverage-as-zero bug burying live-only
+DJ's-DJs. Net vs the labelled set: Adam Beyer #4→#8, Green Velvet →#14, Adriatique →#29,
+Tiga →#42 (down); Jamie Jones →#23, Capriati →#70, Martinez Brothers #220→#91 (up, the
+last also an RA-slug data fix: `themartinezbros`). Tuned vector scored ~82% on intent;
+the residual misses (Township Rebellion rises on RA's underground-Euro bias, Mochakk
+falls because his strengths are beatport+reach) are genuine model-vs-gut disagreements,
+not bugs. Keep score.js + frontend METRICS / METRIC_DETAILS + the How It Works note in sync.
 
 ## Predictive-validation history (the "our calls, scored" backtest data)
 Three change-compressed time-series accrued in `generateStatic.js` (after rank/listeners

@@ -20,6 +20,19 @@ function prep(metric, value) {
   return HEAVY_TAILED.has(metric) ? Math.log10(1 + Math.max(0, v)) : v;
 }
 
+// Self-healing-on-absence signals (v4). These two are STRUCTURALLY SPARSE: an
+// act reads 0/absent not because demand is zero but because the signal didn't
+// sample it. 1001TL is a single-WEEK chart (250/330 acts read 0 — not on this
+// week's chart ≠ no DJ support), and scene_geography needs a Spotify-cities pull
+// the Interceptor only runs locally (67/330 unmeasured). Scoring those 0s as a
+// real low both buried the act on the signal's weight AND cut its coverage — a
+// coverage-as-zero bug that hit exactly the live-headliner DJ's-DJs the index
+// claims to favour (Jamie Jones, Capriati, the Martinez Brothers all read tl=0).
+// So when ABSENT, the weight redistributes per-artist over the signals present
+// (excluded from the denominator) instead of scoring 0. A PRESENT value still
+// scores normally and can pull an act DOWN — e.g. Mau P's real geo of 22.
+const SELF_HEAL_ABSENT = new Set(["tl_support_score", "scene_geography"]);
+
 // Percentile over an ascending-sorted array (nearest-rank).
 function percentile(sortedAsc, p) {
   if (!sortedAsc.length) return 0;
@@ -40,7 +53,7 @@ function normalize(value, min, max) {
   return ((clamped - min) / (max - min)) * 100;
 }
 
-function scoreArtists(artists) {
+function scoreArtists(artists, weightOverride) {
   const metrics = [
     "spotify_followers",
     "spotify_monthly_listeners",
@@ -56,6 +69,7 @@ function scoreArtists(artists) {
     "tl_support_score",
     "wikipedia_pageviews",
     "manual_scene_score",
+    "scene_geography",
     "live_demand_score",
     "label_score",
   ];
@@ -83,24 +97,33 @@ function scoreArtists(artists) {
 
   // Weights sum to 1.00. Self-healing still applies: empty signals' weight
   // redistributes per-artist over the signals they do have.
-  // Jun 2026 reweight (v3, post-conditioning): with log+winsorize normalisation
-  // (above), reach signals finally DISCRIMINATE instead of compressing flat — so
-  // their effective influence jumped. To keep this a BOOKING index (live demand +
-  // scene credibility lead, not streaming reach), reach is pulled DOWN: listeners
-  // 0.12→0.08, yt/tiktok/releases trimmed, and that weight moved to scene (0.14→
-  // 0.18, now co-leading) + live_demand (→0.18) + beatport (→0.15) + 1001TL (→0.10).
-  // Paired with the TWO-SIDED credibility multiplier below (rewards high scene,
-  // penalises low). Keep in sync with frontend METRICS / METRIC_DETAILS + CLAUDE.md.
+  // Jun 2026 reweight (v4): a sniff-test pass found two mechanical biases, tuned
+  // against the labelled calls. (1) beatport (a PRODUCER/track-sales signal) sat at
+  // 0.15 — the 3rd-heaviest weight — and over-ranked chart producers (Kolter, Adam
+  // Port, Green Velvet) while live headliners whose value is curation/performance,
+  // not track sales, sank (Jamie Jones beatport 29, Capriati none). For a BOOKING
+  // index, who fills rooms must outweigh who charts tracks: beatport 0.15→0.12, and
+  // weight moved into live_demand (0.18→0.21) + scene (0.18→0.20, the index's lead).
+  // (2) scene_geography (international appeal — share of listeners in core EM
+  // credibility markets) was built but left unweighted; turned on at a deliberately
+  // SMALL 0.03 (SELF_HEAL_ABSENT, see above) — enough to nudge a single-market act
+  // (Mau P) down without over-punishing non-European acts the labelled set rates
+  // (Mochakk, Beltran). Funded by trimming reach (listeners 0.08→0.05, yt 0.04→0.03,
+  // trends 0.08→0.07). Also: tl_support now self-heals on absence (weekly sample,
+  // 250/330 read 0). Paired with the v3 TWO-SIDED credibility multiplier below. The
+  // tuner (backend/_tune_v4 in history) scored this vector ~82% on intent. Keep in
+  // sync with frontend METRICS / METRIC_DETAILS + CLAUDE.md.
   const weights = {
-    live_demand_score:            0.18,  // LEADS — live booking demand: RA (venue tier/attendance/geo) blended with Songkick tour density
-    manual_scene_score:           0.18,  // CO-LEADS — editorial scene credibility (rubric in How It Works)
-    beatport_score:               0.15,  // core scene / chart credibility (one Beatport metric)
-    tl_support_score:             0.10,  // DJ SUPPORT: 1001Tracklists weekly chart — what DJs actually play (hardest to game)
-    spotify_monthly_listeners:    0.08,  // reach — demoted hard: with conditioning, raw streams over-discriminate
-    google_trends_score:          0.08,
+    live_demand_score:            0.21,  // LEADS — live booking demand: RA (venue tier/attendance/geo) blended with Songkick tour density
+    manual_scene_score:           0.20,  // CO-LEADS — editorial scene credibility (rubric in How It Works)
+    beatport_score:               0.12,  // chart credibility — demoted v4: a producer signal, not a booking one
+    tl_support_score:             0.10,  // DJ SUPPORT: 1001Tracklists weekly chart — what DJs play. SELF-HEALS on absence (weekly sample)
+    google_trends_score:          0.07,
     spotify_follower_growth_rate: 0.06,  // growth (acceleration), thin coverage
+    scene_geography:              0.03,  // v4: international appeal — share of listeners in core EM markets. SELF-HEALS on absence (local-only pull)
     label_score:                  0.05,  // label tier (Drumcode/Kompakt/Defected…) — credibility & trajectory
-    youtube_subscribers:          0.04,  // reach proxy
+    spotify_monthly_listeners:    0.05,  // reach — demoted hard: with conditioning, raw streams over-discriminate
+    youtube_subscribers:          0.03,  // reach proxy
     tiktok_post_count:            0.03,  // social spread (hashtag post volume). Kept at LOW weight: it's the gameable one, but it's the only TikTok signal with real coverage (~75%). Roadmap: swap to tiktok_follower_growth_rate once a follower scraper accrues >50% coverage (growth is less gameable but is 0% covered today).
     spotify_playlist_placements:  0.03,  // catalog depth / release cadence
     wikipedia_pageviews:          0.02,  // public interest
@@ -108,6 +131,7 @@ function scoreArtists(artists) {
     youtube_views_weekly:         0.00,  // REMOVED (delta metric, 0% coverage)
     beatport_hype_score:          0.00,  // REMOVED from primary rankings (one Beatport metric); still collected for emerging views
   };
+  if (weightOverride) Object.assign(weights, weightOverride); // for the weight tuner; production passes nothing
   // Live weights re-normalize below, so the retired track-popularity weight
   // (always empty) is excluded automatically and scores are unaffected.
 
@@ -123,21 +147,29 @@ function scoreArtists(artists) {
 
   return artists
     .map(artist => {
-      let score = 0;
-      // Coverage accounting: how much of the (renormalized) weight is actually
-      // backed by real data for THIS artist. Without this, the self-healing
-      // reweight silently scores each artist on a different weight vector — a
-      // sparse act's score concentrates on its few present signals (a missing
-      // signal is treated as "doesn't count against you," not zero), so thin-data
-      // acts can float up and rank beside fully-covered acts as if comparable.
-      let coverageWeight = 0;   // sum of renormalized weight on present signals (0–1)
+      // Per-artist scoring with a per-artist denominator. SELF_HEAL_ABSENT signals
+      // (tl_support, scene_geography) that are ABSENT for this act are dropped from
+      // BOTH the numerator and the denominator — their weight redistributes over the
+      // act's present signals instead of scoring a structural 0. Every OTHER signal
+      // (incl. a genuine reach low) still counts and still dilutes, exactly as before;
+      // for a fully-sampled act the denominator equals liveWeightSum (no change).
+      let rawScore = 0;         // Σ norm·weight over signals that COUNT for this act
+      let denom = 0;            // Σ weight over signals that count for this act
+      // Coverage accounting: how much of the COUNTED weight is actually backed by
+      // real data for THIS artist (self-healed-away signals are not held against it).
+      let coverageWeight = 0;
       let signalsPresent = 0;
-      let signalsTotal = 0;     // weighted signals only (excludes retired 0-weight)
+      let signalsTotal = 0;     // weighted, counted signals (excludes retired + self-healed-absent)
       for (const metric of liveMetrics) {
         const carriesWeight = weights[metric] > 0;
-        if (carriesWeight) signalsTotal += 1;
-        if (carriesWeight && Number.isFinite(artist[metric]) && artist[metric] > 0) {
-          coverageWeight += weights[metric] / liveWeightSum;
+        if (!carriesWeight) continue;
+        const present = Number.isFinite(artist[metric]) && artist[metric] > 0;
+        // Sparse signal absent → redistribute (don't score 0, don't dock coverage).
+        if (SELF_HEAL_ABSENT.has(metric) && !present) continue;
+        signalsTotal += 1;
+        denom += weights[metric];
+        if (present) {
+          coverageWeight += weights[metric];
           signalsPresent += 1;
         }
         const norm = normalize(
@@ -145,8 +177,11 @@ function scoreArtists(artists) {
           ranges[metric].min,
           ranges[metric].max
         );
-        score += norm * (weights[metric] / liveWeightSum); // renormalized to 1.0
+        rawScore += norm * weights[metric];
       }
+      const liveDenom = denom > 0 ? denom : 1;
+      const score = rawScore / liveDenom;          // renormalized per-artist to 1.0
+      const coverageFrac = coverageWeight / liveDenom; // 0–1 of counted weight backed by data
       // Two-sided credibility multiplier. A booking index for a credibility-driven
       // scene should do BOTH: penalise an act with near-zero scene standing AND
       // reward genuine scene credibility — otherwise (now that conditioning makes
@@ -163,8 +198,8 @@ function scoreArtists(artists) {
       // Acts whose present signals back < 75% of the weight are scaled down — at
       // most a 20% cut at 0% coverage, tapering linearly to no penalty at >= 75%.
       // coverage_score (0–100) + signals_present are surfaced so the cut is legible.
-      const coverageScore = Math.round(coverageWeight * 100);
-      const coverageFactor = 0.80 + 0.20 * Math.min(coverageWeight / 0.75, 1);
+      const coverageScore = Math.round(coverageFrac * 100);
+      const coverageFactor = 0.80 + 0.20 * Math.min(coverageFrac / 0.75, 1);
 
       return {
         ...artist,
