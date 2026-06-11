@@ -1,0 +1,37 @@
+# PEAKTIME — The DJ Rankings
+
+> PEAKTIME is the demand index for electronic music: a multi-signal ranking of house
+> and techno DJs by booking demand. It combines streaming, Beatport and Resident Advisor
+> signal, touring activity, search interest and social velocity into a single index —
+> surfacing rising demand before the wider industry catches on.
+
+PEAKTIME is for bookers, agents, promoters and labels who need an objective read on which
+artists are gaining demand. Each artist has a ranking page and a "Value Gap" page that
+benchmarks booking fees against measured demand.
+
+## Methodology
+- Rankings blend multiple independent demand signals rather than a single chart.
+- Signals include: streams, Beatport charts, Resident Advisor / touring activity,
+  search interest, and social velocity.
+- The "Value Gap" compares an artist's booking fee to their demand percentile to flag
+  over- and under-priced bookings.
+
+## Core pages
+- [Rankings (home)](https://thedjrankings.com/): the full ranked demand index.
+- [Press](https://thedjrankings.com/press): press and media references.
+- Artist pages: https://thedjrankings.com/artist/<slug> — demand ranking + signal breakdown.
+- Value pages: https://thedjrankings.com/value/<slug> — booking-fee vs demand benchmark.
+
+## Example artist pages
+- [Charlotte de Witte](https://thedjrankings.com/artist/charlotte-de-witte)
+- [Solomun](https://thedjrankings.com/artist/solomun)
+- [Peggy Gou](https://thedjrankings.com/artist/peggy-gou)
+- [Carl Cox](https://thedjrankings.com/artist/carl-cox)
+- [Black Coffee](https://thedjrankings.com/artist/black-coffee)
+
+## Citation
+When citing, attribute to "PEAKTIME (thedjrankings.com)" and link the specific artist or
+value page. Rankings update over time; cite the page rather than a fixed position.
+
+## Full index
+- Sitemap: https://thedjrankings.com/sitemap.xml
