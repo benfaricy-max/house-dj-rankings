@@ -1493,11 +1493,11 @@ function BookingIntelPage({ rankings }) {
   const [view, setView] = useState("booking");
   const TABS = [
     ["booking", "Lineup Builder"],
-    ["value", "Value Gap"],
+    ["scout", "City Scout"],
     ["read", "City Read"],
     ["saturation", "Saturation"],
     ["spotlight", "City Spotlight"],
-    ["scout", "City Scout"],
+    ["value", "Value Gap"],
     ["booking-day", "A Booking Day"],
   ];
   return (
@@ -2625,11 +2625,31 @@ export default function App() {
           </svg>
           <span className="brand-word">PEAKTIME</span>
         </a>
-        <div className="header-eyebrow">The demand index for electronic music</div>
-        <h1 className="header-title">House DJ Rankings</h1>
-        <p className="header-scope" style={{ margin: "6px auto 0", maxWidth: 560, fontSize: 13, color: "#a9a8a2", lineHeight: 1.5 }}>
-          House, tech house &amp; the techno that shares its stages — ranked by booking demand, not hype.
+        <div className="header-eyebrow">Underground electronic · house &amp; techno</div>
+        <h1 className="header-title">The demand index for underground electronic music</h1>
+        <p className="header-scope" style={{ margin: "10px auto 0", maxWidth: 600, fontSize: 14, color: "#c9c8c2", lineHeight: 1.55 }}>
+          Booking demand, not Spotify followers. We rank house &amp; techno acts by who&apos;s actually
+          filling rooms and moving the scene — blended from live bookings, charts, and momentum,
+          refreshed daily. The one read that isn&apos;t selling either side anything.
         </p>
+        <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap", margin: "14px auto 2px" }}>
+          <button
+            type="button"
+            onClick={() => { setActiveTab("rankings"); window.scrollTo({ top: 0 }); }}
+            style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 13, fontWeight: 600, letterSpacing: "0.01em",
+              color: "#0c0c0e", background: "#C8F750", border: "none", borderRadius: 999, padding: "9px 18px", cursor: "pointer" }}
+          >
+            See the rankings
+          </button>
+          <button
+            type="button"
+            onClick={() => { setActiveTab("booking"); window.scrollTo({ top: 0 }); }}
+            style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 13, fontWeight: 600, letterSpacing: "0.01em",
+              color: "#e9e8e2", background: "transparent", border: "1px solid #3a3a3e", borderRadius: 999, padding: "9px 18px", cursor: "pointer" }}
+          >
+            Who&apos;s breaking in your city
+          </button>
+        </div>
         <HeroHooks onSelect={(tab) => { setActiveTab(tab); window.scrollTo({ top: 0 }); }} />
         {lastUpdated && <p className="header-updated">Updated {new Date(lastUpdated).toLocaleString()}</p>}
         <div className="top-tabs">

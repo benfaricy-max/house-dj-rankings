@@ -1,11 +1,12 @@
 /**
  * HeroHooks — a rotating call-out line at the top of the front page.
  *
- * One line, three audiences, each phrased as a specific personal call-out built
- * on the product's actual wedge (booking demand > reach; a neutral fee benchmark;
- * the Value Gap "you're underpriced" read). It cycles so a fan, a promoter, and an
- * artist each see themselves within a few seconds of landing — without three
- * competing headlines fighting for the same space.
+ * One line, three audiences, each phrased as a specific personal call-out re-aimed
+ * at the customers the index serves — promoters/festivals, agents/managers, and the
+ * scene. Positive-sum framing only: none of them say "pay less" or "they're
+ * overpriced" (the buy-side-squeeze line is radioactive and leaves the homepage).
+ * It cycles so each audience sees themselves within a few seconds of landing —
+ * without three competing headlines fighting for the same space.
  *
  * No new data, no dependency on App internals. Clicking the line takes that
  * audience to the tab that answers it, via the onSelect(tab) callback.
@@ -14,19 +15,19 @@ import { useEffect, useState } from "react";
 
 const HOOKS = [
   {
-    who: "Fans",
-    line: "Your guy or his? Spotify followers don't settle it — booking demand does.",
-    tab: "rankings",
-  },
-  {
     who: "Promoters",
-    line: "Is £15k fair or a fleece? Get the neutral fee benchmark before you sign.",
+    line: "Find who's breaking before they break the bank.",
     tab: "booking",
   },
   {
-    who: "Artists",
-    line: "Stop pitching a vibe. Send the demand data that proves you're underpriced.",
+    who: "Agents",
+    line: "Proof your act is in demand — before the conversation about fees.",
     tab: "booking",
+  },
+  {
+    who: "The scene",
+    line: "Who's actually hot right now. Daily.",
+    tab: "rankings",
   },
 ];
 
