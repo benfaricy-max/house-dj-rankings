@@ -1,0 +1,195 @@
+/* The PEAKTIME Index — monthly drop. Editorial-feeling layout on the
+   dark/acid-lime system. Reads like an artefact, not a dashboard. */
+.idx-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 8px 18px 64px;
+}
+
+.idx-masthead {
+  text-align: center;
+  padding: 28px 0 8px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 36px;
+}
+.idx-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.idx-month {
+  font-size: clamp(2rem, 6vw, 3.1rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-h);
+  margin: 8px 0 10px;
+  line-height: 1.02;
+}
+.idx-standfirst {
+  color: var(--text);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  max-width: 540px;
+  margin: 0 auto 24px;
+}
+
+.idx-section { margin-bottom: 40px; }
+.idx-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+.idx-h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-h);
+  margin: 0;
+}
+.idx-section-note { color: var(--muted); font-size: 0.78rem; }
+.idx-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+.idx-empty { color: var(--muted); font-size: 0.88rem; padding: 8px 0; }
+
+/* Headline */
+.idx-headline {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, var(--card)), var(--card));
+  border: 1px solid var(--accent-border);
+  border-radius: 16px;
+  padding: 24px 26px;
+}
+.idx-headline-title {
+  font-size: clamp(1.3rem, 4vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-h);
+  margin: 8px 0 0;
+  letter-spacing: -0.01em;
+}
+
+/* Movers */
+.idx-movers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.idx-col-label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.idx-col-label.is-up { color: var(--accent); }
+.idx-col-label.is-down { color: #f87171; }
+.idx-mover {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 7px;
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+.idx-mover:hover { border-color: var(--accent-border); }
+.idx-mover-delta { font-size: 0.78rem; font-weight: 800; font-variant-numeric: tabular-nums; min-width: 38px; }
+.idx-mover-delta.is-up { color: var(--accent); }
+.idx-mover-delta.is-down { color: #f87171; }
+.idx-mover-name { flex: 1; color: var(--text-h); font-size: 0.92rem; font-weight: 500; }
+.idx-mover-rank { color: var(--muted); font-size: 0.8rem; font-family: var(--mono); }
+
+/* Value Gap of the Month */
+.idx-signal {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+.idx-signal--strong-buy { background: var(--accent); color: #0c0c0e; }
+.idx-signal--buy { background: var(--accent-bg); color: var(--accent); border: 1px solid var(--accent-border); }
+.idx-value-card {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--accent-border);
+  border-radius: 16px;
+  padding: 22px 24px;
+  text-decoration: none;
+  transition: filter 0.15s ease;
+}
+.idx-value-card:hover { filter: brightness(1.06); }
+.idx-value-name { font-size: 1.5rem; font-weight: 800; color: var(--text-h); letter-spacing: -0.01em; }
+.idx-value-stat { display: flex; align-items: baseline; gap: 10px; margin: 10px 0; }
+.idx-value-pct { font-size: 2.2rem; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
+.idx-value-lbl { color: var(--text); font-size: 0.9rem; }
+.idx-value-fees {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  color: var(--text); font-size: 0.86rem;
+  padding: 12px 0; border-top: 1px solid var(--border);
+}
+.idx-value-fees strong { color: var(--text-h); }
+.idx-value-arrow { color: var(--accent); font-weight: 800; }
+.idx-value-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+.idx-tag {
+  font-size: 0.72rem; color: var(--text);
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 999px; padding: 3px 10px;
+}
+.idx-value-cta { color: var(--accent); font-weight: 700; font-size: 0.86rem; margin-top: 14px; }
+
+/* City in Focus */
+.idx-city-acts { display: flex; flex-wrap: wrap; gap: 8px; }
+.idx-city-act {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 8px 13px; text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+.idx-city-act:hover { border-color: var(--accent-border); }
+.idx-city-rank { color: var(--muted); font-size: 0.76rem; font-family: var(--mono); }
+.idx-city-name { color: var(--text-h); font-size: 0.9rem; font-weight: 500; }
+
+/* Capture block spacing */
+.idx-capture { margin: 48px 0; }
+
+/* Top 20 */
+.idx-top20 { list-style: none; margin: 0; padding: 0; }
+.idx-top20-row a {
+  display: flex; align-items: center; gap: 14px;
+  padding: 10px 8px; border-bottom: 1px solid var(--border);
+  text-decoration: none;
+}
+.idx-top20-row a:hover { background: var(--card); }
+.idx-top20-rank {
+  width: 26px; text-align: right;
+  color: var(--muted); font-family: var(--mono); font-size: 0.85rem; font-weight: 700;
+}
+.idx-top20-name { flex: 1; color: var(--text-h); font-size: 0.95rem; font-weight: 500; }
+.idx-top20-score { color: var(--accent); font-family: var(--mono); font-size: 0.85rem; font-weight: 700; }
+
+/* Footer / masthead */
+.idx-footer {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+.idx-footer a { color: var(--accent); text-decoration: none; }
+.idx-footer a:hover { text-decoration: underline; }
+.idx-footer-rule { margin-top: 10px; font-style: italic; }
+
+@media (max-width: 560px) {
+  .idx-movers-grid { grid-template-columns: 1fr; }
+}

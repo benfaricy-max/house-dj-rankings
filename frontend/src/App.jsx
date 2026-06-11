@@ -16,6 +16,7 @@ const ClubProfile = lazy(() => import("./ClubsPage").then(m => ({ default: m.Clu
 const BlogPage    = lazy(() => import("./BlogPage"));                                   // editor-only tab — rarely loaded
 const BlogPost    = lazy(() => import("./BlogPage").then(m => ({ default: m.BlogPost })));
 const ChartsPage  = lazy(() => import("./ChartsPage"));                                  // code-split: the 4 SVG charts load in their own chunk
+const IndexDrop   = lazy(() => import("./IndexDrop"));                                    // the monthly "Index drop" — media-brand flagship + email capture
 
 // a11y helper: make a non-button element behave like a button for keyboard +
 // screen-reader users (Enter/Space activate, focusable, announced as a button).
@@ -2637,6 +2638,7 @@ export default function App() {
           <button className={`top-tab ${activeTab === "booking" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking")}>Booking Intelligence</button>
           <button className={`top-tab ${activeTab === "clubs" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("clubs")}>Club Index</button>
           <button className={`top-tab ${activeTab === "reports" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("reports")}>Reports</button>
+          <button className={`top-tab ${activeTab === "index" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("index")}>The Index</button>
           {editor && <button className={`top-tab ${activeTab === "journal" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("journal")}>Journal <span className="tab-private">·private</span></button>}
           <button className={`top-tab ${activeTab === "scouting" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("scouting")}>Scouting</button>
           {/* TEMP: Breakouts & Movers tabs hidden until enough history accrues to populate them
@@ -2651,6 +2653,7 @@ export default function App() {
       {activeTab === "booking"       && <BookingIntelPage rankings={rankings} />}
       {activeTab === "clubs"         && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ClubsPage /></Suspense>}
       {activeTab === "reports"       && <ReportsPage rankings={rankings} />}
+      {activeTab === "index"         && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading the Index…</div>}><IndexDrop rankings={rankings} lastUpdated={lastUpdated} /></Suspense>}
       {activeTab === "journal"       && editor && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><BlogPage /></Suspense>}
       {activeTab === "scouting"      && <ScoutingPage rankings={rankings} />}
       {/* TEMP: hidden until sufficient data

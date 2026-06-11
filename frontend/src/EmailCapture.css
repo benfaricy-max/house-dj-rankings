@@ -1,0 +1,85 @@
+/* Owned-channel capture — matches the PEAKTIME dark/acid-lime system. */
+.ec {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 26px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+.ec--compact { padding: 16px; border-radius: 12px; }
+
+.ec-copy { margin-bottom: 16px; }
+.ec-heading {
+  color: var(--text-h);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.ec-sub {
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 6px 0 0;
+}
+
+.ec-fields {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.ec-email, .ec-role {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 11px 14px;
+  color: var(--text-h);
+  font-size: 0.9rem;
+}
+.ec-email { flex: 1 1 220px; min-width: 0; }
+.ec-email::placeholder { color: var(--muted); }
+.ec-role { flex: 0 1 150px; cursor: pointer; }
+.ec-email:focus, .ec-role:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+
+.ec-submit {
+  flex: 0 0 auto;
+  background: var(--accent);
+  color: #0c0c0e;
+  border: none;
+  border-radius: 10px;
+  padding: 11px 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+.ec-submit:hover { filter: brightness(1.08); }
+.ec-submit:disabled { opacity: 0.6; cursor: default; }
+
+.ec-err { color: #f87171; font-size: 0.82rem; margin-top: 10px; }
+.ec-fine { color: var(--muted); font-size: 0.74rem; margin-top: 12px; line-height: 1.4; }
+
+.ec--done {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-color: var(--accent-border);
+  background: var(--accent-bg);
+}
+.ec-done-mark {
+  flex: 0 0 auto;
+  width: 36px; height: 36px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #0c0c0e;
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+.ec-done-title { color: var(--text-h); font-weight: 700; font-size: 1rem; }
+.ec-done-sub { color: var(--text); font-size: 0.86rem; margin-top: 2px; }
+
+@media (max-width: 480px) {
+  .ec-fields { flex-direction: column; }
+  .ec-email, .ec-role, .ec-submit { flex: 1 1 auto; width: 100%; }
+}
