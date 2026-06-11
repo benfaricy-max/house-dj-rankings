@@ -6,11 +6,18 @@ import "./EmailCapture.css";
 // (working bookers vs fans), so we capture a role segment at signup, not just
 // an email. See COMMERCE.md / the Pivot-2 plan.
 //
-// No server required: if VITE_NEWSLETTER_ENDPOINT is set (a hosted ESP form
-// endpoint — Buttondown / ConvertKit / Formspree all accept a JSON or form POST)
-// we POST there. Until that's wired, signups are kept locally so the UI is
-// real and testable, and nothing is silently lost.
-const ENDPOINT = import.meta.env.VITE_NEWSLETTER_ENDPOINT || "";
+// No server required. ESP = Buttondown: we POST form-encoded to its public
+// embed endpoint (no secret key — the username is public, it's in the URL).
+// The role is sent as BOTH a tag and metadata so the list is segmentable by
+// working-booker vs fan (the metric the whole revenue model prices off).
+//
+// ⚙️ TO GO LIVE: set BUTTONDOWN_USERNAME below to your Buttondown username
+// (or set VITE_BUTTONDOWN_USERNAME at build time). Until it's set, signups are
+// kept locally (pt_newsletter_signups) so the UI is real and nothing is lost.
+const BUTTONDOWN_USERNAME = import.meta.env.VITE_BUTTONDOWN_USERNAME || "";
+const BUTTONDOWN_ENDPOINT = BUTTONDOWN_USERNAME
+  ? `https://buttondown.com/api/emails/embed-subscribe/${BUTTONDOWN_USERNAME}`
+  : "";
 
 const ROLES = [
   { key: "agent",     label: "Agent" },
@@ -49,26 +56,36 @@ export default function EmailCapture({
 
     setState("submitting"); setErr("");
     const entry = { email: email.trim(), role: role || "other", source, ts: new Date().toISOString() };
+    // Always keep a local copy — a backstop if the ESP call fails, and the only
+    // store at all until BUTTONDOWN_USERNAME is set.
+    stashLocally(entry);
 
     try {
-      if (ENDPOINT) {
-        const res = await fetch(ENDPOINT, {
+      if (BUTTONDOWN_ENDPOINT) {
+        // Buttondown's embed endpoint is opaque to fetch (no CORS headers), so
+        // we send no-cors form-encoded: the subscriber is created, but we can't
+        // read the response — so we optimistically confirm. Role rides as a tag
+        // (filterable) AND metadata. `embed=1` marks it a non-API signup.
+        const body = new URLSearchParams();
+        body.set("email", entry.email);
+        body.set("embed", "1");
+        body.set("tag", entry.role);
+        body.set("metadata__role", entry.role);
+        body.set("metadata__source", source);
+        await fetch(BUTTONDOWN_ENDPOINT, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(entry),
+          mode: "no-cors",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: body.toString(),
         });
-        if (!res.ok) throw new Error(`Signup failed (${res.status})`);
-      } else {
-        stashLocally(entry);
       }
       if (typeof window.gtag === "function") {
         window.gtag("event", "newsletter_signup", { source, role: entry.role });
       }
       setState("done");
     } catch (ex) {
-      // Don't lose the signup even if the network/ESP call fails.
-      stashLocally(entry);
-      setErr(ex.message || "Something went wrong — we saved your email and will retry.");
+      // Network failure — the local copy above means it isn't lost.
+      setErr("Network hiccup — we saved your email and will add you to the list.");
       setState("error");
     }
   }
