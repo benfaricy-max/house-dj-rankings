@@ -71,8 +71,9 @@ const URL_DEFAULTS = { tab: "rankings", sort: "score", genre: "all", lens: "all"
 function readRankingsUrl() {
   try {
     const q = new URLSearchParams(window.location.search);
+    const tab = q.get("tab") || URL_DEFAULTS.tab;
     return {
-      tab:    q.get("tab")    || URL_DEFAULTS.tab,
+      tab:    tab === "charts" ? "reports" : tab,   // Charts folded into Reports — redirect stale links
       sort:   q.get("sort")   || URL_DEFAULTS.sort,
       genre:  q.get("genre")  || URL_DEFAULTS.genre,
       lens:   q.get("lens")   || URL_DEFAULTS.lens,
@@ -2327,9 +2328,27 @@ const REPORTS = [
   },
 ];
 
-function ReportsPage() {
+function ReportsPage({ rankings }) {
   const fmtDate = iso => new Date(iso + "T00:00:00").toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
   const [feature, ...rest] = REPORTS;
+  // "Charts" lives here as a single in-app report (the Index, read visually)
+  // rather than a top-level tab. `view` toggles between the report list and
+  // the rendered charts report.
+  const [view, setView] = useState("list");
+
+  if (view === "charts") {
+    return (
+      <div className="page rp-page">
+        <button className="ap-back" onClick={() => { setView("list"); window.scrollTo({ top: 0 }); }}>← Back to reports</button>
+        <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading charts…</div>}>
+          <ChartsPage rankings={rankings} />
+        </Suspense>
+      </div>
+    );
+  }
+
+  const btnReset = { textAlign: "left", font: "inherit", color: "inherit", background: "none", border: 0, width: "100%", cursor: "pointer" };
+
   return (
     <div className="page rp-page">
       <div className="rp-hero">
@@ -2348,6 +2367,13 @@ function ReportsPage() {
       </a>
 
       <div className="rp-list">
+        {/* The Index, visualised — charts folded in as a single report */}
+        <button className="rp-card" style={btnReset} onClick={() => { setView("charts"); window.scrollTo({ top: 0 }); }}>
+          <div className="rp-meta"><span className="rp-tag">Charts</span> · The Index, visualised</div>
+          <div className="rp-card-title">The Index, Visualised</div>
+          <div className="rp-card-dek">The whole ranking read as four charts — demand vs credibility, who's moving, the ranked field, and each act's signal shape.</div>
+          <span className="rp-read">Open the charts →</span>
+        </button>
         {rest.map(r => (
           <a className="rp-card" key={r.href} href={r.href}>
             <div className="rp-meta"><span className="rp-tag">{r.tag}</span> · {fmtDate(r.date)}</div>
@@ -2602,7 +2628,6 @@ export default function App() {
         {lastUpdated && <p className="header-updated">Updated {new Date(lastUpdated).toLocaleString()}</p>}
         <div className="top-tabs">
           <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>
-          <button className={`top-tab ${activeTab === "charts"        ? "top-tab--active" : ""}`} onClick={() => setActiveTab("charts")}>Charts</button>
           <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
           <button className={`top-tab ${activeTab === "booking" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking")}>Booking Intelligence</button>
           <button className={`top-tab ${activeTab === "clubs" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("clubs")}>Club Index</button>
@@ -2618,10 +2643,9 @@ export default function App() {
       </header>
 
       {activeTab === "pro" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ProPage rankings={rankings} /></Suspense>}
-      {activeTab === "charts"        && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading charts…</div>}><ChartsPage rankings={rankings} /></Suspense>}
       {activeTab === "booking"       && <BookingIntelPage rankings={rankings} />}
       {activeTab === "clubs"         && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ClubsPage /></Suspense>}
-      {activeTab === "reports"       && <ReportsPage />}
+      {activeTab === "reports"       && <ReportsPage rankings={rankings} />}
       {activeTab === "journal"       && editor && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><BlogPage /></Suspense>}
       {activeTab === "scouting"      && <ScoutingPage rankings={rankings} />}
       {/* TEMP: hidden until sufficient data
