@@ -192,6 +192,21 @@ async function main() {
     hist.push({ d: today, r: dj.rank });
     dj.rank_history = hist.slice(-90);
 
+    // Weekly rank movement, derived from the history we just appended (mirrors
+    // server.js: positive = climbed, i.e. the rank number fell). Compare against
+    // the most recent snapshot that is ≥7 days old; before a week of history
+    // exists, fall back to the oldest point so early movement still shows. Stays
+    // null with only today's point — never fabricates a delta. Powers the RankDelta
+    // arrows and the live hero's "This week's movers".
+    const weekAgo = Date.now() - 7 * 864e5;
+    let basePt = null;
+    for (const p of dj.rank_history) {
+      if (p.d === today) continue;
+      if (new Date(p.d).getTime() <= weekAgo) basePt = p;   // latest point ≥7d old
+    }
+    if (!basePt) basePt = dj.rank_history.find(p => p.d !== today) ?? null;  // else oldest prior
+    dj.rank_change = (basePt && Number.isFinite(basePt.r)) ? basePt.r - dj.rank : null;
+
     // Listener history → real listener-growth for ALL artists as it accumulates.
     const prevLH = prevRankings[dj.name]?.listeners_history ?? [];
     const lh = prevLH.filter(p => p.d !== today);
