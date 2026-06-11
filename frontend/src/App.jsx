@@ -2490,31 +2490,12 @@ export default function App() {
           </svg>
           <span className="brand-word">PEAKTIME</span>
         </a>
-        <div className="header-eyebrow">PEAKTIME · the demand index for electronic music</div>
+        <div className="header-eyebrow">The demand index for electronic music</div>
         <h1 className="header-title">House DJ Rankings</h1>
         <p className="header-scope" style={{ margin: "6px auto 0", maxWidth: 560, fontSize: 13, color: "#a9a8a2", lineHeight: 1.5 }}>
           House, tech house &amp; the techno that shares its stages — ranked by booking demand, not hype.
         </p>
         <HeroHooks onSelect={(tab) => { setActiveTab(tab); window.scrollTo({ top: 0 }); }} />
-        <div className="header-platforms">
-          <span className="plat-pill"><span className="plat-dot" style={{ background: "#1DB954" }} />Spotify</span>
-          <span className="plat-pill"><span className="plat-dot" style={{ background: "#a8e00f" }} />Beatport</span>
-          <span className="plat-pill"><span className="plat-dot" style={{ background: "#ff0050" }} />TikTok</span>
-          <span className="plat-pill"><span className="plat-dot" style={{ background: "#FF0000" }} />YouTube</span>
-          <span className="plat-pill"><span className="plat-dot" style={{ background: "#4285F4" }} />Trends</span>
-        </div>
-        <button
-          className="header-booker-cta"
-          onClick={() => { setActiveTab("booking"); window.scrollTo({ top: 0 }); }}
-          style={{
-            margin: "14px auto 2px", display: "inline-flex", alignItems: "center", gap: 8,
-            background: "#C8F750", color: "#0c0c0e", border: "none", borderRadius: 999,
-            padding: "9px 18px", fontFamily: "'IBM Plex Mono', monospace", fontWeight: 600,
-            fontSize: 13, letterSpacing: "0.01em", cursor: "pointer",
-          }}
-        >
-          Booking or buying talent? See what an artist should cost →
-        </button>
         {lastUpdated && <p className="header-updated">Updated {new Date(lastUpdated).toLocaleString()}</p>}
         <div className="top-tabs">
           <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>

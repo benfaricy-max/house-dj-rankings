@@ -170,14 +170,6 @@
 }
 
 .header-sub     { font-size: 14px; color: var(--muted); margin: 0 0 6px; }
-.header-platforms { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 0 0 8px; }
-.plat-pill {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 12px; font-weight: 600; color: var(--text);
-  background: var(--card); border: 1px solid var(--border);
-  padding: 4px 11px; border-radius: 20px;
-}
-.plat-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; box-shadow: 0 0 6px currentColor; }
 .header-updated { font-size: 12px; color: var(--muted); opacity: 0.6; margin: 0; }
 
 /* ── Top nav tabs ────────────────────────────────────────────────── */
@@ -851,7 +843,7 @@ details[open] .hiw-faq-q::after { content: "–"; }
 .dj-score-badge, .rank-num, .rank-delta, .dss-num, .dss-lbl, .qs-pill,
 .vel-table, .cmp-val, .cmp-ratio, .otw-momentum, .breaking-mo-score,
 .watch-mo-score, .mover-rank, .mover-past-rank, .mover-current-rank,
-.header-updated, .header-platforms, .plat-pill { font-family: var(--mono); }
+.header-updated { font-family: var(--mono); }
 
 /* ---- Booking Intelligence ---- */
 .bk-page { text-align: left; max-width: 1000px; margin: 0 auto; padding: 0 8px; }
