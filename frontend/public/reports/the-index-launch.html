@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>We stopped counting followers — The Index | PEAKTIME</title>
+<meta name="description" content="Last week Hugel was #16. Today he's #212. Hugel didn't change — what we count did. Why PEAKTIME rebuilt the ranking around booking demand and scene credibility, not reach." />
+<link rel="canonical" href="https://thedjrankings.com/reports/the-index-launch.html" />
+
+<!-- Social cards -->
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="PEAKTIME" />
+<meta property="og:title" content="We stopped counting followers. Hugel went from #16 to #212." />
+<meta property="og:description" content="Why we rebuilt the ranking around booking demand and scene credibility, not reach. The first issue of The Index." />
+<meta property="og:image" content="https://thedjrankings.com/brand/post-reach-cred-1080.png" />
+<meta property="og:url" content="https://thedjrankings.com/reports/the-index-launch.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="We stopped counting followers. Hugel went from #16 to #212." />
+<meta name="twitter:description" content="Why we rebuilt the ranking around booking demand and scene credibility, not reach. The first issue of The Index." />
+<meta name="twitter:image" content="https://thedjrankings.com/brand/post-reach-cred-1080.png" />
+
+<style>
+  :root {
+    --text: #a9a8a2; --text-h: #E9E7DF; --bg: #0c0c0e; --card: #111114;
+    --muted: #8a8b92; --border: #1e1f23; --accent: #C8F750;
+    --accent-bg: rgba(200,247,80,.12); --accent-border: rgba(200,247,80,.45);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Space Grotesk", -apple-system, "Segoe UI", Inter, Arial, sans-serif;
+    color: var(--text); background: var(--bg);
+    line-height: 1.6; padding: 0 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 40px 0 72px; }
+
+  .brandbar { display: flex; align-items: center; gap: 10px; margin-bottom: 40px; }
+  .brandbar svg { width: 26px; height: 26px; }
+  .brandbar .word { font-weight: 700; letter-spacing: .04em; color: var(--text-h); font-size: 15px; }
+  .brandbar a { margin-left: auto; color: var(--muted); text-decoration: none; font-size: 13px; }
+  .brandbar a:hover { color: var(--accent); }
+
+  .kicker { text-transform: uppercase; letter-spacing: .2em; font-size: 12px; font-weight: 700; color: var(--accent); }
+  h1 {
+    color: var(--text-h); font-weight: 800; letter-spacing: -.02em;
+    font-size: clamp(1.9rem, 5.5vw, 2.8rem); line-height: 1.08; margin: 12px 0 14px;
+  }
+  .byline { color: var(--muted); font-size: 13px; margin-bottom: 32px; }
+
+  article p { color: var(--text); font-size: 1.05rem; margin: 0 0 20px; }
+  article p strong { color: var(--text-h); }
+  article .lead { font-size: 1.18rem; color: var(--text-h); }
+
+  .pullquote {
+    border-left: 3px solid var(--accent); padding: 4px 0 4px 20px;
+    margin: 28px 0; color: var(--text-h); font-size: 1.15rem; font-weight: 500;
+  }
+
+  ul.never { list-style: none; margin: 8px 0 28px; padding: 0; }
+  ul.never li {
+    border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px;
+    margin-bottom: 10px; color: var(--text); font-size: .98rem;
+  }
+  ul.never li b { color: var(--text-h); }
+
+  .compare {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0;
+  }
+  .compare .col { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+  .compare .nm { color: var(--text-h); font-weight: 700; font-size: 1.05rem; }
+  .compare .big { color: var(--accent); font-weight: 800; font-size: 1.9rem; font-variant-numeric: tabular-nums; margin: 6px 0 2px; }
+  .compare .lbl { color: var(--muted); font-size: .8rem; }
+  .compare .rk { color: var(--text-h); font-weight: 700; margin-top: 10px; font-size: .95rem; }
+
+  /* Subscribe */
+  .sub {
+    background: var(--card); border: 1px solid var(--accent-border);
+    border-radius: 16px; padding: 26px; margin: 44px 0 24px;
+  }
+  .sub h3 { color: var(--text-h); font-size: 1.2rem; font-weight: 700; }
+  .sub p { color: var(--text); font-size: .92rem; margin: 8px 0 16px; }
+  .sub-fields { display: flex; gap: 8px; flex-wrap: wrap; }
+  .sub input, .sub select {
+    background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
+    padding: 11px 14px; color: var(--text-h); font-size: .9rem; font-family: inherit;
+  }
+  .sub input { flex: 1 1 200px; min-width: 0; }
+  .sub input::placeholder { color: var(--muted); }
+  .sub select { flex: 0 1 150px; cursor: pointer; }
+  .sub button {
+    flex: 0 0 auto; background: var(--accent); color: #0c0c0e; border: none;
+    border-radius: 10px; padding: 11px 20px; font-size: .9rem; font-weight: 700;
+    cursor: pointer; font-family: inherit;
+  }
+  .sub button:hover { filter: brightness(1.08); }
+  .sub .fine { color: var(--muted); font-size: .74rem; margin-top: 12px; }
+  .sub .done { display: none; align-items: center; gap: 12px; }
+  .sub .done .mk { width: 34px; height: 34px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: #0c0c0e; font-weight: 800; }
+  .sub .done .t { color: var(--text-h); font-weight: 700; }
+  .sub .done .s { color: var(--text); font-size: .86rem; }
+  .sub.is-done .sub-form { display: none; }
+  .sub.is-done .done { display: flex; }
+
+  .foot { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: .82rem; }
+  .foot a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 520px) {
+    .compare { grid-template-columns: 1fr; }
+    .sub-fields { flex-direction: column; }
+    .sub input, .sub select, .sub button { width: 100%; flex: 1 1 auto; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brandbar">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <rect width="32" height="32" rx="7" fill="#0c0c0e" stroke="#1e1f23"/>
+      <g fill="#C8F750">
+        <rect x="5.5" y="18.5" width="3.6" height="8" rx="1.3"/>
+        <rect x="11.2" y="13" width="3.6" height="13.5" rx="1.3"/>
+        <rect x="16.9" y="8" width="3.6" height="18.5" rx="1.3"/>
+        <rect x="22.6" y="4" width="3.6" height="22.5" rx="1.3"/>
+      </g>
+    </svg>
+    <span class="word">PEAKTIME</span>
+    <a href="https://thedjrankings.com/">thedjrankings.com →</a>
+  </div>
+
+  <div class="kicker">The Index · Issue 01</div>
+  <h1>We stopped counting followers. Hugel went from #16 to #212.</h1>
+  <div class="byline">Ben Faricy · June 2026</div>
+
+  <article>
+    <p class="lead">Last week, Hugel sat at #16 in our ranking. Today he's #212. Hugel didn't change. What we count did.</p>
+
+    <p>A follower count won't tell you the two things you actually need: whether an artist can fill the room you're booking, and whether you can resell the night at the door. Hugel has just under 30 million monthly Spotify listeners. Solomun has 2.3 million, about a thirteenth of that. Solomun is #5. Hugel is #212.</p>
+
+    <div class="compare">
+      <div class="col">
+        <div class="nm">Hugel</div>
+        <div class="big">29.9M</div>
+        <div class="lbl">monthly listeners · scene score 28</div>
+        <div class="rk">#212</div>
+      </div>
+      <div class="col">
+        <div class="nm">Solomun</div>
+        <div class="big">2.3M</div>
+        <div class="lbl">monthly listeners · scene score 90</div>
+        <div class="rk">#5</div>
+      </div>
+    </div>
+
+    <p>If that looks wrong to you, you're not a booker. If it looks about right, you already know what we rebuilt the ranking to measure.</p>
+
+    <p>We spent the spring talking to agents, promoters, and festival buyers about what actually predicts a booking. The answer came back the same way every time: scene credibility, not reach. A Boiler Room set, a Berghain night, a respected label, a festival closing slot. Those move a fee. Thirty million passive streams do not. Reach tells you who's famous. It doesn't tell you who's bookable.</p>
+
+    <p>So we rebuilt the model around it. Booking demand (real live dates, venue tier, who's getting booked where) and scene credibility now lead the index together. Reach still counts, but it corroborates. It no longer leads. The day that change landed, the commercial-pop crossover acts slid down and the scene-respected names rose. Hugel (scene score 28) to #212. Meduza (scene 20) to #218. Solomun (90), Charlotte de Witte (85), and Peggy Gou (87) into the top six.</p>
+
+    <p class="pullquote">That's not us punishing anyone. It's the model finally measuring the thing you're paying for.</p>
+
+    <p>A few things we'll never do, because they're the whole point:</p>
+    <ul class="never">
+      <li><b>The methodology is public.</b> Every signal and weight is on the How It Works page. Same for everyone.</li>
+      <li><b>We don't sell positions.</b> No one can pay to move up. Not an artist, not an agency, not a label.</li>
+      <li><b>We don't print a number we can't stand behind.</b> A wrong stat is the one thing that would break this.</li>
+    </ul>
+
+    <p>This is the first issue of The Index, the monthly read for people who book and price talent. Once a month: who's rising, the most underpriced act of the month, and the city where demand is heating up. Neutral, specific, and built before the rest of the industry catches on.</p>
+  </article>
+
+  <!-- Subscribe (Buttondown, with localStorage backstop — mirrors the React EmailCapture) -->
+  <div class="sub" id="sub">
+    <form class="sub-form" id="subForm">
+      <h3>Get The Index — every month</h3>
+      <p>Who's rising, the most underpriced act of the month, and the city where demand is heating up. Free, neutral, no hype.</p>
+      <div class="sub-fields">
+        <input id="subEmail" type="email" inputmode="email" autocomplete="email" placeholder="you@agency.com" aria-label="Email address" required />
+        <select id="subRole" aria-label="What you do">
+          <option value="">I'm a…</option>
+          <option value="agent">Agent</option>
+          <option value="promoter">Promoter</option>
+          <option value="festival">Festival / buyer</option>
+          <option value="label">Label</option>
+          <option value="other">Fan / other</option>
+        </select>
+        <button type="submit">Get the Index</button>
+      </div>
+      <div class="fine">No spam. Unsubscribe anytime. We never sell your data — or rankings.</div>
+    </form>
+    <div class="done">
+      <div class="mk">✓</div>
+      <div>
+        <div class="t">You're on the list.</div>
+        <div class="s">The next Index drop lands on the 1st. Watch for it.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <b style="color:var(--text-h)">PEAKTIME</b> ranks booking demand, not popularity, from a transparent composite of scene credibility, live demand, and reach.
+    <a href="https://thedjrankings.com/?tab=how-it-works">How it works →</a>
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    var BUTTONDOWN = "peaktime";
+    var ENDPOINT = "https://buttondown.com/api/emails/embed-subscribe/" + BUTTONDOWN;
+    var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var form = document.getElementById("subForm");
+    var sub = document.getElementById("sub");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var email = document.getElementById("subEmail").value.trim();
+      var role = document.getElementById("subRole").value || "other";
+      if (!EMAIL_RE.test(email)) { return; }
+      var entry = { email: email, role: role, source: "index-launch", ts: new Date().toISOString() };
+      // local backstop — never lose a signup, and the only store until Buttondown clears review
+      try {
+        var k = "pt_newsletter_signups";
+        var prev = JSON.parse(localStorage.getItem(k) || "[]");
+        prev.push(entry); localStorage.setItem(k, JSON.stringify(prev));
+      } catch (x) {}
+      var body = new URLSearchParams();
+      body.set("email", email); body.set("embed", "1");
+      body.set("tag", role); body.set("metadata__role", role); body.set("metadata__source", "index-launch");
+      fetch(ENDPOINT, { method: "POST", mode: "no-cors", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body.toString() }).catch(function () {});
+      if (typeof window.gtag === "function") { window.gtag("event", "newsletter_signup", { source: "index-launch", role: role }); }
+      sub.classList.add("is-done");
+    });
+  })();
+</script>
+</body>
+</html>
