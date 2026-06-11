@@ -9,7 +9,6 @@ import { useWatchlist, useMomentumAlerts } from "./watchlist";
 import { InfoTip, MomentumTip, MOMENTUM_BLEND, artistForm, FORM_META, FormTip, genreLean, GENRE_META, matchesGenre } from "./methodology";
 import { rankWithinCohort, withRankIntervals, deriveRegions, inRegion, isRising, PERSONAS } from "./cohort";
 import PitchPage from "./Pitch";   // read-only private brief route (also pulled by ValueGap)
-import HeroHooks from "./HeroHooks";   // rotating audience call-out at top of front page
 import HeroLive from "./HeroLive";     // live proof strip + who's-moving band under the masthead
 import DayInLifePage from "./DayInLife";   // "A Booking Day" — day-in-the-life + direct answers
 const ClubsPage   = lazy(() => import("./ClubsPage"));                                  // splits ~750 lines of club lore/images out of the main chunk
@@ -2662,28 +2661,6 @@ export default function App() {
           filling rooms and moving the scene — blended from live bookings, charts, and momentum,
           refreshed daily. The one read that isn&apos;t selling either side anything.
         </p>
-        <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap", margin: "14px auto 2px" }}>
-          <button
-            type="button"
-            onClick={() => { setActiveTab("rankings"); window.scrollTo({ top: 0 }); }}
-            style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 13, fontWeight: 600, letterSpacing: "0.01em",
-              color: "#0c0c0e", background: "#C8F750", border: "none", borderRadius: 999, padding: "9px 18px", cursor: "pointer" }}
-          >
-            See the rankings
-          </button>
-          <button
-            type="button"
-            onClick={() => { setActiveTab("booking"); window.scrollTo({ top: 0 }); }}
-            style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 13, fontWeight: 600, letterSpacing: "0.01em",
-              color: "#e9e8e2", background: "transparent", border: "1px solid #3a3a3e", borderRadius: 999, padding: "9px 18px", cursor: "pointer" }}
-          >
-            Who&apos;s breaking in your city
-          </button>
-        </div>
-        <HeroHooks onSelect={(tab) => { setActiveTab(tab); window.scrollTo({ top: 0 }); }} />
-        {activeTab === "rankings" && !loading && (
-          <HeroLive rankings={rankings} lastUpdated={lastUpdated} onExplore={(tab) => { setActiveTab(tab); window.scrollTo({ top: 0 }); }} />
-        )}
         {lastUpdated && <p className="header-updated">Updated {new Date(lastUpdated).toLocaleString()}</p>}
         <div className="top-tabs">
           <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>
