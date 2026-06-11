@@ -1,0 +1,141 @@
+/* BuyerLane — homepage "for buyers" band. Uses the existing tokens in index.css
+   (--bg, --accent acid lime, --muted, --accent-bg, --accent-border). Terminal-meets
+   -warehouse: mono numbers, dark, lime used sparingly. */
+
+.bl {
+  border: 1px solid var(--accent-border);
+  background: linear-gradient(180deg, var(--accent-bg), rgba(200, 247, 80, 0.02));
+  border-radius: 14px;
+  padding: 1.25rem 1.25rem 1rem;
+  margin: 1.5rem auto;
+  max-width: 760px;
+}
+
+.bl-head { margin-bottom: 1rem; }
+.bl-tag {
+  display: inline-block;
+  font-size: .7rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--accent);
+  padding: .15rem .5rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+.bl-title {
+  font-size: 1.5rem;
+  margin: .5rem 0 .25rem;
+  line-height: 1.15;
+}
+.bl-sub {
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 56ch;
+}
+
+.bl-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: center;
+  margin-bottom: .85rem;
+}
+.bl-select {
+  background: var(--bg);
+  color: inherit;
+  border: 1px solid var(--accent-border);
+  border-radius: 8px;
+  padding: .4rem .6rem;
+  font-size: .85rem;
+}
+.bl-bands { display: flex; gap: .35rem; flex-wrap: wrap; }
+.bl-band {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--accent-border);
+  border-radius: 999px;
+  padding: .35rem .7rem;
+  font-size: .8rem;
+  cursor: pointer;
+  transition: color .12s, background .12s;
+}
+.bl-band:hover { color: inherit; }
+.bl-band.is-on {
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+.bl-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
+.bl-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: .75rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: .6rem .8rem;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+  transition: border-color .12s, background .12s;
+}
+.bl-row:hover { border-color: var(--accent-border); background: var(--accent-bg); }
+
+.bl-sig {
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.bl-sig[data-strong="true"] { color: var(--accent); }
+
+.bl-name { font-weight: 600; }
+
+.bl-fee {
+  font-variant-numeric: tabular-nums;
+  font-size: .85rem;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  white-space: nowrap;
+}
+.bl-fee b { color: inherit; }
+.bl-arrow { opacity: .6; }
+.bl-gap {
+  color: var(--accent);
+  font-weight: 700;
+  margin-left: .15rem;
+}
+
+.bl-cta {
+  font-size: .78rem;
+  color: var(--accent);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity .12s;
+}
+.bl-row:hover .bl-cta { opacity: 1; }
+
+.bl-empty { color: var(--muted); font-size: .88rem; margin: .5rem 0; }
+
+.bl-foot {
+  color: var(--muted);
+  font-size: .76rem;
+  margin: .9rem 0 0;
+  line-height: 1.5;
+}
+.bl-foot a { color: var(--accent); }
+
+@media (max-width: 560px) {
+  .bl-row { grid-template-columns: 1fr auto; row-gap: .25rem; }
+  .bl-sig { grid-column: 1 / -1; }
+  .bl-cta { display: none; }
+}
