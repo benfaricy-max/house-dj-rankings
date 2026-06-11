@@ -15,6 +15,7 @@ const ClubsPage   = lazy(() => import("./ClubsPage"));                          
 const ClubProfile = lazy(() => import("./ClubsPage").then(m => ({ default: m.ClubProfile })));
 const BlogPage    = lazy(() => import("./BlogPage"));                                   // editor-only tab — rarely loaded
 const BlogPost    = lazy(() => import("./BlogPage").then(m => ({ default: m.BlogPost })));
+const ChartsPage  = lazy(() => import("./ChartsPage"));                                  // code-split: the 4 SVG charts load in their own chunk
 
 // a11y helper: make a non-button element behave like a button for keyboard +
 // screen-reader users (Enter/Space activate, focusable, announced as a button).
@@ -2499,6 +2500,7 @@ export default function App() {
         {lastUpdated && <p className="header-updated">Updated {new Date(lastUpdated).toLocaleString()}</p>}
         <div className="top-tabs">
           <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>
+          <button className={`top-tab ${activeTab === "charts"        ? "top-tab--active" : ""}`} onClick={() => setActiveTab("charts")}>Charts</button>
           <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
           <button className={`top-tab ${activeTab === "booking" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking")}>Booking Intelligence</button>
           <button className={`top-tab ${activeTab === "booking-day" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking-day")}>A Booking Day</button>
@@ -2515,6 +2517,7 @@ export default function App() {
       </header>
 
       {activeTab === "pro" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ProPage rankings={rankings} /></Suspense>}
+      {activeTab === "charts"        && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading charts…</div>}><ChartsPage rankings={rankings} /></Suspense>}
       {activeTab === "booking"       && <BookingIntelPage rankings={rankings} />}
       {activeTab === "booking-day"   && <DayInLifePage onCta={(tab) => { setActiveTab(tab); window.scrollTo({ top: 0 }); }} />}
       {activeTab === "clubs"         && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ClubsPage /></Suspense>}
