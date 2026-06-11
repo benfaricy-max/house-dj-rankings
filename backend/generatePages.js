@@ -146,7 +146,10 @@ function build() {
   const artists = (d.rankings || d).filter((a) => a && a.name);
   const total = artists.length;
   const today = new Date().toISOString().slice(0, 10);
-  const urls = [{ loc: "/", priority: 1.0, changefreq: "daily", lastmod: today }];
+  const urls = [
+    { loc: "/", priority: 1.0, changefreq: "daily", lastmod: today },
+    { loc: "/press", priority: 0.5, changefreq: "monthly", lastmod: today },
+  ];
   let nArtist = 0, nValue = 0;
 
   for (const a of artists) {
