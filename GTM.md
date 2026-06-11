@@ -13,13 +13,26 @@ Companion docs: `COMMERCE.md` (pricing/billing skeleton), `BRAND.md` (voice).
 Not the 5 biggest names you can reach — the 5 who feel the pain *this month*. A name
 only qualifies when all four columns are filled:
 
-| # | Booker / buyer | Artist they're deciding on | Trigger (hold / date, next 8 wks) | How you reach them | Status |
-|---|----------------|----------------------------|-----------------------------------|--------------------|--------|
-| 1 |                |                            |                                   |                    | not contacted |
-| 2 |                |                            |                                   |                    | not contacted |
-| 3 |                |                            |                                   |                    | not contacted |
-| 4 |                |                            |                                   |                    | not contacted |
-| 5 |                |                            |                                   |                    | not contacted |
+**Seeded from the index (2026-06-10).** The five below are the strongest *strong-buy*
+reads (underpriced **and** surging) whose price band sits in the £5k–£50k one-person-decides
+zone — so the Value Gap £-hook is biggest and the buyer is reachable. Fees are **curated
+estimates** (`basis: "curated"`), so each call doubles as fee-anchor collection (§3 of
+STRATEGY.md). **Before you send: fill the bolded buyer cell with a real person** — a name
+you can reach who is actually weighing this act for a date. The artist + gap is done; the
+person is the only missing column.
+
+| # | Booker / buyer (← fill the name) | Artist (strong-buy read) | Trigger (next 8 wks) | How you reach them | Status |
+|---|----------------|----------------------------|------------------|--------------------|--------|
+| 1 | **[name]** — UK city-club promoter booking autumn/winter (WHP Manchester / fabric / Bristol-Leeds nights) | **Prospa** — est £18–40K, demand-implied **£35–70K (+79%)**, tier-5 demand, Ninja Tune / Boiler Room | Autumn UK club holds (Sep–Dec); recently London + Madrid | RA DM to the promoter, or warm intro via a scene mutual | not contacted |
+| 2 | **[name]** — mid-size UK/EU tech-house night | **PAWSA** — est £8–18K, demand-implied **£18–40K (+133%)**, Solä (own label), Boiler Room | Ibiza season now + UK autumn; recently Ibiza, Miami, Düsseldorf | Cold email, subject = the number; or IG DM | not contacted |
+| 3 | **[name]** — Irish / UK independent promoter | **KETTAMA** — est £8–18K, demand-implied **£18–40K (+133%)**, G-Town / Boiler Room / fabric | Belfast + UK dates this season | Warm intro (Galway/Belfast scene) or RA DM | not contacted |
+| 4 | **[name]** — melodic-house promoter / festival stage buyer | **Yotto** — est £8–18K, demand-implied **£18–40K (+133%)**, Anjunadeep, festival headliner | Festival summer holds; recently Barcelona, Paris | Cold email with the Pitch Link | not contacted |
+| 5 | **[name]** — festival / club booker (highest-gap hook) | **Jayda G** — est £8–18K, demand-implied **£35–70K (+317%)**, tier-5 demand, Hï Ibiza | Summer festival season; recently Ibiza, Lisbon | Cold email — the +317% gap is the subject line | not contacted |
+
+> Backups if any of the above don't have a live decision: **ANOTR** (+79%, £18–40K→£35–70K),
+> **Kerri Chandler** (+79%, tier-5), **Marco Faraone** / **Franky Rizardo** / **Lee Foss**
+> (all +133%, £8–18K band). Pull a fresh list anytime: filter `rankings.json` for
+> `value_signal === "strong-buy"` and sort by `value_gap_pct`.
 
 **Filters:**
 - A live booking decision in the next 8 weeks. No live decision = no urgency.
