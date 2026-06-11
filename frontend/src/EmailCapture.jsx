@@ -14,7 +14,7 @@ import "./EmailCapture.css";
 // ⚙️ TO GO LIVE: set BUTTONDOWN_USERNAME below to your Buttondown username
 // (or set VITE_BUTTONDOWN_USERNAME at build time). Until it's set, signups are
 // kept locally (pt_newsletter_signups) so the UI is real and nothing is lost.
-const BUTTONDOWN_USERNAME = import.meta.env.VITE_BUTTONDOWN_USERNAME || "";
+const BUTTONDOWN_USERNAME = import.meta.env.VITE_BUTTONDOWN_USERNAME || "peaktime";
 const BUTTONDOWN_ENDPOINT = BUTTONDOWN_USERNAME
   ? `https://buttondown.com/api/emails/embed-subscribe/${BUTTONDOWN_USERNAME}`
   : "";
