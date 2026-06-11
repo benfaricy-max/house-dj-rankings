@@ -1,0 +1,12 @@
+# thedjrankings.com (PEAKTIME)
+User-agent: *
+Allow: /
+
+# Private / non-indexable surfaces
+Disallow: /pitch/
+Disallow: /journal
+
+# Sitemap — uncomment once the prerender migration ships real per-page URLs.
+# A sitemap of path URLs before prerendering would list 404s, so it stays off
+# until /artist/<slug> etc. are served as real HTML. Generator: backend/generateSitemap.js
+# Sitemap: https://thedjrankings.com/sitemap.xml
