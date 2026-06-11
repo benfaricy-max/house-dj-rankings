@@ -1141,7 +1141,7 @@ function OnestoWatchPage({ rankings }) {
         <section className="breaking-section">
           <div className="breaking-eyebrow">
             <span className="breaking-live">● BREAKING</span>
-            <span className="breaking-sponsored">Sponsored — <a href="mailto:hello@thedjranks.com">get featured</a></span>
+            <span className="breaking-sponsored">Sponsored — <a href="mailto:hello@thedjrankings.com">get featured</a></span>
           </div>
           <div className="breaking-grid">
             {breaking.map(dj => (

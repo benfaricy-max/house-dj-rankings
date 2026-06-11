@@ -254,7 +254,7 @@ export function ValueReport({ rankings, slug }) {
         {!feeBasis(a).verified && (
           <div className="vr-feenote">
             <strong>On the fee number:</strong> {feeBasis(a).note} We don't hold this act's transacted fee, so the benchmark is model-implied — read the gap as a demand signal, not a quoted price.{" "}
-            <a href={`mailto:hello@thedjranks.com?subject=${encodeURIComponent(`Fee anchor: ${a.name}`)}&body=${encodeURIComponent(`Real fee for ${a.name} (quote/contract/published):\nFee (GBP): \nSource (promoter-quote / agency-ratecard / contract / press): \nDate: \nRegion: \nNotes: `)}`}>Know the real fee? Send it →</a> Verified fees override the estimate and raise confidence.
+            <a href={`mailto:hello@thedjrankings.com?subject=${encodeURIComponent(`Fee anchor: ${a.name}`)}&body=${encodeURIComponent(`Real fee for ${a.name} (quote/contract/published):\nFee (GBP): \nSource (promoter-quote / agency-ratecard / contract / press): \nDate: \nRegion: \nNotes: `)}`}>Know the real fee? Send it →</a> Verified fees override the estimate and raise confidence.
           </div>
         )}
 
