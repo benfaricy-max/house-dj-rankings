@@ -62,6 +62,42 @@ const isEditor = () => {
   } catch { return false; }
 };
 
+// ── Deep-linkable rankings state ───────────────────────────────────────────
+// Sort / genre lens / stakeholder lens / cohort / region / active tab all live
+// in the URL query string, so any view is a shareable link ("look where X sits")
+// and the descriptor domain indexes each lens. Hash routes (#/artist/…) are left
+// untouched. Defaults are omitted from the URL to keep links clean.
+const URL_DEFAULTS = { tab: "rankings", sort: "score", genre: "all", lens: "all", cohort: "full", region: "" };
+function readRankingsUrl() {
+  try {
+    const q = new URLSearchParams(window.location.search);
+    return {
+      tab:    q.get("tab")    || URL_DEFAULTS.tab,
+      sort:   q.get("sort")   || URL_DEFAULTS.sort,
+      genre:  q.get("genre")  || URL_DEFAULTS.genre,
+      lens:   q.get("lens")   || URL_DEFAULTS.lens,
+      cohort: q.get("cohort") || URL_DEFAULTS.cohort,
+      region: q.get("region") || URL_DEFAULTS.region,
+    };
+  } catch { return { ...URL_DEFAULTS }; }
+}
+function writeRankingsUrl(state) {
+  try {
+    // Don't fight the hash routes — when one is active the rankings filters are moot.
+    if (window.location.hash && window.location.hash !== "#") return;
+    const q = new URLSearchParams(window.location.search);
+    // editor flag and anything else already in the query is preserved.
+    for (const [k, def] of Object.entries(URL_DEFAULTS)) {
+      const v = state[k];
+      if (v == null || v === def) q.delete(k);
+      else q.set(k, v);
+    }
+    const qs = q.toString();
+    const next = window.location.pathname + (qs ? `?${qs}` : "") + (window.location.hash || "");
+    window.history.replaceState(null, "", next);
+  } catch { /* no-op */ }
+}
+
 const API = import.meta.env.VITE_API_URL || "http://localhost:3001";
 const MEDAL = { 1: "🥇", 2: "🥈", 3: "🥉" };
 
@@ -323,9 +359,27 @@ function UpcomingEvents({ name }) {
 
 // ── Score breakdown ────────────────────────────────────────────────
 
-function MetricRow({ metric, value, normalized, contribution, maxContrib }) {
+// Signals that SELF-HEAL ON ABSENCE in score.js: a 0 means "not measured for this
+// act" (1001TL single-week chart; Spotify-cities not yet pulled), so the weight is
+// redistributed per-artist rather than scored as a real zero. The breakdown must
+// say "unmeasured" here, not show a 0-contribution row at full weight — otherwise
+// the UI contradicts the model and reads the act as weak on a signal we never took.
+const SELF_HEAL_ABSENT = new Set(["tl_support_score", "scene_geography"]);
+
+function MetricRow({ metric, value, normalized, contribution, maxContrib, absent }) {
   const barPct   = maxContrib > 0 ? (contribution / maxContrib) * 100 : 0;
   const strength = normalized >= 70 ? "strong" : normalized >= 35 ? "mid" : "weak";
+  if (absent) {
+    return (
+      <div className="metric-row metric-row--absent" title="Not measured for this artist — its weight is redistributed across the signals we do have, so this is never scored as a zero.">
+        <div className="metric-label">{metric.label}</div>
+        <div className="metric-raw metric-raw--unmeasured">unmeasured</div>
+        <div className="metric-bar-wrap"><span className="metric-absent-note">weight redistributed</span></div>
+        <div className="metric-contrib metric-contrib--muted">—</div>
+        <div className="metric-weight metric-weight--muted">{Math.round(metric.weight * 100)}%</div>
+      </div>
+    );
+  }
   return (
     <div className="metric-row">
       <div className="metric-label">{metric.label}</div>
@@ -343,13 +397,14 @@ function ScoreBreakdown({ dj, ranges }) {
   const rows = METRICS.map(metric => {
     const { min, max } = ranges[metric.key] ?? { min: 0, max: 0 };
     const value        = dj[metric.key] ?? 0;
+    const absent       = SELF_HEAL_ABSENT.has(metric.key) && !(value > 0);
     const normalized   = normalize(prep(metric.key, value), min, max);
     const contribution = normalized * metric.weight;
-    return { metric, value, normalized, contribution };
-  }).sort((a, b) => b.contribution - a.contribution);
+    return { metric, value, normalized, contribution, absent };
+  }).sort((a, b) => (a.absent - b.absent) || (b.contribution - a.contribution));
 
-  const maxContrib = rows[0]?.contribution ?? 1;
-  const topTwo     = rows.slice(0, 2).map(r => r.metric.label).join(" & ");
+  const maxContrib = rows.find(r => !r.absent)?.contribution ?? 1;
+  const topTwo     = rows.filter(r => !r.absent).slice(0, 2).map(r => r.metric.label).join(" & ");
 
   return (
     <div className="score-breakdown">
@@ -368,8 +423,8 @@ function ScoreBreakdown({ dj, ranges }) {
         <span className="col-header col-right">Wt</span>
       </div>
       <div className="breakdown-rows">
-        {rows.map(({ metric, value, normalized, contribution }) => (
-          <MetricRow key={metric.key} metric={metric} value={value} normalized={normalized} contribution={contribution} maxContrib={maxContrib} />
+        {rows.map(({ metric, value, normalized, contribution, absent }) => (
+          <MetricRow key={metric.key} metric={metric} value={value} normalized={normalized} contribution={contribution} maxContrib={maxContrib} absent={absent} />
         ))}
       </div>
       {Number.isFinite(dj.coverage_score) && (
@@ -598,7 +653,7 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
   const shownRank = displayRank ?? dj.rank;
   return (
     <div className={`dj-card ${isTop ? "dj-card--top" : ""} ${expanded ? "dj-card--expanded" : ""} ${inCompare ? "dj-card--comparing" : ""}`}>
-      <div className="dj-card-main" {...pressable(onToggle, expanded)} aria-label={`${dj.name}, rank ${shownRank} — ${expanded ? "collapse" : "expand"} details`}>
+      <div className="dj-card-main" {...pressable(onToggle, expanded)} aria-expanded={expanded} aria-label={`${dj.name}, rank ${shownRank} — ${expanded ? "collapse" : "expand"} details`}>
         <div className="dj-rank">
           {(!cohortMode && MEDAL[shownRank]) ?? null}
           {(cohortMode || !MEDAL[shownRank]) && <span className="rank-num">#{shownRank}</span>}
@@ -707,6 +762,35 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+// ── Loading skeleton ───────────────────────────────────────────────
+// rankings.json is a static fetch — show shimmer rows in the real card shape
+// rather than a blank screen or a lone spinner (perceived-performance win, and
+// no layout shift when the data lands). Shimmer is paused under reduced-motion
+// by the global rule in index.css.
+function SkeletonCard() {
+  return (
+    <div className="dj-card dj-card--skeleton" aria-hidden="true">
+      <div className="dj-card-main">
+        <div className="sk sk-rank" />
+        <div className="sk sk-avatar" />
+        <div className="dj-info">
+          <div className="sk sk-name" />
+          <div className="sk sk-bar" />
+          <div className="sk-pills"><div className="sk sk-pill" /><div className="sk sk-pill" /><div className="sk sk-pill" /></div>
+        </div>
+        <div className="sk sk-side" />
+      </div>
+    </div>
+  );
+}
+function RankingsSkeleton({ rows = 8 }) {
+  return (
+    <div className="rankings-skeleton" role="status" aria-label="Loading rankings">
+      {Array.from({ length: rows }).map((_, i) => <SkeletonCard key={i} />)}
     </div>
   );
 }
@@ -1415,6 +1499,7 @@ function BookingIntelPage({ rankings }) {
     ["saturation", "Saturation"],
     ["spotlight", "City Spotlight"],
     ["scout", "City Scout"],
+    ["booking-day", "A Booking Day"],
   ];
   return (
     <div className="mk-page">
@@ -1429,6 +1514,7 @@ function BookingIntelPage({ rankings }) {
       {view === "saturation" && <MarketSaturationPage rankings={rankings} />}
       {view === "spotlight" && <CitySpotlightPage rankings={rankings} />}
       {view === "scout" && <CityScoutPage rankings={rankings} />}
+      {view === "booking-day" && <DayInLifePage onCta={(v) => { setView(v); window.scrollTo({ top: 0 }); }} />}
     </div>
   );
 }
@@ -2318,10 +2404,11 @@ export default function App() {
   const [breakouts, setBreakouts]             = useState([]);
   const [breakoutThreshold, setBreakoutThreshold] = useState(8);
   const [expanded, setExpanded]       = useState(null);
-  const [sortKey, setSortKey]         = useState("score");
+  const initUrl = useMemo(readRankingsUrl, []);
+  const [sortKey, setSortKey]         = useState(initUrl.sort);
   const [compareList, setCompareList] = useState([]);
   const [showCompare, setShowCompare] = useState(false);
-  const [activeTab, setActiveTab]     = useState("rankings");
+  const [activeTab, setActiveTab]     = useState(initUrl.tab);
   const { watched, isWatched, toggle: toggleWatch } = useWatchlist();
   const cardRefs = useRef({});
 
@@ -2378,14 +2465,29 @@ export default function App() {
   const { alerts: momentumAlerts, dismiss: dismissAlerts } = useMomentumAlerts(rankings, watched);
 
   // Genre lean filter (house / techno / all) — derived from Beatport, never adjudicated.
-  const [genreFilter, setGenreFilter] = useState("all");
+  const [genreFilter, setGenreFilter] = useState(initUrl.genre);
   // Stakeholder lens + cohort index. Persona reframes the same data (Agent/Promoter/
   // Festival); cohort re-normalises within a sub-pool (emerging / rising / region)
   // so global outliers don't compress the scale. See cohort.js.
-  const [persona, setPersona] = useState("all");
-  const [cohort, setCohort]   = useState("full"); // full | emerging | rising | region
-  const [region, setRegion]   = useState("");
+  const [persona, setPersona] = useState(initUrl.lens);
+  const [cohort, setCohort]   = useState(initUrl.cohort); // full | emerging | rising | region
+  const [region, setRegion]   = useState(initUrl.region);
   const regions = useMemo(() => deriveRegions(rankings), [rankings]);
+
+  // Reflect rankings state into the URL (shareable / indexable), and restore it
+  // on browser back/forward. replaceState keeps history clean while you fiddle.
+  useEffect(() => {
+    writeRankingsUrl({ tab: activeTab, sort: sortKey, genre: genreFilter, lens: persona, cohort, region });
+  }, [activeTab, sortKey, genreFilter, persona, cohort, region]);
+  useEffect(() => {
+    const onPop = () => {
+      const s = readRankingsUrl();
+      setActiveTab(s.tab); setSortKey(s.sort); setGenreFilter(s.genre);
+      setPersona(s.lens); setCohort(s.cohort); setRegion(s.region);
+    };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, []);
 
   function pickPersona(key) {
     const p = PERSONAS[key];
@@ -2503,7 +2605,6 @@ export default function App() {
           <button className={`top-tab ${activeTab === "charts"        ? "top-tab--active" : ""}`} onClick={() => setActiveTab("charts")}>Charts</button>
           <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
           <button className={`top-tab ${activeTab === "booking" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking")}>Booking Intelligence</button>
-          <button className={`top-tab ${activeTab === "booking-day" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking-day")}>A Booking Day</button>
           <button className={`top-tab ${activeTab === "clubs" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("clubs")}>Club Index</button>
           <button className={`top-tab ${activeTab === "reports" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("reports")}>Reports</button>
           {editor && <button className={`top-tab ${activeTab === "journal" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("journal")}>Journal <span className="tab-private">·private</span></button>}
@@ -2519,7 +2620,6 @@ export default function App() {
       {activeTab === "pro" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ProPage rankings={rankings} /></Suspense>}
       {activeTab === "charts"        && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading charts…</div>}><ChartsPage rankings={rankings} /></Suspense>}
       {activeTab === "booking"       && <BookingIntelPage rankings={rankings} />}
-      {activeTab === "booking-day"   && <DayInLifePage onCta={(tab) => { setActiveTab(tab); window.scrollTo({ top: 0 }); }} />}
       {activeTab === "clubs"         && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ClubsPage /></Suspense>}
       {activeTab === "reports"       && <ReportsPage />}
       {activeTab === "journal"       && editor && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><BlogPage /></Suspense>}
@@ -2541,6 +2641,7 @@ export default function App() {
             key={key}
             className={`lens-btn ${persona === key ? "lens-btn--active" : ""}`}
             onClick={() => pickPersona(key)}
+            aria-pressed={persona === key}
             title={p.question || "The full index, no persona framing"}
           >
             {p.label}
@@ -2552,6 +2653,7 @@ export default function App() {
             key={key}
             className={`lens-btn ${cohort === key ? "lens-btn--active" : ""}`}
             onClick={() => { setCohort(key); if (key !== "region") setRegion(""); else if (!region && regions[0]) setRegion(regions[0]); }}
+            aria-pressed={cohort === key}
             title="Re-rank within this cohort — scores re-normalised over the sub-pool, not the global 330"
           >
             {label}
@@ -2581,6 +2683,7 @@ export default function App() {
             key={opt.key}
             className={`sort-btn ${sortKey === opt.key ? "sort-btn--active" : ""}`}
             onClick={() => setSortKey(opt.key)}
+            aria-pressed={sortKey === opt.key}
           >
             {opt.label}
           </button>
@@ -2591,6 +2694,7 @@ export default function App() {
             key={key}
             className={`sort-btn ${genreFilter === key ? "sort-btn--active" : ""}`}
             onClick={() => setGenreFilter(key)}
+            aria-pressed={genreFilter === key}
             title={key === "techno" ? "Techno-leaning & crossover acts — plus the pure-techno acts pulled from the house-anchored main ranking" : key === "house" ? "House, tech house & crossover acts" : "House-anchored main ranking — pure-techno acts live under the Techno filter"}
           >
             {label}
@@ -2609,7 +2713,7 @@ export default function App() {
       )}
 
       <main className="rankings-list">
-        {loading && <div className="state-msg"><div className="spinner" />Loading rankings…</div>}
+        {loading && <RankingsSkeleton rows={8} />}
         {error   && <div className="state-msg state-msg--error">⚠ {error}</div>}
         {!loading && !error && visible.map((dj, i) => {
           // Main/house view is a house-anchored ranking with pure-techno removed, so
