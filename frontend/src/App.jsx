@@ -2309,6 +2309,14 @@ function BreakoutsPage({ rankings, breakouts: staticBreakouts, breakoutThreshold
 // ── Reports — published analysis ────────────────────────────────────
 const REPORTS = [
   {
+    title: "III Points 2026 — Lineup Intelligence",
+    dek: "A full demand read on the III Points Miami lineup: a multi-genre curator bill where the budget splits three ways. Who's underpriced, who's a Club-Space-saturated local, the ticket-conversion standouts, and the budget math — built from the same live-anchored data the rest of the site runs on.",
+    href: "/reports/iii-points-2026/",
+    img: "/reports/iii-points-2026/img/card-table-4x5.png",
+    tag: "Festival",
+    date: "2026-06-10",
+  },
+  {
     title: "CRSSD Fall 2026 — Lineup Intelligence",
     dek: "A full demand read on the CRSSD Fall lineup: who's underpriced, who's overbooked in San Diego, ticket-conversion standouts, and the budget math — built from the same live-anchored data the rest of the site runs on.",
     href: "/reports/crssd-fall-2026/",

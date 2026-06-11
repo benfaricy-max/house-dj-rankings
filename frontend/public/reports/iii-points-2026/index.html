@@ -1,0 +1,627 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>III Points 2026 — Lineup Intelligence | PEAKTIME</title>
+<meta name="description" content="A data-driven booking analysis of the III Points 2026 lineup — estimated budget, value buys, overpays and Miami market saturation, by PEAKTIME / thedjrankings.com.">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0c0c0e;--card:#111114;--ink:#E9E7DF;--muted:#75767d;--accent:#C8F750;--blue:#7fd4ff;--orange:#ff8a5c;--line:#1e1f23;--mono:'IBM Plex Mono',monospace}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.6}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px}
+  .brand{display:flex;align-items:center;gap:10px;padding:22px 0}
+  .brand svg{width:22px;height:22px}.brand b{font-family:var(--mono);letter-spacing:.2em;font-size:13px}
+  .brand a{color:var(--muted);text-decoration:none;font-family:var(--mono);font-size:12px;margin-left:auto}
+  .hero{padding:26px 0 30px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-size:46px;line-height:1.05;letter-spacing:-1.5px;margin-bottom:14px}
+  h2{font-size:26px;letter-spacing:-.5px;margin:38px 0 14px}
+  h3{font-size:16px;color:#fff;margin-bottom:4px}
+  p{color:#c9c8c2;margin-bottom:12px}.lead{font-size:19px;color:#d6d7df}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .kpi .n{font-family:var(--mono);font-size:30px;font-weight:600;color:var(--accent)}
+  .kpi .n.sm{font-size:22px}
+  .kpi .l{font-size:12px;color:var(--muted);margin-top:6px}
+  .bars{margin:8px 0 4px}
+  .bar-row{display:grid;grid-template-columns:230px 1fr 92px;gap:12px;align-items:center;padding:5px 0}
+  .bar-name{font-size:14px;color:#e9e7df;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar-name .cov{color:var(--accent);font-size:10px;font-family:var(--mono);margin-left:6px}
+  .bar-track{height:18px;background:#15161c;border-radius:5px;overflow:hidden}
+  .bar-fill{height:100%;border-radius:5px}
+  .bar-val{font-family:var(--mono);font-size:13px;color:var(--muted);text-align:right}
+  .legend{display:flex;gap:18px;font-family:var(--mono);font-size:12px;color:var(--muted);margin:6px 0 0;flex-wrap:wrap}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:middle}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .box.win{border-color:rgba(200,247,80,.4)} .box.warn{border-color:rgba(255,138,92,.4)}
+  .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:6px;display:inline-block;margin-bottom:8px}
+  .tag.win{background:rgba(200,247,80,.14);color:var(--accent)} .tag.warn{background:rgba(255,138,92,.14);color:var(--orange)} .tag.sat{background:rgba(223,122,92,.16);color:#df7a5c}
+  .box ul{list-style:none;margin-top:8px} .box li{font-size:14px;color:#c9c8c2;padding-left:18px;position:relative;margin-bottom:8px}
+  .box li::before{content:"\203A";position:absolute;left:0;color:var(--accent)} .box li b{color:#fff}
+  .note{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);margin-top:34px;padding:18px 0 50px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:10px}
+  th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+  td{padding:9px 10px;border-bottom:1px solid #161619}.tnum{font-family:var(--mono);color:#e9e7df}
+  .pill{font-family:var(--mono);font-size:11px;padding:2px 7px;border-radius:5px}
+  .p-buy{background:rgba(200,247,80,.15);color:var(--accent)} .p-prem{background:rgba(255,138,92,.15);color:var(--orange)} .p-mo{color:var(--accent)}
+  @media(max-width:720px){.kpis{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}.bar-row{grid-template-columns:130px 1fr 70px}h1{font-size:32px}}
+</style></head><body>
+<div class="wrap">
+  <div class="brand"><svg viewBox="0 0 32 32"><g fill="#C8F750"><rect x="5.5" y="18.5" width="3.6" height="8" rx="1.3"/><rect x="11.2" y="13" width="3.6" height="13.5" rx="1.3"/><rect x="16.9" y="8" width="3.6" height="18.5" rx="1.3"/><rect x="22.6" y="4" width="3.6" height="22.5" rx="1.3"/></g></svg><b>PEAKTIME</b><a href="https://thedjrankings.com">thedjrankings.com ↗</a></div>
+  <div class="hero">
+    <div class="eyebrow">Lineup Intelligence · Miami · Oct 16–17 2026</div>
+    <h1>III Points 2026:<br>what the lineup is really worth</h1>
+    <p class="lead">We ran the III Points 2026 bill through PEAKTIME's demand model — estimating the talent budget, then scoring each act on momentum, value, live conversion and Miami-market freshness. III Points isn't a pure dance festival, so the money splits three ways. Here's where it went, who's underpriced, and who'll actually move tickets.</p>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="n">~$2,290,000</div><div class="l">Est. talent budget (curated top 62)</div></div>
+    <div class="kpi"><div class="n">62</div><div class="l">Acts costed (full bill is larger)</div></div>
+    <div class="kpi"><div class="n">38%</div><div class="l">Spent outside the dance lane</div></div>
+    <div class="kpi"><div class="n sm">29 / 62</div><div class="l">Acts tracked by PEAKTIME</div></div>
+  </div>
+
+  <h2>Where the budget went</h2>
+  <p>Estimated booking fee per act as a share of the ~$2,290,000 costed total. III Points buys across three lanes: electronic / dance in lime, live / indie / alt in blue, hip-hop / rap in orange. PEAKTIME tracks the dance lane — the rest is curation.</p>
+  <div class="legend">
+    <span><span class="dot" style="background:#C8F750"></span>Electronic / dance · $1,420,000</span>
+    <span><span class="dot" style="background:#7fd4ff"></span>Live / indie / alt · $552,000</span>
+    <span><span class="dot" style="background:#ff8a5c"></span>Hip-hop / rap · $318,000</span>
+  </div>
+  <div class="bars"><div class="bar-row">
+    <div class="bar-name">Underworld</div>
+    <div class="bar-track"><div class="bar-fill" style="width:100%;background:#7fd4ff"></div></div>
+    <div class="bar-val">$120,000 · 5.2%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Marco Carola b2b Franky Rizardo<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:79.16666666666666%;background:#C8F750"></div></div>
+    <div class="bar-val">$95,000 · 4.1%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Four Tet<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:75%;background:#C8F750"></div></div>
+    <div class="bar-val">$90,000 · 3.9%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Charlotte de Witte<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:70.83333333333334%;background:#C8F750"></div></div>
+    <div class="bar-val">$85,000 · 3.7%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Lil' Kim</div>
+    <div class="bar-track"><div class="bar-fill" style="width:62.5%;background:#ff8a5c"></div></div>
+    <div class="bar-val">$75,000 · 3.3%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Adam Port<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:58.333333333333336%;background:#C8F750"></div></div>
+    <div class="bar-val">$70,000 · 3.1%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Vintage Culture b2b Max Styler<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:58.333333333333336%;background:#C8F750"></div></div>
+    <div class="bar-val">$70,000 · 3.1%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Blood Orange</div>
+    <div class="bar-track"><div class="bar-fill" style="width:58.333333333333336%;background:#7fd4ff"></div></div>
+    <div class="bar-val">$70,000 · 3.1%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Men I Trust</div>
+    <div class="bar-track"><div class="bar-fill" style="width:58.333333333333336%;background:#7fd4ff"></div></div>
+    <div class="bar-val">$70,000 · 3.1%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Cloonee<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:50%;background:#C8F750"></div></div>
+    <div class="bar-val">$60,000 · 2.6%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Parcels</div>
+    <div class="bar-track"><div class="bar-fill" style="width:50%;background:#7fd4ff"></div></div>
+    <div class="bar-val">$60,000 · 2.6%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Flying Lotus</div>
+    <div class="bar-track"><div class="bar-fill" style="width:45.83333333333333%;background:#C8F750"></div></div>
+    <div class="bar-val">$55,000 · 2.4%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Honey Dijon<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:41.66666666666667%;background:#C8F750"></div></div>
+    <div class="bar-val">$50,000 · 2.2%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Floating Points<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:41.66666666666667%;background:#C8F750"></div></div>
+    <div class="bar-val">$50,000 · 2.2%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Danny Brown</div>
+    <div class="bar-track"><div class="bar-fill" style="width:41.66666666666667%;background:#ff8a5c"></div></div>
+    <div class="bar-val">$50,000 · 2.2%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Bone Thugs-N-Harmony</div>
+    <div class="bar-track"><div class="bar-fill" style="width:41.66666666666667%;background:#ff8a5c"></div></div>
+    <div class="bar-val">$50,000 · 2.2%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Daphni</div>
+    <div class="bar-track"><div class="bar-fill" style="width:37.5%;background:#C8F750"></div></div>
+    <div class="bar-val">$45,000 · 2.0%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">PAWSA<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:37.5%;background:#C8F750"></div></div>
+    <div class="bar-val">$45,000 · 2.0%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Disco Lines<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:37.5%;background:#C8F750"></div></div>
+    <div class="bar-val">$45,000 · 2.0%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Purity Ring</div>
+    <div class="bar-track"><div class="bar-fill" style="width:37.5%;background:#7fd4ff"></div></div>
+    <div class="bar-val">$45,000 · 2.0%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">GZA performing Liquid Swords</div>
+    <div class="bar-track"><div class="bar-fill" style="width:37.5%;background:#ff8a5c"></div></div>
+    <div class="bar-val">$45,000 · 2.0%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Tokischa</div>
+    <div class="bar-track"><div class="bar-fill" style="width:37.5%;background:#ff8a5c"></div></div>
+    <div class="bar-val">$45,000 · 2.0%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">KETTAMA<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:33.33333333333333%;background:#C8F750"></div></div>
+    <div class="bar-val">$40,000 · 1.7%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">DJ Harvey<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:31.666666666666664%;background:#C8F750"></div></div>
+    <div class="bar-val">$38,000 · 1.7%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Seth Troxler<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:29.166666666666668%;background:#C8F750"></div></div>
+    <div class="bar-val">$35,000 · 1.5%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Hamdi</div>
+    <div class="bar-track"><div class="bar-fill" style="width:29.166666666666668%;background:#C8F750"></div></div>
+    <div class="bar-val">$35,000 · 1.5%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Odd Mob</div>
+    <div class="bar-track"><div class="bar-fill" style="width:29.166666666666668%;background:#C8F750"></div></div>
+    <div class="bar-val">$35,000 · 1.5%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Beltran b2b Ben Sterling<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:29.166666666666668%;background:#C8F750"></div></div>
+    <div class="bar-val">$35,000 · 1.5%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Ki/Ki</div>
+    <div class="bar-track"><div class="bar-fill" style="width:29.166666666666668%;background:#C8F750"></div></div>
+    <div class="bar-val">$35,000 · 1.5%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">999999999<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:29.166666666666668%;background:#C8F750"></div></div>
+    <div class="bar-val">$35,000 · 1.5%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Tricky</div>
+    <div class="bar-track"><div class="bar-fill" style="width:29.166666666666668%;background:#7fd4ff"></div></div>
+    <div class="bar-val">$35,000 · 1.5%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Kelela</div>
+    <div class="bar-track"><div class="bar-fill" style="width:29.166666666666668%;background:#ff8a5c"></div></div>
+    <div class="bar-val">$35,000 · 1.5%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Interplanetary Criminal</div>
+    <div class="bar-track"><div class="bar-fill" style="width:25%;background:#C8F750"></div></div>
+    <div class="bar-val">$30,000 · 1.3%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">HAAi<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:25%;background:#C8F750"></div></div>
+    <div class="bar-val">$30,000 · 1.3%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Tiga<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:25%;background:#C8F750"></div></div>
+    <div class="bar-val">$30,000 · 1.3%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Connan Mockasin</div>
+    <div class="bar-track"><div class="bar-fill" style="width:25%;background:#7fd4ff"></div></div>
+    <div class="bar-val">$30,000 · 1.3%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Sunn O)))</div>
+    <div class="bar-track"><div class="bar-fill" style="width:25%;background:#7fd4ff"></div></div>
+    <div class="bar-val">$30,000 · 1.3%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">VTSS<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:23.333333333333332%;background:#C8F750"></div></div>
+    <div class="bar-val">$28,000 · 1.2%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Machine Girl</div>
+    <div class="bar-track"><div class="bar-fill" style="width:20.833333333333336%;background:#7fd4ff"></div></div>
+    <div class="bar-val">$25,000 · 1.1%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Shanti Celeste b2b Peach</div>
+    <div class="bar-track"><div class="bar-fill" style="width:20%;background:#C8F750"></div></div>
+    <div class="bar-val">$24,000 · 1.0%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Nick León b2b Safety Trance</div>
+    <div class="bar-track"><div class="bar-fill" style="width:18.333333333333332%;background:#C8F750"></div></div>
+    <div class="bar-val">$22,000 · 1.0%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Max Dean b2b Luke Dean<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:18.333333333333332%;background:#C8F750"></div></div>
+    <div class="bar-val">$22,000 · 1.0%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Roman Flügel<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:16.666666666666664%;background:#C8F750"></div></div>
+    <div class="bar-val">$20,000 · 0.9%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Danny Daze<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:15%;background:#C8F750"></div></div>
+    <div class="bar-val">$18,000 · 0.8%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Jacques Greene</div>
+    <div class="bar-track"><div class="bar-fill" style="width:15%;background:#C8F750"></div></div>
+    <div class="bar-val">$18,000 · 0.8%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Jane Remover</div>
+    <div class="bar-track"><div class="bar-fill" style="width:15%;background:#7fd4ff"></div></div>
+    <div class="bar-val">$18,000 · 0.8%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Rusowsky</div>
+    <div class="bar-track"><div class="bar-fill" style="width:15%;background:#ff8a5c"></div></div>
+    <div class="bar-val">$18,000 · 0.8%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Ahmed Spins b2b Rafael<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:13.333333333333334%;background:#C8F750"></div></div>
+    <div class="bar-val">$16,000 · 0.7%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Levity b2b Taiki Nulight</div>
+    <div class="bar-track"><div class="bar-fill" style="width:13.333333333333334%;background:#C8F750"></div></div>
+    <div class="bar-val">$16,000 · 0.7%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Discip<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:11.666666666666666%;background:#C8F750"></div></div>
+    <div class="bar-val">$14,000 · 0.6%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Moscoman</div>
+    <div class="bar-track"><div class="bar-fill" style="width:11.666666666666666%;background:#C8F750"></div></div>
+    <div class="bar-val">$14,000 · 0.6%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">ML Buch</div>
+    <div class="bar-track"><div class="bar-fill" style="width:11.666666666666666%;background:#7fd4ff"></div></div>
+    <div class="bar-val">$14,000 · 0.6%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Chanel Beads</div>
+    <div class="bar-track"><div class="bar-fill" style="width:11.666666666666666%;background:#7fd4ff"></div></div>
+    <div class="bar-val">$14,000 · 0.6%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Rebolledo</div>
+    <div class="bar-track"><div class="bar-fill" style="width:10%;background:#C8F750"></div></div>
+    <div class="bar-val">$12,000 · 0.5%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">YHWH Nailgun</div>
+    <div class="bar-track"><div class="bar-fill" style="width:10%;background:#7fd4ff"></div></div>
+    <div class="bar-val">$12,000 · 0.5%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Sam Alfred<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:9.166666666666666%;background:#C8F750"></div></div>
+    <div class="bar-val">$11,000 · 0.5%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Dean Turnley<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:8.333333333333332%;background:#C8F750"></div></div>
+    <div class="bar-val">$10,000 · 0.4%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Roddy Lima<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:8.333333333333332%;background:#C8F750"></div></div>
+    <div class="bar-val">$10,000 · 0.4%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Brunello<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:7.5%;background:#C8F750"></div></div>
+    <div class="bar-val">$9,000 · 0.4%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Chasewest<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:7.5%;background:#C8F750"></div></div>
+    <div class="bar-val">$9,000 · 0.4%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Marco Strous<span class="cov">●TRACKED</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:7.5%;background:#C8F750"></div></div>
+    <div class="bar-val">$9,000 · 0.4%</div>
+  </div><div class="bar-row">
+    <div class="bar-name">Mind Enterprises</div>
+    <div class="bar-track"><div class="bar-fill" style="width:7.5%;background:#7fd4ff"></div></div>
+    <div class="bar-val">$9,000 · 0.4%</div>
+  </div></div>
+
+  <h2>Key wins &amp; watch-outs</h2>
+  <div class="grid">
+    <div class="box win"><span class="tag win">Smartest buy</span><h3>KETTAMA — converts, and fresh for Miami</h3>
+      <p>Flagged a <b>Strong Buy</b> at ~$40K: live-conversion <b>71</b>, RA <b>76</b> — his room demand dwarfs his streaming. And the saturation math favours this date: he's maxed out in SF/Oakland (5 shows/3mo, saturation 100) but carries <b>no recent Miami play</b>. Value <i>and</i> scarcity in the same booking.</p></div>
+    <div class="box win"><span class="tag win">Value mid-card</span><h3>PAWSA &amp; the Carola b2b punch up</h3>
+      <p>PAWSA: #25 on the index, momentum <b>72</b>, RA <b>85</b> (top-five on the whole bill) — a <b>Strong Buy</b> at ~$45K. Inside the headline tech-house b2b, <b>Franky Rizardo</b> also reads underpriced (momentum 41, strong-buy), so the Marco Carola slot carries real demand value even with Carola himself outside our roster.</p></div>
+    <div class="box warn"><span class="tag warn">Paying for the name</span><h3>The marquee is curation, not a deal</h3>
+      <p>The biggest lines — <b>Underworld</b> (5% of the costed budget), <b>Lil' Kim</b>, <b>Blood Orange</b>, <b>Men I Trust</b> — sit outside the dance-demand model entirely. They sell III Points' eclectic identity, not booking value. Inside the dance lane, <b>Four Tet</b> reads <b>Priced ahead</b> (premium; momentum cooled to 16).</p></div>
+    <div class="box warn"><span class="tag warn">Breakout to watch</span><h3>Discip is the steepest climb on the bill</h3>
+      <p>Momentum <b>83</b> — the highest of any tracked act here — booked deep in the undercard at an estimated ~$14K. <b>Dean Turnley</b> (momentum 71) and <b>Roddy Lima</b> (60) are climbing fast too. Early-booked accelerators that look like steals in hindsight if the curve holds.</p></div>
+  </div>
+
+  <h2>Market saturation — this is a Miami date</h2>
+  <div class="box" style="margin-top:6px"><span class="tag sat">Club-Space fatigue risk</span>
+    <ul>
+      <li><b>Chasewest</b> carries Miami saturation <b>76</b> (3 shows/3mo) — a Club Space regular, maximally familiar to the local room.</li>
+      <li><b>PAWSA</b> (sat 54, 2 Miami shows), <b>Beltran</b> (sat 52, played Miami 2 days out) and Miami-native <b>Danny Daze</b> (sat 52) make the Club Space tech-house lane the most locally-worked part of the bill — great value, lower novelty for this crowd.</li>
+      <li><b>Charlotte de Witte</b> played Miami ~8 days before the on-sale read (sat 52) — recent regional presence.</li>
+      <li>Upside: <b>KETTAMA, Four Tet, HAAi, Floating Points</b> and the Euro-underground block carry their saturation in <i>other</i> markets — comparatively fresh for South Florida.</li>
+    </ul>
+  </div>
+
+  <h2>Streaming ≠ tickets</h2>
+  <p>The number a streaming chart hides — RA live-conversion relative to streaming reach. On a curator bill like this, the contrast is the whole point:</p>
+  <div class="grid">
+    <div class="box win"><span class="tag win">Converts above its weight</span>
+      <ul><li><b>Seth Troxler</b> — conversion 98/100 on just 0.1M listeners</li><li><b>Floating Points</b> — conversion 88/100 on just 0.7M listeners</li><li><b>Sam Alfred</b> — conversion 85/100 on just 0.2M listeners</li><li><b>HAAi</b> — conversion 82/100 on just 0.5M listeners</li><li><b>Roman Flügel</b> — conversion 82/100 on just 0.1M listeners</li><li><b>VTSS</b> — conversion 79/100 on just 0.2M listeners</li></ul>
+      <p style="font-size:13px;margin-top:6px">Niche draw &gt; streaming size — the value end of the bill. Seth Troxler turns 0.1M listeners into a 98/100 room read.</p></div>
+    <div class="box warn"><span class="tag warn">Big streams, soft live demand</span>
+      <ul><li><b>Adam Port</b> — 14.2M listeners but conversion 2/100</li><li><b>Cloonee</b> — 9.5M listeners but conversion 2/100</li></ul>
+      <p style="font-size:13px;margin-top:6px">Plus <b>Disco Lines</b> — 20.7M listeners, the bill's biggest streamer, but no RA booking footprint yet. Great for the on-sale headline, riskier as a room-filling underground booking.</p></div>
+  </div>
+
+  <h2>Who actually drives ticket sales</h2>
+  <p>Three jobs on this bill, and they barely overlap. The <b>marquee / curation</b> (Underworld, Lil' Kim, Four Tet, Blood Orange, Charlotte de Witte) sells the on-sale and the festival's eclectic identity. The <b>Club Space tech-house engine</b> (Marco Carola b2b Franky Rizardo, PAWSA, Cloonee, Beltran, KETTAMA) converts Miami's dance core — the city's home-court genre. And the <b>underground-credibility block</b> (Seth Troxler, Floating Points, HAAi, Roman Flügel, 999999999, VTSS — all high live-conversion) sells the curatorial bona fides and over-delivers in the room. The hidden engine, as always, is live-conversion: Seth Troxler's 98/100 on 0.1M listeners is the exact inverse of Adam Port's 14M-listener / conversion-2 profile — and a discerning buyer wants the former.</p>
+
+  <h2>The tracked acts, by the numbers</h2>
+  <table><thead><tr><th>Artist</th><th>Rank</th><th>Est. fee</th><th>Mom.</th><th>Value</th><th>Conv.</th><th>BP</th><th>RA</th></tr></thead>
+  <tbody><tr>
+  <td>Charlotte de Witte</td>
+  <td class="tnum">#6</td>
+  <td class="tnum">$85,000</td>
+  <td><span class="p-mo tnum">25</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">13</td>
+  <td class="tnum">77</td>
+  <td class="tnum">49</td>
+</tr><tr>
+  <td>Four Tet</td>
+  <td class="tnum">#20</td>
+  <td class="tnum">$90,000</td>
+  <td><span class="p-mo tnum">16</span></td>
+  <td><span class="pill p-prem">Priced ahead</span></td>
+  <td class="tnum">43</td>
+  <td class="tnum">11</td>
+  <td class="tnum">76</td>
+</tr><tr>
+  <td>Vintage Culture b2b Max Styler</td>
+  <td class="tnum">#24</td>
+  <td class="tnum">$70,000</td>
+  <td><span class="p-mo tnum">56</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">32</td>
+  <td class="tnum">93</td>
+  <td class="tnum">82</td>
+</tr><tr>
+  <td>PAWSA</td>
+  <td class="tnum">#25</td>
+  <td class="tnum">$45,000</td>
+  <td><span class="p-mo tnum">72</span></td>
+  <td><span class="pill p-buy">★ Strong buy</span></td>
+  <td class="tnum">37</td>
+  <td class="tnum">67</td>
+  <td class="tnum">85</td>
+</tr><tr>
+  <td>Cloonee</td>
+  <td class="tnum">#26</td>
+  <td class="tnum">$60,000</td>
+  <td><span class="p-mo tnum">59</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">2</td>
+  <td class="tnum">74</td>
+  <td class="tnum">42</td>
+</tr><tr>
+  <td>Marco Carola b2b Franky Rizardo</td>
+  <td class="tnum">#28</td>
+  <td class="tnum">$95,000</td>
+  <td><span class="p-mo tnum">41</span></td>
+  <td><span class="pill p-buy">★ Strong buy</span></td>
+  <td class="tnum">34</td>
+  <td class="tnum">73</td>
+  <td class="tnum">58</td>
+</tr><tr>
+  <td>Seth Troxler</td>
+  <td class="tnum">#33</td>
+  <td class="tnum">$35,000</td>
+  <td><span class="p-mo tnum">23</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">98</td>
+  <td class="tnum">—</td>
+  <td class="tnum">84</td>
+</tr><tr>
+  <td>Adam Port</td>
+  <td class="tnum">#35</td>
+  <td class="tnum">$70,000</td>
+  <td><span class="p-mo tnum">73</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">2</td>
+  <td class="tnum">91</td>
+  <td class="tnum">43</td>
+</tr><tr>
+  <td>Tiga</td>
+  <td class="tnum">#42</td>
+  <td class="tnum">$30,000</td>
+  <td><span class="p-mo tnum">37</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">39</td>
+  <td class="tnum">64</td>
+  <td class="tnum">48</td>
+</tr><tr>
+  <td>Max Dean b2b Luke Dean</td>
+  <td class="tnum">#50</td>
+  <td class="tnum">$22,000</td>
+  <td><span class="p-mo tnum">45</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">—</td>
+  <td class="tnum">88</td>
+  <td class="tnum">—</td>
+</tr><tr>
+  <td>Beltran b2b Ben Sterling</td>
+  <td class="tnum">#60</td>
+  <td class="tnum">$35,000</td>
+  <td><span class="p-mo tnum">70</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">65</td>
+  <td class="tnum">41</td>
+  <td class="tnum">54</td>
+</tr><tr>
+  <td>KETTAMA</td>
+  <td class="tnum">#66</td>
+  <td class="tnum">$40,000</td>
+  <td><span class="p-mo tnum">40</span></td>
+  <td><span class="pill p-buy">★ Strong buy</span></td>
+  <td class="tnum">71</td>
+  <td class="tnum">38</td>
+  <td class="tnum">76</td>
+</tr><tr>
+  <td>Honey Dijon</td>
+  <td class="tnum">#71</td>
+  <td class="tnum">$50,000</td>
+  <td><span class="p-mo tnum">24</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">—</td>
+  <td class="tnum">—</td>
+  <td class="tnum">—</td>
+</tr><tr>
+  <td>Floating Points</td>
+  <td class="tnum">#86</td>
+  <td class="tnum">$50,000</td>
+  <td><span class="p-mo tnum">36</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">88</td>
+  <td class="tnum">—</td>
+  <td class="tnum">65</td>
+</tr><tr>
+  <td>HAAi</td>
+  <td class="tnum">#94</td>
+  <td class="tnum">$30,000</td>
+  <td><span class="p-mo tnum">38</span></td>
+  <td><span class="pill p-buy">Underpriced</span></td>
+  <td class="tnum">82</td>
+  <td class="tnum">—</td>
+  <td class="tnum">80</td>
+</tr><tr>
+  <td>Roddy Lima</td>
+  <td class="tnum">#125</td>
+  <td class="tnum">$10,000</td>
+  <td><span class="p-mo tnum">60</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">—</td>
+  <td class="tnum">67</td>
+  <td class="tnum">—</td>
+</tr><tr>
+  <td>Roman Flügel</td>
+  <td class="tnum">#144</td>
+  <td class="tnum">$20,000</td>
+  <td><span class="p-mo tnum">53</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">82</td>
+  <td class="tnum">20</td>
+  <td class="tnum">51</td>
+</tr><tr>
+  <td>Disco Lines</td>
+  <td class="tnum">#160</td>
+  <td class="tnum">$45,000</td>
+  <td><span class="p-mo tnum">41</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">—</td>
+  <td class="tnum">—</td>
+  <td class="tnum">—</td>
+</tr><tr>
+  <td>Discip</td>
+  <td class="tnum">#178</td>
+  <td class="tnum">$14,000</td>
+  <td><span class="p-mo tnum">83</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">—</td>
+  <td class="tnum">53</td>
+  <td class="tnum">—</td>
+</tr><tr>
+  <td>DJ Harvey</td>
+  <td class="tnum">#227</td>
+  <td class="tnum">$38,000</td>
+  <td><span class="tnum" style="color:#555">—</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">—</td>
+  <td class="tnum">—</td>
+  <td class="tnum">46</td>
+</tr><tr>
+  <td>999999999</td>
+  <td class="tnum">#229</td>
+  <td class="tnum">$35,000</td>
+  <td><span class="p-mo tnum">48</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">61</td>
+  <td class="tnum">—</td>
+  <td class="tnum">51</td>
+</tr><tr>
+  <td>Ahmed Spins b2b Rafael</td>
+  <td class="tnum">#236</td>
+  <td class="tnum">$16,000</td>
+  <td><span class="p-mo tnum">57</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">50</td>
+  <td class="tnum">77</td>
+  <td class="tnum">38</td>
+</tr><tr>
+  <td>Danny Daze</td>
+  <td class="tnum">#240</td>
+  <td class="tnum">$18,000</td>
+  <td><span class="tnum" style="color:#555">—</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">—</td>
+  <td class="tnum">—</td>
+  <td class="tnum">54</td>
+</tr><tr>
+  <td>VTSS</td>
+  <td class="tnum">#242</td>
+  <td class="tnum">$28,000</td>
+  <td><span class="p-mo tnum">50</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">79</td>
+  <td class="tnum">—</td>
+  <td class="tnum">67</td>
+</tr><tr>
+  <td>Brunello</td>
+  <td class="tnum">#254</td>
+  <td class="tnum">$9,000</td>
+  <td><span class="p-mo tnum">55</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">—</td>
+  <td class="tnum">99</td>
+  <td class="tnum">—</td>
+</tr><tr>
+  <td>Sam Alfred</td>
+  <td class="tnum">#259</td>
+  <td class="tnum">$11,000</td>
+  <td><span class="p-mo tnum">47</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">85</td>
+  <td class="tnum">—</td>
+  <td class="tnum">64</td>
+</tr><tr>
+  <td>Dean Turnley</td>
+  <td class="tnum">#305</td>
+  <td class="tnum">$10,000</td>
+  <td><span class="p-mo tnum">71</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">—</td>
+  <td class="tnum">61</td>
+  <td class="tnum">4</td>
+</tr><tr>
+  <td>Marco Strous</td>
+  <td class="tnum">#318</td>
+  <td class="tnum">$9,000</td>
+  <td><span class="p-mo tnum">59</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">30</td>
+  <td class="tnum">—</td>
+  <td class="tnum">28</td>
+</tr><tr>
+  <td>Chasewest</td>
+  <td class="tnum">#323</td>
+  <td class="tnum">$9,000</td>
+  <td><span class="p-mo tnum">50</span></td>
+  <td><span style="color:#555">—</span></td>
+  <td class="tnum">75</td>
+  <td class="tnum">—</td>
+  <td class="tnum">42</td>
+</tr></tbody></table>
+
+  <div class="note">
+    <b>Method &amp; caveats.</b> Booking fees are PEAKTIME editorial estimates for a US festival booking (USD), not confirmed contracts — actual fees vary with routing, exclusivity and timing. We costed a curated top 62 of the bill; the full III Points lineup (including the Club Space b2b undercard) is larger. b2b and "presents" slots are costed as a single line. Rank, momentum, value, live-conversion, Beatport, RA and Miami-saturation figures are live from thedjrankings.com for the 29 acts the roster currently tracks — PEAKTIME covers house/techno/electronic, so the hip-hop and indie lanes show as untracked by design. Demand signals from public sources (Spotify, Beatport, Resident Advisor, Google Trends, Wikipedia). Not affiliated with III Points or its promoters.
+    <br><br>PEAKTIME · the demand index for electronic music · <b style="color:var(--accent)">thedjrankings.com</b>
+  </div>
+</div>
+</body></html>
