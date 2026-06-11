@@ -10,6 +10,7 @@ import { InfoTip, MomentumTip, MOMENTUM_BLEND, artistForm, FORM_META, FormTip, g
 import { rankWithinCohort, withRankIntervals, deriveRegions, inRegion, isRising, PERSONAS } from "./cohort";
 import PitchPage from "./Pitch";   // read-only private brief route (also pulled by ValueGap)
 import HeroHooks from "./HeroHooks";   // rotating audience call-out at top of front page
+import HeroLive from "./HeroLive";     // live proof strip + who's-moving band under the masthead
 import DayInLifePage from "./DayInLife";   // "A Booking Day" — day-in-the-life + direct answers
 const ClubsPage   = lazy(() => import("./ClubsPage"));                                  // splits ~750 lines of club lore/images out of the main chunk
 const ClubProfile = lazy(() => import("./ClubsPage").then(m => ({ default: m.ClubProfile })));
@@ -2680,6 +2681,9 @@ export default function App() {
           </button>
         </div>
         <HeroHooks onSelect={(tab) => { setActiveTab(tab); window.scrollTo({ top: 0 }); }} />
+        {activeTab === "rankings" && !loading && (
+          <HeroLive rankings={rankings} lastUpdated={lastUpdated} onExplore={(tab) => { setActiveTab(tab); window.scrollTo({ top: 0 }); }} />
+        )}
         {lastUpdated && <p className="header-updated">Updated {new Date(lastUpdated).toLocaleString()}</p>}
         <div className="top-tabs">
           <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>
