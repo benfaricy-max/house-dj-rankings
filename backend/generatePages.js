@@ -110,6 +110,70 @@ function breadcrumbLd(items) {
   };
 }
 
+// ── homepage (crawler-visible + first-paint) ────────────────────────────────
+function homeMeta() {
+  return {
+    title: "PEAKTIME — The DJ Rankings | Demand index for electronic music",
+    desc: "PEAKTIME is the demand index for electronic music — multi-signal rankings of "
+      + "house and techno DJs across streams, Beatport charts, tours, search and social "
+      + "velocity. Before the industry catches on.",
+  };
+}
+
+// Organization + WebSite (SearchAction) + Dataset entity schema for the homepage.
+// sameAs omitted deliberately — no verified social profiles on file (don't invent them).
+function homeJsonLd() {
+  return [
+    { "@context": "https://schema.org", "@type": "Organization", name: "PEAKTIME",
+      alternateName: "The DJ Rankings", url: `${ORIGIN}/`, logo: `${ORIGIN}/brand/avatar-1080.png`,
+      description: "PEAKTIME is the demand index for electronic music — multi-signal rankings of "
+        + "house and techno DJs across streams, Beatport charts, tours, search and social velocity." },
+    { "@context": "https://schema.org", "@type": "WebSite", name: "PEAKTIME", url: `${ORIGIN}/`,
+      potentialAction: { "@type": "SearchAction",
+        target: { "@type": "EntryPoint", urlTemplate: `${ORIGIN}/?q={search_term_string}` },
+        "query-input": "required name=search_term_string" } },
+    { "@context": "https://schema.org", "@type": "Dataset",
+      name: "PEAKTIME DJ Booking-Demand Index", url: `${ORIGIN}/`,
+      description: "A multi-signal ranking of house and techno DJs by booking demand, combining "
+        + "streams, Beatport and Resident Advisor signal, touring activity, search interest and social velocity.",
+      creator: { "@type": "Organization", name: "PEAKTIME" }, isAccessibleForFree: true,
+      keywords: ["DJ rankings", "booking demand", "house music", "techno", "electronic music", "demand index"] },
+  ];
+}
+
+// Top-N ranking rows baked as static HTML, mirroring the live .dj-* layout so the
+// createRoot() re-render swaps in without a visible reflow. Crawler-visible content +
+// the homepage's only internal links to artist pages (the SPA list isn't crawlable).
+function homeBody(artists, total, n = 25) {
+  const ranked = artists
+    .filter((a) => a.name && Number.isFinite(a.score))
+    .sort((a, b) => (a.rank ?? 1e9) - (b.rank ?? 1e9))
+    .slice(0, n);
+  const rows = ranked.map((a, i) => {
+    const slug = slugify(a.name);
+    const r = Number.isFinite(a.rank) ? a.rank : i + 1;
+    const avatar = a.image
+      ? `<div class="dj-avatar-wrap"><img src="${esc(a.image)}" alt="${esc(a.name)}" class="dj-avatar" loading="lazy" decoding="async" width="44" height="44" /></div>`
+      : `<div class="dj-avatar-wrap"><div class="dj-avatar dj-avatar--placeholder">${esc(a.name[0])}</div></div>`;
+    return `<li class="dj-card-main">`
+      + `<div class="dj-rank"><span class="rank-num">#${r}</span></div>`
+      + avatar
+      + `<div class="dj-info"><div class="dj-name-row">`
+      + `<span class="dj-name"><a href="/artist/${slug}">${esc(a.name)}</a></span>`
+      + `<span class="dj-score-badge">${Math.round(a.score)} pts</span>`
+      + `</div></div></li>`;
+  }).join("");
+  return `
+    <main class="seo-prerender" style="max-width:760px;margin:0 auto;padding:24px;font-family:system-ui,sans-serif">
+      <h1>PEAKTIME — the demand index for electronic music</h1>
+      <p>Multi-signal rankings of house and techno DJs by booking demand — streams, Beatport
+        charts, Resident Advisor signal, touring and search velocity. Before the industry catches on.</p>
+      <h2>Top ${ranked.length} by booking demand</h2>
+      <ol class="dj-list-prerender" style="list-style:none;padding:0">${rows}</ol>
+      <p><a href="/methodology">How the demand score is built</a></p>
+    </main>`;
+}
+
 // ── template surgery ────────────────────────────────────────────────────────
 function renderPage(tpl, { url, title, desc, jsonld, body }) {
   let html = tpl;
@@ -187,7 +251,16 @@ function build() {
     }
   }
 
+  // Homepage — bake content + canonical + entity schema into dist/index.html.
+  // createRoot() wipes #root on mount, so this is crawler/first-paint only (no hydration).
+  {
+    const { title, desc } = homeMeta();
+    const html = renderPage(tpl, { url: "/", title, desc, jsonld: homeJsonLd(), body: homeBody(artists, total) });
+    fs.writeFileSync(TEMPLATE, html); // dist/index.html
+  }
+
   // SPA fallback for any unmatched path (markets/clubs/blog still client-routed).
+  // Use the ORIGINAL template (bare shell), not the prerendered homepage.
   fs.writeFileSync(path.join(DIST, "404.html"), tpl);
 
   // Sitemap — only pages that exist (all 200). markets/clubs/blog deferred to B.2.
