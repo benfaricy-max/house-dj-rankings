@@ -6,7 +6,7 @@ Allow: /
 Disallow: /pitch/
 Disallow: /journal
 
-# Sitemap — uncomment once the prerender migration ships real per-page URLs.
-# A sitemap of path URLs before prerendering would list 404s, so it stays off
-# until /artist/<slug> etc. are served as real HTML. Generator: backend/generateSitemap.js
-# Sitemap: https://thedjrankings.com/sitemap.xml
+# Sitemap — live as of the Phase B prerender migration. Built by
+# backend/generatePages.js (lists only prerendered /artist & /value pages + home,
+# all 200). markets/clubs/blog follow in Phase B.2 (backend/generateSitemap.js).
+Sitemap: https://thedjrankings.com/sitemap.xml

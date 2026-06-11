@@ -13,7 +13,7 @@ export function ArtistLink({ name, className = "", children }) {
   return (
     <a
       className={`artist-link ${className}`.trim()}
-      href={`#/artist/${slugify(name)}`}
+      href={`/artist/${slugify(name)}`}
       onClick={e => e.stopPropagation()}
     >
       {children ?? name}
@@ -364,7 +364,7 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
       )}
 
       {Number.isFinite(dj.value_gap) && (
-        <a className="ap-valuelink" href={`#/value/${slugify(dj.name)}`}>
+        <a className="ap-valuelink" href={`/value/${slugify(dj.name)}`}>
           ✦ View {dj.name}'s Fair Value report — the neutral, live-anchored fee benchmark →
         </a>
       )}

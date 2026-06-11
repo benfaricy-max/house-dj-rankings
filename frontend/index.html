@@ -29,6 +29,14 @@
     </script>
   </head>
   <body>
+    <!-- Legacy hash-link catcher: old shared links like /#/artist/<slug> redirect
+         to the real prerendered path /artist/<slug>. Runs before the app boots. -->
+    <script>
+      (function () {
+        var m = (location.hash || "").match(/^#\/(artist|value|market|club|blog)\/(.+)$/);
+        if (m && location.pathname === "/") location.replace("/" + m[1] + "/" + m[2]);
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

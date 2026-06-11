@@ -30,26 +30,21 @@ export const pressable = (handler, expanded) => ({
   ...(expanded !== undefined ? { "aria-expanded": expanded } : {}),
 });
 
-const parseProfileSlug = () => {
-  const m = (window.location.hash || "").match(/^#\/artist\/(.+)$/);
-  return m ? decodeURIComponent(m[1]) : null;
+// Route parsers read the real path first (/artist/<slug>, served as prerendered
+// static HTML for SEO), then fall back to the legacy hash (#/artist/<slug>) so old
+// shared links still resolve. A trailing ".html" is tolerated (GitHub Pages serves
+// /artist/foo at /artist/foo.html).
+const matchRoute = (kind) => {
+  const h = (window.location.hash || "").match(new RegExp(`^#/${kind}/(.+)$`));
+  if (h) return decodeURIComponent(h[1]);
+  const p = window.location.pathname.match(new RegExp(`^/${kind}/([^/?#]+?)(?:\\.html)?/?$`));
+  return p ? decodeURIComponent(p[1]) : null;
 };
-const parseMarketSlug = () => {
-  const m = (window.location.hash || "").match(/^#\/market\/(.+)$/);
-  return m ? decodeURIComponent(m[1]) : null;
-};
-const parseClubSlug = () => {
-  const m = (window.location.hash || "").match(/^#\/club\/(.+)$/);
-  return m ? decodeURIComponent(m[1]) : null;
-};
-const parseBlogSlug = () => {
-  const m = (window.location.hash || "").match(/^#\/blog\/(.+)$/);
-  return m ? decodeURIComponent(m[1]) : null;
-};
-const parseValueSlug = () => {
-  const m = (window.location.hash || "").match(/^#\/value\/(.+)$/);
-  return m ? decodeURIComponent(m[1]) : null;
-};
+const parseProfileSlug = () => matchRoute("artist");
+const parseMarketSlug  = () => matchRoute("market");
+const parseClubSlug    = () => matchRoute("club");
+const parseBlogSlug    = () => matchRoute("blog");
+const parseValueSlug   = () => matchRoute("value");
 // Editor-only gate: the Journal stays hidden from the public until it's ready.
 // Visit the site once with ?editor=1 (or #editor) on this device to unlock it;
 // the flag is remembered in localStorage. Use ?editor=0 to lock it again.
@@ -84,8 +79,10 @@ function readRankingsUrl() {
 }
 function writeRankingsUrl(state) {
   try {
-    // Don't fight the hash routes — when one is active the rankings filters are moot.
+    // Don't fight the routes — when an artist/value/etc. page is active (real path
+    // or legacy hash) the rankings filters are moot and shouldn't touch its URL.
     if (window.location.hash && window.location.hash !== "#") return;
+    if (window.location.pathname !== "/") return;
     const q = new URLSearchParams(window.location.search);
     // editor flag and anything else already in the query is preserved.
     for (const [k, def] of Object.entries(URL_DEFAULTS)) {
@@ -747,7 +744,7 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
 
       {expanded && (
         <div className="dj-detail">
-          <a className="profile-link" href={`#/artist/${slugify(dj.name)}`} onClick={e => e.stopPropagation()}>
+          <a className="profile-link" href={`/artist/${slugify(dj.name)}`} onClick={e => e.stopPropagation()}>
             View full profile &amp; shareable card →
           </a>
           <div className="detail-tabs">
@@ -2578,7 +2575,7 @@ export default function App() {
     return (
       <div className="page">
         {rankings.length
-          ? <ArtistProfile rankings={rankings} slug={profileSlug} onBack={() => { window.location.hash = ""; }} />
+          ? <ArtistProfile rankings={rankings} slug={profileSlug} onBack={() => { window.location.href = "/"; }} />
           : <div className="loading">Loading…</div>}
       </div>
     );
@@ -2655,7 +2652,7 @@ export default function App() {
       {activeTab === "how-it-works"  && <HowItWorksPage />}
 
       {activeTab === "rankings" && <>
-      <MomentumAlertsBanner alerts={momentumAlerts} onDismiss={dismissAlerts} onOpen={name => { window.location.hash = `#/artist/${slugify(name)}`; }} />
+      <MomentumAlertsBanner alerts={momentumAlerts} onDismiss={dismissAlerts} onOpen={name => { window.location.href = `/artist/${slugify(name)}`; }} />
 
       {/* Stakeholder lens — same index, three jobs-to-be-done */}
       <div className="lens-bar">
