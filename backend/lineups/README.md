@@ -11,8 +11,10 @@ the III Points / CRSSD ones, but the picks (smartest buy, value mid-card, priced
 breakout, saturation, conversion standouts) are **auto-derived from live data** instead
 of hand-written. A new festival is a config, not a coding session.
 
-To feature it on the site, add the slug to the Reports list in `frontend/src/App.jsx`
-(same as the existing reports).
+**It surfaces in-app automatically.** The generator also upserts the report into
+`frontend/public/reports/registry.json` (merge-safe — it only touches this slug's entry).
+The in-app Reports page reads that registry and merges any new reports into the list, so
+you don't edit `App.jsx`. Newest report (by `date`) becomes the featured one.
 
 ## Config schema
 
@@ -23,6 +25,9 @@ To feature it on the site, add the slug to the Reports list in `frontend/src/App
   "eyebrow": "Lineup Intelligence · City · Date",
   "lead": "optional custom intro paragraph",
   "currency": "USD",                     // "USD" | "GBP"  (default USD)
+  "date": "2026-06-11",                  // registry sort + card date (default today)
+  "tag": "Festival",                     // registry card tag (default "Festival")
+  "img": "/reports/<slug>/img/card.png", // optional feature-card image
   "region": {                            // optional — drives the saturation read
     "label": "Miami",
     "countries": ["United States", "United States of America"],

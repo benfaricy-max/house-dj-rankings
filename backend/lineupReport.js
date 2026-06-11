@@ -258,6 +258,25 @@ function generateLineupReport(config) {
 
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, "index.html"), PAGE);
+
+  // Register the report so the in-app Reports page surfaces it with no code edit.
+  // Merge-safe (RULE #1): upsert THIS slug's entry, never touch the others.
+  const href = `/reports/${slug}/`;
+  const REG = path.join(outDir, "..", "registry.json");
+  let reg = [];
+  try { const j = JSON.parse(fs.readFileSync(REG, "utf8")); if (Array.isArray(j)) reg = j; } catch { /* none yet */ }
+  const entry = {
+    title: editorial.cardTitle || `${title} — Lineup Intelligence`,
+    dek: editorial.dek || `A full demand read on the ${title} lineup: who's underpriced, who's over-routed for the date, the ticket-conversion standouts, and the budget math — built from the same live-anchored data the rest of the site runs on.`,
+    href, tag: config.tag || "Festival",
+    date: config.date || new Date().toISOString().slice(0, 10),
+  };
+  if (config.img) entry.img = config.img;
+  reg = reg.filter(e => e && e.href !== href);
+  reg.push(entry);
+  reg.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+  fs.writeFileSync(REG, JSON.stringify(reg, null, 2) + "\n");
+
   return {
     path: path.join(outDir, "index.html"),
     total: TOTAL, acts: acts.length, tracked: tracked.length,

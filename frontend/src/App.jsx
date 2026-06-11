@@ -2310,6 +2310,14 @@ function BreakoutsPage({ rankings, breakouts: staticBreakouts, breakoutThreshold
 // ── Reports — published analysis ────────────────────────────────────
 const REPORTS = [
   {
+    title: "We Stopped Counting Followers",
+    dek: "The first issue of The Index. Last week Hugel was #16; today he's #212 — nothing about Hugel changed, what we count did. Why we rebuilt the ranking around booking demand and scene credibility, not reach.",
+    href: "/reports/the-index-launch.html",
+    img: "/brand/post-reach-cred-1080.png",
+    tag: "The Index",
+    date: "2026-06-11",
+  },
+  {
     title: "III Points 2026 — Lineup Intelligence",
     dek: "A full demand read on the III Points Miami lineup: a multi-genre curator bill where the budget splits three ways. Who's underpriced, who's a Club-Space-saturated local, the ticket-conversion standouts, and the budget math — built from the same live-anchored data the rest of the site runs on.",
     href: "/reports/iii-points-2026/",
@@ -2336,7 +2344,28 @@ const REPORTS = [
 
 function ReportsPage({ rankings }) {
   const fmtDate = iso => new Date(iso + "T00:00:00").toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
-  const [feature, ...rest] = REPORTS;
+
+  // Reports auto-surface: the static list above is the curated base; generated
+  // Lineup Intelligence reports register themselves in /reports/registry.json
+  // (written merge-safe by backend/lineupReport.js). We merge any registry entries
+  // not already curated, so a new report appears with no edit here. Static wins on
+  // href collision, preserving hand-tuned deks. Newest-first by date.
+  const [reports, setReports] = useState(REPORTS);
+  useEffect(() => {
+    let alive = true;
+    fetch("/reports/registry.json", { cache: "no-cache" })
+      .then(r => (r.ok ? r.json() : []))
+      .then(reg => {
+        if (!alive || !Array.isArray(reg)) return;
+        const seen = new Set(REPORTS.map(r => r.href));
+        const extra = reg.filter(r => r && r.href && !seen.has(r.href));
+        if (!extra.length) return;
+        setReports([...REPORTS, ...extra].sort((a, b) => (b.date || "").localeCompare(a.date || "")));
+      })
+      .catch(() => {});
+    return () => { alive = false; };
+  }, []);
+  const [feature, ...rest] = reports;
   // "Charts" lives here as a single in-app report (the Index, read visually)
   // rather than a top-level tab. `view` toggles between the report list and
   // the rendered charts report.
