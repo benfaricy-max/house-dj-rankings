@@ -80,12 +80,13 @@ export function PitchLinkModal({ artist, onClose }) {
     <div className="pl-overlay" onClick={onClose}>
       <div className="pl-modal" onClick={e => e.stopPropagation()}>
         <div className="pl-modal-top">
-          <div className="pl-modal-title">Private pitch link · {artist.name}</div>
+          <div className="pl-modal-title">Demand dossier · {artist.name}</div>
           <button className="pl-close" onClick={onClose} aria-label="Close">✕</button>
         </div>
         <p className="pl-modal-sub">
-          A read-only, expiring brief to send one buyer directly. Not listed publicly, not indexed —
-          just this artist's demand case at a private URL.
+          A read-only, expiring dossier to send one promoter directly — third-party proof of this
+          artist's demand at a private URL. Not listed publicly, not indexed. The numbers are
+          neutral; the framing is yours.
         </p>
 
         <div className="pl-field">
@@ -163,10 +164,39 @@ export default function PitchPage({ rankings }) {
   if (!a) return <PitchShell><div className="pp-msg">This artist is no longer in the index.</div></PitchShell>;
 
   const side = decoded.side;
+  const seller = side !== "buyer";
   const conf = valueConfidence(a);
   const hasGap = Number.isFinite(a.value_gap) && a.booking_fee;
   const line = hasGap ? negotiationLine(a, side) : null;
   const anchor = a.value_anchor || {};
+
+  // Demand standing — the seller-facing headline ("in demand, rising") vs a
+  // neutral position read for the buyer. Momentum ≥60 reads as "rising".
+  const rising = Number.isFinite(a.momentum_score) && a.momentum_score >= 60;
+  const standing = seller
+    ? `In demand — #${a.rank} on the index${rising ? ", and rising" : ""}.`
+    : `#${a.rank} on the index${rising ? ", rising" : ""}.`;
+
+  // Routing → exclusivity. Same aggregation as RoutingSaturation: recent shows
+  // (~90d) by country. Low routing reads as scarcity (a date here is exclusive);
+  // heavy routing reads as proven live demand. Both are seller-positive, honestly.
+  const routing = (() => {
+    const cities = Array.isArray(a.ra_recent_cities) ? a.ra_recent_cities : [];
+    if (!cities.length) return null;
+    const shows = cities.reduce((s, c) => s + (c.shows_3m || c.shows || 0), 0);
+    if (!shows) return null;
+    const countries = new Set(cities.map(c => c.country).filter(Boolean)).size;
+    const selective = shows <= 3;
+    const cLabel = `${countries} ${countries === 1 ? "country" : "countries"}`;
+    const text = seller
+      ? (selective
+          ? `Selective routing — ${shows} shows in ${cLabel} over ~90 days. A date here is comparatively scarce.`
+          : `Proven live demand — ${shows} shows across ${cLabel} in ~90 days. The rooms are already booking.`)
+      : (selective
+          ? `Lightly routed — ${shows} shows in ~90 days; room to build a standout date.`
+          : `Heavily routed — ${shows} shows in ~90 days; a date in a busy region feels less exclusive.`);
+    return { shows, selective, text };
+  })();
 
   const liveStats = [
     anchor.venue_tier > 0 && { k: "Venue tier commanded", v: `${anchor.venue_tier}/5${anchor.venue_label ? ` · ${anchor.venue_label}` : ""}` },
@@ -195,12 +225,14 @@ export default function PitchPage({ rankings }) {
         )}
       </div>
 
+      <div className="pp-standing">{standing}</div>
+
       {hasGap && (
         <div className={`pp-verdict pp-verdict--${a.value_gap >= 1 ? "under" : a.value_gap <= -1 ? "over" : "fair"}`}>
           <div className="pp-bands">
-            <div><div className="pp-band-l">Current fee band</div><div className="pp-band-v">{a.booking_fee.label}</div></div>
+            <div><div className="pp-band-l">{seller ? "Current ask" : "Current fee band"}</div><div className="pp-band-v">{a.booking_fee.label}</div></div>
             <div className="pp-arrow">→</div>
-            <div><div className="pp-band-l">Demand-implied</div><div className="pp-band-v pp-band-v--imp">{a.demand_fee_label}</div></div>
+            <div><div className="pp-band-l">{seller ? "What the data supports" : "Demand-implied"}</div><div className="pp-band-v pp-band-v--imp">{a.demand_fee_label}</div></div>
           </div>
           <div className="pp-conf">Confidence: <strong>{conf.level}</strong> · {conf.n} of {conf.present.length || conf.n} signals corroborate</div>
         </div>
@@ -213,9 +245,15 @@ export default function PitchPage({ rankings }) {
         </div>
       )}
 
+      {routing && (
+        <div className={`pp-routing${routing.selective ? " pp-routing--scarce" : ""}`}>
+          <span className="pp-routing-dot" />{routing.text}
+        </div>
+      )}
+
       {liveStats.length > 0 && (
         <div className="pp-evidence">
-          <div className="pp-evidence-h">What the fee is anchored to <span>— the rooms they fill, not streaming vanity</span></div>
+          <div className="pp-evidence-h">{seller ? "What this fee is backed by" : "What the fee is anchored to"} <span>— the rooms they fill, not streaming vanity</span></div>
           <div className="pp-grid">
             {liveStats.map(s => (
               <div className="pp-stat" key={s.k}><div className="pp-stat-v">{s.v}</div><div className="pp-stat-k">{s.k}</div></div>
@@ -226,7 +264,7 @@ export default function PitchPage({ rankings }) {
 
       <div className="pp-foot">
         Demand-data only — no input from either side of the table. Methodology is public at thedjrankings.com.
-        <button className="pp-explore" onClick={back}>Explore the full index →</button>
+        <button className="pp-explore" onClick={back}>{seller ? "Verify this on the public index →" : "Explore the full index →"}</button>
       </div>
     </PitchShell>
   );
