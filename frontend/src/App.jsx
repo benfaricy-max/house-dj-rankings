@@ -663,7 +663,7 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
 
         <div className="dj-avatar-wrap">
           {dj.image
-            ? <img src={dj.image} alt={dj.name} className="dj-avatar" />
+            ? <img src={dj.image} alt={dj.name} className="dj-avatar" loading="lazy" decoding="async" width="44" height="44" />
             : <div className="dj-avatar dj-avatar--placeholder">{dj.name[0]}</div>
           }
         </div>
