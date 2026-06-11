@@ -486,6 +486,43 @@
 .metric-contrib  { font-size: 12px; font-weight: 600; color: var(--text-h); text-align: right; }
 .metric-weight   { font-size: 11px; color: var(--muted); text-align: right; opacity: 0.7; }
 
+/* Self-healed-absent signal row: not measured for this act → weight redistributed,
+   never a scored zero. Shown muted with an explicit note instead of an empty bar. */
+.metric-row--absent { opacity: 0.62; }
+.metric-raw--unmeasured { font-style: italic; color: var(--muted); }
+.metric-absent-note { font-size: 10px; font-family: var(--mono); letter-spacing: 0.02em; color: var(--muted); opacity: 0.8; white-space: nowrap; }
+.metric-contrib--muted, .metric-weight--muted { color: var(--muted); }
+
+/* ── Loading skeleton ─────────────────────────────────────────────── */
+.rankings-skeleton { display: flex; flex-direction: column; gap: 10px; }
+.dj-card--skeleton { pointer-events: none; }
+.dj-card--skeleton .dj-card-main { align-items: center; }
+.sk { background: color-mix(in srgb, var(--border) 70%, transparent); border-radius: 6px; position: relative; overflow: hidden; }
+.sk::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 8%, transparent), transparent);
+  transform: translateX(-100%); animation: sk-shimmer 1.4s ease-in-out infinite;
+}
+@keyframes sk-shimmer { 100% { transform: translateX(100%); } }
+.sk-rank   { width: 28px; height: 28px; border-radius: 7px; }
+.sk-avatar { width: 46px; height: 46px; border-radius: 50%; }
+.sk-name   { width: 42%; height: 15px; margin-bottom: 9px; }
+.sk-bar    { width: 100%; height: 8px; margin-bottom: 9px; }
+.sk-pills  { display: flex; gap: 6px; }
+.sk-pill   { width: 64px; height: 18px; border-radius: 9px; }
+.sk-side   { width: 56px; height: 30px; justify-self: end; }
+@media (prefers-reduced-motion: reduce) { .sk::after { animation: none; } }
+
+/* Small screens: the 5-column breakdown grid gets cramped under ~500px. Drop the
+   bar column and let Signal / Value / Pts / Wt sit on a readable 4-col grid. */
+@media (max-width: 500px) {
+  .breakdown-cols { grid-template-columns: 1fr 56px 40px 30px; }
+  .breakdown-cols .col-header:nth-child(3) { display: none; } /* "Contribution" header */
+  .metric-row { grid-template-columns: 1fr 56px 40px 30px; gap: 6px; }
+  .metric-bar-wrap { display: none; }
+  .metric-row--absent .metric-absent-note { display: none; }
+}
+
 /* ── Trend chart ─────────────────────────────────────────────────── */
 .trend-chart { background: color-mix(in srgb, var(--border) 30%, transparent); border-radius: 8px; padding: 12px; }
 .trend-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
