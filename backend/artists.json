@@ -22338,5 +22338,27 @@
     "youtube_channel_id": "UCYu_eYB3mccIMkg_Bx3Joog",
     "wikipedia_title": "D.O.D. (DJ)",
     "image": "https://cdn-images.dzcdn.net/images/artist/56400bb2f4fd6997fe9e01bf0b9df677/1000x1000-000000-80-0-0.jpg"
+  },
+  {
+    "name": "Marco Carola",
+    "spotify_id": "2p8O7NCyfWf1sIZamrU9N1",
+    "youtube_channel_id": "",
+    "soundcloud_permalink": "marcocarola",
+    "album_count": 60,
+    "manual_scene_score": 90,
+    "tiktok_tag": "marcocarola",
+    "mixcloud_username": "",
+    "emerging": false,
+    "ra_slug": "marcocarola",
+    "wikipedia_title": "Marco Carola",
+    "youtube_search_alias": "Marco Carola Music On",
+    "booking_fee": {
+      "label": "£40K–£80K",
+      "mid": 60000,
+      "tier": 5,
+      "color": "#f59e0b",
+      "band": "B",
+      "basis": "club/festival est."
+    }
   }
 ]
