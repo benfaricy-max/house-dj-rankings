@@ -22360,5 +22360,199 @@
       "band": "B",
       "basis": "club/festival est."
     }
+  },
+  {
+    "name": "ARTBAT",
+    "spotify_id": "3BkRu2TGd2I1uBxZKddfg1",
+    "manual_scene_score": 88,
+    "ra_slug": "artbat",
+    "wikipedia_title": "ARTBAT",
+    "youtube_search_alias": "ARTBAT music",
+    "booking_fee": {
+      "label": "£40K–£80K",
+      "mid": 60000,
+      "tier": 5,
+      "color": "#f59e0b",
+      "band": "B",
+      "basis": "club/festival est."
+    },
+    "youtube_channel_id": "",
+    "emerging": false
+  },
+  {
+    "name": "Reinier Zonneveld",
+    "spotify_id": "21A7bhIL1m6CNZn8y57PIZ",
+    "manual_scene_score": 82,
+    "ra_slug": "reinierzonneveld",
+    "wikipedia_title": "Reinier Zonneveld",
+    "youtube_search_alias": "Reinier Zonneveld live techno",
+    "booking_fee": {
+      "label": "£20K–£45K",
+      "mid": 32000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
+      "basis": "club/festival est."
+    },
+    "youtube_channel_id": "",
+    "emerging": false
+  },
+  {
+    "name": "Solardo",
+    "spotify_id": "0oO1IaDOBSeI96HbnCa5pZ",
+    "manual_scene_score": 82,
+    "ra_slug": "solardo",
+    "wikipedia_title": "Solardo",
+    "youtube_search_alias": "Solardo tech house",
+    "booking_fee": {
+      "label": "£25K–£50K",
+      "mid": 37000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
+      "basis": "club/festival est."
+    },
+    "youtube_channel_id": "",
+    "emerging": false
+  },
+  {
+    "name": "Gordo",
+    "spotify_id": "4Ge9GwmWnOQsohwPTrXyHc",
+    "manual_scene_score": 80,
+    "ra_slug": "gordo",
+    "youtube_search_alias": "Gordo DJ Sound of Tulum",
+    "booking_fee": {
+      "label": "£30K–£60K",
+      "mid": 45000,
+      "tier": 5,
+      "color": "#f59e0b",
+      "band": "B",
+      "basis": "club/festival est."
+    },
+    "youtube_channel_id": "",
+    "emerging": false
+  },
+  {
+    "name": "Argy",
+    "spotify_id": "1NaQOKgddaJipUtmptb7GI",
+    "manual_scene_score": 80,
+    "ra_slug": "argy",
+    "youtube_search_alias": "Argy melodic house",
+    "booking_fee": {
+      "label": "£20K–£40K",
+      "mid": 30000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
+      "basis": "club/festival est."
+    },
+    "youtube_channel_id": "",
+    "emerging": false
+  },
+  {
+    "name": "Lane 8",
+    "spotify_id": "27gtK7m9vYwCyJ04zz0kIb",
+    "manual_scene_score": 80,
+    "ra_slug": "lane8",
+    "wikipedia_title": "Lane 8 (musician)",
+    "youtube_search_alias": "Lane 8 music",
+    "booking_fee": {
+      "label": "£25K–£50K",
+      "mid": 37000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
+      "basis": "club/festival est."
+    },
+    "youtube_channel_id": "",
+    "emerging": false
+  },
+  {
+    "name": "Purple Disco Machine",
+    "spotify_id": "2WBJQGf1bT1kxuoqziH5g4",
+    "manual_scene_score": 85,
+    "ra_slug": "purplediscomachine",
+    "wikipedia_title": "Purple Disco Machine",
+    "youtube_search_alias": "Purple Disco Machine",
+    "booking_fee": {
+      "label": "£40K–£80K",
+      "mid": 60000,
+      "tier": 5,
+      "color": "#f59e0b",
+      "band": "B",
+      "basis": "club/festival est."
+    },
+    "youtube_channel_id": "",
+    "emerging": false
+  },
+  {
+    "name": "Damian Lazarus",
+    "spotify_id": "3EIJ8wiUHbgkRCt5cpRrQv",
+    "manual_scene_score": 82,
+    "ra_slug": "damianlazarus",
+    "wikipedia_title": "Damian Lazarus",
+    "youtube_search_alias": "Damian Lazarus Crosstown Rebels",
+    "booking_fee": {
+      "label": "£20K–£40K",
+      "mid": 30000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
+      "basis": "club/festival est."
+    },
+    "youtube_channel_id": "",
+    "emerging": false
+  },
+  {
+    "name": "Moodymann",
+    "spotify_id": "6pohviZSNRueSX7uNu63ZX",
+    "manual_scene_score": 85,
+    "ra_slug": "moodymann",
+    "wikipedia_title": "Moodymann",
+    "youtube_search_alias": "Moodymann Detroit house",
+    "booking_fee": {
+      "label": "£15K–£35K",
+      "mid": 25000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
+      "basis": "club/festival est."
+    },
+    "youtube_channel_id": "",
+    "emerging": false
+  },
+  {
+    "name": "Caiiro",
+    "spotify_id": "0fs9otT9TtwXUOcFXZomZY",
+    "manual_scene_score": 80,
+    "ra_slug": "caiiro",
+    "youtube_search_alias": "Caiiro afro house",
+    "booking_fee": {
+      "label": "£12K–£30K",
+      "mid": 20000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
+      "basis": "club/festival est."
+    },
+    "youtube_channel_id": "",
+    "emerging": false
+  },
+  {
+    "name": "Da Capo",
+    "spotify_id": "4YuviELTmYBvDR66ThrMy9",
+    "manual_scene_score": 80,
+    "ra_slug": "dacapo",
+    "youtube_search_alias": "Da Capo afro house South Africa",
+    "booking_fee": {
+      "label": "£12K–£30K",
+      "mid": 20000,
+      "tier": 4,
+      "color": "#3b82f6",
+      "band": "C",
+      "basis": "club/festival est."
+    },
+    "youtube_channel_id": "",
+    "emerging": false
   }
 ]
