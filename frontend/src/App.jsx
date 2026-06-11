@@ -9,7 +9,6 @@ import { useWatchlist, useMomentumAlerts } from "./watchlist";
 import { InfoTip, MomentumTip, MOMENTUM_BLEND, artistForm, FORM_META, FormTip, genreLean, GENRE_META, matchesGenre } from "./methodology";
 import { rankWithinCohort, withRankIntervals, deriveRegions, inRegion, isRising, PERSONAS } from "./cohort";
 import PitchPage from "./Pitch";   // read-only private brief route (also pulled by ValueGap)
-import HeroLive from "./HeroLive";     // live proof strip + who's-moving band under the masthead
 import DayInLifePage from "./DayInLife";   // "A Booking Day" — day-in-the-life + direct answers
 const ClubsPage   = lazy(() => import("./ClubsPage"));                                  // splits ~750 lines of club lore/images out of the main chunk
 const ClubProfile = lazy(() => import("./ClubsPage").then(m => ({ default: m.ClubProfile })));
