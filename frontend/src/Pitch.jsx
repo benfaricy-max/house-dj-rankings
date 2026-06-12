@@ -61,7 +61,10 @@ function track(event, props) {
 
 // ── Generator modal (Pro-gated by the caller) ────────────────────────────────
 export function PitchLinkModal({ artist, onClose }) {
-  const [side, setSide] = useState("seller");
+  // Buy-side is the lead motion (STRATEGY.md / GTM.md §1, decision 2026-06-11):
+  // promoters/buyers are the beachhead; the offer case is the default. Selling
+  // (agent → promoter) is the expansion loop, still available via the toggle.
+  const [side, setSide] = useState("buyer");
   const [days, setDays] = useState(30);
   const [note, setNote] = useState("");
   const [copied, setCopied] = useState(false);
@@ -92,8 +95,8 @@ export function PitchLinkModal({ artist, onClose }) {
         <div className="pl-field">
           <span className="pl-field-label">Framed for</span>
           <div className="pl-seg">
-            <button className={side === "seller" ? "pl-seg-on" : ""} onClick={() => setSide("seller")}>Selling (your fee case)</button>
             <button className={side === "buyer" ? "pl-seg-on" : ""} onClick={() => setSide("buyer")}>Buying (offer case)</button>
+            <button className={side === "seller" ? "pl-seg-on" : ""} onClick={() => setSide("seller")}>Selling (your fee case)</button>
           </div>
         </div>
 

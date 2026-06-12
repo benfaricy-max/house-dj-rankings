@@ -6,6 +6,20 @@ research. Don't deploy Stripe until this doc's tracker has real answers in it.
 
 Companion docs: `COMMERCE.md` (pricing/billing skeleton), `BRAND.md` (voice).
 
+> **LEAD MOTION — DECIDED 2026-06-11 (founder). Do not re-flip without founder sign-off.**
+> **Buy-side first.** Promoters / talent buyers are the beachhead — one person decides,
+> feels "am I overpaying" as their own margin. The **offer case** is the default everywhere.
+> **Selling (agent → promoter) is the EXPANSION loop**, available but not the lead.
+> Surfaces aligned to this:
+> - **Pitch Link** (`Pitch.jsx`): default `side = "buyer"`, "Buying (offer case)" toggle first. (done)
+> - **Outreach** (`materials/outreach-pack.md`): all drafts are buy-side. (done)
+> - **Homepage** (`App.jsx`): wire `BuyerLane` ("Who's underpriced right now") under the hero
+>   on the rankings tab — it's the buy-side entry point, currently built but NOT wired
+>   (in unpushed commit `e095931`). **Before wiring, fix `BuyerLane.jsx`'s local `slugify`:
+>   it uses NFKD and mangles accented names (Sven Väth → `sven-va-th`), breaking the
+>   `/value/<slug>` link. Import the canonical `slugify` from `./artistLink` instead, and
+>   pass `onOpenValue={slug => window.location.href = '/value/'+slug}` for path routing.**
+
 ---
 
 ## 1 · Pick the 5
