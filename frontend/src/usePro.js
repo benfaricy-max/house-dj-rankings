@@ -8,6 +8,11 @@ import { useState, useEffect } from "react";
 const PAYWALL = import.meta.env.VITE_PAYWALL_ENABLED === "true";
 const API = import.meta.env.VITE_API_BASE || "";
 
+// True once the serverless checkout is reachable (i.e. VITE_API_BASE is set at
+// build time). New revenue CTAs render only when this is true, so the live
+// open site is unchanged until Stripe + the API are deployed — see COMMERCE.md.
+export const checkoutReady = !!API;
+
 // Returns { pro, loading, paywall }. When the paywall is disabled, everyone is
 // "pro" — i.e. the whole product is open, which is the current behaviour.
 export function usePro() {
@@ -29,15 +34,17 @@ export function usePro() {
   return { pro, loading, paywall: PAYWALL };
 }
 
-// Kicks off Stripe Checkout via the serverless function.
-export async function startCheckout(plan = "pro") {
+// Kicks off Stripe Checkout via the serverless function. `meta` rides through
+// to Stripe (e.g. { artist, name, source }) so a purchase records what was
+// bought — which artist's Fair Value Report, which surface drove the sale.
+export async function startCheckout(plan = "solo", { meta } = {}) {
   if (!API) { alert("Checkout isn't configured yet — see COMMERCE.md."); return; }
   try {
     const r = await fetch(`${API}/api/checkout`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
-      body: JSON.stringify({ plan }),
+      body: JSON.stringify({ plan, meta }),
     });
     const { url, error } = await r.json();
     if (url) window.location.href = url;

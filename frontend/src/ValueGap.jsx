@@ -6,6 +6,7 @@ import PricingModal from "./Pricing";
 import RoutingSaturation from "./RoutingSaturation";
 import { usePro } from "./usePro";
 import UpgradeCTA from "./UpgradeCTA";
+import ReportCTA from "./ReportCTA";
 
 // The wedge: a NEUTRAL third-party benchmark for booking fees. Today fee talks are
 // information-asymmetric — the agent knows the artist's demand, the promoter doesn't,
@@ -343,6 +344,8 @@ export function ValueReport({ rankings, slug }) {
             </button>
           </div>
         </div>
+
+        <ReportCTA artist={a} />
 
         <div className="vr-foot">
           Generated {new Date().toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric" })} · demand-data only, no party's input · <a href="#/value-method" onClick={e => { e.preventDefault(); window.location.hash = "#/value"; }}>methodology</a>

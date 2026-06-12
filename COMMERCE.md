@@ -54,8 +54,17 @@ signed cookie, so the stub still runs.
    `checkout.session.completed`, `customer.subscription.deleted`.
 3. **Env vars (API):**
    - `STRIPE_SECRET_KEY`, `STRIPE_PRICE_SOLO` (£75/mo), `STRIPE_PRICE_TEAM` (£300/mo).
-     The frontend `startCheckout(plan)` sends `plan: "solo" | "team"` — map each to
-     its price id in `api/checkout.js`.
+     The frontend `startCheckout(plan, { meta })` sends `plan` (+ optional metadata
+     that rides through to Stripe). `api/checkout.js` maps each plan to its price id
+     and derives the Stripe mode (subscription vs one-off).
+   - **Self-serve revenue lines (no sales call, no gatekeeper):**
+     - `STRIPE_PRICE_REPORT` — **one-off £29 Fair Value Report** (`plan: "report"`,
+       Stripe `mode: payment`). Surfaced on the seller side of each Value Report
+       (`ReportCTA.jsx`); metadata records which artist's report was bought.
+     - `STRIPE_PRICE_INTEL` — **£6/mo paid Index tier** (`plan: "intel"`, subscription).
+       Surfaced beside the free capture in the Index drop (`IntelUpsell.jsx`).
+     Both CTAs render only when `VITE_API_BASE` is set (`checkoutReady` in `usePro.js`),
+     so the live open site is unchanged until the API is deployed.
    - `STRIPE_WEBHOOK_SECRET`
    - `SESSION_SECRET` (random 32+ chars)
    - `FRONTEND_URL=https://thedjrankings.com`
@@ -90,6 +99,13 @@ upgrade modal only when the paywall is ON):
 | Free | £0 | — | Fans, funnel | Rankings, discovery, headliner teaser |
 | **Solo** | **£75/mo** | `solo` | Independent promoters & buyers | Full lineup, Fair Value Reports + negotiation scripts, private pitch links, routing & club-vs-viral reads |
 | **Team** | **£300/mo** | `team` | Agencies & festivals | Everything in Solo across seats + roster routing, competitive intel, calibrated sell-through, priority refresh |
+
+**Self-serve lines (sell without a sales call — to the audience you already have):**
+
+| SKU | Price | plan id | Who | What |
+|-----|-------|---------|-----|------|
+| **Fair Value Report** | **£29** one-off | `report` | DJs, managers, agents (sell side) | A verified, downloadable report + private pitch link for one act — the neutral number to take into a fee talk. Sold on the seller side of each Value Report. |
+| **Index Pro** | **£6/mo** | `intel` | Fans, scene-adjacent, working bookers | The full data behind every Index drop — every act's Value Gap, weekly movers, market reads. Sold beside the free capture in the Index drop. |
 
 ## Cost to run (early)
 
