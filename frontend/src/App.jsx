@@ -62,18 +62,19 @@ const isEditor = () => {
 // in the URL query string, so any view is a shareable link ("look where X sits")
 // and the descriptor domain indexes each lens. Hash routes (#/artist/…) are left
 // untouched. Defaults are omitted from the URL to keep links clean.
-const URL_DEFAULTS = { tab: "rankings", sort: "score", genre: "all", lens: "all", cohort: "full", region: "" };
+const URL_DEFAULTS = { tab: "rankings", sort: "score", genre: "all", lens: "all", cohort: "full", region: "", q: "" };
 function readRankingsUrl() {
   try {
-    const q = new URLSearchParams(window.location.search);
-    const tab = q.get("tab") || URL_DEFAULTS.tab;
+    const params = new URLSearchParams(window.location.search);
+    const tab = params.get("tab") || URL_DEFAULTS.tab;
     return {
       tab:    tab === "charts" ? "reports" : tab,   // Charts folded into Reports — redirect stale links
-      sort:   q.get("sort")   || URL_DEFAULTS.sort,
-      genre:  q.get("genre")  || URL_DEFAULTS.genre,
-      lens:   q.get("lens")   || URL_DEFAULTS.lens,
-      cohort: q.get("cohort") || URL_DEFAULTS.cohort,
-      region: q.get("region") || URL_DEFAULTS.region,
+      sort:   params.get("sort")   || URL_DEFAULTS.sort,
+      genre:  params.get("genre")  || URL_DEFAULTS.genre,
+      lens:   params.get("lens")   || URL_DEFAULTS.lens,
+      cohort: params.get("cohort") || URL_DEFAULTS.cohort,
+      region: params.get("region") || URL_DEFAULTS.region,
+      q:      params.get("q")      || URL_DEFAULTS.q,
     };
   } catch { return { ...URL_DEFAULTS }; }
 }
@@ -2532,18 +2533,19 @@ export default function App() {
   const [persona, setPersona] = useState(initUrl.lens);
   const [cohort, setCohort]   = useState(initUrl.cohort); // full | emerging | rising | region
   const [region, setRegion]   = useState(initUrl.region);
+  const [query, setQuery]     = useState(initUrl.q);      // jump-to-name search on the main list
   const regions = useMemo(() => deriveRegions(rankings), [rankings]);
 
   // Reflect rankings state into the URL (shareable / indexable), and restore it
   // on browser back/forward. replaceState keeps history clean while you fiddle.
   useEffect(() => {
-    writeRankingsUrl({ tab: activeTab, sort: sortKey, genre: genreFilter, lens: persona, cohort, region });
-  }, [activeTab, sortKey, genreFilter, persona, cohort, region]);
+    writeRankingsUrl({ tab: activeTab, sort: sortKey, genre: genreFilter, lens: persona, cohort, region, q: query.trim() });
+  }, [activeTab, sortKey, genreFilter, persona, cohort, region, query]);
   useEffect(() => {
     const onPop = () => {
       const s = readRankingsUrl();
       setActiveTab(s.tab); setSortKey(s.sort); setGenreFilter(s.genre);
-      setPersona(s.lens); setCohort(s.cohort); setRegion(s.region);
+      setPersona(s.lens); setCohort(s.cohort); setRegion(s.region); setQuery(s.q);
     };
     window.addEventListener("popstate", onPop);
     return () => window.removeEventListener("popstate", onPop);
@@ -2582,6 +2584,49 @@ export default function App() {
   }, [cohortFiltered, cohortMode, sortKey]);
 
   const showIntervals = sortKey === "score";
+
+  // Compute each row's display rank/interval over the FULL sorted list FIRST, then
+  // filter by the name search — so a matched act keeps its real rank (not renumbered
+  // to #1 within the filtered subset).
+  const rankedRows = useMemo(() => visible.map((dj, i) => ({
+    dj,
+    displayRank: cohortMode ? dj.cohort_rank : (showIntervals ? i + 1 : dj.rank),
+    interval: showIntervals && Number.isFinite(dj.rank_pm) && dj.rank_pm >= 2
+      ? { lo: dj.rank_lo, hi: dj.rank_hi, pm: dj.rank_pm } : null,
+  })), [visible, cohortMode, showIntervals]);
+
+  const needle = query.trim().toLowerCase();
+  const shownRows = useMemo(
+    () => (needle ? rankedRows.filter(r => r.dj.name.toLowerCase().includes(needle)) : rankedRows),
+    [rankedRows, needle]
+  );
+
+  // Progressive reveal: render a window of cards and grow it as a sentinel scrolls
+  // into view (IntersectionObserver), instead of mounting all ~330 at once. Windowing
+  // proper is awkward with expand-to-variable-height cards, so this keeps it simple
+  // and keeps the DOM light on first paint + while scrolling on mobile.
+  const PAGE = 40;
+  const [limit, setLimit] = useState(PAGE);
+  const sentinelRef = useRef(null);
+  // Reset the window whenever the underlying list changes (sort/filter/search).
+  useEffect(() => { setLimit(PAGE); }, [sortKey, genreFilter, cohort, region, needle]);
+  // If something deep-links/expands an act below the current window (hero movers,
+  // momentum alerts), grow the window so its card actually renders to scroll to.
+  useEffect(() => {
+    if (!expanded) return;
+    const idx = shownRows.findIndex(r => r.dj.name === expanded);
+    if (idx >= limit) setLimit(Math.ceil((idx + 1) / PAGE) * PAGE);
+  }, [expanded, shownRows, limit]);
+  useEffect(() => {
+    const el = sentinelRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => { if (entries[0].isIntersecting) setLimit((l) => l + PAGE); },
+      { rootMargin: "600px" }   // preload the next batch before the user hits the end
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [shownRows.length]);
 
   function scrollTo(name) {
     setExpanded(name);
@@ -2737,6 +2782,23 @@ export default function App() {
         </div>
       )}
 
+      <div className="rl-search">
+        <svg className="rl-search-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.5" y2="16.5" strokeLinecap="round" />
+        </svg>
+        <input
+          type="search"
+          className="rl-search-input"
+          placeholder="Search the index by artist…"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          aria-label="Search rankings by artist name"
+        />
+        {query && (
+          <button className="rl-search-clear" onClick={() => setQuery("")} aria-label="Clear search">✕</button>
+        )}
+      </div>
+
       <div className="sort-bar">
         <span className="sort-label">Sort by</span>
         {SORT_OPTIONS.map(opt => (
@@ -2773,19 +2835,22 @@ export default function App() {
         </div>
       )}
 
+      {needle && !loading && !error && (
+        <div className="sort-label" style={{ padding: "0 0 8px", fontSize: 12, color: "#75767d" }}>
+          {shownRows.length} match{shownRows.length !== 1 ? "es" : ""} for “{query.trim()}” · ranks are the act's real index position
+        </div>
+      )}
+
       <main className="rankings-list">
         {loading && <RankingsSkeleton rows={8} />}
         {error   && <div className="state-msg state-msg--error">⚠ {error}</div>}
-        {!loading && !error && visible.map((dj, i) => {
-          // Main/house view is a house-anchored ranking with pure-techno removed, so
-          // it's renumbered 1..N (no gaps, and consistent with the uncertainty bands,
-          // which are already computed relative to this filtered list). Cohort mode
-          // uses cohort_rank; a non-score sort keeps the global rank (it's a re-sort,
-          // not a ranking).
-          const displayRank = cohortMode ? dj.cohort_rank : (showIntervals ? i + 1 : dj.rank);
-          const interval = showIntervals && Number.isFinite(dj.rank_pm) && dj.rank_pm >= 2
-            ? { lo: dj.rank_lo, hi: dj.rank_hi, pm: dj.rank_pm } : null;
-          return (
+        {!loading && !error && shownRows.length === 0 && (
+          <div className="state-msg">
+            No acts match “{query.trim()}”.
+            <button className="rl-empty-clear" onClick={() => setQuery("")}>Clear search</button>
+          </div>
+        )}
+        {!loading && !error && shownRows.slice(0, limit).map(({ dj, displayRank, interval }) => (
           <div key={dj.name} ref={el => { cardRefs.current[dj.name] = el; }}>
             <DJCard
               dj={dj}
@@ -2804,8 +2869,12 @@ export default function App() {
               onToggleWatch={toggleWatch}
             />
           </div>
-          );
-        })}
+        ))}
+        {!loading && !error && limit < shownRows.length && (
+          <div ref={sentinelRef} className="rl-sentinel" aria-hidden="true">
+            <div className="spinner" />Loading more…
+          </div>
+        )}
       </main>
 
       </>}
