@@ -141,6 +141,12 @@
   padding: 48px 24px 120px;
   max-width: 960px;
   margin: 0 auto;
+  /* #root is a column flexbox; `margin: 0 auto` alone makes this item shrink to its
+     widest unwrapped line (e.g. the long genre note) instead of the viewport, which
+     overflowed on mobile. width:100% + border-box fills the column; max-width still
+     caps + centers on desktop. */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* ── Header ──────────────────────────────────────────────────────── */
