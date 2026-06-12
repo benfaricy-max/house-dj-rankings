@@ -1,0 +1,64 @@
+/* PATH 2 — paid Index intelligence tier, shown beside the free capture. */
+.intel-upsell {
+  margin: 18px auto 0;
+  max-width: 560px;
+  padding: 22px 24px;
+  border: 1px solid var(--accent-border);
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent-bg), transparent 70%), var(--card, #141417);
+  text-align: center;
+}
+.intel-up-tag {
+  font-size: .66rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.intel-up-h {
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--text-h);
+  margin-bottom: 8px;
+}
+.intel-up-sub {
+  font-size: .88rem;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0 auto 16px;
+  max-width: 46ch;
+}
+.intel-up-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+.intel-up-price { display: flex; align-items: baseline; gap: 2px; }
+.intel-up-amount {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-h);
+  font-family: var(--mono, ui-monospace, monospace);
+}
+.intel-up-cadence { font-size: .78rem; color: var(--muted); }
+.intel-up-btn {
+  background: var(--accent);
+  color: var(--on-accent);
+  border: none;
+  border-radius: 10px;
+  padding: 11px 22px;
+  font-size: .95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter .15s ease, transform .05s ease;
+}
+.intel-up-btn:hover:not(:disabled) { filter: brightness(1.08); }
+.intel-up-btn:active:not(:disabled) { transform: translateY(1px); }
+.intel-up-btn:disabled { opacity: .6; cursor: default; }
+.intel-up-fine {
+  font-size: .68rem;
+  color: var(--muted);
+  margin-top: 10px;
+}

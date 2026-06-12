@@ -5,6 +5,7 @@
   "description": "Serverless functions for PEAKTIME Pro — Stripe billing, entitlement, AI rationale. Deploy on Vercel/Cloudflare/Netlify (see COMMERCE.md).",
   "type": "module",
   "dependencies": {
+    "pdfkit": "^0.15.2",
     "stripe": "^16.0.0"
   },
   "optionalDependencies": {
