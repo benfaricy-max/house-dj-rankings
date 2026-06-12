@@ -54,8 +54,9 @@ function track(event, props) {
     window.plausible?.(event, { props });
     window.gtag?.("event", event, props);
     const log = JSON.parse(localStorage.getItem("peaktime_funnel") || "[]");
-    log.push({ event, ...props, t: new Date().toISOString() });
-    localStorage.setItem("peaktime_funnel", JSON.stringify(log));
+    log.push({ v: 1, event, ...props, t: new Date().toISOString() });
+    // version each record (v) + cap the append log so it can't grow past quota
+    localStorage.setItem("peaktime_funnel", JSON.stringify(log.slice(-500)));
   } catch { /* storage disabled — ignore */ }
 }
 
