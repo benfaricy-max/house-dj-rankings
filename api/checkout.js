@@ -51,6 +51,15 @@ export default async function handler(req, res) {
   const meta = cleanMeta(req.body?.meta);
   meta.plan = planId;
 
+  // One-off report buyers are redirected straight to their generated PDF
+  // (api/report-pdf verifies the session is paid before rendering). Built from
+  // the request host so it works on whatever domain the API is deployed to.
+  const proto = (req.headers["x-forwarded-proto"] || "https").split(",")[0];
+  const apiBase = req.headers.host ? `${proto}://${req.headers.host}` : "";
+  const successUrl = planId === "report" && apiBase
+    ? `${apiBase}/api/report-pdf?session_id={CHECKOUT_SESSION_ID}`
+    : `${FRONTEND}/?pro=success&plan=${planId}&session_id={CHECKOUT_SESSION_ID}`;
+
   try {
     const session = await stripe.checkout.sessions.create({
       mode: plan.mode,
@@ -63,7 +72,7 @@ export default async function handler(req, res) {
       // one-off purchases also stamp the payment intent so the webhook/receipt
       // carries which artist report was bought.
       ...(plan.mode === "payment" ? { payment_intent_data: { metadata: meta } } : {}),
-      success_url: `${FRONTEND}/?pro=success&plan=${planId}&session_id={CHECKOUT_SESSION_ID}`,
+      success_url: successUrl,
       cancel_url: `${FRONTEND}/?pro=cancelled`,
     });
     return res.status(200).json({ url: session.url });
