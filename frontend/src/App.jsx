@@ -35,10 +35,18 @@ export const pressable = (handler, expanded) => ({
 // static HTML for SEO), then fall back to the legacy hash (#/artist/<slug>) so old
 // shared links still resolve. A trailing ".html" is tolerated (GitHub Pages serves
 // /artist/foo at /artist/foo.html).
+// Compile each kind's two patterns once and cache them, rather than building a
+// fresh RegExp on every route read (js-hoist-regexp).
+const ROUTE_RE = {};
+const routeRe = (kind) => (ROUTE_RE[kind] ||= {
+  hash: new RegExp(`^#/${kind}/(.+)$`),
+  path: new RegExp(`^/${kind}/([^/?#]+?)(?:\\.html)?/?$`),
+});
 const matchRoute = (kind) => {
-  const h = (window.location.hash || "").match(new RegExp(`^#/${kind}/(.+)$`));
+  const re = routeRe(kind);
+  const h = (window.location.hash || "").match(re.hash);
   if (h) return decodeURIComponent(h[1]);
-  const p = window.location.pathname.match(new RegExp(`^/${kind}/([^/?#]+?)(?:\\.html)?/?$`));
+  const p = window.location.pathname.match(re.path);
   return p ? decodeURIComponent(p[1]) : null;
 };
 const parseProfileSlug = () => matchRoute("artist");
@@ -46,6 +54,32 @@ const parseMarketSlug  = () => matchRoute("market");
 const parseClubSlug    = () => matchRoute("club");
 const parseBlogSlug    = () => matchRoute("blog");
 const parseValueSlug   = () => matchRoute("value");
+
+// Hoisted out of MarketReadPage / MarketSaturationPage so they aren't redefined
+// on every parent render (rerender-no-inline-components): a component declared
+// inside another is a brand-new type each render and remounts its whole subtree.
+// Both depend only on the module-level ArtistLink import - no parent closure.
+function MarketLine({ a, right }) {
+  return (
+    <div className="mr-line">
+      <div className="mr-line-l"><ArtistLink name={a.name} /><span className="mr-rk">#{a.rank}</span></div>
+      <div className="mr-line-r">{right}</div>
+    </div>
+  );
+}
+function SaturationRow({ r }) {
+  const level = r.saturation >= 70 ? "over" : "heavy";
+  return (
+    <div className="ms-row">
+      <div className="ms-artist"><ArtistLink name={r.name} /><span className="ms-rank">#{r.rank}</span></div>
+      <div className="ms-city">{r.city}{r.country ? <span className="ms-country">, {r.country}</span> : null}</div>
+      <div className="ms-detail">
+        <b>{r.shows_3m}</b> show{r.shows_3m !== 1 ? "s" : ""} / 3mo{r.days_since != null && <> · last {r.days_since}d ago</>}
+      </div>
+      <div className={`ms-badge ms-badge--${level}`}>{level === "over" ? "Overbooked" : "Heavy"} {r.saturation}</div>
+    </div>
+  );
+}
 // Editor-only gate: the Journal stays hidden from the public until it's ready.
 // Visit the site once with ?editor=1 (or #editor) on this device to unlock it;
 // the flag is remembered in localStorage. Use ?editor=0 to lock it again.
@@ -1642,13 +1676,6 @@ function MarketReadPage({ rankings, slug, embedded }) {
     navigator.clipboard?.writeText(url).then(() => { setCopied(true); setTimeout(() => setCopied(false), 1800); });
   };
 
-  const Line = ({ a, right }) => (
-    <div className="mr-line">
-      <div className="mr-line-l"><ArtistLink name={a.name} /><span className="mr-rk">#{a.rank}</span></div>
-      <div className="mr-line-r">{right}</div>
-    </div>
-  );
-
   return (
     <div className="page mr-page">
       {!embedded && <button className="ap-back mr-back" onClick={() => { window.location.hash = ""; }}>← Back to rankings</button>}
@@ -1729,26 +1756,12 @@ function MarketSaturationPage({ rankings }) {
   const filtered = city === "All cities" ? rows : rows.filter(r => r.city === city);
   const shown = filtered;
 
-  const Row = ({ r }) => {
-    const level = r.saturation >= 70 ? "over" : "heavy";
-    return (
-      <div className="ms-row">
-        <div className="ms-artist"><ArtistLink name={r.name} /><span className="ms-rank">#{r.rank}</span></div>
-        <div className="ms-city">{r.city}{r.country ? <span className="ms-country">, {r.country}</span> : null}</div>
-        <div className="ms-detail">
-          <b>{r.shows_3m}</b> show{r.shows_3m !== 1 ? "s" : ""} / 3mo{r.days_since != null && <> · last {r.days_since}d ago</>}
-        </div>
-        <div className={`ms-badge ms-badge--${level}`}>{level === "over" ? "Overbooked" : "Heavy"} {r.saturation}</div>
-      </div>
-    );
-  };
-
   return (
     <div className="page ms-page">
       <div className="bk-header">
         <h1 className="cs-title">Who's overbooked, and where</h1>
         <p className="cs-sub">
-          An artist who's played a city four times this quarter is a hard sell there — no matter their global numbers.
+          An artist who's played a city four times this quarter is a hard sell there - no matter their global numbers.
           We score market freshness per city from live booking frequency &amp; recency, so a regional buyer knows who's
           fresh in their market and who the crowd has already seen.
         </p>
@@ -1767,10 +1780,10 @@ function MarketSaturationPage({ rankings }) {
       <div className="ms-head">
         <span>Artist</span><span>Market</span><span>Recent activity</span><span>Saturation</span>
       </div>
-      {shown.map((r, i) => <Row key={r.name + r.city + i} r={r} />)}
+      {shown.map((r, i) => <SaturationRow key={r.name + r.city + i} r={r} />)}
 
       <div className="bk-method">
-        <b>How this is computed.</b> From Resident Advisor booking history: saturation (0–100) rises with shows in a
+        <b>How this is computed.</b> From Resident Advisor booking history: saturation (0-100) rises with shows in a
         city over the last 3 months and how recently the artist last played there. Higher = more overexposed in that
         market. RA covers club/festival bookings; absence isn't proof an artist hasn't played a market.
       </div>
