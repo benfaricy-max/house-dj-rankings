@@ -10,6 +10,7 @@ import ClubViral from "./ClubViral";
 import { useWatchlist, useMomentumAlerts } from "./watchlist";
 import { InfoTip, MomentumTip, MOMENTUM_BLEND, artistForm, FORM_META, FormTip, genreLean, GENRE_META, matchesGenre } from "./methodology";
 import { rankWithinCohort, withRankIntervals, deriveRegions, inRegion, isRising, PERSONAS } from "./cohort";
+import BuyerLane from "./BuyerLane";
 const PitchPage     = lazy(() => import("./Pitch"));        // read-only private brief route
 const DayInLifePage = lazy(() => import("./DayInLife"));    // "A Booking Day" route
 const ClubsPage   = lazy(() => import("./ClubsPage"));                                  // splits ~750 lines of club lore/images out of the main chunk
@@ -2695,6 +2696,9 @@ export default function App() {
 
       {activeTab === "rankings" && <>
       <MomentumAlertsBanner alerts={momentumAlerts} onDismiss={dismissAlerts} onOpen={name => { window.location.href = `/artist/${slugify(name)}`; }} />
+      {/* Buy-side entry point (lead motion, GTM.md §1): the open ranking sells the
+          magazine; a buyer's job is "who's underpriced for my city/budget, now." */}
+      <BuyerLane rankings={rankings} onOpenValue={slug => { window.location.href = `/value/${slug}`; }} />
 
       {/* Stakeholder lens — same index, three jobs-to-be-done */}
       <div className="lens-bar">
