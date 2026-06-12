@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { slugify } from "./ArtistProfile";
 import EmailCapture from "./EmailCapture";
+import IntelUpsell from "./IntelUpsell";
 import "./IndexDrop.css";
 
 // ── The PEAKTIME Index — the monthly "drop" ────────────────────────────────
@@ -187,6 +188,7 @@ export default function IndexDrop({ rankings = [], lastUpdated }) {
           heading={`Get the ${monthLabel} Index — and every drop after`}
           sub="The full index plus Movers, the Value Gap of the Month, and City in Focus — in your inbox on the 1st. Free and neutral."
         />
+        <IntelUpsell source="index-drop" />
       </section>
 
       {/* 5 — The top 20 snapshot */}

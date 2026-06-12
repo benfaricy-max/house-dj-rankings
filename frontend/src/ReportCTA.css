@@ -1,0 +1,97 @@
+/* PATH 1 — one-off Fair Value Report CTA. Editorial card, accent-restrained. */
+.rcta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 28px;
+  align-items: center;
+  margin: 26px 0 8px;
+  padding: 22px 24px;
+  border: 1px solid var(--accent-border);
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent-bg), transparent 70%), var(--card, #141417);
+}
+.rcta-eyebrow {
+  font-size: .68rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.rcta-h {
+  font-size: 1.18rem;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--text-h);
+  margin-bottom: 8px;
+}
+.rcta-sub {
+  font-size: .9rem;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0 0 12px;
+  max-width: 52ch;
+}
+.rcta-feats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 5px;
+}
+.rcta-feats li {
+  font-size: .82rem;
+  color: var(--muted);
+  padding-left: 18px;
+  position: relative;
+}
+.rcta-feats li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+.rcta-buy {
+  text-align: center;
+  min-width: 190px;
+}
+.rcta-price { margin-bottom: 12px; }
+.rcta-amount {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-h);
+  font-family: var(--mono, ui-monospace, monospace);
+}
+.rcta-cadence {
+  display: block;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.rcta-btn {
+  width: 100%;
+  background: var(--accent);
+  color: var(--on-accent);
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: .95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter .15s ease, transform .05s ease;
+}
+.rcta-btn:hover:not(:disabled) { filter: brightness(1.08); }
+.rcta-btn:active:not(:disabled) { transform: translateY(1px); }
+.rcta-btn:disabled { opacity: .6; cursor: default; }
+.rcta-fine {
+  font-size: .68rem;
+  color: var(--muted);
+  margin-top: 8px;
+}
+@media (max-width: 640px) {
+  .rcta { grid-template-columns: 1fr; gap: 18px; }
+  .rcta-buy { min-width: 0; }
+}
