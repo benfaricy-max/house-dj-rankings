@@ -1239,3 +1239,84 @@ details[open] .hiw-faq-q::after { content: "–"; }
 .itip-row-l { color: var(--muted, #9a9ba1); }
 .itip-row-w { font-family: var(--mono, monospace); font-weight: 600; }
 .itip-foot { font-size: 11px; line-height: 1.4; color: var(--muted, #75767d); border-top: 1px solid var(--border, #2a2b30); padding-top: 6px; margin-top: 1px; }
+
+/* ============================================================================
+ * PageHeader (.pm-*) — OWNED masthead + nav. See PageHeader.jsx ownership note.
+ * Sticky two-tier terminal masthead; do not restyle without coordinating.
+ * ========================================================================== */
+:root { --pm-bar-h: 48px; }
+html { scroll-behavior: smooth; }   /* anchor jumps glide (reduced-motion override in index.css) */
+
+/* display:contents dissolves this wrapper so the sticky bars are bounded by
+   .page (full scroll height), not by a short header box — otherwise sticky only
+   holds for the header's own height then scrolls away. */
+.pm { display: contents; }
+
+/* Tier 1 — slim sticky bar */
+.pm-bar {
+  position: sticky; top: 0; z-index: 60;
+  display: flex; align-items: center; gap: 14px;
+  height: var(--pm-bar-h); padding: 0 16px;
+  background: var(--bg); border-bottom: 1px solid var(--border);
+}
+.pm-brand { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; flex: none; }
+.pm-mark { width: 22px; height: 22px; display: block; }
+.pm-word { font-family: var(--mono); font-weight: 600; font-size: 14px; letter-spacing: 0.2em; color: var(--text-h); }
+
+.pm-ticker { display: flex; align-items: center; gap: 8px; min-width: 0; overflow: hidden;
+  font-family: var(--mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
+.pm-tk { flex: none; }
+.pm-tk b { color: var(--text-h); font-weight: 600; font-variant-numeric: tabular-nums; }
+.pm-tk-dot { color: var(--border); flex: none; }
+.pm-tk-mover { display: inline-flex; align-items: center; gap: 5px; text-decoration: none;
+  color: var(--text-h); min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.pm-tk-mover:hover { color: var(--accent); }
+.pm-tk-arrow { color: var(--accent); font-weight: 600; font-variant-numeric: tabular-nums; flex: none; }
+.pm-tk-upd { flex: none; opacity: 0.7; }
+
+.pm-cta { margin-left: auto; flex: none; cursor: pointer;
+  font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--on-accent, #0c0c0e); background: var(--accent); border: none;
+  border-radius: 7px; padding: 8px 14px; transition: opacity 0.15s ease; }
+.pm-cta:hover { opacity: 0.88; }
+.pm-cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Tier 2 — sticky primary nav */
+.pm-nav { position: sticky; top: var(--pm-bar-h); z-index: 55;
+  background: var(--bg); border-bottom: 1px solid var(--border); }
+.pm-nav-tabs { display: flex; align-items: stretch; gap: 2px; padding: 0 10px;
+  overflow-x: auto; scrollbar-width: none; }
+.pm-nav-tabs::-webkit-scrollbar { display: none; }
+.pm-tab { position: relative; white-space: nowrap; cursor: pointer; background: transparent; border: none;
+  font-family: var(--sans); font-size: 13.5px; color: var(--text); padding: 13px 12px;
+  border-bottom: 2px solid transparent; transition: color 0.15s ease; }
+.pm-tab:hover { color: var(--text-h); }
+.pm-tab--active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 500; }
+.pm-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; border-radius: 4px; }
+.pm-tab--more { display: inline-flex; align-items: center; gap: 4px; }
+.pm-caret { font-size: 10px; }
+
+.pm-more { position: relative; display: flex; }
+.pm-more-menu { position: absolute; top: 100%; right: 0; z-index: 70; min-width: 180px;
+  background: var(--card); border: 1px solid var(--border); border-radius: 9px;
+  padding: 5px; box-shadow: 0 12px 28px rgba(0,0,0,0.5); }
+.pm-more-item { display: block; width: 100%; text-align: left; cursor: pointer; background: transparent;
+  border: none; border-radius: 6px; font-family: var(--sans); font-size: 13.5px; color: var(--text);
+  padding: 9px 11px; transition: background 0.12s ease, color 0.12s ease; }
+.pm-more-item:hover { background: rgba(255,255,255,0.04); color: var(--text-h); }
+.pm-more-item--active { color: var(--accent); }
+.pm-more-item:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+/* Editorial intro — left-aligned, scrolls away (rankings tab only) */
+.pm-intro { max-width: 640px; padding: 22px 16px 6px; text-align: left; }
+.pm-eyebrow { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.pm-title { font-family: var(--heading); font-size: clamp(26px, 5vw, 40px); line-height: 1.08;
+  color: var(--text-h); margin: 0; letter-spacing: -0.01em; }
+.pm-scope { font-size: 14px; line-height: 1.55; color: #c9c8c2; margin: 12px 0 0; max-width: 60ch; }
+
+@media (max-width: 600px) {
+  .pm-tk-upd { display: none; }            /* keep the ticker to acts · signals · mover on small screens */
+  .pm-word { letter-spacing: 0.14em; }
+  .pm-cta { padding: 7px 11px; }
+}

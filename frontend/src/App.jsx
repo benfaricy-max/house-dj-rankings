@@ -8,6 +8,7 @@ import ClubViral from "./ClubViral";
 import { useWatchlist, useMomentumAlerts } from "./watchlist";
 import { InfoTip, MomentumTip, MOMENTUM_BLEND, artistForm, FORM_META, FormTip, genreLean, GENRE_META, matchesGenre } from "./methodology";
 import { rankWithinCohort, withRankIntervals, deriveRegions, inRegion, isRising, PERSONAS } from "./cohort";
+import PageHeader from "./PageHeader";   // OWNED masthead + nav — change only via the PageHeader owner
 import PitchPage from "./Pitch";   // read-only private brief route (also pulled by ValueGap)
 import DayInLifePage from "./DayInLife";   // "A Booking Day" — day-in-the-life + direct answers
 const ClubsPage   = lazy(() => import("./ClubsPage"));                                  // splits ~750 lines of club lore/images out of the main chunk
@@ -2685,43 +2686,13 @@ export default function App() {
 
   return (
     <div className="page">
-      <header className="page-header">
-        <a href="#" className="brand-lockup" onClick={e => { e.preventDefault(); window.location.hash = ""; setActiveTab("rankings"); }}>
-          <svg className="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
-            <rect width="32" height="32" rx="7" fill="#0c0c0e" />
-            <g fill="var(--accent)">
-              <rect x="5.5" y="18.5" width="3.6" height="8" rx="1.3" />
-              <rect x="11.2" y="13" width="3.6" height="13.5" rx="1.3" />
-              <rect x="16.9" y="8" width="3.6" height="18.5" rx="1.3" />
-              <rect x="22.6" y="4" width="3.6" height="22.5" rx="1.3" />
-            </g>
-          </svg>
-          <span className="brand-word">PEAKTIME</span>
-        </a>
-        <div className="header-eyebrow">Underground electronic · house &amp; techno</div>
-        <h1 className="header-title">The demand index for underground electronic music</h1>
-        <p className="header-scope" style={{ margin: "10px auto 0", maxWidth: 600, fontSize: 14, color: "#c9c8c2", lineHeight: 1.55 }}>
-          Booking demand, not Spotify followers. We rank house &amp; techno acts by who&apos;s actually
-          filling rooms and moving the scene — blended from live bookings, charts, and momentum,
-          refreshed daily. The one read that isn&apos;t selling either side anything.
-        </p>
-        {lastUpdated && <p className="header-updated">Updated {new Date(lastUpdated).toLocaleString()}</p>}
-        <div className="top-tabs">
-          <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>
-          <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
-          <button className={`top-tab ${activeTab === "booking" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking")}>Booking Intelligence</button>
-          <button className={`top-tab ${activeTab === "clubs" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("clubs")}>Club Index</button>
-          <button className={`top-tab ${activeTab === "reports" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("reports")}>Reports</button>
-          <button className={`top-tab ${activeTab === "index" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("index")}>The Index</button>
-          {editor && <button className={`top-tab ${activeTab === "journal" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("journal")}>Journal <span className="tab-private">·private</span></button>}
-          <button className={`top-tab ${activeTab === "scouting" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("scouting")}>Scouting</button>
-          {/* TEMP: Breakouts & Movers tabs hidden until enough history accrues to populate them
-          <button className={`top-tab ${activeTab === "breakouts"     ? "top-tab--active" : ""}`} onClick={() => setActiveTab("breakouts")}>Breakouts</button>
-          <button className={`top-tab ${activeTab === "movers"        ? "top-tab--active" : ""}`} onClick={() => setActiveTab("movers")}>Movers</button>
-          */}
-          <button data-tab="pro" className={`top-tab ${activeTab === "pro" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("pro")}>Deep Dive</button>
-        </div>
-      </header>
+      <PageHeader
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        lastUpdated={lastUpdated}
+        editor={editor}
+        rankings={rankings}
+      />
 
       {activeTab === "pro" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ProPage rankings={rankings} /></Suspense>}
       {activeTab === "booking"       && <BookingIntelPage rankings={rankings} />}

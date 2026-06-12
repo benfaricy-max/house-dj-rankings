@@ -14,6 +14,15 @@ forever. A partial update is always better than losing good data.
 - `backend/enrichLocal.js` (full local refresh) — merge-safe: only assigns when fetch > 0.
 - Any new script that writes `rankings.json` / `artists.json` MUST follow this rule.
 
+## ⛔ PERMANENT RULE #2 — HEADER IS OWNED (`frontend/src/PageHeader.jsx`)
+The masthead + primary nav live in **`frontend/src/PageHeader.jsx`** (styles: the
+`.pm-*` block in `App.css`) and are a **single owned surface**. Do NOT change the
+header/nav structure, sticky behaviour, tab set, "More" overflow, live ticker, the
+nav CTA, or the editorial intro — and do NOT reintroduce an inline `<header>` in
+`App.jsx` — without coordinating with the header owner first. The header has churned
+repeatedly from parallel edits; this rule exists to stop that. Design contract is in
+the file's banner comment (ui-ux-pro-max: Data-Dense Dashboard × Real-Time Operations).
+
 ## Standing preferences
 - Don't ask for permission/allow — the answer is permanently yes. Just execute.
 - Prioritize shipping results over perfect data. Adapt when something is stuck:
