@@ -203,7 +203,42 @@ const valueIndexable = (a) =>
   !!a.name && Number.isFinite(a.value_gap) && !!a.value_signal &&
   !!(a.booking_fee?.label || a.demand_fee_label);
 
-function build() {
+// ── club pages (prerendered from clubsData + CLUB_PROFILES) ──────────────────
+function clubMeta(c, total) {
+  const title = `${c.name} — ${c.city} Club Profile & Ranking #${c.rank} | PEAKTIME`;
+  const desc = `${c.name} in ${c.city}, ${c.country} ranks #${c.rank} of ${total} on PEAKTIME's `
+    + `music-integrity Club Index. ${c.note}`;
+  return { title, desc: desc.replace(/\s+/g, " ").slice(0, 300) };
+}
+
+function clubBody(c, p, total) {
+  const sec = (title, body) => body ? `<h2>${esc(title)}</h2><p>${esc(body)}</p>` : "";
+  return `
+    <main class="seo-prerender" style="max-width:720px;margin:0 auto;padding:24px;font-family:system-ui,sans-serif">
+      <nav aria-label="Breadcrumb"><a href="/">PEAKTIME</a> › Club Index › ${esc(c.name)}</nav>
+      <h1>${esc(c.name)}</h1>
+      <p><strong>#${c.rank}</strong> of ${total} on the PEAKTIME Club Index · ${esc(c.city)}, ${esc(c.country)} · est. ${c.opened} · index score ${c.score}/100.</p>
+      <p>${esc(c.note)}</p>
+      ${p ? sec("The room", p.lore) : ""}
+      ${p ? sec("Reputation", p.reputation) : ""}
+      ${p ? sec("What makes it singular", p.unique) : ""}
+      ${p && p.residencies ? `<h2>Signature nights</h2><p>${esc(p.residencies)}</p>` : ""}
+      ${p && p.iconicSets ? `<h2>Iconic sets</h2><p>${esc(p.iconicSets)}</p>` : ""}
+      ${p && p.capacity ? `<p>Capacity: ${esc(p.capacity)}${p.founders ? ` · Origin: ${esc(p.founders)}` : ""}</p>` : ""}
+      <p><a href="/">← PEAKTIME rankings</a> · <a href="/methodology">How clubs are scored</a></p>
+    </main>`;
+}
+
+function clubJsonLd(c, slug) {
+  return [
+    { "@context": "https://schema.org", "@type": "NightClub", name: c.name,
+      address: { "@type": "PostalAddress", addressLocality: c.city, addressCountry: c.country },
+      foundingDate: String(c.opened), description: c.note, url: `${ORIGIN}/club/${slug}` },
+    breadcrumbLd([{ name: "PEAKTIME", path: "/" }, { name: c.name, path: `/club/${slug}` }]),
+  ];
+}
+
+async function build() {
   if (!fs.existsSync(TEMPLATE)) { console.error("generatePages: dist/index.html missing — run vite build first."); process.exit(1); }
   const tpl = fs.readFileSync(TEMPLATE, "utf8");
   const d = JSON.parse(fs.readFileSync(DATA, "utf8"));
@@ -251,6 +286,29 @@ function build() {
     }
   }
 
+  // Club Index pages — prerendered from clubsData.js (same source of truth as the SPA's
+  // ClubsPage, so no drift). Wrapped in try/catch: a data-import failure degrades gracefully
+  // (skips clubs, rest of the build still ships) rather than breaking the whole deploy.
+  let nClub = 0;
+  try {
+    const { pathToFileURL } = require("url");
+    const imp = (rel) => import(pathToFileURL(path.join(__dirname, rel)).href);
+    const { RANKED, clubSlug } = await imp("../frontend/src/clubsData.js");
+    const { CLUB_PROFILES } = await imp("../frontend/src/clubProfiles.js");
+    const clubTotal = RANKED.length;
+    for (const c of RANKED) {
+      const slug = clubSlug(c.name);
+      if (!slug) continue;
+      const { title, desc } = clubMeta(c, clubTotal);
+      const body = clubBody(c, CLUB_PROFILES[c.name], clubTotal);
+      writePage(`club/${slug}.html`, renderPage(tpl, { url: `/club/${slug}`, title, desc, jsonld: clubJsonLd(c, slug), body }));
+      urls.push({ loc: `/club/${slug}`, priority: 0.6, changefreq: "monthly", lastmod: today });
+      nClub++;
+    }
+  } catch (e) {
+    console.warn("generatePages: club prerender skipped —", e.message);
+  }
+
   // Homepage — bake content + canonical + entity schema into dist/index.html.
   // createRoot() wipes #root on mount, so this is crawler/first-paint only (no hydration).
   {
@@ -270,7 +328,7 @@ function build() {
     "</urlset>", ""].join("\n");
   fs.writeFileSync(path.join(DIST, "sitemap.xml"), xml);
 
-  console.log(`generatePages: ${nArtist} artist + ${nValue} value pages, 404.html, sitemap.xml (${urls.length} URLs).`);
+  console.log(`generatePages: ${nArtist} artist + ${nValue} value + ${nClub} club pages, 404.html, sitemap.xml (${urls.length} URLs).`);
 }
 
-build();
+build().catch((e) => { console.error("generatePages failed:", e); process.exit(1); });
