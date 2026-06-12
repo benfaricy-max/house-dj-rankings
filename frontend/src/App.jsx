@@ -1,15 +1,17 @@
 import { useEffect, useState, useMemo, useRef, lazy, Suspense } from "react";
 import "./App.css";
 const ProPage = lazy(() => import("./ProPage"));   // code-split: the ~750-line tab loads in its own chunk
-import ArtistProfile, { slugify, ArtistLink } from "./ArtistProfile";
-import { ValueGapPage, ValueReport, valueSlug } from "./ValueGap";
+import { slugify, ArtistLink } from "./artistLink";   // leaf helpers — keep ArtistProfile out of the home chunk
+const ArtistProfile = lazy(() => import("./ArtistProfile"));                              // heavy 538-line profile — /artist route only
+const ValueGapPage  = lazy(() => import("./ValueGap").then(m => ({ default: m.ValueGapPage })));   // value tab
+const ValueReport   = lazy(() => import("./ValueGap").then(m => ({ default: m.ValueReport })));    // /value route
 import RoutingSaturation from "./RoutingSaturation";
 import ClubViral from "./ClubViral";
 import { useWatchlist, useMomentumAlerts } from "./watchlist";
 import { InfoTip, MomentumTip, MOMENTUM_BLEND, artistForm, FORM_META, FormTip, genreLean, GENRE_META, matchesGenre } from "./methodology";
 import { rankWithinCohort, withRankIntervals, deriveRegions, inRegion, isRising, PERSONAS } from "./cohort";
-import PitchPage from "./Pitch";   // read-only private brief route (also pulled by ValueGap)
-import DayInLifePage from "./DayInLife";   // "A Booking Day" — day-in-the-life + direct answers
+const PitchPage     = lazy(() => import("./Pitch"));        // read-only private brief route
+const DayInLifePage = lazy(() => import("./DayInLife"));    // "A Booking Day" route
 const ClubsPage   = lazy(() => import("./ClubsPage"));                                  // splits ~750 lines of club lore/images out of the main chunk
 const ClubProfile = lazy(() => import("./ClubsPage").then(m => ({ default: m.ClubProfile })));
 const BlogPage    = lazy(() => import("./BlogPage"));                                   // editor-only tab — rarely loaded
@@ -1507,12 +1509,12 @@ function BookingIntelPage({ rankings }) {
         ))}
       </div>
       {view === "booking" && <BookingToolPage rankings={rankings} />}
-      {view === "value" && <ValueGapPage rankings={rankings} />}
+      {view === "value" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ValueGapPage rankings={rankings} /></Suspense>}
       {view === "read" && <MarketReadPage rankings={rankings} embedded />}
       {view === "saturation" && <MarketSaturationPage rankings={rankings} />}
       {view === "spotlight" && <CitySpotlightPage rankings={rankings} />}
       {view === "scout" && <CityScoutPage rankings={rankings} />}
-      {view === "booking-day" && <DayInLifePage onCta={(v) => { setView(v); window.scrollTo({ top: 0 }); }} />}
+      {view === "booking-day" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><DayInLifePage onCta={(v) => { setView(v); window.scrollTo({ top: 0 }); }} /></Suspense>}
     </div>
   );
 }
@@ -2604,7 +2606,7 @@ export default function App() {
   // Private pitch link route — read-only single-artist brief at #/pitch/<token>.
   // Standalone (no site chrome), Pro-generated, expiring. See Pitch.jsx.
   if (/^#\/pitch\//.test(window.location.hash)) {
-    return <PitchPage rankings={rankings} />;
+    return <Suspense fallback={<div className="loading">Loading…</div>}><PitchPage rankings={rankings} /></Suspense>;
   }
 
   // Profile page route — shareable URL like #/artist/john-summit (after all hooks)
@@ -2612,7 +2614,7 @@ export default function App() {
     return (
       <div className="page">
         {rankings.length
-          ? <ArtistProfile rankings={rankings} slug={profileSlug} onBack={() => { window.location.href = "/"; }} />
+          ? <Suspense fallback={<div className="loading">Loading…</div>}><ArtistProfile rankings={rankings} slug={profileSlug} onBack={() => { window.location.href = "/"; }} /></Suspense>
           : <div className="loading">Loading…</div>}
       </div>
     );
@@ -2632,7 +2634,7 @@ export default function App() {
 
   // Journal post route — shareable like #/blog/notes-from-the-floor (editor-only for now)
   if (valueSlugState) {
-    return <div className="page"><ValueReport rankings={rankings} slug={valueSlugState} /></div>;
+    return <div className="page"><Suspense fallback={<div className="loading">Loading…</div>}><ValueReport rankings={rankings} slug={valueSlugState} /></Suspense></div>;
   }
   if (blogSlugState && editor) {
     return <div className="page"><Suspense fallback={<div className="loading">Loading…</div>}><BlogPost slug={blogSlugState} /></Suspense></div>;

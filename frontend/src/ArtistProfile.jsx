@@ -3,23 +3,10 @@ import { ARTIST_PROFILES } from "./artistProfiles";
 import { useWatchlist } from "./watchlist";
 import { MomentumTip, ValueGapTip, sceneGeography } from "./methodology";
 import "./ArtistProfile.css";
-
-export const slugify = s => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "")
-  .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
-
-// Reusable inline link to an artist's profile. Inherits surrounding text style;
-// stops propagation so it won't trigger parent row/card click handlers.
-export function ArtistLink({ name, className = "", children }) {
-  return (
-    <a
-      className={`artist-link ${className}`.trim()}
-      href={`/artist/${slugify(name)}`}
-      onClick={e => e.stopPropagation()}
-    >
-      {children ?? name}
-    </a>
-  );
-}
+// slugify + ArtistLink now live in the dependency-free leaf module so the home
+// chunk can use them without pulling this component. Re-exported for back-compat.
+import { slugify, ArtistLink } from "./artistLink";
+export { slugify, ArtistLink };
 
 function fmt(n) {
   if (n == null || n === 0) return "—";
