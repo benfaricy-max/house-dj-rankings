@@ -34,10 +34,17 @@ export default async function handler(req, res) {
     switch (event.type) {
       case "checkout.session.completed": {
         const s = event.data.object;
-        // Source of truth: the entitlement store (if configured). The signed
-        // cookie is a convenience so /me works instantly on the success redirect.
-        await setEntitlement(s.customer, { status: "active", plan: "pro", subscription: s.subscription });
-        const token = signSession({ customer: s.customer, plan: "pro", exp: Date.now() + 30 * 864e5 });
+        const plan = s.metadata?.plan || "pro";
+        // One-off purchases (mode "payment", e.g. the £29 report) are NOT a
+        // recurring entitlement — they buy a single artefact, so they don't
+        // grant ongoing Pro access. The sale + its artist metadata live in
+        // Stripe (Payments); fulfilment is handled separately.
+        if (s.mode === "payment") break;
+        // Subscriptions (solo / team / intel / pro): grant access. Source of
+        // truth is the entitlement store (if configured); the signed cookie is
+        // a convenience so /me works instantly on the success redirect.
+        await setEntitlement(s.customer, { status: "active", plan, subscription: s.subscription });
+        const token = signSession({ customer: s.customer, plan, exp: Date.now() + 30 * 864e5 });
         res.setHeader("Set-Cookie", `pt_session=${token}; Path=/; Max-Age=${30 * 86400}; HttpOnly; Secure; SameSite=None`);
         break;
       }
