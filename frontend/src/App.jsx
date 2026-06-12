@@ -1702,23 +1702,23 @@ function MarketReadPage({ rankings, slug, embedded }) {
         <div className="mr-grid">
           <div className="mr-col">
             <div className="mr-sec-h mr-h-buy">◆ Book now · underpriced &amp; rising</div>
-            {D.buys.map(a => <Line key={a.name} a={a} right={<><b>{a.booking_fee.label}</b> → {a.demand_fee_label}{a.value_signal === "strong-buy" ? " ★" : ""}</>} />)}
+            {D.buys.map(a => <MarketLine key={a.name} a={a} right={<><b>{a.booking_fee.label}</b> → {a.demand_fee_label}{a.value_signal === "strong-buy" ? " ★" : ""}</>} />)}
 
             <div className="mr-sec-h">▲ Breaking · momentum leaders</div>
-            {D.breaking.map(a => <Line key={a.name} a={a} right={<>momentum <b>{a.momentum_score}</b></>} />)}
+            {D.breaking.map(a => <MarketLine key={a.name} a={a} right={<>momentum <b>{a.momentum_score}</b></>} />)}
           </div>
           <div className="mr-col">
             <div className="mr-sec-h">◎ Best value live · converts above streaming</div>
-            {D.converters.map(a => <Line key={a.name} a={a} right={<>conv <b>{a.live_conversion_score}</b> · {fmt(a.spotify_monthly_listeners)} list.</>} />)}
+            {D.converters.map(a => <MarketLine key={a.name} a={a} right={<>conv <b>{a.live_conversion_score}</b> · {fmt(a.spotify_monthly_listeners)} list.</>} />)}
 
             {D.saturated.length > 0 && <>
               <div className="mr-sec-h mr-h-warn">✕ Already saturated in {market.city}</div>
-              {D.saturated.slice(0, 5).map(({ a, c }) => <Line key={a.name} a={a} right={<><b>{c.shows_3m}</b> shows/3mo{c.days_since != null ? ` · ${c.days_since}d ago` : ""}</>} />)}
+              {D.saturated.slice(0, 5).map(({ a, c }) => <MarketLine key={a.name} a={a} right={<><b>{c.shows_3m}</b> shows/3mo{c.days_since != null ? ` · ${c.days_since}d ago` : ""}</>} />)}
             </>}
 
             {D.localDemand.length > 0 && <>
               <div className="mr-sec-h">◈ Strong demand in {market.country}</div>
-              {D.localDemand.map(({ a, v }) => <Line key={a.name} a={a} right={<>local interest <b>{v}/100</b></>} />)}
+              {D.localDemand.map(({ a, v }) => <MarketLine key={a.name} a={a} right={<>local interest <b>{v}/100</b></>} />)}
             </>}
           </div>
         </div>
