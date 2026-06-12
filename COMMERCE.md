@@ -30,7 +30,8 @@ serverless platform. The frontend talks to them via `VITE_API_BASE`.
 | File | Role |
 |------|------|
 | `frontend/src/usePro.js` | `usePro()` entitlement hook + `startCheckout()` + `startPortal()` |
-| `api/checkout.js` | Creates a Stripe Checkout subscription session |
+| `api/checkout.js` | Creates a Stripe Checkout session (subscription or one-off, per plan) |
+| `api/report-pdf.js` | One-off fulfilment: verifies a paid `report` session, renders the branded Fair Value Report PDF on the fly from live rankings data (pdfkit). `report` checkouts redirect straight here. |
 | `api/webhook.js` | Verifies Stripe events; persists entitlement + mints a Pro cookie |
 | `api/me.js` | Returns `{ pro }` — confirms against the store, falls back to cookie |
 | `api/portal.js` | Stripe Billing Portal session (self-serve cancel / upgrade) |
