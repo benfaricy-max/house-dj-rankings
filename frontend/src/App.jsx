@@ -1499,6 +1499,7 @@ function BookingIntelPage({ rankings }) {
     ["read", "City Read"],
     ["saturation", "Saturation"],
     ["spotlight", "City Spotlight"],
+    ["buyers", "Who's Underpriced"],
     ["value", "Value Gap"],
     ["booking-day", "A Booking Day"],
   ];
@@ -1510,6 +1511,7 @@ function BookingIntelPage({ rankings }) {
         ))}
       </div>
       {view === "booking" && <BookingToolPage rankings={rankings} />}
+      {view === "buyers" && <BuyerLane rankings={rankings} onOpenValue={slug => { window.location.href = `/value/${slug}`; }} />}
       {view === "value" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ValueGapPage rankings={rankings} /></Suspense>}
       {view === "read" && <MarketReadPage rankings={rankings} embedded />}
       {view === "saturation" && <MarketSaturationPage rankings={rankings} />}
@@ -2696,9 +2698,6 @@ export default function App() {
 
       {activeTab === "rankings" && <>
       <MomentumAlertsBanner alerts={momentumAlerts} onDismiss={dismissAlerts} onOpen={name => { window.location.href = `/artist/${slugify(name)}`; }} />
-      {/* Buy-side entry point (lead motion, GTM.md §1): the open ranking sells the
-          magazine; a buyer's job is "who's underpriced for my city/budget, now." */}
-      <BuyerLane rankings={rankings} onOpenValue={slug => { window.location.href = `/value/${slug}`; }} />
 
       {/* Stakeholder lens — same index, three jobs-to-be-done */}
       <div className="lens-bar">
