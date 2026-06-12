@@ -56,7 +56,9 @@ export default async function handler(req, res) {
       mode: plan.mode,
       line_items: [{ price: plan.price, quantity: 1 }],
       allow_promotion_codes: true,
-      automatic_tax: { enabled: true },
+      // Stripe automatic tax is OFF for launch — turning it on requires a
+      // configured tax origin/registration (Settings → Tax) or Checkout errors.
+      // Re-enable with `automatic_tax: { enabled: true }` once that's set up.
       metadata: meta,
       // one-off purchases also stamp the payment intent so the webhook/receipt
       // carries which artist report was bought.
