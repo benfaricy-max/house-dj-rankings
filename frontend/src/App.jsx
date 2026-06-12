@@ -2506,6 +2506,17 @@ export default function App() {
   const [clubSlugState, setClubSlugState] = useState(parseClubSlug());
   const [blogSlugState, setBlogSlugState] = useState(parseBlogSlug());
   const [valueSlugState, setValueSlugState] = useState(parseValueSlug());
+
+  // Progressive render: paint the top rows first, then expand to the full list once
+  // the browser is idle after first paint. Cuts initial main-thread render work on
+  // mobile (the list is ~340 rows) → faster LCP/TTI. Counts (visible.length) stay full.
+  const [rowLimit, setRowLimit] = useState(60);
+  useEffect(() => {
+    if (rowLimit === Infinity) return;
+    const ric = typeof window !== "undefined" && window.requestIdleCallback;
+    if (ric) { const id = ric(() => setRowLimit(Infinity), { timeout: 1500 }); return () => window.cancelIdleCallback(id); }
+    const id = setTimeout(() => setRowLimit(Infinity), 300); return () => clearTimeout(id);
+  }, [rowLimit]);
   const [editor] = useState(isEditor());
   useEffect(() => {
     const onHash = () => { setProfileSlug(parseProfileSlug()); setMarketSlug(parseMarketSlug()); setClubSlugState(parseClubSlug()); setBlogSlugState(parseBlogSlug()); setValueSlugState(parseValueSlug()); };
@@ -2781,7 +2792,7 @@ export default function App() {
       <main className="rankings-list">
         {loading && <RankingsSkeleton rows={8} />}
         {error   && <div className="state-msg state-msg--error">⚠ {error}</div>}
-        {!loading && !error && visible.map((dj, i) => {
+        {!loading && !error && visible.slice(0, rowLimit).map((dj, i) => {
           // Main/house view is a house-anchored ranking with pure-techno removed, so
           // it's renumbered 1..N (no gaps, and consistent with the uncertainty bands,
           // which are already computed relative to this filtered list). Cohort mode
