@@ -93,7 +93,7 @@
 .ap-valuelink { display: block; margin: 4px 0 20px; padding: 14px 18px; background: var(--accent-bg); border: 1px solid var(--accent-border); border-radius: 12px; color: var(--accent); font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: background 0.12s; }
 .ap-valuelink:hover { background: var(--accent); color: var(--on-accent); }
 
-/* Vibe check — instant audio preview + verification deep-links */
+/* Vibe check - instant audio preview + verification deep-links */
 .ap-vibe { background: var(--card, #111114); border: 1px solid var(--border, #1e1f23); border-radius: 12px; padding: 16px 18px; margin: 4px 0 20px; }
 .ap-vibe-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
 .ap-vibe-label { font-family: var(--mono, monospace); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-h, #E9E7DF); }

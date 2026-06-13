@@ -133,7 +133,7 @@
 .vr-section-h { font-size: 0.8rem; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 0 0 12px; }
 .vr-evidence { margin-bottom: 26px; }
 
-/* Local fee comps (#4 — the regional anchor) */
+/* Local fee comps (#4 - the regional anchor) */
 .vr-comps { margin: 0 0 26px; padding: 16px 18px; border-radius: 12px; background: color-mix(in srgb, var(--accent) 5%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 14%, transparent); }
 .vr-comps-h { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
 .vr-comps-title { font-size: 0.8rem; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--text); }

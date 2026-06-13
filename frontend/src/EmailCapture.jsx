@@ -2,12 +2,12 @@ import { useState } from "react";
 import "./EmailCapture.css";
 
 // Owned-channel capture for the media-brand pivot. The newsletter list is the
-// asset every revenue line prices off — and what matters is *list density*
+// asset every revenue line prices off - and what matters is *list density*
 // (working bookers vs fans), so we capture a role segment at signup, not just
 // an email. See COMMERCE.md / the Pivot-2 plan.
 //
 // No server required. ESP = Buttondown: we POST form-encoded to its public
-// embed endpoint (no secret key — the username is public, it's in the URL).
+// embed endpoint (no secret key - the username is public, it's in the URL).
 // The role is sent as BOTH a tag and metadata so the list is segmentable by
 // working-booker vs fan (the metric the whole revenue model prices off).
 //
@@ -35,13 +35,13 @@ function stashLocally(entry) {
     const prev = JSON.parse(localStorage.getItem(key) || "[]");
     prev.push(entry);
     localStorage.setItem(key, JSON.stringify(prev));
-  } catch { /* private mode / quota — non-fatal */ }
+  } catch { /* private mode / quota - non-fatal */ }
 }
 
 export default function EmailCapture({
   source = "site",
   heading = "Get the PEAKTIME Index",
-  sub = "The monthly booking-demand index — who's rising, who's mispriced, and where — in your inbox. Free, neutral, no hype.",
+  sub = "The monthly booking-demand index - who's rising, who's mispriced, and where - in your inbox. Free, neutral, no hype.",
   compact = false,
 }) {
   const [email, setEmail] = useState("");
@@ -56,7 +56,7 @@ export default function EmailCapture({
 
     setState("submitting"); setErr("");
     const entry = { email: email.trim(), role: role || "other", source, ts: new Date().toISOString() };
-    // Always keep a local copy — a backstop if the ESP call fails, and the only
+    // Always keep a local copy - a backstop if the ESP call fails, and the only
     // store at all until BUTTONDOWN_USERNAME is set.
     stashLocally(entry);
 
@@ -64,7 +64,7 @@ export default function EmailCapture({
       if (BUTTONDOWN_ENDPOINT) {
         // Buttondown's embed endpoint is opaque to fetch (no CORS headers), so
         // we send no-cors form-encoded: the subscriber is created, but we can't
-        // read the response — so we optimistically confirm. Role rides as a tag
+        // read the response - so we optimistically confirm. Role rides as a tag
         // (filterable) AND metadata. `embed=1` marks it a non-API signup.
         const body = new URLSearchParams();
         body.set("email", entry.email);
@@ -84,8 +84,8 @@ export default function EmailCapture({
       }
       setState("done");
     } catch (ex) {
-      // Network failure — the local copy above means it isn't lost.
-      setErr("Network hiccup — we saved your email and will add you to the list.");
+      // Network failure - the local copy above means it isn't lost.
+      setErr("Network hiccup - we saved your email and will add you to the list.");
       setState("error");
     }
   }
@@ -136,7 +136,7 @@ export default function EmailCapture({
         </button>
       </div>
       {state === "error" && <div className="ec-err">{err}</div>}
-      <div className="ec-fine">No spam. Unsubscribe anytime. We never sell your data — or rankings.</div>
+      <div className="ec-fine">No spam. Unsubscribe anytime. We never sell your data - or rankings.</div>
     </form>
   );
 }

@@ -1,21 +1,21 @@
 /**
- * Club vs Viral lens — the booker's trust filter. Cookiy AI research was blunt:
+ * Club vs Viral lens - the booker's trust filter. Cookiy AI research was blunt:
  * bookers trust CLUB traction (RA bookings, Beatport charts, DJs actually playing
  * the tracks) and treat VIRAL traction (TikTok, raw streaming) as noise that can
  * evaporate before the date. A single blended "momentum" number hides which kind
  * an artist's heat is. This splits it: of an act's measured traction, how much is
- * scene-driven vs hype-driven — so a booker knows whether the demand will still be
+ * scene-driven vs hype-driven - so a booker knows whether the demand will still be
  * there on the night.
  *
  * Built from signals already in the model (no new data). Club + Viral are each a
  * 0-100 blend of the signals the artist has; the split is their relative balance.
  */
 
-// Heavy-tailed reach signals are log-compressed before normalising — mirror of
+// Heavy-tailed reach signals are log-compressed before normalising - mirror of
 // the conditioning in computeRanges (App.jsx) / score.js. The `ranges` passed in
 // are built on these LOG-scaled values, so a raw count must be prep'd the same
 // way before it's normalised, or it blows past 100 (e.g. 14.5M listeners against
-// a log range of 0–7.3). This is exactly the bug this fixes.
+// a log range of 0-7.3). This is exactly the bug this fixes.
 const HEAVY_TAILED = new Set([
   "spotify_monthly_listeners", "youtube_subscribers", "tiktok_post_count",
   "spotify_playlist_placements", "wikipedia_pageviews",
@@ -27,7 +27,7 @@ const normalize = (v, min, max) => (max <= min ? 0 : ((Math.max(min, Math.min(ma
 const CLUB = [
   { key: "live_demand_score", pct100: true },   // live-booking strength: RA + tour blend (already 0-100)
   { key: "beatport_score",    pct100: true },   // Beatport chart credibility (already 0-100)
-  { key: "tl_support_score",  pct100: true },   // 1001Tracklists — DJs actually playing it
+  { key: "tl_support_score",  pct100: true },   // 1001Tracklists - DJs actually playing it
 ];
 const VIRAL = [
   { key: "google_trends_score",     pct100: true },  // search hype (already 0-100)
@@ -60,8 +60,8 @@ export function computeClubViral(dj, ranges) {
 }
 
 const NOTE = {
-  club:  "Demand is rooted in scene signals (RA bookings, Beatport, DJ support) — the kind bookers trust to still be there on the night.",
-  viral: "Heat is mostly consumer hype (social + streaming) and light on scene signals — can cool fast; price for the risk.",
+  club:  "Demand is rooted in scene signals (RA bookings, Beatport, DJ support) - the kind bookers trust to still be there on the night.",
+  viral: "Heat is mostly consumer hype (social + streaming) and light on scene signals - can cool fast; price for the risk.",
   mixed: "A balanced mix of scene credibility and consumer reach.",
 };
 

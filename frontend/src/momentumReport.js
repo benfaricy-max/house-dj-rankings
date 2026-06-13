@@ -2,7 +2,7 @@
 // live from real data with realistic fallbacks where data is still building.
 
 function fmt(n) {
-  if (n == null || n === 0) return "—";
+  if (n == null || n === 0) return " - ";
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
   if (n >= 1_000)     return `${(n / 1_000).toFixed(0)}K`;
   return String(Math.round(n));
@@ -64,10 +64,10 @@ export function buildReportHTML(dj, list) {
   // ── metrics vs scene average ──
   const metricRows = [
     ["Monthly listeners", dj.spotify_monthly_listeners, avg.spotify_monthly_listeners, fmt, false],
-    ["Beatport peak",     dj.beatport_best_position,    null, v => v ? `#${v}` : "—", true],
+    ["Beatport peak",     dj.beatport_best_position,    null, v => v ? `#${v}` : " - ", true],
     ["TikTok activity",   dj.tiktok_post_count,         avg.tiktok_post_count, fmt, false],
-    ["Search interest",   dj.google_trends_score,       avg.google_trends_score, v => v ? `${Math.round(v)} / 100` : "—", false],
-    ["Tour reach (90d)",  dj.tour_countries,            avg.tour_countries, v => v ? `${v} countries` : "—", false],
+    ["Search interest",   dj.google_trends_score,       avg.google_trends_score, v => v ? `${Math.round(v)} / 100` : " - ", false],
+    ["Tour reach (90d)",  dj.tour_countries,            avg.tour_countries, v => v ? `${v} countries` : " - ", false],
   ].map(([label, val, av, f, isRank]) => {
     val = val || 0;
     let fill = 50, deltaTxt = "";
@@ -101,11 +101,11 @@ export function buildReportHTML(dj, list) {
 
   // ── breakout signals (dynamic from real data) ──
   const sig = [];
-  if ((dj.beatport_best_position || 99) <= 20) sig.push(["💿", `<b>Beatport Top ${dj.beatport_best_position}</b> single — strong core-scene credibility.`]);
-  if (dj.google_trends_direction === "up") sig.push(["📈", `<b>Search interest rising</b> — upward 12-month trajectory.`]);
-  if ((dj.tour_countries || 0) >= 4) sig.push(["🌍", `<b>Cross-continent demand</b> — ${dj.tour_countries} touring countries booked.`]);
+  if ((dj.beatport_best_position || 99) <= 20) sig.push(["💿", `<b>Beatport Top ${dj.beatport_best_position}</b> single - strong core-scene credibility.`]);
+  if (dj.google_trends_direction === "up") sig.push(["📈", `<b>Search interest rising</b> - upward 12-month trajectory.`]);
+  if ((dj.tour_countries || 0) >= 4) sig.push(["🌍", `<b>Cross-continent demand</b> - ${dj.tour_countries} touring countries booked.`]);
   if (rising) sig.push(["⚡", `<b>Rank velocity:</b> ${movedTxt}.`]);
-  if (dj.emerging) sig.push(["🌟", `<b>Emerging breakout</b> — flagged as a rising act, not yet a global headliner.`]);
+  if (dj.emerging) sig.push(["🌟", `<b>Emerging breakout</b> - flagged as a rising act, not yet a global headliner.`]);
   while (sig.length < 3) sig.push(["📊", "<b>Consistent demand</b> across streaming and social signals."]);
   const signalHTML = sig.slice(0, 4).map(([ic, tx]) => `<div class="signal"><span class="ic">${ic}</span><span class="tx">${tx}</span></div>`).join("");
 
@@ -115,7 +115,7 @@ export function buildReportHTML(dj, list) {
 
   return `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>${esc(dj.name)} — Momentum Report</title><style>
+<title>${esc(dj.name)} - Momentum Report</title><style>
 :root{--ink:#15151c;--muted:#6b6b78;--line:#e7e7ee;--lime:#5b8f00;--limebg:#eef7d6;--up:#1a8f4c;}
 *{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,"Segoe UI",Inter,Arial,sans-serif;color:var(--ink);background:#f3f3f6;padding:28px}
 .page{max-width:820px;margin:0 auto;background:#fff;border-radius:14px;box-shadow:0 6px 30px rgba(0,0,0,.08);overflow:hidden}
@@ -170,7 +170,7 @@ export function buildReportHTML(dj, list) {
 export function openMomentumReport(dj, list) {
   const html = buildReportHTML(dj, list);
   const w = window.open("", "_blank");
-  if (!w) { // popup blocked — fall back to blob download
+  if (!w) { // popup blocked - fall back to blob download
     const blob = new Blob([html], { type: "text/html" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);

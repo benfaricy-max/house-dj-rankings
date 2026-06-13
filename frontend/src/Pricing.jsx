@@ -4,7 +4,7 @@ import { startCheckout } from "./usePro";
 
 // Two-tier pricing presentation (#7). Concrete tiers from the booker research:
 // a solo plan for an individual promoter/buyer, a team plan for agencies/festivals.
-// This is presentation only — the paywall stays OFF by default (usePro/PAYWALL),
+// This is presentation only - the paywall stays OFF by default (usePro/PAYWALL),
 // so the live site is unchanged until VITE_PAYWALL_ENABLED=true + Stripe is wired
 // (see COMMERCE.md). startCheckout(plan) maps to STRIPE_PRICE_SOLO / _TEAM.
 
@@ -17,7 +17,7 @@ export const PLANS = [
     who: "Independent promoters & buyers",
     cta: "Start Solo",
     features: [
-      "Full demand-ranked lineup — every act, not just the headliner",
+      "Full demand-ranked lineup - every act, not just the headliner",
       "Fair Value Reports + ready-to-paste negotiation scripts",
       "Private, expiring pitch links to share with a promoter",
       "Routing-saturation & Club-vs-Viral read on every act",
@@ -77,7 +77,7 @@ export default function PricingModal({ open, onClose, reason }) {
         <button className="pricing-close" onClick={onClose} aria-label="Close">✕</button>
         <div className="pricing-eyebrow">PEAKTIME Pro</div>
         <h2 className="pricing-h">{reason || "Unlock the booking toolkit"}</h2>
-        <p className="pricing-sub">The neutral demand benchmark, the fee comps, the private pitch links — the numbers both sides of a booking can cite. Cancel anytime.</p>
+        <p className="pricing-sub">The neutral demand benchmark, the fee comps, the private pitch links - the numbers both sides of a booking can cite. Cancel anytime.</p>
         <PricingTiers onClose={onClose} />
         <div className="pricing-foot">Secure checkout via Stripe · prices in GBP</div>
       </div>

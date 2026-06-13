@@ -8,15 +8,15 @@ import ClubViral from "./ClubViral";
 import { useWatchlist, useMomentumAlerts } from "./watchlist";
 import { InfoTip, MomentumTip, MOMENTUM_BLEND, artistForm, FORM_META, FormTip, genreLean, GENRE_META, matchesGenre } from "./methodology";
 import { rankWithinCohort, withRankIntervals, deriveRegions, inRegion, isRising, PERSONAS } from "./cohort";
-import PageHeader from "./PageHeader";   // OWNED masthead + nav — change only via the PageHeader owner
+import PageHeader from "./PageHeader";   // OWNED masthead + nav - change only via the PageHeader owner
 import PitchPage from "./Pitch";   // read-only private brief route (also pulled by ValueGap)
-import DayInLifePage from "./DayInLife";   // "A Booking Day" — day-in-the-life + direct answers
+import DayInLifePage from "./DayInLife";   // "A Booking Day" - day-in-the-life + direct answers
 const ClubsPage   = lazy(() => import("./ClubsPage"));                                  // splits ~750 lines of club lore/images out of the main chunk
 const ClubProfile = lazy(() => import("./ClubsPage").then(m => ({ default: m.ClubProfile })));
-const BlogPage    = lazy(() => import("./BlogPage"));                                   // editor-only tab — rarely loaded
+const BlogPage    = lazy(() => import("./BlogPage"));                                   // editor-only tab - rarely loaded
 const BlogPost    = lazy(() => import("./BlogPage").then(m => ({ default: m.BlogPost })));
 const ChartsPage  = lazy(() => import("./ChartsPage"));                                  // code-split: the 4 SVG charts load in their own chunk
-const IndexDrop   = lazy(() => import("./IndexDrop"));                                    // the monthly "Index drop" — media-brand flagship + email capture
+const IndexDrop   = lazy(() => import("./IndexDrop"));                                    // the monthly "Index drop" - media-brand flagship + email capture
 
 // a11y helper: make a non-button element behave like a button for keyboard +
 // screen-reader users (Enter/Space activate, focusable, announced as a button).
@@ -103,7 +103,7 @@ function readRankingsUrl() {
     const params = new URLSearchParams(window.location.search);
     const tab = params.get("tab") || URL_DEFAULTS.tab;
     return {
-      tab:    tab === "charts" ? "reports" : tab,   // Charts folded into Reports — redirect stale links
+      tab:    tab === "charts" ? "reports" : tab,   // Charts folded into Reports - redirect stale links
       sort:   params.get("sort")   || URL_DEFAULTS.sort,
       genre:  params.get("genre")  || URL_DEFAULTS.genre,
       lens:   params.get("lens")   || URL_DEFAULTS.lens,
@@ -115,7 +115,7 @@ function readRankingsUrl() {
 }
 function writeRankingsUrl(state) {
   try {
-    // Don't fight the routes — when an artist/value/etc. page is active (real path
+    // Don't fight the routes - when an artist/value/etc. page is active (real path
     // or legacy hash) the rankings filters are moot and shouldn't touch its URL.
     if (window.location.hash && window.location.hash !== "#") return;
     if (window.location.pathname !== "/") return;
@@ -166,21 +166,25 @@ const SORT_OPTIONS = [
 // ── Utilities ─────────────────────────────────────────────────────
 
 function fmt(n) {
-  if (n == null || n === 0) return "—";
+  if (n == null || n === 0) return " - ";
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
   if (n >= 1_000)     return `${(n / 1_000).toFixed(0)}K`;
   return n.toString();
 }
 
+// One-decimal score display so the index reads consistently (84 → 84.0, never a
+// mix of 86.4 next to a bare 84). Pass-through for anything non-numeric.
+const fmtPts = (s) => (Number.isFinite(+s) ? (+s).toFixed(1) : s);
+
 function fmtMetric(value, format) {
-  if (value == null) return "—";
+  if (value == null) return " - ";
   switch (format) {
     case "count":    return fmt(value);
     case "posts":    return `${fmt(value)} posts`;
-    case "number":   return value ? String(value) : "—";
-    case "score100": return value ? `${Math.round(value)} / 100` : "—";
-    case "pct":      return value ? `${value > 0 ? "+" : ""}${value.toFixed(1)}%` : "—";
-    default:         return String(value ?? "—");
+    case "number":   return value ? String(value) : " - ";
+    case "score100": return value ? `${Math.round(value)} / 100` : " - ";
+    case "pct":      return value ? `${value > 0 ? "+" : ""}${value.toFixed(1)}%` : " - ";
+    default:         return String(value ?? " - ");
   }
 }
 
@@ -193,7 +197,7 @@ function fmtDate(iso) {
 // Mirror of backend/score.js conditioning so the on-screen Score Breakdown,
 // ScoreTip and Compare show the SAME normalised contributions the real score is
 // built from: heavy-tailed reach signals are log-compressed, and every metric's
-// scale is its 1st–99th percentile band (winsorised) rather than raw min/max,
+// scale is its 1st-99th percentile band (winsorised) rather than raw min/max,
 // so one mega-act can't compress the field or swing scores via pool drift.
 const HEAVY_TAILED = new Set([
   "spotify_monthly_listeners", "youtube_subscribers", "tiktok_post_count",
@@ -248,7 +252,7 @@ function RankDelta({ delta }) {
   if (delta == null) return null;
   if (delta > 0)  return <span className="rank-delta rank-delta--up">▲{delta}</span>;
   if (delta < 0)  return <span className="rank-delta rank-delta--down">▼{Math.abs(delta)}</span>;
-  return <span className="rank-delta rank-delta--flat">—</span>;
+  return <span className="rank-delta rank-delta--flat"> - </span>;
 }
 
 function ScoreBar({ score, maxScore }) {
@@ -311,7 +315,7 @@ function TrendChart({ name }) {
   if (points.length < 2) {
     return (
       <div className="trend-empty">
-        Rank history builds up over time — check back after the next weekly refresh.
+        Rank history builds up over time - check back after the next weekly refresh.
       </div>
     );
   }
@@ -396,7 +400,7 @@ function UpcomingEvents({ name }) {
 // Signals that SELF-HEAL ON ABSENCE in score.js: a 0 means "not measured for this
 // act" (1001TL single-week chart; Spotify-cities not yet pulled), so the weight is
 // redistributed per-artist rather than scored as a real zero. The breakdown must
-// say "unmeasured" here, not show a 0-contribution row at full weight — otherwise
+// say "unmeasured" here, not show a 0-contribution row at full weight - otherwise
 // the UI contradicts the model and reads the act as weak on a signal we never took.
 const SELF_HEAL_ABSENT = new Set(["tl_support_score", "scene_geography"]);
 
@@ -405,11 +409,11 @@ function MetricRow({ metric, value, normalized, contribution, maxContrib, absent
   const strength = normalized >= 70 ? "strong" : normalized >= 35 ? "mid" : "weak";
   if (absent) {
     return (
-      <div className="metric-row metric-row--absent" title="Not measured for this artist — its weight is redistributed across the signals we do have, so this is never scored as a zero.">
+      <div className="metric-row metric-row--absent" title="Not measured for this artist - its weight is redistributed across the signals we do have, so this is never scored as a zero.">
         <div className="metric-label">{metric.label}</div>
         <div className="metric-raw metric-raw--unmeasured">unmeasured</div>
         <div className="metric-bar-wrap"><span className="metric-absent-note">weight redistributed</span></div>
-        <div className="metric-contrib metric-contrib--muted">—</div>
+        <div className="metric-contrib metric-contrib--muted"> - </div>
         <div className="metric-weight metric-weight--muted">{Math.round(metric.weight * 100)}%</div>
       </div>
     );
@@ -447,7 +451,7 @@ function ScoreBreakdown({ dj, ranges }) {
           <div className="breakdown-title">Score Breakdown</div>
           <div className="breakdown-sub">Driven by {topTwo}</div>
         </div>
-        <div className="breakdown-total">{dj.score} pts</div>
+        <div className="breakdown-total">{fmtPts(dj.score)} pts</div>
       </div>
       <div className="breakdown-cols">
         <span className="col-header">Signal</span>
@@ -476,7 +480,7 @@ function ScoreBreakdown({ dj, ranges }) {
 
 // ── Methodology tooltip (point-of-score transparency) ──────────────────────
 // Research finding #2: a "black-box" score is a dealbreaker. The Score badge
-// tooltip shows this artist's top contributing signals with weights — computed
+// tooltip shows this artist's top contributing signals with weights - computed
 // from the same ranges the full breakdown uses, so it's the real drivers. InfoTip
 // + MomentumTip come from ./methodology (shared with the profile + How It Works).
 function ScoreTip({ dj, ranges }) {
@@ -500,7 +504,7 @@ function ScoreTip({ dj, ranges }) {
 }
 
 // Surfaces the rubric inputs BEHIND the Scene Score so the editorial layer is
-// transparent — a booker sees the actual credentials (Berghain, Defected,
+// transparent - a booker sees the actual credentials (Berghain, Defected,
 // Essential Mix…), not just a number. Tags are editorial, stored per artist.
 function SceneCredentials({ dj }) {
   const tags = Array.isArray(dj.scene_tags) ? dj.scene_tags : [];
@@ -510,7 +514,7 @@ function SceneCredentials({ dj }) {
       <div className="scene-creds-head">
         <span className="scene-creds-dot" />
         Scene credentials
-        <span className="scene-creds-score">{dj.manual_scene_score ?? "—"}/100</span>
+        <span className="scene-creds-score">{dj.manual_scene_score ?? " - "}/100</span>
       </div>
       <div className="scene-creds-tags">
         {tags.map(t => <span key={t} className="scene-cred">{t}</span>)}
@@ -619,14 +623,14 @@ function CompareModal({ djs, ranges, onClose }) {
           <div className="cmp-dj cmp-dj--left">
             {a.image ? <img src={a.image} alt={a.name} className="cmp-avatar" /> : <div className="cmp-avatar cmp-placeholder">{a.name[0]}</div>}
             <div className="cmp-dj-name">{a.name}</div>
-            <div className="cmp-dj-meta">#{a.rank} · {a.score} pts</div>
+            <div className="cmp-dj-meta">#{a.rank} · {fmtPts(a.score)} pts</div>
             <div className="cmp-wins">{winsA} signals</div>
           </div>
           <div className="cmp-vs">vs</div>
           <div className="cmp-dj cmp-dj--right">
             {b.image ? <img src={b.image} alt={b.name} className="cmp-avatar" /> : <div className="cmp-avatar cmp-placeholder">{b.name[0]}</div>}
             <div className="cmp-dj-name">{b.name}</div>
-            <div className="cmp-dj-meta">#{b.rank} · {b.score} pts</div>
+            <div className="cmp-dj-meta">#{b.rank} · {fmtPts(b.score)} pts</div>
             <div className="cmp-wins">{winsB} signals</div>
           </div>
         </div>
@@ -661,10 +665,10 @@ function CompareModal({ djs, ranges, onClose }) {
   );
 }
 
-// Data-confidence pill — how much of the model's weight is backed by real
+// Data-confidence pill - how much of the model's weight is backed by real
 // signals for this artist (vs filled-in by the self-healing reweight). A high
 // rank on thin data is less trustworthy than the same rank on the full panel;
-// this makes that legible instead of hidden. Reads coverage_score (0–100) from
+// this makes that legible instead of hidden. Reads coverage_score (0-100) from
 // score.js; degrades gracefully if older data lacks the field.
 function Confidence({ dj }) {
   const cov = dj.coverage_score;
@@ -672,8 +676,8 @@ function Confidence({ dj }) {
   const level = cov >= 75 ? "high" : cov >= 50 ? "med" : "low";
   const color = level === "high" ? "#7CE38B" : level === "med" ? "#E2B53E" : "#E2683E";
   const sp = dj.signals_present, st = dj.signals_total;
-  const tip = `Data confidence ${cov}%${Number.isFinite(sp) && Number.isFinite(st) ? ` — ${sp}/${st} signals present` : ""}. `
-    + (level === "high" ? "Built on the full signal panel." : level === "med" ? "Some signals missing — score leans on what's present." : "Thin data — score concentrates on a few signals; read the rank with caution.");
+  const tip = `Data confidence ${cov}%${Number.isFinite(sp) && Number.isFinite(st) ? ` - ${sp}/${st} signals present` : ""}. `
+    + (level === "high" ? "Built on the full signal panel." : level === "med" ? "Some signals missing - score leans on what's present." : "Thin data - score concentrates on a few signals; read the rank with caution.");
   return (
     <span className="qs-pill qs-pill--conf" style={{ color, borderColor: `${color}55` }} title={tip}>
       ◓ Data {cov}%
@@ -687,12 +691,12 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
   const shownRank = displayRank ?? dj.rank;
   return (
     <div className={`dj-card ${isTop ? "dj-card--top" : ""} ${expanded ? "dj-card--expanded" : ""} ${inCompare ? "dj-card--comparing" : ""}`}>
-      <div className="dj-card-main" {...pressable(onToggle, expanded)} aria-expanded={expanded} aria-label={`${dj.name}, rank ${shownRank} — ${expanded ? "collapse" : "expand"} details`}>
+      <div className="dj-card-main" {...pressable(onToggle, expanded)} aria-expanded={expanded} aria-label={`${dj.name}, rank ${shownRank} - ${expanded ? "collapse" : "expand"} details`}>
         <div className="dj-rank">
           {(!cohortMode && MEDAL[shownRank]) ?? null}
           {(cohortMode || !MEDAL[shownRank]) && <span className="rank-num">#{shownRank}</span>}
           {interval && (
-            <span className="rank-ci" title={`Ranks ${interval.lo}–${interval.hi} are within scoring noise — treat this position as approximate, not exact.`}>±{interval.pm}</span>
+            <span className="rank-ci" title={`Ranks ${interval.lo}-${interval.hi} are within scoring noise - treat this position as approximate, not exact.`}>±{interval.pm}</span>
           )}
           {!cohortMode && <RankDelta delta={dj.rank_change} />}
         </div>
@@ -707,13 +711,13 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
         <div className="dj-info">
           <div className="dj-name-row">
             <span className="dj-name"><ArtistLink name={dj.name} /></span>
-            <span className="dj-score-badge">{dj.score} pts<ScoreTip dj={dj} ranges={ranges} /></span>
+            <span className="dj-score-badge">{fmtPts(dj.score)} pts<ScoreTip dj={dj} ranges={ranges} /></span>
           </div>
           <ScoreBar score={dj.score} maxScore={maxScore} />
           <div className="dj-quick-stats">
             {(() => { const g = genreLean(dj); return g ? (
               <span className="qs-pill" style={{ color: GENRE_META[g].color, borderColor: `${GENRE_META[g].color}55` }}
-                title="Genre lean from Beatport charts + label — cited, not adjudicated">
+                title="Genre lean from Beatport charts + label - cited, not adjudicated">
                 {GENRE_META[g].label}
               </span>
             ) : null; })()}
@@ -731,7 +735,7 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
             {dj.tiktok_post_count > 0 && <span className="qs-pill">{fmt(dj.tiktok_post_count)} TikTok posts</span>}
             {dj.google_trends_score > 0 && <span className="qs-pill">Trends {dj.google_trends_score}/100</span>}
             {dj.ra_coverage_thin && (
-              <span className="qs-pill qs-pill--rathin" title="Resident Advisor structurally under-logs this act (real reach, few/no RA events) — typical of US / commercial / festival acts. Live-booking demand here leans on Songkick tour density instead of RA, so the act isn't scored as low-demand just because RA can't see its shows.">
+              <span className="qs-pill qs-pill--rathin" title="Resident Advisor structurally under-logs this act (real reach, few/no RA events) - typical of US / commercial / festival acts. Live-booking demand here leans on Songkick tour density instead of RA, so the act isn't scored as low-demand just because RA can't see its shows.">
                 ⚑ RA-thin · tour-led
               </span>
             )}
@@ -761,7 +765,7 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
             <button
               className={`watch-btn ${isWatched ? "watch-btn--on" : ""}`}
               onClick={() => onToggleWatch(dj.name)}
-              title={isWatched ? "Watching — you'll see momentum spikes on return visits" : "Watch for momentum spikes"}
+              title={isWatched ? "Watching - you'll see momentum spikes on return visits" : "Watch for momentum spikes"}
               aria-pressed={isWatched}
             >
               {isWatched ? "★" : "☆"}
@@ -801,7 +805,7 @@ function DJCard({ dj, maxScore, isTop, expanded, onToggle, ranges, onScoreSaved,
 }
 
 // ── Loading skeleton ───────────────────────────────────────────────
-// rankings.json is a static fetch — show shimmer rows in the real card shape
+// rankings.json is a static fetch - show shimmer rows in the real card shape
 // rather than a blank screen or a lone spinner (perceived-performance win, and
 // no layout shift when the data lands). Shimmer is paused under reduced-motion
 // by the global rule in index.css.
@@ -855,28 +859,28 @@ function CompareBar({ selected, onClear, onCompare }) {
 const DATA_SOURCES = [
   { icon: "🎵", name: "Spotify",       color: "#1DB954", points: ["Monthly listeners (scraped)", "Follower count & growth rate", "Average track popularity score", "Playlist placements count"] },
   { icon: "▶",  name: "YouTube",       color: "#FF0000", points: ["Subscriber count", "Weekly view count"] },
-  { icon: "🎵", name: "TikTok",        color: "#010101", points: ["Hashtag post count — measures how much content is being created around an artist"] },
-  { icon: "📈", name: "Google Trends", color: "#4285F4", points: ["Search interest score (0–100) over the past 90 days"] },
-  { icon: "🎛",  name: "Scene Score",  color: "#8b5cf6", points: ["Manual override 0–100 — accounts for festival bookings, residencies, and cultural weight that algorithms miss"] },
+  { icon: "🎵", name: "TikTok",        color: "#010101", points: ["Hashtag post count - measures how much content is being created around an artist"] },
+  { icon: "📈", name: "Google Trends", color: "#4285F4", points: ["Search interest score (0-100) over the past 90 days"] },
+  { icon: "🎛",  name: "Scene Score",  color: "#8b5cf6", points: ["Manual override 0-100 - accounts for festival bookings, residencies, and cultural weight that algorithms miss"] },
 ];
 
 const METRIC_DETAILS = [
-  { key: "live_demand_score",            label: "Live Booking",        weight: 0.21, color: "#FF5C00", why: "Live booking demand, blended from two sources so it isn't single-sourced: Resident Advisor (venue-capacity tier, attendance, geographic spread) plus Songkick tour density. RA under-logs US/commercial/festival acts, so where its coverage is structurally thin the tour signal leads — acts aren't scored as low-demand just because RA can't see their shows. Leads the index, because this is a booking index, not a streaming chart." },
-  { key: "manual_scene_score",           label: "Scene Score",         weight: 0.20, color: "#8b5cf6", why: "An editorial layer for what algorithms miss — Boiler Room, Berghain/fabric bookings, festival closing slots, press covers. Scored against a published, transparent rubric (below). Also a two-sided credibility multiplier: it lifts genuine scene standing and scales down an act with near-zero credibility, so neither a streaming-pop crossover tops the index nor a revered DJ's-DJ gets buried by reach (see the note under the rubric)." },
-  { key: "beatport_score",               label: "Beatport Chart",      weight: 0.12, color: "#a8e00f", why: "Position across genre Top 100 charts — the DJ retail store, so charting signals credibility with the core scene rather than the mainstream. A producer/track-sales signal, so weighted below live demand: it shows who's releasing strong records, not who's filling rooms." },
-  { key: "tl_support_score",             label: "DJ Support (1001TL)", weight: 0.10, color: "#00b8d4", why: "Where the artist's tracks land on 1001Tracklists' weekly chart of what DJs actually PLAY in their sets. The hardest signal to game — tastemakers spinning your music, not sales or streams. It's a single-week sample, so an act not on this week's chart is treated as unmeasured (its weight redistributes), never scored as zero support." },
+  { key: "live_demand_score",            label: "Live Booking",        weight: 0.21, color: "#FF5C00", why: "Live booking demand, blended from two sources so it isn't single-sourced: Resident Advisor (venue-capacity tier, attendance, geographic spread) plus Songkick tour density. RA under-logs US/commercial/festival acts, so where its coverage is structurally thin the tour signal leads - acts aren't scored as low-demand just because RA can't see their shows. Leads the index, because this is a booking index, not a streaming chart." },
+  { key: "manual_scene_score",           label: "Scene Score",         weight: 0.20, color: "#8b5cf6", why: "An editorial layer for what algorithms miss - Boiler Room, Berghain/fabric bookings, festival closing slots, press covers. Scored against a published, transparent rubric (below). Also a two-sided credibility multiplier: it lifts genuine scene standing and scales down an act with near-zero credibility, so neither a streaming-pop crossover tops the index nor a revered DJ's-DJ gets buried by reach (see the note under the rubric)." },
+  { key: "beatport_score",               label: "Beatport Chart",      weight: 0.12, color: "#a8e00f", why: "Position across genre Top 100 charts - the DJ retail store, so charting signals credibility with the core scene rather than the mainstream. A producer/track-sales signal, so weighted below live demand: it shows who's releasing strong records, not who's filling rooms." },
+  { key: "tl_support_score",             label: "DJ Support (1001TL)", weight: 0.10, color: "#00b8d4", why: "Where the artist's tracks land on 1001Tracklists' weekly chart of what DJs actually PLAY in their sets. The hardest signal to game - tastemakers spinning your music, not sales or streams. It's a single-week sample, so an act not on this week's chart is treated as unmeasured (its weight redistributes), never scored as zero support." },
   { key: "google_trends_score",          label: "Google Trends",       weight: 0.07, color: "#4285F4", why: "Search interest normalized to the artist's own peak. Rising search frequently precedes booking-fee increases." },
-  { key: "spotify_follower_growth_rate", label: "Listener Growth",     weight: 0.06, color: "#C8F750", why: "Rate of change in audience — acceleration often predicts demand before size does. Weighted modestly while its coverage builds." },
+  { key: "spotify_follower_growth_rate", label: "Listener Growth",     weight: 0.06, color: "#C8F750", why: "Rate of change in audience - acceleration often predicts demand before size does. Weighted modestly while its coverage builds." },
   { key: "scene_geography",              label: "International Appeal", weight: 0.03, color: "#4fd6e8", why: "Share of an artist's listeners that sit in the core electronic-music credibility markets (Ibiza/Spain, Berlin, Amsterdam, the UK, Italy, France…). Distinguishes a true international touring act from one whose audience is concentrated in a single home market. Weighted lightly so it nudges rather than dominates, and an act not yet measured is treated as unmeasured rather than scored as zero appeal." },
-  { key: "label_score",                  label: "Label Trajectory",    weight: 0.05, color: "#8b5cf6", why: "Tier and trajectory of the labels an artist releases on (Drumcode/Kompakt/Defected…) — credibility, and whether they're moving onto bigger homes." },
-  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",   weight: 0.05, color: "#1DB954", why: "Active fanbase reach, read from the live Spotify session. A supporting signal, demoted hard — raw streaming is the weakest predictor of who actually fills rooms, so it informs the ranking without driving it." },
+  { key: "label_score",                  label: "Label Trajectory",    weight: 0.05, color: "#8b5cf6", why: "Tier and trajectory of the labels an artist releases on (Drumcode/Kompakt/Defected…) - credibility, and whether they're moving onto bigger homes." },
+  { key: "spotify_monthly_listeners",    label: "Monthly Listeners",   weight: 0.05, color: "#1DB954", why: "Active fanbase reach, read from the live Spotify session. A supporting signal, demoted hard - raw streaming is the weakest predictor of who actually fills rooms, so it informs the ranking without driving it." },
   { key: "youtube_subscribers",          label: "YouTube Subscribers", weight: 0.03, color: "#FF0000", why: "A proxy for dedicated fanbase depth. YouTube audiences tend to convert to ticket buyers at a higher rate." },
-  { key: "tiktok_post_count",            label: "TikTok Posts",        weight: 0.03, color: "#E9E7DF", why: "Posts using the artist's hashtag — grassroots cultural spread, often an early breakout indicator. Kept at a deliberately low weight: hashtag volume is the easiest signal to inflate, so it informs without driving. A less-gameable follower-growth metric is on the roadmap to replace it once coverage exists." },
+  { key: "tiktok_post_count",            label: "TikTok Posts",        weight: 0.03, color: "#E9E7DF", why: "Posts using the artist's hashtag - grassroots cultural spread, often an early breakout indicator. Kept at a deliberately low weight: hashtag volume is the easiest signal to inflate, so it informs without driving. A less-gameable follower-growth metric is on the roadmap to replace it once coverage exists." },
   { key: "spotify_playlist_placements",  label: "Releases / Catalog",  weight: 0.03, color: "#1DB954", why: "Depth and recency of catalog. Active release schedules score higher than a single back-catalog hit." },
   { key: "wikipedia_pageviews",          label: "Wikipedia Views",     weight: 0.02, color: "#9aa0a6", why: "Trailing 30-day article pageviews. A clean, independent measure of broad public interest." },
 ];
 
-// Published, transparent Scene Score rubric — explicit so it's a credible
+// Published, transparent Scene Score rubric - explicit so it's a credible
 // editorial layer, not a black box (and harder to game than pure data signals).
 const SCENE_RUBRIC = [
   { pts: "+20", item: "Boiler Room / HÖR / Cercle set", note: "tastemaker-platform booking" },
@@ -900,16 +904,16 @@ function HowItWorksPage() {
           No editorial bias, no pay-to-play. Refreshed daily.
         </p>
         <p className="hiw-sub" style={{ marginTop: 10 }}>
-          <strong style={{ color: "#E9E7DF" }}>House &amp; techno.</strong> The roster is house-anchored — house, tech house, and the techno acts that share its festival and club stages. The house/techno line is genuinely blurred and nobody agrees on it, so we don't adjudicate it: the <em>House / Techno</em> filter leans on where <strong>Beatport</strong> charts an act (and their primary label when they're not currently charting). "Crossover" is the honest label for the melodic middle — those acts sit under House, the anchor, while Techno stays a precise view of the genuinely-techno acts. It's a lens on the index, not a verdict — and not a comprehensive techno chart.
+          <strong style={{ color: "#E9E7DF" }}>House &amp; techno.</strong> The roster is house-anchored - house, tech house, and the techno acts that share its festival and club stages. The house/techno line is genuinely blurred and nobody agrees on it, so we don't adjudicate it: the <em>House / Techno</em> filter leans on where <strong>Beatport</strong> charts an act (and their primary label when they're not currently charting). "Crossover" is the honest label for the melodic middle - those acts sit under House, the anchor, while Techno stays a precise view of the genuinely-techno acts. It's a lens on the index, not a verdict - and not a comprehensive techno chart.
         </p>
         <p className="hiw-sub" style={{ marginTop: 10 }}>
-          <strong style={{ color: "#E9E7DF" }}>A point-in-time reading.</strong> Booking demand in this scene is seasonal — Ibiza season, festival summer and ADE all lift the live signals. This index is a snapshot, refreshed daily: a summer reading and a winter one aren't directly comparable, and live-demand signals run higher in season. Read a rank as where an act sits relative to the field <em>today</em>, not as an absolute that holds across the calendar.
+          <strong style={{ color: "#E9E7DF" }}>A point-in-time reading.</strong> Booking demand in this scene is seasonal - Ibiza season, festival summer and ADE all lift the live signals. This index is a snapshot, refreshed daily: a summer reading and a winter one aren't directly comparable, and live-demand signals run higher in season. Read a rank as where an act sits relative to the field <em>today</em>, not as an absolute that holds across the calendar.
         </p>
       </div>
 
       <section className="hiw-section">
         <h3 className="hiw-section-title">The 11 Signals</h3>
-        <p className="hiw-section-sub">Each artist receives a score from 0–100 on each metric, normalised across the full ranked pool. Weighted scores are summed to produce the final ranking.</p>
+        <p className="hiw-section-sub">Each artist receives a score from 0-100 on each metric, normalised across the full ranked pool. Weighted scores are summed to produce the final ranking.</p>
         <div className="hiw-metrics">
           {METRIC_DETAILS.map(m => (
             <div key={m.key} className="hiw-metric-row">
@@ -928,18 +932,18 @@ function HowItWorksPage() {
         </div>
         <div className="hiw-weight-note">Weights sum to 100%. Min-max normalisation ensures no single outlier distorts the rankings.</div>
         <div className="hiw-weight-note" style={{ marginTop: 14 }}>
-          <strong>Data confidence.</strong> Not every artist has every signal. When a signal is missing we redistribute its weight across the ones present — but a score built on a fraction of the panel is less reliable than one built on all of it. So each artist carries a <strong>Data confidence</strong> figure: the share of the model's weight backed by real signals. Acts under 75% take a coverage penalty (up to −20% at zero), so a thin-data act can't outrank a fully-covered one on a technicality. The figure is shown on every artist card and in the score breakdown — a high rank on thin data is labelled, not hidden.
+          <strong>Data confidence.</strong> Not every artist has every signal. When a signal is missing we redistribute its weight across the ones present - but a score built on a fraction of the panel is less reliable than one built on all of it. So each artist carries a <strong>Data confidence</strong> figure: the share of the model's weight backed by real signals. Acts under 75% take a coverage penalty (up to −20% at zero), so a thin-data act can't outrank a fully-covered one on a technicality. The figure is shown on every artist card and in the score breakdown - a high rank on thin data is labelled, not hidden.
         </div>
       </section>
 
       <section className="hiw-section">
-        <h3 className="hiw-section-title">Scene Score — the published rubric</h3>
+        <h3 className="hiw-section-title">Scene Score - the published rubric</h3>
         <p className="hiw-section-sub">
-          Scene Score (18% of the rank, co-leading) is the one editorial layer in the model — a read on the industry credibility that pure data misses, alongside the live-booking and chart signals.
-          To keep it honest, the criteria are public. Points accrue toward a 0–100 score; it's deliberately harder to game than a follower count.
+          Scene Score (18% of the rank, co-leading) is the one editorial layer in the model - a read on the industry credibility that pure data misses, alongside the live-booking and chart signals.
+          To keep it honest, the criteria are public. Points accrue toward a 0-100 score; it's deliberately harder to game than a follower count.
         </p>
         <div className="hiw-weight-note" style={{ marginBottom: 14 }}>
-          <strong>Credibility multiplier (two-sided).</strong> Scene Score also scales the whole composite, both ways: an act's final score is multiplied by roughly 0.80 at scene 0, rising through ~0.98 for an unscored act to 1.15 at scene 100. So a streaming-huge but scene-thin crossover can't top a booking index on reach alone — and, just as important, a scene-revered act with a small streaming footprint isn't buried beneath it. A booking index should reward credibility, not just punish its absence.
+          <strong>Credibility multiplier (two-sided).</strong> Scene Score also scales the whole composite, both ways: an act's final score is multiplied by roughly 0.80 at scene 0, rising through ~0.98 for an unscored act to 1.15 at scene 100. So a streaming-huge but scene-thin crossover can't top a booking index on reach alone - and, just as important, a scene-revered act with a small streaming footprint isn't buried beneath it. A booking index should reward credibility, not just punish its absence.
         </div>
         <div className="hiw-rubric">
           {SCENE_RUBRIC.map(r => (
@@ -972,7 +976,7 @@ function HowItWorksPage() {
 
       <section className="hiw-section">
         <h3 className="hiw-section-title">Momentum Score</h3>
-        <p className="hiw-section-sub">Our core differentiator. The Momentum Score (0–100) ranks who is <em>accelerating</em> relative to their own baseline — not who is biggest. An artist climbing 50k→150k monthly listeners outscores one sitting flat at 2M. It blends only rate-of-change signals, and an artist is scored on whichever of these it has data for (no fabricated acceleration from a static snapshot).</p>
+        <p className="hiw-section-sub">Our core differentiator. The Momentum Score (0-100) ranks who is <em>accelerating</em> relative to their own baseline - not who is biggest. An artist climbing 50k→150k monthly listeners outscores one sitting flat at 2M. It blends only rate-of-change signals, and an artist is scored on whichever of these it has data for (no fabricated acceleration from a static snapshot).</p>
         <div className="hiw-momentum-formula">
           {MOMENTUM_BLEND.map((f, i, arr) => (
             <div key={f.signal} className="hiw-formula-row">
@@ -984,7 +988,7 @@ function HowItWorksPage() {
           ))}
         </div>
         <div className="hiw-weight-note" style={{ marginTop: 14 }}>
-          <strong>Form (▲ Rising / ▬ Steady / ▼ Cooling).</strong> The pill on each row is an at-a-glance read of <em>direction</em>, not size. Rising = clearly accelerating (high Momentum); Cooling = a real decline across the signed rate-of-change signals (12-week search, listener growth, Wikipedia trend, Beatport movement); Steady = everything in between, including big acts holding their level. It's context — it never moves the ranking.
+          <strong>Form (▲ Rising / ▬ Steady / ▼ Cooling).</strong> The pill on each row is an at-a-glance read of <em>direction</em>, not size. Rising = clearly accelerating (high Momentum); Cooling = a real decline across the signed rate-of-change signals (12-week search, listener growth, Wikipedia trend, Beatport movement); Steady = everything in between, including big acts holding their level. It's context - it never moves the ranking.
         </div>
       </section>
 
@@ -1014,9 +1018,9 @@ function HowItWorksPage() {
         <div className="hiw-faq">
           {[
             { q: "Why isn't SoundCloud included?", a: "SoundCloud's public API no longer exposes follower or play counts at scale. We include it in data collection but weight it at 0% until reliable data is available." },
-            { q: "Why do some artists show zero for certain metrics?", a: "Not every DJ has a YouTube channel or is active on TikTok. Zero values are genuine — they're not data errors. They pull the weighted score for that signal to zero but don't affect others." },
-            { q: "How is the Scene Score assigned?", a: "It's an editorial 0–100 score against the published rubric above — Boiler Room/HÖR sets, Berghain/fabric/DC10 bookings, festival closing slots, respected label homes, RA/Mixmag/DJ Mag covers, Ibiza residencies, Essential Mix invitations. It carries 18% weight — the highest of any single signal — and the explicit criteria make it harder to game than pure data signals." },
-            { q: "How does the Ones to Watch list differ from the main rankings?", a: "The main rankings weight current standing heavily. Ones to Watch reranks entirely by Momentum Score — so an artist can be #45 in the main chart but #2 in Ones to Watch if they're growing fast." },
+            { q: "Why do some artists show zero for certain metrics?", a: "Not every DJ has a YouTube channel or is active on TikTok. Zero values are genuine - they're not data errors. They pull the weighted score for that signal to zero but don't affect others." },
+            { q: "How is the Scene Score assigned?", a: "It's an editorial 0-100 score against the published rubric above - Boiler Room/HÖR sets, Berghain/fabric/DC10 bookings, festival closing slots, respected label homes, RA/Mixmag/DJ Mag covers, Ibiza residencies, Essential Mix invitations. It carries 18% weight - the highest of any single signal - and the explicit criteria make it harder to game than pure data signals." },
+            { q: "How does the Ones to Watch list differ from the main rankings?", a: "The main rankings weight current standing heavily. Ones to Watch reranks entirely by Momentum Score - so an artist can be #45 in the main chart but #2 in Ones to Watch if they're growing fast." },
             { q: "Can I get notified when an artist moves?", a: "Weekly movement alerts are on the roadmap. For now, the Ones to Watch and Velocity tabs surface who's accelerating across every signal we track." },
           ].map(({ q, a }) => (
             <details key={q} className="hiw-faq-item">
@@ -1128,7 +1132,7 @@ function MoversPage() {
             <div className="movers-no-data-title">Not enough historical data yet</div>
             <p className="movers-no-data-sub">
               {period === "week"  && "Rankings need at least 7 days of snapshots to show weekly movers. Check back soon."}
-              {period === "month" && "Monthly movers require 30+ days of rank history. Keep checking — this will populate automatically."}
+              {period === "month" && "Monthly movers require 30+ days of rank history. Keep checking - this will populate automatically."}
               {period === "year"  && "Yearly movers require 365+ days of rank history."}
             </p>
           </div>
@@ -1176,7 +1180,7 @@ function OnestoWatchPage({ rankings }) {
         <section className="breaking-section">
           <div className="breaking-eyebrow">
             <span className="breaking-live">● BREAKING</span>
-            <span className="breaking-sponsored">Sponsored — <a href="mailto:hello@thedjrankings.com">get featured</a></span>
+            <span className="breaking-sponsored">Sponsored - <a href="mailto:hello@thedjrankings.com">get featured</a></span>
           </div>
           <div className="breaking-grid">
             {breaking.map(dj => (
@@ -1211,7 +1215,7 @@ function OnestoWatchPage({ rankings }) {
       <section className="otw-list-section">
         <div className="otw-section-header">
           <h2 className="otw-section-title">Ones to Watch</h2>
-          <p className="otw-section-sub">All artists ranked by momentum — early trajectory, high growth</p>
+          <p className="otw-section-sub">All artists ranked by momentum - early trajectory, high growth</p>
         </div>
         {withMomentum.map((dj, i) => {
           const moColor = dj.momentum >= 70 ? "#4ade80" : dj.momentum >= 40 ? "var(--accent)" : "var(--muted)";
@@ -1284,8 +1288,8 @@ function priceVerdict(mid, quote) {
   const q = Number(quote);
   if (!q || q <= 0 || !mid) return null;
   const pct = Math.round(((q - mid) / mid) * 100);
-  if (pct <= -8) return { pct, cls: "good", label: `${Math.abs(pct)}% below benchmark — good deal` };
-  if (pct >= 8)  return { pct, cls: "over", label: `${pct}% over benchmark — likely overpaying` };
+  if (pct <= -8) return { pct, cls: "good", label: `${Math.abs(pct)}% below benchmark - good deal` };
+  if (pct >= 8)  return { pct, cls: "over", label: `${pct}% over benchmark - likely overpaying` };
   return { pct, cls: "fair", label: "in line with benchmark" };
 }
 
@@ -1297,13 +1301,13 @@ function buildRationale(lineup, market, budget) {
   if (head._local != null && head._local >= 70)
     s.push(`${head.name} anchors the bill: search demand in ${market.country} is among the strongest in the field (${head._local}/100), so the headline slot is tightly matched to ${market.city}.`);
   else if (head._local != null)
-    s.push(`${head.name} anchors the bill, with ${market.country} search interest at ${head._local}/100 — a solid if not peak fit for ${market.city}.`);
+    s.push(`${head.name} anchors the bill, with ${market.country} search interest at ${head._local}/100 - a solid if not peak fit for ${market.city}.`);
   else
     s.push(`${head.name} anchors the bill on overall demand (${head._overall}/100); we don't yet have ${market.country}-specific signal for them, so treat the local read as provisional.`);
 
   const m = head.trends_mom_12w;
   if (Number.isFinite(m) && m >= 25)
-    s.push(`Momentum is climbing (+${Math.round(m)}% over 12 weeks), which typically precedes fee increases — locking them now likely beats next season's rate.`);
+    s.push(`Momentum is climbing (+${Math.round(m)}% over 12 weeks), which typically precedes fee increases - locking them now likely beats next season's rate.`);
   else if (Number.isFinite(m) && m <= -25)
     s.push(`Momentum has cooled (${Math.round(m)}% over 12 weeks), which is leverage: there's likely room to negotiate below the benchmark.`);
 
@@ -1312,7 +1316,7 @@ function buildRationale(lineup, market, budget) {
     s.push(`${support.length} support act${support.length > 1 ? "s" : ""} (${support.map(a => a.name).join(", ")}) round out the night without stretching spend${topSup._local != null ? `; ${topSup.name} also indexes high locally (${topSup._local}/100)` : ""}.`);
   }
   s.push(`At ${fmtGBP(total)}, the lineup uses ${util}% of your ${fmtGBP(budget)} budget${remaining > 0 ? `, leaving ${fmtGBP(remaining)} for production, visuals, or a local opener` : ""}.`);
-  s.push(`These are demand estimates from public signals — search, streaming, charts, touring — not a ticket guarantee. Calibrate against your own on-sale history before committing.`);
+  s.push(`These are demand estimates from public signals - search, streaming, charts, touring - not a ticket guarantee. Calibrate against your own on-sale history before committing.`);
   return s;
 }
 
@@ -1327,7 +1331,7 @@ function BookingToolPage({ rankings }) {
     [rankings]
   );
 
-  // Demand Fit (0–100): how well an artist suits THIS market. Blends local
+  // Demand Fit (0-100): how well an artist suits THIS market. Blends local
   // (country-level search interest) with overall demand. Transparent, no black box.
   const scored = useMemo(() => {
     return rankings
@@ -1360,7 +1364,7 @@ function BookingToolPage({ rankings }) {
     }
     const acts = [head, ...support];
     const total = acts.reduce((s, a) => s + a.booking_fee.mid, 0);
-    // lineup demand index — headliner weighted 2x
+    // lineup demand index - headliner weighted 2x
     const wSum = head._fit * 2 + support.reduce((s, a) => s + a._fit, 0);
     const wDen = 2 + support.length;
     const demandIndex = Math.round(wSum / wDen);
@@ -1375,7 +1379,7 @@ function BookingToolPage({ rankings }) {
   );
 
   // Rendered as a function call (not <ActCard/>) so the quote <input> keeps
-  // focus across keystrokes — defining a component inline would remount it.
+  // focus across keystrokes - defining a component inline would remount it.
   const ActCard = (a, role) => {
     const mt = momentumTag(a);
     const verdict = priceVerdict(a.booking_fee.mid, quotes[a.name]);
@@ -1392,11 +1396,11 @@ function BookingToolPage({ rankings }) {
           <div className="bk-act-sub">
             {a._local != null
               ? <>Local interest in {market.country}: <b>{a._local}/100</b></>
-              : <>No local data — using <b>global demand {a._overall}/100</b></>}
+              : <>No local data - using <b>global demand {a._overall}/100</b></>}
           </div>
           {(a.value_signal === "buy" || a.value_signal === "strong-buy") && (
             <div className="bk-value bk-value--buy">
-              {a.value_signal === "strong-buy" ? "◆ Strong buy" : "▲ Underpriced"} — demand implies {a.demand_fee_label}
+              {a.value_signal === "strong-buy" ? "◆ Strong buy" : "▲ Underpriced"} - demand implies {a.demand_fee_label}
             </div>
           )}
           {a.value_signal === "premium" && (
@@ -1430,7 +1434,7 @@ function BookingToolPage({ rankings }) {
         <h1 className="cs-title">Build a lineup that sells</h1>
         <p className="cs-sub">
           Enter a budget and a market. We propose a lineup, sized to your budget,
-          ranked by projected demand in that city — so you book the right names
+          ranked by projected demand in that city - so you book the right names
           before you overpay.
         </p>
       </div>
@@ -1506,7 +1510,7 @@ function BookingToolPage({ rankings }) {
           </div>
 
           <a className="bk-marketread" href={`#/market/${citySlug(market.city)}`}>
-            ✦ Generate a shareable Market Read for {market.city} — a one-page brief to send a promoter →
+            ✦ Generate a shareable Market Read for {market.city} - a one-page brief to send a promoter →
           </a>
         </>
       )}
@@ -1514,7 +1518,7 @@ function BookingToolPage({ rankings }) {
   );
 }
 
-// ---- Market Read — shareable one-page demand brief per city ----------------
+// ---- Market Read - shareable one-page demand brief per city ----------------
 const citySlug = c => c.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 const cityMatch = (raCity, marketCity) => {
   const a = (raCity || "").toLowerCase().split("/")[0].trim();
@@ -1522,7 +1526,7 @@ const cityMatch = (raCity, marketCity) => {
   return a && (a.includes(b) || b.includes(a));
 };
 
-// Booking Intelligence — Lineup Builder + Value Gap + the three market views,
+// Booking Intelligence - Lineup Builder + Value Gap + the three market views,
 // all under one tab with a single sub-nav.
 function BookingIntelPage({ rankings }) {
   const [view, setView] = useState("booking");
@@ -1553,8 +1557,8 @@ function BookingIntelPage({ rankings }) {
   );
 }
 
-// Scouting — talent discovery / trajectory views under one tab.
-// "What DJs Are Playing" — the weekly 1001Tracklists DJ-support chart, with our
+// Scouting - talent discovery / trajectory views under one tab.
+// "What DJs Are Playing" - the weekly 1001Tracklists DJ-support chart, with our
 // roster artists linked and non-roster acts shown plain (scene context + leads).
 function DJChartPage() {
   const [chart, setChart] = useState(undefined);
@@ -1572,7 +1576,7 @@ function DJChartPage() {
         <div>
           <h1 className="cs-title">What DJs Are Playing</h1>
           <p className="cs-sub">
-            Who the scene's tastemakers are actually spinning, from the 1001Tracklists weekly chart —
+            Who the scene's tastemakers are actually spinning, from the 1001Tracklists weekly chart - 
             the hardest signal to game (DJ support, not sales or streams). Ranked over the last
             <strong> {chart.weeks_archived} weeks</strong>: <strong>{chart.roster_supported}</strong> of our roster have charted.
           </p>
@@ -1588,7 +1592,7 @@ function DJChartPage() {
                 <span className="dj-board-pos">{i + 1}</span>
                 <span className="dj-board-name">{a.name}</span>
                 <span className="dj-board-bar"><span className="dj-board-fill" style={{ width: `${a.score}%` }} /></span>
-                <span className="dj-board-meta">{a.weeks}wk · best #{a.best ?? "—"}</span>
+                <span className="dj-board-meta">{a.weeks}wk · best #{a.best ?? " - "}</span>
                 {a.now ? <span className="dj-badge">on chart now</span> : a.recent ? <span className="dj-badge dj-badge--soft">recent</span> : <span className="dj-board-spacer" />}
               </a>
             ))}
@@ -1601,7 +1605,7 @@ function DJChartPage() {
       <div className="dj-list">
         {chart.entries.map((e, i) => (
           <div key={i} className={`dj-row ${e.roster.length ? "dj-row--hit" : ""}`}>
-            <span className="dj-rank">{e.rank ? `#${e.rank}` : "—"}</span>
+            <span className="dj-rank">{e.rank ? `#${e.rank}` : " - "}</span>
             <div className="dj-track">
               <div className="dj-title">{e.title}</div>
               <div className="dj-artist">
@@ -1617,7 +1621,7 @@ function DJChartPage() {
           </div>
         ))}
       </div>
-      <div className="cs-est-note" style={{ maxWidth: 640 }}>ⓘ Source: 1001Tracklists weekly chart. Roster acts are linked; un-linked acts are charting names we don't track yet — useful expansion leads.</div>
+      <div className="cs-est-note" style={{ maxWidth: 640 }}>ⓘ Source: 1001Tracklists weekly chart. Roster acts are linked; un-linked acts are charting names we don't track yet - useful expansion leads.</div>
     </div>
   );
 }
@@ -1697,7 +1701,7 @@ function MarketReadPage({ rankings, slug, embedded }) {
         </div>
         <div className="mr-eyebrow">Market Read · Booking intelligence</div>
         <h1 className="mr-title">{market.city}</h1>
-        <p className="mr-sub">Who to book, who's breaking, and who the {market.city} crowd has already seen — from PEAKTIME's live demand model.</p>
+        <p className="mr-sub">Who to book, who's breaking, and who the {market.city} crowd has already seen - from PEAKTIME's live demand model.</p>
 
         <div className="mr-grid">
           <div className="mr-col">
@@ -1732,7 +1736,7 @@ function MarketReadPage({ rankings, slug, embedded }) {
   );
 }
 
-// ---- Market Saturation — per-city freshness for regional buyers ------------
+// ---- Market Saturation - per-city freshness for regional buyers ------------
 function MarketSaturationPage({ rankings }) {
   const [city, setCity] = useState("All cities");
 
@@ -1791,7 +1795,7 @@ function MarketSaturationPage({ rankings }) {
   );
 }
 
-// ---- Price/Demand Gap — the buy signal -------------------------------------
+// ---- Price/Demand Gap - the buy signal -------------------------------------
 
 const CS_SHORT_COUNTRY = { "United States of America": "USA", "United Kingdom": "UK", "United Arab Emirates": "UAE", "Czech Republic": "Czechia" };
 
@@ -1831,7 +1835,7 @@ function CitySpotlightPage({ rankings }) {
         <div>
           <h1 className="cs-title">City Demand Spotlight</h1>
           <p className="cs-sub">
-            Where each artist's live demand actually concentrates — from {artists.length} artists'
+            Where each artist's live demand actually concentrates - from {artists.length} artists'
             Resident Advisor booking footprint over recent months. Book them where they already pull.
           </p>
         </div>
@@ -1847,7 +1851,7 @@ function CitySpotlightPage({ rankings }) {
               key={artist.name}
               className={`cs-card ${isSelected ? "cs-card--open" : ""}`}
               {...pressable(() => setSelected(isSelected ? null : artist.name), isSelected)}
-              aria-label={`${artist.name} — ${isSelected ? "hide" : "show"} top cities`}
+              aria-label={`${artist.name} - ${isSelected ? "hide" : "show"} top cities`}
             >
               <div className="cs-card-header">
                 <div className="cs-card-left">
@@ -1879,7 +1883,7 @@ function CitySpotlightPage({ rankings }) {
                       <span className="cs-city-score">{c.shows} show{c.shows !== 1 ? "s" : ""}</span>
                     </div>
                   ))}
-                  <div className="cs-est-note">ⓘ Concentration = recent Resident Advisor bookings per city — more shows means stronger live demand there.</div>
+                  <div className="cs-est-note">ⓘ Concentration = recent Resident Advisor bookings per city - more shows means stronger live demand there.</div>
                 </div>
               )}
             </div>
@@ -1891,7 +1895,7 @@ function CitySpotlightPage({ rankings }) {
   );
 }
 
-// ── City Scout — the inverted view: pick a city, see who draws there ──────────
+// ── City Scout - the inverted view: pick a city, see who draws there ──────────
 function CityScoutPage({ rankings }) {
   const index = useMemo(() => {
     const m = {};
@@ -1925,7 +1929,7 @@ function CityScoutPage({ rankings }) {
       <div className="cs-header">
         <div>
           <h1 className="cs-title">City Scout</h1>
-          <p className="cs-sub">Pick a market and see which artists actually draw there — ranked by recent Resident Advisor bookings. The promoter's view: who's hot in your city right now.</p>
+          <p className="cs-sub">Pick a market and see which artists actually draw there - ranked by recent Resident Advisor bookings. The promoter's view: who's hot in your city right now.</p>
         </div>
       </div>
 
@@ -1950,7 +1954,7 @@ function CityScoutPage({ rankings }) {
           </div>
         ))}
       </div>
-      <div className="cs-est-note" style={{ maxWidth: 640 }}>ⓘ Ranked by recent Resident Advisor bookings in this city. "Overbooked" flags artists who've played here repeatedly and lately — diminishing returns for a new date.</div>
+      <div className="cs-est-note" style={{ maxWidth: 640 }}>ⓘ Ranked by recent Resident Advisor bookings in this city. "Overbooked" flags artists who've played here repeatedly and lately - diminishing returns for a new date.</div>
     </div>
   );
 }
@@ -1995,10 +1999,10 @@ function ComparativeBenchmarkingPage({ rankings }) {
   // Auto-generated discrepancy insights (over-indexers)
   const insights = useMemo(() => {
     const archetypes = [
-      { a: "tiktok_post_count",         b: "spotify_monthly_listeners", title: "Viral, Under-Streamed",   blurb: "Social buzz is running ahead of streaming — hype before the catalog catches up.", icon: "🚀" },
+      { a: "tiktok_post_count",         b: "spotify_monthly_listeners", title: "Viral, Under-Streamed",   blurb: "Social buzz is running ahead of streaming - hype before the catalog catches up.", icon: "🚀" },
       { a: "beatport_score",            b: "spotify_monthly_listeners", title: "The DJ's DJ",             blurb: "High Beatport chart credibility with the core scene, ahead of mainstream streaming.", icon: "🎧" },
       { a: "spotify_monthly_listeners", b: "tiktok_post_count",         title: "Streaming Giant, Quiet Socially", blurb: "Big streaming numbers without the viral social footprint.",            icon: "📀" },
-      { a: "google_trends_score",       b: "tiktok_post_count",         title: "Search Breakout",         blurb: "Spiking search interest outpacing social buzz — early momentum signal.",         icon: "🔍" },
+      { a: "google_trends_score",       b: "tiktok_post_count",         title: "Search Breakout",         blurb: "Spiking search interest outpacing social buzz - early momentum signal.",         icon: "🔍" },
     ];
     return archetypes.map(arc => {
       const picks = rankings
@@ -2017,7 +2021,7 @@ function ComparativeBenchmarkingPage({ rankings }) {
     }).filter(arc => arc.picks.length > 0);
   }, [profiles, rankings]);
 
-  // Direct comparison selectors — default to two data-rich artists
+  // Direct comparison selectors - default to two data-rich artists
   const withData = rankings.filter(d => CMP_METRICS.filter(m => (d[m.key] || 0) > 0).length >= 2);
   const names = rankings.map(d => d.name).sort((a, b) => a.localeCompare(b));
   const [aName, setAName] = useState(withData[0]?.name ?? rankings[0]?.name);
@@ -2048,7 +2052,7 @@ function ComparativeBenchmarkingPage({ rankings }) {
       <div className="cmp-header">
         <h1 className="cmp-title">Comparative Benchmarking</h1>
         <p className="cmp-sub">
-          Cross-metric analysis that exposes hidden signal — who's viral but not streaming,
+          Cross-metric analysis that exposes hidden signal - who's viral but not streaming,
           who's a DJ's DJ, who's quietly breaking out. Compare any two artists head-to-head.
         </p>
       </div>
@@ -2080,7 +2084,7 @@ function ComparativeBenchmarkingPage({ rankings }) {
           {CMP_METRICS.map(m => {
             const va = A?.[m.key] || 0, vb = B?.[m.key] || 0;
             const max = Math.max(va, vb, 1);
-            const fmtV = v => m.key === "google_trends_score" ? (v ? Math.round(v) : "—") : (v ? fmt(v) : "—");
+            const fmtV = v => m.key === "google_trends_score" ? (v ? Math.round(v) : " - ") : (v ? fmt(v) : " - ");
             return (
               <div className="cmp-row" key={m.key}>
                 <div className="cmp-metric-label">{m.label}<span className="cmp-metric-signal">{m.signal}</span></div>
@@ -2106,7 +2110,7 @@ function ComparativeBenchmarkingPage({ rankings }) {
 
       {/* ── Auto insights ── */}
       <h2 className="cmp-insights-title">Biggest Discrepancies</h2>
-      <p className="cmp-insights-sub">Artists who over-index on one signal but lag on another — the gaps a sharp booker exploits.</p>
+      <p className="cmp-insights-sub">Artists who over-index on one signal but lag on another - the gaps a sharp booker exploits.</p>
       <div className="cmp-insights">
         {insights.map(arc => (
           <div className="cmp-insight-card" key={arc.title}>
@@ -2158,7 +2162,7 @@ function VelocityBadge({ value }) {
 
 // Tiny inline sparkline for the 12-month search-interest series
 function VelSpark({ series }) {
-  if (!Array.isArray(series) || series.length < 4) return <span className="vel-na">—</span>;
+  if (!Array.isArray(series) || series.length < 4) return <span className="vel-na"> - </span>;
   const s = series.slice(-26); // last ~6 months for compactness
   const W = 96, H = 24, max = Math.max(...s, 1);
   const pts = s.map((v, i) => `${(i / (s.length - 1) * W).toFixed(1)},${(H - (v / max) * (H - 3) - 1.5).toFixed(1)}`).join(" ");
@@ -2185,7 +2189,7 @@ function VelocityPage({ rankings }) {
   if (!artists.length) return (
     <div className="page vel-empty">
       <h2>Velocity data is still building</h2>
-      <p>Driven by the 12-month Google Trends backfill — check back as it accumulates.</p>
+      <p>Driven by the 12-month Google Trends backfill - check back as it accumulates.</p>
     </div>
   );
 
@@ -2194,7 +2198,7 @@ function VelocityPage({ rankings }) {
       <div className="vel-header">
         <h1 className="vel-title">Velocity</h1>
         <p className="vel-sub">
-          Real momentum from 12 months of Google Trends search data — who's accelerating right now.
+          Real momentum from 12 months of Google Trends search data - who's accelerating right now.
           Spotify, TikTok &amp; YouTube velocity join here as weekly history accumulates.
         </p>
       </div>
@@ -2220,10 +2224,10 @@ function VelocityPage({ rankings }) {
                 <td className="vel-td vel-td--composite"><VelocityBadge value={mom4} /></td>
                 <td className="vel-td"><VelocityBadge value={mom12} /></td>
                 <td className="vel-td">
-                  {rankDelta == null ? <span className="vel-na">—</span>
+                  {rankDelta == null ? <span className="vel-na"> - </span>
                     : rankDelta > 0 ? <span className="vel-badge vel-badge--up">▲{rankDelta}</span>
                     : rankDelta < 0 ? <span className="vel-badge vel-badge--down">▼{Math.abs(rankDelta)}</span>
-                    : <span className="vel-badge vel-badge--flat">—</span>}
+                    : <span className="vel-badge vel-badge--flat"> - </span>}
                 </td>
                 <td className="vel-td"><VelSpark series={dj.trends_12m} /></td>
               </tr>
@@ -2252,7 +2256,7 @@ function BreakoutsPage({ rankings, breakouts: staticBreakouts, breakoutThreshold
       <div className="brk-header">
         <div>
           <h1 className="brk-title">Breakout Alerts</h1>
-          <p className="brk-sub">Artists whose overall score jumped significantly week-over-week — move before the market catches on.</p>
+          <p className="brk-sub">Artists whose overall score jumped significantly week-over-week - move before the market catches on.</p>
         </div>
         <div className="brk-threshold">
           <label>Alert threshold</label>
@@ -2321,35 +2325,35 @@ function BreakoutsPage({ rankings, breakouts: staticBreakouts, breakoutThreshold
   );
 }
 
-// ── Reports — published analysis ────────────────────────────────────
+// ── Reports - published analysis ────────────────────────────────────
 const REPORTS = [
   {
     title: "We Stopped Counting Followers",
-    dek: "The first issue of The Index. Last week Hugel was #16; today he's #212 — nothing about Hugel changed, what we count did. Why we rebuilt the ranking around booking demand and scene credibility, not reach.",
+    dek: "The first issue of The Index. Last week Hugel was #16; today he's #212 - nothing about Hugel changed, what we count did. Why we rebuilt the ranking around booking demand and scene credibility, not reach.",
     href: "/reports/the-index-launch.html",
     img: "/brand/post-reach-cred-1080.png",
     tag: "The Index",
     date: "2026-06-11",
   },
   {
-    title: "III Points 2026 — Lineup Intelligence",
-    dek: "A full demand read on the III Points Miami lineup: a multi-genre curator bill where the budget splits three ways. Who's underpriced, who's a Club-Space-saturated local, the ticket-conversion standouts, and the budget math — built from the same live-anchored data the rest of the site runs on.",
+    title: "III Points 2026 - Lineup Intelligence",
+    dek: "A full demand read on the III Points Miami lineup: a multi-genre curator bill where the budget splits three ways. Who's underpriced, who's a Club-Space-saturated local, the ticket-conversion standouts, and the budget math - built from the same live-anchored data the rest of the site runs on.",
     href: "/reports/iii-points-2026/",
     img: "/reports/iii-points-2026/img/card-table-4x5.png",
     tag: "Festival",
     date: "2026-06-10",
   },
   {
-    title: "CRSSD Fall 2026 — Lineup Intelligence",
-    dek: "A full demand read on the CRSSD Fall lineup: who's underpriced, who's overbooked in San Diego, ticket-conversion standouts, and the budget math — built from the same live-anchored data the rest of the site runs on.",
+    title: "CRSSD Fall 2026 - Lineup Intelligence",
+    dek: "A full demand read on the CRSSD Fall lineup: who's underpriced, who's overbooked in San Diego, ticket-conversion standouts, and the budget math - built from the same live-anchored data the rest of the site runs on.",
     href: "/reports/crssd-fall-2026/",
     img: "/reports/crssd-fall-2026/img/card-table-4x5.png",
     tag: "Festival",
     date: "2026-06-02",
   },
   {
-    title: "Mau P — Momentum Report",
-    dek: "A single-artist deep dive on Mau P's trajectory across every signal — the kind of one-pager you'd send a promoter to make the case.",
+    title: "Mau P - Momentum Report",
+    dek: "A single-artist deep dive on Mau P's trajectory across every signal - the kind of one-pager you'd send a promoter to make the case.",
     href: "/reports/mau-p.html",
     tag: "Artist",
     date: "2026-05-30",
@@ -2402,7 +2406,7 @@ function ReportsPage({ rankings }) {
     <div className="page rp-page">
       <div className="rp-hero">
         <h1 className="rp-title">Analysis Reports</h1>
-        <p className="rp-sub">Standalone intelligence briefs — lineups, artists and scenes read through PEAKTIME's demand data. Shareable, and built for industry decisions.</p>
+        <p className="rp-sub">Standalone intelligence briefs - lineups, artists and scenes read through PEAKTIME's demand data. Shareable, and built for industry decisions.</p>
       </div>
 
       <a className="rp-feature" href={feature.href}>
@@ -2416,11 +2420,11 @@ function ReportsPage({ rankings }) {
       </a>
 
       <div className="rp-list">
-        {/* The Index, visualised — charts folded in as a single report */}
+        {/* The Index, visualised - charts folded in as a single report */}
         <button className="rp-card" style={btnReset} onClick={() => { setView("charts"); window.scrollTo({ top: 0 }); }}>
           <div className="rp-meta"><span className="rp-tag">Charts</span> · The Index, visualised</div>
           <div className="rp-card-title">The Index, Visualised</div>
-          <div className="rp-card-dek">The whole ranking read as four charts — demand vs credibility, who's moving, the ranked field, and each act's signal shape.</div>
+          <div className="rp-card-dek">The whole ranking read as four charts - demand vs credibility, who's moving, the ranked field, and each act's signal shape.</div>
           <span className="rp-read">Open the charts →</span>
         </button>
         {rest.map(r => (
@@ -2437,7 +2441,7 @@ function ReportsPage({ rankings }) {
 }
 
 // ── Momentum spike alerts banner ───────────────────────────────────
-// Research finding #3 / P3: the data felt "static" — managers need to know WHEN
+// Research finding #3 / P3: the data felt "static" - managers need to know WHEN
 // an artist moves to time a negotiation. This surfaces watched artists whose
 // momentum jumped since the last visit, turning the dashboard into a timing tool.
 function MomentumAlertsBanner({ alerts, onDismiss, onOpen }) {
@@ -2490,7 +2494,7 @@ export default function App() {
   function load() {
     setLoading(true);
     // no-cache = always revalidate against the server's ETag. A returning visitor
-    // gets a cheap 304 when unchanged, but fresh data the moment it updates —
+    // gets a cheap 304 when unchanged, but fresh data the moment it updates - 
     // otherwise GitHub Pages can serve a stale rankings.json and newly-added
     // fields (e.g. Beatport) look "missing".
     fetch("/rankings.json", { cache: "no-cache" })
@@ -2523,7 +2527,7 @@ export default function App() {
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
 
-  // GA4 SPA virtual pageviews — track tab switches and profile navigation
+  // GA4 SPA virtual pageviews - track tab switches and profile navigation
   useEffect(() => {
     if (typeof window.gtag !== "function") return;
     const path  = profileSlug ? `/artist/${profileSlug}` : `/${activeTab}`;
@@ -2539,7 +2543,7 @@ export default function App() {
   const maxScore = rankings[0]?.score ?? 1;
   const { alerts: momentumAlerts, dismiss: dismissAlerts } = useMomentumAlerts(rankings, watched);
 
-  // Genre lean filter (house / techno / all) — derived from Beatport, never adjudicated.
+  // Genre lean filter (house / techno / all) - derived from Beatport, never adjudicated.
   const [genreFilter, setGenreFilter] = useState(initUrl.genre);
   // Stakeholder lens + cohort index. Persona reframes the same data (Agent/Promoter/
   // Festival); cohort re-normalises within a sub-pool (emerging / rising / region)
@@ -2548,6 +2552,7 @@ export default function App() {
   const [cohort, setCohort]   = useState(initUrl.cohort); // full | emerging | rising | region
   const [region, setRegion]   = useState(initUrl.region);
   const [query, setQuery]     = useState(initUrl.q);      // jump-to-name search on the main list
+  const [filtersOpen, setFiltersOpen] = useState(false);  // mobile-only: collapse the chip walls behind a toggle
   const regions = useMemo(() => deriveRegions(rankings), [rankings]);
 
   // Reflect rankings state into the URL (shareable / indexable), and restore it
@@ -2600,7 +2605,7 @@ export default function App() {
   const showIntervals = sortKey === "score";
 
   // Compute each row's display rank/interval over the FULL sorted list FIRST, then
-  // filter by the name search — so a matched act keeps its real rank (not renumbered
+  // filter by the name search - so a matched act keeps its real rank (not renumbered
   // to #1 within the filtered subset).
   const rankedRows = useMemo(() => visible.map((dj, i) => ({
     dj,
@@ -2660,13 +2665,13 @@ export default function App() {
 
   const compareDJs = compareList.map(n => rankings.find(r => r.name === n)).filter(Boolean);
 
-  // Private pitch link route — read-only single-artist brief at #/pitch/<token>.
+  // Private pitch link route - read-only single-artist brief at #/pitch/<token>.
   // Standalone (no site chrome), Pro-generated, expiring. See Pitch.jsx.
   if (/^#\/pitch\//.test(window.location.hash)) {
     return <PitchPage rankings={rankings} />;
   }
 
-  // Profile page route — shareable URL like #/artist/john-summit (after all hooks)
+  // Profile page route - shareable URL like #/artist/john-summit (after all hooks)
   if (profileSlug) {
     return (
       <div className="page">
@@ -2677,19 +2682,19 @@ export default function App() {
     );
   }
 
-  // Market Read route — shareable one-pager like #/market/amsterdam
+  // Market Read route - shareable one-pager like #/market/amsterdam
   if (marketSlug) {
     return rankings.length
       ? <MarketReadPage rankings={rankings} slug={marketSlug} />
       : <div className="page"><div className="loading">Loading…</div></div>;
   }
 
-  // Club profile route — shareable like #/club/berghain-panorama-bar
+  // Club profile route - shareable like #/club/berghain-panorama-bar
   if (clubSlugState) {
     return <div className="page"><Suspense fallback={<div className="loading">Loading…</div>}><ClubProfile slug={clubSlugState} /></Suspense></div>;
   }
 
-  // Journal post route — shareable like #/blog/notes-from-the-floor (editor-only for now)
+  // Journal post route - shareable like #/blog/notes-from-the-floor (editor-only for now)
   if (valueSlugState) {
     return <div className="page"><ValueReport rankings={rankings} slug={valueSlugState} /></div>;
   }
@@ -2723,7 +2728,31 @@ export default function App() {
       {activeTab === "rankings" && <>
       <MomentumAlertsBanner alerts={momentumAlerts} onDismiss={dismissAlerts} onOpen={name => { window.location.href = `/artist/${slugify(name)}`; }} />
 
-      {/* Stakeholder lens — same index, three jobs-to-be-done */}
+      {/* Mobile-only: collapse the four chip walls behind one toggle so the first
+          ranking row clears the fold. Desktop renders the panel inline (display:contents). */}
+      <button
+        type="button"
+        className="filter-toggle"
+        onClick={() => setFiltersOpen(o => !o)}
+        aria-expanded={filtersOpen}
+        aria-controls="rankings-filter-panel"
+      >
+        <svg className="filter-toggle-ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+          <line x1="4" y1="8" x2="20" y2="8" /><circle cx="10" cy="8" r="2.6" fill="var(--bg)" />
+          <line x1="4" y1="16" x2="20" y2="16" /><circle cx="15" cy="16" r="2.6" fill="var(--bg)" />
+        </svg>
+        <span className="filter-toggle-label">Filters</span>
+        <span className="filter-toggle-summary">
+          {(PERSONAS[persona]?.label || "Everyone")
+            + " · " + (cohort === "region" ? (region || "By region") : ({ full: "Full index", emerging: "Emerging", rising: "Rising tier" }[cohort] || cohort))
+            + " · " + (SORT_OPTIONS.find(o => o.key === sortKey)?.label || "Score")
+            + " · " + ({ all: "All genres", house: "House", techno: "Techno" }[genreFilter] || "All")}
+        </span>
+        <span className="filter-toggle-caret" aria-hidden="true">{filtersOpen ? "▲" : "▼"}</span>
+      </button>
+
+      <div id="rankings-filter-panel" className={`filter-panel ${filtersOpen ? "filter-panel--open" : ""}`}>
+      {/* Stakeholder lens - same index, three jobs-to-be-done */}
       <div className="lens-bar">
         <span className="sort-label">Lens</span>
         {Object.entries(PERSONAS).map(([key, p]) => (
@@ -2744,7 +2773,7 @@ export default function App() {
             className={`lens-btn ${cohort === key ? "lens-btn--active" : ""}`}
             onClick={() => { setCohort(key); if (key !== "region") setRegion(""); else if (!region && regions[0]) setRegion(regions[0]); }}
             aria-pressed={cohort === key}
-            title="Re-rank within this cohort — scores re-normalised over the sub-pool, not the global 330"
+            title="Re-rank within this cohort - scores re-normalised over the sub-pool, not the global 330"
           >
             {label}
           </button>
@@ -2759,7 +2788,7 @@ export default function App() {
         <div className="lens-note">
           {persona !== "all" && PERSONAS[persona].question && <strong className="lens-q">{PERSONAS[persona].question} </strong>}
           {persona !== "all" && PERSONAS[persona].blurb}
-          {cohortMode && <span className="lens-cohort-tag"> · Re-ranked within {cohort === "region" ? region : cohort === "rising" ? "the rising tier" : "emerging acts"} ({visible.length}) — scores normalised over this cohort, not the global pool.</span>}
+          {cohortMode && <span className="lens-cohort-tag"> · Re-ranked within {cohort === "region" ? region : cohort === "rising" ? "the rising tier" : "emerging acts"} ({visible.length}) - scores normalised over this cohort, not the global pool.</span>}
           {persona !== "all" && PERSONAS[persona].cta && (
             <button className="lens-cta" onClick={() => { setActiveTab(PERSONAS[persona].cta.tab); window.scrollTo({ top: 0 }); }}>{PERSONAS[persona].cta.label}</button>
           )}
@@ -2802,25 +2831,26 @@ export default function App() {
             className={`sort-btn ${genreFilter === key ? "sort-btn--active" : ""}`}
             onClick={() => setGenreFilter(key)}
             aria-pressed={genreFilter === key}
-            title={key === "techno" ? "Techno-leaning & crossover acts — plus the pure-techno acts pulled from the house-anchored main ranking" : key === "house" ? "House, tech house & crossover acts" : "House-anchored main ranking — pure-techno acts live under the Techno filter"}
+            title={key === "techno" ? "Techno-leaning & crossover acts - plus the pure-techno acts pulled from the house-anchored main ranking" : key === "house" ? "House, tech house & crossover acts" : "House-anchored main ranking - pure-techno acts live under the Techno filter"}
           >
             {label}
           </button>
         ))}
       </div>
+      </div>{/* /filter-panel */}
       {genreFilter === "all" && (
-        <div className="sort-label" style={{ padding: "0 0 8px", fontSize: 12, color: "#75767d" }}>
-          House-anchored ranking · pure-techno acts (Charlotte de Witte, Adam Beyer, Amelie Lens…) are kept in the database under the <strong style={{ color: "#b388ff" }}>Techno</strong> filter, not the main list.
+        <div className="filter-note">
+          House-anchored ranking · pure-techno acts (Charlotte de Witte, Adam Beyer, Amelie Lens…) are kept in the database under the <strong className="filter-note-em">Techno</strong> filter, not the main list.
         </div>
       )}
       {genreFilter !== "all" && (
-        <div className="sort-label" style={{ padding: "0 0 8px", fontSize: 12, color: "#75767d" }}>
+        <div className="filter-note">
           {visible.length} {genreFilter}-leaning act{visible.length !== 1 ? "s" : ""} · genre from Beatport charts + label, never adjudicated{genreFilter === "house" ? " · includes tech house & melodic crossover" : " · includes the pure-techno acts removed from the main ranking"}
         </div>
       )}
 
       {needle && !loading && !error && (
-        <div className="sort-label" style={{ padding: "0 0 8px", fontSize: 12, color: "#75767d" }}>
+        <div className="filter-note">
           {shownRows.length} match{shownRows.length !== 1 ? "es" : ""} for “{query.trim()}” · ranks are the act's real index position
         </div>
       )}

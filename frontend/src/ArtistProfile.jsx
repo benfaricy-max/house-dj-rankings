@@ -22,7 +22,7 @@ export function ArtistLink({ name, className = "", children }) {
 }
 
 function fmt(n) {
-  if (n == null || n === 0) return "—";
+  if (n == null || n === 0) return " - ";
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
   if (n >= 1_000)     return `${(n / 1_000).toFixed(0)}K`;
   return String(n);
@@ -54,11 +54,11 @@ function TrajectoryChart({ series }) {
   );
 }
 
-// ── Historical rank chart (12 weeks) — lower rank = higher on chart ──
+// ── Historical rank chart (12 weeks) - lower rank = higher on chart ──
 function RankChart({ history }) {
   const pts = (history || []).filter(p => p.r != null).slice(-84);
   if (pts.length < 2) {
-    return <div className="ap-chart-empty">Rank history is building — check back as weekly data accumulates.</div>;
+    return <div className="ap-chart-empty">Rank history is building - check back as weekly data accumulates.</div>;
   }
   const W = 600, H = 140, pad = 14;
   const ranks = pts.map(p => p.r);
@@ -139,9 +139,9 @@ async function generateCard(dj, profile) {
 
   // stats
   const stats = [
-    ["Score", dj.score != null ? String(dj.score) : "—"],
+    ["Score", dj.score != null ? String(dj.score) : " - "],
     ["Spotify", fmt(dj.spotify_monthly_listeners)],
-    ["Beatport", dj.beatport_score ? `${dj.beatport_score}/100` : "—"],
+    ["Beatport", dj.beatport_score ? `${dj.beatport_score}/100` : " - "],
     ["TikTok", fmt(dj.tiktok_post_count)],
   ];
   let sy = 660;
@@ -203,7 +203,7 @@ function VibeCheck({ dj }) {
 }
 
 // Direct social links for promoters/talent buyers. We only hold VERIFIED handles
-// for some acts (curated in backend/socials.json) — guessing a handle risks
+// for some acts (curated in backend/socials.json) - guessing a handle risks
 // linking to an impostor/fan account, which for a booker is worse than no link.
 // So: a verified handle → direct profile (↗); otherwise → a pre-filled platform
 // search (⌕) that reliably lands on the right account in one click. Full coverage,
@@ -244,7 +244,7 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
   const profile = ARTIST_PROFILES[dj.name] || {};
   const genres = profile.genres || dj.genres || [];
 
-  // Plain PNG download — deliberately NOT using navigator.share(), which on iOS
+  // Plain PNG download - deliberately NOT using navigator.share(), which on iOS
   // surfaces a "wants to access other apps and services" prompt that reads as
   // sketchy to first-time visitors. A download has no permission surface at all.
   async function share() {
@@ -260,17 +260,17 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
   }
 
   const stats = [
-    { label: "Overall Score", value: dj.score ?? "—" },
+    { label: "Overall Score", value: dj.score ?? " - " },
     { label: "Spotify Listeners", value: fmt(dj.spotify_monthly_listeners) },
-    { label: "Spotify World Rank", value: Number.isFinite(dj.spotify_world_rank) && dj.spotify_world_rank > 0 ? `#${dj.spotify_world_rank.toLocaleString()}` : "—" },
-    { label: "Beatport Score", value: dj.beatport_score ? `${dj.beatport_score}/100` : "—" },
-    { label: "RA Score", value: dj.ra_score ? `${dj.ra_score}/100` : "—" },
+    { label: "Spotify World Rank", value: Number.isFinite(dj.spotify_world_rank) && dj.spotify_world_rank > 0 ? `#${dj.spotify_world_rank.toLocaleString()}` : " - " },
+    { label: "Beatport Score", value: dj.beatport_score ? `${dj.beatport_score}/100` : " - " },
+    { label: "RA Score", value: dj.ra_score ? `${dj.ra_score}/100` : " - " },
     { label: "TikTok Posts", value: fmt(dj.tiktok_post_count) },
     { label: "YouTube Subs", value: fmt(dj.youtube_subscribers) },
-    { label: "Google Trends", value: dj.google_trends_score ? `${Math.round(dj.google_trends_score)}/100` : "—" },
+    { label: "Google Trends", value: dj.google_trends_score ? `${Math.round(dj.google_trends_score)}/100` : " - " },
   ];
 
-  const TIER_LABELS = ["", "<300 cap", "300–700", "700–1.5K", "1.5K–5K", "5K+"];
+  const TIER_LABELS = ["", "<300 cap", "300-700", "700-1.5K", "1.5K-5K", "5K+"];
   const raAttendTrend = dj.ra_attending_h1 && dj.ra_attending_h2
     ? dj.ra_attending_h1 > dj.ra_attending_h2 * 1.1 ? "↑" : dj.ra_attending_h1 < dj.ra_attending_h2 * 0.9 ? "↓" : "→"
     : null;
@@ -365,13 +365,13 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
 
       {Number.isFinite(dj.value_gap) && (
         <a className="ap-valuelink" href={`/value/${slugify(dj.name)}`}>
-          ✦ View {dj.name}'s Fair Value report — the neutral, live-anchored fee benchmark →
+          ✦ View {dj.name}'s Fair Value report - the neutral, live-anchored fee benchmark →
         </a>
       )}
 
       <VibeCheck dj={dj} />
 
-      {/* Touring summary — Songkick when matched, otherwise backfilled from RA
+      {/* Touring summary - Songkick when matched, otherwise backfilled from RA
           (RA is the better-covered source; Songkick can't match many names). */}
       {(dj.tour_upcoming > 0 || dj.ra_upcoming > 0 || dj.ra_events_6m > 0) && (() => {
         const sk = dj.tour_upcoming > 0;                       // have Songkick upcoming + next-show detail
@@ -384,7 +384,7 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
               <div className="ap-tour-label">{sk ? "Upcoming shows" : "Recent bookings"}</div>
             </div>
             <div className="ap-tour-item">
-              <div className="ap-tour-val">{countries || "—"}</div>
+              <div className="ap-tour-val">{countries || " - "}</div>
               <div className="ap-tour-label">Countries</div>
             </div>
             {sk && dj.tour_next_date ? (
@@ -399,7 +399,7 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
               </div>
             ) : <div className="ap-tour-item" />}
             <div className="ap-tour-item">
-              <div className="ap-tour-val" style={{ color: "#f5a623" }}>{dj.tour_score || dj.ra_score || "—"}</div>
+              <div className="ap-tour-val" style={{ color: "#f5a623" }}>{dj.tour_score || dj.ra_score || " - "}</div>
               <div className="ap-tour-label">{dj.tour_score ? "Tour density" : "RA booking score"}</div>
             </div>
           </div>
@@ -414,30 +414,30 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
           </div>
           <div className="ap-ra-grid">
             <div className="ap-ra-item">
-              <div className="ap-ra-val">{dj.ra_followers ? fmt(dj.ra_followers) : "—"}</div>
+              <div className="ap-ra-val">{dj.ra_followers ? fmt(dj.ra_followers) : " - "}</div>
               <div className="ap-ra-key">RA Followers</div>
             </div>
             <div className="ap-ra-item">
-              <div className="ap-ra-val">{dj.ra_events_6m ?? "—"}<span className="ap-ra-unit"> / 6mo</span></div>
+              <div className="ap-ra-val">{dj.ra_events_6m ?? " - "}<span className="ap-ra-unit"> / 6mo</span></div>
               <div className="ap-ra-key">Bookings</div>
             </div>
             <div className="ap-ra-item">
               <div className="ap-ra-val">
-                {dj.ra_avg_attending ?? "—"}
+                {dj.ra_avg_attending ?? " - "}
                 {raAttendTrend && <span className={`ap-ra-trend ap-ra-trend--${raAttendTrend === "↑" ? "up" : raAttendTrend === "↓" ? "down" : "flat"}`}>{raAttendTrend}</span>}
               </div>
               <div className="ap-ra-key">Avg Attending</div>
             </div>
             <div className="ap-ra-item">
-              <div className="ap-ra-val">{dj.ra_venue_tier ? TIER_LABELS[Math.round(dj.ra_venue_tier)] : "—"}</div>
+              <div className="ap-ra-val">{dj.ra_venue_tier ? TIER_LABELS[Math.round(dj.ra_venue_tier)] : " - "}</div>
               <div className="ap-ra-key">Venue Size</div>
             </div>
             <div className="ap-ra-item">
-              <div className="ap-ra-val">{dj.ra_countries ?? "—"}</div>
+              <div className="ap-ra-val">{dj.ra_countries ?? " - "}</div>
               <div className="ap-ra-key">Countries</div>
             </div>
             <div className="ap-ra-item">
-              <div className="ap-ra-val">{dj.ra_upcoming ?? "—"}</div>
+              <div className="ap-ra-val">{dj.ra_upcoming ?? " - "}</div>
               <div className="ap-ra-key">Upcoming</div>
             </div>
           </div>

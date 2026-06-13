@@ -4,12 +4,12 @@ import EmailCapture from "./EmailCapture";
 import IntelUpsell from "./IntelUpsell";
 import "./IndexDrop.css";
 
-// ── The PEAKTIME Index — the monthly "drop" ────────────────────────────────
+// ── The PEAKTIME Index - the monthly "drop" ────────────────────────────────
 // The media-brand flagship (Pivot 2). A dated, narrated snapshot of the same
-// live data — frozen into a citable monthly artefact with the recurring rituals
+// live data - frozen into a citable monthly artefact with the recurring rituals
 // bookers come back for: Movers, Value Gap of the Month, City in Focus.
 //
-// Everything here is DERIVED from rankings.json — no new data, no fabrication
+// Everything here is DERIVED from rankings.json - no new data, no fabrication
 // (PERMANENT RULE #1). If a signal is thin, the section degrades gracefully
 // rather than inventing a story.
 
@@ -48,6 +48,23 @@ export default function IndexDrop({ rankings = [], lastUpdated }) {
     () => [...rankings].sort((a, b) => (a.rank ?? 999) - (b.rank ?? 999)).slice(0, 20),
     [rankings]
   );
+
+  // Masthead "demand skyline" — the month's top acts as score-scaled bars (echoes
+  // the brand's equalizer mark). A real data-viz hero, not decoration: heights are
+  // the composite demand score, floored at 30% so even the shortest bar reads.
+  const skyline = useMemo(() => {
+    const top = top20.slice(0, 14).filter(d => Number.isFinite(d.score));
+    if (top.length < 5) return [];
+    const scores = top.map(d => d.score);
+    const max = Math.max(...scores), min = Math.min(...scores);
+    const span = Math.max(max - min, 1);
+    return top.map(d => ({
+      name: d.name,
+      rank: d.rank,
+      score: Math.round(d.score),
+      h: 30 + Math.round(((d.score - min) / span) * 70),
+    }));
+  }, [top20]);
 
   const { risers, fallers } = useMemo(() => {
     const withDelta = rankings
@@ -100,18 +117,35 @@ export default function IndexDrop({ rankings = [], lastUpdated }) {
         <div className="idx-kicker">The PEAKTIME Index</div>
         <h1 className="idx-month">{monthLabel}</h1>
         <p className="idx-standfirst">
-          The neutral booking-demand index for house &amp; techno — who's rising, who's mispriced,
+          The neutral booking-demand index for house &amp; techno - who's rising, who's mispriced,
           and where, this month. Data, not hype.
         </p>
+
+        {skyline.length >= 5 && (
+          <div
+            className="idx-skyline"
+            role="img"
+            aria-label={`Demand skyline: the top ${skyline.length} acts by composite score this month, led by ${skyline[0].name} at ${skyline[0].score} points.`}
+          >
+            {skyline.map((b, i) => (
+              <span
+                key={b.name}
+                className={`idx-sky-bar${i === 0 ? " is-lead" : ""}`}
+                style={{ height: `${b.h}%`, opacity: i === 0 ? 1 : Math.max(0.3, 0.66 - i * 0.03) }}
+                title={`#${b.rank} ${b.name} · ${b.score} pts`}
+              />
+            ))}
+          </div>
+        )}
       </header>
 
-      {/* 1 — The headline */}
+      {/* 1 - The headline */}
       <section className="idx-section idx-headline">
         <div className="idx-eyebrow">This month</div>
         <h2 className="idx-headline-title">{headline}</h2>
       </section>
 
-      {/* 2 — Movers */}
+      {/* 2 - Movers */}
       <section className="idx-section">
         <div className="idx-section-head">
           <h2 className="idx-h2">Movers</h2>
@@ -135,7 +169,7 @@ export default function IndexDrop({ rankings = [], lastUpdated }) {
         )}
       </section>
 
-      {/* 3 — Value Gap of the Month */}
+      {/* 3 - Value Gap of the Month */}
       {valuePick && (
         <section className="idx-section idx-value">
           <div className="idx-section-head">
@@ -149,9 +183,9 @@ export default function IndexDrop({ rankings = [], lastUpdated }) {
               <span className="idx-value-lbl">booking demand says the fee should be higher than where it sits</span>
             </div>
             <div className="idx-value-fees">
-              <span>Known fee <strong>{valuePick.booking_fee?.label || "—"}</strong></span>
+              <span>Known fee <strong>{valuePick.booking_fee?.label || " - "}</strong></span>
               <span className="idx-value-arrow">→</span>
-              <span>Demand-implied <strong>{valuePick.demand_fee_label || "—"}</strong></span>
+              <span>Demand-implied <strong>{valuePick.demand_fee_label || " - "}</strong></span>
             </div>
             {Array.isArray(valuePick.scene_tags) && valuePick.scene_tags.length > 0 && (
               <div className="idx-value-tags">
@@ -163,11 +197,11 @@ export default function IndexDrop({ rankings = [], lastUpdated }) {
         </section>
       )}
 
-      {/* 4 — City in Focus */}
+      {/* 4 - City in Focus */}
       {cityFocus && (
         <section className="idx-section">
           <div className="idx-section-head">
-            <h2 className="idx-h2">City in Focus — {cityFocus.city}</h2>
+            <h2 className="idx-h2">City in Focus - {cityFocus.city}</h2>
             <span className="idx-section-note">Most live booking activity this period</span>
           </div>
           <div className="idx-city-acts">
@@ -185,16 +219,16 @@ export default function IndexDrop({ rankings = [], lastUpdated }) {
       <section className="idx-section idx-capture">
         <EmailCapture
           source="index-drop"
-          heading={`Get the ${monthLabel} Index — and every drop after`}
-          sub="The full index plus Movers, the Value Gap of the Month, and City in Focus — in your inbox on the 1st. Free and neutral."
+          heading={`Get the ${monthLabel} Index - and every drop after`}
+          sub="The full index plus Movers, the Value Gap of the Month, and City in Focus - in your inbox on the 1st. Free and neutral."
         />
         <IntelUpsell source="index-drop" />
       </section>
 
-      {/* 5 — The top 20 snapshot */}
+      {/* 5 - The top 20 snapshot */}
       <section className="idx-section">
         <div className="idx-section-head">
-          <h2 className="idx-h2">The Index — Top 20</h2>
+          <h2 className="idx-h2">The Index - Top 20</h2>
           <span className="idx-section-note">{monthLabel} snapshot</span>
         </div>
         <ol className="idx-top20">
@@ -210,7 +244,7 @@ export default function IndexDrop({ rankings = [], lastUpdated }) {
         </ol>
       </section>
 
-      {/* Masthead / neutrality footer — same every issue */}
+      {/* Masthead / neutrality footer - same every issue */}
       <footer className="idx-footer">
         <p>
           The PEAKTIME Index ranks booking demand, not popularity, from a transparent
@@ -219,7 +253,7 @@ export default function IndexDrop({ rankings = [], lastUpdated }) {
         </p>
         <p className="idx-footer-rule">
           We never take payment to alter a ranking or fee benchmark. A fabricated stat is
-          the one thing that would break this — so we don't print one.
+          the one thing that would break this - so we don't print one.
         </p>
       </footer>
     </div>

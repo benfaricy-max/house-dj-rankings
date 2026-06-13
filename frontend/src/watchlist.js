@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 // ── Watchlist + momentum-spike alerts (client-side, no backend) ──────────────
 // The research (Cookiy AI, P3 "The Strategic Pragmatist") said the data feels
-// static — managers need to know *when* an artist is moving so they can time a
+// static - managers need to know *when* an artist is moving so they can time a
 // negotiation. Until server-push email alerts exist (roadmap), this delivers the
 // same timing value locally: a manager stars the acts they represent / track, and
 // on each return visit we compare each watched artist's momentum_score against the
@@ -82,20 +82,21 @@ export function detectSpikes(rankings, watched) {
   return { spikes, ack };
 }
 
-// Hook wrapper: runs spike detection once rankings + watchlist are ready, and
-// exposes the current alert list with a dismiss that acknowledges the baseline.
+// Hook wrapper: derives the spike list from rankings + watchlist (pure, in
+// render), and exposes a dismiss that acknowledges the baseline and hides it.
 export function useMomentumAlerts(rankings, watched) {
-  const [alerts, setAlerts] = useState([]);
-  const [ackFn, setAckFn] = useState(() => () => {});
+  // Track WHICH set of spikes was dismissed (by signature) rather than a boolean,
+  // so a fresh detection (new artists moving) re-shows the banner without an
+  // effect that writes state - keeps the hook free of cascading renders.
+  const [dismissedSig, setDismissedSig] = useState("");
 
-  useEffect(() => {
-    if (!rankings.length || watched.size === 0) { setAlerts([]); return; }
-    const { spikes, ack } = detectSpikes(rankings, watched);
-    setAlerts(spikes);
-    setAckFn(() => ack);
+  const { spikes, ack } = useMemo(() => {
+    if (!rankings.length || watched.size === 0) return { spikes: [], ack: () => {} };
+    return detectSpikes(rankings, watched);
   }, [rankings, watched]);
 
-  const dismiss = useCallback(() => { ackFn(); setAlerts([]); }, [ackFn]);
+  const sig = spikes.map(s => `${s.name}:${s.to}`).join("|");
+  const dismiss = useCallback(() => { ack(); setDismissedSig(sig); }, [ack, sig]);
 
-  return { alerts, dismiss };
+  return { alerts: sig && dismissedSig === sig ? [] : spikes, dismiss };
 }

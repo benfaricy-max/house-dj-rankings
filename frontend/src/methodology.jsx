@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 // Shared methodology primitives so the "how is this built?" tooltip and the
-// published Momentum blend live in ONE place — used by the rankings rows, the
+// published Momentum blend live in ONE place - used by the rankings rows, the
 // artist profile, and the How It Works page. Research finding #2: a black-box
 // score is a dealbreaker, so the breakdown must sit next to every number.
 
@@ -43,7 +43,7 @@ export function InfoTip({ label, children }) {
   );
 }
 
-// The Momentum tooltip — the published blend, identical everywhere it appears.
+// The Momentum tooltip - the published blend, identical everywhere it appears.
 export function MomentumTip({ dj }) {
   return (
     <InfoTip label="How momentum is calculated">
@@ -63,11 +63,11 @@ export function MomentumTip({ dj }) {
 
 // ── Form / trajectory ────────────────────────────────────────────────────────
 // A categorical, at-a-glance read of an act's DIRECTION (rising / steady / cooling)
-// — distinct from Momentum's magnitude. Brand belief #3: "movement, not position;
+// - distinct from Momentum's magnitude. Brand belief #3: "movement, not position;
 // who's accelerating is the alpha." Built only from signals that can go NEGATIVE,
 // so "cooling" means real decline, not merely a low momentum score. Conservative by
 // design: defaults to steady unless the signal is clear, so it never makes a bold
-// wrong call on a mixed-signal act. Changes nothing in the ranking — it's context.
+// wrong call on a mixed-signal act. Changes nothing in the ranking - it's context.
 const clipDir = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 
 // Net direction in [-1, +1] from the signed rate-of-change signals an act has data
@@ -101,24 +101,24 @@ export function artistForm(a) {
   return "steady";
 }
 
-// The Form tooltip — explains the read so ▲/▬/▼ never looks like an opaque verdict.
+// The Form tooltip - explains the read so ▲/▬/▼ never looks like an opaque verdict.
 export function FormTip({ dj }) {
   if (!artistForm(dj)) return null;
   return (
     <InfoTip label="What 'form' means">
       <span className="itip-h">Form = direction, not size</span>
-      <span className="itip-note">Whether booking demand is accelerating (▲ Rising), holding (▬ Steady) or fading (▼ Cooling) — read from the rate-of-change signals (12-week search trend, listener growth, Wikipedia trend, Beatport movement) plus the Momentum score. It's context only; it doesn't move the ranking.</span>
+      <span className="itip-note">Whether booking demand is accelerating (▲ Rising), holding (▬ Steady) or fading (▼ Cooling) - read from the rate-of-change signals (12-week search trend, listener growth, Wikipedia trend, Beatport movement) plus the Momentum score. It's context only; it doesn't move the ranking.</span>
     </InfoTip>
   );
 }
 
 // ── Scene geography (international appeal) ────────────────────────────────────
 // Two genuinely different axes, kept separate on purpose:
-//   • BOOKING footprint — where an act is actually booked (RA top regions). A
+//   • BOOKING footprint - where an act is actually booked (RA top regions). A
 //     European tech-house act tours Ibiza/Berlin/Amsterdam even if huge in the US.
-//   • AUDIENCE geography — where the listeners are (Spotify top cities, the real
+//   • AUDIENCE geography - where the listeners are (Spotify top cities, the real
 //     "international appeal" read; Google Trends countries as a sparse fallback).
-// An act can be Euro-booked but US-listened — that gap is the insight, so we never
+// An act can be Euro-booked but US-listened - that gap is the insight, so we never
 // collapse the two into one number. Core = the electronic-music credibility markets.
 const CORE_COUNTRIES = new Set(["Spain","Germany","Netherlands","United Kingdom","Italy","France","Belgium","Croatia","Switzerland","Austria","Georgia","Serbia","Czechia","Czech Republic","Portugal","Greece","Poland","Ireland"]);
 // Spotify top-cities use ISO-3166 alpha-2 country codes; Trends/RA use full names.
@@ -137,7 +137,7 @@ function bookingGeo(dj) {
   return { score, category: geoCategory(score), hits, color: GEO_COLOR[geoCategory(score)] };
 }
 
-// Audience geography — prefer Spotify top cities (populated by enrichSpotifyGeo via
+// Audience geography - prefer Spotify top cities (populated by enrichSpotifyGeo via
 // the Interceptor); fall back to the sparser/noisier Trends-by-country data.
 function audienceGeo(dj) {
   const cities = Array.isArray(dj?.spotify_top_cities) ? dj.spotify_top_cities : [];
@@ -168,12 +168,12 @@ export function sceneGeography(dj) {
 }
 
 // ── Genre lean (house ↔ techno) ──────────────────────────────────────────────
-// The house/techno line is genuinely blurred and no one agrees on it — so we don't
+// The house/techno line is genuinely blurred and no one agrees on it - so we don't
 // adjudicate it, we cite Beatport (the industry's own taxonomy). Lean is derived
 // from where Beatport charts the artist; for acts not currently charting, we fall
-// back to their single most-representative label (label_best) — a label is a strong
+// back to their single most-representative label (label_best) - a label is a strong
 // genre signal (Drumcode→techno, Defected→house, Afterlife→melodic techno). Output
-// is a 3-way lean — house / crossover / techno — where "crossover" is the honest
+// is a 3-way lean - house / crossover / techno - where "crossover" is the honest
 // bucket for the melodic middle. An editorial `genre_lean` on the artist overrides.
 const HOUSE_CHART = new Set(["House","Deep House","Afro House","Tech House","Bass House","Progressive House","Future House","Jackin House","Indie Dance","Nu Disco / Disco","Organic House","Funky House","Soulful House","Amapiano"]);
 const TECHNO_CHART = new Set(["Techno (Peak Time / Driving)","Techno (Raw / Deep / Hypnotic)","Hard Techno","Hard Dance / Hardcore","Electro (Classic / Detroit / Modern)"]);
@@ -217,15 +217,15 @@ export function genreLean(dj) {
   return leanFromLabel(dj?.label_best);
 }
 
-// PURE techno — editorial. This is a HOUSE-anchored index ("House DJ Rankings"),
+// PURE techno - editorial. This is a HOUSE-anchored index ("House DJ Rankings"),
 // so acts who are genuinely pure techno with no house overlap don't belong in the
 // main ranking; they stay in the database and surface under the Techno filter.
 // This is deliberately NARROWER than genreLean === "techno": that bucket sweeps in
 // melodic/Afterlife acts (Tale Of Us, Anyma, Adriatique, Mind Against, Recondite,
-// Massano, Colyn, KAS:ST…) who share festival/club stages WITH house — those keep
+// Massano, Colyn, KAS:ST…) who share festival/club stages WITH house - those keep
 // their place in the main ranking. Only the peak-time/driving/raw/hard/industrial
 // techno acts with no house crossover are listed here. A per-artist `pure_techno:
-// true` in the data also flags one without editing this set. Curated Jun 2026 —
+// true` in the data also flags one without editing this set. Curated Jun 2026 - 
 // add/remove names as the call gets refined.
 const PURE_TECHNO = new Set([
   "Charlotte de Witte", "Adam Beyer", "Amelie Lens", "Sven Väth", "Surgeon",
@@ -245,7 +245,7 @@ export function isPureTechno(dj) {
 // Filter predicate for a house-anchored index. The default ("all") is the
 // house-anchored main ranking: everything EXCEPT pure-techno outliers. House is
 // the broad anchor: house + the melodic "crossover" middle + unclassified acts.
-// Techno is the home for the genuinely-techno acts — INCLUDING the pure-techno
+// Techno is the home for the genuinely-techno acts - INCLUDING the pure-techno
 // names removed from the main view, so they're never lost, just relocated.
 export function matchesGenre(dj, filter) {
   if (filter === "techno") return genreLean(dj) === "techno" || isPureTechno(dj);
@@ -271,13 +271,13 @@ export const DEMAND_BLEND = [
   { signal: "Search interest + YouTube",            weight: "6%",  color: "#4285F4" },
 ];
 
-// The Value Gap tooltip — explains the buy/sell signal in plain language so
+// The Value Gap tooltip - explains the buy/sell signal in plain language so
 // "underpriced" never reads as a black-box claim (research finding #2).
 export function ValueGapTip({ dj }) {
   return (
     <InfoTip label="How the price-vs-demand gap is calculated">
       <span className="itip-h">Demand-implied fee vs. the asking fee</span>
-      <span className="itip-note">We build a demand index, map it to the same fee tiers the market uses, then compare to the act's known fee. The gap is the difference in tiers — it never sees the fee while scoring.</span>
+      <span className="itip-note">We build a demand index, map it to the same fee tiers the market uses, then compare to the act's known fee. The gap is the difference in tiers - it never sees the fee while scoring.</span>
       {DEMAND_BLEND.map(f => (
         <span className="itip-row" key={f.signal}>
           <span className="itip-row-l">{f.signal}</span>

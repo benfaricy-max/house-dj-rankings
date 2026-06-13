@@ -1,15 +1,15 @@
 /**
- * BuyerLane — a "for buyers" band for the homepage hero.
+ * BuyerLane - a "for buyers" band for the homepage hero.
  *
  * WHY (June 2026 research panel): every professional persona said the front door
  * "sells the magazine, not the tool." The homepage answers "who's hot"; a buyer's
  * actual job is "who's underpriced for MY city and MY budget, right now." This
- * component is that lane — it turns the open ranking into a buyer entry point
+ * component is that lane - it turns the open ranking into a buyer entry point
  * without paywalling anything (neutrality moat intact; STRATEGY.md §3).
  *
  * Drop-in & additive: pure read of the rankings array already loaded by App.
  * No new data, no network, defensive about missing fields. Navigates to the
- * existing Value Gap report route (#/value/<slug>) — the wedge artifact (GTM.md §3).
+ * existing Value Gap report route (#/value/<slug>) - the wedge artifact (GTM.md §3).
  *
  * Wiring (see docs/HOMEPAGE-REPOSITION.md): import and render it once, just under
  * the hero <h1>, passing the ranked list:
@@ -26,7 +26,7 @@ const slugify = (name) =>
 const BAND_FILTERS = [
   { id: "all", label: "Any budget", test: () => true },
   { id: "lt10", label: "Under £10k", test: (t) => t <= 2 },
-  { id: "10to40", label: "£10k–£40k", test: (t) => t >= 3 && t <= 4 },
+  { id: "10to40", label: "£10k-£40k", test: (t) => t >= 3 && t <= 4 },
   { id: "gt40", label: "£40k+", test: (t) => t >= 5 },
 ];
 
@@ -34,9 +34,9 @@ export default function BuyerLane({ rankings = [], onOpenValue }) {
   const [region, setRegion] = useState("all");
   const [band, setBand] = useState("all");
 
-  // Regions a buyer would recognise — derived from where acts are actually booked.
-  // ra_top_regions is [{name, country}] (cities — most useful to a buyer);
-  // ra_country_list is [string]. tour_countries is a COUNT (number), not a list —
+  // Regions a buyer would recognise - derived from where acts are actually booked.
+  // ra_top_regions is [{name, country}] (cities - most useful to a buyer);
+  // ra_country_list is [string]. tour_countries is a COUNT (number), not a list - 
   // never iterate it. actRegions() normalises any act to a flat string[] of places.
   const actRegions = (a) => {
     const out = [];
@@ -89,12 +89,12 @@ export default function BuyerLane({ rankings = [], onOpenValue }) {
   };
 
   return (
-    <section className="bl" aria-label="For buyers — who's underpriced right now">
+    <section className="bl" aria-label="For buyers - who's underpriced right now">
       <div className="bl-head">
         <span className="bl-tag">For buyers</span>
         <h2 className="bl-title">Who's underpriced right now</h2>
         <p className="bl-sub">
-          The neutral read for the offer you're about to make — fee band vs. what demand implies.
+          The neutral read for the offer you're about to make - fee band vs. what demand implies.
           No agency, no act, no kickback. Free.
         </p>
       </div>
@@ -121,7 +121,7 @@ export default function BuyerLane({ rankings = [], onOpenValue }) {
       </div>
 
       {picks.length === 0 ? (
-        <p className="bl-empty">No underpriced reads match that filter right now — widen the budget or region.</p>
+        <p className="bl-empty">No underpriced reads match that filter right now - widen the budget or region.</p>
       ) : (
         <ul className="bl-list">
           {picks.map((a) => {
@@ -148,7 +148,7 @@ export default function BuyerLane({ rankings = [], onOpenValue }) {
       )}
 
       <p className="bl-foot">
-        Estimated fee bands until verified — the demand side is RA bookings, Beatport, search &amp; streaming.{" "}
+        Estimated fee bands until verified - the demand side is RA bookings, Beatport, search &amp; streaming.{" "}
         <a href="#/methodology">How we read it →</a>
       </p>
     </section>

@@ -5,13 +5,13 @@ import { valueConfidence, negotiationLine } from "./ValueGap";
 
 // ── Private Pitch Link ───────────────────────────────────────────────────────
 // The research (Cookiy AI, P4 "The Protective Gatekeeper") was explicit: managers
-// want to share an artist's demand data *selectively with a promoter* — never
+// want to share an artist's demand data *selectively with a promoter* - never
 // publicly, never on social. A Pitch Link is that primitive: a clean, read-only,
 // single-artist, branded brief at an unguessable URL with a built-in expiry. No
 // public index, no site chrome, marked confidential.
 //
 // The underlying numbers are already public (rankings.json), so this leaks
-// nothing — it *packages* them privately for a one-to-one negotiation. The token
+// nothing - it *packages* them privately for a one-to-one negotiation. The token
 // carries only {slug, side, expiry, note}; the page resolves the artist from the
 // live data. Expiry is enforced client-side. Hardening path: server-minted,
 // revocable tokens + access logging (see COMMERCE.md).
@@ -44,7 +44,7 @@ export function decodePitch(token) {
 
 const fmtDate = ts => new Date(ts).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
 
-// Funnel instrumentation — same shape as UpgradeCTA's track(). Pitch-link
+// Funnel instrumentation - same shape as UpgradeCTA's track(). Pitch-link
 // activation lands in localStorage.peaktime_funnel alongside the upgrade funnel,
 // so the whole picture is in one log. The core question this answers: do the
 // private pitch links bookers generate actually get opened by the recipient?
@@ -57,7 +57,7 @@ function track(event, props) {
     log.push({ v: 1, event, ...props, t: new Date().toISOString() });
     // version each record (v) + cap the append log so it can't grow past quota
     localStorage.setItem("peaktime_funnel", JSON.stringify(log.slice(-500)));
-  } catch { /* storage disabled — ignore */ }
+  } catch { /* storage disabled - ignore */ }
 }
 
 // ── Generator modal (Pro-gated by the caller) ────────────────────────────────
@@ -85,7 +85,7 @@ export function PitchLinkModal({ artist, onClose }) {
           <button className="pl-close" onClick={onClose} aria-label="Close">✕</button>
         </div>
         <p className="pl-modal-sub">
-          A read-only, expiring dossier to send one promoter directly — third-party proof of this
+          A read-only, expiring dossier to send one promoter directly - third-party proof of this
           artist's demand at a private URL. Not listed publicly, not indexed. The numbers are
           neutral; the framing is yours.
         </p>
@@ -144,7 +144,7 @@ export default function PitchPage({ rankings }) {
   useEffect(() => {
     if (firedRef.current) return;
     if (decoded.error) { firedRef.current = true; track("pitch_dead", { reason: decoded.error }); return; }
-    if (!rankings.length) return; // data still loading — resolve on the next run
+    if (!rankings.length) return; // data still loading - resolve on the next run
     firedRef.current = true;
     const a = rankings.find(r => slugify(r.name) === decoded.slug);
     track(a ? "pitch_opened" : "pitch_dead",
@@ -171,11 +171,11 @@ export default function PitchPage({ rankings }) {
   const line = hasGap ? negotiationLine(a, side) : null;
   const anchor = a.value_anchor || {};
 
-  // Demand standing — the seller-facing headline ("in demand, rising") vs a
+  // Demand standing - the seller-facing headline ("in demand, rising") vs a
   // neutral position read for the buyer. Momentum ≥60 reads as "rising".
   const rising = Number.isFinite(a.momentum_score) && a.momentum_score >= 60;
   const standing = seller
-    ? `In demand — #${a.rank} on the index${rising ? ", and rising" : ""}.`
+    ? `In demand - #${a.rank} on the index${rising ? ", and rising" : ""}.`
     : `#${a.rank} on the index${rising ? ", rising" : ""}.`;
 
   // Routing → exclusivity. Same aggregation as RoutingSaturation: recent shows
@@ -191,11 +191,11 @@ export default function PitchPage({ rankings }) {
     const cLabel = `${countries} ${countries === 1 ? "country" : "countries"}`;
     const text = seller
       ? (selective
-          ? `Selective routing — ${shows} shows in ${cLabel} over ~90 days. A date here is comparatively scarce.`
-          : `Proven live demand — ${shows} shows across ${cLabel} in ~90 days. The rooms are already booking.`)
+          ? `Selective routing - ${shows} shows in ${cLabel} over ~90 days. A date here is comparatively scarce.`
+          : `Proven live demand - ${shows} shows across ${cLabel} in ~90 days. The rooms are already booking.`)
       : (selective
-          ? `Lightly routed — ${shows} shows in ~90 days; room to build a standout date.`
-          : `Heavily routed — ${shows} shows in ~90 days; a date in a busy region feels less exclusive.`);
+          ? `Lightly routed - ${shows} shows in ~90 days; room to build a standout date.`
+          : `Heavily routed - ${shows} shows in ~90 days; a date in a busy region feels less exclusive.`);
     return { shows, selective, text };
   })();
 
@@ -208,7 +208,7 @@ export default function PitchPage({ rankings }) {
 
   return (
     <PitchShell>
-      <div className="pp-confidential">Confidential · prepared privately for direct negotiation — not published{decoded.exp ? ` · expires ${fmtDate(decoded.exp)}` : ""}</div>
+      <div className="pp-confidential">Confidential · prepared privately for direct negotiation - not published{decoded.exp ? ` · expires ${fmtDate(decoded.exp)}` : ""}</div>
 
       {decoded.note && <div className="pp-note">“{decoded.note}”</div>}
 
@@ -254,7 +254,7 @@ export default function PitchPage({ rankings }) {
 
       {liveStats.length > 0 && (
         <div className="pp-evidence">
-          <div className="pp-evidence-h">{seller ? "What this fee is backed by" : "What the fee is anchored to"} <span>— the rooms they fill, not streaming vanity</span></div>
+          <div className="pp-evidence-h">{seller ? "What this fee is backed by" : "What the fee is anchored to"} <span> - the rooms they fill, not streaming vanity</span></div>
           <div className="pp-grid">
             {liveStats.map(s => (
               <div className="pp-stat" key={s.k}><div className="pp-stat-v">{s.v}</div><div className="pp-stat-k">{s.k}</div></div>
@@ -264,7 +264,7 @@ export default function PitchPage({ rankings }) {
       )}
 
       <div className="pp-foot">
-        Demand-data only — no input from either side of the table. Methodology is public at thedjrankings.com.
+        Demand-data only - no input from either side of the table. Methodology is public at thedjrankings.com.
         <button className="pp-explore" onClick={back}>{seller ? "Verify this on the public index →" : "Explore the full index →"}</button>
       </div>
     </PitchShell>

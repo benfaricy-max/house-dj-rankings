@@ -78,23 +78,23 @@ function getMeta(name) {
 
 // ── Booking fee tiers ────────────────────────────────────────────
 function getFeeTier(rank) {
-  if (rank <= 3)  return { label: "£20K–£50K+", tier: 5, mid: 35000, color: "#f59e0b" };
-  if (rank <= 8)  return { label: "£8K–£20K",   tier: 4, mid: 14000, color: "#3b82f6" };
-  if (rank <= 15) return { label: "£3K–£8K",    tier: 3, mid: 5500,  color: "#8b5cf6" };
-  if (rank <= 30) return { label: "£1K–£3K",    tier: 2, mid: 2000,  color: "var(--accent)" };
-  return           { label: "£500–£1.5K",        tier: 1, mid: 1000,  color: "var(--muted)" };
+  if (rank <= 3)  return { label: "£20K-£50K+", tier: 5, mid: 35000, color: "#f59e0b" };
+  if (rank <= 8)  return { label: "£8K-£20K",   tier: 4, mid: 14000, color: "#3b82f6" };
+  if (rank <= 15) return { label: "£3K-£8K",    tier: 3, mid: 5500,  color: "#8b5cf6" };
+  if (rank <= 30) return { label: "£1K-£3K",    tier: 2, mid: 2000,  color: "var(--accent)" };
+  return           { label: "£500-£1.5K",        tier: 1, mid: 1000,  color: "var(--muted)" };
 }
 
 function getVenueFit(rank) {
   if (rank <= 3)  return { label: "Festival / Arena", sub: "5,000+ capacity",  icon: "🏟" };
-  if (rank <= 8)  return { label: "Large Club",        sub: "1,000–5,000 cap", icon: "🔊" };
-  if (rank <= 15) return { label: "Mid Club",           sub: "500–1,000 cap",  icon: "🎛" };
-  if (rank <= 30) return { label: "Club",               sub: "200–500 cap",    icon: "🎶" };
+  if (rank <= 8)  return { label: "Large Club",        sub: "1,000-5,000 cap", icon: "🔊" };
+  if (rank <= 15) return { label: "Mid Club",           sub: "500-1,000 cap",  icon: "🎛" };
+  if (rank <= 30) return { label: "Club",               sub: "200-500 cap",    icon: "🎶" };
   return           { label: "Emerging Venue",           sub: "Under 200 cap",  icon: "⭐" };
 }
 
 // ── Geographic interest ──────────────────────────────────────────
-// (computeMarkets / REGION_DEFAULTS removed — geography is now real per-artist
+// (computeMarkets / REGION_DEFAULTS removed - geography is now real per-artist
 //  data: Google Trends countries + RA booking markets, see GeographicInterest.)
 
 // ── Momentum scores ──────────────────────────────────────────────
@@ -126,7 +126,7 @@ function computeMomentumScores(rankings) {
 }
 
 function fmt(n) {
-  if (!n) return "—";
+  if (!n) return " - ";
   if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
   if (n >= 1_000)     return `${(n / 1_000).toFixed(0)}K`;
   return String(n);
@@ -188,7 +188,7 @@ function TrendSparkline({ dj }) {
   return (
     <div className="detail-section" style={{ marginTop: 20 }}>
       <div className="detail-section-title">
-        Search Interest — 12 Months
+        Search Interest - 12 Months
         {mom != null && mom !== 0 && (
           <span style={{ color: momColor, marginLeft: 8, fontSize: "0.78rem", fontWeight: 700 }}>
             {mom > 0 ? "▲" : "▼"} {Math.abs(mom).toFixed(0)}% vs prior qtr
@@ -216,7 +216,7 @@ function TrendSparkline({ dj }) {
 }
 
 function GeographicInterest({ dj }) {
-  // Real, per-artist geography only — no hardcoded regional defaults.
+  // Real, per-artist geography only - no hardcoded regional defaults.
   const countries = dj?.google_trends_countries ?? {};
   const raCountries = Array.isArray(dj?.ra_country_list) ? dj.ra_country_list : [];
   const direction = dj?.google_trends_direction ?? "stable";
@@ -269,7 +269,7 @@ function GeographicInterest({ dj }) {
       )}
 
       <div className="geo-note">
-        {hasSearch ? "Live per-artist Google Trends + RA booking data" : hasTour ? "Live Resident Advisor booking markets" : "No fabricated defaults — real data only"}
+        {hasSearch ? "Live per-artist Google Trends + RA booking data" : hasTour ? "Live Resident Advisor booking markets" : "No fabricated defaults - real data only"}
       </div>
     </div>
   );
@@ -283,14 +283,14 @@ function ArtistDetailPanel({ dj, inShortlist, onToggleShortlist, onClose, allArt
     { label: "Spotify Followers", value: fmt(dj.spotify_followers) },
     { label: "YouTube Subs",      value: fmt(dj.youtube_subscribers) },
     { label: "TikTok Posts",      value: fmt(dj.tiktok_post_count) },
-    { label: "Google Trends",     value: dj.google_trends_score ? `${Math.round(dj.google_trends_score)}/100` : "—" },
-    { label: "Listener Growth",   value: dj.spotify_follower_growth_rate ? `${dj.spotify_follower_growth_rate >= 0 ? "+" : ""}${dj.spotify_follower_growth_rate.toFixed(1)}%` : "—" },
+    { label: "Google Trends",     value: dj.google_trends_score ? `${Math.round(dj.google_trends_score)}/100` : " - " },
+    { label: "Listener Growth",   value: dj.spotify_follower_growth_rate ? `${dj.spotify_follower_growth_rate >= 0 ? "+" : ""}${dj.spotify_follower_growth_rate.toFixed(1)}%` : " - " },
     { label: "Mixcloud Followers", value: fmt(dj.mixcloud_followers) },
     { label: "Mixcloud Plays",    value: fmt(dj.mixcloud_play_count_total) },
-    { label: "Beatport Score",    value: dj.beatport_score ? `${dj.beatport_score}/100` : "—" },
-    { label: "Beatport Best Pos", value: dj.beatport_best_position ? `#${dj.beatport_best_position}` : "—" },
-    { label: "Upcoming Shows",    value: dj.tour_upcoming ? `${dj.tour_upcoming}${dj.tour_upcoming_capped ? "+" : ""}` : "—" },
-    { label: "Touring Countries", value: dj.tour_countries || "—" },
+    { label: "Beatport Score",    value: dj.beatport_score ? `${dj.beatport_score}/100` : " - " },
+    { label: "Beatport Best Pos", value: dj.beatport_best_position ? `#${dj.beatport_best_position}` : " - " },
+    { label: "Upcoming Shows",    value: dj.tour_upcoming ? `${dj.tour_upcoming}${dj.tour_upcoming_capped ? "+" : ""}` : " - " },
+    { label: "Touring Countries", value: dj.tour_countries || " - " },
   ];
   return (
     <div className="artist-detail-panel">
@@ -362,7 +362,7 @@ function ArtistDetailPanel({ dj, inShortlist, onToggleShortlist, onClose, allArt
             {claimed ? (
               <a href={`mailto:${dj.meta.booking}`} className="detail-contact-btn">✉ {dj.meta.booking}</a>
             ) : (
-              <div className="detail-unclaimed">Profile unclaimed — <a href="#">Invite artist</a></div>
+              <div className="detail-unclaimed">Profile unclaimed - <a href="#">Invite artist</a></div>
             )}
             {dj.spotify_url && (
               <a href={dj.spotify_url} target="_blank" rel="noreferrer" className="detail-spotify-link">Open on Spotify ↗</a>
@@ -668,7 +668,7 @@ function ArtistPortal({ enriched }) {
                   { label: "Rank",     value: `#${selected.rank}` },
                   { label: "Score",    value: `${selected.score} pts` },
                   { label: "Momentum", value: selected.momentum, accent: true },
-                  ...(selected.rank_change != null ? [{ label: "This week", value: selected.rank_change > 0 ? `▲${selected.rank_change}` : selected.rank_change < 0 ? `▼${Math.abs(selected.rank_change)}` : "—", delta: selected.rank_change }] : []),
+                  ...(selected.rank_change != null ? [{ label: "This week", value: selected.rank_change > 0 ? `▲${selected.rank_change}` : selected.rank_change < 0 ? `▼${Math.abs(selected.rank_change)}` : " - ", delta: selected.rank_change }] : []),
                 ].map((s, i) => (
                   <span key={i} className="portal-stat">
                     <span className="portal-stat-label">{s.label}</span>

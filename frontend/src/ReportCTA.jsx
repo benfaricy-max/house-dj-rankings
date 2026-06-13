@@ -2,11 +2,11 @@ import { useState } from "react";
 import { startCheckout, checkoutReady } from "./usePro";
 import "./ReportCTA.css";
 
-// PATH 1 — the one-off Fair Value Report purchase (£29, no subscription).
+// PATH 1 - the one-off Fair Value Report purchase (£29, no subscription).
 //
 // Aimed at the *sell side*: the DJ, manager or agent who wants the demand data
 // about their own act to take into a fee conversation. The negotiation script
-// already has a seller framing — this turns it into a finished, paid artefact:
+// already has a seller framing - this turns it into a finished, paid artefact:
 // a verified, downloadable report + a private pitch link they can forward.
 //
 // Self-serve and gatekeeper-free: an artist buys it for themselves at an impulse
@@ -40,7 +40,7 @@ export default function ReportCTA({ artist }) {
         <div className="rcta-eyebrow">Take this to the table</div>
         <div className="rcta-h">Your verified Fair Value Report for {artist.name}</div>
         <p className="rcta-sub">
-          A clean, branded PDF of this benchmark plus a private pitch link to forward — the neutral
+          A clean, branded PDF of this benchmark plus a private pitch link to forward - the neutral
           number that backs your fee, so you negotiate from data, not gut feel. One-off. No subscription.
         </p>
         <ul className="rcta-feats">

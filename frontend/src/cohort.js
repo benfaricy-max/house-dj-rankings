@@ -6,7 +6,7 @@
 // 330-deep pool, so one streaming giant compresses the reach signal for everyone
 // and the score barely discriminates inside a sub-group. Re-normalising within a
 // smaller, more homogeneous cohort (emerging acts, one region, the rising tier)
-// is statistically cleaner — the scale is set by the cohort, not by global outliers.
+// is statistically cleaner - the scale is set by the cohort, not by global outliers.
 
 // Re-score a subset against ITSELF: min-max each signal within the subset, weight
 // by the published METRICS weights, self-heal empty-in-cohort signals, and apply
@@ -14,14 +14,14 @@
 // sorted by cohort_score with a 1..N cohort_rank.
 // Conditioning, mirrored from backend/score.js so cohort scores use the same
 // model as the global index (log-compress heavy-tailed reach, winsorise to the
-// 1st–99th percentile band, two-sided scene credibility multiplier).
+// 1st-99th percentile band, two-sided scene credibility multiplier).
 const C_HEAVY = new Set([
   "spotify_monthly_listeners", "youtube_subscribers", "tiktok_post_count",
   "spotify_playlist_placements", "wikipedia_pageviews",
 ]);
 // Structurally-sparse signals that SELF-HEAL on absence (mirror of backend
-// score.js SELF_HEAL_ABSENT): when an act doesn't read on them — the 1001TL
-// weekly chart, the local-only Spotify geography pull — their weight redistributes
+// score.js SELF_HEAL_ABSENT): when an act doesn't read on them - the 1001TL
+// weekly chart, the local-only Spotify geography pull - their weight redistributes
 // over the act's present signals instead of scoring a structural 0.
 const C_SELF_HEAL = new Set(["tl_support_score", "scene_geography"]);
 const cPrep = (key, v) => { const x = Number.isFinite(v) ? v : 0; return C_HEAVY.has(key) ? Math.log10(1 + Math.max(0, x)) : x; };
@@ -64,7 +64,7 @@ export function rankWithinCohort(subset, metricDefs) {
 
 // Rank-uncertainty band. A hard ordinal (#7 vs #9) implies a precision the data
 // doesn't have. This finds the contiguous run of acts whose score sits within a
-// small noise epsilon of this act's score — i.e. the ranks that are statistically
+// small noise epsilon of this act's score - i.e. the ranks that are statistically
 // indistinguishable. Epsilon widens for thin-data acts (low coverage = more
 // uncertainty). It's an honesty band, not a bootstrap CI, and is labelled as such.
 export function withRankIntervals(sortedByScore, scoreKey = "score") {
@@ -104,7 +104,7 @@ export function inRegion(a, region) {
 }
 
 // "Rising into headliner tier": real momentum AND enough scene/live credibility to
-// carry a bigger stage — not just a viral spike. The festival lens cohort.
+// carry a bigger stage - not just a viral spike. The festival lens cohort.
 export function isRising(a) {
   return Number.isFinite(a.momentum_score) && a.momentum_score >= 45
     && (a.manual_scene_score ?? 0) >= 55
@@ -113,7 +113,7 @@ export function isRising(a) {
 
 // Stakeholder lenses. Same index, three jobs-to-be-done. Each sets a default sort,
 // an optional cohort, a one-line framing, and a jump to the tool that finishes the
-// job — making explicit what City Scout / Value Gap already started.
+// job - making explicit what City Scout / Value Gap already started.
 export const PERSONAS = {
   all: {
     label: "Everyone", question: null, sort: "score", cohort: "full", cta: null,
@@ -122,16 +122,16 @@ export const PERSONAS = {
   agent: {
     label: "Agent", question: "Is my act under-priced?", sort: "value_gap", cohort: "full",
     cta: { label: "Open Value Gap →", tab: "booking" },
-    blurb: "Sorted by how far independently-measured demand runs ahead of the current fee band — your re-pricing leverage, act by act.",
+    blurb: "Sorted by how far independently-measured demand runs ahead of the current fee band - your re-pricing leverage, act by act.",
   },
   promoter: {
     label: "Promoter", question: "Who's hot, and affordable?", sort: "momentum_score", cohort: "full",
     cta: { label: "City Scout →", tab: "scouting" },
-    blurb: "Sorted by momentum — who's accelerating right now. Each card shows the estimated fee band so you can weigh heat against budget.",
+    blurb: "Sorted by momentum - who's accelerating right now. Each card shows the estimated fee band so you can weigh heat against budget.",
   },
   festival: {
     label: "Festival", question: "Who's rising into headliner tier?", sort: "score", cohort: "rising",
     cta: null,
-    blurb: "The rising cohort: real momentum plus the scene and live-booking credibility to carry a bigger stage — re-ranked within the tier, not buried under established headliners.",
+    blurb: "The rising cohort: real momentum plus the scene and live-booking credibility to carry a bigger stage - re-ranked within the tier, not buried under established headliners.",
   },
 };

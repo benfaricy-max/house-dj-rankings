@@ -1,6 +1,6 @@
-// Fake-door payment CTA — Experiment 2, Prong A.
+// Fake-door payment CTA - Experiment 2, Prong A.
 // Measures willingness to PAY, not interest. A real card entry is the only signal
-// that isn't a lie people tell in surveys. This is ONE button, not a paywall — the
+// that isn't a lie people tell in surveys. This is ONE button, not a paywall - the
 // product stays fully open, so there's no anchor damage and nothing is taken away.
 //
 // To go live: set the Payment Link env vars at build time (Stripe Dashboard →
@@ -33,7 +33,7 @@ function track(event, props) {
     log.push({ v: 1, event, ...props, t: new Date().toISOString() });
     // version each record (v) + cap the append log so it can't grow past quota
     localStorage.setItem("peaktime_funnel", JSON.stringify(log.slice(-500)));
-  } catch { /* storage disabled — ignore */ }
+  } catch { /* storage disabled - ignore */ }
 }
 
 export default function UpgradeCTA({ tier = "solo", surface = "value_gap" }) {
@@ -44,20 +44,20 @@ export default function UpgradeCTA({ tier = "solo", surface = "value_gap" }) {
   const onClick = () => {
     track("upgrade_click", { tier, surface });
     if (link) { track("reached_stripe", { tier, surface }); window.open(link, "_blank", "noopener"); }
-    else setDone(true); // no link configured yet — still capture intent
+    else setDone(true); // no link configured yet - still capture intent
   };
 
   if (done) {
     return (
       <div className="vg-fakedoor vg-fakedoor--done" role="status">
-        You're on the list — I'll set up your access and email you within 24h. Thanks for backing this.
+        You're on the list - I'll set up your access and email you within 24h. Thanks for backing this.
       </div>
     );
   }
   return (
     <div className="vg-fakedoor">
       <div className="vg-fakedoor-text">
-        <strong>{c.label} — {c.price}</strong>
+        <strong>{c.label} - {c.price}</strong>
         <span>{c.sub}</span>
       </div>
       <button className="vg-fakedoor-btn" onClick={onClick}>Get {c.price === "£75/mo" ? "Solo" : "Team"} →</button>

@@ -288,7 +288,7 @@
   margin-left: 8px; background: #C8F750; color: #0c0c0e; border: none; border-radius: 999px;
   padding: 4px 12px; font-size: 12px; font-weight: 600; cursor: pointer; white-space: nowrap;
 }
-/* Filter context notes — sentence case, AA-contrast muted (replaces the old
+/* Filter context notes - sentence case, AA-contrast muted (replaces the old
    .sort-label uppercase wall that was both low-contrast and shouty). */
 .filter-note { padding: 0 0 10px; font-size: 12px; line-height: 1.5; color: var(--muted); }
 .filter-note-em { color: var(--accent); font-weight: 600; }
@@ -362,7 +362,7 @@
   padding: 2px 8px; border-radius: 10px; white-space: nowrap;
 }
 
-/* Compact right-side metrics — fills the space before actions on desktop */
+/* Compact right-side metrics - fills the space before actions on desktop */
 .dj-side-stats { display: flex; gap: 18px; align-items: center; padding-right: 4px; }
 .dss { display: flex; flex-direction: column; align-items: flex-end; line-height: 1.1; }
 .dss-num { font-size: 15px; font-weight: 700; color: var(--text-h); }
@@ -389,7 +389,7 @@
 .compare-btn--active  { background: #4ade80; border-color: #4ade80; color: #06210f; }
 .expand-btn { font-size: 10px; color: var(--muted); padding: 2px 6px; border-radius: 4px; background: color-mix(in srgb, var(--border) 50%, transparent); }
 
-/* Watch (★) toggle — drives momentum spike alerts */
+/* Watch (★) toggle - drives momentum spike alerts */
 .watch-btn {
   width: 27px; height: 27px; border-radius: 6px; border: 1px solid var(--border);
   background: none; color: var(--muted); font-size: 14px; line-height: 1;
@@ -745,7 +745,7 @@
 .hiw-source-name { font-size: 14px; font-weight: 700; }
 .hiw-source-points { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
 .hiw-source-points li { font-size: 12px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.4; }
-.hiw-source-points li::before { content: "–"; position: absolute; left: 0; color: var(--muted); }
+.hiw-source-points li::before { content: "-"; position: absolute; left: 0; color: var(--muted); }
 
 /* Momentum formula */
 .hiw-momentum-formula { display: flex; flex-direction: column; gap: 12px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
@@ -774,7 +774,7 @@
   user-select: none;
 }
 .hiw-faq-q::after { content: "+"; color: var(--accent); font-size: 18px; font-weight: 300; }
-details[open] .hiw-faq-q::after { content: "–"; }
+details[open] .hiw-faq-q::after { content: "-"; }
 .hiw-faq-a { font-size: 13px; color: var(--muted); padding: 0 16px 14px; line-height: 1.6; margin: 0; }
 
 /* ── Movers page ─────────────────────────────────────────────────── */
@@ -933,7 +933,7 @@ details[open] .hiw-faq-q::after { content: "–"; }
   .event-row { grid-template-columns: 80px 1fr auto; }
   .event-city { display: none; }
 
-  /* Filter drawer — show the toggle, collapse the panel unless opened. */
+  /* Filter drawer - show the toggle, collapse the panel unless opened. */
   .filter-toggle {
     display: flex; align-items: center; gap: 9px; width: 100%;
     margin-bottom: 10px; padding: 11px 14px;
@@ -1041,7 +1041,7 @@ details[open] .hiw-faq-q::after { content: "–"; }
   .bk-lineup { grid-template-columns: 1fr; }
 }
 
-/* booking — quote check + rationale */
+/* booking - quote check + rationale */
 .bk-quote { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
 .bk-quote-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .bk-quote-prefix { font-family: var(--mono); color: var(--muted); font-size: 16px; }
@@ -1077,9 +1077,9 @@ details[open] .hiw-faq-q::after { content: "–"; }
 /* momentum pill on ranking rows */
 .qs-pill--mo { color: var(--muted); border-color: var(--border); }
 .qs-pill--mo.qs-mo--hot { color: var(--on-accent); background: var(--accent); border-color: var(--accent); font-weight: 600; }
-/* data-confidence pill — colour comes inline from coverage level */
+/* data-confidence pill - colour comes inline from coverage level */
 .qs-pill--conf { border: 1px solid; background: transparent; font-weight: 600; font-variant-numeric: tabular-nums; }
-/* RA-under-coverage flag — live demand leaned on tour data, not RA */
+/* RA-under-coverage flag - live demand leaned on tour data, not RA */
 .qs-pill--rathin { color: #E2B53E; border: 1px solid #E2B53E55; background: transparent; font-weight: 600; }
 /* data-confidence row in the score breakdown */
 .breakdown-coverage { display: flex; align-items: center; gap: 10px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
@@ -1160,7 +1160,7 @@ details[open] .hiw-faq-q::after { content: "–"; }
 
 .mr-back { margin-bottom: 14px; }
 
-/* combined Markets tab — sub-nav */
+/* combined Markets tab - sub-nav */
 .mk-page { max-width: 1000px; margin: 0 auto; }
 .mk-subnav { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 22px; }
 .mk-subtab { font-family: var(--mono); font-size: 14px; cursor: pointer; background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: 999px; padding: 9px 18px; transition: all 0.12s; }
@@ -1228,7 +1228,7 @@ details[open] .hiw-faq-q::after { content: "–"; }
 .dj-badge { font-family: var(--mono); font-size: 10px; color: var(--on-accent); background: var(--accent); padding: 3px 8px; border-radius: 5px; white-space: nowrap; }
 @media (max-width: 640px) { .dj-row { grid-template-columns: 34px 1fr; } .dj-badge { display: none; } }
 
-/* DJ Chart — most-supported leaderboard */
+/* DJ Chart - most-supported leaderboard */
 .dj-section-h { font-size: 1.05rem; font-weight: 700; color: var(--text-h); margin: 22px 0 12px; }
 .dj-board { display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px; }
 .dj-board-row { display: grid; grid-template-columns: 30px 1.3fr 1.4fr auto auto; align-items: center; gap: 12px; padding: 9px 14px; background: var(--card); border: 1px solid var(--border); border-radius: 9px; text-decoration: none; transition: border-color 0.12s; }
@@ -1248,7 +1248,7 @@ details[open] .hiw-faq-q::after { content: "–"; }
   .top-tab { padding: 7px 13px; font-size: 12px; }
 }
 
-/* ── Methodology tooltip (InfoTip) — shared by rankings rows, profile, How It Works.
+/* ── Methodology tooltip (InfoTip) - shared by rankings rows, profile, How It Works.
    Research finding #2: a proprietary number must never read as a black box, so the
    breakdown sits one tap away from every score. ── */
 .infotip { position: relative; display: inline-flex; vertical-align: middle; }
@@ -1270,7 +1270,7 @@ details[open] .hiw-faq-q::after { content: "–"; }
   text-align: left; white-space: normal; cursor: default;
 }
 /* On narrow screens a mid-card anchor can't fit a tooltip either side, so pin it
-   as a small fixed card near the bottom — always fully on-screen and readable. */
+   as a small fixed card near the bottom - always fully on-screen and readable. */
 @media (max-width: 560px) {
   .infotip-pop {
     position: fixed; top: auto; bottom: 16px; left: 14px; right: 14px;
