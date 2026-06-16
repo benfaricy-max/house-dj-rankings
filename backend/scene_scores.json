@@ -1,6 +1,6 @@
 {
   "version": "2026.06.1",
-  "generated": "2026-06-09",
+  "generated": "2026-06-16",
   "method": "Editorial rubric, single rater. Reliability checked against an automated independent rubric re-score (see sceneReliability.js).",
   "scores": {
     "999999999": {
@@ -169,7 +169,7 @@
       "credits": []
     },
     "Mall Grab": {
-      "hand": 72,
+      "hand": 65,
       "version": "2026.06.1",
       "rubric": null,
       "credits": []
@@ -704,7 +704,7 @@
       "credits": []
     },
     "Booka Shade": {
-      "hand": 77,
+      "hand": 66,
       "version": "2026.06.1",
       "rubric": null,
       "credits": []
@@ -740,7 +740,7 @@
       "credits": []
     },
     "Octave One": {
-      "hand": 75,
+      "hand": 67,
       "version": "2026.06.1",
       "rubric": null,
       "credits": []
@@ -1016,7 +1016,7 @@
       ]
     },
     "WhoMadeWho": {
-      "hand": 76,
+      "hand": 67,
       "version": "2026.06.1",
       "rubric": null,
       "credits": []
@@ -1461,7 +1461,7 @@
       ]
     },
     "Mano Le Tough": {
-      "hand": 76,
+      "hand": 69,
       "version": "2026.06.1",
       "rubric": null,
       "credits": []
@@ -1952,7 +1952,7 @@
       "credits": []
     },
     "Antdot": {
-      "hand": 70,
+      "hand": 60,
       "version": "2026.06.1",
       "rubric": null,
       "credits": []
@@ -2166,6 +2166,78 @@
       "credits": [
         "festival"
       ]
+    },
+    "Marco Carola": {
+      "hand": 90,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "ARTBAT": {
+      "hand": 88,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Reinier Zonneveld": {
+      "hand": 82,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Solardo": {
+      "hand": 82,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Gordo": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Argy": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Lane 8": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Purple Disco Machine": {
+      "hand": 85,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Damian Lazarus": {
+      "hand": 82,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Moodymann": {
+      "hand": 85,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Caiiro": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
+    },
+    "Da Capo": {
+      "hand": 80,
+      "version": "2026.06.1",
+      "rubric": null,
+      "credits": []
     }
   }
 }
