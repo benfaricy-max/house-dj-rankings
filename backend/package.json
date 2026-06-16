@@ -9,7 +9,7 @@
     "freshness": "node freshness.js",
     "freshness:ci": "node freshness.js --ci",
     "content": "node makeContentBuffer.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test"
   },
   "keywords": [],
   "author": "",

@@ -17,15 +17,43 @@ export function cors(req, res) {
 // The webhook mints a token after payment; /api/me verifies it. For production,
 // swap this for a real datastore (Vercel KV / Upstash / Postgres) keyed by the
 // Stripe customer id, so you can revoke on cancellation. See COMMERCE.md.
-const SECRET = process.env.SESSION_SECRET || "dev-only-not-secret";
+const DEV_SECRET = "dev-only-not-secret";
+const SECRET = process.env.SESSION_SECRET || DEV_SECRET;
+
+// Anything internet-reachable (any Vercel deployment, incl. preview, or an
+// explicit production NODE_ENV) must run with a real secret. The dev fallback
+// signs forgeable Pro tokens — leaving it on in prod means anyone can mint
+// themselves a "pro" session cookie and bypass the paywall entirely.
+const IS_DEPLOYED = Boolean(process.env.VERCEL) || process.env.NODE_ENV === "production";
+const SECRET_IS_REAL = SECRET !== DEV_SECRET && SECRET.length >= 16;
+// Insecure = deployed but the secret is missing, the dev default, or too short.
+const INSECURE_SECRET = IS_DEPLOYED && !SECRET_IS_REAL;
+
+// Fail closed and loudly: refuse to MINT a session with an unsafe secret. Callers
+// (checkout/webhook) will surface a 5xx instead of silently issuing a token that
+// an attacker could forge. Better a broken upgrade flow than a free-Pro exploit.
+export function assertSessionSecret() {
+  if (INSECURE_SECRET) {
+    throw new Error(
+      "SESSION_SECRET is missing, the dev default, or shorter than 16 chars in a deployed " +
+      "environment. Set a strong SESSION_SECRET (e.g. `openssl rand -base64 32`) before " +
+      "minting sessions — refusing to issue a forgeable Pro token."
+    );
+  }
+}
 
 export function signSession(payload) {
+  assertSessionSecret();
   const body = Buffer.from(JSON.stringify(payload)).toString("base64url");
   const sig = crypto.createHmac("sha256", SECRET).update(body).digest("base64url");
   return `${body}.${sig}`;
 }
 
 export function verifySession(token) {
+  // Fail closed on verify too: with an unsafe secret in a deployed env, treat
+  // every cookie as invalid (caller falls back to free) rather than trusting a
+  // signature anyone could have produced.
+  if (INSECURE_SECRET) return null;
   if (!token || !token.includes(".")) return null;
   const [body, sig] = token.split(".");
   const expected = crypto.createHmac("sha256", SECRET).update(body).digest("base64url");
