@@ -120,9 +120,32 @@ function homeMeta() {
   };
 }
 
-// Organization + WebSite (SearchAction) + Dataset entity schema for the homepage.
-// sameAs omitted deliberately — no verified social profiles on file (don't invent them).
-function homeJsonLd() {
+// Organization + WebSite (SearchAction) + Dataset + ItemList entity schema for the
+// homepage. sameAs omitted deliberately — no verified social profiles on file.
+// The ItemList exposes the ranking as a machine-readable ORDERED list (position +
+// artist), which is what answer engines (ChatGPT/Perplexity/AI Overviews) parse into
+// "the #1 most in-demand techno DJ is X". `dateModified` advertises the daily refresh
+// — AI engines preferentially cite fresh sources, and a daily-updated ranking beats a
+// stale listicle. `lastUpdated` comes from rankings.json (generateStatic); falls back to today.
+function homeJsonLd(artists = [], total = 0, lastUpdated = "") {
+  const modified = (lastUpdated || new Date().toISOString()).slice(0, 10);
+  const ranked = artists
+    .filter((a) => a.name && Number.isFinite(a.score))
+    .sort((a, b) => (a.rank ?? 1e9) - (b.rank ?? 1e9))
+    .slice(0, 25);
+  const itemList = {
+    "@context": "https://schema.org", "@type": "ItemList",
+    name: "PEAKTIME DJ Booking-Demand Index — Top 25",
+    description: "House and techno DJs ranked by booking demand, refreshed daily.",
+    url: `${ORIGIN}/`, numberOfItems: total,
+    itemListOrder: "https://schema.org/ItemListOrderDescending",
+    itemListElement: ranked.map((a, i) => {
+      const slug = slugify(a.name);
+      return { "@type": "ListItem", position: Number.isFinite(a.rank) ? a.rank : i + 1,
+        url: `${ORIGIN}/artist/${slug}`,
+        item: { "@type": "MusicGroup", name: a.name, url: `${ORIGIN}/artist/${slug}` } };
+    }),
+  };
   return [
     { "@context": "https://schema.org", "@type": "Organization", name: "PEAKTIME",
       alternateName: "The DJ Rankings", url: `${ORIGIN}/`, logo: `${ORIGIN}/brand/avatar-1080.png`,
@@ -137,14 +160,18 @@ function homeJsonLd() {
       description: "A multi-signal ranking of house and techno DJs by booking demand, combining "
         + "streams, Beatport and Resident Advisor signal, touring activity, search interest and social velocity.",
       creator: { "@type": "Organization", name: "PEAKTIME" }, isAccessibleForFree: true,
+      dateModified: modified,
       keywords: ["DJ rankings", "booking demand", "house music", "techno", "electronic music", "demand index"] },
+    itemList,
   ];
 }
 
 // Top-N ranking rows baked as static HTML, mirroring the live .dj-* layout so the
 // createRoot() re-render swaps in without a visible reflow. Crawler-visible content +
 // the homepage's only internal links to artist pages (the SPA list isn't crawlable).
-function homeBody(artists, total, n = 25) {
+function homeBody(artists, total, lastUpdated = "", n = 25) {
+  const updated = new Date((lastUpdated || new Date().toISOString()))
+    .toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
   const ranked = artists
     .filter((a) => a.name && Number.isFinite(a.score))
     .sort((a, b) => (a.rank ?? 1e9) - (b.rank ?? 1e9))
@@ -168,6 +195,7 @@ function homeBody(artists, total, n = 25) {
       <h1>PEAKTIME — the demand index for electronic music</h1>
       <p>Multi-signal rankings of house and techno DJs by booking demand — streams, Beatport
         charts, Resident Advisor signal, touring and search velocity. Before the industry catches on.</p>
+      <p class="seo-updated" style="color:#75767d;font-size:13px">Ranking of ${total} DJs · updated daily · last updated ${esc(updated)}</p>
       <h2>Top ${ranked.length} by booking demand</h2>
       <ol class="dj-list-prerender" style="list-style:none;padding:0">${rows}</ol>
       <p><a href="/methodology">How the demand score is built</a></p>
@@ -249,6 +277,23 @@ async function build() {
     { loc: "/", priority: 1.0, changefreq: "daily", lastmod: today },
     { loc: "/press", priority: 0.5, changefreq: "monthly", lastmod: today },
   ];
+
+  // Published reports — real static HTML under public/reports (shipped to dist/),
+  // previously orphaned from the sitemap. Listed only if the built file exists, so a
+  // renamed/removed report never leaves a 404 in the sitemap. Mirrors the REPORTS
+  // array in App.jsx; the daily Rank 2.0 report changes most, hence changefreq daily.
+  const REPORT_PAGES = [
+    { loc: "/reports/rank-2-0/",          file: "reports/rank-2-0/index.html",          changefreq: "daily" },
+    { loc: "/reports/iii-points-2026/",   file: "reports/iii-points-2026/index.html",   changefreq: "monthly" },
+    { loc: "/reports/crssd-fall-2026/",   file: "reports/crssd-fall-2026/index.html",   changefreq: "monthly" },
+    { loc: "/reports/the-index-launch.html", file: "reports/the-index-launch.html",     changefreq: "monthly" },
+    { loc: "/reports/mau-p.html",         file: "reports/mau-p.html",                   changefreq: "monthly" },
+  ];
+  for (const r of REPORT_PAGES) {
+    if (fs.existsSync(path.join(DIST, r.file))) {
+      urls.push({ loc: r.loc, priority: 0.6, changefreq: r.changefreq, lastmod: today });
+    }
+  }
   let nArtist = 0, nValue = 0;
 
   for (const a of artists) {
@@ -313,7 +358,8 @@ async function build() {
   // createRoot() wipes #root on mount, so this is crawler/first-paint only (no hydration).
   {
     const { title, desc } = homeMeta();
-    const html = renderPage(tpl, { url: "/", title, desc, jsonld: homeJsonLd(), body: homeBody(artists, total) });
+    const html = renderPage(tpl, { url: "/", title, desc,
+      jsonld: homeJsonLd(artists, total, d.lastUpdated), body: homeBody(artists, total, d.lastUpdated) });
     fs.writeFileSync(TEMPLATE, html); // dist/index.html
   }
 
