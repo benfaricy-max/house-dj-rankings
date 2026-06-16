@@ -1491,9 +1491,10 @@ const cityMatch = (raCity, marketCity) => {
 
 // Booking Intelligence — Lineup Builder + Value Gap + the three market views,
 // all under one tab with a single sub-nav.
-function BookingIntelPage({ rankings }) {
-  const [view, setView] = useState("booking");
+function BookingIntelPage({ rankings, lastUpdated, initialView = "booking" }) {
+  const [view, setView] = useState(initialView);
   const TABS = [
+    ["index", "The Index"],
     ["booking", "Lineup Builder"],
     ["scout", "City Scout"],
     ["read", "City Read"],
@@ -1510,6 +1511,7 @@ function BookingIntelPage({ rankings }) {
           <button key={k} className={`mk-subtab ${view === k ? "mk-subtab--on" : ""}`} onClick={() => setView(k)}>{label}</button>
         ))}
       </div>
+      {view === "index" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading the Index…</div>}><IndexDrop rankings={rankings} lastUpdated={lastUpdated} /></Suspense>}
       {view === "booking" && <BookingToolPage rankings={rankings} />}
       {view === "buyers" && <BuyerLane rankings={rankings} onOpenValue={slug => { window.location.href = `/value/${slug}`; }} />}
       {view === "value" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ValueGapPage rankings={rankings} /></Suspense>}
@@ -2683,7 +2685,7 @@ export default function App() {
           <button className={`top-tab ${activeTab === "booking" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking")}>Booking Intelligence</button>
           <button className={`top-tab ${activeTab === "clubs" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("clubs")}>Club Index</button>
           <button className={`top-tab ${activeTab === "reports" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("reports")}>Reports</button>
-          <button className={`top-tab ${activeTab === "index" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("index")}>The Index</button>
+          {/* "The Index" now lives as a sub-tab under Booking Intelligence */}
           {editor && <button className={`top-tab ${activeTab === "journal" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("journal")}>Journal <span className="tab-private">·private</span></button>}
           <button className={`top-tab ${activeTab === "scouting" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("scouting")}>Scouting</button>
           {/* TEMP: Breakouts & Movers tabs hidden until enough history accrues to populate them
@@ -2695,10 +2697,11 @@ export default function App() {
       </header>
 
       {activeTab === "pro" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ProPage rankings={rankings} /></Suspense>}
-      {activeTab === "booking"       && <BookingIntelPage rankings={rankings} />}
+      {activeTab === "booking"       && <BookingIntelPage rankings={rankings} lastUpdated={lastUpdated} />}
       {activeTab === "clubs"         && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ClubsPage /></Suspense>}
       {activeTab === "reports"       && <ReportsPage rankings={rankings} />}
-      {activeTab === "index"         && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading the Index…</div>}><IndexDrop rankings={rankings} lastUpdated={lastUpdated} /></Suspense>}
+      {/* "The Index" now lives as a sub-tab under Booking Intelligence; keep the old top-level route as a deep-link redirect into that sub-tab. */}
+      {activeTab === "index"         && <BookingIntelPage rankings={rankings} lastUpdated={lastUpdated} initialView="index" />}
       {activeTab === "journal"       && editor && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><BlogPage /></Suspense>}
       {activeTab === "scouting"      && <ScoutingPage rankings={rankings} />}
       {/* TEMP: hidden until sufficient data
