@@ -15,6 +15,19 @@ function fmt(n) {
   return String(n);
 }
 
+// How firm each booking-fee number is, by how it was derived (computeFees.js).
+// We never imply we know a fee we don't — the confidence pill says so plainly.
+const FEE_CONF_TIP = {
+  anchored: "Verified — a real quoted/contracted/published fee, not modelled.",
+  curated:  "Hand-tiered from known bookings — an estimate, not a transacted fee.",
+  estimate: "Listener-calibrated estimate laddered from the known tiers — lowest confidence.",
+};
+const FEE_BASIS_SUB = {
+  anchored: "verified fee · sourced",
+  curated:  "curated club/festival range",
+  estimate: "estimated from popularity (listeners)",
+};
+
 // ── Career trajectory (12-mo search interest) ──
 function TrajectoryChart({ series }) {
   if (!Array.isArray(series) || series.length < 4) {
@@ -330,8 +343,11 @@ export default function ArtistProfile({ rankings, slug, onBack }) {
           {dj.booking_fee && (
             <div className="ap-signal">
               <div className="ap-signal-val">{dj.booking_fee.label}</div>
-              <div className="ap-signal-key">Booking fee {dj.booking_fee.basis === "curated" || dj.booking_fee.basis === "anchored" ? "" : "(est.)"}</div>
-              <div className="ap-signal-sub">curated club/festival range</div>
+              <div className="ap-signal-key">
+                Booking fee {dj.booking_fee.basis === "curated" || dj.booking_fee.basis === "anchored" ? "" : "(est.)"}
+                {dj.booking_fee.fee_confidence && <span className={`ap-conf ap-conf--${dj.booking_fee.fee_confidence}`} title={FEE_CONF_TIP[dj.booking_fee.basis] || ""}>{dj.booking_fee.fee_confidence}</span>}
+              </div>
+              <div className="ap-signal-sub">{FEE_BASIS_SUB[dj.booking_fee.basis] || "curated club/festival range"}</div>
             </div>
           )}
           {dj.value_signal && dj.value_signal !== "fair" && (
