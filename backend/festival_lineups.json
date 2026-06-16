@@ -1,16 +1,67 @@
 {
   "_doc": "Major-festival booking presence → festival_score (computeFestivalScore.js). tier: 1.0 = global flagship, 0.6 = major regional/boutique. acts[] MUST match rankings.json names EXACTLY (a mismatch just self-heals — the act is treated as unmeasured, never penalised). STARTER SEED, hand-entered from well-known headliner relationships — VERIFY + EXPAND via a scraper (fetchFestivals.js, Songkick festival tags / lineup aggregators) and refresh each season. Coverage is the gate: the signal only nudges acts listed here.",
   "updated": "2026-06-16",
-  "source": "manual-starter",
+  "source": "fetchFestivals.js (Songkick)",
   "festivals": [
-    { "name": "Tomorrowland", "tier": 1.0, "season": "2025", "acts": ["Charlotte de Witte", "Amelie Lens", "Carl Cox", "Adam Beyer", "Eric Prydz", "Anyma", "FISHER", "Dom Dolla", "Hugel", "Solomun"] },
-    { "name": "EDC Las Vegas", "tier": 1.0, "season": "2025", "acts": ["FISHER", "John Summit", "Dom Dolla", "Chris Lake", "Gordo", "Disco Lines", "James Hype", "Hugel", "Mau P"] },
-    { "name": "Coachella", "tier": 1.0, "season": "2025", "acts": ["FISHER", "John Summit", "Disco Lines", "Anyma", "Peggy Gou", "Mau P"] },
-    { "name": "Ultra Miami", "tier": 1.0, "season": "2025", "acts": ["Charlotte de Witte", "Carl Cox", "Adam Beyer", "Anyma", "Chris Lake", "John Summit", "Gordo"] },
-    { "name": "Awakenings", "tier": 1.0, "season": "2025", "acts": ["Charlotte de Witte", "Amelie Lens", "Adam Beyer", "Sven Väth", "Carl Cox"] },
-    { "name": "Sónar", "tier": 1.0, "season": "2025", "acts": ["Peggy Gou", "ANOTR", "Chris Stussy"] },
-    { "name": "CRSSD", "tier": 0.6, "season": "2025", "acts": ["Disco Lines", "Mau P", "Chris Lake", "Dom Dolla", "&ME", "Cloonee"] },
-    { "name": "Portola", "tier": 0.6, "season": "2025", "acts": ["Disco Lines", "John Summit", "Mau P", "Peggy Gou"] },
-    { "name": "Parklife", "tier": 0.6, "season": "2025", "acts": ["James Hype", "Hugel", "Chris Stussy", "ANOTR"] }
+    {
+      "name": "Ultra",
+      "tier": 1,
+      "acts": [
+        "Adam Beyer",
+        "Alisha",
+        "CamelPhat",
+        "DJ T.",
+        "Dom Dolla",
+        "FISHER",
+        "GUDFELLA",
+        "Guy Gerber",
+        "I Hate Models",
+        "Jamie Jones",
+        "John Summit",
+        "Mau P",
+        "Themba",
+        "Ultra Nate"
+      ]
+    },
+    {
+      "name": "Sónar",
+      "tier": 1,
+      "acts": [
+        "Amelie Lens",
+        "Charlotte de Witte",
+        "Chris Stussy",
+        "Gerd Janson",
+        "KETTAMA",
+        "WhoMadeWho"
+      ]
+    },
+    {
+      "name": "EDC",
+      "tier": 1,
+      "acts": [
+        "Sam Alfred"
+      ]
+    },
+    {
+      "name": "Hï / Ushuaïa Ibiza",
+      "tier": 0.6,
+      "acts": [
+        "Andrea Oliva",
+        "CamelPhat",
+        "Hugel",
+        "James Hype",
+        "MK",
+        "Tale Of Us",
+        "Themba"
+      ]
+    },
+    {
+      "name": "Parookaville",
+      "tier": 0.6,
+      "acts": [
+        "Agents Of Time",
+        "Charlotte de Witte"
+      ]
+    }
   ]
 }

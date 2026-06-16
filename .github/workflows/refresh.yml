@@ -91,6 +91,11 @@ jobs:
         working-directory: backend
         continue-on-error: true   # plain GraphQL, no puppeteer — runs in CI; skip stale (<14d)
 
+      - name: Festival presence signal (Songkick lineups)
+        run: node fetchFestivals.js
+        working-directory: backend
+        continue-on-error: true   # plain HTTP; merge-safe (failed fetch keeps prior lineups). Feeds next generateStatic via computeFestivalScore.
+
       - name: Reconcile tour reach (fill Songkick gaps from RA)
         run: node reconcileTour.js
         working-directory: backend

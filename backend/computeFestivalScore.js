@@ -51,12 +51,17 @@ function festivalScoreFor(name, weights) {
   return Math.round(Math.min(w, CAP) / CAP * 100);
 }
 
-// Set a.festival_score in place for acts present in the lineup file; leave it
-// undefined for the rest (so score.js self-heals it away for them).
+// Set a.festival_score from the lineup file. AUTHORITATIVE: an act no longer on any
+// tracked lineup has its festival_score CLEARED (deleted) so score.js self-heals it
+// away — otherwise a prior value carried in via generateStatic's `...prev` spread
+// would go stale (festival presence is current-season). The lineup file is already
+// merge-safe at the scraper level (a failed fetch keeps prior memberships), so the
+// file is the authoritative current state to mirror here.
 function computeFestivalScores(artists, weights = loadFestivalWeights()) {
   for (const a of artists) {
     const s = festivalScoreFor(a.name, weights);
     if (s !== undefined) a.festival_score = s;
+    else if ("festival_score" in a) delete a.festival_score;
   }
   return artists;
 }
