@@ -1,0 +1,17 @@
+priority,name,target_venue,event_date,event_status,jurisdiction,records_mechanism,request_status,date_filed,fee_found_gbp,source_type,source_url,date_quoted,region,note
+1,Disco Lines,Red Rocks Amphitheatre,2025-04-05,past (sold out - "Disco Rocks"),City & County of Denver,CORA - Denver Arts & Venues,not_started,,,contract,,,US-amphitheater,Executed past-show settlement; it's murph supported
+1,Dom Dolla,Red Rocks Amphitheatre,2024-04-05,past (sold out - opening weekend),City & County of Denver,CORA - Denver Arts & Venues,not_started,,,contract,,,US-amphitheater,3rd consecutive RR year - 2022/2023 also requestable
+1,Gorgon City,Red Rocks Amphitheatre,2023-04-27,past,City & County of Denver,CORA - Denver Arts & Venues,not_started,,,contract,,,US-amphitheater,Also played RR 2022-04-14; w/ DJ Seinfeld + Franky Wah
+1,Chris Lake,Red Rocks Amphitheatre,2025-08-30,past (headline debut),City & County of Denver,CORA - Denver Arts & Venues,not_started,,,contract,,,US-amphitheater,Settlement also carries Chris Lorenzo support fee (row below)
+1,Chris Lorenzo,Red Rocks Amphitheatre,2025-08-30,past (support for Chris Lake),City & County of Denver,CORA - Denver Arts & Venues,not_started,,,contract,,,US-amphitheater,BONUS - rides in Chris Lake settlement; support guarantee
+1,Mau P,Red Rocks Amphitheatre,2025-11-15,past,City & County of Denver,CORA - Denver Arts & Venues,not_started,,,contract,,,US-amphitheater,Executed past-show settlement
+2,John Summit,Red Rocks Amphitheatre,2026-04-08,future (contract signed; prior sold-out RR exist),City & County of Denver,CORA - Denver Arts & Venues,not_started,,,contract,,,US-amphitheater,If 2026 withheld pre-event request earlier sold-out RR date
+2,FISHER,Red Rocks Amphitheatre,2026-05-23,future (contract signed),City & County of Denver,CORA - Denver Arts & Venues,not_started,,,contract,,,US-amphitheater,Contract exists; may be withheld until performed
+2,Cloonee,Red Rocks Amphitheatre,2026-05-09,future (AEG Presents),City & County of Denver,CORA - Denver Arts & Venues,not_started,,,contract,,,US-amphitheater,Settlement also carries KETTAMA support fee (row below)
+2,KETTAMA,Red Rocks Amphitheatre,2026-05-09,future (support for Cloonee),City & County of Denver,CORA - Denver Arts & Venues,not_started,,,contract,,,US-amphitheater,BONUS - rides in Cloonee settlement; support guarantee
+3,ANOTR,VERIFY (no RR date found),,unknown,unknown,public-records,not_started,,,contract,,,US-amphitheater,No RR date surfaced; check other publicly-owned US venues/festivals
+3,SIDEPIECE,VERIFY (no RR date found),,unknown,unknown,public-records,not_started,,,contract,,,US-amphitheater,Often support on US amphitheater bills - check co-headline settlements
+3,Disclosure,VERIFY,,unknown,unknown,public-records,not_started,,,contract,,,US-amphitheater,Plays larger US venues; verify a publicly-owned one
+3,Hot Since 82,VERIFY,,unknown,unknown,public-records,not_started,,,contract,,,US-amphitheater,US touring; verify public-venue date
+3,Prospa,VERIFY,,unknown,unknown,public-records,not_started,,,contract,,,US-amphitheater,Lower confidence; verify US public-venue date
+3,Peggy Gou,VERIFY,,unknown,unknown,public-records,not_started,,,contract,,,US-amphitheater,Mostly private/festival; check public-venue US dates
