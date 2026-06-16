@@ -2827,14 +2827,12 @@ export default function App() {
           </svg>
           <span className="brand-word">PEAKTIME</span>
         </a>
-        <div className="header-eyebrow">Underground electronic · house &amp; techno</div>
+        <div className="header-eyebrow">House &amp; techno</div>
         <h1 className="header-title">The demand index for underground electronic music</h1>
-        <p className="header-scope" style={{ margin: "10px auto 0", maxWidth: 600, fontSize: 14, color: "#c9c8c2", lineHeight: 1.55 }}>
-          Booking demand, not Spotify followers. We rank house &amp; techno acts by who&apos;s actually
-          filling rooms and moving the scene — blended from live bookings, charts, and momentum,
-          refreshed daily. The one read that isn&apos;t selling either side anything.
+        <p className="header-scope" style={{ margin: "10px auto 0", maxWidth: 540, fontSize: 14, color: "#c9c8c2", lineHeight: 1.55 }}>
+          Booking demand, not Spotify followers. Ranked by live bookings, charts, and momentum.
         </p>
-        {lastUpdated && <p className="header-updated">Updated {new Date(lastUpdated).toLocaleString()}</p>}
+        {lastUpdated && <p className="header-updated">Updated {new Date(lastUpdated).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}</p>}
         <div className="top-tabs">
           <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>
           <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
