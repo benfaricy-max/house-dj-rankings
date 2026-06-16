@@ -107,7 +107,14 @@ async function getRAData(artistName, overrideSlug) {
     // Filter to last 6 months; RA returns ~10 events
     const recent  = events.filter(e => (now - new Date(e.date).getTime()) < SIX_M);
 
-    const attendingVals = recent.map(e => e.attending || 0);
+    // Attending = a per-show DRAW proxy, so EXCLUDE festival events: a festival's
+    // "attending" count is the whole-site crowd, not this act's pull, and one festival
+    // gig otherwise pegs the average (e.g. Midland: a 37,325 festival reading dragged
+    // his avg to 4094 against tier-2 club bookings). Fall back to all events only if an
+    // act has nothing but festivals (else attending would read 0 for festival-circuit acts).
+    const drawEvents    = recent.filter(e => !e.isFestival);
+    const attendSource  = drawEvents.length ? drawEvents : recent;
+    const attendingVals = attendSource.map(e => e.attending || 0);
     // Split into first-5 (most recent) and second-5 (older) for trajectory
     const h1 = attendingVals.slice(0, 5);  // most recent
     const h2 = attendingVals.slice(5);     // older
