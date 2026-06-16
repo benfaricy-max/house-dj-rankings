@@ -310,6 +310,26 @@ Four review findings on the index, and how each was handled:
   weight to `tiktok_follower_growth_rate` once it clears ~50% coverage (less gameable, but
   0% covered today — weighting it now would silently zero out TikTok via self-healing).
 
+## Rank 2.0 (experimental, parallel weighting) — Reports tab
+An ALTERNATE weight vector run alongside production so the two rankings compare
+side-by-side; production (live_demand LEADS) stays the default. `WEIGHTS_V2` in
+`backend/score.js`; `generateStatic.js` runs `scoreArtists` twice and merges the
+second pass as `score_v2` / `rank_v2` onto each artist in rankings.json.
+Vector (discovery-leaning — pulls weight OFF booking onto scene/DJ-support/search/reach):
+scene .186, dj_support .1395, trends .093, listeners .0744, tiktok .0744, wikipedia .0744,
+releases .0651, live_demand .0558, beatport .0558, youtube .0465, scene_geo .0372,
+label .0279 — i.e. the 12 requested weights (scene 20 / dj 15 / trends 10 / listeners 8 /
+tiktok 8 / wiki 8 / releases 7 / live 6 / beatport 6 / youtube 5 / intl 4 / label 3) scaled
+by 0.93, with growth .07 KEPT at production weight so the sum stays 1.00. festival_score is
+DROPPED from 2.0 (explicit 0 in WEIGHTS_V2 — else base 0.05 carries over via Object.assign):
+a simpler 2.0 methodology that doesn't lean on hand-maintained festival_lineups.json.
+Production still weights festival .05 — only 2.0 drops it.
+Self-heal + credibility/coverage multipliers are applied identically (scoreArtists is
+weight-agnostic). UI: a `RankV2Report` in the **Reports** tab (`view==="rankv2"` inside
+ReportsPage, same pattern as the Charts report) — weight-diff table, 2.0 leaderboard, and
+biggest prod-vs-2.0 divergences. NOT a sort mode on the Rankings tab (deliberately kept off
+the live list). Keep `WEIGHTS_V2` (score.js) + `RANK_V2_WEIGHTS` (App.jsx) in sync.
+
 ## Key per-artist fields (in artists.json, persisted)
 - `emerging` (bool) — reputation-based; drives "Ones to Watch" (excludes legends).
 - `booking_fee` {label, mid, tier, color} — curated club/festival estimate.

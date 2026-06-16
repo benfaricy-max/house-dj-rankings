@@ -16,7 +16,7 @@ const { getMixcloudData }       = require("./fetchMixcloud");
 const { getSoundCloudData }     = require("./fetchSoundCloud");
 const { getPlaylistPlacements } = require("./fetchSpotifyPlaylists");
 const { getGoogleTrends }       = require("./fetchTrends");
-const { scoreArtists }          = require("./score");
+const { scoreArtists, WEIGHTS_V2 } = require("./score");
 const { computeLiveDemand }     = require("./computeLiveDemand");
 const { recomputeRaScores }     = require("./computeRaScore");
 const { computeFestivalScores } = require("./computeFestivalScore");
@@ -194,6 +194,18 @@ async function main() {
 
   const ranked = scoreArtists(enriched);
   ranked.forEach((dj, i) => { dj.rank = i + 1; });
+
+  // Rank 2.0 (parallel) — same pipeline, alternate weight vector (WEIGHTS_V2 in
+  // score.js). Run as a second independent pass and merge score_v2 / rank_v2 onto
+  // the production ranking so the frontend can offer a "Rank 2.0" sort toggle
+  // without changing the default order. Self-heal + credibility/coverage logic is
+  // identical (scoreArtists applies it to whatever weights it's handed).
+  const v2 = scoreArtists(enriched, WEIGHTS_V2);
+  const v2ByName = new Map(v2.map(d => [d.name, d]));
+  for (const dj of ranked) {
+    const m = v2ByName.get(dj.name);
+    if (m) { dj.score_v2 = m.score; dj.rank_v2 = m.rank; }
+  }
 
   // Append today's rank to each artist's history (one point/day, keep ~90 days).
   // Powers the historical rank chart on profile pages. Merge-safe — only grows.

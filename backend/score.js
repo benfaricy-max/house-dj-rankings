@@ -256,4 +256,38 @@ function scoreArtists(artists, weightOverride) {
     .map((artist, i) => ({ ...artist, rank: i + 1 }));
 }
 
-module.exports = { scoreArtists };
+// ─────────────────────────────────────────────────────────────────────────────
+// Rank 2.0 (experimental, parallel) — an ALTERNATE weight vector run alongside the
+// production weights so the two rankings can be compared side-by-side before either
+// is committed. Production stays the default (live_demand LEADS); 2.0 is a reach/
+// discovery-leaning cut requested for evaluation: it pulls weight OFF the booking
+// signal (live_demand .17→.0528) and onto scene, DJ support, search, social reach
+// (TikTok/Wikipedia/YouTube) and catalog. generateStatic runs scoreArtists twice and
+// merges 2.0's output as score_v2 / rank_v2; the frontend exposes a sort toggle.
+//
+// The 12 requested weights (scene 20, dj_support 15, trends 10, listeners 8, tiktok 8,
+// live 6, beatport 6, intl 4, label 3, youtube 5, wikipedia 8, releases 7 — sum 93
+// after reserving 7 for growth, the one omitted signal kept) are scaled by 0.93 so
+// growth (.07) keeps its production weight and the vector still sums to 1.00.
+// festival_score is DROPPED from 2.0 (explicit 0 — without it the base 0.05 would
+// carry over via Object.assign): a deliberately simpler 2.0 methodology that doesn't
+// lean on the hand-maintained festival_lineups.json. Self-healing + the credibility/
+// coverage multipliers are unchanged (scoreArtists is weight-agnostic).
+const WEIGHTS_V2 = {
+  manual_scene_score:           0.186,   // scene 20% × 0.93
+  tl_support_score:             0.1395,  // dj support 15%
+  google_trends_score:          0.093,   // google trends 10%
+  spotify_monthly_listeners:    0.0744,  // monthly listeners 8%
+  tiktok_post_count:            0.0744,  // tik tok 8%
+  wikipedia_pageviews:          0.0744,  // wikipedia views 8%
+  spotify_playlist_placements:  0.0651,  // release/catalog 7%
+  live_demand_score:            0.0558,  // live booking 6%
+  beatport_score:               0.0558,  // beatport chart 6%
+  youtube_subscribers:          0.0465,  // youtube subscribers 5%
+  scene_geography:              0.0372,  // international appeal 4%
+  label_score:                  0.0279,  // label trajectory 3%
+  spotify_follower_growth_rate: 0.07,    // KEPT (omitted from the 12 → production weight retained)
+  festival_score:               0,       // DROPPED from 2.0 (explicit 0 overrides base 0.05)
+};
+
+module.exports = { scoreArtists, WEIGHTS_V2 };
