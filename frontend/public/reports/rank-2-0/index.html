@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rank 2.0 — An Alternate Weighting | The DJ Rankings</title>
+<meta name="description" content="The same signals, reweighted toward scene credibility, DJ support, search and reach instead of booking demand. The weight diff, the new leaderboard, and who moves most between the two rankings." />
+<meta property="og:title" content="Rank 2.0 — An Alternate Weighting" />
+<meta property="og:description" content="The same signals, reweighted toward scene credibility, DJ support, search and reach instead of booking demand." />
+<meta property="og:image" content="https://thedjrankings.com/brand/post-methodology-1080.png" />
+<meta property="og:type" content="article" />
+<style>
+  :root { --ink:#15151c; --muted:#6b6b78; --line:#e7e7ee; --lime:#5b8f00; --limebg:#eef7d6; --up:#1a8f4c; --dn:#c0492a; --accent:#3b3bdb; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", Inter, Arial, sans-serif; color: var(--ink); background: #f3f3f6; padding: 28px; }
+  .page { max-width: 820px; margin: 0 auto; background: #fff; border-radius: 14px; box-shadow: 0 6px 30px rgba(0,0,0,.08); overflow: hidden; }
+  .top { background: linear-gradient(120deg,#15151c,#23233a); color: #fff; padding: 26px 34px; display: flex; justify-content: space-between; align-items: center; }
+  .brand { font-size: 12px; letter-spacing: .18em; color: #a8e00f; font-weight: 700; }
+  .doc-title { font-size: 13px; color: #aaa; margin-top: 2px; }
+  .top .date { font-size: 12px; color: #9a9aac; text-align: right; }
+  .hero { padding: 28px 34px 22px; border-bottom: 1px solid var(--line); }
+  .hero .tag { display:inline-block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:var(--accent); background:#edeefe; border-radius:20px; padding:3px 11px; margin-bottom:12px; }
+  .hero h1 { font-size: 30px; line-height: 1.1; }
+  .hero .sub { color: var(--muted); font-size: 14.5px; margin-top: 10px; max-width: 62ch; line-height: 1.5; }
+  .section { padding: 22px 34px; border-bottom: 1px solid var(--line); }
+  .section h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 16px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th { text-align: left; color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+  td { padding: 7px 8px; border-bottom: 1px solid #f1f1f5; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.strong { font-weight: 700; }
+  td.muted, .muted { color: var(--muted); }
+  td.wl { font-weight: 600; }
+  td.rk { font-weight: 700; }
+  .dl { font-weight: 700; }
+  .dl.up { color: var(--up); }
+  .dl.dn { color: var(--dn); }
+  .dl.flat { color: var(--muted); font-weight: 500; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .mv-h { font-size: 12px; font-weight: 700; margin-bottom: 10px; }
+  .mv-h.up { color: var(--up); }
+  .mv-h.dn { color: var(--dn); }
+  .mv { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 0; border-bottom: 1px solid #f1f1f5; font-size: 13.5px; }
+  .mv-n { font-weight: 600; }
+  .mv-r { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .note { font-size: 12px; color: var(--muted); margin-top: 12px; line-height: 1.5; }
+  .foot { padding: 16px 34px; font-size: 11px; color: var(--muted); display: flex; justify-content: space-between; }
+  .foot b { color: #15151c; }
+  @media (max-width: 560px) { .grid2 { grid-template-columns: 1fr; gap: 18px; } body { padding: 12px; } .section, .hero, .top { padding-left: 18px; padding-right: 18px; } }
+  @media print { body { background:#fff; padding:0; } .page { box-shadow:none; border-radius:0; } @page { margin: 12mm; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top">
+    <div><div class="brand">THE DJ RANKINGS</div><div class="doc-title">Methodology Report · Experimental</div></div>
+    <div class="date">Updated 16 June 2026<br/>342 acts ranked</div>
+  </div>
+
+  <div class="hero">
+    <span class="tag">Rank 2.0</span>
+    <h1>An alternate weighting</h1>
+    <p class="sub">The same signals, reweighted. Where the live index leads on <b>booking demand</b>, Rank 2.0 leans toward <b>scene credibility, DJ support, search and reach</b> — a discovery-first cut of the same data. This is a comparison brief; the live ranking on the site is unchanged.</p>
+  </div>
+
+  <div class="section">
+    <h2>How the weights change</h2>
+    <table>
+      <thead><tr><th class="wl">Signal</th><th class="num">Rank 2.0</th><th class="num">Live index</th><th class="num">Δ</th></tr></thead>
+      <tbody>
+<tr>
+      <td class="wl">Scene score</td>
+      <td class="num strong">20%</td>
+      <td class="num muted">20%</td>
+      <td class="num"><span class="dl flat">0</span></td>
+    </tr>
+<tr>
+      <td class="wl">DJ support (1001TL)</td>
+      <td class="num strong">15%</td>
+      <td class="num muted">11%</td>
+      <td class="num"><span class="dl up">+4</span></td>
+    </tr>
+<tr>
+      <td class="wl">Google Trends</td>
+      <td class="num strong">10%</td>
+      <td class="num muted">8%</td>
+      <td class="num"><span class="dl up">+2</span></td>
+    </tr>
+<tr>
+      <td class="wl">Monthly listeners</td>
+      <td class="num strong">8%</td>
+      <td class="num muted">5%</td>
+      <td class="num"><span class="dl up">+3</span></td>
+    </tr>
+<tr>
+      <td class="wl">TikTok</td>
+      <td class="num strong">8%</td>
+      <td class="num muted">1%</td>
+      <td class="num"><span class="dl up">+7</span></td>
+    </tr>
+<tr>
+      <td class="wl">Wikipedia views</td>
+      <td class="num strong">8%</td>
+      <td class="num muted">1%</td>
+      <td class="num"><span class="dl up">+7</span></td>
+    </tr>
+<tr>
+      <td class="wl">Release / catalog</td>
+      <td class="num strong">7%</td>
+      <td class="num muted">2%</td>
+      <td class="num"><span class="dl up">+5</span></td>
+    </tr>
+<tr>
+      <td class="wl">Live booking</td>
+      <td class="num strong">6%</td>
+      <td class="num muted">17%</td>
+      <td class="num"><span class="dl dn">-11</span></td>
+    </tr>
+<tr>
+      <td class="wl">Beatport chart</td>
+      <td class="num strong">6%</td>
+      <td class="num muted">13%</td>
+      <td class="num"><span class="dl dn">-7</span></td>
+    </tr>
+<tr>
+      <td class="wl">YouTube subscribers</td>
+      <td class="num strong">5%</td>
+      <td class="num muted">2%</td>
+      <td class="num"><span class="dl up">+3</span></td>
+    </tr>
+<tr>
+      <td class="wl">International appeal</td>
+      <td class="num strong">4%</td>
+      <td class="num muted">3%</td>
+      <td class="num"><span class="dl up">+1</span></td>
+    </tr>
+<tr>
+      <td class="wl">Label trajectory</td>
+      <td class="num strong">3%</td>
+      <td class="num muted">5%</td>
+      <td class="num"><span class="dl dn">-2</span></td>
+    </tr>
+      </tbody>
+    </table>
+    <p class="note">The 12 weights above are scaled to 93% so growth (7%) keeps its live weight; the vector sums to 100%. Festival presence — weighted 5% on the live index — is dropped from Rank 2.0 for a simpler methodology. Self-healing, the credibility floor and the coverage penalty are applied identically to both rankings.</p>
+  </div>
+
+  <div class="section">
+    <h2>Biggest divergences</h2>
+    <div class="grid2">
+      <div>
+        <div class="mv-h up">Ranks higher in 2.0</div>
+<div class="mv">
+      <span class="mv-n">Frankie Knuckles</span>
+      <span class="mv-r">#250 → #55 <span class="dl up">▲ 195</span></span>
+    </div>
+<div class="mv">
+      <span class="mv-n">Tale Of Us</span>
+      <span class="mv-r">#261 → #66 <span class="dl up">▲ 195</span></span>
+    </div>
+<div class="mv">
+      <span class="mv-n">Trentemøller</span>
+      <span class="mv-r">#308 → #142 <span class="dl up">▲ 166</span></span>
+    </div>
+<div class="mv">
+      <span class="mv-n">Larry Heard</span>
+      <span class="mv-r">#260 → #123 <span class="dl up">▲ 137</span></span>
+    </div>
+<div class="mv">
+      <span class="mv-n">BICEP</span>
+      <span class="mv-r">#194 → #68 <span class="dl up">▲ 126</span></span>
+    </div>
+<div class="mv">
+      <span class="mv-n">Maya</span>
+      <span class="mv-r">#299 → #174 <span class="dl up">▲ 125</span></span>
+    </div>
+      </div>
+      <div>
+        <div class="mv-h dn">Ranks lower in 2.0</div>
+<div class="mv">
+      <span class="mv-n">Mason Collective</span>
+      <span class="mv-r">#70 → #255 <span class="dl dn">▼ 185</span></span>
+    </div>
+<div class="mv">
+      <span class="mv-n">Township Rebellion</span>
+      <span class="mv-r">#59 → #240 <span class="dl dn">▼ 181</span></span>
+    </div>
+<div class="mv">
+      <span class="mv-n">Adam Ten</span>
+      <span class="mv-r">#75 → #254 <span class="dl dn">▼ 179</span></span>
+    </div>
+<div class="mv">
+      <span class="mv-n">Sidney Charles</span>
+      <span class="mv-r">#56 → #232 <span class="dl dn">▼ 176</span></span>
+    </div>
+<div class="mv">
+      <span class="mv-n">Antdot</span>
+      <span class="mv-r">#117 → #277 <span class="dl dn">▼ 160</span></span>
+    </div>
+<div class="mv">
+      <span class="mv-n">Mano Le Tough</span>
+      <span class="mv-r">#74 → #230 <span class="dl dn">▼ 156</span></span>
+    </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>The Rank 2.0 leaderboard</h2>
+    <table>
+      <thead><tr><th class="num">2.0</th><th>Artist</th><th class="num">Score</th><th class="num">Live</th><th class="num">Move</th></tr></thead>
+      <tbody>
+<tr>
+      <td class="num rk">#1</td>
+      <td>Prospa</td>
+      <td class="num">77.9</td>
+      <td class="num muted">#2</td>
+      <td class="num"><span class="dl up">▲ 1</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#2</td>
+      <td>Chris Lake</td>
+      <td class="num">76.3</td>
+      <td class="num muted">#6</td>
+      <td class="num"><span class="dl up">▲ 4</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#3</td>
+      <td>Charlotte de Witte</td>
+      <td class="num">76.1</td>
+      <td class="num muted">#3</td>
+      <td class="num"><span class="dl flat">—</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#4</td>
+      <td>FISHER</td>
+      <td class="num">75</td>
+      <td class="num muted">#5</td>
+      <td class="num"><span class="dl up">▲ 1</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#5</td>
+      <td>Peggy Gou</td>
+      <td class="num">74.4</td>
+      <td class="num muted">#4</td>
+      <td class="num"><span class="dl dn">▼ 1</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#6</td>
+      <td>Carl Cox</td>
+      <td class="num">74.4</td>
+      <td class="num muted">#11</td>
+      <td class="num"><span class="dl up">▲ 5</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#7</td>
+      <td>ANOTR</td>
+      <td class="num">73.1</td>
+      <td class="num muted">#1</td>
+      <td class="num"><span class="dl dn">▼ 6</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#8</td>
+      <td>Chris Stussy</td>
+      <td class="num">72.4</td>
+      <td class="num muted">#9</td>
+      <td class="num"><span class="dl up">▲ 1</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#9</td>
+      <td>Eric Prydz</td>
+      <td class="num">71.9</td>
+      <td class="num muted">#16</td>
+      <td class="num"><span class="dl up">▲ 7</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#10</td>
+      <td>Black Coffee</td>
+      <td class="num">71.7</td>
+      <td class="num muted">#7</td>
+      <td class="num"><span class="dl dn">▼ 3</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#11</td>
+      <td>Adam Beyer</td>
+      <td class="num">70.3</td>
+      <td class="num muted">#12</td>
+      <td class="num"><span class="dl up">▲ 1</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#12</td>
+      <td>Mau P</td>
+      <td class="num">69.3</td>
+      <td class="num muted">#10</td>
+      <td class="num"><span class="dl dn">▼ 2</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#13</td>
+      <td>John Summit</td>
+      <td class="num">69.2</td>
+      <td class="num muted">#21</td>
+      <td class="num"><span class="dl up">▲ 8</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#14</td>
+      <td>Dom Dolla</td>
+      <td class="num">69.1</td>
+      <td class="num muted">#18</td>
+      <td class="num"><span class="dl up">▲ 4</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#15</td>
+      <td>Michael Bibi</td>
+      <td class="num">68.2</td>
+      <td class="num muted">#14</td>
+      <td class="num"><span class="dl dn">▼ 1</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#16</td>
+      <td>Fred again..</td>
+      <td class="num">68.1</td>
+      <td class="num muted">#108</td>
+      <td class="num"><span class="dl up">▲ 92</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#17</td>
+      <td>Solomun</td>
+      <td class="num">67.2</td>
+      <td class="num muted">#25</td>
+      <td class="num"><span class="dl up">▲ 8</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#18</td>
+      <td>Four Tet</td>
+      <td class="num">67.2</td>
+      <td class="num muted">#37</td>
+      <td class="num"><span class="dl up">▲ 19</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#19</td>
+      <td>Cloonee</td>
+      <td class="num">67</td>
+      <td class="num muted">#8</td>
+      <td class="num"><span class="dl dn">▼ 11</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#20</td>
+      <td>Green Velvet</td>
+      <td class="num">66.5</td>
+      <td class="num muted">#24</td>
+      <td class="num"><span class="dl up">▲ 4</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#21</td>
+      <td>Armand Van Helden</td>
+      <td class="num">66.5</td>
+      <td class="num muted">#32</td>
+      <td class="num"><span class="dl up">▲ 11</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#22</td>
+      <td>Anyma</td>
+      <td class="num">66.1</td>
+      <td class="num muted">#66</td>
+      <td class="num"><span class="dl up">▲ 44</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#23</td>
+      <td>Tiga</td>
+      <td class="num">66</td>
+      <td class="num muted">#27</td>
+      <td class="num"><span class="dl up">▲ 4</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#24</td>
+      <td>Sasha</td>
+      <td class="num">65.7</td>
+      <td class="num muted">#19</td>
+      <td class="num"><span class="dl dn">▼ 5</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#25</td>
+      <td>Disclosure</td>
+      <td class="num">65.2</td>
+      <td class="num muted">#36</td>
+      <td class="num"><span class="dl up">▲ 11</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#26</td>
+      <td>Amelie Lens</td>
+      <td class="num">65</td>
+      <td class="num muted">#65</td>
+      <td class="num"><span class="dl up">▲ 39</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#27</td>
+      <td>Josh Baker</td>
+      <td class="num">64.9</td>
+      <td class="num muted">#13</td>
+      <td class="num"><span class="dl dn">▼ 14</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#28</td>
+      <td>James Hype</td>
+      <td class="num">64.9</td>
+      <td class="num muted">#50</td>
+      <td class="num"><span class="dl up">▲ 22</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#29</td>
+      <td>Jamie Jones</td>
+      <td class="num">64.7</td>
+      <td class="num muted">#38</td>
+      <td class="num"><span class="dl up">▲ 9</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#30</td>
+      <td>Sven Väth</td>
+      <td class="num">64.6</td>
+      <td class="num muted">#45</td>
+      <td class="num"><span class="dl up">▲ 15</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#31</td>
+      <td>Laurent Garnier</td>
+      <td class="num">64.3</td>
+      <td class="num muted">#44</td>
+      <td class="num"><span class="dl up">▲ 13</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#32</td>
+      <td>Bob Sinclar</td>
+      <td class="num">64.2</td>
+      <td class="num muted">#43</td>
+      <td class="num"><span class="dl up">▲ 11</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#33</td>
+      <td>MK</td>
+      <td class="num">64</td>
+      <td class="num muted">#57</td>
+      <td class="num"><span class="dl up">▲ 24</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#34</td>
+      <td>Âme</td>
+      <td class="num">63.9</td>
+      <td class="num muted">#22</td>
+      <td class="num"><span class="dl dn">▼ 12</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#35</td>
+      <td>Chris Lorenzo</td>
+      <td class="num">63</td>
+      <td class="num muted">#39</td>
+      <td class="num"><span class="dl up">▲ 4</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#36</td>
+      <td>Adriatique</td>
+      <td class="num">62.7</td>
+      <td class="num muted">#30</td>
+      <td class="num"><span class="dl dn">▼ 6</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#37</td>
+      <td>Richie Hawtin</td>
+      <td class="num">62.2</td>
+      <td class="num muted">#76</td>
+      <td class="num"><span class="dl up">▲ 39</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#38</td>
+      <td>Joris Voorn</td>
+      <td class="num">61.9</td>
+      <td class="num muted">#34</td>
+      <td class="num"><span class="dl dn">▼ 4</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#39</td>
+      <td>Gorgon City</td>
+      <td class="num">61.6</td>
+      <td class="num muted">#55</td>
+      <td class="num"><span class="dl up">▲ 16</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#40</td>
+      <td>The Martinez Brothers</td>
+      <td class="num">61.4</td>
+      <td class="num muted">#80</td>
+      <td class="num"><span class="dl up">▲ 40</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#41</td>
+      <td>Luciano</td>
+      <td class="num">61.2</td>
+      <td class="num muted">#69</td>
+      <td class="num"><span class="dl up">▲ 28</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#42</td>
+      <td>Mark Knight</td>
+      <td class="num">61.1</td>
+      <td class="num muted">#26</td>
+      <td class="num"><span class="dl dn">▼ 16</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#43</td>
+      <td>Kevin Saunderson</td>
+      <td class="num">60.7</td>
+      <td class="num muted">#46</td>
+      <td class="num"><span class="dl up">▲ 3</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#44</td>
+      <td>Max Styler</td>
+      <td class="num">60.6</td>
+      <td class="num muted">#17</td>
+      <td class="num"><span class="dl dn">▼ 27</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#45</td>
+      <td>Omar+</td>
+      <td class="num">60.4</td>
+      <td class="num muted">#29</td>
+      <td class="num"><span class="dl dn">▼ 16</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#46</td>
+      <td>Seth Troxler</td>
+      <td class="num">60.3</td>
+      <td class="num muted">#62</td>
+      <td class="num"><span class="dl up">▲ 16</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#47</td>
+      <td>Midland</td>
+      <td class="num">60.1</td>
+      <td class="num muted">#52</td>
+      <td class="num"><span class="dl up">▲ 5</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#48</td>
+      <td>The Hacker</td>
+      <td class="num">60.1</td>
+      <td class="num muted">#60</td>
+      <td class="num"><span class="dl up">▲ 12</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#49</td>
+      <td>Huxley</td>
+      <td class="num">60</td>
+      <td class="num muted">#94</td>
+      <td class="num"><span class="dl up">▲ 45</span></td>
+    </tr>
+<tr>
+      <td class="num rk">#50</td>
+      <td>Ben Böhmer</td>
+      <td class="num">59.9</td>
+      <td class="num muted">#42</td>
+      <td class="num"><span class="dl dn">▼ 8</span></td>
+    </tr>
+      </tbody>
+    </table>
+    <p class="note">Top 50 shown, ranked over the full database (house + techno) — the same pool as the live index before its house-anchored display filter.</p>
+  </div>
+
+  <div class="foot">
+    <span><b>The DJ Rankings</b> · thedjrankings.com</span>
+    <span>Rank 2.0 · experimental alternate weighting · refreshed daily</span>
+  </div>
+</div>
+</body>
+</html>

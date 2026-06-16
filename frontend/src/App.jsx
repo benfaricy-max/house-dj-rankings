@@ -2318,6 +2318,14 @@ function BreakoutsPage({ rankings, breakouts: staticBreakouts, breakoutThreshold
 // ── Reports — published analysis ────────────────────────────────────
 const REPORTS = [
   {
+    title: "Rank 2.0 — An Alternate Weighting",
+    dek: "The same signals, reweighted toward scene credibility, DJ support, search and reach instead of booking demand. The weight diff, the new leaderboard, and who moves most between the two rankings — refreshed daily off the live data.",
+    href: "/reports/rank-2-0/",
+    img: "/brand/post-methodology-1080.png",
+    tag: "Methodology",
+    date: "2026-06-16",
+  },
+  {
     title: "We Stopped Counting Followers",
     dek: "The first issue of The Index. Last week Hugel was #16; today he's #212 — nothing about Hugel changed, what we count did. Why we rebuilt the ranking around booking demand and scene credibility, not reach.",
     href: "/reports/the-index-launch.html",
@@ -2349,149 +2357,6 @@ const REPORTS = [
     date: "2026-05-30",
   },
 ];
-
-// ── Rank 2.0 — experimental alternate-weighting report ──────────────
-// Renders the parallel ranking baked into rankings.json (score_v2 / rank_v2 from
-// WEIGHTS_V2 in backend/score.js) as an in-app analysis report: the weight diff
-// vs production, the 2.0 leaderboard, and the acts that diverge most between the
-// two weightings. Read-only — the production ranking on the Rankings tab is
-// unchanged; this is a "what if we weighted it this way" comparison brief.
-const RANK_V2_WEIGHTS = [
-  ["Scene score",          "manual_scene_score",          20, 20],
-  ["DJ support (1001TL)",  "tl_support_score",            15, 11],
-  ["Google Trends",        "google_trends_score",         10, 8],
-  ["Monthly listeners",    "spotify_monthly_listeners",   8,  5],
-  ["TikTok",               "tiktok_post_count",           8,  1],
-  ["Wikipedia views",      "wikipedia_pageviews",         8,  1],
-  ["Release / catalog",    "spotify_playlist_placements", 7,  2],
-  ["Live booking",         "live_demand_score",           6,  17],
-  ["Beatport chart",       "beatport_score",              6,  13],
-  ["YouTube subscribers",  "youtube_subscribers",         5,  2],
-  ["International appeal",  "scene_geography",             4,  3],
-  ["Label trajectory",     "label_score",                 3,  5],
-];
-
-function RankV2Report({ rankings, onBack }) {
-  // Only acts the v2 pass scored (every act in a normal build). Sort by 2.0 rank.
-  const v2 = useMemo(
-    () => rankings.filter(r => Number.isFinite(r.rank_v2)).slice().sort((a, b) => a.rank_v2 - b.rank_v2),
-    [rankings]
-  );
-  // Divergence = production rank − 2.0 rank. Positive ⇒ 2.0 ranks the act HIGHER.
-  const movers = useMemo(
-    () => v2.map(r => ({ name: r.name, prod: r.rank, v2: r.rank_v2, score_v2: r.score_v2, d: r.rank - r.rank_v2 })),
-    [v2]
-  );
-  const risers  = useMemo(() => movers.slice().sort((a, b) => b.d - a.d).slice(0, 6), [movers]);
-  const fallers = useMemo(() => movers.slice().sort((a, b) => a.d - b.d).slice(0, 6), [movers]);
-
-  const Delta = ({ d }) => (
-    <span style={{ color: d > 0 ? "#7CE38B" : d < 0 ? "#E2683E" : "#75767d", fontVariantNumeric: "tabular-nums", fontWeight: 600 }}>
-      {d > 0 ? `▲ ${d}` : d < 0 ? `▼ ${Math.abs(d)}` : "—"}
-    </span>
-  );
-
-  return (
-    <div className="page rp-page">
-      <button className="ap-back" onClick={onBack}>← Back to reports</button>
-
-      <div className="rp-hero">
-        <div className="rp-meta"><span className="rp-tag">Methodology</span> · Experimental</div>
-        <h1 className="rp-title">Rank 2.0 — an alternate weighting</h1>
-        <p className="rp-sub">
-          The same signals, reweighted. Where the live index leads on <strong>booking demand</strong>,
-          Rank 2.0 leans toward <strong>scene credibility, DJ support, search and reach</strong> —
-          a discovery-first cut. This is a comparison brief, not the live ranking: the Rankings tab is unchanged.
-        </p>
-      </div>
-
-      <div className="rp-feature-body" style={{ marginBottom: 28 }}>
-        <h2 style={{ fontSize: 18, margin: "0 0 12px" }}>What changed in the weights</h2>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr style={{ textAlign: "left", color: "#75767d", borderBottom: "1px solid #2a2a30" }}>
-              <th style={{ padding: "6px 8px" }}>Signal</th>
-              <th style={{ padding: "6px 8px", textAlign: "right" }}>Rank 2.0</th>
-              <th style={{ padding: "6px 8px", textAlign: "right" }}>Live index</th>
-              <th style={{ padding: "6px 8px", textAlign: "right" }}>Δ</th>
-            </tr>
-          </thead>
-          <tbody>
-            {RANK_V2_WEIGHTS.map(([label, , v2w, prodw]) => (
-              <tr key={label} style={{ borderBottom: "1px solid #1d1d22" }}>
-                <td style={{ padding: "6px 8px" }}>{label}</td>
-                <td style={{ padding: "6px 8px", textAlign: "right", fontVariantNumeric: "tabular-nums", fontWeight: 600 }}>{v2w}%</td>
-                <td style={{ padding: "6px 8px", textAlign: "right", color: "#9a9aa2", fontVariantNumeric: "tabular-nums" }}>{prodw}%</td>
-                <td style={{ padding: "6px 8px", textAlign: "right" }}>
-                  <span style={{ color: v2w > prodw ? "#7CE38B" : v2w < prodw ? "#E2683E" : "#75767d", fontVariantNumeric: "tabular-nums" }}>
-                    {v2w > prodw ? "+" : ""}{v2w - prodw}
-                  </span>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <p style={{ fontSize: 12, color: "#75767d", marginTop: 10 }}>
-          The 12 weights above are scaled to 93% so growth (7%) keeps its live weight; the vector sums to
-          100%. Festival presence — weighted 5% on the live index — is dropped from Rank 2.0 for a simpler
-          methodology. Self-healing, the credibility floor and the coverage penalty are applied identically
-          to both rankings.
-        </p>
-      </div>
-
-      <div className="rp-feature-body" style={{ marginBottom: 28 }}>
-        <h2 style={{ fontSize: 18, margin: "0 0 12px" }}>Biggest divergences</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
-          <div>
-            <div style={{ fontSize: 12, color: "#7CE38B", marginBottom: 8, fontWeight: 600 }}>Ranks higher in 2.0</div>
-            {risers.map(m => (
-              <div key={m.name} style={{ display: "flex", justifyContent: "space-between", padding: "5px 0", borderBottom: "1px solid #1d1d22", fontSize: 13 }}>
-                <span>{m.name}</span>
-                <span style={{ color: "#9a9aa2", fontVariantNumeric: "tabular-nums" }}>#{m.prod} → #{m.v2} <Delta d={m.d} /></span>
-              </div>
-            ))}
-          </div>
-          <div>
-            <div style={{ fontSize: 12, color: "#E2683E", marginBottom: 8, fontWeight: 600 }}>Ranks lower in 2.0</div>
-            {fallers.map(m => (
-              <div key={m.name} style={{ display: "flex", justifyContent: "space-between", padding: "5px 0", borderBottom: "1px solid #1d1d22", fontSize: 13 }}>
-                <span>{m.name}</span>
-                <span style={{ color: "#9a9aa2", fontVariantNumeric: "tabular-nums" }}>#{m.prod} → #{m.v2} <Delta d={m.d} /></span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="rp-feature-body">
-        <h2 style={{ fontSize: 18, margin: "0 0 12px" }}>The Rank 2.0 leaderboard</h2>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-          <thead>
-            <tr style={{ textAlign: "left", color: "#75767d", borderBottom: "1px solid #2a2a30" }}>
-              <th style={{ padding: "6px 8px", width: 48 }}>2.0</th>
-              <th style={{ padding: "6px 8px" }}>Artist</th>
-              <th style={{ padding: "6px 8px", textAlign: "right" }}>Score</th>
-              <th style={{ padding: "6px 8px", textAlign: "right" }}>Live rank</th>
-              <th style={{ padding: "6px 8px", textAlign: "right" }}>Move</th>
-            </tr>
-          </thead>
-          <tbody>
-            {v2.slice(0, 50).map(r => (
-              <tr key={r.name} style={{ borderBottom: "1px solid #1d1d22" }}>
-                <td style={{ padding: "6px 8px", fontWeight: 700, fontVariantNumeric: "tabular-nums" }}>#{r.rank_v2}</td>
-                <td style={{ padding: "6px 8px" }}><ArtistLink name={r.name} /></td>
-                <td style={{ padding: "6px 8px", textAlign: "right", fontVariantNumeric: "tabular-nums" }}>{r.score_v2}</td>
-                <td style={{ padding: "6px 8px", textAlign: "right", color: "#9a9aa2", fontVariantNumeric: "tabular-nums" }}>#{r.rank}</td>
-                <td style={{ padding: "6px 8px", textAlign: "right" }}><Delta d={r.rank - r.rank_v2} /></td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <p style={{ fontSize: 12, color: "#75767d", marginTop: 10 }}>Top 50 shown. Ranked over the full database (house + techno), same as the live index before the house-anchored display filter.</p>
-      </div>
-    </div>
-  );
-}
 
 function ReportsPage({ rankings }) {
   const fmtDate = iso => new Date(iso + "T00:00:00").toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
@@ -2533,10 +2398,6 @@ function ReportsPage({ rankings }) {
     );
   }
 
-  if (view === "rankv2") {
-    return <RankV2Report rankings={rankings} onBack={() => { setView("list"); window.scrollTo({ top: 0 }); }} />;
-  }
-
   const btnReset = { textAlign: "left", font: "inherit", color: "inherit", background: "none", border: 0, width: "100%", cursor: "pointer" };
 
   return (
@@ -2563,13 +2424,6 @@ function ReportsPage({ rankings }) {
           <div className="rp-card-title">The Index, Visualised</div>
           <div className="rp-card-dek">The whole ranking read as four charts — demand vs credibility, who's moving, the ranked field, and each act's signal shape.</div>
           <span className="rp-read">Open the charts →</span>
-        </button>
-        {/* Rank 2.0 — experimental alternate weighting, rendered in-app */}
-        <button className="rp-card" style={btnReset} onClick={() => { setView("rankv2"); window.scrollTo({ top: 0 }); }}>
-          <div className="rp-meta"><span className="rp-tag">Methodology</span> · Experimental</div>
-          <div className="rp-card-title">Rank 2.0 — An Alternate Weighting</div>
-          <div className="rp-card-dek">The same signals, reweighted toward scene credibility, DJ support, search and reach instead of booking demand. The weight diff, the new leaderboard, and who moves most between the two.</div>
-          <span className="rp-read">Open the comparison →</span>
         </button>
         {rest.map(r => (
           <a className="rp-card" key={r.href} href={r.href}>

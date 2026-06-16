@@ -331,10 +331,14 @@ DROPPED from 2.0 (explicit 0 in WEIGHTS_V2 — else base 0.05 carries over via O
 a simpler 2.0 methodology that doesn't lean on hand-maintained festival_lineups.json.
 Production still weights festival .05 — only 2.0 drops it.
 Self-heal + credibility/coverage multipliers are applied identically (scoreArtists is
-weight-agnostic). UI: a `RankV2Report` in the **Reports** tab (`view==="rankv2"` inside
-ReportsPage, same pattern as the Charts report) — weight-diff table, 2.0 leaderboard, and
-biggest prod-vs-2.0 divergences. NOT a sort mode on the Rankings tab (deliberately kept off
-the live list). Keep `WEIGHTS_V2` (score.js) + `RANK_V2_WEIGHTS` (App.jsx) in sync.
+weight-agnostic). PUBLISHED as a standalone report: `backend/rankV2Report.js` reads the
+rankings.json we just wrote and renders `frontend/public/reports/rank-2-0/index.html`
+(light-theme, branded, shareable — same format as the III Points / CRSSD / launch briefs),
+regenerated every build via generateStatic (best-effort try/catch; read-only, so the
+NEVER-WIPE rule doesn't apply). Registered in the `REPORTS` array in App.jsx (Reports tab,
+img /brand/post-methodology-1080.png). The weight-diff table in the report is hardcoded in
+rankV2Report.js (`WEIGHT_ROWS`) — keep it in sync with `WEIGHTS_V2` (score.js). NOT a sort
+mode on the Rankings tab (deliberately kept off the live list).
 
 ## Key per-artist fields (in artists.json, persisted)
 - `emerging` (bool) — reputation-based; drives "Ones to Watch" (excludes legends).

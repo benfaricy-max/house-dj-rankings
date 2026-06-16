@@ -17,6 +17,7 @@ const { getSoundCloudData }     = require("./fetchSoundCloud");
 const { getPlaylistPlacements } = require("./fetchSpotifyPlaylists");
 const { getGoogleTrends }       = require("./fetchTrends");
 const { scoreArtists, WEIGHTS_V2 } = require("./score");
+const { generate: generateRankV2Report } = require("./rankV2Report");
 const { computeLiveDemand }     = require("./computeLiveDemand");
 const { recomputeRaScores }     = require("./computeRaScore");
 const { computeFestivalScores } = require("./computeFestivalScore");
@@ -197,9 +198,10 @@ async function main() {
 
   // Rank 2.0 (parallel) — same pipeline, alternate weight vector (WEIGHTS_V2 in
   // score.js). Run as a second independent pass and merge score_v2 / rank_v2 onto
-  // the production ranking so the frontend can offer a "Rank 2.0" sort toggle
-  // without changing the default order. Self-heal + credibility/coverage logic is
-  // identical (scoreArtists applies it to whatever weights it's handed).
+  // the production ranking; the published Rank 2.0 report (backend/rankV2Report.js,
+  // regenerated below) reads these. The default ranking order is unchanged.
+  // Self-heal + credibility/coverage logic is identical (scoreArtists applies it to
+  // whatever weights it's handed).
   const v2 = scoreArtists(enriched, WEIGHTS_V2);
   const v2ByName = new Map(v2.map(d => [d.name, d]));
   for (const dj of ranked) {
@@ -316,6 +318,14 @@ async function main() {
   fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
   fs.writeFileSync(OUT_FILE, JSON.stringify(payload));
   console.log(`\nSaved ${ranked.length} artists → ${OUT_FILE}`);
+
+  // Regenerate the published Rank 2.0 report (reads the rankings.json we just wrote).
+  // Best-effort: a report failure must never fail the data build.
+  try {
+    generateRankV2Report(OUT_FILE, path.join(__dirname, "..", "frontend", "public", "reports", "rank-2-0", "index.html"));
+  } catch (e) {
+    console.warn("[rankV2Report] skipped:", e.message);
+  }
 }
 
 main().catch(e => { console.error(e); process.exit(1); });
