@@ -198,6 +198,15 @@ function homeBody(artists, total, lastUpdated = "", n = 25) {
       <p class="seo-updated" style="color:#75767d;font-size:13px">Ranking of ${total} DJs · updated daily · last updated ${esc(updated)}</p>
       <h2>Top ${ranked.length} by booking demand</h2>
       <ol class="dj-list-prerender" style="list-style:none;padding:0">${rows}</ol>
+      <nav class="seo-cuts" aria-label="Ranking cuts">
+        <h2>Explore the rankings</h2>
+        <ul>
+          <li><a href="/rankings/techno">Most in-demand techno DJs</a></li>
+          <li><a href="/rankings/house">Most in-demand house DJs</a></li>
+          <li><a href="/rankings/rising">Fastest-rising DJs (momentum)</a></li>
+          <li><a href="/rankings/value">Most underpriced DJs to book</a></li>
+        </ul>
+      </nav>
       <p><a href="/methodology">How the demand score is built</a></p>
     </main>`;
 }
@@ -264,6 +273,136 @@ function clubJsonLd(c, slug) {
       foundingDate: String(c.opened), description: c.note, url: `${ORIGIN}/club/${slug}` },
     breadcrumbLd([{ name: "PEAKTIME", path: "/" }, { name: c.name, path: `/club/${slug}` }]),
   ];
+}
+
+// ── Ranking landing pages (/rankings/<cut>) ─────────────────────────────────
+// Standalone, branded, static SEO/AEO pages that own the head-on query space
+// ("best techno DJs", "rising house DJs", "underpriced DJs to book"). Built as
+// self-contained HTML (NOT the SPA #root template) because the SPA has no
+// /rankings/* route — standalone avoids any hydration/routing mismatch and gives
+// crawlers a fully-rendered, text-rich page. Each ships ItemList (the ranking as a
+// machine-readable ordered list, for AI answer engines) + FAQPage (the literal
+// questions users ask assistants) + BreadcrumbList + a CollectionPage carrying
+// dateModified (advertises the daily refresh). Light theme matches the published reports.
+function landingRows(ranked) {
+  return ranked.map((a, i) => {
+    const slug = slugify(a.name);
+    const lean = a._lean ? `<span class="g g-${a._lean}">${a._lean}</span>` : "";
+    const metric = a._metric != null ? `<td class="num muted">${esc(String(a._metric))}</td>` : `<td class="num muted">${Math.round(a.score)}</td>`;
+    return `<tr>
+      <td class="num rk">#${i + 1}</td>
+      <td><a href="/artist/${slug}">${esc(a.name)}</a> ${lean}</td>
+      ${metric}
+    </tr>`;
+  }).join("\n");
+}
+
+function renderLanding({ slug, h1, lede, metricLabel, faq, ranked, total, lastUpdated }) {
+  const modified = (lastUpdated || new Date().toISOString()).slice(0, 10);
+  const updatedHuman = new Date(lastUpdated || new Date().toISOString())
+    .toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  const url = `${ORIGIN}/rankings/${slug}`;
+  const top = ranked.slice(0, 50);
+  const title = `${h1} — ${updatedHuman} | PEAKTIME`;
+  const desc = `${lede} Ranked by booking demand on PEAKTIME — updated daily. ${total} acts tracked.`.replace(/\s+/g, " ").trim();
+
+  const itemList = {
+    "@context": "https://schema.org", "@type": "ItemList", name: h1, url,
+    numberOfItems: top.length, itemListOrder: "https://schema.org/ItemListOrderDescending",
+    itemListElement: top.map((a, i) => {
+      const s = slugify(a.name);
+      return { "@type": "ListItem", position: i + 1, url: `${ORIGIN}/artist/${s}`,
+        item: { "@type": "MusicGroup", name: a.name, url: `${ORIGIN}/artist/${s}` } };
+    }),
+  };
+  const faqLd = { "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a } })) };
+  const collectionLd = { "@context": "https://schema.org", "@type": "CollectionPage",
+    name: h1, url, description: desc, dateModified: modified, isPartOf: { "@type": "WebSite", name: "PEAKTIME", url: `${ORIGIN}/` } };
+  const crumbs = breadcrumbLd([{ name: "Rankings", path: "/" }, { name: h1, path: `/rankings/${slug}` }]);
+  const jsonld = [collectionLd, itemList, faqLd, crumbs];
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>${esc(title)}</title>
+<meta name="description" content="${esc(desc)}" />
+<link rel="canonical" href="${url}" />
+<meta property="og:title" content="${esc(h1)}" />
+<meta property="og:description" content="${esc(desc)}" />
+<meta property="og:url" content="${url}" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="${ORIGIN}/brand/post-top5-1080.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">${JSON.stringify(jsonld)}</script>
+<style>
+  :root { --ink:#15151c; --muted:#6b6b78; --line:#e7e7ee; --accent:#3b3bdb; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,"Segoe UI",Inter,Arial,sans-serif; color:var(--ink); background:#f3f3f6; padding:28px; }
+  .page { max-width:820px; margin:0 auto; background:#fff; border-radius:14px; box-shadow:0 6px 30px rgba(0,0,0,.08); overflow:hidden; }
+  .top { background:linear-gradient(120deg,#15151c,#23233a); color:#fff; padding:24px 34px; display:flex; justify-content:space-between; align-items:center; }
+  .brand { font-size:12px; letter-spacing:.18em; color:#a8e00f; font-weight:700; }
+  .doc-title { font-size:13px; color:#aaa; margin-top:2px; }
+  .top .date { font-size:12px; color:#9a9aac; text-align:right; }
+  .hero { padding:26px 34px 18px; border-bottom:1px solid var(--line); }
+  .hero h1 { font-size:28px; line-height:1.12; }
+  .hero .sub { color:var(--muted); font-size:14.5px; margin-top:10px; max-width:60ch; line-height:1.5; }
+  .hero .upd { color:var(--muted); font-size:12.5px; margin-top:10px; }
+  .section { padding:20px 34px; border-bottom:1px solid var(--line); }
+  .section h2 { font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:14px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th { text-align:left; color:var(--muted); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.05em; padding:6px 8px; border-bottom:1px solid var(--line); }
+  td { padding:7px 8px; border-bottom:1px solid #f1f1f5; }
+  td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+  td.rk { font-weight:700; width:52px; }
+  td.muted, .muted { color:var(--muted); }
+  a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; }
+  .g { font-size:10px; text-transform:uppercase; letter-spacing:.04em; padding:1px 6px; border-radius:10px; margin-left:6px; vertical-align:middle; }
+  .g-house { background:#eef7d6; color:#5b7a00; } .g-techno { background:#efe7ff; color:#6a3bdb; } .g-crossover { background:#e0f7fb; color:#1d8fa0; }
+  .faq dt { font-weight:700; font-size:14.5px; margin-top:14px; }
+  .faq dd { color:#333; font-size:14px; line-height:1.55; margin-top:5px; }
+  .foot { padding:16px 34px; font-size:12px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  .foot b { color:#15151c; }
+  @media (max-width:560px){ body{padding:12px;} .top,.hero,.section,.foot{padding-left:18px;padding-right:18px;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top">
+    <div><div class="brand">THE DJ RANKINGS</div><div class="doc-title">PEAKTIME · demand index</div></div>
+    <div class="date">Updated daily<br/>${esc(updatedHuman)}</div>
+  </div>
+  <div class="hero">
+    <h1>${esc(h1)}</h1>
+    <p class="sub">${esc(lede)} Ranked by booking demand — scene credibility, Resident Advisor &amp; Beatport signal, touring, search and social velocity.</p>
+    <p class="upd">${top.length} acts · refreshed daily · last updated ${esc(updatedHuman)} · <a href="/">see the full live index →</a></p>
+  </div>
+  <div class="section">
+    <h2>Ranked by booking demand</h2>
+    <table>
+      <thead><tr><th class="num">#</th><th>Artist</th><th class="num">${esc(metricLabel)}</th></tr></thead>
+      <tbody>
+${landingRows(top)}
+      </tbody>
+    </table>
+  </div>
+  <div class="section faq">
+    <h2>Frequently asked</h2>
+    <dl>
+${faq.map((f) => `      <dt>${esc(f.q)}</dt>\n      <dd>${esc(f.a)}</dd>`).join("\n")}
+    </dl>
+  </div>
+  <div class="foot">
+    <span><b>PEAKTIME</b> · thedjrankings.com — the demand index for electronic music</span>
+    <span><a href="/methodology">How the demand score is built →</a></span>
+  </div>
+</div>
+</body>
+</html>
+`;
 }
 
 async function build() {
@@ -354,6 +493,76 @@ async function build() {
     console.warn("generatePages: club prerender skipped —", e.message);
   }
 
+  // Ranking landing pages — the head-on SEO/AEO query space. Genre cuts reuse the
+  // SPA's own classifier (genre.js, single source of truth — no drift). try/catch:
+  // a classifier import failure skips landings without breaking the deploy.
+  let nLanding = 0;
+  try {
+    const { pathToFileURL } = require("url");
+    const { matchesGenre, genreLean } = await import(pathToFileURL(path.join(__dirname, "../frontend/src/genre.js")).href);
+    const fmtN = (n) => (n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${Math.round(n / 1e3)}K` : String(n));
+    const named = artists.filter((a) => a.name && Number.isFinite(a.score));
+    const byRank = (a, b) => (a.rank ?? 1e9) - (b.rank ?? 1e9);
+
+    // Genre cuts — renumbered within the cut, genre pill shown.
+    const techno = named.filter((a) => matchesGenre(a, "techno")).sort(byRank).map((a) => ({ ...a, _lean: genreLean(a) || "techno" }));
+    const house = named.filter((a) => matchesGenre(a, "house")).sort(byRank).map((a) => ({ ...a, _lean: genreLean(a) || "house" }));
+    // Rising — momentum-led. Gate to acts with a real momentum read (mirrors the app's Momentum sort).
+    const rising = named.filter((a) => Number.isFinite(a.momentum_score) && a.momentum_score > 0)
+      .sort((a, b) => b.momentum_score - a.momentum_score).map((a) => ({ ...a, _metric: Math.round(a.momentum_score) }));
+    // Value — underpriced buys, by value gap (mirrors the Value Gap tab's buy filter).
+    const value = named.filter((a) => (a.value_signal === "buy" || a.value_signal === "strong-buy") && Number.isFinite(a.value_gap))
+      .sort((a, b) => (b.value_gap - a.value_gap) || ((b.momentum_score || 0) - (a.momentum_score || 0)))
+      .map((a) => ({ ...a, _metric: a.value_gap > 0 ? `+${a.value_gap}` : String(a.value_gap) }));
+
+    const topName = (arr) => (arr[0] ? arr[0].name : "the field");
+    const LANDINGS = [
+      { slug: "techno", ranked: techno, metricLabel: "Demand",
+        h1: "The most in-demand techno DJs right now",
+        lede: "The house-anchored index's techno cut — peak-time, melodic and crossover techno acts.",
+        faq: [
+          { q: "Who is the most in-demand techno DJ right now?", a: `As of the latest daily update, ${topName(techno)} leads PEAKTIME's techno cut, ranked by booking demand across scene credibility, Resident Advisor and Beatport signal, touring and search velocity.` },
+          { q: "How is the techno ranking calculated?", a: "Each act blends multiple independent demand signals — live booking (Resident Advisor venue tier and attendance, plus touring), editorial scene credibility, Beatport chart credibility, 1001Tracklists DJ support, search interest and social velocity — into one demand score, refreshed daily." },
+          { q: "Is this a pure techno chart?", a: "No. PEAKTIME is a house-anchored index; the techno cut surfaces techno-leaning and crossover acts (plus pure-techno names kept out of the main house view), classified by where Beatport charts them. It's a lens on the index, not a comprehensive techno chart." },
+        ] },
+      { slug: "house", ranked: house, metricLabel: "Demand",
+        h1: "The most in-demand house DJs right now",
+        lede: "House, tech house and the melodic crossover middle — the anchor of the index.",
+        faq: [
+          { q: "Who is the most in-demand house DJ right now?", a: `As of the latest daily update, ${topName(house)} leads PEAKTIME's house cut, ranked by measured booking demand rather than reach or follower counts.` },
+          { q: "How is the house ranking calculated?", a: "It blends live booking demand (Resident Advisor venue tier, attendance and touring), editorial scene credibility, Beatport chart credibility, 1001Tracklists DJ support, search interest and social velocity into one daily-refreshed demand score." },
+          { q: "What counts as house here?", a: "House, tech house and the melodic 'crossover' middle, classified by where Beatport charts each act and their primary label. Pure-techno acts live under the techno cut instead." },
+        ] },
+      { slug: "rising", ranked: rising, metricLabel: "Momentum",
+        h1: "The fastest-rising DJs right now",
+        lede: "Who's accelerating — ranked by momentum, not by who's already biggest.",
+        faq: [
+          { q: "Which DJs are gaining demand the fastest right now?", a: `As of the latest daily update, ${topName(rising)} tops PEAKTIME's momentum ranking — the acts whose demand is accelerating fastest.` },
+          { q: "How does PEAKTIME measure momentum?", a: "Momentum is a 0–100 score blending the rate of change across signals — search-interest slope, monthly-listener growth, Wikipedia trend, Beatport week-over-week movement and tour velocity — so it ranks who's accelerating, not who's largest." },
+          { q: "How often does the rising ranking update?", a: "Daily. Momentum is recomputed every refresh from the latest signal deltas." },
+        ] },
+      { slug: "value", ranked: value, metricLabel: "Value gap",
+        h1: "The most underpriced DJs to book right now",
+        lede: "Acts whose measured demand outpaces their estimated booking fee — the buy signals.",
+        faq: [
+          { q: "Which DJs are underpriced to book?", a: `As of the latest daily update, ${topName(value)} tops PEAKTIME's value-gap ranking — acts whose demand outpaces their fee tier. These are model-implied estimates, not transacted prices.` },
+          { q: "What is the Value Gap?", a: "The Value Gap compares an act's demand-implied fee tier against their known fee tier. A positive gap flags an act priced below current booking demand — a potential buy. Fees are model-implied estimates, not transacted prices." },
+          { q: "What does 'strong-buy' mean?", a: "A strong-buy is an act that is both underpriced (positive value gap) and surging in momentum — underpriced and accelerating at the same time." },
+        ] },
+    ];
+
+    for (const l of LANDINGS) {
+      if (!l.ranked.length) continue; // never ship an empty cut
+      const html = renderLanding({ ...l, total, lastUpdated: d.lastUpdated });
+      writePage(`rankings/${l.slug}.html`, html);
+      urls.push({ loc: `/rankings/${l.slug}`, priority: 0.8, changefreq: "daily", lastmod: today });
+      nLanding++;
+    }
+    void fmtN; // reserved for future reach-based cuts
+  } catch (e) {
+    console.warn("generatePages: ranking landings skipped —", e.message);
+  }
+
   // Homepage — bake content + canonical + entity schema into dist/index.html.
   // createRoot() wipes #root on mount, so this is crawler/first-paint only (no hydration).
   {
@@ -374,7 +583,7 @@ async function build() {
     "</urlset>", ""].join("\n");
   fs.writeFileSync(path.join(DIST, "sitemap.xml"), xml);
 
-  console.log(`generatePages: ${nArtist} artist + ${nValue} value + ${nClub} club pages, 404.html, sitemap.xml (${urls.length} URLs).`);
+  console.log(`generatePages: ${nArtist} artist + ${nValue} value + ${nClub} club + ${nLanding} ranking-landing pages, 404.html, sitemap.xml (${urls.length} URLs).`);
 }
 
 build().catch((e) => { console.error("generatePages failed:", e); process.exit(1); });
