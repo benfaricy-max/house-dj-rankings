@@ -233,6 +233,10 @@ const PURE_TECHNO = new Set([
   "Answer Code Request", "Jay Lumen", "999999999", "Wehbba", "Luigi Madonna",
   "Harvey McKay", "Spektre", "Dense & Pika", "Chelina Manuhutu",
   "Township Rebellion", "Alan Fitzpatrick", "Joseph Capriati",
+  // Top-100 editorial pass, Jun 2026 — heritage/peak-time/electro acts with no
+  // real house crossover that were still sitting in the house-anchored main index.
+  "Laurent Garnier", "Richie Hawtin", "Kenny Larkin", "Marco Faraone",
+  "The Hacker", "Objekt", "Stephan Bodzin", "Agents Of Time",
 ]);
 
 export function isPureTechno(dj) {
