@@ -23,7 +23,10 @@ const C_HEAVY = new Set([
 // score.js SELF_HEAL_ABSENT): when an act doesn't read on them — the 1001TL
 // weekly chart, the local-only Spotify geography pull — their weight redistributes
 // over the act's present signals instead of scoring a structural 0.
-const C_SELF_HEAL = new Set(["tl_support_score", "scene_geography"]);
+const C_SELF_HEAL = new Set(["tl_support_score", "scene_geography", "spotify_monthly_listeners"]);
+// Google Trends is namesake-contaminated for these acts (mirror of score.js
+// TRENDS_NAMESAKE) — treated as unmeasured rather than scored on a polluted value.
+const C_TRENDS_NAMESAKE = new Set(["Midland"]);
 const cPrep = (key, v) => { const x = Number.isFinite(v) ? v : 0; return C_HEAVY.has(key) ? Math.log10(1 + Math.max(0, x)) : x; };
 const cPct = (s, p) => (s.length ? s[Math.min(s.length - 1, Math.max(0, Math.round((p / 100) * (s.length - 1))))] : 0);
 
@@ -46,6 +49,7 @@ export function rankWithinCohort(subset, metricDefs) {
       for (const m of live) {
         const present = Number.isFinite(a[m.key]) && a[m.key] > 0;
         if (C_SELF_HEAL.has(m.key) && !present) continue;
+        if (m.key === "google_trends_score" && C_TRENDS_NAMESAKE.has(a.name)) continue;
         denom += m.weight;
         if (present) covW += m.weight;
         raw += norm(cPrep(m.key, a[m.key]), ranges[m.key].min, ranges[m.key].max) * m.weight;
@@ -54,7 +58,7 @@ export function rankWithinCohort(subset, metricDefs) {
       const s = raw / d;
       const covFrac = covW / d;
       const scene = Number.isFinite(a.manual_scene_score) ? a.manual_scene_score : 50;
-      const cred = 0.80 + 0.35 * (scene / 100); // two-sided: lifts high scene, scales down low
+      const cred = 0.80 + 0.20 * (scene / 100); // v5: narrowed swing — scene no longer double-counted (mirror of score.js)
       const covFactor = 0.8 + 0.2 * Math.min(covFrac / 0.75, 1);
       return { ...a, cohort_score: Math.round(s * cred * covFactor * 10) / 10, cohort_coverage: Math.round(covFrac * 100) };
     })

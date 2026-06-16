@@ -31,7 +31,23 @@ function prep(metric, value) {
 // So when ABSENT, the weight redistributes per-artist over the signals present
 // (excluded from the denominator) instead of scoring 0. A PRESENT value still
 // scores normally and can pull an act DOWN — e.g. Mau P's real geo of 22.
-const SELF_HEAL_ABSENT = new Set(["tl_support_score", "scene_geography"]);
+const SELF_HEAL_ABSENT = new Set(["tl_support_score", "scene_geography", "spotify_monthly_listeners"]);
+// spotify_monthly_listeners self-heals on absence (v5): the listener count comes from
+// a puppeteer scrape that only runs locally, so ~19 real, major acts (Marco Carola,
+// Luciano, ARTBAT, Moodymann, Lane 8…) read 0 simply because the scrape didn't reach
+// them — NOT because they have no audience. Scoring that 0 as rock-bottom reach both
+// buried them on the listeners weight AND docked their coverage. A 0 here means
+// "unmeasured" (no act in this roster truly has zero listeners), so its weight
+// redistributes per-artist like 1001TL/geo. A real, present count still scores normally.
+
+// Google Trends is structurally UNREADABLE for acts whose name collides with a
+// common word or a more-famous namesake — "Midland" is a US country duo, a Texas
+// city, a UK region; the search index can't isolate the DJ, so the trends number
+// is namesake noise, not demand (Midland reads 85 while every DJ peer is ≤11).
+// For these acts we treat google_trends_score as UNMEASURED — its weight redistributes
+// per-artist (same self-heal as 1001TL/geo) rather than letting a contaminated value
+// inflate the rank. A scalar analog of cleanGeoTrends.js. Mirror in cohort.js.
+const TRENDS_NAMESAKE = new Set(["Midland"]);
 
 // Percentile over an ascending-sorted array (nearest-rank).
 function percentile(sortedAsc, p) {
@@ -113,13 +129,20 @@ function scoreArtists(artists, weightOverride) {
   // 250/330 read 0). Paired with the v3 TWO-SIDED credibility multiplier below. The
   // tuner (backend/_tune_v4 in history) scored this vector ~82% on intent. Keep in
   // sync with frontend METRICS / METRIC_DETAILS + CLAUDE.md.
+  // v5 rebalance: RA "attending" was both the largest ra_score component AND soft,
+  // festival-inflated RSVP data — so its unreliability propagated up through
+  // live_demand. Rather than just reshuffle inside RA, lean the COMPOSITE off
+  // live_demand (0.21→0.17) and onto the harder-to-game signals: Beatport (track
+  // sales), 1001TL DJ support (what DJs actually play), Google Trends (search), and
+  // listener growth (acceleration). Scene unchanged (its multiplier was already
+  // narrowed). Sum still 1.00.
   const weights = {
-    live_demand_score:            0.21,  // LEADS — live booking demand: RA (venue tier/attendance/geo) blended with Songkick tour density
+    live_demand_score:            0.17,  // LEADS still, but trimmed: RA's biggest input (attending) is its least reliable, so live demand carries a bit less
     manual_scene_score:           0.20,  // CO-LEADS — editorial scene credibility (rubric in How It Works)
-    beatport_score:               0.12,  // chart credibility — demoted v4: a producer signal, not a booking one
-    tl_support_score:             0.10,  // DJ SUPPORT: 1001Tracklists weekly chart — what DJs play. SELF-HEALS on absence (weekly sample)
-    google_trends_score:          0.07,
-    spotify_follower_growth_rate: 0.06,  // growth (acceleration), thin coverage
+    beatport_score:               0.13,  // chart credibility (producer/track-sales signal) — bumped v5
+    tl_support_score:             0.11,  // DJ SUPPORT: 1001Tracklists weekly chart — what DJs play. Bumped v5. SELF-HEALS on absence (weekly sample)
+    google_trends_score:          0.08,  // search interest — bumped v5
+    spotify_follower_growth_rate: 0.07,  // growth (acceleration) — bumped v5
     scene_geography:              0.03,  // v4: international appeal — share of listeners in core EM markets. SELF-HEALS on absence (local-only pull)
     label_score:                  0.05,  // label tier (Drumcode/Kompakt/Defected…) — credibility & trajectory
     spotify_monthly_listeners:    0.05,  // reach — demoted hard: with conditioning, raw streams over-discriminate
@@ -166,6 +189,8 @@ function scoreArtists(artists, weightOverride) {
         const present = Number.isFinite(artist[metric]) && artist[metric] > 0;
         // Sparse signal absent → redistribute (don't score 0, don't dock coverage).
         if (SELF_HEAL_ABSENT.has(metric) && !present) continue;
+        // Namesake-contaminated Trends → treat as unmeasured (drop from num+denom).
+        if (metric === "google_trends_score" && TRENDS_NAMESAKE.has(artist.name)) continue;
         signalsTotal += 1;
         denom += weights[metric];
         if (present) {
@@ -190,7 +215,14 @@ function scoreArtists(artists, weightOverride) {
       // unscored 50 default) → 1.15 (scene 100). This is the lever that both demotes
       // a chart-pop crossover (low scene) and lifts a DJ's-DJ (high scene, low reach).
       const sceneVal = Number.isFinite(artist.manual_scene_score) ? artist.manual_scene_score : 50;
-      const credibility = 0.80 + 0.35 * (sceneVal / 100);
+      // v5 — scene was DOUBLE-COUNTED: it's already a 0.20-weighted signal AND a
+      // multiplier with a wide 0.80→1.15 swing, so a scene-88 heritage act got ~+11%
+      // on top of its weighted scene term. That lifted revered/DJ's-DJ names (Garnier,
+      // Koze, Joris Voorn, Bob Sinclar, Kerri Chandler) above their current live heat.
+      // Narrowed to 0.80→1.00: the multiplier keeps its job as a DOWNSIDE credibility
+      // floor (a near-zero-scene streaming-pop crossover is still demoted) but no longer
+      // hands high scene a second large bonus on top of the 0.20 weight. Mirror in cohort.js.
+      const credibility = 0.80 + 0.20 * (sceneVal / 100);
 
       // Coverage penalty: a score built on a fraction of the signals isn't as
       // trustworthy as one on the full panel, and the self-healing reweight would

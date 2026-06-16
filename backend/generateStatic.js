@@ -18,6 +18,7 @@ const { getPlaylistPlacements } = require("./fetchSpotifyPlaylists");
 const { getGoogleTrends }       = require("./fetchTrends");
 const { scoreArtists }          = require("./score");
 const { computeLiveDemand }     = require("./computeLiveDemand");
+const { recomputeRaScores }     = require("./computeRaScore");
 
 const ARTISTS_FILE = path.join(__dirname, "artists.json");
 const SNAP_FILE    = path.join(__dirname, "data", "snapshots.json");
@@ -175,6 +176,11 @@ async function main() {
     console.log("All fetches failed (likely rate limited) — keeping existing rankings.json");
     process.exit(0);
   }
+
+  // Recompute ra_score from its persisted components every build (v5: ra_score is
+  // no longer frozen at fetch time — keeps the RA weighting current and consistent
+  // with the components). Must run BEFORE computeLiveDemand, which reads ra_score.
+  recomputeRaScores(enriched);
 
   // Blend RA + Songkick tour into live_demand_score (+ flag RA under-coverage)
   // before scoring, so the leading booking signal isn't single-sourced on RA.

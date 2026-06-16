@@ -69,8 +69,18 @@ ra_attending_h1/h2 (trajectory), ra_venue_tier (1-5 capacity buckets), ra_countr
 ra_country_list, ra_top_regions, ra_top_venues → composite ra_score 0-100.
 Stale threshold: 14 days. Runs in CI (plain HTTP, no puppeteer). NOTE: ra_score is
 NOT weighted directly anymore — it feeds `live_demand_score` (see below).
+**ra_score formula lives in `backend/computeRaScore.js`** (shared by fetchRA + the
+build) and is RECOMPUTED from the persisted aggregates every build via
+`recomputeRaScores(enriched)` in generateStatic — it's no longer frozen at fetch time.
+**v5 weighting devalues attending:** density 0.35 + venue tier 0.15 + geo 0.30 +
+attending **0.20** (was attending 0.40 / density 0.25 / geo 0.20 / tier 0.15). RA
+"attending" is soft RSVP/"interested" data — festival-inflated (a festival event
+reports the whole-site crowd; Midland read avg 4094 against tier-2 clubs) and
+cap-saturated at 500 — so it's the LEAST reliable input and no longer the largest;
+weight moved to the hard structural facts (how OFTEN + how WIDELY booked). Keep the
+weights in `computeRaScore.js` (the only place they live now).
 
-## Live-demand blend (RA not single-sourced) — `live_demand_score`, weight 0.21 (LEADS)
+## Live-demand blend (RA not single-sourced) — `live_demand_score`, weight 0.17 (LEADS)
 `backend/computeLiveDemand.js` (run in `generateStatic.js` BEFORE scoreArtists).
 RA's event coverage skews underground/Europe and UNDER-logs US/commercial/festival
 acts — so RA alone scores a real touring act as low-demand just because RA can't see
@@ -148,10 +158,16 @@ signal on artist profiles + How It Works methodology.
 closing +15, respected label +15, RA/Mixmag/DJ Mag cover +10, Ibiza residency +10,
 Essential Mix +10. Explicit criteria = credible + hard to game. Most of the roster
 is hand-scored (editorial pass Jun 2026). Default for unscored artists = 50.
-**Credibility multiplier — TWO-SIDED (score.js return map):** the final composite is
-multiplied by `0.80 + 0.35*(scene/100)` — 0.80 at scene 0, ~0.98 at the unscored-50
-default, 1.15 at scene 100. It both PENALISES near-zero scene AND REWARDS genuine
-credibility. The two-sided form (v3) replaced the old one-sided floor
+**Credibility multiplier (score.js return map):** the final composite is
+multiplied by `0.80 + 0.20*(scene/100)` — 0.80 at scene 0, 0.90 at the unscored-50
+default, 1.00 at scene 100. **v5 NARROWED the swing** (was `0.80 + 0.35*`, range
+0.80→1.15): scene was DOUBLE-COUNTED — already a 0.20-weighted signal AND a wide
+multiplier, so a scene-88 heritage act got ~+11% on top of its weighted scene term,
+lifting reputation-coasting names (Garnier, DJ Koze, Kerri Chandler) above their
+current live heat. Narrowed, it's a DOWNSIDE credibility floor (a near-zero-scene
+streaming-pop crossover is still demoted) without handing high scene a second large
+bonus. Keep `score.js` + `cohort.js` (`cred`) + this note in sync.
+The two-sided v3 form (`0.80 + 0.35*`) had replaced the old one-sided floor
 (`0.75 + 0.25*min(scene,50)/50`) because once conditioning made reach discriminate,
 a scene-revered but streaming-invisible act (Ben UFO, Villalobos) was getting buried
 by reach — the floor only punished low scene, it didn't lift high scene. Still demotes
@@ -176,11 +192,28 @@ labelled set rates (Mochakk, Beltran). SELF-HEALS ON ABSENCE (same `SELF_HEAL_AB
 mechanic as 1001TL): the 67/330 acts without a Spotify-cities pull are treated as
 unmeasured (weight redistributes) rather than scored as zero international appeal.
 
-## Composite weights (score.js, sum=1.00) — v4
-live_demand (RA+tour blend) .21 (LEADS), scene .20 (CO-LEADS), beatport .12,
-tl_support (1001TL) .10, trends .07, growth .06, scene_geography .03, label .05,
+## Composite weights (score.js, sum=1.00) — v5
+live_demand (RA+tour blend) **.17** (LEADS), scene .20 (CO-LEADS), beatport **.13**,
+tl_support (1001TL) **.11**, trends **.08**, growth **.07**, scene_geography .03, label .05,
 listeners .05, yt_subs .03, tiktok .03, releases .03, wikipedia .02. Then the
-**two-sided credibility multiplier** scales the final score (see Scene Score section).
+**credibility multiplier** (now `0.80 + 0.20*scene`, narrowed — see Scene Score section)
+scales the final score.
+**Jun 2026 reweight v5 (attending-unreliability + namesake/zero-data pass):** a second
+labelled-acts review (8 "too high" + 6 "too low" calls). (1) RA "attending" — soft,
+festival-inflated RSVP data — was devalued INSIDE ra_score (0.40→0.20, see RA section)
+AND the composite leaned off live_demand (.21→.17) onto the harder-to-game signals the
+calls implied: beatport .12→.13, 1001TL .10→.11, trends .07→.08, growth .06→.07. (2)
+Scene credibility multiplier narrowed 0.80+0.35→0.80+0.20 (scene was double-counted —
+demoted reputation-coasting heritage: Garnier, Koze, Kerri). (3) `spotify_monthly_listeners`
+now SELF-HEALS ON ABSENCE — ~19 real acts (Carola, Luciano, ARTBAT, Moodymann, Lane 8…)
+read 0 only because the local Spotify scrape didn't reach them; that 0 was burying them
+on reach + docking coverage (0 = unmeasured here, no roster act truly has zero listeners).
+(4) `TRENDS_NAMESAKE` set (score.js + cohort.js): Google Trends for common-word/namesake
+acts (Midland — a US country duo / Texas city) is treated as unmeasured, not scored on a
+contaminated value (Midland read trends 85 vs ≤11 for every DJ peer). KNOWN model-vs-gut
+residuals (not bugs): Ben Böhmer & Bob Sinclar stay high (real global touring / real
+catalog streaming); Disco Lines stays low (no RA profile exists + not Beatport-charting —
+structurally invisible, needs a TikTok-growth / festival signal, not a reweight).
 RETIRED (0): track_pop (Spotify-blocked), yt_views_weekly (delta metric, 0% coverage),
 beatport_hype (one Beatport metric in primary rankings — Hype still collected for
 emerging views). NORMALISATION (v3): heavy-tailed reach signals

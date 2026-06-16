@@ -15,6 +15,7 @@
  *   - ra_score          composite 0-100 booking-momentum signal
  */
 const axios = require("axios");
+const { computeRaScore } = require("./computeRaScore");
 
 const RA_GQL = "https://ra.co/graphql";
 const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36";
@@ -117,17 +118,18 @@ async function getRAData(artistName, overrideSlug) {
 
     const countries = [...new Set(recent.map(e => e.country?.name).filter(Boolean))];
 
-    // Composite ra_score 0-100:
-    //   40% attending volume (avg attending, cap at 500 for normalization)
-    //   25% booking density (events in 6m, cap at 12)
-    //   20% geo spread (unique countries, cap at 10)
-    //   15% venue tier (median tier, max 5)
+    // Composite ra_score 0-100 — computed from the same aggregates the build
+    // recomputes from, via the shared computeRaScore module. v5 weighting devalues
+    // attending (soft RSVP / festival-inflated / cap-saturated) in favour of the hard
+    // structural facts (venue tier = real room capacity, booking density). See
+    // computeRaScore.js for the rationale and weights.
     const avgAttending = avg(attendingVals);
-    const attendScore  = Math.min(avgAttending / 500, 1) * 100;
-    const densityScore = Math.min(recent.length / 12, 1) * 100;
-    const geoScore     = Math.min(countries.length / 10, 1) * 100;
-    const tierScore    = (median(capacities) / 5) * 100;
-    const ra_score     = Math.round(attendScore * 0.40 + densityScore * 0.25 + geoScore * 0.20 + tierScore * 0.15);
+    const ra_score     = computeRaScore({
+      ra_avg_attending: Math.round(avgAttending),
+      ra_events_6m:     recent.length,
+      ra_countries:     countries.length,
+      ra_venue_tier:    median(capacities) || 0,
+    });
 
     // ── Market saturation: per-city booking frequency + recency ──
     // "Overbooked" = repeated recent shows in one city. Freshness drops with
