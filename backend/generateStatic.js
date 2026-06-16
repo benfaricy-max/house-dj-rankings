@@ -19,6 +19,7 @@ const { getGoogleTrends }       = require("./fetchTrends");
 const { scoreArtists }          = require("./score");
 const { computeLiveDemand }     = require("./computeLiveDemand");
 const { recomputeRaScores }     = require("./computeRaScore");
+const { computeFestivalScores } = require("./computeFestivalScore");
 
 const ARTISTS_FILE = path.join(__dirname, "artists.json");
 const SNAP_FILE    = path.join(__dirname, "data", "snapshots.json");
@@ -185,6 +186,11 @@ async function main() {
   // Blend RA + Songkick tour into live_demand_score (+ flag RA under-coverage)
   // before scoring, so the leading booking signal isn't single-sourced on RA.
   computeLiveDemand(enriched);
+
+  // Major-festival booking presence (festival_lineups.json) — the live demand RA +
+  // Beatport miss for US-festival/viral acts. Self-heals on absence; safe no-op if
+  // the lineup file is empty/missing.
+  computeFestivalScores(enriched);
 
   const ranked = scoreArtists(enriched);
   ranked.forEach((dj, i) => { dj.rank = i + 1; });

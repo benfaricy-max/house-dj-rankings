@@ -23,7 +23,7 @@ const C_HEAVY = new Set([
 // score.js SELF_HEAL_ABSENT): when an act doesn't read on them — the 1001TL
 // weekly chart, the local-only Spotify geography pull — their weight redistributes
 // over the act's present signals instead of scoring a structural 0.
-const C_SELF_HEAL = new Set(["tl_support_score", "scene_geography", "spotify_monthly_listeners"]);
+const C_SELF_HEAL = new Set(["tl_support_score", "scene_geography", "spotify_monthly_listeners", "festival_score"]);
 // Google Trends is namesake-contaminated for these acts (mirror of score.js
 // TRENDS_NAMESAKE) — treated as unmeasured rather than scored on a polluted value.
 const C_TRENDS_NAMESAKE = new Set(["Midland"]);

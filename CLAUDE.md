@@ -192,10 +192,24 @@ labelled set rates (Mochakk, Beltran). SELF-HEALS ON ABSENCE (same `SELF_HEAL_AB
 mechanic as 1001TL): the 67/330 acts without a Spotify-cities pull are treated as
 unmeasured (weight redistributes) rather than scored as zero international appeal.
 
-## Composite weights (score.js, sum=1.00) — v5
+## Festival presence signal (the live demand RA + Beatport miss)
+`backend/computeFestivalScore.js` (run in generateStatic BEFORE scoreArtists, after
+computeLiveDemand). `festival_score` 0-100 = `min(Σ festival_tier, 6)/6*100` from
+`backend/festival_lineups.json` (festival → tier → acts; T1 global flagship=1.0,
+T2 regional=0.6). Captures who's booked on the big stages — the US-festival/viral
+demand RA (club-skewed/Euro) and Beatport (track-charting) structurally miss
+(Disco Lines, Gordo, Hugel were buried with no RA profile + bp 0). Weight **0.05**,
+SELF-HEALS ON ABSENCE (an act on no tracked lineup is unmeasured, weight redistributes
+— only LIFTS festival acts, never penalises club-only ones). The lineup file is a
+HAND-SEEDED STARTER (well-known headliners) — coverage is the gate; grow/refresh it
+via a scraper (planned `fetchFestivals.js`, Songkick festival tags / aggregators).
+Names in the file MUST match rankings.json exactly (mismatch just self-heals). Mirror
+in frontend METRICS / METRIC_DETAILS + cohort.js (`C_SELF_HEAL`).
+
+## Composite weights (score.js, sum=1.00) — v5.1
 live_demand (RA+tour blend) **.17** (LEADS), scene .20 (CO-LEADS), beatport **.13**,
-tl_support (1001TL) **.11**, trends **.08**, growth **.07**, scene_geography .03, label .05,
-listeners .05, yt_subs .03, tiktok .03, releases .03, wikipedia .02. Then the
+tl_support (1001TL) **.11**, trends **.08**, growth **.07**, **festival .05**, scene_geography .03, label .05,
+listeners .05, yt_subs **.02**, tiktok **.01**, releases **.02**, wikipedia **.01**. Then the
 **credibility multiplier** (now `0.80 + 0.20*scene`, narrowed — see Scene Score section)
 scales the final score.
 **Jun 2026 reweight v5 (attending-unreliability + namesake/zero-data pass):** a second
@@ -214,6 +228,10 @@ contaminated value (Midland read trends 85 vs ≤11 for every DJ peer). KNOWN mo
 residuals (not bugs): Ben Böhmer & Bob Sinclar stay high (real global touring / real
 catalog streaming); Disco Lines stays low (no RA profile exists + not Beatport-charting —
 structurally invisible, needs a TikTok-growth / festival signal, not a reweight).
+**v5.1 (festival signal):** added `festival_score` 0.05 — the festival-presence signal
+that finally reaches the structurally-invisible class above (Disco Lines, Gordo, Hugel),
+funded by halving gameable tiktok_post_count (.03→.01) + trims to yt_subs (.03→.02),
+releases (.03→.02), wikipedia (.02→.01). See the Festival presence section above.
 RETIRED (0): track_pop (Spotify-blocked), yt_views_weekly (delta metric, 0% coverage),
 beatport_hype (one Beatport metric in primary rankings — Hype still collected for
 emerging views). NORMALISATION (v3): heavy-tailed reach signals

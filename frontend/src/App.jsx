@@ -109,13 +109,14 @@ const METRICS = [
   { key: "tl_support_score",             label: "DJ Support (1001TL)",weight: 0.11, format: "score100" },
   { key: "google_trends_score",          label: "Google Trends",      weight: 0.08, format: "score100" },
   { key: "spotify_follower_growth_rate", label: "Listener Growth",    weight: 0.07, format: "pct"      },
+  { key: "festival_score",               label: "Festival Presence",  weight: 0.05, format: "score100" },
   { key: "scene_geography",              label: "International Appeal",weight: 0.03, format: "score100" },
   { key: "label_score",                  label: "Label Trajectory",   weight: 0.05, format: "score100" },
   { key: "spotify_monthly_listeners",    label: "Monthly Listeners",  weight: 0.05, format: "count"    },
-  { key: "youtube_subscribers",          label: "YT Subscribers",     weight: 0.03, format: "count"    },
-  { key: "tiktok_post_count",            label: "TikTok Posts",       weight: 0.03, format: "posts"    },
-  { key: "spotify_playlist_placements",  label: "Releases",           weight: 0.03, format: "number"   },
-  { key: "wikipedia_pageviews",          label: "Wikipedia Views",    weight: 0.02, format: "count"    },
+  { key: "youtube_subscribers",          label: "YT Subscribers",     weight: 0.02, format: "count"    },
+  { key: "tiktok_post_count",            label: "TikTok Posts",       weight: 0.01, format: "posts"    },
+  { key: "spotify_playlist_placements",  label: "Releases",           weight: 0.02, format: "number"   },
+  { key: "wikipedia_pageviews",          label: "Wikipedia Views",    weight: 0.01, format: "count"    },
 ];
 
 const SORT_OPTIONS = [
@@ -834,13 +835,14 @@ const METRIC_DETAILS = [
   { key: "tl_support_score",             label: "DJ Support (1001TL)", weight: 0.11, color: "#00b8d4", why: "Where the artist's tracks land on 1001Tracklists' weekly chart of what DJs actually PLAY in their sets. The hardest signal to game — tastemakers spinning your music, not sales or streams. It's a single-week sample, so an act not on this week's chart is treated as unmeasured (its weight redistributes), never scored as zero support." },
   { key: "google_trends_score",          label: "Google Trends",       weight: 0.08, color: "#4285F4", why: "Search interest normalized to the artist's own peak. Rising search frequently precedes booking-fee increases. Acts whose name collides with a common word or a more-famous namesake (where search can't isolate the DJ) are treated as unmeasured rather than scored on a contaminated value." },
   { key: "spotify_follower_growth_rate", label: "Listener Growth",     weight: 0.07, color: "#C8F750", why: "Rate of change in audience — acceleration often predicts demand before size does. Weighted modestly while its coverage builds." },
+  { key: "festival_score",               label: "Festival Presence",   weight: 0.05, color: "#ff8a3d", why: "How many major festivals the act is booked on this season, tier-weighted (global flagships — Tomorrowland, EDC, Coachella, Ultra, Sónar — count more than regional/boutique events). This is live booking demand that Resident Advisor (club-skewed, Europe-heavy) and Beatport (track-charting producers) structurally miss — a US-festival or viral act who fills fields but logs no RA club nights. An act not on any tracked lineup is treated as unmeasured rather than scored as zero, so it only lifts festival acts and never penalises a club-focused one." },
   { key: "scene_geography",              label: "International Appeal", weight: 0.03, color: "#4fd6e8", why: "Share of an artist's listeners that sit in the core electronic-music credibility markets (Ibiza/Spain, Berlin, Amsterdam, the UK, Italy, France…). Distinguishes a true international touring act from one whose audience is concentrated in a single home market. Weighted lightly so it nudges rather than dominates, and an act not yet measured is treated as unmeasured rather than scored as zero appeal." },
   { key: "label_score",                  label: "Label Trajectory",    weight: 0.05, color: "#8b5cf6", why: "Tier and trajectory of the labels an artist releases on (Drumcode/Kompakt/Defected…) — credibility, and whether they're moving onto bigger homes." },
   { key: "spotify_monthly_listeners",    label: "Monthly Listeners",   weight: 0.05, color: "#1DB954", why: "Active fanbase reach, read from the live Spotify session. A supporting signal, demoted hard — raw streaming is the weakest predictor of who actually fills rooms, so it informs the ranking without driving it." },
-  { key: "youtube_subscribers",          label: "YouTube Subscribers", weight: 0.03, color: "#FF0000", why: "A proxy for dedicated fanbase depth. YouTube audiences tend to convert to ticket buyers at a higher rate." },
-  { key: "tiktok_post_count",            label: "TikTok Posts",        weight: 0.03, color: "#E9E7DF", why: "Posts using the artist's hashtag — grassroots cultural spread, often an early breakout indicator. Kept at a deliberately low weight: hashtag volume is the easiest signal to inflate, so it informs without driving. A less-gameable follower-growth metric is on the roadmap to replace it once coverage exists." },
-  { key: "spotify_playlist_placements",  label: "Releases / Catalog",  weight: 0.03, color: "#1DB954", why: "Depth and recency of catalog. Active release schedules score higher than a single back-catalog hit." },
-  { key: "wikipedia_pageviews",          label: "Wikipedia Views",     weight: 0.02, color: "#9aa0a6", why: "Trailing 30-day article pageviews. A clean, independent measure of broad public interest." },
+  { key: "youtube_subscribers",          label: "YouTube Subscribers", weight: 0.02, color: "#FF0000", why: "A proxy for dedicated fanbase depth. YouTube audiences tend to convert to ticket buyers at a higher rate." },
+  { key: "tiktok_post_count",            label: "TikTok Posts",        weight: 0.01, color: "#E9E7DF", why: "Posts using the artist's hashtag — grassroots cultural spread, often an early breakout indicator. Kept at the lowest weight: hashtag volume is the easiest signal to inflate, so it barely informs. A less-gameable follower-growth metric is on the roadmap to replace it once coverage exists." },
+  { key: "spotify_playlist_placements",  label: "Releases / Catalog",  weight: 0.02, color: "#1DB954", why: "Depth and recency of catalog. Active release schedules score higher than a single back-catalog hit." },
+  { key: "wikipedia_pageviews",          label: "Wikipedia Views",     weight: 0.01, color: "#9aa0a6", why: "Trailing 30-day article pageviews. A clean, independent measure of broad public interest." },
 ];
 
 // Published, transparent Scene Score rubric — explicit so it's a credible
