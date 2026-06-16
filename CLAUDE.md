@@ -340,6 +340,24 @@ img /brand/post-methodology-1080.png). The weight-diff table in the report is ha
 rankV2Report.js (`WEIGHT_ROWS`) — keep it in sync with `WEIGHTS_V2` (score.js). NOT a sort
 mode on the Rankings tab (deliberately kept off the live list).
 
+## SEO/AEO prerender (`backend/generatePages.js`, runs after `vite build`)
+Operates on `frontend/dist` (gitignored — regenerated every deploy, never committed).
+Emits static crawler-visible HTML for: `/artist/<slug>`, `/value/<slug>`, 50 `/club/<slug>`,
+the homepage shell (baked top-25 + Organization/WebSite/SearchAction/**Dataset(dateModified)**/
+**ItemList** schema), and **4 ranking landing pages** `/rankings/{techno,house,rising,value}`.
+- **Landing pages** are STANDALONE static HTML (own `<head>`/styles, light-theme like the
+  reports) — NOT the SPA `#root` template, because the SPA has no `/rankings/*` route, so
+  standalone avoids a hydration/routing mismatch. Each ships ItemList + FAQPage + CollectionPage
+  (dateModified) + BreadcrumbList. Linked from the prerendered homepage + in the sitemap.
+- **Genre classification single source of truth = `frontend/src/genre.js`** (plain JS, no JSX).
+  Both the SPA (`methodology.jsx` re-exports it) AND the build (`generatePages.js` dynamic-imports
+  it) use the same `genreLean`/`matchesGenre`/`isPureTechno` — so the techno/house landing pages
+  can NEVER drift from the on-site genre filter. Same single-source pattern as `clubsData.js`.
+  If you change genre logic, edit `genre.js` only.
+- AEO: `frontend/public/llms.txt` advertises the daily refresh + lists core/report pages.
+  `dateModified` + visible "updated daily" on home and landings signal freshness to AI engines.
+- Published reports (incl. Rank 2.0) are listed in the sitemap (existence-checked).
+
 ## Key per-artist fields (in artists.json, persisted)
 - `emerging` (bool) — reputation-based; drives "Ones to Watch" (excludes legends).
 - `booking_fee` {label, mid, tier, color} — curated club/festival estimate.
