@@ -1,0 +1,11 @@
+{
+  "_doc": "HAND-VERIFIED festival bookings, merged ON TOP of the auto-scraped festival_lineups.json by computeFestivalScore.js. WHY: the Songkick scraper is European-summer skewed and misses the US-festival/viral acts the signal is meant to reach (Disco Lines, Gordo @ EDC/Coachella). Add CONFIRMED bookings here that the scraper can't see. Schema = festival_lineups.json (festival → tier → acts). tier: 1.0 = global flagship, 0.6 = major regional. Dedup is by festival NAME (an act on the same festival in both files counts once). acts[] MUST match rankings.json names exactly. MAINTAIN MANUALLY — verify before adding; this is the curated layer, the scraper owns the rest.",
+  "updated": "2026-06-16",
+  "source": "manual-verified",
+  "festivals": [
+    { "name": "Coachella",      "tier": 1.0, "acts": ["Disco Lines", "John Summit", "Dom Dolla", "FISHER", "Anyma", "Mau P", "Sara Landry"] },
+    { "name": "EDC Las Vegas",  "tier": 1.0, "acts": ["Disco Lines", "Gordo", "John Summit", "Dom Dolla", "Chris Lake", "FISHER", "James Hype", "Hugel", "Mau P", "Sara Landry"] },
+    { "name": "Lollapalooza",   "tier": 1.0, "acts": ["John Summit", "Dom Dolla", "Disco Lines"] },
+    { "name": "Ultra Miami",    "tier": 1.0, "acts": ["Gordo", "Chris Lake", "Anyma"] }
+  ]
+}

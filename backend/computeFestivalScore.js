@@ -26,21 +26,36 @@
 const fs = require("fs");
 const path = require("path");
 
-const LINEUPS_FILE = path.join(__dirname, "festival_lineups.json");
+const LINEUPS_FILE   = path.join(__dirname, "festival_lineups.json");   // auto-scraped (fetchFestivals.js)
+const OVERRIDES_FILE = path.join(__dirname, "festival_overrides.json"); // hand-verified supplement
 const CAP = 6; // Σ tier at which festival_score saturates to 100
 
-// Build name → Σ(tier) from the lineup file. Returns {} if the file is missing/empty
-// (signal then self-heals away for everyone — safe no-op until data lands).
+// Build name → Σ(tier), merging the auto-scraped lineups with a hand-verified
+// overrides file. WHY overrides: the Songkick scraper is European-summer skewed
+// (same blind spot as RA) and misses the US-festival/viral acts the signal is meant
+// to reach (Disco Lines, Gordo @ EDC/Coachella). The overrides file is a small,
+// hand-verified supplement that credits those confirmed bookings the scraper can't see.
+// DEDUP by festival NAME per act (an act on the same festival in both files counts
+// ONCE; the overrides tier wins on conflict) — so the two sources can't double-count.
+// Returns {} if both files are missing (signal self-heals away — safe no-op).
 function loadFestivalWeights() {
-  let data;
-  try { data = JSON.parse(fs.readFileSync(LINEUPS_FILE, "utf8")); }
-  catch { return {}; }
-  const weights = {};
-  for (const f of (data.festivals || [])) {
-    const tier = Number.isFinite(f.tier) ? f.tier : 0.6;
-    for (const act of (f.acts || [])) {
-      weights[act] = (weights[act] || 0) + tier;
+  const actFest = {}; // act → Map(festivalName → tier)
+  const ingest = (file) => {
+    let data;
+    try { data = JSON.parse(fs.readFileSync(file, "utf8")); } catch { return; }
+    for (const f of (data.festivals || [])) {
+      if (!f.name) continue;
+      const tier = Number.isFinite(f.tier) ? f.tier : 0.6;
+      for (const act of (f.acts || [])) {
+        (actFest[act] || (actFest[act] = new Map())).set(f.name, tier);
+      }
     }
+  };
+  ingest(LINEUPS_FILE);
+  ingest(OVERRIDES_FILE); // merged on top; same festival name → deduped, override tier wins
+  const weights = {};
+  for (const [act, m] of Object.entries(actFest)) {
+    weights[act] = [...m.values()].reduce((s, t) => s + t, 0);
   }
   return weights;
 }

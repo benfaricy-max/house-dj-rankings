@@ -200,11 +200,17 @@ T2 regional=0.6). Captures who's booked on the big stages — the US-festival/vi
 demand RA (club-skewed/Euro) and Beatport (track-charting) structurally miss
 (Disco Lines, Gordo, Hugel were buried with no RA profile + bp 0). Weight **0.05**,
 SELF-HEALS ON ABSENCE (an act on no tracked lineup is unmeasured, weight redistributes
-— only LIFTS festival acts, never penalises club-only ones). The lineup file is a
-HAND-SEEDED STARTER (well-known headliners) — coverage is the gate; grow/refresh it
-via a scraper (planned `fetchFestivals.js`, Songkick festival tags / aggregators).
-Names in the file MUST match rankings.json exactly (mismatch just self-heals). Mirror
-in frontend METRICS / METRIC_DETAILS + cohort.js (`C_SELF_HEAL`).
+— only LIFTS festival acts, never penalises club-only ones). Weight values come from
+TWO merged files (computeFestivalScore.loadFestivalWeights, deduped by festival name):
+(1) `festival_lineups.json` — AUTO-SCRAPED by `backend/fetchFestivals.js` (act-centric:
+matches each artist's Songkick events against a 25-festival registry; merge-safe;
+runs daily in refresh.yml). Songkick is European-summer skewed, so (2)
+`festival_overrides.json` — a HAND-VERIFIED supplement for confirmed US-festival/viral
+bookings the scraper misses (Disco Lines/Gordo @ EDC/Coachella). Maintain (2) manually;
+the scraper owns (1). Names MUST match rankings.json exactly (mismatch self-heals).
+`computeFestivalScores` is AUTHORITATIVE — it CLEARS festival_score for acts no longer
+on any lineup (else generateStatic's `...prev` spread goes stale). Mirror in frontend
+METRICS / METRIC_DETAILS + cohort.js (`C_SELF_HEAL`).
 
 ## Composite weights (score.js, sum=1.00) — v5.1
 live_demand (RA+tour blend) **.17** (LEADS), scene .20 (CO-LEADS), beatport **.13**,
