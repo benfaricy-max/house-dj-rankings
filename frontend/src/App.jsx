@@ -2713,12 +2713,6 @@ export default function App() {
       {activeTab === "rankings" && <>
       <MomentumAlertsBanner alerts={momentumAlerts} onDismiss={dismissAlerts} onOpen={name => { window.location.href = `/artist/${slugify(name)}`; }} />
 
-      {/* Buy-side front door (GTM.md, lead motion decided 2026-06-11): the leaderboard
-          sells the magazine; a buyer's job is "who's underpriced for my city/budget, right now."
-          BuyerLane is the buy-side entry point under the hero — additive, pure-read, links to
-          the Value Gap wedge via canonical slug + path routing. */}
-      <BuyerLane rankings={rankings} onOpenValue={slug => { window.location.href = `/value/${slug}`; }} />
-
       {/* Stakeholder lens — same index, three jobs-to-be-done */}
       <div className="lens-bar">
         <span className="sort-label">Lens</span>
