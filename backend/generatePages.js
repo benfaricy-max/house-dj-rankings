@@ -207,6 +207,16 @@ function homeBody(artists, total, lastUpdated = "", n = 25) {
           <li><a href="/rankings/value">Most underpriced DJs to book</a></li>
         </ul>
       </nav>
+      <nav class="seo-scenes" aria-label="Scenes">
+        <h2>By scene</h2>
+        <ul>
+          <li><a href="/scene/berlin">DJs booked in Berlin</a></li>
+          <li><a href="/scene/london">DJs booked in London</a></li>
+          <li><a href="/scene/amsterdam">DJs booked in Amsterdam</a></li>
+          <li><a href="/scene/ibiza">DJs booked in Ibiza</a></li>
+          <li><a href="/scene/new-york">DJs booked in New York</a></li>
+        </ul>
+      </nav>
       <p><a href="/methodology">How the demand score is built</a></p>
     </main>`;
 }
@@ -405,6 +415,223 @@ ${faq.map((f) => `      <dt>${esc(f.q)}</dt>\n      <dd>${esc(f.a)}</dd>`).join(
 `;
 }
 
+// Shared standalone-page shell (light theme, branded) for /compare and /scene pages —
+// same look as the ranking landings + reports. jsonld is an array; inner is body HTML.
+const STANDALONE_CSS = `
+  :root { --ink:#15151c; --muted:#6b6b78; --line:#e7e7ee; --accent:#3b3bdb; --win:#1a8f4c; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,"Segoe UI",Inter,Arial,sans-serif; color:var(--ink); background:#f3f3f6; padding:28px; }
+  .page { max-width:820px; margin:0 auto; background:#fff; border-radius:14px; box-shadow:0 6px 30px rgba(0,0,0,.08); overflow:hidden; }
+  .top { background:linear-gradient(120deg,#15151c,#23233a); color:#fff; padding:24px 34px; display:flex; justify-content:space-between; align-items:center; }
+  .brand { font-size:12px; letter-spacing:.18em; color:#a8e00f; font-weight:700; }
+  .doc-title { font-size:13px; color:#aaa; margin-top:2px; }
+  .top .date { font-size:12px; color:#9a9aac; text-align:right; }
+  .hero { padding:26px 34px 18px; border-bottom:1px solid var(--line); }
+  .hero h1 { font-size:27px; line-height:1.12; }
+  .hero .sub { color:var(--muted); font-size:14.5px; margin-top:10px; max-width:62ch; line-height:1.5; }
+  .hero .upd { color:var(--muted); font-size:12.5px; margin-top:10px; }
+  .section { padding:20px 34px; border-bottom:1px solid var(--line); }
+  .section h2 { font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:14px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th { text-align:left; color:var(--muted); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.05em; padding:6px 8px; border-bottom:1px solid var(--line); }
+  td { padding:7px 8px; border-bottom:1px solid #f1f1f5; }
+  td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+  td.rk { font-weight:700; width:52px; }
+  td.muted, .muted { color:var(--muted); }
+  td.win { font-weight:700; color:var(--win); }
+  a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; }
+  .faq dt { font-weight:700; font-size:14.5px; margin-top:14px; }
+  .faq dd { color:#333; font-size:14px; line-height:1.55; margin-top:5px; }
+  .foot { padding:16px 34px; font-size:12px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  .foot b { color:#15151c; }
+  @media (max-width:560px){ body{padding:12px;} .top,.hero,.section,.foot{padding-left:18px;padding-right:18px;} }`;
+
+function pageShell({ title, desc, canonical, ogImage, jsonld, docTitle, updatedHuman, inner }) {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>${esc(title)}</title>
+<meta name="description" content="${esc(desc)}" />
+<link rel="canonical" href="${canonical}" />
+<meta property="og:title" content="${esc(title)}" />
+<meta property="og:description" content="${esc(desc)}" />
+<meta property="og:url" content="${canonical}" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="${ORIGIN}${ogImage}" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">${JSON.stringify(jsonld)}</script>
+<style>${STANDALONE_CSS}</style>
+</head>
+<body>
+<div class="page">
+  <div class="top">
+    <div><div class="brand">THE DJ RANKINGS</div><div class="doc-title">${esc(docTitle)}</div></div>
+    <div class="date">Updated daily<br/>${esc(updatedHuman)}</div>
+  </div>
+${inner}
+  <div class="foot">
+    <span><b>PEAKTIME</b> · thedjrankings.com — the demand index for electronic music</span>
+    <span><a href="/methodology">How the demand score is built →</a></span>
+  </div>
+</div>
+</body>
+</html>
+`;
+}
+
+const fmtReach = (n) => (!Number.isFinite(n) || n <= 0 ? "—" : n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${Math.round(n / 1e3)}K` : String(n));
+
+// ── Head-to-head comparison pages (/compare/<a>-vs-<b>) ──────────────────────
+function renderComparison({ a, b, total, lastUpdated }) {
+  // a is the better-ranked act (caller guarantees a.rank <= b.rank).
+  const modified = (lastUpdated || new Date().toISOString()).slice(0, 10);
+  const updatedHuman = new Date(lastUpdated || new Date().toISOString())
+    .toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  const sa = slugify(a.name), sb = slugify(b.name);
+  const url = `${ORIGIN}/compare/${sa}-vs-${sb}`;
+  const gap = (b.rank ?? 0) - (a.rank ?? 0);
+  const h1 = `${a.name} vs ${b.name}`;
+  const verdict = `${a.name} ranks #${a.rank} and ${b.name} ranks #${b.rank} of ${total} on PEAKTIME's `
+    + `booking-demand index — ${a.name} sits ${gap} place${gap === 1 ? "" : "s"} higher as of ${updatedHuman}.`;
+  const title = `${a.name} vs ${b.name}: Who's More in Demand? | PEAKTIME`;
+  const desc = `${verdict} A signal-by-signal booking-demand comparison.`.replace(/\s+/g, " ").trim();
+
+  const ROWS = [
+    ["PEAKTIME rank", a.rank, b.rank, false, (v) => `#${v}`],
+    ["Demand score", a.score, b.score, true, (v) => Math.round(v)],
+    ["Scene score", a.manual_scene_score, b.manual_scene_score, true, (v) => Math.round(v)],
+    ["Live demand", a.live_demand_score, b.live_demand_score, true, (v) => Math.round(v)],
+    ["Beatport", a.beatport_score, b.beatport_score, true, (v) => Math.round(v)],
+    ["DJ support (1001TL)", a.tl_support_score, b.tl_support_score, true, (v) => Math.round(v)],
+    ["Momentum", a.momentum_score, b.momentum_score, true, (v) => Math.round(v)],
+    ["Monthly listeners", a.spotify_monthly_listeners, b.spotify_monthly_listeners, true, fmtReach],
+  ];
+  const rowsHtml = ROWS.filter(([, av, bv]) => Number.isFinite(av) || Number.isFinite(bv)).map(([label, av, bv, hib, fmt]) => {
+    const aFin = Number.isFinite(av), bFin = Number.isFinite(bv);
+    let aWin = false, bWin = false;
+    if (aFin && bFin && av !== bv) { const aBetter = hib ? av > bv : av < bv; aWin = aBetter; bWin = !aBetter; }
+    return `<tr><td>${esc(label)}</td>`
+      + `<td class="num ${aWin ? "win" : ""}">${aFin ? esc(String(fmt(av))) : "—"}</td>`
+      + `<td class="num ${bWin ? "win" : ""}">${bFin ? esc(String(fmt(bv))) : "—"}</td></tr>`;
+  }).join("\n");
+
+  const faq = [
+    { q: `Who is more in demand, ${a.name} or ${b.name}?`, a: `${a.name}. On PEAKTIME's booking-demand index, ${a.name} ranks #${a.rank} versus ${b.name} at #${b.rank} as of ${updatedHuman} — a gap of ${gap} place${gap === 1 ? "" : "s"}. The ranking measures booking demand, not reach or follower counts.` },
+    { q: `How is ${a.name} vs ${b.name} compared?`, a: `Both acts are scored on the same blend of independent demand signals — live booking (Resident Advisor venue tier, attendance and touring), editorial scene credibility, Beatport chart credibility, 1001Tracklists DJ support, search interest and social velocity — refreshed daily.` },
+  ];
+  const itemList = { "@context": "https://schema.org", "@type": "ItemList", name: h1, url, numberOfItems: 2,
+    itemListOrder: "https://schema.org/ItemListOrderAscending",
+    itemListElement: [a, b].map((x) => ({ "@type": "ListItem", position: x.rank,
+      url: `${ORIGIN}/artist/${slugify(x.name)}`, item: { "@type": "MusicGroup", name: x.name, url: `${ORIGIN}/artist/${slugify(x.name)}` } })) };
+  const faqLd = { "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
+  const collectionLd = { "@context": "https://schema.org", "@type": "WebPage", name: h1, url, description: desc, dateModified: modified };
+  const crumbs = breadcrumbLd([{ name: "Rankings", path: "/" }, { name: h1, path: `/compare/${sa}-vs-${sb}` }]);
+
+  const inner = `  <div class="hero">
+    <h1>${esc(a.name)} <span style="color:#999">vs</span> ${esc(b.name)}</h1>
+    <p class="sub">${esc(verdict)}</p>
+    <p class="upd">refreshed daily · last updated ${esc(updatedHuman)} · <a href="/artist/${sa}">${esc(a.name)}</a> · <a href="/artist/${sb}">${esc(b.name)}</a></p>
+  </div>
+  <div class="section">
+    <h2>Signal by signal</h2>
+    <table>
+      <thead><tr><th>Signal</th><th class="num">${esc(a.name)}</th><th class="num">${esc(b.name)}</th></tr></thead>
+      <tbody>
+${rowsHtml}
+      </tbody>
+    </table>
+  </div>
+  <div class="section faq">
+    <h2>Frequently asked</h2>
+    <dl>
+${faq.map((f) => `      <dt>${esc(f.q)}</dt>\n      <dd>${esc(f.a)}</dd>`).join("\n")}
+    </dl>
+  </div>`;
+
+  return pageShell({ title, desc, canonical: url, ogImage: "/brand/post-top5-1080.png",
+    jsonld: [collectionLd, itemList, faqLd, crumbs], docTitle: "PEAKTIME · head-to-head", updatedHuman, inner });
+}
+
+// ── Scene / city pages (/scene/<city>) ───────────────────────────────────────
+// Who's booked in a market, ranked by PEAKTIME demand. Built from ra_recent_cities.
+function renderScene({ city, country, acts, total, lastUpdated }) {
+  const modified = (lastUpdated || new Date().toISOString()).slice(0, 10);
+  const updatedHuman = new Date(lastUpdated || new Date().toISOString())
+    .toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  const slug = citySlugLocal(city);
+  const url = `${ORIGIN}/scene/${slug}`;
+  const top = acts.slice(0, 40);
+  const h1 = `The most in-demand DJs booked in ${city}`;
+  const lede = `House and techno DJs with recent ${city} bookings, ranked by PEAKTIME booking demand.`;
+  const title = `DJs Booked in ${city} — Demand Ranking | PEAKTIME`;
+  const desc = `${lede} ${top.length} acts, updated daily.`.replace(/\s+/g, " ").trim();
+
+  const rows = top.map((a) => {
+    const s = slugify(a.name);
+    return `<tr><td class="num rk">#${a.rank}</td><td><a href="/artist/${s}">${esc(a.name)}</a></td>`
+      + `<td class="num muted">${a._shows ? `${a._shows} show${a._shows === 1 ? "" : "s"}` : "—"}</td></tr>`;
+  }).join("\n");
+
+  const faq = [
+    { q: `Who is the most in-demand DJ booked in ${city}?`, a: `${top[0] ? top[0].name : "—"} is the highest-ranked act with recent ${city} bookings on PEAKTIME (overall #${top[0] ? top[0].rank : "—"}), as of ${updatedHuman}.` },
+    { q: `Which DJs play ${city}?`, a: `PEAKTIME tracks ${top.length}+ ranked house and techno acts with recent ${city} dates (from Resident Advisor booking data). The list is ordered by each act's overall booking-demand rank and refreshed daily.` },
+  ];
+  const itemList = { "@context": "https://schema.org", "@type": "ItemList", name: h1, url, numberOfItems: top.length,
+    itemListOrder: "https://schema.org/ItemListOrderAscending",
+    itemListElement: top.map((a, i) => ({ "@type": "ListItem", position: i + 1, url: `${ORIGIN}/artist/${slugify(a.name)}`,
+      item: { "@type": "MusicGroup", name: a.name, url: `${ORIGIN}/artist/${slugify(a.name)}` } })) };
+  const faqLd = { "@context": "https://schema.org", "@type": "FAQPage",
+    mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
+  const collectionLd = { "@context": "https://schema.org", "@type": "CollectionPage", name: h1, url, description: desc,
+    dateModified: modified, about: { "@type": "Place", name: `${city}${country ? `, ${country}` : ""}` } };
+  const crumbs = breadcrumbLd([{ name: "Rankings", path: "/" }, { name: city, path: `/scene/${slug}` }]);
+
+  const inner = `  <div class="hero">
+    <h1>${esc(h1)}</h1>
+    <p class="sub">${esc(lede)} Demand is measured from live booking, scene credibility, Beatport, DJ support, search and social velocity.</p>
+    <p class="upd">${top.length} acts · refreshed daily · last updated ${esc(updatedHuman)} · <a href="/">see the full live index →</a></p>
+  </div>
+  <div class="section">
+    <h2>Ranked by booking demand</h2>
+    <table>
+      <thead><tr><th class="num">Rank</th><th>Artist</th><th class="num">Recent ${esc(city)} dates</th></tr></thead>
+      <tbody>
+${rows}
+      </tbody>
+    </table>
+  </div>
+  <div class="section faq">
+    <h2>Frequently asked</h2>
+    <dl>
+${faq.map((f) => `      <dt>${esc(f.q)}</dt>\n      <dd>${esc(f.a)}</dd>`).join("\n")}
+    </dl>
+  </div>`;
+
+  return pageShell({ title, desc, canonical: url, ogImage: "/brand/post-top5-1080.png",
+    jsonld: [collectionLd, itemList, faqLd, crumbs], docTitle: `PEAKTIME · ${city} scene`, updatedHuman, inner });
+}
+
+// Curated booking markets + city matching — MIRRORS App.jsx BOOKING_MARKETS / citySlug /
+// cityMatch (App.jsx is JSX, not Node-importable). Keep in sync if those change.
+const BOOKING_MARKETS = [
+  { city: "Amsterdam", country: "Netherlands" }, { city: "Berlin", country: "Germany" },
+  { city: "London", country: "United Kingdom" }, { city: "Ibiza", country: "Spain" },
+  { city: "Paris", country: "France" }, { city: "Miami", country: "United States" },
+  { city: "New York", country: "United States" }, { city: "Los Angeles", country: "United States" },
+  { city: "Las Vegas", country: "United States" }, { city: "Melbourne", country: "Australia" },
+  { city: "Sydney", country: "Australia" }, { city: "Toronto", country: "Canada" },
+  { city: "Mexico City", country: "Mexico" },
+];
+const citySlugLocal = (c) => c.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+const cityMatchLocal = (raCity, marketCity) => {
+  const a = (raCity || "").toLowerCase().split("/")[0].trim();
+  const b = marketCity.toLowerCase();
+  return a && (a.includes(b) || b.includes(a));
+};
+
 async function build() {
   if (!fs.existsSync(TEMPLATE)) { console.error("generatePages: dist/index.html missing — run vite build first."); process.exit(1); }
   const tpl = fs.readFileSync(TEMPLATE, "utf8");
@@ -563,6 +790,65 @@ async function build() {
     console.warn("generatePages: ranking landings skipped —", e.message);
   }
 
+  // Comparison pages — /compare/<a>-vs-<b> for same-genre adjacent-rank rivalry pairs
+  // (high-intent, near-zero competition, the format AI engines cite most). Reuses the
+  // genre classifier (genre.js). Own try/catch so a comparison bug can't break the rest.
+  let nCompare = 0;
+  try {
+    const { pathToFileURL } = require("url");
+    const { matchesGenre } = await import(pathToFileURL(path.join(__dirname, "../frontend/src/genre.js")).href);
+    const named = artists.filter((a) => a.name && Number.isFinite(a.score) && Number.isFinite(a.rank));
+    const byRank = (a, b) => a.rank - b.rank;
+    const technoCut = named.filter((a) => matchesGenre(a, "techno")).sort(byRank);
+    const houseCut = named.filter((a) => matchesGenre(a, "house")).sort(byRank);
+    const overall = named.slice().sort(byRank);
+
+    const seen = new Set();
+    const pairs = [];
+    const addPair = (x, y) => {
+      if (!x || !y || x.name === y.name) return;
+      const [a, b] = x.rank <= y.rank ? [x, y] : [y, x];   // better rank first
+      const key = `${slugify(a.name)}-vs-${slugify(b.name)}`;
+      if (seen.has(key)) return;
+      seen.add(key);
+      pairs.push({ a, b });
+    };
+    for (const cut of [technoCut, houseCut]) {
+      for (let i = 0; i < cut.length - 1; i++) addPair(cut[i], cut[i + 1]);            // consecutive
+      for (let i = 0; i < Math.min(cut.length - 2, 25); i++) addPair(cut[i], cut[i + 2]); // skip-one, top 25
+    }
+    for (let i = 0; i < Math.min(overall.length - 1, 16); i++) addPair(overall[i], overall[i + 1]); // marquee top pairs
+    for (const { a, b } of pairs.slice(0, 220)) {
+      writePage(`compare/${slugify(a.name)}-vs-${slugify(b.name)}.html`, renderComparison({ a, b, total, lastUpdated: d.lastUpdated }));
+      urls.push({ loc: `/compare/${slugify(a.name)}-vs-${slugify(b.name)}`, priority: 0.5, changefreq: "weekly", lastmod: today });
+      nCompare++;
+    }
+  } catch (e) {
+    console.warn("generatePages: comparison pages skipped —", e.message);
+  }
+
+  // Scene / city pages — /scene/<city> for the curated booking markets. Aggregates
+  // ra_recent_cities, ranks by overall demand. Completes the "market" page type the
+  // SEO audit deferred (built standalone, not the hash-routed /market SPA view).
+  let nScene = 0;
+  try {
+    for (const m of BOOKING_MARKETS) {
+      const acts = [];
+      for (const a of artists) {
+        if (!a.name || !Number.isFinite(a.rank)) continue;
+        const hit = (a.ra_recent_cities || []).find((c) => cityMatchLocal(c.city, m.city));
+        if (hit) acts.push({ ...a, _shows: hit.shows || hit.shows_3m || 0 });
+      }
+      if (acts.length < 5) continue;            // skip thin cities (no substantive page)
+      acts.sort((x, y) => x.rank - y.rank);
+      writePage(`scene/${citySlugLocal(m.city)}.html`, renderScene({ city: m.city, country: m.country, acts, total, lastUpdated: d.lastUpdated }));
+      urls.push({ loc: `/scene/${citySlugLocal(m.city)}`, priority: 0.6, changefreq: "weekly", lastmod: today });
+      nScene++;
+    }
+  } catch (e) {
+    console.warn("generatePages: scene pages skipped —", e.message);
+  }
+
   // Homepage — bake content + canonical + entity schema into dist/index.html.
   // createRoot() wipes #root on mount, so this is crawler/first-paint only (no hydration).
   {
@@ -583,7 +869,7 @@ async function build() {
     "</urlset>", ""].join("\n");
   fs.writeFileSync(path.join(DIST, "sitemap.xml"), xml);
 
-  console.log(`generatePages: ${nArtist} artist + ${nValue} value + ${nClub} club + ${nLanding} ranking-landing pages, 404.html, sitemap.xml (${urls.length} URLs).`);
+  console.log(`generatePages: ${nArtist} artist + ${nValue} value + ${nClub} club + ${nLanding} landing + ${nCompare} compare + ${nScene} scene pages, 404.html, sitemap.xml (${urls.length} URLs).`);
 }
 
 build().catch((e) => { console.error("generatePages failed:", e); process.exit(1); });
