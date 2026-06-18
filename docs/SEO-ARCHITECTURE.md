@@ -1,13 +1,22 @@
 # SEO architecture & migration plan — thedjrankings.com (PEAKTIME)
 
-The site is a client-rendered SPA on **hash routing**, so for search it collapses
-to **one indexable URL** (the homepage). 330 artist pages, every Value Gap page,
-and the blog are invisible to Google. This is the single biggest SEO problem and
-it directly caps the free-ranking funnel in `STRATEGY.md`/`GTM.md`.
+> **STATUS (updated 2026-06-18): Phase B SHIPPED.** The hash-routing problem this
+> doc was written to solve is fixed. `backend/generatePages.js` runs after
+> `vite build` (`frontend/package.json`: `"build": "vite build && node
+> ../backend/generatePages.js"`) and emits ~1,200 prerendered, indexable static
+> pages — artist, value/fee, `/rankings/*`, `/compare/*`, `/scene/*`, club, and a
+> baked homepage — each with unique title/meta/canonical/OG + JSON-LD, plus
+> `404.html` SPA fallback, a legacy `#/artist/x → /artist/x` redirect, and a live
+> `sitemap.xml` referenced in `robots.txt`. Verified live: `/artist/<slug>` and
+> `/rankings/techno` return 200 with prerendered content + schema.
+> **The only open foundational item is Phase A's GSC verification + sitemap
+> submission (owner action — needs a Google account). Do NOT re-plan a routing
+> migration; it's done.** History below is retained for context.
 
-This doc is the blueprint to fix it: the target URL scheme, internal-linking
-model, and a phased migration. Companion: run the `/seo-audit`, `/schema`, and
-`/programmatic-seo` skills against this.
+Originally: the site was a client-rendered SPA on **hash routing**, so for search
+it collapsed to one indexable URL (the homepage) — 330 artist pages, every Value
+Gap page, and the blog invisible to Google. This doc was the blueprint to fix it:
+the target URL scheme, internal-linking model, and a phased migration.
 
 ---
 
@@ -72,12 +81,16 @@ artist hierarchy/breadcrumb (stronger cluster; bigger routing change).
 
 ### Phase A — quick wins (DONE, non-breaking)
 - ✅ `frontend/public/robots.txt`
-- ✅ `backend/generateSitemap.js` (inert, ready)
+- ✅ `backend/generateSitemap.js` (superseded — the live sitemap is now emitted by
+  `generatePages.js`, which lists only pages that exist; this standalone script is
+  the legacy/inert version)
 - ✅ This architecture doc
-- ☐ **Set up Google Search Console** + verify the domain (currently zero index
-  visibility; GA4 is already installed). Do this now — it measures the migration.
+- ☐ **Set up Google Search Console** + verify the domain via DNS TXT, then submit
+  `/sitemap.xml`. **STILL OPEN — the one remaining foundational task** (owner
+  action; GA4 `G-SP860FWPQR` is already installed but Domain properties need DNS
+  verification). This is now the highest-priority SEO item.
 
-### Phase B — crawlable URLs + prerender (the unlock — the real lift)
+### Phase B — crawlable URLs + prerender (✅ SHIPPED — see status note at top)
 1. **Routing:** replace manual `window.location.hash` matching in `App.jsx` with
    path-based routing (`/artist/<slug>` …). Keep a hash-catcher in `index.html`
    that `location.replace()`s old `#/artist/x` → `/artist/x` (preserve shared
