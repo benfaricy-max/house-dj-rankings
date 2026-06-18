@@ -11,3 +11,6 @@ frontend/.env
 
 # Local experiment tooling + outreach contacts — never publish (public repo)
 backend/experiments/
+
+# Generated PDF exports (regenerated from data — not source)
+reports/
