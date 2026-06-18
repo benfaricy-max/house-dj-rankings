@@ -820,12 +820,20 @@ function CompareBar({ selected, onClear, onCompare }) {
 
 // ── How It Works page ─────────────────────────────────────────────
 
+// Every external source the index actually pulls from — one card each, so the
+// page matches the hero's source list and nothing the model uses is hidden.
 const DATA_SOURCES = [
-  { icon: "🎵", name: "Spotify",       color: "#1DB954", points: ["Monthly listeners (scraped)", "Follower count & growth rate", "Average track popularity score", "Playlist placements count"] },
-  { icon: "▶",  name: "YouTube",       color: "#FF0000", points: ["Subscriber count", "Weekly view count"] },
-  { icon: "🎵", name: "TikTok",        color: "#010101", points: ["Hashtag post count — measures how much content is being created around an artist"] },
-  { icon: "📈", name: "Google Trends", color: "#4285F4", points: ["Search interest score (0–100) over the past 90 days"] },
-  { icon: "🎛",  name: "Scene Score",  color: "#8b5cf6", points: ["Manual override 0–100 — accounts for festival bookings, residencies, and cultural weight that algorithms miss"] },
+  { icon: "🎤", name: "Resident Advisor", color: "#FF5C00", points: ["Venue-capacity tier of upcoming bookings", "Booking frequency & 6-month event count", "Average / top RSVP attendance", "Geographic spread of bookings (top regions & countries)"] },
+  { icon: "🎛", name: "Scene Score",      color: "#8b5cf6", points: ["Editorial 0–100 against a published rubric", "Boiler Room / Berghain / festival-closing bookings", "Label homes, press covers, Ibiza residencies", "Cultural weight algorithms miss — versioned & dated"] },
+  { icon: "🟢", name: "Beatport",         color: "#a8e00f", points: ["Best position across genre Top 100 charts", "Track breadth on the charts", "Cross-genre chart reach", "Week-over-week chart movement (feeds Momentum)"] },
+  { icon: "💿", name: "1001Tracklists",   color: "#00b8d4", points: ["Position on the weekly chart of what DJs PLAY in sets", "Number of charting tracks", "Cumulative weeks charted (~16-week archive)"] },
+  { icon: "📈", name: "Google Trends",    color: "#4285F4", points: ["Search interest score (0–100), normalised to the artist's own peak", "12-month search-slope history (feeds Momentum)", "Country-level interest as a geography fallback"] },
+  { icon: "🗓", name: "Songkick",         color: "#f80046", points: ["Upcoming tour density & show count", "Number of countries routed", "Tour velocity vs prior period (feeds Momentum)", "Festival-booking detection"] },
+  { icon: "🎪", name: "Festival lineups", color: "#ff8a3d", points: ["Booked-on-lineup presence across a 25-festival registry", "Tier weighting (global flagship vs regional/boutique)", "Auto-scraped from Songkick + a hand-verified US/viral supplement"] },
+  { icon: "🎵", name: "Spotify",          color: "#1DB954", points: ["Monthly listeners (scraped)", "Follower count & growth rate", "Top listener cities → International Appeal", "Playlist placements / catalog depth"] },
+  { icon: "▶",  name: "YouTube",          color: "#FF0000", points: ["Subscriber count", "Channel reach as a fanbase-depth proxy"] },
+  { icon: "🎬", name: "TikTok",           color: "#010101", points: ["Hashtag post count — how much content is being created around an artist", "Grassroots cultural spread / early-breakout signal"] },
+  { icon: "📚", name: "Wikipedia",        color: "#9aa0a6", points: ["Trailing 30-day article pageviews", "Recent-vs-prior-30-day trend (feeds Momentum)"] },
 ];
 
 const METRIC_DETAILS = [
@@ -859,13 +867,15 @@ const SCENE_RUBRIC = [
 
 function HowItWorksPage() {
   const totalWeight = METRIC_DETAILS.reduce((s, m) => s + m.weight, 0);
+  // Render weights in descending % order so the heaviest signals lead the list.
+  const orderedMetrics = [...METRIC_DETAILS].sort((a, b) => b.weight - a.weight);
   return (
     <div className="hiw-page">
       <div className="hiw-hero">
         <div className="hiw-eyebrow">Methodology</div>
         <h2 className="hiw-title">How we rank the world's hottest DJs</h2>
         <p className="hiw-sub">
-          Every ranking is computed from 11 independent signals pulled from Spotify, Beatport, 1001Tracklists, YouTube, TikTok, Google Trends, Resident Advisor and Wikipedia.
+          Every ranking is computed from 14 independent signals pulled from Resident Advisor, Beatport, 1001Tracklists, Songkick, festival lineups, Spotify, YouTube, TikTok, Google Trends and Wikipedia.
           No editorial bias, no pay-to-play. Refreshed daily.
         </p>
         <p className="hiw-sub" style={{ marginTop: 10 }}>
@@ -877,10 +887,10 @@ function HowItWorksPage() {
       </div>
 
       <section className="hiw-section">
-        <h3 className="hiw-section-title">The 11 Signals</h3>
+        <h3 className="hiw-section-title">The 14 Signals</h3>
         <p className="hiw-section-sub">Each artist receives a score from 0–100 on each metric, normalised across the full ranked pool. Weighted scores are summed to produce the final ranking.</p>
         <div className="hiw-metrics">
-          {METRIC_DETAILS.map(m => (
+          {orderedMetrics.map(m => (
             <div key={m.key} className="hiw-metric-row">
               <div className="hiw-metric-info">
                 <div className="hiw-metric-name">{m.label}</div>
@@ -904,11 +914,11 @@ function HowItWorksPage() {
       <section className="hiw-section">
         <h3 className="hiw-section-title">Scene Score — the published rubric</h3>
         <p className="hiw-section-sub">
-          Scene Score (18% of the rank, co-leading) is the one editorial layer in the model — a read on the industry credibility that pure data misses, alongside the live-booking and chart signals.
+          Scene Score (20% of the rank, co-leading) is the one editorial layer in the model — a read on the industry credibility that pure data misses, alongside the live-booking and chart signals.
           To keep it honest, the criteria are public. Points accrue toward a 0–100 score; it's deliberately harder to game than a follower count.
         </p>
         <div className="hiw-weight-note" style={{ marginBottom: 14 }}>
-          <strong>Credibility multiplier (two-sided).</strong> Scene Score also scales the whole composite, both ways: an act's final score is multiplied by roughly 0.80 at scene 0, rising through ~0.98 for an unscored act to 1.15 at scene 100. So a streaming-huge but scene-thin crossover can't top a booking index on reach alone — and, just as important, a scene-revered act with a small streaming footprint isn't buried beneath it. A booking index should reward credibility, not just punish its absence.
+          <strong>Credibility multiplier.</strong> Scene Score also scales the whole composite: an act's final score is multiplied by roughly 0.80 at scene 0, rising through ~0.90 for an unscored act to 1.00 at scene 100. It's a credibility floor — a streaming-huge but scene-thin crossover can't top a booking index on reach alone — kept deliberately narrow so high scene isn't double-counted (it's already a 20% weighted signal). It demotes near-zero-credibility acts without handing the most-credentialed names a second large bonus on top of their scene weight.
         </div>
         <div className="hiw-rubric">
           {SCENE_RUBRIC.map(r => (
@@ -961,13 +971,16 @@ function HowItWorksPage() {
         <h3 className="hiw-section-title">Update Schedule</h3>
         <div className="hiw-schedule">
           {[
-            { label: "Spotify Monthly Listeners",       freq: "Daily (scraped)" },
+            { label: "Resident Advisor (bookings & venues)", freq: "Daily" },
             { label: "Beatport Chart Position",         freq: "Daily" },
+            { label: "1001Tracklists DJ Support",       freq: "Weekly chart" },
+            { label: "Tour Density (Songkick)",         freq: "Daily" },
+            { label: "Festival Lineups",                freq: "Daily" },
+            { label: "Spotify Monthly Listeners",       freq: "Daily (scraped)" },
             { label: "YouTube Subscribers & Views",     freq: "Daily" },
             { label: "Google Trends (12-month history)",freq: "Daily" },
             { label: "TikTok Post Count",               freq: "Daily (scraped)" },
             { label: "Wikipedia Pageviews",             freq: "Daily" },
-            { label: "Tour Density (Songkick)",         freq: "Daily" },
             { label: "Rank Snapshots Retained",         freq: "90 data points" },
           ].map(s => (
             <div key={s.label} className="hiw-schedule-row">
@@ -984,7 +997,7 @@ function HowItWorksPage() {
           {[
             { q: "Why isn't SoundCloud included?", a: "SoundCloud's public API no longer exposes follower or play counts at scale. We include it in data collection but weight it at 0% until reliable data is available." },
             { q: "Why do some artists show zero for certain metrics?", a: "Not every DJ has a YouTube channel or is active on TikTok. Zero values are genuine — they're not data errors. They pull the weighted score for that signal to zero but don't affect others." },
-            { q: "How is the Scene Score assigned?", a: "It's an editorial 0–100 score against the published rubric above — Boiler Room/HÖR sets, Berghain/fabric/DC10 bookings, festival closing slots, respected label homes, RA/Mixmag/DJ Mag covers, Ibiza residencies, Essential Mix invitations. It carries 18% weight — the highest of any single signal — and the explicit criteria make it harder to game than pure data signals." },
+            { q: "How is the Scene Score assigned?", a: "It's an editorial 0–100 score against the published rubric above — Boiler Room/HÖR sets, Berghain/fabric/DC10 bookings, festival closing slots, respected label homes, RA/Mixmag/DJ Mag covers, Ibiza residencies, Essential Mix invitations. It carries 20% weight — the highest of any single signal — and the explicit criteria make it harder to game than pure data signals." },
             { q: "How does the Ones to Watch list differ from the main rankings?", a: "The main rankings weight current standing heavily. Ones to Watch reranks entirely by Momentum Score — so an artist can be #45 in the main chart but #2 in Ones to Watch if they're growing fast." },
             { q: "Can I get notified when an artist moves?", a: "Weekly movement alerts are on the roadmap. For now, the Ones to Watch and Velocity tabs surface who's accelerating across every signal we track." },
           ].map(({ q, a }) => (
