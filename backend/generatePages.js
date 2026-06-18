@@ -35,9 +35,31 @@ const esc = (s) =>
   String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 
+// ── entity / E-E-A-T constants ───────────────────────────────────────────────
+// Named editor + publisher entity. EDITOR is the human E-E-A-T signal Google
+// weights on commercial-data pages; it's emitted standalone on /about and nested
+// as the Organization `founder` on the homepage + trust pages. No sameAs: we link
+// no unverified profiles (same honesty as the homepage Organization). Contact is a
+// domain inbox — set up forwarding for it, or swap CONTACT_EMAIL.
+const CONTACT_EMAIL = "editorial@thedjrankings.com";
+const EDITOR = {
+  "@type": "Person", name: "Ben Faricy", jobTitle: "Founder & Editor",
+  url: `${ORIGIN}/about`, email: `mailto:${CONTACT_EMAIL}`,
+  worksFor: { "@type": "Organization", name: "PEAKTIME", url: `${ORIGIN}/` },
+  description: "Founder and editor of PEAKTIME, the booking-demand index for house and techno.",
+};
+const ORG_NODE = {
+  "@type": "Organization", name: "PEAKTIME", alternateName: "The DJ Rankings",
+  url: `${ORIGIN}/`, logo: `${ORIGIN}/brand/avatar-1080.png`,
+  email: `mailto:${CONTACT_EMAIL}`, founder: EDITOR,
+ description: "PEAKTIME is the demand index for electronic music, multi-signal rankings of "
+    + "house and techno DJs by booking demand. Independent; not a booking agency.",
+};
+const withCtx = (node) => ({ "@context": "https://schema.org", ...node });
+
 // ── meta / content helpers ──────────────────────────────────────────────────
 const VERDICT = {
-  "strong-buy": "is underpriced relative to current booking demand — and accelerating",
+ "strong-buy": "is underpriced relative to current booking demand: and accelerating",
   buy: "is modestly underpriced relative to current booking demand",
   premium: "is priced above current booking demand",
   fair: "is priced broadly in line with current booking demand",
@@ -45,17 +67,17 @@ const VERDICT = {
 
 function artistMeta(a, total) {
   const r = Number.isFinite(a.rank) ? a.rank : null;
-  const title = `${a.name} — Booking Demand & Ranking${r ? ` #${r}` : ""} | PEAKTIME`;
-  const desc = `${a.name}${r ? ` ranks #${r} of ${total}` : ""} by booking demand on PEAKTIME — `
+ const title = `${a.name}, Booking Demand & Ranking${r ? ` #${r}` : ""} | PEAKTIME`;
+ const desc = `${a.name}${r ? ` ranks #${r} of ${total}` : ""} by booking demand on PEAKTIME, `
     + `scene credibility, Resident Advisor & Beatport signals, routing and streaming. Data, not hype.`;
   return { title, desc };
 }
 
 function valueMeta(a) {
   const verdict = VERDICT[a.value_signal] || "fair-value read";
-  const title = `${a.name} Booking Fee — Fair Value Benchmark | PEAKTIME`;
-  const desc = `What does it cost to book ${a.name}? A neutral, demand-led fair-value fee benchmark — `
-    + `${a.name} ${verdict.replace(/—.*/, "").trim()}. Estimated tiers, not transacted prices. Data, not hype.`;
+ const title = `${a.name} Booking Fee, Fair Value Benchmark | PEAKTIME`;
+ const desc = `What does it cost to book ${a.name}? A neutral, demand-led fair-value fee benchmark, `
+ + `${a.name} ${verdict.replace(/—.*/, "").trim()}. Estimated tiers, not transacted prices. Data, not hype.`;
   return { title, desc: desc.replace(/\s+/g, " ").trim() };
 }
 
@@ -78,7 +100,7 @@ function artistBody(a, total) {
       ${r ? `<p><strong>#${r}</strong> of ${total} by booking demand.</p>` : ""}
       ${signals.length ? `<h2>Demand signals</h2><ul>${signals.map(([k, v]) => `<li>${esc(k)}: ${Math.round(v)}</li>`).join("")}</ul>` : ""}
       ${tags.length ? `<h2>Scene credentials</h2><p>${tags.map(esc).join(" · ")}</p>` : ""}
-      ${Number.isFinite(a.value_gap) ? `<p><a href="/value/${slugify(a.name)}">How much does it cost to book ${esc(a.name)}? — Fair Value benchmark →</a></p>` : ""}
+ ${Number.isFinite(a.value_gap) ? `<p><a href="/value/${slugify(a.name)}">How much does it cost to book ${esc(a.name)}?, Fair Value benchmark →</a></p>` : ""}
       <p><a href="/methodology">How the demand score is built</a></p>
     </main>`;
 }
@@ -97,7 +119,7 @@ function valueBody(a) {
       ${Number.isFinite(a.demand_index) ? `<p>Demand index: ${Math.round(a.demand_index)} / 100${Number.isFinite(a.value_gap) ? `, value gap ${a.value_gap > 0 ? "+" : ""}${a.value_gap}` : ""}.</p>` : ""}
       ${cities.length ? `<h2>Recent routing</h2><p>${cities.map(esc).join(" · ")}</p>` : ""}
       <p><a href="/artist/${slugify(a.name)}">Full ${esc(a.name)} demand profile →</a> · <a href="/methodology">How this is calculated</a></p>
-      <p style="color:#888;font-size:13px">Benchmark is demand-led and model-implied — an estimated tier, not a transacted price.</p>
+ <p style="color:#888;font-size:13px">Benchmark is demand-led and model-implied: an estimated tier, not a transacted price.</p>
     </main>`;
 }
 
@@ -113,8 +135,8 @@ function breadcrumbLd(items) {
 // ── homepage (crawler-visible + first-paint) ────────────────────────────────
 function homeMeta() {
   return {
-    title: "PEAKTIME — The DJ Rankings | Demand index for electronic music",
-    desc: "PEAKTIME is the demand index for electronic music — multi-signal rankings of "
+ title: "PEAKTIME: The DJ Rankings | Demand index for electronic music",
+ desc: "PEAKTIME is the demand index for electronic music, multi-signal rankings of "
       + "house and techno DJs across streams, Beatport charts, tours, search and social "
       + "velocity. Before the industry catches on.",
   };
@@ -135,7 +157,7 @@ function homeJsonLd(artists = [], total = 0, lastUpdated = "") {
     .slice(0, 25);
   const itemList = {
     "@context": "https://schema.org", "@type": "ItemList",
-    name: "PEAKTIME DJ Booking-Demand Index — Top 25",
+ name: "PEAKTIME DJ Booking-Demand Index: Top 25",
     description: "House and techno DJs ranked by booking demand, refreshed daily.",
     url: `${ORIGIN}/`, numberOfItems: total,
     itemListOrder: "https://schema.org/ItemListOrderDescending",
@@ -149,7 +171,8 @@ function homeJsonLd(artists = [], total = 0, lastUpdated = "") {
   return [
     { "@context": "https://schema.org", "@type": "Organization", name: "PEAKTIME",
       alternateName: "The DJ Rankings", url: `${ORIGIN}/`, logo: `${ORIGIN}/brand/avatar-1080.png`,
-      description: "PEAKTIME is the demand index for electronic music — multi-signal rankings of "
+      founder: EDITOR, email: `mailto:${CONTACT_EMAIL}`,
+ description: "PEAKTIME is the demand index for electronic music, multi-signal rankings of "
         + "house and techno DJs across streams, Beatport charts, tours, search and social velocity." },
     { "@context": "https://schema.org", "@type": "WebSite", name: "PEAKTIME", url: `${ORIGIN}/`,
       potentialAction: { "@type": "SearchAction",
@@ -192,8 +215,8 @@ function homeBody(artists, total, lastUpdated = "", n = 25) {
   }).join("");
   return `
     <main class="seo-prerender" style="max-width:760px;margin:0 auto;padding:24px;font-family:system-ui,sans-serif">
-      <h1>PEAKTIME — the demand index for electronic music</h1>
-      <p>Multi-signal rankings of house and techno DJs by booking demand — streams, Beatport
+ <h1>PEAKTIME, the demand index for electronic music</h1>
+ <p>Multi-signal rankings of house and techno DJs by booking demand: streams, Beatport
         charts, Resident Advisor signal, touring and search velocity. Before the industry catches on.</p>
       <p class="seo-updated" style="color:#75767d;font-size:13px">Ranking of ${total} DJs · updated daily · last updated ${esc(updated)}</p>
       <h2>Top ${ranked.length} by booking demand</h2>
@@ -217,7 +240,7 @@ function homeBody(artists, total, lastUpdated = "", n = 25) {
           <li><a href="/scene/new-york">DJs booked in New York</a></li>
         </ul>
       </nav>
-      <p><a href="/methodology">How the demand score is built</a></p>
+      <p><a href="/methodology">How the demand score is built</a> · <a href="/about">About PEAKTIME</a> · <a href="/about/editorial-policy">Editorial policy</a> · <a href="/about/corrections">Corrections</a></p>
     </main>`;
 }
 
@@ -252,7 +275,7 @@ const valueIndexable = (a) =>
 
 // ── club pages (prerendered from clubsData + CLUB_PROFILES) ──────────────────
 function clubMeta(c, total) {
-  const title = `${c.name} — ${c.city} Club Profile & Ranking #${c.rank} | PEAKTIME`;
+ const title = `${c.name}, ${c.city} Club Profile & Ranking #${c.rank} | PEAKTIME`;
   const desc = `${c.name} in ${c.city}, ${c.country} ranks #${c.rank} of ${total} on PEAKTIME's `
     + `music-integrity Club Index. ${c.note}`;
   return { title, desc: desc.replace(/\s+/g, " ").slice(0, 300) };
@@ -313,8 +336,8 @@ function renderLanding({ slug, h1, lede, metricLabel, faq, ranked, total, lastUp
     .toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
   const url = `${ORIGIN}/rankings/${slug}`;
   const top = ranked.slice(0, 50);
-  const title = `${h1} — ${updatedHuman} | PEAKTIME`;
-  const desc = `${lede} Ranked by booking demand on PEAKTIME — updated daily. ${total} acts tracked.`.replace(/\s+/g, " ").trim();
+ const title = `${h1}, ${updatedHuman} | PEAKTIME`;
+ const desc = `${lede} Ranked by booking demand on PEAKTIME, updated daily. ${total} acts tracked.`.replace(/\s+/g, " ").trim();
 
   const itemList = {
     "@context": "https://schema.org", "@type": "ItemList", name: h1, url,
@@ -387,7 +410,7 @@ function renderLanding({ slug, h1, lede, metricLabel, faq, ranked, total, lastUp
   </div>
   <div class="hero">
     <h1>${esc(h1)}</h1>
-    <p class="sub">${esc(lede)} Ranked by booking demand — scene credibility, Resident Advisor &amp; Beatport signal, touring, search and social velocity.</p>
+ <p class="sub">${esc(lede)} Ranked by booking demand: scene credibility, Resident Advisor &amp; Beatport signal, touring, search and social velocity.</p>
     <p class="upd">${top.length} acts · refreshed daily · last updated ${esc(updatedHuman)} · <a href="/">see the full live index →</a></p>
   </div>
   <div class="section">
@@ -406,7 +429,7 @@ ${faq.map((f) => `      <dt>${esc(f.q)}</dt>\n      <dd>${esc(f.a)}</dd>`).join(
     </dl>
   </div>
   <div class="foot">
-    <span><b>PEAKTIME</b> · thedjrankings.com — the demand index for electronic music</span>
+ <span><b>PEAKTIME</b> · thedjrankings.com, the demand index for electronic music</span>
     <span><a href="/methodology">How the demand score is built →</a></span>
   </div>
 </div>
@@ -415,7 +438,7 @@ ${faq.map((f) => `      <dt>${esc(f.q)}</dt>\n      <dd>${esc(f.a)}</dd>`).join(
 `;
 }
 
-// Shared standalone-page shell (light theme, branded) for /compare and /scene pages —
+// Shared standalone-page shell (light theme, branded) for /compare and /scene pages,
 // same look as the ranking landings + reports. jsonld is an array; inner is body HTML.
 const STANDALONE_CSS = `
   :root { --ink:#15151c; --muted:#6b6b78; --line:#e7e7ee; --accent:#3b3bdb; --win:#1a8f4c; }
@@ -472,13 +495,130 @@ function pageShell({ title, desc, canonical, ogImage, jsonld, docTitle, updatedH
   </div>
 ${inner}
   <div class="foot">
-    <span><b>PEAKTIME</b> · thedjrankings.com — the demand index for electronic music</span>
+ <span><b>PEAKTIME</b> · thedjrankings.com, the demand index for electronic music</span>
     <span><a href="/methodology">How the demand score is built →</a></span>
   </div>
 </div>
 </body>
 </html>
 `;
+}
+
+// ── Trust pages (E-E-A-T): /about, /about/editorial-policy, /about/corrections ─
+// Static, branded (pageShell), indexable. They carry the named editor + publisher
+// entity and state independence, fee honesty, the never-wipe data rule, and how to
+// report errors — the trust signals Google weights on commercial-data pages. Built
+// standalone (no SPA route needed) and listed in the sitemap.
+function renderAbout(updatedHuman) {
+  const url = `${ORIGIN}/about`;
+ const title = "About PEAKTIME, The booking-demand index for house & techno";
+ const desc = "PEAKTIME is an independent, daily booking-demand index for house and techno DJs, "
+    + "founded and edited by Ben Faricy. Not a booking agency. Data, not hype.";
+  const jsonld = [
+    withCtx({ "@type": "AboutPage", name: title, url, description: desc, about: ORG_NODE }),
+    withCtx(EDITOR),
+    breadcrumbLd([{ name: "PEAKTIME", path: "/" }, { name: "About", path: "/about" }]),
+  ];
+  const inner = `  <div class="hero">
+    <h1>About PEAKTIME</h1>
+ <p class="sub">PEAKTIME is the booking-demand index for house and techno: a daily, multi-signal read on which DJs are in demand, built for the people who book and sell them. Data, not hype.</p>
+    <p class="upd">Independent · refreshed daily · last updated ${esc(updatedHuman)}</p>
+  </div>
+  <div class="section">
+    <h2>What this is</h2>
+ <p>Most DJ rankings measure popularity: followers, streams, fan votes. PEAKTIME measures booking demand: how often and how widely an act is booked, and how their scene credibility, chart, touring and search signals move. It is refreshed every day. The aim is a neutral benchmark that both sides of a booking, the agent selling and the promoter buying, can cite.</p>
+  </div>
+  <div class="section">
+    <h2>Who is behind it</h2>
+ <p>PEAKTIME is founded and edited by <strong>Ben Faricy</strong>. The index, its methodology and the editorial reports are produced independently. PEAKTIME is not a booking agency and does not represent, manage or sell any artist, so the demand read has no commercial stake in the outcome.</p>
+    <p>Editorial and corrections: <a href="mailto:${esc(CONTACT_EMAIL)}">${esc(CONTACT_EMAIL)}</a>.</p>
+  </div>
+  <div class="section">
+    <h2>How it is built</h2>
+ <p>Every ranking blends independent demand signals: live booking (Resident Advisor venue tier, attendance and touring), editorial scene credibility, Beatport chart credibility, 1001Tracklists DJ support, search interest and social velocity, into a single demand score. The full method is public.</p>
+    <p><a href="/methodology">How the demand score is built →</a> · <a href="/about/editorial-policy">Editorial policy →</a> · <a href="/about/corrections">Corrections →</a></p>
+  </div>`;
+  return pageShell({ title, desc, canonical: url, ogImage: "/brand/avatar-1080.png",
+    jsonld, docTitle: "PEAKTIME · about", updatedHuman, inner });
+}
+
+function renderEditorialPolicy(updatedHuman, modified) {
+  const url = `${ORIGIN}/about/editorial-policy`;
+ const title = "Editorial Policy, PEAKTIME";
+  const desc = "How PEAKTIME stays independent: no pay-to-rank, model-implied fee benchmarks "
+    + "(not transacted prices), a strict never-wipe data rule, and a published methodology.";
+  const jsonld = [
+    withCtx({ "@type": "WebPage", name: title, url, description: desc,
+      lastReviewed: modified, publisher: ORG_NODE,
+      mainEntityOfPage: { "@type": "WebPage", "@id": url } }),
+    withCtx(EDITOR),
+    breadcrumbLd([{ name: "PEAKTIME", path: "/" }, { name: "About", path: "/about" }, { name: "Editorial policy", path: "/about/editorial-policy" }]),
+  ];
+  const inner = `  <div class="hero">
+    <h1>Editorial policy</h1>
+    <p class="sub">PEAKTIME exists to be a neutral, citeable read on booking demand. These are the rules that keep it that way.</p>
+    <p class="upd">Maintained by Ben Faricy, Founder &amp; Editor · last reviewed ${esc(updatedHuman)}</p>
+  </div>
+  <div class="section">
+    <h2>Independence</h2>
+ <p>PEAKTIME is not a booking agency and does not represent, manage or sell any artist, venue or festival. We take no payment to add, rank, raise or remove an act. Rankings are produced from data on a published method, they cannot be bought.</p>
+  </div>
+  <div class="section">
+    <h2>How rankings are produced</h2>
+    <p>Each act is scored on the same blend of independent demand signals, refreshed daily, and normalised across the whole field. The weights and rubric are public and dated. We change the model when the data or our review of it justifies it, and we note material changes.</p>
+    <p><a href="/methodology">Read the full methodology →</a></p>
+  </div>
+  <div class="section">
+    <h2>How we handle booking fees</h2>
+ <p>PEAKTIME holds no transacted fees. Fee figures are <strong>model-implied estimates</strong>, derived from demand signals or hand-tiered, and are labelled as estimated tiers, never as a quoted or contracted price. The "Value Gap" compares an act's demand against that estimate; it is a benchmark, not an offer. Where a real, sourced fee has been verified it is labelled as such. If you can confirm or correct a fee, tell us.</p>
+  </div>
+  <div class="section">
+    <h2>Data integrity</h2>
+    <p>A fabricated or wiped statistic is the one thing that would break a "data, not hype" index, so the pipeline is built to never do it: a failed or empty data fetch keeps the last known good value rather than overwriting it, and obviously broken figures are suppressed rather than shown. We would rather show nothing than show a number we do not trust.</p>
+  </div>
+  <div class="section">
+    <h2>Freshness &amp; conflicts</h2>
+    <p>The index is a point-in-time reading, refreshed daily, with the last-updated date shown on every page. Booking demand is seasonal, so readings months apart are not directly comparable. Any conflict of interest that could affect coverage will be disclosed on the relevant page.</p>
+  </div>
+  <div class="section">
+    <h2>Corrections</h2>
+    <p>We fix errors promptly and openly. See the <a href="/about/corrections">corrections policy</a>, or email <a href="mailto:${esc(CONTACT_EMAIL)}">${esc(CONTACT_EMAIL)}</a>.</p>
+  </div>`;
+  return pageShell({ title, desc, canonical: url, ogImage: "/brand/avatar-1080.png",
+    jsonld, docTitle: "PEAKTIME · editorial policy", updatedHuman, inner });
+}
+
+function renderCorrections(updatedHuman, modified) {
+  const url = `${ORIGIN}/about/corrections`;
+ const title = "Corrections Policy, PEAKTIME";
+  const desc = "How to report an error in a PEAKTIME ranking, profile or fee benchmark, "
+    + "what we correct, and our commitment to fixing mistakes openly.";
+  const jsonld = [
+    withCtx({ "@type": "WebPage", name: title, url, description: desc,
+      lastReviewed: modified, publisher: ORG_NODE,
+      mainEntityOfPage: { "@type": "WebPage", "@id": url } }),
+    breadcrumbLd([{ name: "PEAKTIME", path: "/" }, { name: "About", path: "/about" }, { name: "Corrections", path: "/about/corrections" }]),
+  ];
+  const inner = `  <div class="hero">
+    <h1>Corrections</h1>
+    <p class="sub">PEAKTIME is only as useful as it is accurate. If something is wrong, we want to fix it.</p>
+    <p class="upd">Maintained by Ben Faricy, Founder &amp; Editor · last reviewed ${esc(updatedHuman)}</p>
+  </div>
+  <div class="section">
+    <h2>How to report an error</h2>
+    <p>Email <a href="mailto:${esc(CONTACT_EMAIL)}">${esc(CONTACT_EMAIL)}</a> with the page URL, what is wrong, and a source if you have one. Artists, managers and agents are welcome to flag a profile, a signal, or a fee benchmark; promoters can confirm or correct a fee directly.</p>
+  </div>
+  <div class="section">
+    <h2>What we correct</h2>
+ <p>Factual errors in an artist profile, a misattributed namesake or wrong identity, a mis-sourced or out-of-date booking-fee figure, a broken or misclassified signal, and any data point we cannot stand behind. We do not change a ranking simply because someone disagrees with where the model places them, but we will explain how the score was reached.</p>
+  </div>
+  <div class="section">
+    <h2>Our commitment</h2>
+    <p>We aim to acknowledge a correction request quickly and to fix confirmed errors promptly. Where a correction materially changes what a page said, we note it. Because the index is rebuilt daily from source data, most data corrections take effect on the next refresh.</p>
+    <p><a href="/about/editorial-policy">Read the editorial policy →</a></p>
+  </div>`;
+  return pageShell({ title, desc, canonical: url, ogImage: "/brand/avatar-1080.png",
+    jsonld, docTitle: "PEAKTIME · corrections", updatedHuman, inner });
 }
 
 const fmtReach = (n) => (!Number.isFinite(n) || n <= 0 ? "—" : n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${Math.round(n / 1e3)}K` : String(n));
@@ -494,7 +634,7 @@ function renderComparison({ a, b, total, lastUpdated }) {
   const gap = (b.rank ?? 0) - (a.rank ?? 0);
   const h1 = `${a.name} vs ${b.name}`;
   const verdict = `${a.name} ranks #${a.rank} and ${b.name} ranks #${b.rank} of ${total} on PEAKTIME's `
-    + `booking-demand index — ${a.name} sits ${gap} place${gap === 1 ? "" : "s"} higher as of ${updatedHuman}.`;
+ + `booking-demand index, ${a.name} sits ${gap} place${gap === 1 ? "" : "s"} higher as of ${updatedHuman}.`;
   const title = `${a.name} vs ${b.name}: Who's More in Demand? | PEAKTIME`;
   const desc = `${verdict} A signal-by-signal booking-demand comparison.`.replace(/\s+/g, " ").trim();
 
@@ -513,13 +653,13 @@ function renderComparison({ a, b, total, lastUpdated }) {
     let aWin = false, bWin = false;
     if (aFin && bFin && av !== bv) { const aBetter = hib ? av > bv : av < bv; aWin = aBetter; bWin = !aBetter; }
     return `<tr><td>${esc(label)}</td>`
-      + `<td class="num ${aWin ? "win" : ""}">${aFin ? esc(String(fmt(av))) : "—"}</td>`
-      + `<td class="num ${bWin ? "win" : ""}">${bFin ? esc(String(fmt(bv))) : "—"}</td></tr>`;
+ + `<td class="num ${aWin ? "win" : ""}">${aFin ? esc(String(fmt(av))) : "—"}</td>`
+ + `<td class="num ${bWin ? "win" : ""}">${bFin ? esc(String(fmt(bv))) : "—"}</td></tr>`;
   }).join("\n");
 
   const faq = [
-    { q: `Who is more in demand, ${a.name} or ${b.name}?`, a: `${a.name}. On PEAKTIME's booking-demand index, ${a.name} ranks #${a.rank} versus ${b.name} at #${b.rank} as of ${updatedHuman} — a gap of ${gap} place${gap === 1 ? "" : "s"}. The ranking measures booking demand, not reach or follower counts.` },
-    { q: `How is ${a.name} vs ${b.name} compared?`, a: `Both acts are scored on the same blend of independent demand signals — live booking (Resident Advisor venue tier, attendance and touring), editorial scene credibility, Beatport chart credibility, 1001Tracklists DJ support, search interest and social velocity — refreshed daily.` },
+ { q: `Who is more in demand, ${a.name} or ${b.name}?`, a: `${a.name}. On PEAKTIME's booking-demand index, ${a.name} ranks #${a.rank} versus ${b.name} at #${b.rank} as of ${updatedHuman}, a gap of ${gap} place${gap === 1 ? "" : "s"}. The ranking measures booking demand, not reach or follower counts.` },
+ { q: `How is ${a.name} vs ${b.name} compared?`, a: `Both acts are scored on the same blend of independent demand signals: live booking (Resident Advisor venue tier, attendance and touring), editorial scene credibility, Beatport chart credibility, 1001Tracklists DJ support, search interest and social velocity, refreshed daily.` },
   ];
   const itemList = { "@context": "https://schema.org", "@type": "ItemList", name: h1, url, numberOfItems: 2,
     itemListOrder: "https://schema.org/ItemListOrderAscending",
@@ -566,17 +706,17 @@ function renderScene({ city, country, acts, total, lastUpdated }) {
   const top = acts.slice(0, 40);
   const h1 = `The most in-demand DJs booked in ${city}`;
   const lede = `House and techno DJs with recent ${city} bookings, ranked by PEAKTIME booking demand.`;
-  const title = `DJs Booked in ${city} — Demand Ranking | PEAKTIME`;
+ const title = `DJs Booked in ${city}, Demand Ranking | PEAKTIME`;
   const desc = `${lede} ${top.length} acts, updated daily.`.replace(/\s+/g, " ").trim();
 
   const rows = top.map((a) => {
     const s = slugify(a.name);
     return `<tr><td class="num rk">#${a.rank}</td><td><a href="/artist/${s}">${esc(a.name)}</a></td>`
-      + `<td class="num muted">${a._shows ? `${a._shows} show${a._shows === 1 ? "" : "s"}` : "—"}</td></tr>`;
+ + `<td class="num muted">${a._shows ? `${a._shows} show${a._shows === 1 ? "" : "s"}` : "—"}</td></tr>`;
   }).join("\n");
 
   const faq = [
-    { q: `Who is the most in-demand DJ booked in ${city}?`, a: `${top[0] ? top[0].name : "—"} is the highest-ranked act with recent ${city} bookings on PEAKTIME (overall #${top[0] ? top[0].rank : "—"}), as of ${updatedHuman}.` },
+ { q: `Who is the most in-demand DJ booked in ${city}?`, a: `${top[0] ? top[0].name : "—"} is the highest-ranked act with recent ${city} bookings on PEAKTIME (overall #${top[0] ? top[0].rank : "—"}), as of ${updatedHuman}.` },
     { q: `Which DJs play ${city}?`, a: `PEAKTIME tracks ${top.length}+ ranked house and techno acts with recent ${city} dates (from Resident Advisor booking data). The list is ordered by each act's overall booking-demand rank and refreshed daily.` },
   ];
   const itemList = { "@context": "https://schema.org", "@type": "ItemList", name: h1, url, numberOfItems: top.length,
@@ -633,7 +773,7 @@ const cityMatchLocal = (raCity, marketCity) => {
 };
 
 async function build() {
-  if (!fs.existsSync(TEMPLATE)) { console.error("generatePages: dist/index.html missing — run vite build first."); process.exit(1); }
+ if (!fs.existsSync(TEMPLATE)) { console.error("generatePages: dist/index.html missing, run vite build first."); process.exit(1); }
   const tpl = fs.readFileSync(TEMPLATE, "utf8");
   const d = JSON.parse(fs.readFileSync(DATA, "utf8"));
   const artists = (d.rankings || d).filter((a) => a && a.name);
@@ -642,7 +782,20 @@ async function build() {
   const urls = [
     { loc: "/", priority: 1.0, changefreq: "daily", lastmod: today },
     { loc: "/press", priority: 0.5, changefreq: "monthly", lastmod: today },
+    { loc: "/about", priority: 0.4, changefreq: "monthly", lastmod: today },
+    { loc: "/about/editorial-policy", priority: 0.4, changefreq: "yearly", lastmod: today },
+    { loc: "/about/corrections", priority: 0.4, changefreq: "yearly", lastmod: today },
   ];
+
+  // Trust pages (E-E-A-T) — named editor + independence/corrections policy. Static,
+  // indexable, linked from the homepage footer. updatedHuman mirrors the home format.
+  {
+    const updatedHuman = new Date(d.lastUpdated || new Date().toISOString())
+      .toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+    writePage("about.html", renderAbout(updatedHuman));
+    writePage("about/editorial-policy.html", renderEditorialPolicy(updatedHuman, today));
+    writePage("about/corrections.html", renderCorrections(updatedHuman, today));
+  }
 
   // Published reports — real static HTML under public/reports (shipped to dist/),
   // previously orphaned from the sitemap. Listed only if the built file exists, so a
@@ -684,7 +837,7 @@ async function build() {
       const band = fee.label || a.demand_fee_label;
       const answer = `${a.name} ${(VERDICT[a.value_signal] || "is priced in line with demand")}. `
         + `Fair-value benchmark: ${band} (${fee.basis === "anchored" ? "verified fee" : "estimated tier"}). `
-        + `Demand-led and model-implied — an estimated tier, not a transacted price.`;
+ + `Demand-led and model-implied: an estimated tier, not a transacted price.`;
       const jsonld = [
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [{
           "@type": "Question", name: `How much does it cost to book ${a.name}?`,
@@ -717,7 +870,7 @@ async function build() {
       nClub++;
     }
   } catch (e) {
-    console.warn("generatePages: club prerender skipped —", e.message);
+ console.warn("generatePages: club prerender skipped —", e.message);
   }
 
   // Ranking landing pages — the head-on SEO/AEO query space. Genre cuts reuse the
@@ -746,15 +899,15 @@ async function build() {
     const LANDINGS = [
       { slug: "techno", ranked: techno, metricLabel: "Demand",
         h1: "The most in-demand techno DJs right now",
-        lede: "The house-anchored index's techno cut — peak-time, melodic and crossover techno acts.",
+ lede: "The house-anchored index's techno cut: peak-time, melodic and crossover techno acts.",
         faq: [
           { q: "Who is the most in-demand techno DJ right now?", a: `As of the latest daily update, ${topName(techno)} leads PEAKTIME's techno cut, ranked by booking demand across scene credibility, Resident Advisor and Beatport signal, touring and search velocity.` },
-          { q: "How is the techno ranking calculated?", a: "Each act blends multiple independent demand signals — live booking (Resident Advisor venue tier and attendance, plus touring), editorial scene credibility, Beatport chart credibility, 1001Tracklists DJ support, search interest and social velocity — into one demand score, refreshed daily." },
+ { q: "How is the techno ranking calculated?", a: "Each act blends multiple independent demand signals: live booking (Resident Advisor venue tier and attendance, plus touring), editorial scene credibility, Beatport chart credibility, 1001Tracklists DJ support, search interest and social velocity: into one demand score, refreshed daily." },
           { q: "Is this a pure techno chart?", a: "No. PEAKTIME is a house-anchored index; the techno cut surfaces techno-leaning and crossover acts (plus pure-techno names kept out of the main house view), classified by where Beatport charts them. It's a lens on the index, not a comprehensive techno chart." },
         ] },
       { slug: "house", ranked: house, metricLabel: "Demand",
         h1: "The most in-demand house DJs right now",
-        lede: "House, tech house and the melodic crossover middle — the anchor of the index.",
+ lede: "House, tech house and the melodic crossover middle, the anchor of the index.",
         faq: [
           { q: "Who is the most in-demand house DJ right now?", a: `As of the latest daily update, ${topName(house)} leads PEAKTIME's house cut, ranked by measured booking demand rather than reach or follower counts.` },
           { q: "How is the house ranking calculated?", a: "It blends live booking demand (Resident Advisor venue tier, attendance and touring), editorial scene credibility, Beatport chart credibility, 1001Tracklists DJ support, search interest and social velocity into one daily-refreshed demand score." },
@@ -762,19 +915,19 @@ async function build() {
         ] },
       { slug: "rising", ranked: rising, metricLabel: "Momentum",
         h1: "The fastest-rising DJs right now",
-        lede: "Who's accelerating — ranked by momentum, not by who's already biggest.",
+ lede: "Who's accelerating: ranked by momentum, not by who's already biggest.",
         faq: [
-          { q: "Which DJs are gaining demand the fastest right now?", a: `As of the latest daily update, ${topName(rising)} tops PEAKTIME's momentum ranking — the acts whose demand is accelerating fastest.` },
-          { q: "How does PEAKTIME measure momentum?", a: "Momentum is a 0–100 score blending the rate of change across signals — search-interest slope, monthly-listener growth, Wikipedia trend, Beatport week-over-week movement and tour velocity — so it ranks who's accelerating, not who's largest." },
+ { q: "Which DJs are gaining demand the fastest right now?", a: `As of the latest daily update, ${topName(rising)} tops PEAKTIME's momentum ranking, the acts whose demand is accelerating fastest.` },
+ { q: "How does PEAKTIME measure momentum?", a: "Momentum is a 0–100 score blending the rate of change across signals: search-interest slope, monthly-listener growth, Wikipedia trend, Beatport week-over-week movement and tour velocity: so it ranks who's accelerating, not who's largest." },
           { q: "How often does the rising ranking update?", a: "Daily. Momentum is recomputed every refresh from the latest signal deltas." },
         ] },
       { slug: "value", ranked: value, metricLabel: "Value gap",
         h1: "The most underpriced DJs to book right now",
-        lede: "Acts whose measured demand outpaces their estimated booking fee — the buy signals.",
+ lede: "Acts whose measured demand outpaces their estimated booking fee, the buy signals.",
         faq: [
-          { q: "Which DJs are underpriced to book?", a: `As of the latest daily update, ${topName(value)} tops PEAKTIME's value-gap ranking — acts whose demand outpaces their fee tier. These are model-implied estimates, not transacted prices.` },
-          { q: "What is the Value Gap?", a: "The Value Gap compares an act's demand-implied fee tier against their known fee tier. A positive gap flags an act priced below current booking demand — a potential buy. Fees are model-implied estimates, not transacted prices." },
-          { q: "What does 'strong-buy' mean?", a: "A strong-buy is an act that is both underpriced (positive value gap) and surging in momentum — underpriced and accelerating at the same time." },
+ { q: "Which DJs are underpriced to book?", a: `As of the latest daily update, ${topName(value)} tops PEAKTIME's value-gap ranking, acts whose demand outpaces their fee tier. These are model-implied estimates, not transacted prices.` },
+ { q: "What is the Value Gap?", a: "The Value Gap compares an act's demand-implied fee tier against their known fee tier. A positive gap flags an act priced below current booking demand, a potential buy. Fees are model-implied estimates, not transacted prices." },
+ { q: "What does 'strong-buy' mean?", a: "A strong-buy is an act that is both underpriced (positive value gap) and surging in momentum, underpriced and accelerating at the same time." },
         ] },
     ];
 
@@ -787,7 +940,7 @@ async function build() {
     }
     void fmtN; // reserved for future reach-based cuts
   } catch (e) {
-    console.warn("generatePages: ranking landings skipped —", e.message);
+ console.warn("generatePages: ranking landings skipped —", e.message);
   }
 
   // Comparison pages — /compare/<a>-vs-<b> for same-genre adjacent-rank rivalry pairs
@@ -824,7 +977,7 @@ async function build() {
       nCompare++;
     }
   } catch (e) {
-    console.warn("generatePages: comparison pages skipped —", e.message);
+ console.warn("generatePages: comparison pages skipped —", e.message);
   }
 
   // Scene / city pages — /scene/<city> for the curated booking markets. Aggregates
@@ -846,7 +999,7 @@ async function build() {
       nScene++;
     }
   } catch (e) {
-    console.warn("generatePages: scene pages skipped —", e.message);
+ console.warn("generatePages: scene pages skipped —", e.message);
   }
 
   // Homepage — bake content + canonical + entity schema into dist/index.html.
