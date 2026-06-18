@@ -127,6 +127,56 @@ async function loadArtistImages(artists) {
   return map;
 }
 
+// Returns a map { clubName → "data:image/…;base64,…" } for top-10 clubs.
+async function loadClubImages(clubs) {
+  fs.mkdirSync(IMG_CACHE, { recursive: true });
+  let CLUB_IMAGES = {};
+  try {
+    const m = await import(pathToFileURL(path.join(ROOT, "frontend/src/clubImages.js")).href);
+    CLUB_IMAGES = m.CLUB_IMAGES || {};
+  } catch (e) { console.warn("  clubImages.js import failed:", e.message); }
+
+  const map = {};
+  for (const c of clubs) {
+    const url = CLUB_IMAGES[c.name];
+    if (!url) continue;
+    const hash = crypto.createHash("md5").update(url).digest("hex").slice(0, 12);
+    const ext  = /\.png$/i.test(url) ? "png" : "jpg";
+    const mime = ext === "png" ? "image/png" : "image/jpeg";
+    const file = path.join(IMG_CACHE, hash + "." + ext);
+    let buf;
+    try {
+      if (fs.existsSync(file)) {
+        buf = fs.readFileSync(file);
+      } else {
+        // Wikimedia redirects need a proper User-Agent
+        const https = require("https");
+        buf = await new Promise((res, rej) => {
+          const opts = new URL(url);
+          https.get({ hostname: opts.hostname, path: opts.pathname + opts.search,
+            headers: { "User-Agent": "thedjrankings/1.0 (https://thedjrankings.com)" } }, r => {
+            if (r.statusCode === 301 || r.statusCode === 302) {
+              https.get({ hostname: new URL(r.headers.location).hostname,
+                path: new URL(r.headers.location).pathname,
+                headers: { "User-Agent": "thedjrankings/1.0" } }, r2 => {
+                const ch = []; r2.on("data", d => ch.push(d)); r2.on("end", () => res(Buffer.concat(ch)));
+              }).on("error", rej);
+              return;
+            }
+            const ch = []; r.on("data", d => ch.push(d)); r.on("end", () => res(Buffer.concat(ch)));
+          }).on("error", rej);
+        });
+        fs.writeFileSync(file, buf);
+      }
+    } catch (e) {
+      console.warn(`  club image fetch failed for ${c.name}: ${e.message}`);
+      continue;
+    }
+    map[c.name] = `data:${mime};base64,${buf.toString("base64")}`;
+  }
+  return map;
+}
+
 // ── Helpers ───────────────────────────────────────────────────────────────────
 const esc = s => String(s == null ? "" : s)
   .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -400,6 +450,8 @@ h1,h2,h3 { color: var(--text-h); font-weight: 700; letter-spacing: -.015em; marg
 /* Club full profile pages (top 10) — typographic identity hero */
 .club-page { display:flex; flex-direction:column; height:${isKDP ? "235mm" : "281mm"}; overflow:hidden; }
 .club-hero { position:relative; height:${isKDP ? "92mm" : "122mm"}; overflow:hidden; flex-shrink:0; background:linear-gradient(158deg, #11151d 0%, #0c0c0e 64%); border-bottom:1px solid var(--border); }
+.club-hero-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; opacity:.45; filter:${isKDP ? "grayscale(1) contrast(1.1)" : "contrast(1.05) saturate(0.85)"}; }
+.club-hero-shade { position:absolute; inset:0; background:linear-gradient(to top, rgba(10,10,14,.92) 0%, rgba(10,10,14,.45) 60%, rgba(10,10,14,.25) 100%); }
 .club-hero-grid { position:absolute; inset:0; opacity:.06; background-image:repeating-linear-gradient(0deg, #C8F750 0, #C8F750 1px, transparent 1px, transparent 34px), repeating-linear-gradient(90deg, #C8F750 0, #C8F750 1px, transparent 1px, transparent 34px); }
 .club-hero-ghost { position:absolute; right:-8px; bottom:-44px; font-family:'IBM Plex Mono',monospace; font-size:280px; font-weight:600; line-height:.7; color:rgba(200,247,80,.08); letter-spacing:-.04em; }
 .club-hero-top { position:absolute; top:26px; left:32px; right:32px; display:flex; justify-content:space-between; align-items:flex-start; }
@@ -782,6 +834,20 @@ const CLUB_DIMS = [
   { key: "Notoriety",         idx: 4, weight: 10 },
 ];
 
+// Editorial notoriety paragraphs for the top 10 club profiles.
+const CLUB_STORIES = {
+  "Club Space": "The 24-hour Terrace license is the one thing no other room in the Americas can copy. When Miami went home, Club Space stayed open. Carl Cox, Ricardo Villalobos, and Reboot built their Miami reputations inside it. Its sessions score of 100 is the highest of any room in the index, earned one sunrise at a time over 25 years.",
+  "Amnesia": "Heinz Hofer opened this as a hippie commune in 1976. By the 1990s it had become the most credible night on Ibiza. Sven Vath's Cocoon defined a decade of serious programming; the Pyramid party pushed it further. A heritage score of 98 reflects what five decades of staying music-first looks like when someone finally runs the numbers.",
+  "Berghain / Panorama Bar": "A converted power plant in a former East Berlin industrial zone. Panorama Bar runs house on the floor above Berghain's techno. Its music integrity score of 100 is the only perfect score in the index. The door policy is famous. The programming is why the door policy exists. Marcel Dettmann, Ben Klock, and Len Faki built careers in this building.",
+  "DC-10": "The room Circoloco built. DC-10 sits beneath a runway approach path, which has been both its character and its ongoing fight: noise complaints, city politics, and gentrification for 25 years. None of it has touched what happens on the terrace when Circoloco takes it on a Monday morning. A sessions score of 98 says everything about what those mornings add up to.",
+  "Tresor": "The first serious techno club in a reunified Berlin, opened in the vault of the Wertheim department store in 1991. Jeff Mills, Robert Hood, and Underground Resistance flew in from Detroit. That pipeline gave Berlin its sound. The original location closed in 2005; the current building in the Kraftwerk power station opened in 2007 and carries the same lineage. Heritage score: 98.",
+  "Sub Club": "Open since 1987, the longest continuously running underground house club anywhere. The basement on Jamaica Street in Glasgow has never chased the market. Subculture has held its residency there for over 30 years. A heritage score of 97 reflects what nearly four decades of not selling out looks like when the data finally catches up.",
+  "fabric": "Room One's bodysonic floor, built into the foundation, is the reason DJs ask to play here. fabric opened in a former cold storage facility in Farringdon in 1999 and built one of the deepest DJ rosters in London. When Islington Council revoked its license in 2016, 150,000 people signed a petition. It reopened six months later with new conditions and the same programming.",
+  "Robert Johnson": "A 350-capacity room on the Main riverbank in Offenbach, eight minutes from Frankfurt. Its size is the point. Theo Parrish, DJ Stingray, Zip, and Move D played here because a room this small forces you to hear what you are doing. The Live at Robert Johnson label documents what happens when the right artists have nowhere to go but deeper. Music integrity score: 95.",
+  "Smart Bar": "House music started at the Warehouse and the Music Box. Smart Bar opened in 1982, a year before Frankie Knuckles moved to the Power Plant, and has been Chicago's most consistent home for serious house since. Four decades of programming that never moved toward commercial. Heritage score 97, music integrity 90. Two numbers that explain why the birthplace still matters.",
+  "Rex Club": "Laurent Garnier played his first Paris residency here in 1989, a year after the room opened. He came back for 17 years. The Rex installed a Funktion-One and committed to techno and house at a time when French authorities were working to shut rave culture down. Being the only serious room in Paris for a decade does something specific to your heritage score. Theirs is 93.",
+};
+
 const normVenue = s => String(s || "").toLowerCase().replace(/[^a-z0-9]/g, "");
 // House style: no em/en dashes in body prose. Turn " — " into a clean comma clause.
 const dedash = s => String(s || "").replace(/\s*[—–]\s*/g, ", ");
@@ -800,7 +866,7 @@ function artistsAtClub(club, artists) {
     .slice(0, 9);
 }
 
-function buildClubs(clubs, artists) {
+function buildClubs(clubs, artists, clubImages = {}) {
   if (!clubs.length) return "";
   const top10 = clubs.slice(0, 10);
   const rest  = clubs.slice(10, 50);
@@ -875,13 +941,19 @@ function buildClubs(clubs, artists) {
           `<span class="club-play-pill"><span class="cpp-rank">#${a.rank}</span>${esc(a.name)}</span>`).join("")}</div>`
       : `<div class="club-plays-none">No current top-100 act lists this room in their recent RA bookings. The reach here runs deeper than this season's routing.</div>`;
 
+    const photoUri  = clubImages[c.name];
+    const photoHtml = photoUri
+      ? `<img class="club-hero-photo" src="${photoUri}" alt="${esc(c.name)}"><div class="club-hero-shade"></div>`
+      : `<div class="club-hero-grid"></div>`;
+    const storyText = CLUB_STORIES[c.name] || dedash(c.note || "");
+
     return `<div class="club-page page">
       <div class="club-hero">
-        <div class="club-hero-grid"></div>
+        ${photoHtml}
         <div class="club-hero-ghost">${c.rank}</div>
         <div class="club-hero-top">
           <span class="club-eyebrow">The Club Top 50</span>
- <span class="club-coord">EST. ${c.opened || "—"}<br>${esc((c.city || "").toUpperCase())} · ${esc((c.country || "").toUpperCase())}</span>
+          <span class="club-coord">EST. ${c.opened || "—"}<br>${esc((c.city || "").toUpperCase())} · ${esc((c.country || "").toUpperCase())}</span>
         </div>
         <div class="club-hero-main">
           <div class="club-hero-rank">No. ${c.rank}</div>
@@ -890,7 +962,7 @@ function buildClubs(clubs, artists) {
         </div>
       </div>
       <div class="club-lower">
-        <div class="club-note">${esc(dedash(c.note || ""))}</div>
+        <div class="club-note">${storyText}</div>
         <div class="club-body">
           <div class="club-col">
             <h4>The five-axis read</h4>
@@ -1225,6 +1297,10 @@ async function main() {
   const images = await loadArtistImages(artists.slice(0, 10));
   console.log(`  artist photos embedded: ${Object.keys(images).length}/10`);
 
+  // Embed top-10 club photos (cached + base64)
+  const clubImages = await loadClubImages(clubs.slice(0, 10));
+  console.log(`  club photos embedded: ${Object.keys(clubImages).length}/10`);
+
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
 
   // Kindle: write HTML and exit
@@ -1243,7 +1319,7 @@ async function main() {
     buildEditorsNote(artists),
     buildMethod(),
     buildHouse100(artists, images, genreMod),
-    buildClubs(clubs, artists),
+    buildClubs(clubs, artists, clubImages),
     buildBreakouts(artists),
     await buildSceneCuts(artists, genreMod),
     buildFullIndex(artists),
