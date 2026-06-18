@@ -104,21 +104,65 @@ function verdict(a) {
   const tl = a.tl_support_score    || 0;
   const tr = a.tour_score          || 0;
 
-  if (sc >= 85 && dm >= 75)       return "Every signal agrees. The consensus pick.";
-  if (sc >= 80 && mo >= 65)       return "Heritage name still filling the rooms. Rarer than it sounds.";
-  if (sc >= 80 && dm < 50)        return "The rooms come to them. The scene says so.";
-  if (mo >= 80)                   return "Everything moving at once. The story of this season.";
-  if (mo >= 65 && dm >= 65)       return "Rising faster than anyone else right now, and the bookings confirm it.";
-  if (bp >= 75 && tl >= 65)       return "The tracks other DJs actually play in their sets. That says something.";
-  if (bp >= 70 && dm >= 60)       return "Charts and live rooms both say yes.";
-  if (tr >= 70 && dm >= 65)       return "The data implied it. The tour dates confirmed it.";
-  if (sc >= 75 && bp >= 60)       return "Underground first. The charts followed.";
-  if (sc >= 70 && mo >= 50)       return "Slow build, strong position. The scene knew before the data caught up.";
-  if (dm >= 70)                   return "Consistent live demand. Rooms, consistently. That is the argument.";
-  if (sc >= 65)                   return "The scene rates this higher than the algorithm does. That usually means something.";
-  if (mo >= 55)                   return "Moving up. The climb is real.";
-  if (bp >= 60)                   return "Beatport says the DJs are paying attention. Worth noting.";
-  if (tl >= 50)                   return "Selectors are playing it. Main stages follow selectors.";
+  // Living legend tier (sc 90+)
+  if (sc >= 90) return "The scene has been saying this for years. The data agrees.";
+
+  // Demand leads the field (80+)
+  if (dm >= 80 && tl >= 75) return "The most booked, and selectors are playing it. That combination holds.";
+  if (dm >= 80 && bp >= 85) return "Demand-led with the charts to back it up.";
+  if (dm >= 80)              return "The most-booked act in this tier. Rooms, consistently.";
+
+  // Beatport + DJ-support aligned and accelerating
+  if (bp >= 90 && tl >= 58 && mo >= 60) return "Chart-leading and accelerating. Two things that rarely move together.";
+  if (bp >= 90 && tl >= 58)             return "The most-played tracks in the DJ community. The rooms noticed.";
+
+  // Touring at capacity with scene and demand
+  if (tr >= 95 && sc >= 80 && dm >= 70) return "Touring at capacity. Scene and live rooms in sync.";
+  if (tr >= 95 && sc >= 83)             return "Cultural weight that shows up in the touring numbers.";
+
+  // All three axes strong
+  if (sc >= 75 && dm >= 70 && mo >= 60) return "Scene, bookings, momentum. All three. The complete picture.";
+
+  // DJ support leads — what selectors actually play
+  if (tl >= 80 && sc >= 80) return "What the DJs play, and what the scene respects. Rarely the same act.";
+  if (tl >= 75)              return "Selectors are playing it. Main stages follow selectors.";
+
+  // High scene + solid demand, low momentum — structural, not trending
+  if (sc >= 85 && dm >= 70 && mo < 35) return "Established. The demand is structural, not a trend.";
+  if (sc >= 83 && dm >= 65 && mo < 42) return "Scene credibility driving the bookings. The rooms are following.";
+
+  // Long career, very low momentum — the veteran read
+  if (tr >= 88 && sc >= 80 && mo < 20) return "The long game. Demand is structural, nothing trend-driven about it.";
+
+  // Scene + demand aligned
+  if (sc >= 82 && dm >= 72) return "Scene and rooms aligned. The reliable read.";
+
+  // Beatport + touring
+  if (bp >= 85 && tr >= 80) return "Beatport-strong with the touring to back it up.";
+  if (bp >= 80 && dm >= 65) return "Chart credibility and live demand moving together.";
+
+  // Credibility + momentum
+  if (sc >= 80 && mo >= 55) return "Credibility had the head start. Momentum is doing the rest.";
+
+  // Momentum story
+  if (mo >= 80) return "Everything moving at once. The story of this season.";
+  if (mo >= 65 && dm >= 60) return "Rising faster than most. The bookings are catching up.";
+  if (mo >= 55) return "Moving up. The climb is real.";
+
+  // Scene leads demand
+  if (sc >= 80 && dm >= 55) return "The scene rates this highly. Live demand is following.";
+  if (sc >= 75 && dm >= 62) return "Scene and live rooms in sync.";
+  if (sc >= 75)              return "The scene rates this higher than the algorithm. Note it.";
+
+  // Tour confirms
+  if (tr >= 80 && dm >= 65) return "The touring confirms what the demand data implies.";
+
+  // Steady demand
+  if (dm >= 70) return "Consistent live demand. Rooms, consistently.";
+
+  // Beatport only
+  if (bp >= 65) return "Beatport signals the DJ community is paying attention.";
+
   return "No single standout signal. No weak spots either.";
 }
 
