@@ -58,7 +58,7 @@ const WEIGHT_LABELS = {
 function loadArtists() {
   let raw = fs.readFileSync(DATA, "utf8");
   if (raw.includes("<<<<<<<")) {
-    console.log("⚠  rankings.json has merge conflict — reading clean copy from git HEAD");
+ console.log("⚠ rankings.json has merge conflict, reading clean copy from git HEAD");
     raw = execSync("git show HEAD:frontend/public/rankings.json",
       { cwd: ROOT, maxBuffer: 20 * 1024 * 1024 }).toString();
   }
@@ -76,7 +76,7 @@ async function loadClubs() {
     );
     return (RANKED || []).slice().sort((a, b) => (a.rank || 999) - (b.rank || 999));
   } catch (e) {
-    console.warn("club data import failed — continuing without clubs:", e.message);
+ console.warn("club data import failed: continuing without clubs:", e.message);
     return [];
   }
 }
@@ -88,6 +88,43 @@ async function loadGenre() {
       pathToFileURL(path.join(ROOT, "frontend/src/genre.js")).href
     );
   } catch { return null; }
+}
+
+// ── Artist photos (cache + base64 embed so the PDF is self-contained) ──────────
+const IMG_CACHE = path.join(ROOT, "backend/data/img-cache");
+const crypto    = require("crypto");
+
+function fetchBuffer(url) {
+  return new Promise((resolve, reject) => {
+    const https = require("https");
+    https.get(url, res => {
+      if (res.statusCode !== 200) { reject(new Error("HTTP " + res.statusCode)); return; }
+      const chunks = [];
+      res.on("data", c => chunks.push(c));
+      res.on("end", () => resolve(Buffer.concat(chunks)));
+    }).on("error", reject);
+  });
+}
+
+// Returns a map { rank → "data:image/jpeg;base64,…" } for the given artists.
+async function loadArtistImages(artists) {
+  fs.mkdirSync(IMG_CACHE, { recursive: true });
+  const map = {};
+  for (const a of artists) {
+    if (!a.image) continue;
+    const hash = crypto.createHash("md5").update(a.image).digest("hex").slice(0, 12);
+    const file = path.join(IMG_CACHE, hash + ".jpg");
+    let buf;
+    try {
+      buf = fs.existsSync(file) ? fs.readFileSync(file) : await fetchBuffer(a.image);
+      if (!fs.existsSync(file)) fs.writeFileSync(file, buf);
+    } catch (e) {
+      console.warn(`  image fetch failed for ${a.name}: ${e.message}`);
+      continue;
+    }
+    map[a.rank] = `data:image/jpeg;base64,${buf.toString("base64")}`;
+  }
+  return map;
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -184,7 +221,7 @@ function deltaTag(a) {
   const d = prev - (a.rank || 0);
   if (d > 0) return `<span class="delta up">▲${d}</span>`;
   if (d < 0) return `<span class="delta dn">▼${Math.abs(d)}</span>`;
-  return `<span class="delta fl">—</span>`;
+ return `<span class="delta fl">—</span>`;
 }
 
 function actRegions(a) {
@@ -244,7 +281,7 @@ h1,h2,h3 { color: var(--text-h); font-weight: 700; letter-spacing: -.015em; marg
 
 /* Cover */
 .cover {
-  height: ${isKDP ? "254mm" : "297mm"};
+  height: ${isKDP ? "235mm" : "281mm"};
   display: flex; flex-direction: column;
   justify-content: flex-end; align-items: flex-start;
   padding: 0 0 40px 36px;
@@ -293,42 +330,45 @@ h1,h2,h3 { color: var(--text-h); font-weight: 700; letter-spacing: -.015em; marg
 .method-note { background:rgba(200,247,80,.05); border:1px solid rgba(200,247,80,.2); border-radius:8px; padding:12px 14px; margin-top:18px; font-size:10px; line-height:1.6; color:var(--text); }
 .method-note b { color:var(--text-h); }
 
-/* Full profile cards (top 10) */
-.profile-page { padding:28px 30px 24px; display:flex; flex-direction:column; }
-.profile-header { display:flex; align-items:flex-start; gap:0; margin-bottom:18px; border-bottom:1px solid var(--border); padding-bottom:18px; }
-.profile-rank { font-family:'IBM Plex Mono',monospace; font-size:80px; font-weight:600; line-height:.9; color:var(--accent); letter-spacing:-.03em; margin-right:22px; flex-shrink:0; }
-.profile-rank small { font-size:28px; color:var(--muted); display:block; margin-bottom:2px; }
-.profile-header-text { flex:1; }
-.profile-name { font-size:34px; font-weight:700; color:var(--text-h); letter-spacing:-.02em; line-height:1; margin-bottom:8px; }
-.profile-verdict { font-size:13px; color:var(--text); line-height:1.6; max-width:500px; }
-.profile-badge { font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); border:1px solid rgba(200,247,80,.35); border-radius:4px; padding:3px 8px; display:inline-block; margin-top:10px; }
-.profile-body { display:grid; grid-template-columns:1fr 1fr; gap:24px; flex:1; }
-.profile-signals { }
-.profile-signals h4 { font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin:0 0 12px; }
+/* Full artist profile pages (top 10) — photo-led editorial spread */
+.profile-page { display:flex; flex-direction:column; height:${isKDP ? "235mm" : "281mm"}; overflow:hidden; }
+.profile-hero { position:relative; height:${isKDP ? "90mm" : "118mm"}; overflow:hidden; background:#0a0a0c; flex-shrink:0; }
+.profile-hero img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 22%; ${isKDP ? "filter:grayscale(1) brightness(.92) contrast(1.05);" : "filter:brightness(.92) contrast(1.04) saturate(1.05);"} }
+.profile-hero-shade { position:absolute; inset:0; background:linear-gradient(to top, var(--bg) 2%, rgba(12,12,14,.55) 32%, rgba(12,12,14,.1) 62%, rgba(12,12,14,.35) 100%); }
+.profile-hero-top { position:absolute; top:24px; left:30px; right:30px; display:flex; justify-content:space-between; align-items:flex-start; }
+.profile-eyebrow { font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:.22em; text-transform:uppercase; color:#C8F750; text-shadow:0 1px 6px rgba(0,0,0,.6); }
+.profile-pill { font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:.12em; text-transform:uppercase; color:#E9E7DF; background:rgba(12,12,14,.66); border:1px solid rgba(255,255,255,.2); border-radius:5px; padding:4px 9px; }
+.profile-hero-name { position:absolute; bottom:26px; left:30px; right:30px; }
+.profile-hero-rank { font-family:'IBM Plex Mono',monospace; font-size:74px; font-weight:600; line-height:.82; color:var(--accent); letter-spacing:-.03em; }
+.profile-hero-rank small { font-size:24px; color:rgba(200,247,80,.55); }
+.profile-name { font-size:42px; font-weight:700; color:var(--text-h); letter-spacing:-.025em; line-height:.98; margin-top:6px; text-shadow:0 2px 22px rgba(0,0,0,.55); }
+.profile-tagline { font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.06em; color:var(--text); margin-top:8px; }
+.profile-tagline .accent { color:var(--accent); }
+.profile-lower { flex:1; padding:18px 30px 22px; display:flex; flex-direction:column; min-height:0; }
+.profile-verdict { font-size:14px; color:var(--text-h); line-height:1.5; font-weight:500; letter-spacing:-.01em; margin-bottom:14px; padding-bottom:14px; border-bottom:1px solid var(--border); }
+.profile-body { display:grid; grid-template-columns:1.05fr 1fr; gap:26px; min-height:0; }
+.profile-col h4 { font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin:0 0 11px; }
 .sig-row { display:flex; align-items:center; gap:10px; margin-bottom:9px; }
-.sig-label { font-size:10px; color:var(--text); min-width:100px; }
+.sig-label { font-size:10px; color:var(--text); min-width:104px; }
 .sig-bar-wrap { flex:1; height:4px; background:rgba(255,255,255,.07); border-radius:2px; }
 .sig-bar { height:4px; border-radius:2px; background:var(--accent); }
 .sig-val { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text-h); min-width:24px; text-align:right; }
-.profile-right { display:flex; flex-direction:column; gap:16px; }
-.profile-stats { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
-.stat-box { background:var(--sub); border:1px solid var(--border); border-radius:8px; padding:10px 12px; }
-.stat-box .st-val { font-family:'IBM Plex Mono',monospace; font-size:16px; font-weight:600; color:var(--accent); line-height:1.2; }
-.stat-box .st-lbl { font-size:9px; color:var(--muted); margin-top:3px; }
-.profile-section { }
-.profile-section h4 { font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin:0 0 8px; }
-.profile-tags { display:flex; flex-wrap:wrap; gap:5px; }
-.profile-tag { font-size:9.5px; color:var(--text); background:rgba(255,255,255,.04); border:1px solid var(--border); border-radius:4px; padding:3px 7px; }
+.profile-stats { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:14px; }
+.stat-box { background:var(--sub); border:1px solid var(--border); border-radius:8px; padding:9px 12px; }
+.stat-box .st-val { font-family:'IBM Plex Mono',monospace; font-size:17px; font-weight:600; color:var(--accent); line-height:1.1; }
+.stat-box .st-lbl { font-size:8.5px; color:var(--muted); margin-top:3px; }
+.profile-tags { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:12px; }
+.profile-tag { font-size:9px; color:var(--text); background:rgba(255,255,255,.04); border:1px solid var(--border); border-radius:4px; padding:3px 7px; }
 .profile-venues { list-style:none; margin:0; padding:0; }
-.profile-venues li { font-size:10px; color:var(--text); padding:4px 0; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; }
+.profile-venues li { font-size:9.5px; color:var(--text); padding:3.5px 0; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; gap:8px; }
 .profile-venues li:last-child { border-bottom:none; }
-.profile-venues .v-loc { color:var(--muted); font-size:9px; }
-.profile-anecdote { margin-top:18px; padding-top:16px; border-top:1px solid var(--border); font-size:11px; color:var(--text); line-height:1.65; font-style:italic; }
+.profile-venues .v-loc { color:var(--muted); font-size:8.5px; white-space:nowrap; }
+.profile-anecdote { margin-top:auto; padding:12px 14px; background:rgba(200,247,80,.045); border-left:2px solid var(--accent); border-radius:0 6px 6px 0; font-size:10.5px; color:var(--text); line-height:1.62; }
 .profile-anecdote em { color:var(--text-h); font-style:normal; font-weight:600; }
-.profile-footer { display:flex; gap:20px; margin-top:14px; padding-top:12px; border-top:1px solid var(--border); }
+.profile-footer { display:flex; gap:22px; margin-top:auto; padding-top:13px; border-top:1px solid var(--border); }
 .profile-footer .pf-item { display:flex; flex-direction:column; }
 .profile-footer .pf-val { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text-h); }
-.profile-footer .pf-lbl { font-size:8.5px; color:var(--muted); margin-top:2px; }
+.profile-footer .pf-lbl { font-size:8px; color:var(--muted); margin-top:2px; letter-spacing:.04em; }
 
 /* Standard entry rows (11-100) */
 .entry-table { width:100%; border-collapse:collapse; margin-top:6px; }
@@ -356,6 +396,41 @@ h1,h2,h3 { color: var(--text-h); font-weight: 700; letter-spacing: -.015em; marg
 .c-city { font-size:9.5px; color:var(--muted); }
 .c-score { font-family:'IBM Plex Mono',monospace; text-align:right; color:var(--accent); font-size:11px; width:44px; }
 .medal { color:var(--accent); font-size:15px; font-family:'IBM Plex Mono',monospace; }
+
+/* Club full profile pages (top 10) — typographic identity hero */
+.club-page { display:flex; flex-direction:column; height:${isKDP ? "235mm" : "281mm"}; overflow:hidden; }
+.club-hero { position:relative; height:${isKDP ? "92mm" : "122mm"}; overflow:hidden; flex-shrink:0; background:linear-gradient(158deg, #11151d 0%, #0c0c0e 64%); border-bottom:1px solid var(--border); }
+.club-hero-grid { position:absolute; inset:0; opacity:.06; background-image:repeating-linear-gradient(0deg, #C8F750 0, #C8F750 1px, transparent 1px, transparent 34px), repeating-linear-gradient(90deg, #C8F750 0, #C8F750 1px, transparent 1px, transparent 34px); }
+.club-hero-ghost { position:absolute; right:-8px; bottom:-44px; font-family:'IBM Plex Mono',monospace; font-size:280px; font-weight:600; line-height:.7; color:rgba(200,247,80,.08); letter-spacing:-.04em; }
+.club-hero-top { position:absolute; top:26px; left:32px; right:32px; display:flex; justify-content:space-between; align-items:flex-start; }
+.club-eyebrow { font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:.22em; text-transform:uppercase; color:#C8F750; }
+.club-coord { font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:.1em; color:rgba(233,231,223,.55); text-align:right; line-height:1.5; }
+.club-hero-main { position:absolute; bottom:28px; left:32px; right:32px; }
+.club-hero-rank { font-family:'IBM Plex Mono',monospace; font-size:30px; font-weight:600; color:#C8F750; letter-spacing:.02em; margin-bottom:6px; }
+.club-hero-name { font-size:46px; font-weight:700; color:#E9E7DF; letter-spacing:-.025em; line-height:.96; }
+.club-hero-meta { font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.08em; color:rgba(233,231,223,.82); margin-top:10px; }
+.club-hero-meta .sep { color:rgba(200,247,80,.5); margin:0 7px; }
+.club-lower { flex:1; padding:20px 32px 22px; display:flex; flex-direction:column; min-height:0; }
+.club-note { font-size:14.5px; color:var(--text-h); line-height:1.5; font-weight:500; letter-spacing:-.01em; margin-bottom:14px; padding-bottom:15px; border-bottom:1px solid var(--border); }
+.club-body { display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+.club-col h4 { font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin:0 0 12px; }
+.cdim-row { margin-bottom:15px; }
+.club-subgroup { margin-top:18px; }
+.cdim-head { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px; }
+.cdim-label { font-size:10px; color:var(--text); }
+.cdim-weight { font-family:'IBM Plex Mono',monospace; font-size:8px; color:var(--muted); margin-left:6px; }
+.cdim-val { font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text-h); }
+.cdim-bar-wrap { height:4px; background:rgba(255,255,255,.07); border-radius:2px; }
+.cdim-bar { height:4px; border-radius:2px; background:var(--accent); }
+.club-plays { display:flex; flex-wrap:wrap; gap:5px; }
+.club-play-pill { font-size:9.5px; color:var(--text-h); background:rgba(255,255,255,.05); border:1px solid var(--border); border-radius:5px; padding:3px 8px; white-space:nowrap; }
+.club-play-pill .cpp-rank { font-family:'IBM Plex Mono',monospace; font-size:8px; color:var(--accent); margin-right:4px; }
+.club-plays-none { font-size:10px; color:var(--muted); font-style:italic; }
+.club-insight { margin-top:auto; padding:12px 14px; background:rgba(200,247,80,.045); border-left:2px solid var(--accent); border-radius:0 6px 6px 0; font-size:10.5px; color:var(--text); line-height:1.6; }
+.club-insight em { color:var(--text-h); font-style:normal; font-weight:600; }
+.club-footer { display:flex; gap:24px; margin-top:14px; padding-top:13px; border-top:1px solid var(--border); }
+.club-footer .cf-val { font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--accent); }
+.club-footer .cf-lbl { font-size:8px; color:var(--muted); margin-top:2px; letter-spacing:.04em; }
 
 /* Scene cuts */
 .cut-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:14px; }
@@ -389,7 +464,7 @@ h1,h2,h3 { color: var(--text-h); font-weight: 700; letter-spacing: -.015em; marg
 .idx-score { font-family:'IBM Plex Mono',monospace; color:var(--muted); font-size:8px; }
 
 /* Back matter */
-.back-page { display:flex; flex-direction:column; justify-content:space-between; height:${isKDP ? "254mm" : "297mm"}; padding:44px 40px; }
+.back-page { display:flex; flex-direction:column; justify-content:space-between; height:${isKDP ? "235mm" : "281mm"}; padding:44px 40px; }
 .back-headline { font-size:38px; line-height:1.1; font-weight:700; color:var(--text-h); max-width:520px; }
 .back-headline span { color:var(--accent); }
 .back-cta { margin-top:28px; font-size:14px; color:var(--text); }
@@ -445,14 +520,14 @@ const CONTENTS = [
   { title: "The Read",           pg: 3 },
   { title: "The Method",         pg: 4 },
   { section: true, label: "The rankings" },
-  { title: "The House 100",      pg: 5, sub: "The full ranking, #1–#100" },
-  { title: "The Club Top 50",    pg: 27, sub: "The rooms that define the scene" },
+  { title: "The House 100",      pg: 5,  sub: "Ten profiles, then the full ranking" },
+  { title: "The Club Top 50",    pg: 21, sub: "The rooms that hand out credibility" },
   { section: true, label: "The analysis" },
-  { title: "Breakouts",          pg: 35, sub: "Who's accelerating this season" },
-  { title: "Scene Cuts",         pg: 38, sub: "By city · by sound · the discoveries" },
+  { title: "Breakouts",          pg: 36, sub: "Who's accelerating this season" },
+  { title: "Scene Cuts",         pg: 37, sub: "By sound, and the names to argue about" },
   { section: true, label: "The full field" },
-  { title: "The Full Index",     pg: 46, sub: "All 342 artists ranked and scored" },
-  { title: "Next Edition",       pg: 56 },
+  { title: "The Full Index",     pg: 40, sub: "All 342 artists ranked and scored" },
+  { title: "Next Edition",       pg: 48 },
 ];
 
 function buildContents() {
@@ -461,7 +536,7 @@ function buildContents() {
       return `<li class="toc-section">${esc(item.label)}</li>`;
     }
     return `<li>
-      <span class="toc-title">${esc(item.title)}${item.sub ? `<span style="color:var(--muted);font-weight:400;font-size:10.5px"> — ${esc(item.sub)}</span>` : ""}</span>
+      <span class="toc-title">${esc(item.title)}${item.sub ? `<span style="color:var(--muted);font-weight:400;font-size:10.5px"> &nbsp;·&nbsp; ${esc(item.sub)}</span>` : ""}</span>
       <span class="toc-pg">${item.pg}</span>
     </li>`;
   }).join("");
@@ -526,30 +601,43 @@ function buildMethod() {
 </div>`;
 }
 
-// ── Artist anecdotes (editorially grounded in real signal data) ───────────────
+// ── Artist anecdotes (grounded in real signal data; no em-dashes per house style)
 const ANECDOTES = {
-  "ANOTR": `<em>15.4 million</em> monthly Spotify listeners, <em>30,600</em> YouTube subscribers. The ratio is the point. ANOTR built their audience inside clubs and on record store shelves before the algorithm had time to catch up. Their Google Trends index peaks in the Netherlands at 100 — home market dominance — but Italy at 85 and the UK at 77 show the first full European routing cycle is already underway. This is what a DJ-first career looks like when the data finally starts to reflect it.`,
+  "ANOTR": `<em>15.4 million</em> monthly Spotify listeners against <em>30,600</em> YouTube subscribers. That ratio is the whole story. ANOTR built a room-filling audience through clubs and record bags before the algorithm caught up. Their search interest peaks in the Netherlands, but Italy at 85 and the UK at 77 say the European routing cycle is already in full swing.`,
 
-  "Charlotte de Witte": `With <em>974,000</em> YouTube subscribers, she has the largest video audience of the top 10 by a wide margin. She doesn't appear on a single 1001Tracklists chart — selector support score: zero — yet her tour density score hits <em>100</em>, the ceiling. Privilege Ibiza, capacity 10,000, sits in her recent venue history. The rooms are filling without the DJ-chart pipeline that lifts most acts at this level. That path is harder to build and harder to lose.`,
+  "Charlotte de Witte": `She has <em>974,000</em> YouTube subscribers, the biggest video audience in the top 10 by far. She doesn't appear on a single 1001Tracklists chart, yet her tour density score is <em>100</em>, the ceiling. Privilege Ibiza, capacity 10,000, sits in her recent venue history. The rooms fill without the DJ-chart pipeline most acts lean on. That path is harder to build, and harder to lose.`,
 
-  "Prospa": `<em>14 Beatport charting tracks</em> — more than anyone else in the top 10. "Baby" and "Free Your Mind" have been in DJ sets for <em>19 consecutive weeks</em>. Their Google Trends interest reads: UK at 96, New Zealand at 71, Australia at 54. That Commonwealth pattern is unusual for a house act — it maps a touring footprint built city by city through UK club culture before the festival-circuit phase even began.`,
+  "Prospa": `<em>14 Beatport charting tracks</em>, more than anyone else in the top 10. "Baby" and "Free Your Mind" have lived in DJ sets for <em>19 straight weeks</em>. Their search interest reads UK 96, New Zealand 71, Australia 54. That Commonwealth pattern is rare for a house act. It maps a touring footprint built city by city through UK club culture, well before the festival phase.`,
 
-  "Peggy Gou": `<em>141,232</em> RA followers — the largest audience of the top 10, and it isn't close. Yet her RA average attendance figure is 61 per event, one of the lower conversion rates here. She draws more followers than any act in this ranking, but those followers are spread across more cities and more demographics than a typical house act. Beatport places her in Indie Dance. This index places her at #4 on booking demand. The gap between those two classifications tells you something about where the genre is going.`,
+  "Peggy Gou": `<em>141,232</em> RA followers, the largest audience in the top 10 and not close. Her average attendance per event is 61, one of the lower conversion rates here. The followers outnumber everyone, but they're spread across more cities and more demographics than a typical house act. Beatport files her under Indie Dance. This index files her at #4 on booking demand. The gap says something about where the genre is headed.`,
 
-  "Black Coffee": `Debut year: <em>1996</em>. The oldest career in the top 10 by two full decades. His top Spotify city is <em>Johannesburg</em> at 120,000 monthly listeners — the only act in the top 10 whose home country leads their own streaming geography. His Grammy win came in 2022, 26 years into the career. The Hï Ibiza residency followed. At this point the data is just confirming what the rooms already knew.`,
+  "Black Coffee": `Debut year <em>1996</em>, the oldest career in the top 10 by two decades. His top Spotify city is <em>Johannesburg</em> at 120,000 listeners, the only act here whose home country leads their own streaming map. The Grammy came in 2022, 26 years in. The Hï Ibiza residency followed. The data is just confirming what the rooms already knew.`,
 
-  "Chris Stussy": `His own label, <em>Up The Stuss</em>, sits in the top-four label tier. His Google Trends peak country: <em>Chile</em>, index 100. Ireland comes second at 42, the Netherlands third at 39. A Dutch deep house act trending hardest in South America is a geographic fingerprint with no clean explanation — except that certain sounds move through nightlife circuits that bypass traditional media entirely, and Chile has one of the strongest underground club scenes in the Americas.`,
+  "Chris Stussy": `His own label, <em>Up The Stuss</em>, sits in the top-four label tier. His search interest peaks in <em>Chile</em> at 100, with Ireland second and the Netherlands third. A Dutch deep house producer trending hardest in South America is a strange fingerprint, until you remember Chile runs one of the deepest underground club scenes in the Americas, and certain sounds travel through nightlife, not media.`,
 
-  "Mau P": `Career debut: <em>2022</em>. The youngest career in the top 10 by four years. Top venues this season include Pacha Ibiza, Ushuaia Ibiza, and Hï Ibiza simultaneously — that triple Ibiza placement in a single season is unusual even for acts a decade older. His 1001Tracklists chart has been running for <em>21 weeks</em> with a best position of #1. The selectors locked in before the mainstream had finished deciding what to make of him.`,
+  "Mau P": `Career debut <em>2022</em>, the youngest in the top 10 by four years. This season's top venues include Pacha, Ushuaïa and Hï Ibiza at once, a triple-island placement most acts twice his age never get. His 1001Tracklists run is <em>21 weeks</em> deep with a best position of #1. The selectors locked in before the mainstream finished making up its mind.`,
 
-  "Carl Cox": `<em>260,038</em> Mixcloud followers — more than any other act in this entire index of 342. His Beatport chart position improved <em>13 places</em> in a single tracking window, the biggest movement in the top 10. His live conversion rate on RA sits at 18.5%: when someone looks him up, they attend. That number is driven by a career built before social media existed, which means the people following him on platforms are the ones who were already going to shows. The scene score of <em>92</em> is the highest in the top 10. The algorithm agrees with the rooms, for once.`,
+  "Carl Cox": `<em>260,038</em> Mixcloud followers, more than any of the 342 acts in this index. His Beatport position jumped <em>13 places</em> in one tracking window, the biggest move in the top 10. His live conversion rate is 18.5%: look him up and you go. That's a career built before social media, so the people following him online were already in the room. His scene score of <em>92</em> is the highest in the top 10. For once, the algorithm and the floor agree.`,
 
-  "Chris Lake": `Google Trends interest: <em>USA 100, Canada 58</em>. Every other country is in single figures. He is, by search data, almost entirely a North American phenomenon — yet his bookings span three continents and his Spotify top cities include London, Sydney, Melbourne, and Mexico City. His track "Make You Fight" has been charting on 1001Tracklists for <em>18 consecutive weeks</em>. Black Book Records, his own label, means he controls the release cadence that keeps that chart position warm.`,
+  "Chris Lake": `Search interest reads <em>USA 100, Canada 58</em>, everywhere else in single digits. By the numbers he's almost entirely North American, yet his bookings cross three continents and his top Spotify cities run London, Sydney, Melbourne, Mexico City. "Make You Fight" has charted on 1001Tracklists for <em>18 weeks</em>. Black Book Records is his own label, so he controls the release cadence that keeps it there.`,
 
-  "Josh Baker": `Live conversion rate: <em>41.4%</em>. The highest in the top 10 by a margin that doesn't make sense until you look at the venue data — RA records average attendance of <em>799 people</em> per event, with a top attendance of 7,146. His booking fee sits at £8K–18K. That is the largest demand-to-fee gap in the top 10, and the data has been flagging it since the first tracking window. The people who know, know.`,
+  "Josh Baker": `Live conversion rate <em>41.4%</em>, the highest in the top 10 by a wide margin. The venue data explains it: average attendance of <em>799</em> per event, topping out at 7,146. His booking fee sits at £8K to £18K. That's the largest demand-to-fee gap up here, and the index has flagged it since the first tracking window. The people who know, know.`,
 };
 
-function buildProfileCard(a, isFirst) {
+// One-line hero tagline derived from real fields (genre · subgenre · since year).
+function profileTagline(a, genreMod) {
+  const parts = [];
+  if (genreMod && genreMod.genreLean) {
+    const g = genreMod.genreLean(a);
+    if (g) parts.push(`<span class="accent">${esc(g === "crossover" ? "house / crossover" : g)}</span>`);
+  }
+  const sub = Array.isArray(a.beatport_charts) ? a.beatport_charts[0] : null;
+  if (sub && !/peak time/i.test(sub)) parts.push(esc(sub));
+  if (a.debut_year) parts.push(`since ${a.debut_year}`);
+  return parts.join(" &nbsp;·&nbsp; ");
+}
+
+function buildProfileCard(a, isFirst, images, genreMod) {
   const signals = [
     { label: "Scene credibility",  val: a.manual_scene_score || 0 },
     { label: "Live demand",        val: a.live_demand_score  || 0 },
@@ -567,13 +655,13 @@ function buildProfileCard(a, isFirst) {
     </div>`).join("");
 
   function fmtListeners(n) {
-    if (!n) return "—";
+ if (!n) return "—";
     if (n >= 1e6) return (n / 1e6).toFixed(1) + "M";
     if (n >= 1e3) return Math.round(n / 1e3) + "K";
     return String(n);
   }
   function fmtNum(n) {
-    if (!n) return "—";
+ if (!n) return "—";
     if (n >= 1e6) return (n / 1e6).toFixed(1) + "M";
     if (n >= 1e3) return (n / 1e3).toFixed(n >= 100000 ? 0 : 1) + "K";
     return String(n);
@@ -582,8 +670,8 @@ function buildProfileCard(a, isFirst) {
   const stats = [
     { val: fmtListeners(a.spotify_monthly_listeners), lbl: "Spotify listeners / mo" },
     { val: fmtNum(a.youtube_subscribers), lbl: "YouTube subscribers" },
-    { val: a.beatport_best_position ? `#${a.beatport_best_position}` : "—", lbl: "Best Beatport position" },
-    { val: a.tl_weeks_charted ? `${a.tl_weeks_charted}w` : "—", lbl: "Weeks on 1001T chart" },
+ { val: a.beatport_best_position ? `#${a.beatport_best_position}` : "—", lbl: "Best Beatport position" },
+ { val: a.tl_weeks_charted ? `${a.tl_weeks_charted}w` : "—", lbl: "Weeks on 1001T chart" },
   ].map(s => `<div class="stat-box"><div class="st-val">${esc(s.val)}</div><div class="st-lbl">${esc(s.lbl)}</div></div>`).join("");
 
   const topVenues = (a.ra_top_venues || []).slice(0, 4).map(v => `
@@ -596,53 +684,62 @@ function buildProfileCard(a, isFirst) {
 
   const anecdote = ANECDOTES[a.name] || "";
 
-  const fee   = a.booking_fee ? esc(a.booking_fee.label) : "—";
+ const fee = a.booking_fee ? esc(a.booking_fee.label) : "—";
   const debut = a.debut_year  ? String(a.debut_year) : "N/A";
-  const label = esc(a.label_best || a.beatport_labels?.[0] || "—");
-  const countries = a.ra_countries ? `${a.ra_countries} countries` : "—";
+ const label = esc(a.label_best || a.beatport_labels?.[0] || "—");
+ const countries = a.ra_countries ? `${a.ra_countries} countries` : "—";
+
+  const img = images && images[a.rank];
+  const photo = img
+    ? `<img src="${img}" alt="${esc(a.name)}">`
+    : `<div style="position:absolute;inset:0;background:linear-gradient(155deg,#141822,#0c0c0e)"></div>`;
 
   return `<div class="profile-page page">
-    ${isFirst ? `<div class="eyebrow" style="margin-bottom:14px">The House 100 — Top 10 profiles</div>` : ""}
-    <div class="profile-header">
-      <div class="profile-rank"><small>#</small>${a.rank}</div>
-      <div class="profile-header-text">
+    <div class="profile-hero">
+      ${photo}
+      <div class="profile-hero-shade"></div>
+      <div class="profile-hero-top">
+ <span class="profile-eyebrow">${isFirst ? "The House 100, Top 10" : "The House 100"}</span>
+        <span class="profile-pill">${esc(leadSignalLabel(a))} · Score ${(a.score||0).toFixed(1)}</span>
+      </div>
+      <div class="profile-hero-name">
+        <div class="profile-hero-rank"><small>#</small>${a.rank}</div>
         <div class="profile-name">${esc(a.name)}</div>
-        <div class="profile-verdict">${verdict(a)}</div>
-        <div class="profile-badge">${esc(leadSignalLabel(a))} · Score ${(a.score||0).toFixed(1)}</div>
+        <div class="profile-tagline">${profileTagline(a, genreMod)}</div>
       </div>
     </div>
-    <div class="profile-body">
-      <div class="profile-signals">
-        <h4>Signal breakdown</h4>
-        ${sigBars}
-        ${tags ? `<div class="profile-section" style="margin-top:16px"><h4>Scene credentials</h4><div class="profile-tags">${tags}</div></div>` : ""}
-      </div>
-      <div class="profile-right">
-        <div class="profile-section">
+    <div class="profile-lower">
+      <div class="profile-verdict">${verdict(a)}</div>
+      <div class="profile-body">
+        <div class="profile-col">
+          <h4>Signal breakdown</h4>
+          ${sigBars}
+          ${tags ? `<div style="margin-top:15px"><h4>Scene credentials</h4><div class="profile-tags">${tags}</div></div>` : ""}
+        </div>
+        <div class="profile-col">
           <h4>Key numbers</h4>
           <div class="profile-stats">${stats}</div>
+          ${topVenues ? `<h4>Rooms they fill</h4><ul class="profile-venues">${topVenues}</ul>` : ""}
         </div>
-        ${topVenues ? `<div class="profile-section"><h4>Top venues</h4><ul class="profile-venues">${topVenues}</ul></div>` : ""}
-        ${topCities ? `<div class="profile-section"><h4>Top Spotify cities</h4><ul class="profile-venues">${topCities}</ul></div>` : ""}
       </div>
-    </div>
-    ${anecdote ? `<div class="profile-anecdote">${anecdote}</div>` : ""}
-    <div class="profile-footer">
-      <div class="pf-item"><div class="pf-val">${fee}</div><div class="pf-lbl">Booking fee</div></div>
-      <div class="pf-item"><div class="pf-val">${debut}</div><div class="pf-lbl">Debut year</div></div>
-      <div class="pf-item"><div class="pf-val">${label}</div><div class="pf-lbl">Lead label</div></div>
-      <div class="pf-item"><div class="pf-val">${countries}</div><div class="pf-lbl">Routing this season</div></div>
+      ${anecdote ? `<div class="profile-anecdote">${anecdote}</div>` : ""}
+      <div class="profile-footer">
+        <div class="pf-item"><div class="pf-val">${fee}</div><div class="pf-lbl">Booking fee</div></div>
+        <div class="pf-item"><div class="pf-val">${debut}</div><div class="pf-lbl">Debut year</div></div>
+        <div class="pf-item"><div class="pf-val">${label}</div><div class="pf-lbl">Lead label</div></div>
+        <div class="pf-item"><div class="pf-val">${countries}</div><div class="pf-lbl">Routing this season</div></div>
+      </div>
     </div>
   </div>`;
 }
 
 // ── Section: The House 100 ────────────────────────────────────────────────────
-function buildHouse100(artists) {
+function buildHouse100(artists, images, genreMod) {
   const top10  = artists.slice(0, 10);
   const rest   = artists.slice(10, 100);
 
   // Top 10: one full-page profile per artist
-  const heroHtml = top10.map((a, i) => buildProfileCard(a, i === 0)).join("");
+  const heroHtml = top10.map((a, i) => buildProfileCard(a, i === 0, images, genreMod)).join("");
 
   // #11–100: 5 per page
   const chunkSize = 5;
@@ -672,40 +769,181 @@ function buildHouse100(artists) {
 }
 
 // ── Section: Club Top 50 ──────────────────────────────────────────────────────
-function buildClubs(clubs) {
-  if (!clubs.length) return "";
-  const perPage = 8;
-  const chunks  = [];
-  for (let i = 0; i < clubs.length && i < 50; i += perPage) chunks.push(clubs.slice(i, i + perPage));
+const COUNTRY_NAMES = {
+  US:"USA", ES:"Spain", DE:"Germany", GB:"UK", FR:"France", IT:"Italy",
+  GE:"Georgia", CA:"Canada", IL:"Israel", PT:"Portugal", NL:"Netherlands",
+  BE:"Belgium", JP:"Japan", BR:"Brazil",
+};
+const CLUB_DIMS = [
+  { key: "Heritage",          idx: 0, weight: 28 },
+  { key: "Music integrity",   idx: 1, weight: 24 },
+  { key: "Legendary sessions",idx: 2, weight: 22 },
+  { key: "Crowd & vibe",      idx: 3, weight: 16 },
+  { key: "Notoriety",         idx: 4, weight: 10 },
+];
 
-  function clubWhy(c) {
-    if (c.why) return esc(c.why);
-    if (c.description) return esc(String(c.description).slice(0, 80));
-    const parts = [];
-    if (c.opened)   parts.push(`Est. ${c.opened}`);
-    if (c.capacity) parts.push(`Cap. ${c.capacity}`);
-    if (c.genres)   parts.push(esc(Array.isArray(c.genres) ? c.genres.slice(0,2).join(" · ") : c.genres));
-    return parts.join(" · ") || "Defining room.";
+const normVenue = s => String(s || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+// House style: no em/en dashes in body prose. Turn " — " into a clean comma clause.
+const dedash = s => String(s || "").replace(/\s*[—–]\s*/g, ", ");
+
+// Top-100 artists who list this club among their most-played rooms.
+function artistsAtClub(club, artists) {
+  const cn = normVenue(String(club.name).split("/")[0]);
+  if (cn.length < 3) return [];
+  return artists
+    .filter(a => (a.rank || 999) <= 100)
+    .filter(a => (a.ra_top_venues || []).some(v => {
+      const vn = normVenue(v.name);
+      return vn && (vn.includes(cn) || cn.includes(vn));
+    }))
+    .sort((a, b) => (a.rank || 999) - (b.rank || 999))
+    .slice(0, 9);
+}
+
+function buildClubs(clubs, artists) {
+  if (!clubs.length) return "";
+  const top10 = clubs.slice(0, 10);
+  const rest  = clubs.slice(10, 50);
+
+  // Field-wide maxima so "highest in the index" claims are true.
+  const dimMax = CLUB_DIMS.map(d => Math.max(...clubs.map(c => c.scores?.[d.idx] || 0)));
+  const oldest = Math.min(...clubs.map(c => c.opened || 9999));
+
+  function clubInsight(c, plays) {
+    const age = c.opened ? 2026 - c.opened : null;
+    // Standout dimension for this club, and whether it tops the field.
+    let best = CLUB_DIMS[0], bestVal = -1;
+    CLUB_DIMS.forEach(d => { const v = c.scores?.[d.idx] || 0; if (v > bestVal) { bestVal = v; best = d; } });
+    const leadsField = bestVal >= dimMax[best.idx];
+    const dimPhrase = leadsField
+      ? `Its <em>${best.key.toLowerCase()}</em> score of ${bestVal} is the highest of any room in the index.`
+      : `Its sharpest axis is <em>${best.key.toLowerCase()}</em> at ${bestVal}.`;
+
+    if (plays.length) {
+      const names = plays.slice(0, 2).map(a => `${esc(a.name)} (#${a.rank})`).join(" and ");
+      return `<em>${plays.length}</em> of the artists ranked in this year's top 100 list ${esc(c.name)} among their most-played rooms, ${names} among them. ${dimPhrase}`;
+    }
+    if (c.opened === oldest) {
+      return `At ${age} years, ${esc(c.name)} is the oldest room in the entire index. ${dimPhrase}`;
+    }
+    return `${dimPhrase} A room that scores on the music, not the marquee.`;
   }
 
-  return chunks.map((chunk, ci) => `
-  <div class="section${ci > 0 ? "-cont" : ""} page">
-    ${ci === 0 ? `<div class="eyebrow">The Club Top 50</div>
-    <div class="section-head"><h2 style="font-size:24px">The rooms that count</h2>
-    <p>The rooms where a booking is a credential. Where the artists in this ranking want to play.</p></div>` : `<div class="eyebrow">Club Top 50, continued</div>`}
+  // ── Section opener ──
+  const opener = `<div class="section page">
+    <div class="eyebrow">The Club Top 50</div>
+    <h2 style="font-size:30px;margin-bottom:10px;max-width:560px">The rooms that hand out credibility</h2>
+    <p style="color:var(--text);font-size:13px;max-width:540px;line-height:1.65;margin:0 0 22px">
+      Artists earn a ranking from the data. Clubs earn one from history. This list scores 50 rooms on five things that take years to build and minutes to lose: heritage, music integrity, the sessions people still talk about, the floor, and the myth. A booking at the top of this list is a credential. Most of the artists in the first half of this magazine want to play these rooms more than they want a festival main stage.
+    </p>
+    <div class="cut-grid" style="margin-top:0">
+      <div class="cut-card">
+        <h3 style="font-size:14px">How a room scores</h3>
+        <ul class="cut-list">
+          ${CLUB_DIMS.map(d => `<li><span class="cut-name">${esc(d.key)}</span><span class="cut-stat">${d.weight}%</span></li>`).join("")}
+        </ul>
+      </div>
+      <div class="cut-card">
+        <h3 style="font-size:14px">What it ignores</h3>
+        <p style="font-size:10.5px;color:var(--text);line-height:1.6;margin:0">
+          Capacity. Bottle service. Instagram following. A glass pyramid with table service and a 10,000 cap scores below a 200-capacity basement that programs the right records. Pacha sits at #48 for exactly this reason. The music comes first, or it doesn't count.
+        </p>
+      </div>
+    </div>
+  </div>`;
+
+  // ── Top 10 full profile pages ──
+  const profiles = top10.map(c => {
+    const age   = c.opened ? 2026 - c.opened : null;
+    const ctry  = COUNTRY_NAMES[c.country] || c.country || "";
+    const plays = artistsAtClub(c, artists);
+    const sameCity = clubs.filter(o => o.city === c.city && o.rank !== c.rank).slice(0, 6);
+
+    const dimBars = CLUB_DIMS.map(d => {
+      const v = c.scores?.[d.idx] || 0;
+      return `<div class="cdim-row">
+        <div class="cdim-head">
+          <span class="cdim-label">${esc(d.key)}<span class="cdim-weight">${d.weight}%</span></span>
+          <span class="cdim-val">${v}</span>
+        </div>
+        <div class="cdim-bar-wrap"><div class="cdim-bar" style="width:${v}%"></div></div>
+      </div>`;
+    }).join("");
+
+    const playPills = plays.length
+      ? `<div class="club-plays">${plays.map(a =>
+          `<span class="club-play-pill"><span class="cpp-rank">#${a.rank}</span>${esc(a.name)}</span>`).join("")}</div>`
+      : `<div class="club-plays-none">No current top-100 act lists this room in their recent RA bookings. The reach here runs deeper than this season's routing.</div>`;
+
+    return `<div class="club-page page">
+      <div class="club-hero">
+        <div class="club-hero-grid"></div>
+        <div class="club-hero-ghost">${c.rank}</div>
+        <div class="club-hero-top">
+          <span class="club-eyebrow">The Club Top 50</span>
+ <span class="club-coord">EST. ${c.opened || "—"}<br>${esc((c.city || "").toUpperCase())} · ${esc((c.country || "").toUpperCase())}</span>
+        </div>
+        <div class="club-hero-main">
+          <div class="club-hero-rank">No. ${c.rank}</div>
+          <div class="club-hero-name">${esc(c.name)}</div>
+          <div class="club-hero-meta">${esc(c.city)}${ctry ? `<span class="sep">/</span>${esc(ctry)}` : ""}${age ? `<span class="sep">/</span>${age} years open` : ""}</div>
+        </div>
+      </div>
+      <div class="club-lower">
+        <div class="club-note">${esc(dedash(c.note || ""))}</div>
+        <div class="club-body">
+          <div class="club-col">
+            <h4>The five-axis read</h4>
+            ${dimBars}
+          </div>
+          <div class="club-col">
+            <h4>Who plays here · from the top 100</h4>
+            ${playPills}
+            <div class="club-subgroup">
+              <h4>${sameCity.length ? `Also ranked in ${esc(c.city)}` : `${esc(c.city)} on the list`}</h4>
+              ${sameCity.length
+                ? `<div class="club-plays">${sameCity.map(o => `<span class="club-play-pill"><span class="cpp-rank">#${o.rank}</span>${esc(o.name)}</span>`).join("")}</div>`
+                : `<div class="club-plays-none">The only ${esc(c.city)} room in the top 50. The city shows up once, and this is it.</div>`}
+            </div>
+          </div>
+        </div>
+        <div class="club-insight">${clubInsight(c, plays)}</div>
+        <div class="club-footer">
+          <div><div class="cf-val">${num(c.score, 1)}</div><div class="cf-lbl">Composite score</div></div>
+ <div><div class="cf-val">${c.opened || "—"}</div><div class="cf-lbl">Year opened</div></div>
+ <div><div class="cf-val">${age != null ? age : "—"}</div><div class="cf-lbl">Years running</div></div>
+ <div><div class="cf-val">${esc(ctry || "—")}</div><div class="cf-lbl">Home country</div></div>
+        </div>
+      </div>
+    </div>`;
+  }).join("");
+
+  // ── #11–50 table ──
+  const perPage = 10;
+  const chunks  = [];
+  for (let i = 0; i < rest.length; i += perPage) chunks.push(rest.slice(i, i + perPage));
+
+  const table = chunks.map((chunk, ci) => `
+  <div class="section${ci === 0 ? "" : "-cont"} page">
+    ${ci === 0 ? `<div class="eyebrow">The Club Top 50 · #11–#50</div>
+    <h2 style="font-size:22px;margin-bottom:4px">The next forty</h2>
+    <p style="color:var(--text);font-size:10.5px;max-width:520px;margin:0 0 12px;line-height:1.5">The rest of the fifty. Same five-axis scoring, ranked. Every one of these is a room worth crossing a city for.</p>`
+      : `<div class="eyebrow">Club Top 50, continued</div>`}
     <table class="entry-table">
       <thead><tr><th>#</th><th class="l">Club</th><th class="l">City</th><th class="l">Why it matters</th><th>Score</th></tr></thead>
       <tbody>
         ${chunk.map(c => `<tr class="club-row">
-          <td class="c-rank">${c.rank <= 3 ? `<span class="medal">${["①","②","③"][c.rank-1]}</span>` : `#${c.rank}`}</td>
+          <td class="c-rank">#${c.rank}</td>
           <td class="c-name">${esc(c.name)}</td>
-          <td class="c-city">${esc([c.city, c.country].filter(Boolean).join(", "))}</td>
-          <td class="e-verdict">${clubWhy(c)}</td>
-          <td class="c-score">${num(c.score)}</td>
+          <td class="c-city">${esc([c.city, COUNTRY_NAMES[c.country] || c.country].filter(Boolean).join(", "))}</td>
+          <td class="e-verdict">${esc(dedash(c.note || ""))}</td>
+          <td class="c-score">${num(c.score, 1)}</td>
         </tr>`).join("")}
       </tbody>
     </table>
   </div>`).join("");
+
+  return opener + profiles + table;
 }
 
 // ── Section: Breakouts (first edition — no rank_prev) ────────────────────────
@@ -883,18 +1121,35 @@ function buildFullIndex(artists) {
 
 // ── Section: Back matter ──────────────────────────────────────────────────────
 function buildBack(snapStr) {
-  const urlNote = isKDP
+  const url = isKDP
     ? `<strong>thedjrankings.com</strong>`
     : `<strong><a href="https://thedjrankings.com" style="color:var(--accent)">thedjrankings.com</a></strong>`;
+
+  const teasers = [
+    { k: "Daily, not seasonal", v: "This page froze on a date. The live ranking re-scores all 342 artists every morning. By the time you read this, the order has changed." },
+    { k: "The Value Gap", v: "The live site flags the acts whose booking demand has outrun their fee. The buy signals, before the rest of the market catches them." },
+    { k: "Settle the argument", v: "Every signal, every artist, side by side. Compare any two names. Filter by city, by sound, by who is climbing. Then tell us where we got it wrong." },
+  ];
+
   return `<div class="back-page page">
   <div>
     <div class="eyebrow">Summer 2026</div>
     <h1 class="back-headline">This is a snapshot.<br><span>The scene already moved.</span></h1>
-    <p class="back-cta">The live index refreshes daily at ${urlNote}. Every rank, every signal, updated. The next edition covers Autumn 2026.<br><br>
-      <strong>Bookmark the live site. Buy the next edition. Argue with the ranking.</strong></p>
+    <p class="back-cta" style="margin-top:22px;max-width:540px">
+      You hold one frame of a thing that never stops moving. The numbers in this magazine were true on ${esc(snapStr)}. Here is what is waiting at ${url}.
+    </p>
+    <div style="display:grid;gap:14px;margin-top:26px;max-width:560px">
+      ${teasers.map(t => `<div style="display:flex;gap:14px;align-items:baseline">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);min-width:118px;padding-top:2px">${esc(t.k)}</span>
+        <span style="font-size:11.5px;color:var(--text);line-height:1.55">${esc(t.v)}</span>
+      </div>`).join("")}
+    </div>
+    <p class="back-cta" style="margin-top:30px;font-size:15px">
+      <strong>Read it live. Watch it move. Come argue with the ranking.</strong>
+    </p>
   </div>
   <div class="back-footer">
-    PEAKTIME: The House 100 · Summer 2026 · Snapshot ${snapStr} · thedjrankings.com<br>
+    PEAKTIME: The House 100 · Summer 2026 · Snapshot ${esc(snapStr)} · thedjrankings.com<br>
     Rankings are generated from public signals and an editorial scene rubric. Full methodology published at thedjrankings.com/methodology.<br>
     © 2026 PEAKTIME. Not affiliated with any artist, agency, or booking platform.
   </div>
@@ -927,7 +1182,7 @@ function buildKindleHTML(artists, clubs, genreMod, snapStr) {
   </tr>`).join("");
 
   return `<!doctype html><html><head><meta charset="utf-8">
-    <title>PEAKTIME: The House 100 — Summer 2026</title>
+ <title>PEAKTIME: The House 100, Summer 2026</title>
     <style>${kindleCss}</style>
   </head><body>
     <h1>PEAKTIME: The House 100</h1>
@@ -943,7 +1198,7 @@ function buildKindleHTML(artists, clubs, genreMod, snapStr) {
     ${clubs.length ? `<h2>The Club Top 50</h2>
     <table><thead><tr><th>#</th><th>Club</th><th>City</th></tr></thead>
     <tbody>${clubs.slice(0,50).map(c => `<tr><td class="rank">#${c.rank}</td><td>${esc(c.name)}</td><td>${esc([c.city,c.country].filter(Boolean).join(", "))}</td></tr>`).join("")}</tbody></table><hr>` : ""}
-    <h2>The Full Index — all ${artists.length} artists</h2>
+ <h2>The Full Index, all ${artists.length} artists</h2>
     <table><thead><tr><th>#</th><th>Artist</th></tr></thead>
     <tbody>${indexRows}</tbody></table>
     <hr>
@@ -953,7 +1208,7 @@ function buildKindleHTML(artists, clubs, genreMod, snapStr) {
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 async function main() {
-  console.log(`\n● PEAKTIME: The House 100 — ${VARIANT.toUpperCase()} variant`);
+ console.log(`\n● PEAKTIME: The House 100, ${VARIANT.toUpperCase()} variant`);
 
   const { artists, lastUpdated } = loadArtists();
   const clubs    = await loadClubs();
@@ -965,6 +1220,10 @@ async function main() {
     : today.toLocaleDateString("en-GB", { day:"numeric", month:"short", year:"numeric" });
 
   console.log(`  ${artists.length} artists · ${clubs.length} clubs · genre module: ${genreMod ? "✓" : "×"}`);
+
+  // Embed top-10 artist photos (cached + base64 so the PDF is self-contained)
+  const images = await loadArtistImages(artists.slice(0, 10));
+  console.log(`  artist photos embedded: ${Object.keys(images).length}/10`);
 
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
 
@@ -983,8 +1242,8 @@ async function main() {
     buildContents(),
     buildEditorsNote(artists),
     buildMethod(),
-    buildHouse100(artists),
-    buildClubs(clubs),
+    buildHouse100(artists, images, genreMod),
+    buildClubs(clubs, artists),
     buildBreakouts(artists),
     await buildSceneCuts(artists, genreMod),
     buildFullIndex(artists),
