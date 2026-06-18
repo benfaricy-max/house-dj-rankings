@@ -329,33 +329,48 @@ h1,h2,h3 { color: var(--text-h); font-weight: 700; letter-spacing: -.015em; marg
 .section-head p { color:var(--text); max-width:580px; font-size:11px; margin:0; }
 .rule { width:40px; height:3px; background:var(--accent); border-radius:2px; margin: 10px 0; }
 
-/* Cover */
+/* Cover — magazine photo cover */
 .cover {
   height: ${isKDP ? "235mm" : "281mm"};
-  display: flex; flex-direction: column;
-  justify-content: flex-end; align-items: flex-start;
-  padding: 0 0 40px 36px;
   position: relative; overflow: hidden;
+  background: #080a0c;
 }
-.cover-bg {
-  position:absolute; top:0; left:0; right:0; bottom:0; z-index:0;
-  ${dark ? `background: linear-gradient(165deg, #0c0c0e 0%, #111822 60%, #0c0c0e 100%);` : `background: linear-gradient(165deg, #f0ede8 0%, #e8e4de 60%, #f0ede8 100%);`}
+.cover-photo {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center top;
+  opacity:${isKDP ? ".62" : ".78"};
+  filter:${isKDP ? "grayscale(1) contrast(1.15)" : "contrast(1.05) saturate(0.9)"};
 }
-.cover-grid {
-  position:absolute; top:0; left:0; right:0; bottom:0; z-index:1; opacity:${dark?'.04':'.06'};
-  background-image: repeating-linear-gradient(0deg, var(--accent) 0, var(--accent) 1px, transparent 1px, transparent 32px),
-    repeating-linear-gradient(90deg, var(--accent) 0, var(--accent) 1px, transparent 1px, transparent 32px);
+.cover-shade {
+  position:absolute; inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(8,10,12,.10) 0%,
+    rgba(8,10,12,.05) 28%,
+    rgba(8,10,12,.35) 52%,
+    rgba(8,10,12,.82) 72%,
+    rgba(8,10,12,.97) 100%
+  );
 }
-.cover-content { position:relative; z-index:2; }
-.cover-logo { width:48px; height:48px; margin-bottom:28px; }
-.cover-brandword { font-family:'IBM Plex Mono',monospace; font-weight:600; letter-spacing:.32em; font-size:12px; color:var(--accent); margin-bottom:14px; }
-.cover-title { font-size:72px; line-height:.95; letter-spacing:-.04em; color:var(--text-h); margin-bottom:18px; font-weight:700; }
-.cover-title span { display:block; }
-.cover-hl { color:var(--accent); }
-.cover-strap { font-size:14px; color:var(--text); max-width:440px; line-height:1.4; margin-bottom:32px; }
-.cover-meta { font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.18em; color:var(--muted); text-transform:uppercase; }
-.cover-url { position:absolute; bottom:36px; right:36px; font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent); letter-spacing:.1em; z-index:2; }
-.cover-rule { width:52px; height:3px; background:var(--accent); margin-bottom:22px; border-radius:2px; }
+.cover-top-bar {
+  position:absolute; top:0; left:0; right:0; z-index:3;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:22px 28px 18px;
+  border-bottom:1px solid rgba(200,247,80,.18);
+  background:rgba(8,10,12,.55);
+}
+.cover-brand { font-family:'IBM Plex Mono',monospace; font-weight:600; letter-spacing:.32em; font-size:11px; color:#C8F750; }
+.cover-issue { font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.14em; color:rgba(233,231,223,.55); text-transform:uppercase; }
+.cover-bottom { position:absolute; bottom:0; left:0; right:0; z-index:3; padding:0 32px 36px; }
+.cover-feature-tag { font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:.24em; text-transform:uppercase; color:#C8F750; margin-bottom:10px; }
+.cover-artist { font-size:${isKDP ? "72px" : "88px"}; font-weight:700; letter-spacing:-.04em; line-height:.9; color:#E9E7DF; margin-bottom:12px; }
+.cover-headline { font-size:${isKDP ? "15px" : "17px"}; font-weight:500; color:rgba(233,231,223,.88); line-height:1.35; max-width:480px; margin-bottom:24px; letter-spacing:-.01em; }
+.cover-teasers { display:flex; gap:22px; margin-bottom:20px; }
+.cover-teaser { font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:.12em; text-transform:uppercase; color:rgba(233,231,223,.45); border-left:2px solid rgba(200,247,80,.4); padding-left:8px; }
+.cover-divider { width:100%; height:1px; background:rgba(200,247,80,.2); margin-bottom:16px; }
+.cover-pub-line { display:flex; justify-content:space-between; align-items:center; }
+.cover-pub-left { font-family:'IBM Plex Mono',monospace; font-size:8px; letter-spacing:.12em; text-transform:uppercase; color:rgba(233,231,223,.35); }
+.cover-url-final { font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.1em; color:#C8F750; opacity:.7; }
 
 /* Contents page */
 .toc { list-style:none; margin:0; padding:0; margin-top:18px; }
@@ -546,23 +561,31 @@ const LOGO = `<svg class="cover-logo" viewBox="0 0 30 30" xmlns="http://www.w3.o
   </g></svg>`;
 
 // ── Section: Cover ────────────────────────────────────────────────────────────
-function buildCover(artists, snapStr) {
+function buildCover(artists, snapStr, images) {
+  const prospaImg = images && images[3] ? `<img class="cover-photo" src="${images[3]}" alt="Prospa">` : "";
   return `<div class="cover page">
-  <div class="cover-bg"></div>
-  <div class="cover-grid"></div>
-  <div class="cover-content">
-    ${LOGO}
-    <div class="cover-brandword">PEAKTIME</div>
-    <div class="cover-rule"></div>
-    <h1 class="cover-title">
-      <span>THE</span>
-      <span class="cover-hl">HOUSE</span>
-      <span>100</span>
-    </h1>
-    <p class="cover-strap">100 house and techno DJs. 50 clubs. Ranked by booking demand, not Spotify followers.</p>
-    <div class="cover-meta">Summer 2026 · ${artists.length} artists measured · 5 demand signals · 1 ranking</div>
+  ${prospaImg}
+  <div class="cover-shade"></div>
+  <div class="cover-top-bar">
+    <span class="cover-brand">PEAKTIME</span>
+    <span class="cover-issue">The House 100 · Summer 2026</span>
   </div>
-  <div class="cover-url">thedjrankings.com</div>
+  <div class="cover-bottom">
+    <div class="cover-feature-tag">Cover · No. 3 in The House 100</div>
+    <div class="cover-artist">Prospa</div>
+    <div class="cover-headline">The Leeds duo routing the European circuit on rave energy and zero industry favours. Inside: what the booking data says about this summer's real movers.</div>
+    <div class="cover-teasers">
+      <div class="cover-teaser">The House 100</div>
+      <div class="cover-teaser">Club Top 50</div>
+      <div class="cover-teaser">Scene Signals</div>
+      <div class="cover-teaser">Breakout Watch</div>
+    </div>
+    <div class="cover-divider"></div>
+    <div class="cover-pub-line">
+      <span class="cover-pub-left">100 DJs · 50 clubs · 5 demand signals · 1 ranking</span>
+      <span class="cover-url-final">thedjrankings.com</span>
+    </div>
+  </div>
 </div>`;
 }
 
@@ -1314,7 +1337,7 @@ async function main() {
 
   // Build HTML sections
   const sections = [
-    buildCover(artists, snapStr),
+    buildCover(artists, snapStr, images),
     buildContents(),
     buildEditorsNote(artists),
     buildMethod(),
