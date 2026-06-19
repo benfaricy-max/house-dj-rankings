@@ -39,9 +39,10 @@ const esc = (s) =>
 // Named editor + publisher entity. EDITOR is the human E-E-A-T signal Google
 // weights on commercial-data pages; it's emitted standalone on /about and nested
 // as the Organization `founder` on the homepage + trust pages. No sameAs: we link
-// no unverified profiles (same honesty as the homepage Organization). Contact is a
-// domain inbox — set up forwarding for it, or swap CONTACT_EMAIL.
-const CONTACT_EMAIL = "editorial@thedjrankings.com";
+// no unverified profiles (same honesty as the homepage Organization). Contact reuses
+// the site's existing hello@ forwarding alias (already live on Namecheap) — swap
+// CONTACT_EMAIL if a dedicated editorial@ alias is added later.
+const CONTACT_EMAIL = "benfaricy@gmail.com";
 const EDITOR = {
   "@type": "Person", name: "Ben Faricy", jobTitle: "Founder & Editor",
   url: `${ORIGIN}/about`, email: `mailto:${CONTACT_EMAIL}`,
@@ -511,7 +512,7 @@ ${inner}
 // standalone (no SPA route needed) and listed in the sitemap.
 function renderAbout(updatedHuman) {
   const url = `${ORIGIN}/about`;
- const title = "About PEAKTIME, The booking-demand index for house & techno";
+ const title = "About PEAKTIME | The booking-demand index for house & techno";
  const desc = "PEAKTIME is an independent, daily booking-demand index for house and techno DJs, "
     + "founded and edited by Ben Faricy. Not a booking agency. Data, not hype.";
   const jsonld = [
@@ -544,7 +545,7 @@ function renderAbout(updatedHuman) {
 
 function renderEditorialPolicy(updatedHuman, modified) {
   const url = `${ORIGIN}/about/editorial-policy`;
- const title = "Editorial Policy, PEAKTIME";
+ const title = "Editorial Policy | PEAKTIME";
   const desc = "How PEAKTIME stays independent: no pay-to-rank, model-implied fee benchmarks "
     + "(not transacted prices), a strict never-wipe data rule, and a published methodology.";
   const jsonld = [
@@ -590,7 +591,7 @@ function renderEditorialPolicy(updatedHuman, modified) {
 
 function renderCorrections(updatedHuman, modified) {
   const url = `${ORIGIN}/about/corrections`;
- const title = "Corrections Policy, PEAKTIME";
+ const title = "Corrections Policy | PEAKTIME";
   const desc = "How to report an error in a PEAKTIME ranking, profile or fee benchmark, "
     + "what we correct, and our commitment to fixing mistakes openly.";
   const jsonld = [
