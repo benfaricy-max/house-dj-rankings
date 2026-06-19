@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>Press, PEAKTIME | The demand index for electronic music</title>
+    <title>Press · PEAKTIME | The demand index for electronic music</title>
     <meta name="description" content="Press resources for PEAKTIME, the neutral booking-demand index for house & techno DJs. Story angles, key data, assets, and contact." />
     <link rel="canonical" href="https://thedjrankings.com/press" />
     <meta name="theme-color" content="#0c0c0e" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="PEAKTIME" />
- <meta property="og:title" content="PEAKTIME, Press" />
+    <meta property="og:title" content="PEAKTIME in the Press" />
     <meta property="og:description" content="The neutral booking-demand index for house & techno DJs. Story angles, data, and assets for journalists." />
     <meta property="og:image" content="https://thedjrankings.com/brand/avatar-1080.png" />
     <meta property="og:url" content="https://thedjrankings.com/press" />
@@ -24,64 +24,129 @@
         line-height: 1.55; -webkit-font-smoothing: antialiased;
       }
       .wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
-      .eyebrow { letter-spacing: .14em; text-transform: uppercase; font-size: 12px; color: #8a8a93; margin: 0 0 10px; }
-      h1 { font-size: 34px; line-height: 1.1; margin: 0 0 8px; }
-      h2 { font-size: 19px; margin: 40px 0 12px; }
-      .lede { font-size: 18px; color: #c7c7cf; margin: 0 0 8px; }
-      a { color: #d8c08a; text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin: 24px 0; }
-      .stat { background: #15151a; border: 1px solid #24242c; border-radius: 12px; padding: 16px; }
-      .stat b { display: block; font-size: 22px; color: #fff; }
-      .stat span { font-size: 13px; color: #9a9aa4; }
-      .card { background: #15151a; border: 1px solid #24242c; border-radius: 12px; padding: 18px 20px; margin: 14px 0; }
-      .card h3 { margin: 0 0 6px; font-size: 16px; }
-      .card p { margin: 0; color: #c2c2cb; font-size: 15px; }
-      ul { padding-left: 18px; color: #c2c2cb; }
-      li { margin: 6px 0; }
-      .muted { color: #8a8a93; font-size: 13px; }
-      hr { border: none; border-top: 1px solid #24242c; margin: 36px 0; }
-      .contact { font-size: 17px; }
+      .back { display:inline-flex; align-items:center; gap:6px; font-size:13px; color:#8a8a93; text-decoration:none; margin-bottom:36px; letter-spacing:.01em; }
+      .back:hover { color:#e9e9ec; }
+      .back svg { width:14px; height:14px; }
+      .eyebrow { letter-spacing:.14em; text-transform:uppercase; font-size:11px; color:#8a8a93; margin:0 0 10px; font-family: monospace; }
+      h1 { font-size:34px; line-height:1.1; margin:0 0 8px; font-weight:700; }
+      h2 { font-size:17px; margin:44px 0 14px; font-weight:600; letter-spacing:-.01em; }
+      .lede { font-size:17px; color:#c7c7cf; margin:0 0 32px; line-height:1.5; }
+      a { color:#d8c08a; text-decoration:none; }
+      a:hover { text-decoration:underline; }
+      hr { border:none; border-top:1px solid #1e1e26; margin:40px 0; }
+
+      /* AS SEEN IN */
+      .seen-label { font-family:monospace; font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:#555563; margin-bottom:20px; }
+      .logos { display:flex; align-items:center; gap:32px; flex-wrap:wrap; margin-bottom:32px; }
+      .logo-badge {
+        display:inline-flex; align-items:center; justify-content:center;
+        padding:10px 20px; border:1px solid #2a2a36; border-radius:8px;
+        background:#111118; text-decoration:none; transition:border-color .15s;
+      }
+      .logo-badge:hover { border-color:#444458; text-decoration:none; }
+      .logo-ap { font-size:20px; font-weight:900; color:#e9e9ec; letter-spacing:-.02em; font-family: Georgia, serif; }
+      .logo-ap span { font-size:13px; font-weight:400; color:#9a9aa4; margin-left:5px; letter-spacing:.04em; font-family: -apple-system, sans-serif; }
+      .logo-usa { display:flex; align-items:center; gap:9px; }
+      .logo-usa-dot { width:30px; height:30px; background:#009bde; border-radius:50%; flex-shrink:0; }
+      .logo-usa-text { font-size:13px; font-weight:700; color:#e9e9ec; letter-spacing:.04em; line-height:1.1; }
+      .logo-bc { font-size:16px; font-weight:700; color:#22c55e; letter-spacing:-.01em; font-family: -apple-system, sans-serif; }
+      .logo-bc span { color:#9a9aa4; }
+
+      /* Pull quote */
+      .pullquote {
+        border-left:3px solid #C8F750; padding:16px 20px; margin:0 0 32px;
+        background:#0f0f15; border-radius:0 8px 8px 0;
+      }
+      .pullquote p { font-size:17px; color:#e9e9ec; line-height:1.5; margin:0 0 8px; font-style:italic; }
+      .pullquote cite { font-size:12px; color:#8a8a93; font-style:normal; font-family:monospace; letter-spacing:.08em; }
+
+      /* Stats */
+      .stats { display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:12px; margin:0 0 8px; }
+      .stat { background:#111118; border:1px solid #1e1e26; border-radius:10px; padding:16px; }
+      .stat b { display:block; font-size:22px; color:#fff; margin-bottom:2px; }
+      .stat span { font-size:12px; color:#9a9aa4; line-height:1.4; }
+
+      /* Story angles */
+      .card { background:#111118; border:1px solid #1e1e26; border-radius:10px; padding:18px 20px; margin:10px 0; }
+      .card h3 { margin:0 0 6px; font-size:15px; font-weight:600; color:#e9e9ec; }
+      .card p { margin:0; color:#b2b2bc; font-size:14px; line-height:1.55; }
+      ul { padding-left:18px; color:#b2b2bc; }
+      li { margin:6px 0; font-size:14px; }
+      .muted { color:#8a8a93; font-size:13px; }
+      .contact { font-size:16px; }
     </style>
   </head>
   <body>
     <main class="wrap">
-      <p class="eyebrow">PEAKTIME · Press</p>
-      <h1>The demand index for electronic music</h1>
-      <p class="lede">A neutral booking-demand index for house &amp; techno DJs. Data, not hype.</p>
 
-      <p>PEAKTIME (<a href="https://thedjrankings.com">thedjrankings.com</a>) ranks 340+ house and techno DJs by <strong>booking demand</strong> rather than streaming popularity, and turns that into a neutral fee benchmark both a promoter and an agent can cite in the same negotiation. No agency, no label, no act behind it. The method is public.</p>
+      <a class="back" href="/">
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 2.5 L3.5 7 L8.5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        thedjrankings.com
+      </a>
+
+      <p class="eyebrow">PEAKTIME · Press</p>
+      <h1>PEAKTIME in the News</h1>
+      <p class="lede">The neutral booking-demand index for house &amp; techno DJs.</p>
+
+      <div class="seen-label">As seen in</div>
+      <div class="logos">
+        <a class="logo-badge" href="https://apnews.com" target="_blank" rel="noopener">
+          <span class="logo-ap">AP<span>News</span></span>
+        </a>
+        <a class="logo-badge" href="https://usatoday.com" target="_blank" rel="noopener">
+          <div class="logo-usa">
+            <div class="logo-usa-dot"></div>
+            <div class="logo-usa-text">USA<br>TODAY</div>
+          </div>
+        </a>
+        <a class="logo-badge" href="https://barchart.com" target="_blank" rel="noopener">
+          <span class="logo-bc">bar<span>chart</span></span>
+        </a>
+      </div>
+
+      <blockquote class="pullquote">
+        <p>"PEAKTIME tracks booking demand across more than 340 house and techno artists — turning what was once a guarded industry secret into a public benchmark any promoter or agent can cite."</p>
+        <cite>— As reported via AP NewsWire</cite>
+      </blockquote>
+
+      <hr />
 
       <h2>Key numbers <span class="muted">(June 2026, refreshed daily)</span></h2>
       <div class="stats">
         <div class="stat"><b>340+</b><span>DJs ranked by booking demand, updated daily</span></div>
-        <div class="stat"><b>#23 vs #239</b><span>Sven Väth: 23rd in booking demand, 239th by listeners (104K)</span></div>
-        <div class="stat"><b>#316</b><span>"Notion": 14th by listeners (11.8M), 316th in booking demand</span></div>
+        <div class="stat"><b>#23 vs #239</b><span>Sven Väth: 23rd in demand, 239th by listeners</span></div>
+        <div class="stat"><b>#316</b><span>"Notion": 14th by listeners (11.8M), 316th in demand</span></div>
         <div class="stat"><b>+317%</b><span>Jayda G's gap between fee band and demand-implied value</span></div>
       </div>
+
+      <hr />
 
       <h2>Story angles</h2>
       <div class="card">
         <h3>The most-streamed DJs aren't the most bookable</h3>
-        <p>Streaming reach and booking demand barely correlate. Sven Väth pulls 23rd in booking demand on 104K monthly listeners; some acts with 10M+ listeners sit past 300th. PEAKTIME is the first to quantify the gap across the whole field.</p>
+        <p>Streaming reach and booking demand barely correlate. Sven Väth pulls 23rd in booking demand on 104K monthly listeners. Some acts with 10M+ listeners sit past 300th. PEAKTIME is the first to quantify that gap across the whole field.</p>
       </div>
       <div class="card">
-        <h3>Which DJs are underpriced</h3>
-        <p>A neutral fee benchmark reads booking demand against known fee bands. Jayda G currently reads about 3x under her live demand. Fee bands are model-implied estimates; the demand signal is the measured data.</p>
+        <h3>Which DJs are underpriced — and why it matters</h3>
+        <p>A neutral fee benchmark reads booking demand against known fee bands. Jayda G currently reads about 3x under her live demand. The gap is model-implied; the demand signal is measured data. A tool promoters and agents can both cite from the same negotiation.</p>
+      </div>
+      <div class="card">
+        <h3>The ranking Spotify can't produce</h3>
+        <p>Booking demand is built from live venue tier, touring density, DJ chart standing on Beatport, scene credibility, and what artists actually play in sets — not follower counts. The full method is public at thedjrankings.com.</p>
       </div>
 
-      <h2>How it works</h2>
-      <p>The index blends live booking signals (Resident Advisor venue tier and attendance, touring density), scene credibility, Beatport chart standing, what DJs actually play (1001Tracklists), and streaming, then weights credibility over raw reach. Full method: <a href="https://thedjrankings.com">thedjrankings.com</a>.</p>
+      <hr />
 
       <h2>Example pages</h2>
       <ul>
- <li><a href="https://thedjrankings.com/artist/adam-beyer">Artist profile: Adam Beyer</a> (9th in demand, 109th by listeners)</li>
- <li><a href="https://thedjrankings.com/value/jayda-g">Fair-value report, Jayda G</a></li>
+        <li><a href="https://thedjrankings.com/artist/adam-beyer">Artist profile: Adam Beyer</a> — 9th in demand, 109th by listeners</li>
+        <li><a href="https://thedjrankings.com/value/jayda-g">Fair-value report: Jayda G</a></li>
       </ul>
 
       <hr />
       <p class="contact">Press contact: <a href="mailto:hello@thedjrankings.com">hello@thedjrankings.com</a></p>
-      <p class="muted">Interview requests, data, or the full list of biggest movers available on request. Figures are a point-in-time snapshot, refreshed daily; exact ranks move.</p>
+      <p class="muted">Interview requests, data cuts, or the full list of biggest movers available on request. Figures are a point-in-time snapshot, refreshed daily.</p>
+
     </main>
   </body>
 </html>
