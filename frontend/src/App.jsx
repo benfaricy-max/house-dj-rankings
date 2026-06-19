@@ -2331,6 +2331,14 @@ function BreakoutsPage({ rankings, breakouts: staticBreakouts, breakoutThreshold
 // ── Reports — published analysis ────────────────────────────────────
 const REPORTS = [
   {
+    title: "The State of DJ Booking Demand 2026",
+    dek: "The flagship. Resident Advisor killed its poll and DJ Mag's Top 100 is a fan vote — so this is the data-led read on who's actually in demand: the demand leaders, the fastest risers, and the most underpriced acts to book, from the live index of 342 house and techno acts.",
+    href: "/reports/state-of-demand-2026/",
+    img: "/brand/post-top5-1080.png",
+    tag: "The Index",
+    date: "2026-06-18",
+  },
+  {
  title: "Rank 2.0: An Alternate Weighting",
  dek: "The same signals, reweighted toward scene credibility, DJ support, search and reach instead of booking demand. The weight diff, the new leaderboard, and who moves most between the two rankings, refreshed daily off the live data.",
     href: "/reports/rank-2-0/",

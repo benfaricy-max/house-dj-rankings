@@ -803,6 +803,7 @@ async function build() {
   // renamed/removed report never leaves a 404 in the sitemap. Mirrors the REPORTS
   // array in App.jsx; the daily Rank 2.0 report changes most, hence changefreq daily.
   const REPORT_PAGES = [
+    { loc: "/reports/state-of-demand-2026/", file: "reports/state-of-demand-2026/index.html", changefreq: "weekly" },
     { loc: "/reports/rank-2-0/",          file: "reports/rank-2-0/index.html",          changefreq: "daily" },
     { loc: "/reports/iii-points-2026/",   file: "reports/iii-points-2026/index.html",   changefreq: "monthly" },
     { loc: "/reports/crssd-fall-2026/",   file: "reports/crssd-fall-2026/index.html",   changefreq: "monthly" },
