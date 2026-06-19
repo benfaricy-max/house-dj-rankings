@@ -38,7 +38,7 @@ export function usePro() {
 // to Stripe (e.g. { artist, name, source }) so a purchase records what was
 // bought — which artist's Fair Value Report, which surface drove the sale.
 export async function startCheckout(plan = "solo", { meta } = {}) {
-  if (!API) { alert("Checkout isn't configured yet — see COMMERCE.md."); return; }
+ if (!API) { alert("Checkout isn't configured yet, see COMMERCE.md."); return; }
   try {
     const r = await fetch(`${API}/api/checkout`, {
       method: "POST",
@@ -56,7 +56,7 @@ export async function startCheckout(plan = "solo", { meta } = {}) {
 
 // Opens the Stripe Billing Portal for self-serve cancel / upgrade.
 export async function startPortal() {
-  if (!API) { alert("Billing portal isn't configured yet — see COMMERCE.md."); return; }
+ if (!API) { alert("Billing portal isn't configured yet, see COMMERCE.md."); return; }
   try {
     const r = await fetch(`${API}/api/portal`, { method: "POST", credentials: "include" });
     const { url, error } = await r.json();

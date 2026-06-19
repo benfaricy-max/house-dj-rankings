@@ -107,7 +107,7 @@ export function FormTip({ dj }) {
   return (
     <InfoTip label="What 'form' means">
       <span className="itip-h">Form = direction, not size</span>
-      <span className="itip-note">Whether booking demand is accelerating (▲ Rising), holding (▬ Steady) or fading (▼ Cooling) — read from the rate-of-change signals (12-week search trend, listener growth, Wikipedia trend, Beatport movement) plus the Momentum score. It's context only; it doesn't move the ranking.</span>
+ <span className="itip-note">Whether booking demand is accelerating (▲ Rising), holding (▬ Steady) or fading (▼ Cooling): read from the rate-of-change signals (12-week search trend, listener growth, Wikipedia trend, Beatport movement) plus the Momentum score. It's context only; it doesn't move the ranking.</span>
     </InfoTip>
   );
 }
@@ -194,7 +194,7 @@ export function ValueGapTip({ dj }) {
   return (
     <InfoTip label="How the price-vs-demand gap is calculated">
       <span className="itip-h">Demand-implied fee vs. the asking fee</span>
-      <span className="itip-note">We build a demand index, map it to the same fee tiers the market uses, then compare to the act's known fee. The gap is the difference in tiers — it never sees the fee while scoring.</span>
+ <span className="itip-note">We build a demand index, map it to the same fee tiers the market uses, then compare to the act's known fee. The gap is the difference in tiers, it never sees the fee while scoring.</span>
       {DEMAND_BLEND.map(f => (
         <span className="itip-row" key={f.signal}>
           <span className="itip-row-l">{f.signal}</span>

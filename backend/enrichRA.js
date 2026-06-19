@@ -65,11 +65,11 @@ function save() {
       if (error) {
         failStreak++;
         if (failStreak >= 8) {
-          console.log("\nMultiple consecutive API errors — likely throttled. Saving and stopping.");
+ console.log("\nMultiple consecutive API errors, likely throttled. Saving and stopping.");
           break;
         }
       } else {
-        failStreak = 0; // artist not on RA — not a failure
+ failStreak = 0; // artist not on RA, not a failure
       }
     }
 

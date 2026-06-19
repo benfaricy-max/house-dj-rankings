@@ -76,7 +76,7 @@ function citySpotlight() {
 
 // ---- pillar 5: Methodology — rotate through the signals that build trust.
 const METHODS = [
-  ["Why #1 is the boring number", "Rank is a lagging indicator. We sort on momentum — rate of change across search, streams, and bookings — because the rooms know who's rising before the chart does. The acceleration is the alpha."],
+ ["Why #1 is the boring number", "Rank is a lagging indicator. We sort on momentum, rate of change across search, streams, and bookings, because the rooms know who's rising before the chart does. The acceleration is the alpha."],
   ["Reach is not credibility", "We plot two axes. A DJ can be huge on Spotify and invisible on Beatport, or the reverse. One fills festivals; one earns the booth's respect. Showing both is how you tell them apart."],
   ["Value Gap, explained", "We estimate a demand-implied fee tier from streams, RA bookings, Beatport, and search, then compare it to the known fee. A positive gap flags an act whose demand has outrun its price. The method is in the bio."],
   ["What we won't do", "No stock DJ-silhouette photos. No takes without a number behind them. Charts are the imagery, and the formula is always public. The transparency is the point."],
@@ -92,7 +92,7 @@ function captionFor(pillar, ctx) {
       const climbers = ctx.up.map(x => `${x.a.name} ${x.from}→${x.to}`).join(", ");
       return {
         title: "Weekly Movers",
-        body: `Biggest climbers this week: ${climbers}. ${top.a.name} moved ${top.delta} places on rising search and bookings — momentum, not a one-off. Full board and method in bio.`,
+ body: `Biggest climbers this week: ${climbers}. ${top.a.name} moved ${top.delta} places on rising search and bookings: momentum, not a one-off. Full board and method in bio.`,
         tags: `${TAGS_BASE} #${top.a.name.replace(/[^a-z0-9]/gi, "")}`,
       };
     }
@@ -100,7 +100,7 @@ function captionFor(pillar, ctx) {
       const a = ctx;
       return {
         title: "Breakout of the Week",
-        body: `${a.name}: momentum ${Math.round(a.momentum_score)}/100 at #${a.rank}, on ${m(a)}. Accelerating faster than acts twice their size — the rooms are moving before the algorithm. Methodology in bio.`,
+ body: `${a.name}: momentum ${Math.round(a.momentum_score)}/100 at #${a.rank}, on ${m(a)}. Accelerating faster than acts twice their size, the rooms are moving before the algorithm. Methodology in bio.`,
         tags: `${TAGS_BASE} #${a.name.replace(/[^a-z0-9]/gi, "")}`,
       };
     }
@@ -108,7 +108,7 @@ function captionFor(pillar, ctx) {
       const a = ctx;
       return {
         title: "Reach vs. Credibility",
-        body: `${a.name}: Beatport credibility ${Math.round(a.beatport_score)}/100 on ${m(a)}. Scene-respected before mainstream-large — a DJ's DJ. We plot both axes so a headliner reads differently from a booth favourite. Method in bio.`,
+ body: `${a.name}: Beatport credibility ${Math.round(a.beatport_score)}/100 on ${m(a)}. Scene-respected before mainstream-large, a DJ's DJ. We plot both axes so a headliner reads differently from a booth favourite. Method in bio.`,
         tags: `${TAGS_BASE} #${a.name.replace(/[^a-z0-9]/gi, "")}`,
       };
     }
@@ -122,7 +122,7 @@ function captionFor(pillar, ctx) {
     }
     case "Method": {
       const [t, b] = ctx;
-      return { title: `Methodology — ${t}`, body: b, tags: `${TAGS_BASE} #methodology` };
+ return { title: `Methodology: ${t}`, body: b, tags: `${TAGS_BASE} #methodology` };
     }
   }
 }
@@ -153,7 +153,7 @@ for (let w = 0; w < WEEKS; w++) {
 
 // ---- write the queue --------------------------------------------------------
 const lines = [];
-lines.push(`# PEAKTIME — content queue`);
+lines.push(`# PEAKTIME, content queue`);
 lines.push("");
 lines.push(`> ${WEEKS} weeks, ${posts.length} posts. Generated ${new Date().toISOString().slice(0, 10)} from data dated **${dataDate}**.`);
 lines.push(`> Cadence: Movers (Mon), Breakout/Reach/City (Wed), Methodology (Fri). Voice: number → read → method, no emoji, no exclamation marks.`);

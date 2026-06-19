@@ -148,19 +148,19 @@ function scoreArtists(artists, weightOverride) {
   // wiki) so no single act takes a big funding hit. SELF-HEALS on absence. Sum still 1.00.
   const weights = {
     live_demand_score:            0.17,  // LEADS still, but trimmed: RA's biggest input (attending) is its least reliable, so live demand carries a bit less
-    manual_scene_score:           0.20,  // CO-LEADS — editorial scene credibility (rubric in How It Works)
-    beatport_score:               0.13,  // chart credibility (producer/track-sales signal) — bumped v5
-    tl_support_score:             0.11,  // DJ SUPPORT: 1001Tracklists weekly chart — what DJs play. Bumped v5. SELF-HEALS on absence (weekly sample)
-    google_trends_score:          0.08,  // search interest — bumped v5
-    spotify_follower_growth_rate: 0.07,  // growth (acceleration) — bumped v5
+ manual_scene_score: 0.20, // CO-LEADS, editorial scene credibility (rubric in How It Works)
+ beatport_score: 0.13, // chart credibility (producer/track-sales signal), bumped v5
+ tl_support_score: 0.11, // DJ SUPPORT: 1001Tracklists weekly chart, what DJs play. Bumped v5. SELF-HEALS on absence (weekly sample)
+ google_trends_score: 0.08, // search interest, bumped v5
+ spotify_follower_growth_rate: 0.07, // growth (acceleration), bumped v5
     festival_score:               0.05,  // v5.1: major-festival booking presence. SELF-HEALS on absence (lineup coverage is the gate)
-    scene_geography:              0.03,  // v4: international appeal — share of listeners in core EM markets. SELF-HEALS on absence (local-only pull)
-    label_score:                  0.05,  // label tier (Drumcode/Kompakt/Defected…) — credibility & trajectory
-    spotify_monthly_listeners:    0.05,  // reach — demoted hard: with conditioning, raw streams over-discriminate. SELF-HEALS on absence (local-only scrape)
-    youtube_subscribers:          0.02,  // reach proxy — trimmed v5.1 to fund festival_score
-    tiktok_post_count:            0.01,  // social spread (hashtag post volume) — the gameable signal, halved v5.1 to fund festival_score (festival presence is a better, harder-to-game live signal). Roadmap: tiktok_follower_growth_rate once a scraper accrues coverage.
-    spotify_playlist_placements:  0.02,  // catalog depth / release cadence — trimmed v5.1
-    wikipedia_pageviews:          0.01,  // public interest — trimmed v5.1
+ scene_geography: 0.03, // v4: international appeal, share of listeners in core EM markets. SELF-HEALS on absence (local-only pull)
+ label_score: 0.05, // label tier (Drumcode/Kompakt/Defected…), credibility & trajectory
+ spotify_monthly_listeners: 0.05, // reach: demoted hard: with conditioning, raw streams over-discriminate. SELF-HEALS on absence (local-only scrape)
+ youtube_subscribers: 0.02, // reach proxy, trimmed v5.1 to fund festival_score
+ tiktok_post_count: 0.01, // social spread (hashtag post volume): the gameable signal, halved v5.1 to fund festival_score (festival presence is a better, harder-to-game live signal). Roadmap: tiktok_follower_growth_rate once a scraper accrues coverage.
+ spotify_playlist_placements: 0.02, // catalog depth / release cadence, trimmed v5.1
+ wikipedia_pageviews: 0.01, // public interest, trimmed v5.1
     spotify_avg_track_popularity: 0.00,  // RETIRED (Spotify blocks the endpoint)
     youtube_views_weekly:         0.00,  // REMOVED (delta metric, 0% coverage)
     beatport_hype_score:          0.00,  // REMOVED from primary rankings (one Beatport metric); still collected for emerging views

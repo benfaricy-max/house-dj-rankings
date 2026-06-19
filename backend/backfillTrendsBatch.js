@@ -108,7 +108,7 @@ function save() {
       const throttled = /429/.test(res?.error || "") || res?.error === "timeout";
       if (throttled) backoff = Math.min(backoff * 1.8, 90000);
       if (failStreak >= MAX_FAIL_STREAK) {
-        console.log(`\n⚠️  ${failStreak} batches failed in a row — Google throttling. Progress saved; re-run later to continue.`);
+ console.log(`\n⚠️ ${failStreak} batches failed in a row, Google throttling. Progress saved; re-run later to continue.`);
         break;
       }
     }

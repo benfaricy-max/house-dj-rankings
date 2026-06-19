@@ -35,7 +35,7 @@ const suspects = d.rankings
                    || (dj.manual_scene_score || 0) >= SCENE_HINT;
     // No real booking footprint on the resolved profile: no score AND no recent
     // events. A small profile that still has live bookings (e.g. an emerging act
-    // with few followers but real gigs) is genuine, NOT a namesake collision —
+    // with few followers but real gigs) is genuine, NOT a namesake collision,
     // so the low-follower flag only fires when there's also zero activity.
     const noBookings = !dj.ra_score && !dj.ra_events_6m;
     const reasons = [];
@@ -43,7 +43,7 @@ const suspects = d.rankings
       reasons.push(`only ${dj.ra_followers || 0} RA followers + no recent bookings`);
     if (!dj.ra_score && prominent)
       reasons.push(`ra_score 0 but prominent`);
-    // High confidence: a prominent act on a near-empty, inactive RA profile —
+    // High confidence: a prominent act on a near-empty, inactive RA profile,
     // the FISHER → "Mike Fisher" signature (20 followers, 0 events, 19M listeners).
     const hot = prominent && noBookings && (dj.ra_followers || 0) < FOLLOWER_FLOOR;
     return reasons.length ? { dj, reasons, hot } : null;
@@ -52,15 +52,15 @@ const suspects = d.rankings
   .sort((a, b) => (b.hot - a.hot) || ((b.dj.spotify_monthly_listeners||0) - (a.dj.spotify_monthly_listeners||0)));
 
 if (suspects.length) {
-  console.log(`\n⚠️  MISMATCH AUDIT — ${suspects.length} artist(s) with a suspicious ra_slug (likely wrong namesake):\n`);
+ console.log(`\n⚠️ MISMATCH AUDIT, ${suspects.length} artist(s) with a suspicious ra_slug (likely wrong namesake):\n`);
   for (const { dj, reasons, hot } of suspects) {
-    const reach = dj.spotify_monthly_listeners ? `${(dj.spotify_monthly_listeners/1e6).toFixed(1)}M listeners` : "—";
-    const scene = dj.manual_scene_score != null ? `scene ${dj.manual_scene_score}` : "scene —";
+ const reach = dj.spotify_monthly_listeners ? `${(dj.spotify_monthly_listeners/1e6).toFixed(1)}M listeners` : "—";
+ const scene = dj.manual_scene_score != null ? `scene ${dj.manual_scene_score}` : "scene —";
     console.log(`  ${hot ? "‼️ " : "•  "}${dj.name}  [slug="${dj.ra_slug}", ${reach}, ${scene}]  → ${reasons.join("; ")}`);
   }
   console.log(`\n  Fix: search RA for the correct profile and set ra_slug in artists.json, then re-run enrichRA (or targeted-apply).\n`);
 } else {
-  console.log("\n✅ MISMATCH AUDIT — no suspicious slugs.\n");
+ console.log("\n✅ MISMATCH AUDIT, no suspicious slugs.\n");
 }
 
 // ── Pass 2: miss finder (network) ─────────────────────────────────────────────

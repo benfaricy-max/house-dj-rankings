@@ -2,7 +2,7 @@
  * fetchFestivals.js — populate backend/festival_lineups.json from real bookings.
  *
  * APPROACH (act-centric, reuses the proven Songkick pipeline): rather than scrape
- * fragile per-festival lineup pages, we read each roster artist's Songkick events —
+ * fragile per-festival lineup pages, we read each roster artist's Songkick events,
  * the same public ld+json MusicEvent data fetchTour already uses — and match each
  * event's `location.name`/`name` against a curated registry of MAJOR festivals.
  * Songkick surfaces the festival as the location (e.g. "Ultra Europe", "Sonar",
@@ -113,7 +113,7 @@ async function main() {
     if (n >= limit) break;
     n++;
     if (n > 1) await delay(2000);
-    if (n > 1 && n % 60 === 0) { console.log(`[pause] ${n} done — resting 15s…`); await delay(15000); }
+ if (n > 1 && n % 60 === 0) { console.log(`[pause] ${n} done, resting 15s…`); await delay(15000); }
 
     const r = await getArtistEvents(artist.name, artist.songkick_slug);
     if (r.status !== "ok") { process.stdout.write("."); continue; } // failed → keep prior memberships

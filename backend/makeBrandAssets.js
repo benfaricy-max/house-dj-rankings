@@ -118,7 +118,7 @@ const breakout = () => {
         ${a.tour_upcoming > 0 ? `<div><div class="big">${a.tour_upcoming}</div><div class="cap">shows · ${a.tour_countries} countries</div></div>` : ``}
       </div>
       <p style="font-size:36px;line-height:1.32;color:var(--text);max-width:840px">
-        Search interest is accelerating faster than the streams —
+ Search interest is accelerating faster than the streams,
         the rooms are moving before the algorithm catches up.</p>
       <style>.big{font-family:var(--mono);font-size:76px;font-weight:600;color:var(--accent);line-height:1}
         .cap{font-family:var(--mono);font-size:21px;color:var(--muted);margin-top:12px;letter-spacing:0.03em}</style>
@@ -161,7 +161,7 @@ const reachCred = () => {
       </svg>
       <p style="font-size:30px;line-height:1.3;color:var(--text);max-width:900px;margin-top:22px">
         <b style="color:var(--accent)">Kolter</b> sits near the top for chart credibility on a fraction
-        of the streams — a DJ's DJ the mainstream hasn't priced in yet.</p>
+ of the streams, a DJ's DJ the mainstream hasn't priced in yet.</p>
     </div>
     <div class="foot"><span>axes: Beatport score × monthly listeners</span><span><span class="dot">●</span> thedjrankings.com</span></div>
   `);
@@ -241,7 +241,7 @@ const storyBreakout = () => {
       <div class="m"><div class="big">${fmtML(a.spotify_monthly_listeners)}</div><div class="cap">monthly listeners</div></div>
       ${a.tour_upcoming > 0 ? `<div class="m"><div class="big">${a.tour_upcoming} shows</div><div class="cap">across ${a.tour_countries} countries</div></div>` : ``}
       <p style="font-size:40px;line-height:1.34;color:var(--text);margin-top:56px">
-        Search interest is accelerating faster than the streams — the rooms
+ Search interest is accelerating faster than the streams, the rooms
         are moving before the algorithm catches up.</p>
       <style>.m{margin-bottom:46px}.big{font-family:var(--mono);font-size:96px;font-weight:600;color:var(--accent);line-height:1}
         .cap{font-family:var(--mono);font-size:26px;color:var(--muted);margin-top:14px;letter-spacing:0.03em}</style>

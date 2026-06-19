@@ -25,7 +25,7 @@ const LEVELS = [
       <>
         <p>
           PEAKTIME tells you what a DJ should cost and whether they'll actually sell
-          tickets — <strong>before</strong> you commit. No spreadsheets, no guessing.
+ tickets, <strong>before</strong> you commit. No spreadsheets, no guessing.
         </p>
         <p>
           Search an artist. You get a fair fee range for the size of room you're filling,
@@ -44,25 +44,25 @@ const LEVELS = [
       <>
         <p>
           PEAKTIME ranks house &amp; techno acts by <strong>booking demand</strong>, not
-          streaming reach — so the leaderboard reflects who fills rooms, not who has the
+ streaming reach: so the leaderboard reflects who fills rooms, not who has the
           biggest Spotify number. Built for the buy side.
         </p>
         <ul>
           <li>
-            <strong>Value Gap</strong> — a neutral, demand-implied fee benchmark with local
+ <strong>Value Gap</strong>: a neutral, demand-implied fee benchmark with local
             and regional comps, plus a ready-to-paste negotiation line.
           </li>
           <li>
-            <strong>Routing saturation</strong> — how heavily an act has played your region
+ <strong>Routing saturation</strong>, how heavily an act has played your region
             lately, so you know when a date's stopped feeling exclusive.
           </li>
           <li>
-            <strong>Club vs Viral</strong> — splits an act's heat into scene-driven (RA,
+ <strong>Club vs Viral</strong>: splits an act's heat into scene-driven (RA,
             Beatport, what DJs actually play) versus hype-driven (TikTok, streaming), so you
             know if the demand will still be there on the night.
           </li>
           <li>
-            <strong>Momentum</strong> — who's accelerating, not just who's already big.
+ <strong>Momentum</strong>: who's accelerating, not just who's already big.
           </li>
         </ul>
         <p>Refreshed daily. Built on signals agents already respect.</p>
@@ -77,22 +77,22 @@ const LEVELS = [
       <>
         <p>
           The headline index is a weighted composite of 13 signals (Σ = 1.00), field-wide
-          normalised — heavy-tailed reach signals log-compressed and every signal winsorised
+ normalised, heavy-tailed reach signals log-compressed and every signal winsorised
           to its 1st–99th-percentile band before min-max, so no single streaming giant
           compresses the field.
         </p>
         <ul>
           <li>
-            <strong>live_demand .21</strong> (leads) — RA venue-tier / attendance / geo
+ <strong>live_demand.21</strong> (leads), RA venue-tier / attendance / geo
             blended with Songkick tour density; corroborates upward only.
           </li>
           <li>
-            <strong>scene .20</strong> — editorial credibility against a published rubric,
+ <strong>scene.20</strong>: editorial credibility against a published rubric,
             then a two-sided multiplier <code>0.80 + 0.35·(scene/100)</code> scales the final
             composite (penalises near-zero scene, rewards genuine credibility).
           </li>
           <li>
-            <strong>beatport .12</strong>, <strong>1001Tracklists .10</strong> (DJ support —
+ <strong>beatport.12</strong>, <strong>1001Tracklists.10</strong> (DJ support,
             hardest to game), trends .07, growth .06, label .05, listeners .05, plus
             scene-geography, YouTube, TikTok, releases, Wikipedia.
           </li>
@@ -101,7 +101,7 @@ const LEVELS = [
           Self-healing: an empty signal redistributes its weight; sparse signals
           (1001TL, scene-geography) redistribute <em>per-artist</em> so a structural 0 never
           scores as a real low. The <strong>Value Gap</strong> reprices a demand index against
-          the known fee tier — confidence capped at Medium unless the fee is a verified anchor,
+ the known fee tier: confidence capped at Medium unless the fee is a verified anchor,
           because we hold no transacted contracts and say so. Daily merge-safe refresh, with
           fee / venue / value-call histories accrued for backtesting the calls.
         </p>
@@ -118,7 +118,7 @@ const ANSWERS = [
     a: (
       <>
         You stop negotiating in the dark. The <strong>Value Gap</strong> gives you a
-        demand-implied fee range for that artist, in a room that size, in your city —
+ demand-implied fee range for that artist, in a room that size, in your city,
         then puts it next to <strong>local fee comps</strong> from comparable venues.
         You walk into the call with a number that has something underneath it, instead
         of a feeling you can't send to your partner.
@@ -131,8 +131,8 @@ const ANSWERS = [
       <>
         Because reach isn't tickets. We've all booked the act with the bigger streaming
         number and watched the room empty by midnight because the audience was in another
-        country. PEAKTIME ranks on <strong>booking demand</strong> — live bookings, room
-        sizes, scene credibility — not raw streams. It tells you who actually sells the
+ country. PEAKTIME ranks on <strong>booking demand</strong>: live bookings, room
+ sizes, scene credibility, not raw streams. It tells you who actually sells the
         date you're putting money behind.
       </>
     ),
@@ -144,7 +144,7 @@ const ANSWERS = [
         You shouldn't have to find out by accident, from a WhatsApp group, on the day you
         commit. <strong>Routing saturation</strong> shows how many times an artist has
         played your region recently and flags when a date there has stopped feeling
-        exclusive — before you build the spend around it, not after.
+ exclusive: before you build the spend around it, not after.
       </>
     ),
   },
@@ -153,7 +153,7 @@ const ANSWERS = [
     a: (
       <>
         "Trust me" doesn't close a negotiation, and it doesn't survive a post-mortem. Every
-        Fair Value report comes with a <strong>ready-to-paste negotiation line</strong> —
+ Fair Value report comes with a <strong>ready-to-paste negotiation line</strong>,
         the demand read, the comps, and the counter, in language an agent already respects.
         Your gut still makes the call. This makes it defensible to everyone you answer to.
       </>
@@ -163,11 +163,11 @@ const ANSWERS = [
     q: "Aren't these fees just made up?",
     a: (
       <>
-        No — and we won't pretend otherwise. We don't hold signed contracts, so we never
+ No, and we won't pretend otherwise. We don't hold signed contracts, so we never
         quote you an artist's invoice. What you get is a <strong>demand-implied range</strong>
         built from live bookings and chart credibility, with the confidence labelled plainly.
         It's a neutral benchmark, not a guess dressed up as a price. That honesty is the
-        point — it's why the number holds up when the agent pushes back.
+ point, it's why the number holds up when the agent pushes back.
       </>
     ),
   },
@@ -176,7 +176,7 @@ const ANSWERS = [
     a: (
       <>
         One headliner overpaid by 10% costs more than a year of this. You don't need it
-        every day — you need it the Thursday you're staring at a quote with nothing to push
+ every day, you need it the Thursday you're staring at a quote with nothing to push
         back with. Solo is <strong>month-to-month</strong>: turn it on for booking season,
         off when you're quiet.
       </>
@@ -192,7 +192,7 @@ export default function DayInLifePage({ onCta }) {
       <div className="dil-eyebrow">A Booking Day</div>
       <h1 className="dil-title">The night you have to commit on the headliner</h1>
       <p className="dil-sub">
-        If you book talent, you've had this Thursday. Here's what it actually feels like —
+ If you book talent, you've had this Thursday. Here's what it actually feels like,
         and the questions it raises, answered straight.
       </p>
 
@@ -207,8 +207,8 @@ export default function DayInLifePage({ onCta }) {
           that makes my chest tight.
         </p>
         <p>
-          600 cap. If I do £30 advance and <em>actually</em> sell it out — not the optimistic
-          version — that's £18k on the door before the bar. Take out his fee, the support,
+ 600 cap. If I do £30 advance and <em>actually</em> sell it out, not the optimistic
+ version, that's £18k on the door before the bar. Take out his fee, the support,
           sound, security, the licence, my deposit's already gone. If I do 70% on a wet
           February Saturday I'm underwater, and I'm the one who eats it. Not the agent. Me.
         </p>
@@ -217,7 +217,7 @@ export default function DayInLifePage({ onCta }) {
         <p>
           Texted Sam, who books a room about the same size in Bristol. "What did you pay for
           him in the autumn?" Three dots, then nothing for an hour, then "ha, can't really
-          say, was a package thing." Everyone protects their number. That's the whole problem —
+ say, was a package thing." Everyone protects their number. That's the whole problem,
           nobody will tell you what anyone actually costs, so you're always negotiating in the
           dark against someone who books forty of these a year while you book eight.
         </p>
@@ -225,7 +225,7 @@ export default function DayInLifePage({ onCta }) {
         <p className="dil-time">11am.</p>
         <p>
           Pulled up his Spotify. 4.2 million monthly. Looks huge. But I remember booking an
-          act last year with bigger numbers than him and we did 41% — turned out his crowd was
+ act last year with bigger numbers than him and we did 41%, turned out his crowd was
           all in São Paulo, not here, and the room was a morgue by midnight. So the streaming
           number tells me nothing I can bank tickets on. I <em>know</em> it's the wrong number
           to look at. I just don't have a better one I can point to.
@@ -244,7 +244,7 @@ export default function DayInLifePage({ onCta }) {
         <p>
           Found out from a mate that he already played the city in November. <em>And</em> he's
           doing the festival 40 minutes up the road three weeks after my date. So anyone who
-          really wanted to see him has, or will. That changes everything about how this sells —
+ really wanted to see him has, or will. That changes everything about how this sells,
           and the agent obviously wasn't going to volunteer it. How am I supposed to know how
           routed an artist is in my own region? I find out by accident, on the day I'm meant to
           commit.
@@ -252,8 +252,8 @@ export default function DayInLifePage({ onCta }) {
 
         <p className="dil-time">6pm.</p>
         <p>
-          Still haven't sent the reply. Eight browser tabs open — Spotify, RA, his Instagram, a
-          half-built spreadsheet, the agent's email — trying to assemble out of scraps the one
+ Still haven't sent the reply. Eight browser tabs open: Spotify, RA, his Instagram, a
+ half-built spreadsheet, the agent's email, trying to assemble out of scraps the one
           thing I actually need and can't get: a fair number, with something underneath it, that
           I can put in front of the agent and my partner and not feel like I'm guessing.
         </p>
@@ -265,7 +265,7 @@ export default function DayInLifePage({ onCta }) {
       <div className="dil-turn">
         <h2 className="dil-turn-title">You don't have to book like this.</h2>
         <p className="dil-turn-sub">
-          Every worry in that day has an answer. Here they are — straight, no hunting through a help page.
+ Every worry in that day has an answer. Here they are: straight, no hunting through a help page.
         </p>
       </div>
 

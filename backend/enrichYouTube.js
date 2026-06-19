@@ -42,7 +42,7 @@ const delay = ms => new Promise(r => setTimeout(r, ms));
       }
     } else {
       failStreak++;
-      if (failStreak >= 6) { console.log("\nQuota exhausted / repeated failures — stopping. Resume next reset."); break; }
+ if (failStreak >= 6) { console.log("\nQuota exhausted / repeated failures, stopping. Resume next reset."); break; }
     }
     await delay(400);
   }

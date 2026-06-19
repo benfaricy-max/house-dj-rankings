@@ -44,7 +44,7 @@ export default function BlogPage() {
       <div className="bl-hero">
         <div className="bl-eyebrow">PEAKTIME Journal</div>
         <h1 className="bl-title">Notes from the floor</h1>
-        <p className="bl-sub">The editor's log — raves, clubs and the sets that rearranged everything. Data lives in the rest of the site; the stories live here.</p>
+ <p className="bl-sub">The editor's log: raves, clubs and the sets that rearranged everything. Data lives in the rest of the site; the stories live here.</p>
       </div>
       <div className="bl-list">
         {BLOG_POSTS.map(p => (

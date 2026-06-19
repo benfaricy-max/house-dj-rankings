@@ -17,7 +17,7 @@
  *     <BuyerLane rankings={rankings} />
  */
 import { useMemo, useState } from "react";
-import { slugify } from "./artistLink";  // canonical slug — must match the /value/<slug> prerender (NFD, strips combining marks). A local NFKD copy mangled accented names (Sven Väth -> sven-va-th) and 404'd.
+import { slugify } from "./artistLink"; // canonical slug: must match the /value/<slug> prerender (NFD, strips combining marks). A local NFKD copy mangled accented names (Sven Väth -> sven-va-th) and 404'd.
 import "./BuyerLane.css";
 
 // Fee-band filter options map to booking_fee.tier (computeFees.js BANDS).
@@ -34,7 +34,7 @@ export default function BuyerLane({ rankings = [], onOpenValue }) {
 
   // Regions a buyer would recognise — derived from where acts are actually booked.
   // ra_top_regions is [{name, country}] (cities — most useful to a buyer);
-  // ra_country_list is [string]. tour_countries is a COUNT (number), not a list —
+  // ra_country_list is [string]. tour_countries is a COUNT (number), not a list,
   // never iterate it. actRegions() normalises any act to a flat string[] of places.
   const actRegions = (a) => {
     const out = [];
@@ -87,12 +87,12 @@ export default function BuyerLane({ rankings = [], onOpenValue }) {
   };
 
   return (
-    <section className="bl" aria-label="For buyers — who's underpriced right now">
+ <section className="bl" aria-label="For buyers, who's underpriced right now">
       <div className="bl-head">
         <span className="bl-tag">For buyers</span>
         <h2 className="bl-title">Who's underpriced right now</h2>
         <p className="bl-sub">
-          The neutral read for the offer you're about to make — fee band vs. what demand implies.
+ The neutral read for the offer you're about to make, fee band vs. what demand implies.
           No agency, no act, no kickback. Free.
         </p>
       </div>
@@ -119,7 +119,7 @@ export default function BuyerLane({ rankings = [], onOpenValue }) {
       </div>
 
       {picks.length === 0 ? (
-        <p className="bl-empty">No underpriced reads match that filter right now — widen the budget or region.</p>
+ <p className="bl-empty">No underpriced reads match that filter right now, widen the budget or region.</p>
       ) : (
         <ul className="bl-list">
           {picks.map((a) => {
@@ -146,7 +146,7 @@ export default function BuyerLane({ rankings = [], onOpenValue }) {
       )}
 
       <p className="bl-foot">
-        Estimated fee bands until verified — the demand side is RA bookings, Beatport, search &amp; streaming.{" "}
+ Estimated fee bands until verified: the demand side is RA bookings, Beatport, search &amp; streaming.{" "}
         <a href="#/methodology">How we read it →</a>
       </p>
     </section>

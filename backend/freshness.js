@@ -109,14 +109,14 @@ if (JSON_ONLY) {
   const genColor = ga == null ? C.dim : ga > 2 ? C.red : ga > 1 ? C.yellow : C.green;
   console.log(`Last full rebuild: ${genColor}${d1(ga)}d ago${C.off} ${C.dim}(newest row); median row ${d1(genAge)}d${C.off}`);
   if (ga != null && ga > 2)
-    console.log(`${C.red}  ⚠ stale rebuild — run enrichLocal.js; the site is serving ${Math.round(ga)}-day-old numbers.${C.off}`);
+ console.log(`${C.red} ⚠ stale rebuild, run enrichLocal.js; the site is serving ${Math.round(ga)}-day-old numbers.${C.off}`);
 
   console.log(`\n${C.dim}signal              cover   age(med)  oldest   thresh  status${C.off}`);
   for (const r of rows) {
     const pad = (s, n) => String(s).padEnd(n);
     const padl = (s, n) => String(s).padStart(n);
     const age = r.verifiable ? padl(d1(r.medAge) + "d", 8) : padl("no-stamp", 8);
-    const old = r.verifiable ? padl(d1(r.oldest) + "d", 7) : padl("—", 7);
+ const old = r.verifiable ? padl(d1(r.oldest) + "d", 7) : padl("—", 7);
     console.log(
       `${pad(r.label, 18)}  ${padl(r.coverage + "%", 4)}  ${age}  ${old}  ${padl(r.maxDays + "d", 6)}  ${color(r.status)}${r.status}${C.off}`
     );
@@ -124,7 +124,7 @@ if (JSON_ONLY) {
 
   const blind = rows.filter(r => !r.verifiable && r.coverage > 0);
   if (blind.length) {
-    console.log(`\n${C.yellow}Blind spots${C.off} ${C.dim}— these carry no *_updated stamp, so freshness can't be verified.`);
+ console.log(`\n${C.yellow}Blind spots${C.off} ${C.dim}— these carry no *_updated stamp, so freshness can't be verified.`);
     console.log(`Merge-safety means a frozen one looks identical to a live one. Fix: have each`);
     console.log(`enrich* writer stamp a <signal>_updated field, then this turns green/red honestly.${C.off}`);
     console.log(`  ${blind.map(b => b.label).join(", ")}`);
@@ -136,7 +136,7 @@ if (CI) {
   const bad = rows.some(r => r.status === "STALE" || r.status === "EMPTY") ||
     (report.generationAgeDaysNewest != null && report.generationAgeDaysNewest > 3);
   if (bad) {
-    console.error("freshness: FAIL — stale/empty signal or rebuild older than 3 days.");
+ console.error("freshness: FAIL, stale/empty signal or rebuild older than 3 days.");
     process.exit(1);
   }
 }

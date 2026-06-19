@@ -35,13 +35,13 @@ function stashLocally(entry) {
     const prev = JSON.parse(localStorage.getItem(key) || "[]");
     prev.push(entry);
     localStorage.setItem(key, JSON.stringify(prev));
-  } catch { /* private mode / quota — non-fatal */ }
+ } catch { /* private mode / quota, non-fatal */ }
 }
 
 export default function EmailCapture({
   source = "site",
   heading = "Get the PEAKTIME Index",
-  sub = "The monthly booking-demand index — who's rising, who's mispriced, and where — in your inbox. Free, neutral, no hype.",
+ sub = "The monthly booking-demand index, who's rising, who's mispriced, and where, in your inbox. Free, neutral, no hype.",
   compact = false,
 }) {
   const [email, setEmail] = useState("");
@@ -85,7 +85,7 @@ export default function EmailCapture({
       setState("done");
     } catch (ex) {
       // Network failure — the local copy above means it isn't lost.
-      setErr("Network hiccup — we saved your email and will add you to the list.");
+ setErr("Network hiccup, we saved your email and will add you to the list.");
       setState("error");
     }
   }
@@ -136,7 +136,7 @@ export default function EmailCapture({
         </button>
       </div>
       {state === "error" && <div className="ec-err">{err}</div>}
-      <div className="ec-fine">No spam. Unsubscribe anytime. We never sell your data — or rankings.</div>
+ <div className="ec-fine">No spam. Unsubscribe anytime. We never sell your data, or rankings.</div>
     </form>
   );
 }

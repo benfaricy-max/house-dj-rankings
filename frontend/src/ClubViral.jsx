@@ -27,7 +27,7 @@ const normalize = (v, min, max) => (max <= min ? 0 : ((Math.max(min, Math.min(ma
 const CLUB = [
   { key: "live_demand_score", pct100: true },   // live-booking strength: RA + tour blend (already 0-100)
   { key: "beatport_score",    pct100: true },   // Beatport chart credibility (already 0-100)
-  { key: "tl_support_score",  pct100: true },   // 1001Tracklists — DJs actually playing it
+ { key: "tl_support_score", pct100: true }, // 1001Tracklists, DJs actually playing it
 ];
 const VIRAL = [
   { key: "google_trends_score",     pct100: true },  // search hype (already 0-100)
@@ -60,8 +60,8 @@ export function computeClubViral(dj, ranges) {
 }
 
 const NOTE = {
-  club:  "Demand is rooted in scene signals (RA bookings, Beatport, DJ support) — the kind bookers trust to still be there on the night.",
-  viral: "Heat is mostly consumer hype (social + streaming) and light on scene signals — can cool fast; price for the risk.",
+ club: "Demand is rooted in scene signals (RA bookings, Beatport, DJ support), the kind bookers trust to still be there on the night.",
+ viral: "Heat is mostly consumer hype (social + streaming) and light on scene signals, can cool fast; price for the risk.",
   mixed: "A balanced mix of scene credibility and consumer reach.",
 };
 

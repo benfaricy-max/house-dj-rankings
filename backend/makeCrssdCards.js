@@ -125,9 +125,9 @@ cards.push(["card-wins.png", 1080, 1350, `${brand}
   <div class="eyebrow">Key wins</div>
   <h1 style="font-size:104px">Smart money<br>on the bill</h1>
   <div class="panel" style="margin-top:26px">
-    <div class="li"><span class="chip chip-buy">★ Strong buy</span>&nbsp; <b>Prospa</b> — #4, momentum <span class="k">56</span>, Beatport <span class="k">95</span>, RA <span class="k">88</span>. Booked ~2 tiers below its demand.</div>
-    <div class="li"><b>KETTAMA &amp; Carlita</b> — underpriced mid-card; KETTAMA's <span class="k">68</span> live-conversion means he overdelivers on stage vs. fee.</div>
-    <div class="li"><b>Rossi.</b> — momentum <span class="k">75</span>, among the steepest climbs on the whole lineup. Booked early.</div>
+ <div class="li"><span class="chip chip-buy">★ Strong buy</span>&nbsp; <b>Prospa</b>: #4, momentum <span class="k">56</span>, Beatport <span class="k">95</span>, RA <span class="k">88</span>. Booked ~2 tiers below its demand.</div>
+ <div class="li"><b>KETTAMA &amp; Carlita</b>, underpriced mid-card; KETTAMA's <span class="k">68</span> live-conversion means he overdelivers on stage vs. fee.</div>
+ <div class="li"><b>Rossi.</b>: momentum <span class="k">75</span>, among the steepest climbs on the whole lineup. Booked early.</div>
   </div>
   </div>
   ${foot}`]);
@@ -138,9 +138,9 @@ cards.push(["card-watchouts.png", 1080, 1350, `${brand}
   <div class="eyebrow">Watch-outs</div>
   <h1 style="font-size:104px">Where the<br>risk sits</h1>
   <div class="panel" style="margin-top:26px">
-    <div class="li"><span class="chip chip-warn">Priced ahead</span>&nbsp; <b>Chris Lake b2b Disclosure</b> — ${pctOf(250000).toFixed(0)}% of budget on one slot; momentum flat. A name play, not value.</div>
-    <div class="li"><b>The streaming trap</b> — Notion (${(ml("Notion")/1e6).toFixed(1)}M) &amp; oskar med k (${(ml("oskar med k")/1e6).toFixed(1)}M) huge on streams, near-zero live conversion.</div>
-    <div class="li"><b>Regional fatigue</b> — KETTAMA &amp; Chris Lake have been worked hard on the West Coast (see: saturation).</div>
+ <div class="li"><span class="chip chip-warn">Priced ahead</span>&nbsp; <b>Chris Lake b2b Disclosure</b>, ${pctOf(250000).toFixed(0)}% of budget on one slot; momentum flat. A name play, not value.</div>
+ <div class="li"><b>The streaming trap</b>, Notion (${(ml("Notion")/1e6).toFixed(1)}M) &amp; oskar med k (${(ml("oskar med k")/1e6).toFixed(1)}M) huge on streams, near-zero live conversion.</div>
+ <div class="li"><b>Regional fatigue</b>, KETTAMA &amp; Chris Lake have been worked hard on the West Coast (see: saturation).</div>
   </div>
   </div>
   ${foot}`]);
@@ -151,8 +151,8 @@ cards.push(["card-saturation.png", 1080, 1350, `${brand}
   <div class="eyebrow">Saturation watch</div>
   <h1 style="font-size:96px">Has San Diego<br>seen them?</h1>
   <div class="panel" style="margin-top:24px;border-color:var(--magenta)">
-    <div class="li" style="margin-bottom:12px"><b>KETTAMA</b> — 5 shows in SF/Oakland this quarter + already hit San Diego. Real fatigue risk.</div>
-    <div class="li" style="margin-bottom:0"><b>Chris Lake</b> — worked hard across the West Coast. Low scarcity for a SoCal crowd.</div>
+ <div class="li" style="margin-bottom:12px"><b>KETTAMA</b>, 5 shows in SF/Oakland this quarter + already hit San Diego. Real fatigue risk.</div>
+ <div class="li" style="margin-bottom:0"><b>Chris Lake</b>, worked hard across the West Coast. Low scarcity for a SoCal crowd.</div>
   </div>
   <div class="panel" style="margin-top:16px;padding:22px 30px">
     <div class="mono" style="font-size:16px;color:var(--green);font-weight:600;letter-spacing:.06em">FRESH FOR SOCAL</div>
@@ -166,9 +166,9 @@ cards.push(["card-tickets.png", 1080, 1350, `${brand}
   <div class="eyebrow">What sells tickets</div>
   <h1 style="font-size:100px">Three jobs,<br>one lineup</h1>
   <div class="panel" style="margin-top:26px">
-    <div class="li"><span class="k">THE MARQUEE</span> — Chris Lake b2b Disclosure, Skepta, Mochakk, Sonny Fodera sell the on-sale.</div>
-    <div class="li"><span class="k">SCENE CREDIBILITY</span> — I Hate Models, Ben UFO, Helena Hauff, 999999999, VTSS (high RA demand) convert the hardcore.</div>
-    <div class="li" style="margin-bottom:0"><span class="k">VALUE MID-CARD</span> — Prospa, KETTAMA, Carlita, Jamback over-deliver on spend. Live conversion is the hidden engine.</div>
+ <div class="li"><span class="k">THE MARQUEE</span>: Chris Lake b2b Disclosure, Skepta, Mochakk, Sonny Fodera sell the on-sale.</div>
+ <div class="li"><span class="k">SCENE CREDIBILITY</span>: I Hate Models, Ben UFO, Helena Hauff, 999999999, VTSS (high RA demand) convert the hardcore.</div>
+ <div class="li" style="margin-bottom:0"><span class="k">VALUE MID-CARD</span>: Prospa, KETTAMA, Carlita, Jamback over-deliver on spend. Live conversion is the hidden engine.</div>
   </div>
   ${foot}`]);
 
@@ -190,8 +190,8 @@ const tableRows = trows.map(r => `<tr>
   <td ${tdm}>${cell(r.mom)}</td>
   <td class="mono" style="text-align:center">${valChip(r.val)}</td>
   <td ${tdm}>${cell(r.conv)}</td>
-  <td ${tdm}>${r.bp || "—"}</td>
-  <td ${tdm}>${r.ra || "—"}</td>
+ <td ${tdm}>${r.bp || "—"}</td>
+ <td ${tdm}>${r.ra || "—"}</td>
 </tr>`).join("");
 cards.push(["card-table-4x5.png", 1080, 1350, `${brand}
   <div class="eyebrow">The tracked acts · by the numbers</div>

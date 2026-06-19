@@ -76,7 +76,7 @@ async function scrapeHype(slug, id) {
   }
 
   if (scraped === 0) {
-    console.log("No Hype charts scraped (likely throttled) — keeping existing data.");
+ console.log("No Hype charts scraped (likely throttled), keeping existing data.");
     return;
   }
 

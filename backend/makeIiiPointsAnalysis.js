@@ -176,11 +176,11 @@ const tableHTML = tracked.map(({ a, d }) => `<tr>
   <td>${a.name}</td>
   <td class="tnum">#${d.rank}</td>
   <td class="tnum">${usd(a.fee)}</td>
-  <td>${d.momentum >= 0 ? `<span class="p-mo tnum">${d.momentum}</span>` : '<span class="tnum" style="color:#555">—</span>'}</td>
-  <td>${d.value === "strong-buy" ? '<span class="pill p-buy">★ Strong buy</span>' : d.value === "buy" ? '<span class="pill p-buy">Underpriced</span>' : d.value === "premium" ? '<span class="pill p-prem">Priced ahead</span>' : '<span style="color:#555">—</span>'}</td>
-  <td class="tnum">${d.conv >= 0 ? d.conv : "—"}</td>
-  <td class="tnum">${d.beatport || "—"}</td>
-  <td class="tnum">${d.ra || "—"}</td>
+ <td>${d.momentum >= 0 ? `<span class="p-mo tnum">${d.momentum}</span>` : '<span class="tnum" style="color:#555">—</span>'}</td>
+ <td>${d.value === "strong-buy" ? '<span class="pill p-buy">★ Strong buy</span>' : d.value === "buy" ? '<span class="pill p-buy">Underpriced</span>' : d.value === "premium" ? '<span class="pill p-prem">Priced ahead</span>' : '<span style="color:#555">—</span>'}</td>
+ <td class="tnum">${d.conv >= 0 ? d.conv : "—"}</td>
+ <td class="tnum">${d.beatport || "—"}</td>
+ <td class="tnum">${d.ra || "—"}</td>
 </tr>`).join("");
 
 const tierTotals = [1, 2, 3].map(t => ACTS.filter(a => a.tier === t).reduce((s, a) => s + a.fee, 0));
@@ -195,8 +195,8 @@ const softLive = ACTS.map(a => ({ a, d: actData(a), m: ml(firstName(a)) }))
 
 const PAGE = `<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>III Points 2026 — Lineup Intelligence | PEAKTIME</title>
-<meta name="description" content="A data-driven booking analysis of the III Points 2026 lineup — estimated budget, value buys, overpays and Miami market saturation, by PEAKTIME / thedjrankings.com.">
+<title>III Points 2026, Lineup Intelligence | PEAKTIME</title>
+<meta name="description" content="A data-driven booking analysis of the III Points 2026 lineup: estimated budget, value buys, overpays and Miami market saturation, by PEAKTIME / thedjrankings.com.">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>${STYLE}</style></head><body>
 <div class="wrap">
@@ -204,7 +204,7 @@ const PAGE = `<!doctype html><html lang="en"><head><meta charset="utf-8">
   <div class="hero">
     <div class="eyebrow">Lineup Intelligence · Miami · Oct 16–17 2026</div>
     <h1>III Points 2026:<br>what the lineup is really worth</h1>
-    <p class="lead">We ran the III Points 2026 bill through PEAKTIME's demand model — estimating the talent budget, then scoring each act on momentum, value, live conversion and Miami-market freshness. III Points isn't a pure dance festival, so the money splits three ways. Here's where it went, who's underpriced, and who'll actually move tickets.</p>
+ <p class="lead">We ran the III Points 2026 bill through PEAKTIME's demand model: estimating the talent budget, then scoring each act on momentum, value, live conversion and Miami-market freshness. III Points isn't a pure dance festival, so the money splits three ways. Here's where it went, who's underpriced, and who'll actually move tickets.</p>
   </div>
 
   <div class="kpis">
@@ -215,7 +215,7 @@ const PAGE = `<!doctype html><html lang="en"><head><meta charset="utf-8">
   </div>
 
   <h2>Where the budget went</h2>
-  <p>Estimated booking fee per act as a share of the ~${usd(TOTAL)} costed total. III Points buys across three lanes: electronic / dance in lime, live / indie / alt in blue, hip-hop / rap in orange. PEAKTIME tracks the dance lane — the rest is curation.</p>
+ <p>Estimated booking fee per act as a share of the ~${usd(TOTAL)} costed total. III Points buys across three lanes: electronic / dance in lime, live / indie / alt in blue, hip-hop / rap in orange. PEAKTIME tracks the dance lane, the rest is curation.</p>
   <div class="legend">
     <span><span class="dot" style="background:#C8F750"></span>Electronic / dance · ${usd(tierTotals[0])}</span>
     <span><span class="dot" style="background:#7fd4ff"></span>Live / indie / alt · ${usd(tierTotals[1])}</span>
@@ -225,46 +225,46 @@ const PAGE = `<!doctype html><html lang="en"><head><meta charset="utf-8">
 
   <h2>Key wins &amp; watch-outs</h2>
   <div class="grid">
-    <div class="box win"><span class="tag win">Smartest buy</span><h3>KETTAMA — converts, and fresh for Miami</h3>
-      <p>Flagged a <b>Strong Buy</b> at ~$40K: live-conversion <b>71</b>, RA <b>76</b> — his room demand dwarfs his streaming. And the saturation math favours this date: he's maxed out in SF/Oakland (5 shows/3mo, saturation 100) but carries <b>no recent Miami play</b>. Value <i>and</i> scarcity in the same booking.</p></div>
+ <div class="box win"><span class="tag win">Smartest buy</span><h3>KETTAMA: converts, and fresh for Miami</h3>
+ <p>Flagged a <b>Strong Buy</b> at ~$40K: live-conversion <b>71</b>, RA <b>76</b>, his room demand dwarfs his streaming. And the saturation math favours this date: he's maxed out in SF/Oakland (5 shows/3mo, saturation 100) but carries <b>no recent Miami play</b>. Value <i>and</i> scarcity in the same booking.</p></div>
     <div class="box win"><span class="tag win">Value mid-card</span><h3>PAWSA &amp; the Carola b2b punch up</h3>
-      <p>PAWSA: #${actData(ACTS.find(a=>a.name==='PAWSA')).rank} on the index, momentum <b>72</b>, RA <b>85</b> (top-five on the whole bill) — a <b>Strong Buy</b> at ~$45K. Inside the headline tech-house b2b, <b>Franky Rizardo</b> also reads underpriced (momentum 41, strong-buy), so the Marco Carola slot carries real demand value even with Carola himself outside our roster.</p></div>
+ <p>PAWSA: #${actData(ACTS.find(a=>a.name==='PAWSA')).rank} on the index, momentum <b>72</b>, RA <b>85</b> (top-five on the whole bill), a <b>Strong Buy</b> at ~$45K. Inside the headline tech-house b2b, <b>Franky Rizardo</b> also reads underpriced (momentum 41, strong-buy), so the Marco Carola slot carries real demand value even with Carola himself outside our roster.</p></div>
     <div class="box warn"><span class="tag warn">Paying for the name</span><h3>The marquee is curation, not a deal</h3>
-      <p>The biggest lines — <b>Underworld</b> (${pct(120000).toFixed(0)}% of the costed budget), <b>Lil' Kim</b>, <b>Blood Orange</b>, <b>Men I Trust</b> — sit outside the dance-demand model entirely. They sell III Points' eclectic identity, not booking value. Inside the dance lane, <b>Four Tet</b> reads <b>Priced ahead</b> (premium; momentum cooled to 16).</p></div>
+ <p>The biggest lines, <b>Underworld</b> (${pct(120000).toFixed(0)}% of the costed budget), <b>Lil' Kim</b>, <b>Blood Orange</b>, <b>Men I Trust</b>, sit outside the dance-demand model entirely. They sell III Points' eclectic identity, not booking value. Inside the dance lane, <b>Four Tet</b> reads <b>Priced ahead</b> (premium; momentum cooled to 16).</p></div>
     <div class="box warn"><span class="tag warn">Breakout to watch</span><h3>Discip is the steepest climb on the bill</h3>
-      <p>Momentum <b>83</b> — the highest of any tracked act here — booked deep in the undercard at an estimated ~$14K. <b>Dean Turnley</b> (momentum 71) and <b>Roddy Lima</b> (60) are climbing fast too. Early-booked accelerators that look like steals in hindsight if the curve holds.</p></div>
+ <p>Momentum <b>83</b>, the highest of any tracked act here, booked deep in the undercard at an estimated ~$14K. <b>Dean Turnley</b> (momentum 71) and <b>Roddy Lima</b> (60) are climbing fast too. Early-booked accelerators that look like steals in hindsight if the curve holds.</p></div>
   </div>
 
-  <h2>Market saturation — this is a Miami date</h2>
+ <h2>Market saturation, this is a Miami date</h2>
   <div class="box" style="margin-top:6px"><span class="tag sat">Club-Space fatigue risk</span>
     <ul>
-      <li><b>Chasewest</b> carries Miami saturation <b>76</b> (3 shows/3mo) — a Club Space regular, maximally familiar to the local room.</li>
-      <li><b>PAWSA</b> (sat 54, 2 Miami shows), <b>Beltran</b> (sat 52, played Miami 2 days out) and Miami-native <b>Danny Daze</b> (sat 52) make the Club Space tech-house lane the most locally-worked part of the bill — great value, lower novelty for this crowd.</li>
-      <li><b>Charlotte de Witte</b> played Miami ~8 days before the on-sale read (sat 52) — recent regional presence.</li>
-      <li>Upside: <b>KETTAMA, Four Tet, HAAi, Floating Points</b> and the Euro-underground block carry their saturation in <i>other</i> markets — comparatively fresh for South Florida.</li>
+ <li><b>Chasewest</b> carries Miami saturation <b>76</b> (3 shows/3mo): a Club Space regular, maximally familiar to the local room.</li>
+ <li><b>PAWSA</b> (sat 54, 2 Miami shows), <b>Beltran</b> (sat 52, played Miami 2 days out) and Miami-native <b>Danny Daze</b> (sat 52) make the Club Space tech-house lane the most locally-worked part of the bill: great value, lower novelty for this crowd.</li>
+ <li><b>Charlotte de Witte</b> played Miami ~8 days before the on-sale read (sat 52), recent regional presence.</li>
+ <li>Upside: <b>KETTAMA, Four Tet, HAAi, Floating Points</b> and the Euro-underground block carry their saturation in <i>other</i> markets, comparatively fresh for South Florida.</li>
     </ul>
   </div>
 
   <h2>Streaming ≠ tickets</h2>
-  <p>The number a streaming chart hides — RA live-conversion relative to streaming reach. On a curator bill like this, the contrast is the whole point:</p>
+ <p>The number a streaming chart hides, RA live-conversion relative to streaming reach. On a curator bill like this, the contrast is the whole point:</p>
   <div class="grid">
     <div class="box win"><span class="tag win">Converts above its weight</span>
-      <ul>${convStars.map(({ a, d }) => `<li><b>${a.name}</b> — conversion ${d.conv}/100${ml(firstName(a)) ? ` on just ${(ml(firstName(a)) / 1e6).toFixed(1)}M listeners` : ""}</li>`).join("")}</ul>
-      <p style="font-size:13px;margin-top:6px">Niche draw &gt; streaming size — the value end of the bill. Seth Troxler turns 0.1M listeners into a 98/100 room read.</p></div>
+ <ul>${convStars.map(({ a, d }) => `<li><b>${a.name}</b>, conversion ${d.conv}/100${ml(firstName(a)) ? ` on just ${(ml(firstName(a)) / 1e6).toFixed(1)}M listeners` : ""}</li>`).join("")}</ul>
+ <p style="font-size:13px;margin-top:6px">Niche draw &gt; streaming size, the value end of the bill. Seth Troxler turns 0.1M listeners into a 98/100 room read.</p></div>
     <div class="box warn"><span class="tag warn">Big streams, soft live demand</span>
-      <ul>${softLive.map(({ a, d, m }) => `<li><b>${a.name}</b> — ${(m / 1e6).toFixed(1)}M listeners but conversion ${d.conv}/100</li>`).join("")}</ul>
-      <p style="font-size:13px;margin-top:6px">Plus <b>Disco Lines</b> — ${(ml("Disco Lines") / 1e6).toFixed(1)}M listeners, the bill's biggest streamer, but no RA booking footprint yet. Great for the on-sale headline, riskier as a room-filling underground booking.</p></div>
+ <ul>${softLive.map(({ a, d, m }) => `<li><b>${a.name}</b>, ${(m / 1e6).toFixed(1)}M listeners but conversion ${d.conv}/100</li>`).join("")}</ul>
+ <p style="font-size:13px;margin-top:6px">Plus <b>Disco Lines</b>, ${(ml("Disco Lines") / 1e6).toFixed(1)}M listeners, the bill's biggest streamer, but no RA booking footprint yet. Great for the on-sale headline, riskier as a room-filling underground booking.</p></div>
   </div>
 
   <h2>Who actually drives ticket sales</h2>
-  <p>Three jobs on this bill, and they barely overlap. The <b>marquee / curation</b> (Underworld, Lil' Kim, Four Tet, Blood Orange, Charlotte de Witte) sells the on-sale and the festival's eclectic identity. The <b>Club Space tech-house engine</b> (Marco Carola b2b Franky Rizardo, PAWSA, Cloonee, Beltran, KETTAMA) converts Miami's dance core — the city's home-court genre. And the <b>underground-credibility block</b> (Seth Troxler, Floating Points, HAAi, Roman Flügel, 999999999, VTSS — all high live-conversion) sells the curatorial bona fides and over-delivers in the room. The hidden engine, as always, is live-conversion: Seth Troxler's 98/100 on 0.1M listeners is the exact inverse of Adam Port's 14M-listener / conversion-2 profile — and a discerning buyer wants the former.</p>
+ <p>Three jobs on this bill, and they barely overlap. The <b>marquee / curation</b> (Underworld, Lil' Kim, Four Tet, Blood Orange, Charlotte de Witte) sells the on-sale and the festival's eclectic identity. The <b>Club Space tech-house engine</b> (Marco Carola b2b Franky Rizardo, PAWSA, Cloonee, Beltran, KETTAMA) converts Miami's dance core, the city's home-court genre. And the <b>underground-credibility block</b> (Seth Troxler, Floating Points, HAAi, Roman Flügel, 999999999, VTSS, all high live-conversion) sells the curatorial bona fides and over-delivers in the room. The hidden engine, as always, is live-conversion: Seth Troxler's 98/100 on 0.1M listeners is the exact inverse of Adam Port's 14M-listener / conversion-2 profile, and a discerning buyer wants the former.</p>
 
   <h2>The tracked acts, by the numbers</h2>
   <table><thead><tr><th>Artist</th><th>Rank</th><th>Est. fee</th><th>Mom.</th><th>Value</th><th>Conv.</th><th>BP</th><th>RA</th></tr></thead>
   <tbody>${tableHTML}</tbody></table>
 
   <div class="note">
-    <b>Method &amp; caveats.</b> Booking fees are PEAKTIME editorial estimates for a US festival booking (USD), not confirmed contracts — actual fees vary with routing, exclusivity and timing. We costed a curated top ${ACTS.length} of the bill; the full III Points lineup (including the Club Space b2b undercard) is larger. b2b and "presents" slots are costed as a single line. Rank, momentum, value, live-conversion, Beatport, RA and Miami-saturation figures are live from thedjrankings.com for the ${tracked.length} acts the roster currently tracks — PEAKTIME covers house/techno/electronic, so the hip-hop and indie lanes show as untracked by design. Demand signals from public sources (Spotify, Beatport, Resident Advisor, Google Trends, Wikipedia). Not affiliated with III Points or its promoters.
+ <b>Method &amp; caveats.</b> Booking fees are PEAKTIME editorial estimates for a US festival booking (USD), not confirmed contracts: actual fees vary with routing, exclusivity and timing. We costed a curated top ${ACTS.length} of the bill; the full III Points lineup (including the Club Space b2b undercard) is larger. b2b and "presents" slots are costed as a single line. Rank, momentum, value, live-conversion, Beatport, RA and Miami-saturation figures are live from thedjrankings.com for the ${tracked.length} acts the roster currently tracks: PEAKTIME covers house/techno/electronic, so the hip-hop and indie lanes show as untracked by design. Demand signals from public sources (Spotify, Beatport, Resident Advisor, Google Trends, Wikipedia). Not affiliated with III Points or its promoters.
     <br><br>PEAKTIME · the demand index for electronic music · <b style="color:var(--accent)">thedjrankings.com</b>
   </div>
 </div>
@@ -273,12 +273,12 @@ const PAGE = `<!doctype html><html lang="en"><head><meta charset="utf-8">
 fs.writeFileSync(path.join(OUT_DIR, "index.html"), PAGE);
 console.log("Wrote report: /reports/iii-points-2026/index.html");
 console.log(`Total budget $${TOTAL.toLocaleString()} · ${ACTS.length} acts · ${tracked.length} tracked · ${outsideDance}% outside dance lane`);
-console.log(`Lane totals — dance $${tierTotals[0].toLocaleString()} / live $${tierTotals[1].toLocaleString()} / hiphop $${tierTotals[2].toLocaleString()}`);
+console.log(`Lane totals, dance $${tierTotals[0].toLocaleString()} / live $${tierTotals[1].toLocaleString()} / hiphop $${tierTotals[2].toLocaleString()}`);
 
 // ---------- PDF + feature card via puppeteer (optional, best-effort) ----------
 (async () => {
   let puppeteer;
-  try { puppeteer = require("puppeteer"); } catch { console.log("puppeteer not available — skipped PDF/card"); return; }
+ try { puppeteer = require("puppeteer"); } catch { console.log("puppeteer not available, skipped PDF/card"); return; }
   const browser = await puppeteer.launch({ headless: "new", args: ["--no-sandbox"] });
   const page = await browser.newPage();
   await page.setContent(PAGE, { waitUntil: "networkidle0" });

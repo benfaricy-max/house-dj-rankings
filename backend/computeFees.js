@@ -59,7 +59,7 @@ function fitCuratedCurve(djs) {
   return { a, b, n };
 }
 
-// Re-level the intercept so the calibrated curve passes through real anchors —
+// Re-level the intercept so the calibrated curve passes through real anchors,
 // only once ≥3 anchors exist (a single outlier like a press-reported top fee
 // must not be allowed to swing the whole field; see the BC distortion test).
 function relevelToAnchors(fit, anchors) {
@@ -104,7 +104,7 @@ try {
   for (const e of (raw.anchors || [])) {
     if (e && e.name && Number.isFinite(e.fee_gbp)) ANCHORS[e.name] = e;
   }
-} catch { /* no anchors file yet — estimates only */ }
+} catch { /* no anchors file yet, estimates only */ }
 
 const rankData = JSON.parse(fs.readFileSync(RANKINGS, "utf8"));
 const artists  = JSON.parse(fs.readFileSync(ARTISTS, "utf8"));

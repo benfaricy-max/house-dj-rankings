@@ -159,20 +159,20 @@ const firstCallDate = (() => {
 })();
 
 const lines = [];
-lines.push(`# PEAKTIME — Value-Call Backtest`);
+lines.push(`# PEAKTIME, Value-Call Backtest`);
 lines.push("");
 lines.push(`*Generated ${asOf} · horizon ${HORIZON}d · grades Value Gap calls against fee/venue-tier movement (CLAUDE.md predictive-validation history). Outcomes graded against ground-truth tier MOVES, never the model's own re-score.*`);
 lines.push("");
 lines.push(`## Verdict`);
 lines.push("");
 if (graded.length === 0) {
-  lines.push(`**Not yet gradable — and that is the honest, correct state today.**`);
+ lines.push(`**Not yet gradable: and that is the honest, correct state today.**`);
   lines.push("");
   lines.push(`- Call-grading history (\`value_call_history\`) began **${firstCallDate || "n/a"}**.`);
   lines.push(`- Oldest directional call is **${oldestPending} day(s)** old; the horizon to grade a fee/room-tier move is **${HORIZON} days**.`);
   lines.push(`- **${pending.length}** directional calls are accruing and will become gradable on a rolling basis. First results land ~**${HORIZON - oldestPending} days** from now.`);
   lines.push("");
-  lines.push(`The framework is built and running. Fee/room tiers move slowly (a booking re-prices over months, not days), so grading now would measure noise. The backtest *proves itself* only with time — this script is the instrument; re-run it on a schedule.`);
+ lines.push(`The framework is built and running. Fee/room tiers move slowly (a booking re-prices over months, not days), so grading now would measure noise. The backtest *proves itself* only with time, this script is the instrument; re-run it on a schedule.`);
 } else {
   lines.push(`**${accuracy}% directional accuracy** across **${graded.length}** matured calls (${hits} hit / ${graded.length - hits} miss).`);
   lines.push("");
@@ -186,8 +186,8 @@ if (graded.length) {
   lines.push(`| Artist | Call | Date | Age (d) | Fee tier Δ | Room tier Δ | Verdict |`);
   lines.push(`|---|---|---|--:|---|---|---|`);
   for (const g of graded.sort((a, b) => a.date.localeCompare(b.date))) {
-    const fΔ = g.feeAtCall != null ? `${g.feeAtCall}→${g.feeNow}` : "—";
-    const vΔ = g.venueAtCall != null ? `${g.venueAtCall}→${g.venueNow}` : "—";
+ const fΔ = g.feeAtCall != null ? `${g.feeAtCall}→${g.feeNow}` : "—";
+ const vΔ = g.venueAtCall != null ? `${g.venueAtCall}→${g.venueNow}` : "—";
     lines.push(`| ${g.name} | ${g.signal} | ${g.date} | ${g.age} | ${fΔ} | ${vΔ} | ${g.verdict === "hit" ? "✅ hit" : "❌ miss"} |`);
   }
   lines.push("");
@@ -196,7 +196,7 @@ if (graded.length) {
 if (leading) {
   lines.push(`## Leading-indicator read (NOT a backtest)`);
   lines.push("");
-  lines.push(`*A 12-day rank-movement sanity check while the real backtest matures. Avg rank Δ is positive when an act climbed (rank number fell). This is a directional smell test, not validation — too short a window, and rank movement is partly the model re-scoring itself.*`);
+ lines.push(`*A 12-day rank-movement sanity check while the real backtest matures. Avg rank Δ is positive when an act climbed (rank number fell). This is a directional smell test, not validation: too short a window, and rank movement is partly the model re-scoring itself.*`);
   lines.push("");
   lines.push(`Window: ${leading.window}`);
   lines.push("");
@@ -204,10 +204,10 @@ if (leading) {
   lines.push(`|---|--:|--:|`);
   for (const s of ["strong-buy", "buy", "premium", "fair"]) {
     const v = leading.avgRankDelta[s];
-    lines.push(`| ${s} | ${leading.counts[s]} | ${v == null ? "—" : (v > 0 ? "+" : "") + v.toFixed(1)} |`);
+ lines.push(`| ${s} | ${leading.counts[s]} | ${v == null ? "—" : (v > 0 ? "+" : "") + v.toFixed(1)} |`);
   }
   lines.push("");
-  lines.push(`**Read it loosely:** if \`strong-buy\` acts climb and \`premium\` acts slip over time, the signal has directional life. Do not quote this as accuracy — quote the matured backtest above once it exists.`);
+ lines.push(`**Read it loosely:** if \`strong-buy\` acts climb and \`premium\` acts slip over time, the signal has directional life. Do not quote this as accuracy, quote the matured backtest above once it exists.`);
   lines.push("");
 }
 
@@ -215,7 +215,7 @@ lines.push(`## How to use this`);
 lines.push("");
 lines.push(`- Re-run weekly: \`node backend/backtestValueCalls.js --leading --write\`.`);
 lines.push(`- The first real, quotable number ("of acts we flagged strong-buy N months ago, X% rose a fee or room tier") arrives once calls cross the ${HORIZON}-day horizon.`);
-lines.push(`- That single number is what the talent-buyer persona said would move them more than any feature — it converts "looks plausible" into "proven."`);
+lines.push(`- That single number is what the talent-buyer persona said would move them more than any feature, it converts "looks plausible" into "proven."`);
 lines.push("");
 
 const out = lines.join("\n");
@@ -232,7 +232,7 @@ if (leading) {
   console.log(`Leading read (${leading.window}):`);
   for (const s of ["strong-buy", "buy", "premium", "fair"]) {
     const v = leading.avgRankDelta[s];
-    console.log(`  ${s.padEnd(11)} n=${String(leading.counts[s]).padStart(3)}  avgRankΔ ${v == null ? "—" : (v > 0 ? "+" : "") + v.toFixed(1)}`);
+ console.log(` ${s.padEnd(11)} n=${String(leading.counts[s]).padStart(3)} avgRankΔ ${v == null ? "—" : (v > 0 ? "+" : "") + v.toFixed(1)}`);
   }
 }
 

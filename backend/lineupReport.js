@@ -156,17 +156,17 @@ function generateLineupReport(config) {
   const buyVerb = r => (r.d.value === "strong-buy" ? "Strong Buy" : "underpriced");
   const smartestNote = editorial.smartestBuy || (smartest ? (() => {
     const scarce = region && smartest.region && smartest.region.shows === 0
-      ? ` And it's fresh for ${esc(region.label)} — no recent local play, so the date carries novelty as well as value.` : "";
-    return `Flagged a <b>${buyVerb(smartest)}</b> at ~${money(smartest.a.fee)}: live-conversion <b>${smartest.d.conv}</b>, RA <b>${smartest.d.ra}</b> — room demand running ahead of streaming.${scarce}`;
+ ? ` And it's fresh for ${esc(region.label)}: no recent local play, so the date carries novelty as well as value.` : "";
+ return `Flagged a <b>${buyVerb(smartest)}</b> at ~${money(smartest.a.fee)}: live-conversion <b>${smartest.d.conv}</b>, RA <b>${smartest.d.ra}</b>, room demand running ahead of streaming.${scarce}`;
   })() : "");
   const midcardNote = editorial.valueMidcard || (midcard.length ? midcard.map(r =>
-    `<b>${nm(r)}</b> (#${r.d.rank}, momentum ${r.d.momentum}, ${buyVerb(r)} at ~${money(r.a.fee)})`).join(", ") + " read as margin bookings — demand ahead of the fee." : "");
+ `<b>${nm(r)}</b> (#${r.d.rank}, momentum ${r.d.momentum}, ${buyVerb(r)} at ~${money(r.a.fee)})`).join(", ") + " read as margin bookings, demand ahead of the fee." : "");
   const pricedNote = editorial.pricedAhead || (() => {
-    const big = bigUntracked.length ? `The biggest lines — ${bigUntracked.map(r => `<b>${nm(r)}</b>`).join(", ")} — sit outside the dance-demand model: they sell identity, not booking value. ` : "";
-    const prem = pricedAhead.length ? `Inside the tracked lane, ${pricedAhead.map(r => `<b>${nm(r)}</b>`).join(", ")} read <b>Priced ahead</b> — fee hotter than current momentum.` : "";
-    return (big + prem) || "No clear overpays in the tracked lane — the bill prices in line with demand.";
+ const big = bigUntracked.length ? `The biggest lines, ${bigUntracked.map(r => `<b>${nm(r)}</b>`).join(", ")}, sit outside the dance-demand model: they sell identity, not booking value. ` : "";
+ const prem = pricedAhead.length ? `Inside the tracked lane, ${pricedAhead.map(r => `<b>${nm(r)}</b>`).join(", ")} read <b>Priced ahead</b>, fee hotter than current momentum.` : "";
+ return (big + prem) || "No clear overpays in the tracked lane, the bill prices in line with demand.";
   })();
-  const breakoutNote = editorial.breakout || (breakout ? `<b>${nm(breakout)}</b> carries momentum <b>${breakout.d.momentum}</b>${topMomentum ? " — the highest of any tracked act here" : " — among the steepest on the bill"}, booked at an estimated ~${money(breakout.a.fee)}. An early-booked accelerator that looks like a steal in hindsight if the curve holds.` : "");
+ const breakoutNote = editorial.breakout || (breakout ? `<b>${nm(breakout)}</b> carries momentum <b>${breakout.d.momentum}</b>${topMomentum ? ", the highest of any tracked act here" : ", among the steepest on the bill"}, booked at an estimated ~${money(breakout.a.fee)}. An early-booked accelerator that looks like a steal in hindsight if the curve holds.` : "");
 
   // ── HTML ────────────────────────────────────────────────────────────────────
   const barsHTML = sorted.map(({ a, d }) => `<div class="bar-row">
@@ -182,16 +182,16 @@ function generateLineupReport(config) {
 
   const tableHTML = tracked.map(({ a, d }) => `<tr>
     <td>${esc(a.name)}</td><td class="tnum">#${d.rank}</td><td class="tnum">${money(a.fee)}</td>
-    <td>${d.momentum >= 0 ? `<span class="p-mo tnum">${d.momentum}</span>` : '<span class="tnum" style="color:#555">—</span>'}</td>
-    <td>${d.value === "strong-buy" ? '<span class="pill p-buy">★ Strong buy</span>' : d.value === "buy" ? '<span class="pill p-buy">Underpriced</span>' : d.value === "premium" ? '<span class="pill p-prem">Priced ahead</span>' : '<span style="color:#555">—</span>'}</td>
-    <td class="tnum">${d.conv >= 0 ? d.conv : "—"}</td><td class="tnum">${d.beatport || "—"}</td><td class="tnum">${d.ra || "—"}</td>
+ <td>${d.momentum >= 0 ? `<span class="p-mo tnum">${d.momentum}</span>` : '<span class="tnum" style="color:#555">—</span>'}</td>
+ <td>${d.value === "strong-buy" ? '<span class="pill p-buy">★ Strong buy</span>' : d.value === "buy" ? '<span class="pill p-buy">Underpriced</span>' : d.value === "premium" ? '<span class="pill p-prem">Priced ahead</span>' : '<span style="color:#555">—</span>'}</td>
+ <td class="tnum">${d.conv >= 0 ? d.conv : "—"}</td><td class="tnum">${d.beatport || "—"}</td><td class="tnum">${d.ra || "—"}</td>
   </tr>`).join("");
 
   const satHTML = satList.length ? `
-  <h2>Market saturation — this is a ${esc(region.label)} date</h2>
+ <h2>Market saturation, this is a ${esc(region.label)} date</h2>
   <div class="box" style="margin-top:6px"><span class="tag sat">Local-fatigue risk</span><ul>
-    ${satList.map(r => `<li><b>${nm(r)}</b> — local saturation <b>${r.region.sat}</b> (${r.region.shows} ${r.region.shows === 1 ? "show" : "shows"}/~90d), familiar to the ${esc(region.label)} room.</li>`).join("")}
-    ${fresh.length ? `<li>Upside: <b>${fresh.map(nm).join(", ")}</b> carry their saturation in other markets — comparatively fresh for ${esc(region.label)}.</li>` : ""}
+ ${satList.map(r => `<li><b>${nm(r)}</b>, local saturation <b>${r.region.sat}</b> (${r.region.shows} ${r.region.shows === 1 ? "show" : "shows"}/~90d), familiar to the ${esc(region.label)} room.</li>`).join("")}
+ ${fresh.length ? `<li>Upside: <b>${fresh.map(nm).join(", ")}</b> carry their saturation in other markets, comparatively fresh for ${esc(region.label)}.</li>` : ""}
   </ul></div>` : "";
 
   const laneTotals = lanes.map(l => acts.filter(a => a.lane === l.id).reduce((s, a) => s + a.fee, 0));
@@ -199,8 +199,8 @@ function generateLineupReport(config) {
 
   const PAGE = `<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${esc(title)} — Lineup Intelligence | PEAKTIME</title>
-<meta name="description" content="A data-driven booking analysis of the ${esc(title)} lineup — estimated budget, value buys, overpays and market saturation, by PEAKTIME / thedjrankings.com.">
+<title>${esc(title)}, Lineup Intelligence | PEAKTIME</title>
+<meta name="description" content="A data-driven booking analysis of the ${esc(title)} lineup: estimated budget, value buys, overpays and market saturation, by PEAKTIME / thedjrankings.com.">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>${STYLE}</style></head><body>
 <div class="wrap">
@@ -208,7 +208,7 @@ function generateLineupReport(config) {
   <div class="hero">
     <div class="eyebrow">${esc(eyebrow)}</div>
     <h1>${esc(title)}:<br>what the lineup is really worth</h1>
-    <p class="lead">${esc(lead || `We ran the ${title} bill through PEAKTIME's demand model — estimating the talent budget, then scoring each act on momentum, value, live conversion and market freshness. Here's where the money went, who's underpriced, and who'll actually move tickets.`)}</p>
+ <p class="lead">${esc(lead || `We ran the ${title} bill through PEAKTIME's demand model: estimating the talent budget, then scoring each act on momentum, value, live conversion and market freshness. Here's where the money went, who's underpriced, and who'll actually move tickets.`)}</p>
   </div>
 
   <div class="kpis">
@@ -219,13 +219,13 @@ function generateLineupReport(config) {
   </div>
 
   <h2>Where the budget went</h2>
-  <p>Estimated booking fee per act as a share of the ~${money(TOTAL)} costed total. PEAKTIME tracks the electronic / dance lane — the rest is curation.</p>
+ <p>Estimated booking fee per act as a share of the ~${money(TOTAL)} costed total. PEAKTIME tracks the electronic / dance lane, the rest is curation.</p>
   <div class="legend">${legendHTML}</div>
   <div class="bars">${barsHTML}</div>
 
   <h2>Key wins &amp; watch-outs</h2>
   <div class="grid">
-    ${smartest ? `<div class="box win"><span class="tag win">Smartest buy</span><h3>${nm(smartest)} — converts, and underpriced</h3><p>${smartestNote}</p></div>` : ""}
+ ${smartest ? `<div class="box win"><span class="tag win">Smartest buy</span><h3>${nm(smartest)}: converts, and underpriced</h3><p>${smartestNote}</p></div>` : ""}
     ${midcard.length ? `<div class="box win"><span class="tag win">Value mid-card</span><h3>Margin bookings on the bill</h3><p>${midcardNote}</p></div>` : ""}
     <div class="box warn"><span class="tag warn">Paying for the name</span><h3>Where the marquee is curation, not a deal</h3><p>${pricedNote}</p></div>
     ${breakout ? `<div class="box warn"><span class="tag warn">Breakout to watch</span><h3>${nm(breakout)} is climbing fast</h3><p>${breakoutNote}</p></div>` : ""}
@@ -233,13 +233,13 @@ function generateLineupReport(config) {
   ${satHTML}
 
   <h2>Streaming ≠ tickets</h2>
-  <p>The number a streaming chart hides — RA live-conversion relative to streaming reach. On a curator bill, the contrast is the whole point:</p>
+ <p>The number a streaming chart hides, RA live-conversion relative to streaming reach. On a curator bill, the contrast is the whole point:</p>
   <div class="grid">
     <div class="box win"><span class="tag win">Converts above its weight</span>
-      <ul>${convStars.map(({ a, d }) => `<li><b>${esc(a.name)}</b> — conversion ${d.conv}/100${ml(firstName(a)) ? ` on just ${(ml(firstName(a)) / 1e6).toFixed(1)}M listeners` : ""}</li>`).join("") || "<li>No standout over-converters in this bill.</li>"}</ul>
-      <p style="font-size:13px;margin-top:6px">Niche draw &gt; streaming size — the value end of the bill.</p></div>
+ <ul>${convStars.map(({ a, d }) => `<li><b>${esc(a.name)}</b>, conversion ${d.conv}/100${ml(firstName(a)) ? ` on just ${(ml(firstName(a)) / 1e6).toFixed(1)}M listeners` : ""}</li>`).join("") || "<li>No standout over-converters in this bill.</li>"}</ul>
+ <p style="font-size:13px;margin-top:6px">Niche draw &gt; streaming size, the value end of the bill.</p></div>
     <div class="box warn"><span class="tag warn">Big streams, soft live demand</span>
-      <ul>${softLive.map(({ a, d }) => `<li><b>${esc(a.name)}</b> — ${(ml(firstName(a)) / 1e6).toFixed(1)}M listeners but conversion ${d.conv}/100</li>`).join("") || "<li>No big-stream / soft-live mismatches flagged.</li>"}</ul>
+ <ul>${softLive.map(({ a, d }) => `<li><b>${esc(a.name)}</b>, ${(ml(firstName(a)) / 1e6).toFixed(1)}M listeners but conversion ${d.conv}/100</li>`).join("") || "<li>No big-stream / soft-live mismatches flagged.</li>"}</ul>
       <p style="font-size:13px;margin-top:6px">Great for the on-sale headline, riskier as room-filling bookings.</p></div>
   </div>
 
@@ -250,7 +250,7 @@ function generateLineupReport(config) {
   <tbody>${tableHTML}</tbody></table>
 
   <div class="note">
-    <b>Method &amp; caveats.</b> Booking fees are PEAKTIME editorial estimates for a festival booking (${currency}), not confirmed contracts — actual fees vary with routing, exclusivity and timing. We costed ${acts.length} of the bill; the full lineup is larger. b2b and "presents" slots are costed as a single line. Rank, momentum, value, live-conversion, Beatport, RA and saturation figures are live from thedjrankings.com for the ${tracked.length} acts the roster currently tracks — PEAKTIME covers house/techno/electronic, so other lanes show as untracked by design. Demand signals from public sources (Spotify, Beatport, Resident Advisor, Google Trends, Wikipedia). Not affiliated with the festival or its promoters.
+ <b>Method &amp; caveats.</b> Booking fees are PEAKTIME editorial estimates for a festival booking (${currency}), not confirmed contracts: actual fees vary with routing, exclusivity and timing. We costed ${acts.length} of the bill; the full lineup is larger. b2b and "presents" slots are costed as a single line. Rank, momentum, value, live-conversion, Beatport, RA and saturation figures are live from thedjrankings.com for the ${tracked.length} acts the roster currently tracks: PEAKTIME covers house/techno/electronic, so other lanes show as untracked by design. Demand signals from public sources (Spotify, Beatport, Resident Advisor, Google Trends, Wikipedia). Not affiliated with the festival or its promoters.
     <br><br>PEAKTIME · the demand index for electronic music · <b style="color:var(--accent)">thedjrankings.com</b>
   </div>
 </div>
@@ -266,8 +266,8 @@ function generateLineupReport(config) {
   let reg = [];
   try { const j = JSON.parse(fs.readFileSync(REG, "utf8")); if (Array.isArray(j)) reg = j; } catch { /* none yet */ }
   const entry = {
-    title: editorial.cardTitle || `${title} — Lineup Intelligence`,
-    dek: editorial.dek || `A full demand read on the ${title} lineup: who's underpriced, who's over-routed for the date, the ticket-conversion standouts, and the budget math — built from the same live-anchored data the rest of the site runs on.`,
+ title: editorial.cardTitle || `${title}: Lineup Intelligence`,
+ dek: editorial.dek || `A full demand read on the ${title} lineup: who's underpriced, who's over-routed for the date, the ticket-conversion standouts, and the budget math, built from the same live-anchored data the rest of the site runs on.`,
     href, tag: config.tag || "Festival",
     date: config.date || new Date().toISOString().slice(0, 10),
   };

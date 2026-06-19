@@ -1,7 +1,7 @@
 /**
  * Writes VERIFIED Instagram / TikTok profile handles from socials.json onto each
  * artist (rankings.json + artists.json). The frontend renders a direct profile
- * link when a handle is present, and a platform-search fallback when it isn't —
+ * link when a handle is present, and a platform-search fallback when it isn't,
  * so we never guess a handle (a wrong link sends a booker to an impostor account).
  *
  * Merge-safe & idempotent: only sets a handle when socials.json has a real one;
@@ -17,7 +17,7 @@ const ARTISTS  = path.join(__dirname, "artists.json");
 let handles = {};
 try {
   handles = JSON.parse(fs.readFileSync(path.join(__dirname, "socials.json"), "utf8")).handles || {};
-} catch { console.error("No socials.json — nothing to apply."); process.exit(0); }
+} catch { console.error("No socials.json, nothing to apply."); process.exit(0); }
 
 const clean = h => (typeof h === "string" ? h.trim().replace(/^@/, "") : null) || null;
 

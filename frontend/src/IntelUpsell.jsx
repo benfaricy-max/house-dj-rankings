@@ -33,7 +33,7 @@ export default function IntelUpsell({ source = "index-drop" }) {
       <p className="intel-up-sub">
         The free Index is the headline. Pro is the whole story: every act's Value Gap, the weekly
         movers before they surface publicly, full market &amp; routing reads, and the raw demand
-        numbers to cite. Neutral, no hype — delivered all month, not once.
+ numbers to cite. Neutral, no hype: delivered all month, not once.
       </p>
       <div className="intel-up-row">
         <div className="intel-up-price"><span className="intel-up-amount">£6</span><span className="intel-up-cadence">/mo</span></div>

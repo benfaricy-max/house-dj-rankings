@@ -109,7 +109,7 @@ async function buildRankings() {
 // Serve from cache — instant response
 app.get("/api/rankings", (req, res) => {
   if (!cache.rankings.length) {
-    return res.status(503).json({ error: "Rankings not ready yet — check back in a moment." });
+ return res.status(503).json({ error: "Rankings not ready yet, check back in a moment." });
   }
   res.json(cache);
 });

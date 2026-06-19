@@ -38,7 +38,7 @@ const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(
 function deltaPill(d) {
   if (d > 0) return `<span class="dl up">▲ ${d}</span>`;
   if (d < 0) return `<span class="dl dn">▼ ${Math.abs(d)}</span>`;
-  return `<span class="dl flat">—</span>`;
+ return `<span class="dl flat">—</span>`;
 }
 
 function buildHtml(rankings) {
@@ -83,9 +83,9 @@ function buildHtml(rankings) {
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Rank 2.0 — An Alternate Weighting | The DJ Rankings</title>
+<title>Rank 2.0, An Alternate Weighting | The DJ Rankings</title>
 <meta name="description" content="The same signals, reweighted toward scene credibility, DJ support, search and reach instead of booking demand. The weight diff, the new leaderboard, and who moves most between the two rankings." />
-<meta property="og:title" content="Rank 2.0 — An Alternate Weighting" />
+<meta property="og:title" content="Rank 2.0, An Alternate Weighting" />
 <meta property="og:description" content="The same signals, reweighted toward scene credibility, DJ support, search and reach instead of booking demand." />
 <meta property="og:image" content="https://thedjrankings.com/brand/post-methodology-1080.png" />
 <meta property="og:type" content="article" />
@@ -140,7 +140,7 @@ function buildHtml(rankings) {
   <div class="hero">
     <span class="tag">Rank 2.0</span>
     <h1>An alternate weighting</h1>
-    <p class="sub">The same signals, reweighted. Where the live index leads on <b>booking demand</b>, Rank 2.0 leans toward <b>scene credibility, DJ support, search and reach</b> — a discovery-first cut of the same data. This is a comparison brief; the live ranking on the site is unchanged.</p>
+ <p class="sub">The same signals, reweighted. Where the live index leads on <b>booking demand</b>, Rank 2.0 leans toward <b>scene credibility, DJ support, search and reach</b>, a discovery-first cut of the same data. This is a comparison brief; the live ranking on the site is unchanged.</p>
   </div>
 
   <div class="section">
@@ -151,7 +151,7 @@ function buildHtml(rankings) {
 ${weightRows}
       </tbody>
     </table>
-    <p class="note">The 12 weights above are scaled to 93% so growth (7%) keeps its live weight; the vector sums to 100%. Festival presence — weighted 5% on the live index — is dropped from Rank 2.0 for a simpler methodology. Self-healing, the credibility floor and the coverage penalty are applied identically to both rankings.</p>
+ <p class="note">The 12 weights above are scaled to 93% so growth (7%) keeps its live weight; the vector sums to 100%. Festival presence, weighted 5% on the live index, is dropped from Rank 2.0 for a simpler methodology. Self-healing, the credibility floor and the coverage penalty are applied identically to both rankings.</p>
   </div>
 
   <div class="section">
@@ -176,7 +176,7 @@ ${moverCol(fallers)}
 ${leaderRows}
       </tbody>
     </table>
-    <p class="note">Top 50 shown, ranked over the full database (house + techno) — the same pool as the live index before its house-anchored display filter.</p>
+ <p class="note">Top 50 shown, ranked over the full database (house + techno), the same pool as the live index before its house-anchored display filter.</p>
   </div>
 
   <div class="foot">
@@ -193,7 +193,7 @@ function generate(rankingsPath, outPath) {
   const raw = JSON.parse(fs.readFileSync(rankingsPath, "utf8"));
   const rankings = Array.isArray(raw) ? raw : raw.rankings;
   if (!Array.isArray(rankings) || !rankings.some(r => Number.isFinite(r.rank_v2))) {
-    console.warn("[rankV2Report] no rank_v2 data found — skipping (run after the v2 scoring pass).");
+ console.warn("[rankV2Report] no rank_v2 data found, skipping (run after the v2 scoring pass).");
     return false;
   }
   const html = buildHtml(rankings);

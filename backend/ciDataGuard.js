@@ -32,7 +32,7 @@ function fail(msg) {
 }
 
 const newPath = path.resolve(process.cwd(), REL_PATH);
-if (!fs.existsSync(newPath)) fail(`${REL_PATH} not found in the working tree — generateStatic did not produce it.`);
+if (!fs.existsSync(newPath)) fail(`${REL_PATH} not found in the working tree, generateStatic did not produce it.`);
 
 const newRaw = fs.readFileSync(newPath, "utf8");
 const newBytes = Buffer.byteLength(newRaw);
@@ -41,10 +41,10 @@ let newJson;
 try {
   newJson = JSON.parse(newRaw);
 } catch (e) {
-  fail(`${REL_PATH} is not valid JSON (${e.message}) — refusing to commit a corrupt index.`);
+ fail(`${REL_PATH} is not valid JSON (${e.message}), refusing to commit a corrupt index.`);
 }
 const newCount = countArtists(newJson);
-if (newCount === 0) fail(`${REL_PATH} has an empty "rankings" array — refusing to wipe the index.`);
+if (newCount === 0) fail(`${REL_PATH} has an empty "rankings" array, refusing to wipe the index.`);
 
 // Read the previously committed version. First refresh / brand-new file → nothing
 // to compare against, so let it through.
@@ -52,14 +52,14 @@ let oldRaw;
 try {
   oldRaw = execSync(`git show HEAD:${REL_PATH}`, { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"], maxBuffer: 64 * 1024 * 1024 });
 } catch {
-  console.log(`data guard: no committed ${REL_PATH} at HEAD — first run, skipping comparison.`);
-  console.log(`data guard: new file OK — ${newCount} artists, ${(newBytes / 1e6).toFixed(2)} MB.`);
+ console.log(`data guard: no committed ${REL_PATH} at HEAD: first run, skipping comparison.`);
+ console.log(`data guard: new file OK: ${newCount} artists, ${(newBytes / 1e6).toFixed(2)} MB.`);
   process.exit(0);
 }
 
 const oldBytes = Buffer.byteLength(oldRaw);
 let oldCount = 0;
-try { oldCount = countArtists(JSON.parse(oldRaw)); } catch { /* old was unparseable — don't block on it */ }
+try { oldCount = countArtists(JSON.parse(oldRaw)); } catch { /* old was unparseable, don't block on it */ }
 
 const minCount = Math.floor(oldCount * MIN_RETAIN);
 const minBytes = Math.floor(oldBytes * MIN_RETAIN);
@@ -71,10 +71,10 @@ console.log(
 );
 
 if (oldCount > 0 && newCount < minCount) {
-  fail(`artist count dropped ${oldCount} → ${newCount} (more than the ${((1 - MIN_RETAIN) * 100).toFixed(0)}% allowed). Data loss suspected — blocking commit.`);
+ fail(`artist count dropped ${oldCount} → ${newCount} (more than the ${((1 - MIN_RETAIN) * 100).toFixed(0)}% allowed). Data loss suspected, blocking commit.`);
 }
 if (oldBytes > 0 && newBytes < minBytes) {
-  fail(`rankings.json shrank ${(oldBytes / 1e6).toFixed(2)}MB → ${(newBytes / 1e6).toFixed(2)}MB (more than the ${((1 - MIN_RETAIN) * 100).toFixed(0)}% allowed). Data loss suspected — blocking commit.`);
+ fail(`rankings.json shrank ${(oldBytes / 1e6).toFixed(2)}MB → ${(newBytes / 1e6).toFixed(2)}MB (more than the ${((1 - MIN_RETAIN) * 100).toFixed(0)}% allowed). Data loss suspected, blocking commit.`);
 }
 
-console.log("data guard: passed — index is intact.");
+console.log("data guard: passed, index is intact.");

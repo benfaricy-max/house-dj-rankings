@@ -14,7 +14,7 @@ export function computeRouting(dj) {
   if (!cities.length) return null;
   const byCountry = {};
   for (const c of cities) {
-    const k = c.country || "—";
+ const k = c.country || "—";
     const r = (byCountry[k] ||= { country: k, shows: 0, cities: new Set(), minDays: Infinity, satMax: 0 });
     r.shows += c.shows_3m || c.shows || 0;
     if (c.city) r.cities.add(c.city);
@@ -62,7 +62,7 @@ export default function RoutingSaturation({ dj, max = 4, compact = false }) {
       </div>
       {data.topHeavy && (
         <div className="routing-sat-flag">
-          ⚠ Heavily routed in {data.topHeavy.country} ({data.topHeavy.shows} recent shows) —
+ ⚠ Heavily routed in {data.topHeavy.country} ({data.topHeavy.shows} recent shows),
           a date here will feel less exclusive; price/pitch accordingly.
         </div>
       )}

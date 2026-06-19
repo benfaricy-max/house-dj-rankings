@@ -9,7 +9,7 @@
   --muted: #8a8b92;                  /* meets WCAG AA (>=4.5:1) on all surfaces */
   --border: #1e1f23;
   --code-bg: #141417;
-  --accent: #C8F750;                 /* acid lime — used sparingly */
+ --accent: #C8F750; /* acid lime, used sparingly */
   --on-accent: #0c0c0e;              /* dark text for use ON the accent */
   --accent-bg: rgba(200, 247, 80, 0.12);
   --accent-border: rgba(200, 247, 80, 0.45);

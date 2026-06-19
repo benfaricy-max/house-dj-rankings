@@ -86,7 +86,7 @@ async function main() {
   for (const [i, artist] of artists.entries()) {
     if (i > 0) await delay(2500);
     if (i > 0 && i % 60 === 0) {
-      console.log(`\n[pause] ${i} done — resting 20s…`);
+ console.log(`\n[pause] ${i} done, resting 20s…`);
       await delay(20000);
     }
     try {
@@ -175,7 +175,7 @@ async function main() {
   }
 
   if (enriched.length === 0) {
-    console.log("All fetches failed (likely rate limited) — keeping existing rankings.json");
+ console.log("All fetches failed (likely rate limited), keeping existing rankings.json");
     process.exit(0);
   }
 

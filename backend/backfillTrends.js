@@ -81,7 +81,7 @@ function isFresh(name) {
       const is429 = /429/.test(res?.error || "") || res?.error === "timeout";
       if (is429) backoff = Math.min(backoff * 1.7, 60000);
       if (failStreak >= MAX_FAIL_STREAK) {
-        console.log(`\n⚠️  ${failStreak} failures in a row — Google is throttling. Saving progress and stopping. Re-run later to continue.`);
+ console.log(`\n⚠️ ${failStreak} failures in a row, Google is throttling. Saving progress and stopping. Re-run later to continue.`);
         break;
       }
     }

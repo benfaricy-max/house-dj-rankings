@@ -58,7 +58,7 @@ export function rankWithinCohort(subset, metricDefs) {
       const s = raw / d;
       const covFrac = covW / d;
       const scene = Number.isFinite(a.manual_scene_score) ? a.manual_scene_score : 50;
-      const cred = 0.80 + 0.20 * (scene / 100); // v5: narrowed swing — scene no longer double-counted (mirror of score.js)
+ const cred = 0.80 + 0.20 * (scene / 100); // v5: narrowed swing, scene no longer double-counted (mirror of score.js)
       const covFactor = 0.8 + 0.2 * Math.min(covFrac / 0.75, 1);
       return { ...a, cohort_score: Math.round(s * cred * covFactor * 10) / 10, cohort_coverage: Math.round(covFrac * 100) };
     })
@@ -126,16 +126,16 @@ export const PERSONAS = {
   agent: {
     label: "Agent", question: "Is my act under-priced?", sort: "value_gap", cohort: "full",
     cta: { label: "Open Value Gap →", tab: "booking" },
-    blurb: "Sorted by how far independently-measured demand runs ahead of the current fee band — your re-pricing leverage, act by act.",
+ blurb: "Sorted by how far independently-measured demand runs ahead of the current fee band: your re-pricing leverage, act by act.",
   },
   promoter: {
     label: "Promoter", question: "Who's hot, and affordable?", sort: "momentum_score", cohort: "full",
     cta: { label: "City Scout →", tab: "scouting" },
-    blurb: "Sorted by momentum — who's accelerating right now. Each card shows the estimated fee band so you can weigh heat against budget.",
+ blurb: "Sorted by momentum, who's accelerating right now. Each card shows the estimated fee band so you can weigh heat against budget.",
   },
   festival: {
     label: "Festival", question: "Who's rising into headliner tier?", sort: "score", cohort: "rising",
     cta: null,
-    blurb: "The rising cohort: real momentum plus the scene and live-booking credibility to carry a bigger stage — re-ranked within the tier, not buried under established headliners.",
+ blurb: "The rising cohort: real momentum plus the scene and live-booking credibility to carry a bigger stage: re-ranked within the tier, not buried under established headliners.",
   },
 };

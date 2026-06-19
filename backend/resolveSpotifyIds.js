@@ -29,7 +29,7 @@ async function token() {
   for (const a of artists) if (SEED[a.name] && a.spotify_id !== SEED[a.name]) { a.spotify_id = SEED[a.name]; seeded++; }
   if (seeded) { fs.writeFileSync(ARTISTS, JSON.stringify(artists, null, 2)); console.log(`Seeded ${seeded} hand-verified ids.`); }
 
-  if (!process.env.SPOTIFY_CLIENT_ID) { console.log("No Spotify creds — applied seeds only, skipping search."); return; }
+ if (!process.env.SPOTIFY_CLIENT_ID) { console.log("No Spotify creds: applied seeds only, skipping search."); return; }
   // Re-resolve acts with NO id, PLUS those whose stored id failed validation
   // (spotify_id_audit.json BAD_ID/WRONG_ARTIST) — a bad id is the reason they have
   // no listeners, so "has an id" must NOT mean "skip" for them.
@@ -55,7 +55,7 @@ async function token() {
       if (e.response?.status === 401) { t = await token(); i--; continue; }
       if (e.response?.status === 429) {
         const wait = Number(e.response.headers?.["retry-after"] || 30);
-        if (wait > 120) { console.log(`\n429 Retry-After ${wait}s — backing off, resume later.`); break; }
+ if (wait > 120) { console.log(`\n429 Retry-After ${wait}s: backing off, resume later.`); break; }
         await delay((wait + 1) * 1000); i--; continue;
       }
     }

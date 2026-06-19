@@ -60,7 +60,7 @@ function propose(a) {
   const ibizaV = hasVenue(venues, IBIZA_CLUBS);
   if (ibizaV.length && regions.some(r => r.includes("ibiza"))) { cats.add("ibiza"); ev.ibiza = ibizaV; }
 
-  if (a.label_score >= 70) { cats.add("label"); ev.label = [`label_score ${a.label_score}/100 (name not stored — confirm)`]; }
+ if (a.label_score >= 70) { cats.add("label"); ev.label = [`label_score ${a.label_score}/100 (name not stored, confirm)`]; }
 
   return { cats: [...cats], evidence: ev };
 }
@@ -98,8 +98,8 @@ function main() {
   console.log(`${r.length} acts | ${withProp} got >=1 data-evidenced credential | ${gained} previously-untagged acts now have evidence`);
   console.log(`Tag coverage would rise from ~${out.filter(o => o.existing_tags.length).length} to ~${withProp} (data-evidenced credentials only).`);
   console.log(`Still needs human review per act: Boiler Room/HÖR, Essential Mix, press covers (not in any data field).`);
-  console.log(`\nWrote backend/scene_tags_proposed.json + .csv — review, then merge approved tags into artists.json scene_tags.\n`);
+ console.log(`\nWrote backend/scene_tags_proposed.json +.csv: review, then merge approved tags into artists.json scene_tags.\n`);
   console.log(`Sample (top 10):`);
-  for (const o of out.slice(0, 10)) console.log(`  #${o.rank} ${o.name.padEnd(18)} hand ${o.hand_scene} → proposed ${o.proposed_rubric_score ?? "—"}  [${o.proposed_credits.join(", ") || "no data evidence"}]`);
+ for (const o of out.slice(0, 10)) console.log(` #${o.rank} ${o.name.padEnd(18)} hand ${o.hand_scene} → proposed ${o.proposed_rubric_score ?? "—"} [${o.proposed_credits.join(", ") || "no data evidence"}]`);
 }
 main();

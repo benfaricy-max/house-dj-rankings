@@ -90,7 +90,7 @@ async function setCrawl(inRoster) {
     if (e instanceof Blocked) blocked = true;
     // Non-block feed failure (transient/timeout): no new sets this run, but the
     // chart data still applies. Log it so an unattended nightly run isn't opaque.
-    else console.log(`1001TL set-crawl: feed seed failed (${e.code || e.message}) — no new sets this run; chart data still applied.`);
+ else console.log(`1001TL set-crawl: feed seed failed (${e.code || e.message}), no new sets this run; chart data still applied.`);
   }
 
   // 2) Crawl each NEW set's tracklist; record roster plays. Mark every fetched id
@@ -152,8 +152,8 @@ async function main() {
     // A soft-block (503) means the API is UP but our IP is rate-limited — proceed
     // (the chart loop preserves data, the set-crawl backs off). Only a true
     // unreachable (connection refused / DNS / timeout) should skip the whole run.
-    if (!(e instanceof Blocked)) { console.log(`1001Tracklists API unreachable at ${BASE} (${e.code || e.message}) — keeping existing tl_* data. Skipping.`); return; }
-    console.log(`1001Tracklists API reachable but IP soft-blocked — proceeding with back-off; existing data preserved.`);
+ if (!(e instanceof Blocked)) { console.log(`1001Tracklists API unreachable at ${BASE} (${e.code || e.message}), keeping existing tl_* data. Skipping.`); return; }
+ console.log(`1001Tracklists API reachable but IP soft-blocked, proceeding with back-off; existing data preserved.`);
   }
 
   acquireLock("rankings-write");   // refuse to run if another data writer is active (prevents racing writes)
@@ -289,7 +289,7 @@ async function main() {
 
   const viaSetsOnly = data.rankings.filter(a => a.tl_support_score > 0 && !a.tl_weeks_charted).length;
   console.log(`1001TL: ${total} weeks archived (+${fetched} fetched) · ${supported}/${data.rankings.length} roster artists with DJ support (${Math.round(supported / data.rankings.length * 100)}%)${SETCRAWL ? ` · ${viaSetsOnly} via set-crawl only` : ""}.`);
-  topSupported.slice(0, 14).forEach(a => console.log(`  ${a.name.padEnd(22)} score ${String(a.score).padStart(3)} · ${a.weeks}wk · best #${a.best ?? "—"}${a.now ? " · on chart now" : a.recent ? " · recent" : ""}${a.sets ? ` · ${a.sets} recent sets` : ""}`));
+ topSupported.slice(0, 14).forEach(a => console.log(` ${a.name.padEnd(22)} score ${String(a.score).padStart(3)} · ${a.weeks}wk · best #${a.best ?? "—"}${a.now ? " · on chart now" : a.recent ? " · recent" : ""}${a.sets ? ` · ${a.sets} recent sets` : ""}`));
 }
 
 main();

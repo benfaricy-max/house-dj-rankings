@@ -12,7 +12,7 @@
  * Robust + honest: each component is normalized across the field; an artist's
  * momentum is the weighted average of ONLY the components it has data for
  * (weights renormalized per artist). Artists with no rate-of-change data at all
- * get momentum_score = null and are excluded from the momentum leaderboard —
+ * get momentum_score = null and are excluded from the momentum leaderboard,
  * we never fabricate acceleration from a static snapshot.
  */
 const clip = (v, lo, hi) => Math.max(lo, Math.min(v, hi));

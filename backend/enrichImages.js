@@ -78,7 +78,7 @@ async function spotifyImage(name) {
               if (byName[a.name]) byName[a.name].spotify_id = sp.spotify_id;
             }
           }
-        } catch (se) { if (se.rateLimited) { spOff = true; console.log("\n(Spotify fallback throttled — Deezer only this run)"); } }
+ } catch (se) { if (se.rateLimited) { spOff = true; console.log("\n(Spotify fallback throttled, Deezer only this run)"); } }
       }
       if (img) {
         a.image = img;

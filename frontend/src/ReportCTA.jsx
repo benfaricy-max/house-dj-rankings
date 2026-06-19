@@ -40,7 +40,7 @@ export default function ReportCTA({ artist }) {
         <div className="rcta-eyebrow">Take this to the table</div>
         <div className="rcta-h">Your verified Fair Value Report for {artist.name}</div>
         <p className="rcta-sub">
-          A clean, branded PDF of this benchmark plus a private pitch link to forward — the neutral
+ A clean, branded PDF of this benchmark plus a private pitch link to forward, the neutral
           number that backs your fee, so you negotiate from data, not gut feel. One-off. No subscription.
         </p>
         <ul className="rcta-feats">

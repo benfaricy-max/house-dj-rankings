@@ -61,7 +61,7 @@ export function feeBasis(a) {
   const bf = a.booking_fee || {};
   if (bf.basis === "anchored" && bf.fee_source) {
     return { verified: true, label: `verified fee · ${bf.fee_source}`,
-      note: `Real, sourced fee${bf.fee_date ? ` (${bf.fee_date})` : ""} — not modelled.` };
+ note: `Real, sourced fee${bf.fee_date ? ` (${bf.fee_date})` : ""}, not modelled.` };
   }
   if (bf.basis === "curated") {
     return { verified: false, label: "estimated tier · curated",
@@ -73,9 +73,9 @@ export function feeBasis(a) {
 
 const verdictText = (a, conf) => {
   const g = a.value_gap, pct = a.value_gap_pct;
-  if (g >= 1) return `Demand data implies ${a.name} is underpriced — the booking fee sits about ${g} tier${g > 1 ? "s" : ""} (~${pct > 0 ? "+" : ""}${pct}%) below what current demand supports.`;
+ if (g >= 1) return `Demand data implies ${a.name} is underpriced, the booking fee sits about ${g} tier${g > 1 ? "s" : ""} (~${pct > 0 ? "+" : ""}${pct}%) below what current demand supports.`;
   if (g <= -1) return `Demand data implies ${a.name}'s fee runs ahead of currently measured demand by about ${Math.abs(g)} tier${Math.abs(g) > 1 ? "s" : ""}.`;
-  return `${a.name}'s fee is aligned with measured demand — a clean deal at the current rate.`;
+ return `${a.name}'s fee is aligned with measured demand, a clean deal at the current rate.`;
 };
 
 // A ready-to-paste negotiation line — the exact gap the research surfaced: a
@@ -89,21 +89,21 @@ export function negotiationLine(a, side = "seller") {
     anchor.avg_attending > 0 && `~${anchor.avg_attending} attending per show`,
     (anchor.routing_countries || a.ra_countries) > 0 && `${anchor.routing_countries || a.ra_countries} countries on the routing`,
   ].filter(Boolean).join(", ");
-  const evidence = proof ? ` — ${proof}` : "";
+ const evidence = proof ? `, ${proof}` : "";
   const surging = Number.isFinite(a.momentum_score) && a.momentum_score >= 40
     ? `, with momentum still climbing (${a.momentum_score}/100)` : "";
-  const src = "Source: PEAKTIME neutral demand benchmark (thedjrankings.com), built from live booking data — no input from either side.";
+ const src = "Source: PEAKTIME neutral demand benchmark (thedjrankings.com), built from live booking data, no input from either side.";
   const g = a.value_gap;
 
   if (side === "buyer") {
     if (g >= 1) return `${a.name}'s measured demand${evidence} already supports ${a.demand_fee_label}${surging}, yet the act is still bookable around ${a.booking_fee.label}. Worth locking in at today's rate before the fee catches up. ${src}`;
     if (g <= -1) return `The ask for ${a.name} sits at ${a.booking_fee.label}, but measured live demand${evidence} only supports about ${a.demand_fee_label}. A fee nearer that band is the fair number, or expect to carry more ticket-sales risk. ${src}`;
-    return `${a.name}'s fee (${a.booking_fee.label}) lines up with measured live demand${evidence} — a clean deal at the current rate. ${src}`;
+ return `${a.name}'s fee (${a.booking_fee.label}) lines up with measured live demand${evidence}, a clean deal at the current rate. ${src}`;
   }
   // seller / manager / agent
-  if (g >= 1) return `${a.name}'s live demand${evidence}${surging} supports a fee around ${a.demand_fee_label} — about ${g} tier${g > 1 ? "s" : ""} above the current ${a.booking_fee.label} band. ${src}`;
+ if (g >= 1) return `${a.name}'s live demand${evidence}${surging} supports a fee around ${a.demand_fee_label}, about ${g} tier${g > 1 ? "s" : ""} above the current ${a.booking_fee.label} band. ${src}`;
   if (g <= -1) return `${a.name}'s fee (${a.booking_fee.label}) currently sits ahead of independently measured demand${evidence}. Defensible with private sell-through data, but a data-led buyer will likely cite the gap. ${src}`;
-  return `${a.name}'s ${a.booking_fee.label} fee is backed by independently measured live demand${evidence} — useful proof if a buyer tries to talk it down. ${src}`;
+ return `${a.name}'s ${a.booking_fee.label} fee is backed by independently measured live demand${evidence}, useful proof if a buyer tries to talk it down. ${src}`;
 }
 
 // Same data, two negotiating positions. This is why both audiences pay.
@@ -111,15 +111,15 @@ function bothSides(a) {
   const g = a.value_gap;
   if (g >= 1) return {
     buyer:  `Opportunity. You can likely book ${a.name} at today's rate before the fee rises to meet demand. If the quote comes in higher, this is your neutral benchmark to push back toward ${a.booking_fee.label}.`,
-    seller: `Leverage. Neutral demand data supports a higher fee — roughly ${a.demand_fee_label}. Bring this into the next conversation instead of arguing from gut feel.`,
+ seller: `Leverage. Neutral demand data supports a higher fee, roughly ${a.demand_fee_label}. Bring this into the next conversation instead of arguing from gut feel.`,
   };
   if (g <= -1) return {
     buyer:  `Caution. The asking fee runs ahead of measured demand. Use this to negotiate toward ${a.demand_fee_label}, or expect to carry more of the ticket-sales risk.`,
-    seller: `Your fee is ahead of measured demand. Defensible if you hold private sell-through data — but a data-driven buyer will likely cite a gap here, so be ready for it.`,
+ seller: `Your fee is ahead of measured demand. Defensible if you hold private sell-through data: but a data-driven buyer will likely cite a gap here, so be ready for it.`,
   };
   return {
     buyer:  `Priced in line with demand. No overpay risk at the current rate, and little headroom to negotiate down.`,
-    seller: `Priced correctly. The data backs your current fee — useful proof if a buyer tries to talk you down.`,
+ seller: `Priced correctly. The data backs your current fee, useful proof if a buyer tries to talk you down.`,
   };
 }
 
@@ -184,7 +184,7 @@ export function ValueReport({ rankings, slug }) {
     return (
       <div className="page vr-page">
         <button className="ap-back" onClick={back}>← Back</button>
-        <div className="vr-missing">No fair-value report for this artist yet — we only publish a verdict when there's a fee benchmark and enough live demand data to be neutral about it.</div>
+ <div className="vr-missing">No fair-value report for this artist yet, we only publish a verdict when there's a fee benchmark and enough live demand data to be neutral about it.</div>
       </div>
     );
   }
@@ -195,7 +195,7 @@ export function ValueReport({ rankings, slug }) {
 
   const copySummary = () => {
     const lines = [
-      `PEAKTIME — Fair Value Report: ${a.name}`,
+ `PEAKTIME, Fair Value Report: ${a.name}`,
       verdictText(a, conf),
       `Current fee band: ${a.booking_fee.label}  →  Demand-implied: ${a.demand_fee_label}  (confidence: ${conf.level})`,
       comps ? `Comparable fees (${comps.regional ? "same rooms, this artist's regions" : "same-size rooms"}): ${feeShort(comps.lo)}–${feeShort(comps.hi)} across ${comps.count} acts.` : null,
@@ -235,7 +235,7 @@ export function ValueReport({ rankings, slug }) {
         </div>
 
         {conf.level === "Low" && (
-          <div className="vr-lowconf">⚠ Indicative only. Too few independent signals to present this as proof — treat as a prompt to dig deeper, not a benchmark to cite.</div>
+ <div className="vr-lowconf">⚠ Indicative only. Too few independent signals to present this as proof: treat as a prompt to dig deeper, not a benchmark to cite.</div>
         )}
 
         <div className="vr-bands">
@@ -254,7 +254,7 @@ export function ValueReport({ rankings, slug }) {
 
         {!feeBasis(a).verified && (
           <div className="vr-feenote">
-            <strong>On the fee number:</strong> {feeBasis(a).note} We don't hold this act's transacted fee, so the benchmark is model-implied — read the gap as a demand signal, not a quoted price.{" "}
+ <strong>On the fee number:</strong> {feeBasis(a).note} We don't hold this act's transacted fee, so the benchmark is model-implied: read the gap as a demand signal, not a quoted price.{" "}
             <a href={`mailto:hello@thedjrankings.com?subject=${encodeURIComponent(`Fee anchor: ${a.name}`)}&body=${encodeURIComponent(`Real fee for ${a.name} (quote/contract/published):\nFee (GBP): \nSource (promoter-quote / agency-ratecard / contract / press): \nDate: \nRegion: \nNotes: `)}`}>Know the real fee? Send it →</a> Verified fees override the estimate and raise confidence.
           </div>
         )}
@@ -276,7 +276,7 @@ export function ValueReport({ rankings, slug }) {
                 <span className="vr-comp" key={e.name}><span className="vr-comp-n">{e.name}</span><span className="vr-comp-f">{e.fee}</span></span>
               ))}
             </div>
-            <div className="vr-comps-note">The neutral local anchor: {a.name}'s demand-implied {a.demand_fee_label} band sits against what acts filling the same rooms actually command — not a global index.</div>
+ <div className="vr-comps-note">The neutral local anchor: {a.name}'s demand-implied {a.demand_fee_label} band sits against what acts filling the same rooms actually command, not a global index.</div>
           </div>
         )}
 
@@ -297,7 +297,7 @@ export function ValueReport({ rankings, slug }) {
             </div>
           )}
           {a.value_anchor?.capped_by_venue && (
-            <div className="vr-ev-note">⛓ Implied fee capped at the venue size this artist actually fills — no arena-fee inflation from digital reach.</div>
+ <div className="vr-ev-note">⛓ Implied fee capped at the venue size this artist actually fills, no arena-fee inflation from digital reach.</div>
           )}
         </div>
 
@@ -321,10 +321,10 @@ export function ValueReport({ rankings, slug }) {
             <div className="vr-ev vr-ev--mo">
               <span className="vr-ev-dot vr-ev-dot--mo" />
               <span className="vr-ev-label">Momentum</span>
-              <span className="vr-ev-val">▲ {a.momentum_score}/100 — demand accelerating</span>
+ <span className="vr-ev-val">▲ {a.momentum_score}/100, demand accelerating</span>
             </div>
           )}
-          {conf.support.length === 0 && <div className="vr-ev-missing">No supporting digital signals yet — verdict rests on the live anchor alone.</div>}
+ {conf.support.length === 0 && <div className="vr-ev-missing">No supporting digital signals yet, verdict rests on the live anchor alone.</div>}
         </div>
 
         <div className="vr-section-h">What this means</div>
@@ -333,14 +333,14 @@ export function ValueReport({ rankings, slug }) {
             <div className="vr-side-h">For the buyer / promoter</div>
             <p>{sides.buyer}</p>
             <button className="vr-line-copy" onClick={() => copyLine("buyer")}>
-              {lineCopied === "buyer" ? "✓ Copied — paste into your offer" : "Copy the negotiation line ↗"}
+ {lineCopied === "buyer" ? "✓ Copied, paste into your offer" : "Copy the negotiation line ↗"}
             </button>
           </div>
           <div className="vr-side">
             <div className="vr-side-h">For the artist / manager</div>
             <p>{sides.seller}</p>
             <button className="vr-line-copy" onClick={() => copyLine("seller")}>
-              {lineCopied === "seller" ? "✓ Copied — paste into your pitch" : "Copy the negotiation line ↗"}
+ {lineCopied === "seller" ? "✓ Copied, paste into your pitch" : "Copy the negotiation line ↗"}
             </button>
           </div>
         </div>
@@ -413,8 +413,8 @@ export function ValueGapPage({ rankings }) {
         <p className="vg-lead">
           Booking fees are negotiated blind: the agent knows the artist's demand, the buyer doesn't, and
           there's no neutral number either side can point to. Value Gap is that number. It's anchored to
-          what bookers actually trust — <em>the venue size an artist fills, their live draw per show, and
-          their tour routing</em> — with streaming and search used only to corroborate, never to drive it.
+ what bookers actually trust: <em>the venue size an artist fills, their live draw per show, and
+ their tour routing</em>: with streaming and search used only to corroborate, never to drive it.
           The implied fee is capped at the rooms they really play, so it never inflates a club act into an
           arena fee. Open any artist for a ready-to-send negotiation line and a private pitch link.
         </p>
@@ -437,13 +437,13 @@ export function ValueGapPage({ rankings }) {
         <>
           <div className="vg-section">
             <div className="vg-head vg-head--prem">Don't overpay · fee runs ahead of demand</div>
-            <div className="vg-sub">Your leverage. The data supports a lower number — negotiate toward the demand-implied band.</div>
+ <div className="vg-sub">Your leverage. The data supports a lower number, negotiate toward the demand-implied band.</div>
             {buyerLead.length ? buyerLead.slice(0, 20).map(a => <Row key={a.name} a={a} />)
               : <div className="vg-empty">No clearly-overpriced acts with enough data to prove it right now.</div>}
           </div>
           <div className="vg-section">
             <div className="vg-head vg-head--up">Underpriced · book before the fee catches up</div>
-            <div className="vg-sub">Your opportunity. Demand has outpaced the fee — lock them in at today's rate.</div>
+ <div className="vg-sub">Your opportunity. Demand has outpaced the fee, lock them in at today's rate.</div>
             {buyerNext.slice(0, 25).map(a => <Row key={a.name} a={a} />)}
           </div>
         </>
@@ -457,7 +457,7 @@ export function ValueGapPage({ rankings }) {
           </div>
           <div className="vg-section">
             <div className="vg-head vg-head--prem">Priced ahead · defend it or expect pushback</div>
-            <div className="vg-sub">Your fee runs ahead of measured demand — fine if you hold private sell-through, but a data-driven buyer will cite this.</div>
+ <div className="vg-sub">Your fee runs ahead of measured demand: fine if you hold private sell-through, but a data-driven buyer will cite this.</div>
             {sellerNext.slice(0, 20).map(a => <Row key={a.name} a={a} />)}
           </div>
         </>
@@ -477,10 +477,10 @@ export function ValueGapPage({ rankings }) {
         </button>
         {showMethod && (
           <div className="vg-method-body">
-            <p><strong>It's anchored to live demand, not digital vanity metrics.</strong> The demand index is led (≈two-thirds of its weight) by the signals bookers price on: the venue tier an artist commands, their average live draw per show, streaming-to-live conversion, and tour-routing breadth. Streaming reach, Beatport, search and YouTube only corroborate — they can't drive a verdict on their own. This is the direct answer to "global metrics are noise until they line up with local ticket velocity and routing."</p>
+ <p><strong>It's anchored to live demand, not digital vanity metrics.</strong> The demand index is led (≈two-thirds of its weight) by the signals bookers price on: the venue tier an artist commands, their average live draw per show, streaming-to-live conversion, and tour-routing breadth. Streaming reach, Beatport, search and YouTube only corroborate, they can't drive a verdict on their own. This is the direct answer to "global metrics are noise until they line up with local ticket velocity and routing."</p>
             <p><strong>The implied fee is capped by venue size.</strong> A fee can't outrun the rooms you fill, so the demand-implied tier is capped at the venue tier an artist actually plays (plus a notch of headroom). No arena fee gets pinned on a 500-capacity club act because their Spotify is big.</p>
-            <p><strong>No verdict without a live anchor.</strong> We publish a gap only for artists with a real venue tier <em>and</em> attendance figure to stand on. No live data, no verdict — the global-digital-only cases are excluded rather than guessed at.</p>
-            <p><strong>It's a relative re-pricing.</strong> Every anchored artist is ranked by a 0–100 demand index, then mapped onto the <em>actual</em> distribution of booking-fee tiers. A gap means the data ranks an artist above (or below) where their fee sits — not a fee "wrong" against an invented scale. Across the field the gaps net to roughly zero.</p>
+ <p><strong>No verdict without a live anchor.</strong> We publish a gap only for artists with a real venue tier <em>and</em> attendance figure to stand on. No live data, no verdict, the global-digital-only cases are excluded rather than guessed at.</p>
+ <p><strong>It's a relative re-pricing.</strong> Every anchored artist is ranked by a 0–100 demand index, then mapped onto the <em>actual</em> distribution of booking-fee tiers. A gap means the data ranks an artist above (or below) where their fee sits, not a fee "wrong" against an invented scale. Across the field the gaps net to roughly zero.</p>
             <p><strong>It states its confidence and uses no party's input.</strong> Every verdict carries a confidence level from how well the live anchor holds and how much corroborates it; thin cases are held back. Neither the artist nor the buyer feeds it anything.</p>
           </div>
         )}

@@ -24,14 +24,14 @@ async function getSpotifyData(artistId, token) {
 
   return {
     name: artistRes.data.name,
-    spotify_followers: 0,          // not accessible — album_count used via fetchSpotifyPlaylists
+ spotify_followers: 0, // not accessible, album_count used via fetchSpotifyPlaylists
     spotify_monthly_listeners: 0,  // not accessible under Client Credentials
     spotify_url: artistRes.data.external_urls.spotify,
     image: artistRes.data.images[0]?.url,
   };
 }
 
-// Returns track popularity signals. Currently 403 under Client Credentials —
+// Returns track popularity signals. Currently 403 under Client Credentials,
 // will activate automatically once Spotify grants extended quota access.
 async function getSpotifyTopTracks(artistId, token) {
   try {

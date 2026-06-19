@@ -100,18 +100,18 @@ export default function IndexDrop({ rankings = [], lastUpdated }) {
         <div className="idx-kicker">The PEAKTIME Index</div>
         <h1 className="idx-month">{monthLabel}</h1>
         <p className="idx-standfirst">
-          The neutral booking-demand index for house &amp; techno — who's rising, who's mispriced,
+ The neutral booking-demand index for house &amp; techno: who's rising, who's mispriced,
           and where, this month. Data, not hype.
         </p>
       </header>
 
-      {/* 1 — The headline */}
+ {/* 1, The headline */}
       <section className="idx-section idx-headline">
         <div className="idx-eyebrow">This month</div>
         <h2 className="idx-headline-title">{headline}</h2>
       </section>
 
-      {/* 2 — Movers */}
+ {/* 2, Movers */}
       <section className="idx-section">
         <div className="idx-section-head">
           <h2 className="idx-h2">Movers</h2>
@@ -135,7 +135,7 @@ export default function IndexDrop({ rankings = [], lastUpdated }) {
         )}
       </section>
 
-      {/* 3 — Value Gap of the Month */}
+ {/* 3, Value Gap of the Month */}
       {valuePick && (
         <section className="idx-section idx-value">
           <div className="idx-section-head">
@@ -149,9 +149,9 @@ export default function IndexDrop({ rankings = [], lastUpdated }) {
               <span className="idx-value-lbl">booking demand says the fee should be higher than where it sits</span>
             </div>
             <div className="idx-value-fees">
-              <span>Known fee <strong>{valuePick.booking_fee?.label || "—"}</strong></span>
+ <span>Known fee <strong>{valuePick.booking_fee?.label || "—"}</strong></span>
               <span className="idx-value-arrow">→</span>
-              <span>Demand-implied <strong>{valuePick.demand_fee_label || "—"}</strong></span>
+ <span>Demand-implied <strong>{valuePick.demand_fee_label || "—"}</strong></span>
             </div>
             {Array.isArray(valuePick.scene_tags) && valuePick.scene_tags.length > 0 && (
               <div className="idx-value-tags">
@@ -163,11 +163,11 @@ export default function IndexDrop({ rankings = [], lastUpdated }) {
         </section>
       )}
 
-      {/* 4 — City in Focus */}
+ {/* 4, City in Focus */}
       {cityFocus && (
         <section className="idx-section">
           <div className="idx-section-head">
-            <h2 className="idx-h2">City in Focus — {cityFocus.city}</h2>
+ <h2 className="idx-h2">City in Focus, {cityFocus.city}</h2>
             <span className="idx-section-note">Most live booking activity this period</span>
           </div>
           <div className="idx-city-acts">
@@ -185,16 +185,16 @@ export default function IndexDrop({ rankings = [], lastUpdated }) {
       <section className="idx-section idx-capture">
         <EmailCapture
           source="index-drop"
-          heading={`Get the ${monthLabel} Index — and every drop after`}
-          sub="The full index plus Movers, the Value Gap of the Month, and City in Focus — in your inbox on the 1st. Free and neutral."
+ heading={`Get the ${monthLabel} Index, and every drop after`}
+ sub="The full index plus Movers, the Value Gap of the Month, and City in Focus, in your inbox on the 1st. Free and neutral."
         />
         <IntelUpsell source="index-drop" />
       </section>
 
-      {/* 5 — The top 20 snapshot */}
+ {/* 5, The top 20 snapshot */}
       <section className="idx-section">
         <div className="idx-section-head">
-          <h2 className="idx-h2">The Index — Top 20</h2>
+ <h2 className="idx-h2">The Index, Top 20</h2>
           <span className="idx-section-note">{monthLabel} snapshot</span>
         </div>
         <ol className="idx-top20">
@@ -210,7 +210,7 @@ export default function IndexDrop({ rankings = [], lastUpdated }) {
         </ol>
       </section>
 
-      {/* Masthead / neutrality footer — same every issue */}
+ {/* Masthead / neutrality footer, same every issue */}
       <footer className="idx-footer">
         <p>
           The PEAKTIME Index ranks booking demand, not popularity, from a transparent
@@ -219,7 +219,7 @@ export default function IndexDrop({ rankings = [], lastUpdated }) {
         </p>
         <p className="idx-footer-rule">
           We never take payment to alter a ranking or fee benchmark. A fabricated stat is
-          the one thing that would break this — so we don't print one.
+ the one thing that would break this, so we don't print one.
         </p>
       </footer>
     </div>

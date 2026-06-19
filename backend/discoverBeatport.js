@@ -91,8 +91,8 @@ async function scrapeChart(slug, id) {
     if (toAdd.length) fs.writeFileSync(ARTISTS, JSON.stringify(artists, null, 2));
     console.log(`\nAdded ${toAdd.length} new artists (score >= ${MIN}, ${MIN_CHARTS}+ charts, untagged) to artists.json. Roster now ${artists.length}.`);
     const skipped = candidates.filter(c => c.score >= MIN && (c.tagged || c.dupe)).map(c => c.name);
-    if (skipped.length) console.log("Skipped (country-tagged or dupe — manual review):", skipped.join(", "));
+ if (skipped.length) console.log("Skipped (country-tagged or dupe: manual review):", skipped.join(", "));
   } else {
-    console.log(`\n(report only — re-run with --add to append candidates with score >= ${MIN})`);
+ console.log(`\n(report only, re-run with --add to append candidates with score >= ${MIN})`);
   }
 })();

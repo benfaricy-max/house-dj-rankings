@@ -113,7 +113,7 @@ function ReachCredChart({ rankings }) {
           <h2 className="ch-title">Reach vs. Credibility</h2>
           <p className="ch-sub">
             Streaming reach on the x-axis, scene credibility (Beatport + editorial Scene score) on the y.
-            Bubble size = momentum. The top-left quadrant is the DJ's DJs — revered, not yet mainstream.
+ Bubble size = momentum. The top-left quadrant is the DJ's DJs: revered, not yet mainstream.
           </p>
         </div>
         <button className="ch-toggle" onClick={() => setShowData((s) => !s)} aria-pressed={showData}>
@@ -123,13 +123,13 @@ function ReachCredChart({ rankings }) {
 
       {showData ? (
         <DataTable
-          caption="Reach vs. Credibility — underlying values"
+ caption="Reach vs. Credibility, underlying values"
           cols={["Rank", "Artist", "Reach (idx)", "Credibility", "Momentum", "Monthly listeners"]}
           rows={pts
             .slice()
             .sort((a, b) => b.y - a.y)
             .map((p) => [
-              p.rank ?? "—",
+ p.rank ?? "—",
               p.name,
               p.x.toFixed(0),
               p.y.toFixed(0),
@@ -246,7 +246,7 @@ function TrendsChart({ rankings }) {
   if (!series.length)
     return (
       <section className="ch-card">
-        <Empty title="Momentum / Trends" msg="Search-interest history is still accruing — check back after the next refresh." />
+ <Empty title="Momentum / Trends" msg="Search-interest history is still accruing, check back after the next refresh." />
       </section>
     );
 
@@ -255,7 +255,7 @@ function TrendsChart({ rankings }) {
       <header className="ch-head">
         <div>
           <span className="ch-eyebrow">12-month search interest</span>
-          <h2 className="ch-title">Momentum — who's accelerating</h2>
+ <h2 className="ch-title">Momentum, who's accelerating</h2>
           <p className="ch-sub">The six highest-momentum acts, each normalised to its own peak. Movement is the signal, not position.</p>
         </div>
       </header>
@@ -311,7 +311,7 @@ function RankingsBar({ rankings }) {
       <header className="ch-head">
         <div>
           <span className="ch-eyebrow">Composite index</span>
-          <h2 className="ch-title">Top 20 — overall demand</h2>
+ <h2 className="ch-title">Top 20, overall demand</h2>
           <p className="ch-sub">The weighted multi-signal score, sorted descending. Click any bar for the full breakdown.</p>
         </div>
       </header>
@@ -402,7 +402,7 @@ function SignalRadar({ rankings }) {
         </svg>
         <DataTable
           compact
-          caption={`${dj.name} — signal scores`}
+ caption={`${dj.name}, signal scores`}
           cols={["Signal", "Score"]}
           rows={data.map((d) => [d.label, d.v.toFixed(0)])}
         />
@@ -457,7 +457,7 @@ export default function ChartsPage({ rankings }) {
     <div className="ch-page">
       <div className="ch-intro">
         <h1 className="ch-h1">Charts</h1>
-        <p className="ch-lede">The Index, read visually — where demand sits, who's moving, and the shape of each act's signals.</p>
+ <p className="ch-lede">The Index, read visually: where demand sits, who's moving, and the shape of each act's signals.</p>
       </div>
       <ReachCredChart rankings={rankings} />
       <TrendsChart rankings={rankings} />

@@ -54,7 +54,7 @@ function computeLiveDemand(artists) {
     } else if (tour != null) {
       live = 0.9 * tour;         // RA blind → fall back to tour density (coarser, lightly discounted)
     } else {
-      live = null;               // neither source — leave absent (no contribution)
+ live = null; // neither source, leave absent (no contribution)
     }
     a.live_demand_score = live == null ? null : Math.round(live);
   }

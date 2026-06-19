@@ -32,7 +32,7 @@ function track(event, props) {
     const log = JSON.parse(localStorage.getItem("peaktime_funnel") || "[]");
     log.push({ event, ...props, t: new Date().toISOString() });
     localStorage.setItem("peaktime_funnel", JSON.stringify(log));
-  } catch { /* storage disabled — ignore */ }
+ } catch { /* storage disabled, ignore */ }
 }
 
 export default function UpgradeCTA({ tier = "solo", surface = "value_gap" }) {
@@ -43,20 +43,20 @@ export default function UpgradeCTA({ tier = "solo", surface = "value_gap" }) {
   const onClick = () => {
     track("upgrade_click", { tier, surface });
     if (link) { track("reached_stripe", { tier, surface }); window.open(link, "_blank", "noopener"); }
-    else setDone(true); // no link configured yet — still capture intent
+ else setDone(true); // no link configured yet, still capture intent
   };
 
   if (done) {
     return (
       <div className="vg-fakedoor vg-fakedoor--done" role="status">
-        You're on the list — I'll set up your access and email you within 24h. Thanks for backing this.
+ You're on the list, I'll set up your access and email you within 24h. Thanks for backing this.
       </div>
     );
   }
   return (
     <div className="vg-fakedoor">
       <div className="vg-fakedoor-text">
-        <strong>{c.label} — {c.price}</strong>
+ <strong>{c.label}, {c.price}</strong>
         <span>{c.sub}</span>
       </div>
       <button className="vg-fakedoor-btn" onClick={onClick}>Get {c.price === "£75/mo" ? "Solo" : "Team"} →</button>

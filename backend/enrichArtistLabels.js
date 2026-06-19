@@ -102,7 +102,7 @@ async function fetchLabels(id) {
       failStreak = 0;
     } catch (e) {
       failStreak++;
-      if (failStreak >= 10) { console.log("Too many consecutive errors — saving and stopping."); break; }
+ if (failStreak >= 10) { console.log("Too many consecutive errors, saving and stopping."); break; }
     }
     if (++done % 15 === 0) { fs.writeFileSync(RANKINGS, JSON.stringify(data)); fs.writeFileSync(ARTISTS, JSON.stringify(artists, null, 2)); process.stdout.write(`\r${done}/${todo.length} · ${scored} scored · ${resolved} new ids · ${missed} no-match   `); }
   }

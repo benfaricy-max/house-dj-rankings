@@ -106,10 +106,10 @@ async function fetchArtist(id) {
         a.geo_updated = new Date().toISOString();
         ok++;
       } else {
-        kept++; // no city data returned — keep whatever exists
+ kept++; // no city data returned, keep whatever exists
       }
       if (i % 25 === 0 || i === targets.length) {
-        process.stdout.write(`  [${i}/${targets.length}] ${a.name}: geo ${a.scene_geography ?? "—"} (${cities.length} cities)\n`);
+ process.stdout.write(` [${i}/${targets.length}] ${a.name}: geo ${a.scene_geography ?? "—"} (${cities.length} cities)\n`);
       }
     } catch (e) {
       kept++; // keep existing values on any failure (rule #1)

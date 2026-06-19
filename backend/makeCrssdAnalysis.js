@@ -149,19 +149,19 @@ const tableHTML = tracked.map(({ a, d }) => `<tr>
   <td>${a.name}</td>
   <td class="tnum">#${d.rank}</td>
   <td class="tnum">${usd(a.fee)}</td>
-  <td>${d.momentum >= 0 ? `<span class="p-mo tnum">${d.momentum}</span>` : '<span class="tnum" style="color:#555">—</span>'}</td>
-  <td>${d.value === "strong-buy" ? '<span class="pill p-buy">★ Strong buy</span>' : d.value === "buy" ? '<span class="pill p-buy">Underpriced</span>' : d.value === "premium" ? '<span class="pill p-prem">Priced ahead</span>' : '<span style="color:#555">—</span>'}</td>
-  <td class="tnum">${d.conv >= 0 ? d.conv : "—"}</td>
-  <td class="tnum">${d.beatport || "—"}</td>
-  <td class="tnum">${d.ra || "—"}</td>
+ <td>${d.momentum >= 0 ? `<span class="p-mo tnum">${d.momentum}</span>` : '<span class="tnum" style="color:#555">—</span>'}</td>
+ <td>${d.value === "strong-buy" ? '<span class="pill p-buy">★ Strong buy</span>' : d.value === "buy" ? '<span class="pill p-buy">Underpriced</span>' : d.value === "premium" ? '<span class="pill p-prem">Priced ahead</span>' : '<span style="color:#555">—</span>'}</td>
+ <td class="tnum">${d.conv >= 0 ? d.conv : "—"}</td>
+ <td class="tnum">${d.beatport || "—"}</td>
+ <td class="tnum">${d.ra || "—"}</td>
 </tr>`).join("");
 
 const tierTotals = [1, 2, 3].map(t => ACTS.filter(a => a.tier === t).reduce((s, a) => s + a.fee, 0));
 
 const PAGE = `<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CRSSD Fall 2026 — Lineup Intelligence | PEAKTIME</title>
-<meta name="description" content="A data-driven booking analysis of the CRSSD Fall 2026 lineup — estimated budget, value buys, overpays and market saturation, by PEAKTIME / thedjrankings.com.">
+<title>CRSSD Fall 2026, Lineup Intelligence | PEAKTIME</title>
+<meta name="description" content="A data-driven booking analysis of the CRSSD Fall 2026 lineup: estimated budget, value buys, overpays and market saturation, by PEAKTIME / thedjrankings.com.">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>${STYLE}</style></head><body>
 <div class="wrap">
@@ -169,7 +169,7 @@ const PAGE = `<!doctype html><html lang="en"><head><meta charset="utf-8">
   <div class="hero">
     <div class="eyebrow">Lineup Intelligence · San Diego · Sept 26–27 2026</div>
     <h1>CRSSD Fall 2026:<br>what the lineup is really worth</h1>
-    <p class="lead">We ran the CRSSD Fall 2026 bill through PEAKTIME's demand model — estimating the talent budget, then scoring each act on momentum, value, live conversion and market freshness. Here's where the money went, who's underpriced, and who'll actually move tickets.</p>
+ <p class="lead">We ran the CRSSD Fall 2026 bill through PEAKTIME's demand model: estimating the talent budget, then scoring each act on momentum, value, live conversion and market freshness. Here's where the money went, who's underpriced, and who'll actually move tickets.</p>
   </div>
 
   <div class="kpis">
@@ -190,51 +190,51 @@ const PAGE = `<!doctype html><html lang="en"><head><meta charset="utf-8">
 
   <h2>Key wins &amp; watch-outs</h2>
   <div class="grid">
-    <div class="box win"><span class="tag win">Smartest buy</span><h3>Prospa — booked low, demand high</h3>
-      <p>#4 on the index, momentum <b>56</b>, Beatport <b>95</b>, RA <b>88</b> — flagged a <b>Strong Buy</b> (demand implies a £70–150K tier vs an estimated ~$42K here). The fee almost certainly jumps before the next CRSSD.</p></div>
+ <div class="box win"><span class="tag win">Smartest buy</span><h3>Prospa: booked low, demand high</h3>
+ <p>#4 on the index, momentum <b>56</b>, Beatport <b>95</b>, RA <b>88</b>, flagged a <b>Strong Buy</b> (demand implies a £70–150K tier vs an estimated ~$42K here). The fee almost certainly jumps before the next CRSSD.</p></div>
     <div class="box win"><span class="tag win">Value mid-card</span><h3>KETTAMA &amp; Carlita punch up</h3>
-      <p>KETTAMA carries a <b>66</b> live-conversion score — his RA crowd dwarfs his streaming, so he overdelivers on a festival stage relative to a ~$48K fee. Carlita flags underpriced too. Classic margin bookings.</p></div>
+ <p>KETTAMA carries a <b>66</b> live-conversion score: his RA crowd dwarfs his streaming, so he overdelivers on a festival stage relative to a ~$48K fee. Carlita flags underpriced too. Classic margin bookings.</p></div>
     <div class="box warn"><span class="tag warn">Paying for the name</span><h3>The headline b2b is a marquee, not a deal</h3>
-      <p>Chris Lake b2b Disclosure eats <b>${pct(250000).toFixed(0)}%</b> of the budget, and both read <b>Priced ahead</b> — fees hotter than current momentum (Disclosure 20, Chris Lake 5, both flat). It sells the festival; it isn't a value play.</p></div>
+ <p>Chris Lake b2b Disclosure eats <b>${pct(250000).toFixed(0)}%</b> of the budget, and both read <b>Priced ahead</b>: fees hotter than current momentum (Disclosure 20, Chris Lake 5, both flat). It sells the festival; it isn't a value play.</p></div>
     <div class="box warn"><span class="tag warn">Breakout to watch</span><h3>Rossi. is accelerating fast</h3>
-      <p>Momentum <b>75</b> — among the steepest on the whole bill — at an estimated b2b-shared fee. Booked early enough that the b2b-with-Carlita slot looks like a steal in hindsight if the climb continues.</p></div>
+ <p>Momentum <b>75</b>, among the steepest on the whole bill, at an estimated b2b-shared fee. Booked early enough that the b2b-with-Carlita slot looks like a steal in hindsight if the climb continues.</p></div>
   </div>
 
-  <h2>Market saturation — this is a San Diego date</h2>
+ <h2>Market saturation, this is a San Diego date</h2>
   <div class="box" style="margin-top:6px"><span class="tag sat">West-coast fatigue risk</span>
     <ul>
-      <li><b>Chris Lake</b> is heavily worked on the US West Coast — Las Vegas (2 shows/3mo) and SF/Oakland — so the "event" scarcity is low for a SoCal crowd.</li>
-      <li><b>KETTAMA</b> is maxed in SF/Oakland (5 shows/3mo, saturation 100) and has already hit San Diego this quarter — some local-fatigue risk despite the value.</li>
-      <li><b>Mathame</b> recently played both San Diego and LA — regionally present.</li>
-      <li>Upside: <b>Disclosure, Prospa, Carlita, I Hate Models, Ben UFO, Helena Hauff</b> carry their saturation in <i>other</i> markets — comparatively fresh for Southern California.</li>
+ <li><b>Chris Lake</b> is heavily worked on the US West Coast, Las Vegas (2 shows/3mo) and SF/Oakland, so the "event" scarcity is low for a SoCal crowd.</li>
+ <li><b>KETTAMA</b> is maxed in SF/Oakland (5 shows/3mo, saturation 100) and has already hit San Diego this quarter, some local-fatigue risk despite the value.</li>
+ <li><b>Mathame</b> recently played both San Diego and LA, regionally present.</li>
+ <li>Upside: <b>Disclosure, Prospa, Carlita, I Hate Models, Ben UFO, Helena Hauff</b> carry their saturation in <i>other</i> markets, comparatively fresh for Southern California.</li>
     </ul>
   </div>
 
   <h2>Streaming ≠ tickets</h2>
-  <p>The number a streaming chart hides — RA live-attendance relative to streaming reach. The contrast on this bill is stark:</p>
+ <p>The number a streaming chart hides, RA live-attendance relative to streaming reach. The contrast on this bill is stark:</p>
   <div class="grid">
     <div class="box win"><span class="tag win">Converts above its weight</span>
       <ul>${ACTS.map(a => ({ a, d: actData(a) })).filter(x => x.d.covered && x.d.conv >= 70)
         .sort((x, y) => y.d.conv - x.d.conv).slice(0, 5)
-        .map(({ a, d }) => `<li><b>${a.name}</b> — conversion ${d.conv}/100${sig(a.members ? a.members[0] : a.name)?.spotify_monthly_listeners ? ` on just ${(sig(a.members ? a.members[0] : a.name).spotify_monthly_listeners / 1e6).toFixed(1)}M listeners` : ""}</li>`).join("")}</ul>
-      <p style="font-size:13px;margin-top:6px">Niche draw &gt; streaming size — the value end of the bill.</p></div>
+.map(({ a, d }) => `<li><b>${a.name}</b>, conversion ${d.conv}/100${sig(a.members ? a.members[0] : a.name)?.spotify_monthly_listeners ? ` on just ${(sig(a.members ? a.members[0] : a.name).spotify_monthly_listeners / 1e6).toFixed(1)}M listeners` : ""}</li>`).join("")}</ul>
+ <p style="font-size:13px;margin-top:6px">Niche draw &gt; streaming size, the value end of the bill.</p></div>
     <div class="box warn"><span class="tag warn">Big streams, soft live demand</span>
       <ul>${ACTS.map(a => ({ a, d: actData(a), ml: sig(a.members ? a.members[0] : a.name)?.spotify_monthly_listeners || 0 }))
         .filter(x => x.d.covered && x.ml >= 3e6 && x.d.conv >= 0 && x.d.conv < 20)
         .sort((x, y) => y.ml - x.ml).slice(0, 5)
-        .map(({ a, d, ml }) => `<li><b>${a.name}</b> — ${(ml / 1e6).toFixed(1)}M listeners but conversion ${d.conv}/100</li>`).join("")}</ul>
+.map(({ a, d, ml }) => `<li><b>${a.name}</b>, ${(ml / 1e6).toFixed(1)}M listeners but conversion ${d.conv}/100</li>`).join("")}</ul>
       <p style="font-size:13px;margin-top:6px">Great for the on-sale headline, riskier as a room-filling booking.</p></div>
   </div>
 
   <h2>Who actually drives ticket sales</h2>
-  <p>Three different jobs on this bill: the <b>marquee</b> (Chris Lake b2b Disclosure, Skepta, Mochakk, Sonny Fodera) sells the on-sale; the <b>scene-credibility</b> techno block (I Hate Models, Ben UFO, Helena Hauff, 999999999, VTSS — all high RA booking demand) sells the festival's underground bona fides and converts the hardcore; and the <b>value mid-card</b> (Prospa, KETTAMA, Carlita, Jamback) over-delivers relative to spend. The hidden engine is live-conversion: acts like KETTAMA and Helena Hauff turn modest streaming into outsized room demand — exactly what a discerning buyer wants.</p>
+ <p>Three different jobs on this bill: the <b>marquee</b> (Chris Lake b2b Disclosure, Skepta, Mochakk, Sonny Fodera) sells the on-sale; the <b>scene-credibility</b> techno block (I Hate Models, Ben UFO, Helena Hauff, 999999999, VTSS: all high RA booking demand) sells the festival's underground bona fides and converts the hardcore; and the <b>value mid-card</b> (Prospa, KETTAMA, Carlita, Jamback) over-delivers relative to spend. The hidden engine is live-conversion: acts like KETTAMA and Helena Hauff turn modest streaming into outsized room demand, exactly what a discerning buyer wants.</p>
 
   <h2>The tracked acts, by the numbers</h2>
   <table><thead><tr><th>Artist</th><th>Rank</th><th>Est. fee</th><th>Mom.</th><th>Value</th><th>Conv.</th><th>BP</th><th>RA</th></tr></thead>
   <tbody>${tableHTML}</tbody></table>
 
   <div class="note">
-    <b>Method &amp; caveats.</b> Booking fees are PEAKTIME editorial estimates for a US festival booking (USD), not confirmed contracts — actual fees vary with routing, exclusivity and timing. b2b and "presents" slots are costed as a single line. Rank, momentum, value, live-conversion, Beatport and RA figures are live from thedjrankings.com for the ${tracked.length} acts the roster currently tracks; blanks are acts/data we don't yet cover. Demand signals from public sources (Spotify, Beatport, Resident Advisor, Google Trends, Wikipedia). Not affiliated with CRSSD or FNGRS CRSSD.
+ <b>Method &amp; caveats.</b> Booking fees are PEAKTIME editorial estimates for a US festival booking (USD), not confirmed contracts: actual fees vary with routing, exclusivity and timing. b2b and "presents" slots are costed as a single line. Rank, momentum, value, live-conversion, Beatport and RA figures are live from thedjrankings.com for the ${tracked.length} acts the roster currently tracks; blanks are acts/data we don't yet cover. Demand signals from public sources (Spotify, Beatport, Resident Advisor, Google Trends, Wikipedia). Not affiliated with CRSSD or FNGRS CRSSD.
     <br><br>PEAKTIME · the demand index for electronic music · <b style="color:var(--accent)">thedjrankings.com</b>
   </div>
 </div>

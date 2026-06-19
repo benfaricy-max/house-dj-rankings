@@ -49,7 +49,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8">
   <div class="brand">${MARK}<b>PEAKTIME</b></div>
   <div class="eyebrow">Club Index · Top 10</div>
   <h1>The most legendary<br>house destinations</h1>
-  <div class="sub">Ranked on music integrity, heritage &amp; legendary sessions — not hype.</div>
+ <div class="sub">Ranked on music integrity, heritage &amp; legendary sessions, not hype.</div>
   ${rows}
   <div class="note">Editorial index · north star = music integrity. Fame &amp; bottle service earn nothing.</div>
   <div class="ftr"><span>full 50 + club profiles</span><span><b>thedjrankings.com</b></span></div>
