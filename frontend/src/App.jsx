@@ -2438,6 +2438,13 @@ function ReportsPage({ rankings }) {
         </div>
       </a>
 
+      <a className="rp-card" href="/press" style={{ borderColor: "rgba(200,247,80,.18)" }}>
+        <div className="rp-meta"><span className="rp-tag">Press</span> · As seen in AP News &amp; USA Today</div>
+        <div className="rp-card-title">PEAKTIME in the News</div>
+        <div className="rp-card-dek">Press resources, story angles, and key data for journalists.</div>
+        <span className="rp-read">View press page →</span>
+      </a>
+
       <div className="rp-list">
  {/* The Index, visualised, charts folded in as a single report */}
         <button className="rp-card" style={btnReset} onClick={() => { setView("charts"); window.scrollTo({ top: 0 }); }}>
