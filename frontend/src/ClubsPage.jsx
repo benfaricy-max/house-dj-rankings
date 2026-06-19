@@ -42,7 +42,7 @@ export default function ClubsPage() {
         <h1 className="clubs-title">The 50 most legendary house destinations</h1>
         <p className="clubs-sub">
           Not a popularity contest and not a list of the biggest rooms. We rank the world's house &amp; techno
-          venues with <b>music integrity as the north star</b> — serious, music-first programming and sound over
+ venues with <b>music integrity as the north star</b>: serious, music-first programming and sound over
           spectacle, alongside heritage and legendary sessions. Booking famous artists earns nothing; bottle-service
           and EDM-tourist models score low. Tap any club for its full story.
         </p>
@@ -75,7 +75,7 @@ export default function ClubsPage() {
       </div>
 
       <div className="clubs-foot">
-        Editorial index — scored by PEAKTIME against the published rubric above, with music integrity as the north
+ Editorial index: scored by PEAKTIME against the published rubric above, with music integrity as the north
         star. Not driven by ticket sales, capacity or social following. Corrections and nominations welcome.
       </div>
     </div>
@@ -136,8 +136,13 @@ export function ClubProfile({ slug }) {
         </div>
       </div>
 
-      {!p.lore && <div className="cp-foot">Full profile in progress — this club's extended story is being written. Score &amp; criteria are live.</div>}
+ {!p.lore && <div className="cp-foot">Full profile in progress, this club's extended story is being written. Score &amp; criteria are live.</div>}
       <div className="cp-foot">PEAKTIME Club Index · editorial. A club's score never rises for booking a popular artist.</div>
+
+      <a href="https://peaktimegumroadcom.gumroad.com/l/ypfrg" target="_blank" rel="noopener noreferrer" style={{ display: "block", margin: "16px 0 4px", background: "#111114", border: "1px solid #1e1f23", borderRadius: 10, padding: "14px 18px", textDecoration: "none", color: "inherit" }}>
+        <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#C8F750" }}>Summer 2026 Edition</span>
+        <p style={{ margin: "4px 0 0", fontSize: 14, color: "#a9a8a2" }}>The full Club Top 50 + House 100 ranked in print. <span style={{ color: "#C8F750" }}>Get the edition →</span></p>
+      </a>
     </div>
   );
 }

@@ -186,6 +186,8 @@
 }
 .top-tab:hover { color: var(--text-h); }
 .top-tab--active { background: var(--bg); color: var(--text-h); box-shadow: 0 1px 4px rgba(0,0,0,0.15); }
+.top-tab--edition { color: #C8F750; font-weight: 600; }
+.top-tab--edition:hover { color: #C8F750; }
 
 /* ── Section heading (was a kicker; now a real heading via scale + weight) ── */
 .section-eyebrow {
@@ -1204,7 +1206,7 @@ details[open] .hiw-faq-q::after { content: "–"; }
   text-align: left; white-space: normal; cursor: default;
 }
 /* On narrow screens a mid-card anchor can't fit a tooltip either side, so pin it
-   as a small fixed card near the bottom — always fully on-screen and readable. */
+ as a small fixed card near the bottom, always fully on-screen and readable. */
 @media (max-width: 560px) {
   .infotip-pop {
     position: fixed; top: auto; bottom: 16px; left: 14px; right: 14px;
