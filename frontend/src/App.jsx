@@ -1008,6 +1008,16 @@ function HowItWorksPage() {
           ))}
         </div>
       </section>
+
+      <section className="hiw-section">
+        <h3 className="hiw-section-title">Independence &amp; corrections</h3>
+        <p className="hiw-section-sub">
+          PEAKTIME is independent and not a booking agency — no pay-to-rank, and fee figures are model-implied estimates, not transacted prices. How the index stays neutral, and how to report an error:
+        </p>
+        <p className="hiw-section-sub" style={{ marginTop: 10 }}>
+          <a href="/about">About PEAKTIME</a> · <a href="/about/editorial-policy">Editorial policy</a> · <a href="/about/corrections">Corrections</a>
+        </p>
+      </section>
     </div>
   );
 }

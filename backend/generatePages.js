@@ -505,11 +505,77 @@ ${inner}
 `;
 }
 
+// Dark shell for the trust pages — matches the live SPA's dark theme (near-black
+// #0c0c0e, acid-lime #C8F750 accents, Space Grotesk) rather than the light report
+// look of pageShell. Same class structure as pageShell so the trust renderers'
+// inner markup works unchanged. Kept separate so /compare and /scene stay light.
+function darkShell({ title, desc, canonical, ogImage, jsonld, docTitle, updatedHuman, inner }) {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0c0c0e" />
+<title>${esc(title)}</title>
+<meta name="description" content="${esc(desc)}" />
+<link rel="canonical" href="${canonical}" />
+<meta property="og:title" content="${esc(title)}" />
+<meta property="og:description" content="${esc(desc)}" />
+<meta property="og:url" content="${canonical}" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="${ORIGIN}${ogImage}" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">${JSON.stringify(jsonld)}</script>
+<style>
+  :root { --bg:#0c0c0e; --card:#111114; --ink:#E9E7DF; --text:#a9a8a2; --muted:#8a8b92; --line:#1e1f23; --accent:#C8F750; --accent-bg:rgba(200,247,80,.10); }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Space Grotesk',system-ui,sans-serif; color:var(--text); background:var(--bg); padding:28px; }
+  .page { max-width:820px; margin:0 auto; background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+  .top { background:#08080a; border-bottom:1px solid var(--line); padding:22px 34px; display:flex; justify-content:space-between; align-items:center; }
+  .brand { font-size:12px; letter-spacing:.18em; color:var(--accent); font-weight:700; }
+  .doc-title { font-size:13px; color:var(--muted); margin-top:2px; }
+  .top .date { font-size:12px; color:var(--muted); text-align:right; }
+  .hero { padding:30px 34px 22px; border-bottom:1px solid var(--line); }
+  .hero h1 { font-size:30px; line-height:1.12; color:var(--accent); font-weight:700; }
+  .hero .sub { color:var(--text); font-size:15px; margin-top:12px; max-width:64ch; line-height:1.6; }
+  .hero .upd { color:var(--muted); font-size:12.5px; margin-top:12px; }
+  .section { padding:22px 34px; border-bottom:1px solid var(--line); }
+  .section h2 { font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--accent); margin-bottom:14px; font-weight:700; }
+  .section p { color:var(--text); font-size:14.5px; line-height:1.65; margin-bottom:10px; }
+  .section p strong, .section strong { color:var(--ink); }
+  a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; }
+  .faq dt { font-weight:700; font-size:14.5px; margin-top:14px; color:var(--ink); }
+  .faq dd { color:var(--text); font-size:14px; line-height:1.6; margin-top:5px; }
+  .foot { padding:16px 34px; font-size:12px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  .foot b { color:var(--ink); }
+  @media (max-width:560px){ body{padding:12px;} .top,.hero,.section,.foot{padding-left:18px;padding-right:18px;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top">
+    <div><div class="brand">THE DJ RANKINGS</div><div class="doc-title">${esc(docTitle)}</div></div>
+    <div class="date">Updated daily<br/>${esc(updatedHuman)}</div>
+  </div>
+${inner}
+  <div class="foot">
+    <span><b>PEAKTIME</b> · thedjrankings.com — the demand index for electronic music</span>
+    <span><a href="/methodology">How the demand score is built →</a></span>
+  </div>
+</div>
+</body>
+</html>
+`;
+}
+
 // ── Trust pages (E-E-A-T): /about, /about/editorial-policy, /about/corrections ─
-// Static, branded (pageShell), indexable. They carry the named editor + publisher
-// entity and state independence, fee honesty, the never-wipe data rule, and how to
-// report errors — the trust signals Google weights on commercial-data pages. Built
-// standalone (no SPA route needed) and listed in the sitemap.
+// Static, dark-themed (darkShell, matches the live site), indexable. They carry the
+// named editor + publisher entity and state independence, fee honesty, the never-wipe
+// data rule, and how to report errors — the trust signals Google weights on
+// commercial-data pages. Built standalone (no SPA route needed) and listed in the sitemap.
 function renderAbout(updatedHuman) {
   const url = `${ORIGIN}/about`;
  const title = "About PEAKTIME | The booking-demand index for house & techno";
@@ -539,7 +605,7 @@ function renderAbout(updatedHuman) {
  <p>Every ranking blends independent demand signals: live booking (Resident Advisor venue tier, attendance and touring), editorial scene credibility, Beatport chart credibility, 1001Tracklists DJ support, search interest and social velocity, into a single demand score. The full method is public.</p>
     <p><a href="/methodology">How the demand score is built →</a> · <a href="/about/editorial-policy">Editorial policy →</a> · <a href="/about/corrections">Corrections →</a></p>
   </div>`;
-  return pageShell({ title, desc, canonical: url, ogImage: "/brand/avatar-1080.png",
+  return darkShell({ title, desc, canonical: url, ogImage: "/brand/avatar-1080.png",
     jsonld, docTitle: "PEAKTIME · about", updatedHuman, inner });
 }
 
@@ -585,7 +651,7 @@ function renderEditorialPolicy(updatedHuman, modified) {
     <h2>Corrections</h2>
     <p>We fix errors promptly and openly. See the <a href="/about/corrections">corrections policy</a>, or email <a href="mailto:${esc(CONTACT_EMAIL)}">${esc(CONTACT_EMAIL)}</a>.</p>
   </div>`;
-  return pageShell({ title, desc, canonical: url, ogImage: "/brand/avatar-1080.png",
+  return darkShell({ title, desc, canonical: url, ogImage: "/brand/avatar-1080.png",
     jsonld, docTitle: "PEAKTIME · editorial policy", updatedHuman, inner });
 }
 
@@ -618,7 +684,7 @@ function renderCorrections(updatedHuman, modified) {
     <p>We aim to acknowledge a correction request quickly and to fix confirmed errors promptly. Where a correction materially changes what a page said, we note it. Because the index is rebuilt daily from source data, most data corrections take effect on the next refresh.</p>
     <p><a href="/about/editorial-policy">Read the editorial policy →</a></p>
   </div>`;
-  return pageShell({ title, desc, canonical: url, ogImage: "/brand/avatar-1080.png",
+  return darkShell({ title, desc, canonical: url, ogImage: "/brand/avatar-1080.png",
     jsonld, docTitle: "PEAKTIME · corrections", updatedHuman, inner });
 }
 
