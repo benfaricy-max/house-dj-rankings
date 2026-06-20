@@ -2341,6 +2341,14 @@ function BreakoutsPage({ rankings, breakouts: staticBreakouts, breakoutThreshold
 // ── Reports — published analysis ────────────────────────────────────
 const REPORTS = [
   {
+    title: "ANOTR is #1. The streaming charts don't show it yet.",
+    dek: "FISHER has 19.6M Spotify monthly listeners. ANOTR has 15.6M. FISHER ranks #11. ANOTR ranks #1. Why streaming numbers don't tell you who's filling rooms — and what the booking demand data shows instead.",
+    href: "/reports/anotr-number-one.html",
+    img: "/brand/post-methodology-1080.png",
+    tag: "Analysis",
+    date: "2026-06-20",
+  },
+  {
     title: "The State of DJ Booking Demand 2026",
     dek: "The flagship. Resident Advisor killed its poll and DJ Mag's Top 100 is a fan vote — so this is the data-led read on who's actually in demand: the demand leaders, the fastest risers, and the most underpriced acts to book, from the live index of 342 house and techno acts.",
     href: "/reports/state-of-demand-2026/",
