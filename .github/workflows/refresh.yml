@@ -164,11 +164,22 @@ jobs:
           git add frontend/public/rankings.json backend/artists.json frontend/public/brand backend/beatport-archive.json
           git diff --staged --quiet && { echo "no changes"; exit 0; }
           git commit -m "chore: refresh rankings + cache YouTube channel IDs [skip ci]"
-          # Push with rebase-and-retry: if a commit landed during the long refresh,
-          # rebase onto it and try again rather than losing the day's data to a
+          # Push with rebase-and-retry: if a commit landed on main during the long
+          # refresh (concurrent runs / other sessions hit this repo), replay our
+          # refresh commit on top of it rather than losing the day's data to a
           # non-fast-forward rejection.
+          #
+          # The committed files are fully *regenerated* snapshots, so on any content
+          # conflict our freshly-built version is authoritative: `-X theirs` makes the
+          # commit being replayed (ours) win every conflicting hunk, while still
+          # cleanly merging non-overlapping concurrent edits (e.g. a manual roster add
+          # to artists.json on different lines). Always `--abort` a failed rebase
+          # before the next attempt — otherwise an unmerged/detached-HEAD state makes
+          # every subsequent attempt fail with "you have unmerged files" and the loop
+          # can never recover (the bug this replaces).
           for i in 1 2 3 4 5; do
-            git pull --rebase --autostash origin main || true
+            git fetch origin main || true
+            git rebase -X theirs origin/main || { git rebase --abort 2>/dev/null || true; }
             git push && { echo "pushed on attempt $i"; exit 0; }
             echo "push attempt $i failed — retrying"; sleep $((i * 3))
           done
