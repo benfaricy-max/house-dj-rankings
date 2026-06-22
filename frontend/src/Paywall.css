@@ -1,0 +1,151 @@
+/* Preview / paywall gating — editorial data-terminal, brand tokens only. */
+
+.pw-clip {
+  position: relative;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+/* The blurred peek of the next few locked rows behind the card. */
+.pw-clip-peek {
+  filter: blur(7px) saturate(0.7);
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.15) 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.15) 80%, transparent 100%);
+  min-height: 220px;
+}
+
+.pw-clip-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background: linear-gradient(to bottom, rgba(12, 12, 14, 0) 0%, rgba(12, 12, 14, 0.82) 45%, var(--bg, #0c0c0e) 100%);
+}
+
+/* Whole-surface gate. */
+.pw-gate {
+  position: relative;
+  margin-top: 16px;
+}
+.pw-gate-preview {
+  filter: blur(6px) saturate(0.7);
+  opacity: 0.45;
+  pointer-events: none;
+  user-select: none;
+  max-height: 320px;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
+}
+.pw-gate .pw-card {
+  margin: -180px auto 0;
+  position: relative;
+}
+
+/* The upgrade card. */
+.pw-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 460px;
+  background: var(--card, #111114);
+  border: 1px solid var(--border, #1e1f23);
+  border-radius: 14px;
+  padding: 24px 24px 20px;
+  text-align: center;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+}
+
+.pw-card-eyebrow {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent, #C8F750);
+  margin-bottom: 10px;
+}
+
+.pw-card-h {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.25;
+  color: var(--text-h, #E9E7DF);
+  margin: 0 0 8px;
+}
+
+.pw-card-sub {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text, #a9a8a2);
+  margin: 0 auto 14px;
+  max-width: 38ch;
+}
+
+.pw-card-count {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--muted, #75767d);
+  margin-bottom: 16px;
+}
+
+.pw-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.pw-btn {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  border-radius: 9px;
+  padding: 12px 16px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.08s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.pw-btn:active { transform: translateY(1px); }
+
+.pw-btn--primary {
+  background: var(--accent, #C8F750);
+  color: var(--on-accent, #0c0c0e);
+}
+.pw-btn--primary:hover { background: #d4ff66; }
+
+.pw-btn--ghost {
+  background: transparent;
+  color: var(--text, #a9a8a2);
+  border-color: var(--border, #1e1f23);
+  font-size: 12px;
+}
+.pw-btn--ghost:hover { color: var(--text-h, #E9E7DF); border-color: #2c2d33; }
+
+.pw-card-fine {
+  font-size: 11px;
+  color: var(--muted, #75767d);
+}
+
+/* Locked sub-tab lozenge. */
+.pw-pill {
+  display: inline-block;
+  margin-left: 6px;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-weight: 600;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent, #C8F750);
+  border: 1px solid color-mix(in srgb, var(--accent, #C8F750) 35%, transparent);
+  border-radius: 999px;
+  padding: 1px 6px;
+  vertical-align: middle;
+}

@@ -2,6 +2,8 @@ import { useState, useMemo } from "react";
 import "./ProPage.css";
 import { openMomentumReport } from "./momentumReport";
 import { ArtistLink } from "./ArtistProfile";
+import { LockCard } from "./Paywall";
+import { useTier } from "./usePro";
 
 // a11y: make a non-button element keyboard-activatable (Enter/Space) and focusable.
 const pressable = (handler, opts = {}) => ({
@@ -487,6 +489,7 @@ function BookerDashboard({ enriched }) {
   const [search,    setSearch]    = useState("");
   const [activeRow, setActiveRow] = useState(null);
   const [shortlist, setShortlist] = useState([]);
+  const { unlocked } = useTier("allaccess");
 
   function toggleShortlist(dj) {
     setShortlist(prev =>
@@ -574,7 +577,7 @@ function BookerDashboard({ enriched }) {
             <span>Momentum</span>
             <span />
           </div>
-          {filtered.map((dj, i) => (
+          {(unlocked ? filtered : filtered.slice(0, 2)).map((dj, i) => (
             <BookerArtistRow
               key={dj.name}
               dj={dj}
@@ -586,6 +589,19 @@ function BookerDashboard({ enriched }) {
             />
           ))}
           {!filtered.length && <div className="booker-empty">No artists match your filters</div>}
+          {!unlocked && filtered.length > 2 && (
+            <div className="booker-lock">
+              <p className="booker-lock-note">
+                Two live examples are open above — and here's a full example artefact:{" "}
+                <a href="/reports/mau-p.html" target="_blank" rel="noopener">the Mau&nbsp;P deep-dive report</a>.
+                Deep Dive on the whole roster, plus every paid feature, is part of All Access.
+              </p>
+              <LockCard tier="allaccess" source="deep-dive-booker"
+                headline="Open the full Deep Dive"
+                sub="Filter, shortlist and export the entire roster — booker dashboard, artist portal, fee estimates and momentum reads on every act."
+                hiddenCount={filtered.length - 2} />
+            </div>
+          )}
         </div>
 
         {activeArtist && (
@@ -734,6 +750,7 @@ function ArtistPortal({ enriched }) {
 // ── Pro page root ─────────────────────────────────────────────────
 export default function ProPage({ rankings }) {
   const [proTab, setProTab] = useState("booker");
+  const { unlocked } = useTier("allaccess");
 
   const enriched = useMemo(() => computeMomentumScores(rankings), [rankings]);
 
@@ -751,7 +768,14 @@ export default function ProPage({ rankings }) {
         </div>
       </div>
       {proTab === "booker" && <BookerDashboard enriched={enriched} />}
-      {proTab === "artist" && <ArtistPortal    enriched={enriched} />}
+      {proTab === "artist" && (unlocked
+        ? <ArtistPortal enriched={enriched} />
+        : <div style={{ display: "flex", justifyContent: "center", padding: "44px 16px" }}>
+            <LockCard tier="allaccess" source="deep-dive-portal"
+              headline="The Artist Portal is part of All Access"
+              sub="Claim and manage an artist profile, surface booking contacts, and let promoters reach you straight from the Deep Dive dashboard." />
+          </div>
+      )}
     </div>
   );
 }

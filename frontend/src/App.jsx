@@ -12,6 +12,8 @@ import { InfoTip, MomentumTip, MOMENTUM_BLEND, artistForm, FORM_META, FormTip, g
 import { rankWithinCohort, withRankIntervals, deriveRegions, inRegion, isRising, PERSONAS } from "./cohort";
 import BuyerLane from "./BuyerLane";
 import { Icon, Medal } from "./icons";
+import { PreviewClip, LockGate, LockCard, LockPill } from "./Paywall";
+import { useTier } from "./usePro";
 const PitchPage     = lazy(() => import("./Pitch"));        // read-only private brief route
 const DayInLifePage = lazy(() => import("./DayInLife"));    // "A Booking Day" route
 const ClubsPage   = lazy(() => import("./ClubsPage"));                                  // splits ~750 lines of club lore/images out of the main chunk
@@ -1205,6 +1207,9 @@ function OnestoWatchPage({ rankings }) {
           <h2 className="otw-section-title">Ones to Watch</h2>
  <p className="otw-section-sub">All artists ranked by momentum: early trajectory, high growth</p>
         </div>
+        <PreviewClip tier="rankings" freeCount={10} source="scouting-watch"
+          headline="See every act on the rise"
+          sub="The top 10 are free. The full momentum board is part of the $7/mo ranking subscription.">
         {withMomentum.map((dj, i) => {
           const moColor = dj.momentum >= 70 ? "#4ade80" : dj.momentum >= 40 ? "var(--accent)" : "var(--muted)";
           return (
@@ -1232,6 +1237,7 @@ function OnestoWatchPage({ rankings }) {
             </div>
           );
         })}
+        </PreviewClip>
       </section>
     </div>
   );
@@ -1518,6 +1524,11 @@ const cityMatch = (raCity, marketCity) => {
 // all under one tab with a single sub-nav.
 function BookingIntelPage({ rankings, lastUpdated, initialView = "booking" }) {
   const [view, setView] = useState(initialView);
+  const { unlocked } = useTier("booking");
+  // The Index (free lead magnet) and the Lineup Builder are the open preview of
+  // the toolset; the analytical tools sit behind the $29/mo Booking Intelligence tier.
+  const FREE = new Set(["index", "booking"]);
+  const locked = !unlocked && !FREE.has(view);
   const TABS = [
     ["index", "The Index"],
     ["booking", "Lineup Builder"],
@@ -1533,18 +1544,27 @@ function BookingIntelPage({ rankings, lastUpdated, initialView = "booking" }) {
     <div className="mk-page">
       <div className="mk-subnav">
         {TABS.map(([k, label]) => (
-          <button key={k} className={`mk-subtab ${view === k ? "mk-subtab--on" : ""}`} onClick={() => setView(k)}>{label}</button>
+          <button key={k} className={`mk-subtab ${view === k ? "mk-subtab--on" : ""}`} onClick={() => setView(k)}>
+            {label}{!unlocked && !FREE.has(k) && <LockPill />}
+          </button>
         ))}
       </div>
-      {view === "index" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading the Index…</div>}><IndexDrop rankings={rankings} lastUpdated={lastUpdated} /></Suspense>}
-      {view === "booking" && <BookingToolPage rankings={rankings} />}
-      {view === "buyers" && <BuyerLane rankings={rankings} onOpenValue={slug => { window.location.href = `/value/${slug}`; }} />}
-      {view === "value" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ValueGapPage rankings={rankings} /></Suspense>}
-      {view === "read" && <MarketReadPage rankings={rankings} embedded />}
-      {view === "saturation" && <MarketSaturationPage rankings={rankings} />}
-      {view === "spotlight" && <CitySpotlightPage rankings={rankings} />}
-      {view === "scout" && <CityScoutPage rankings={rankings} />}
-      {view === "booking-day" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><DayInLifePage onCta={(v) => { setView(v); window.scrollTo({ top: 0 }); }} /></Suspense>}
+      {locked && (
+        <div style={{ display: "flex", justifyContent: "center", padding: "44px 16px" }}>
+          <LockCard tier="booking" source="booking-intel"
+            headline="Unlock the Booking Intelligence toolset"
+            sub="The Index and Lineup Builder are free to explore. City Scout, the market reads, Saturation, Value Gap and the rest are part of the Booking Intelligence subscription." />
+        </div>
+      )}
+      {!locked && view === "index" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading the Index…</div>}><IndexDrop rankings={rankings} lastUpdated={lastUpdated} /></Suspense>}
+      {!locked && view === "booking" && <BookingToolPage rankings={rankings} />}
+      {!locked && view === "buyers" && <BuyerLane rankings={rankings} onOpenValue={slug => { window.location.href = `/value/${slug}`; }} />}
+      {!locked && view === "value" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><ValueGapPage rankings={rankings} /></Suspense>}
+      {!locked && view === "read" && <MarketReadPage rankings={rankings} embedded />}
+      {!locked && view === "saturation" && <MarketSaturationPage rankings={rankings} />}
+      {!locked && view === "spotlight" && <CitySpotlightPage rankings={rankings} />}
+      {!locked && view === "scout" && <CityScoutPage rankings={rankings} />}
+      {!locked && view === "booking-day" && <Suspense fallback={<div className="state-msg"><div className="spinner" />Loading…</div>}><DayInLifePage onCta={(v) => { setView(v); window.scrollTo({ top: 0 }); }} /></Suspense>}
     </div>
   );
 }
@@ -1595,6 +1615,9 @@ function DJChartPage() {
       <div className="dj-section-h">This week's chart · {chart.roster_hits} of {chart.count} are roster</div>
       <div className="dj-meta">Week {chart.week} · updated {chart.date}</div>
       <div className="dj-list">
+        <PreviewClip tier="rankings" freeCount={10} source="scouting-djchart"
+          headline="See the full DJ-support chart"
+          sub="The top 10 are free. The complete weekly chart is part of the $7/mo ranking subscription.">
         {chart.entries.map((e, i) => (
           <div key={i} className={`dj-row ${e.roster.length ? "dj-row--hit" : ""}`}>
  <span className="dj-rank">{e.rank ? `#${e.rank}` : "—"}</span>
@@ -1612,6 +1635,7 @@ function DJChartPage() {
             {e.roster.length > 0 && <span className="dj-badge">tracked</span>}
           </div>
         ))}
+        </PreviewClip>
       </div>
  <div className="cs-est-note" style={{ maxWidth: 640 }}>ⓘ Source: 1001Tracklists weekly chart. Roster acts are linked; un-linked acts are charting names we don't track yet, useful expansion leads.</div>
     </div>
@@ -2125,6 +2149,9 @@ function ComparativeBenchmarkingPage({ rankings }) {
       <h2 className="cmp-insights-title">Biggest Discrepancies</h2>
  <p className="cmp-insights-sub">Artists who over-index on one signal but lag on another, the gaps a sharp booker exploits.</p>
       <div className="cmp-insights">
+        <PreviewClip tier="rankings" freeCount={1} peek={2} source="scouting-benchmark"
+          headline="See every discrepancy"
+          sub="One read is free. The full benchmark engine is part of the $7/mo ranking subscription.">
         {insights.map(arc => (
           <div className="cmp-insight-card" key={arc.title}>
             <div className="cmp-insight-head">
@@ -2148,6 +2175,7 @@ function ComparativeBenchmarkingPage({ rankings }) {
             </div>
           </div>
         ))}
+        </PreviewClip>
       </div>
       <p className="cmp-foot">Percentiles are within artists that have data for each metric. Updated every refresh.</p>
     </div>
@@ -2189,6 +2217,7 @@ function VelSpark({ series }) {
 
 function VelocityPage({ rankings }) {
   const [sortKey, setSortKey] = useState("mom4");
+  const { unlocked } = useTier("rankings");
 
   const artists = rankings
     .filter(d => d.trends_mom_4w != null && Array.isArray(d.trends_12m) && d.trends_12m.length > 4)
@@ -2227,7 +2256,7 @@ function VelocityPage({ rankings }) {
             </tr>
           </thead>
           <tbody>
-            {artists.map(({ dj, mom4, mom12, rankDelta }) => (
+            {(unlocked ? artists : artists.slice(0, 10)).map(({ dj, mom4, mom12, rankDelta }) => (
               <tr key={dj.name} className="vel-row">
                 <td className="vel-td vel-td--artist">
                   <span className="vel-rank">#{dj.rank}</span>
@@ -2248,6 +2277,12 @@ function VelocityPage({ rankings }) {
           </tbody>
         </table>
       </div>
+      {!unlocked && artists.length > 10 && (
+        <LockCard tier="rankings" source="scouting-velocity"
+          headline="See the full velocity board"
+          sub="The top 10 are free. Every accelerating act is part of the $7/mo ranking subscription."
+          hiddenCount={artists.length - 10} />
+      )}
     </div>
   );
 }
@@ -2879,7 +2914,14 @@ export default function App() {
       <main className="rankings-list">
         {loading && <RankingsSkeleton rows={8} />}
         {error   && <div className="state-msg state-msg--error">⚠ {error}</div>}
-        {!loading && !error && visible.slice(0, rowLimit).map((dj, i) => {
+        {!loading && !error && (
+        <PreviewClip
+          tier="rankings"
+          freeCount={50}
+          source="rankings"
+          headline="See the full demand index"
+          sub="The top 50 are free. Unlock every ranked act, all signals, and the daily movement behind the index.">
+        {visible.slice(0, rowLimit).map((dj, i) => {
           // Main/house view is a house-anchored ranking with pure-techno removed, so
           // it's renumbered 1..N (no gaps, and consistent with the uncertainty bands,
           // which are already computed relative to this filtered list). Cohort mode
@@ -2909,6 +2951,8 @@ export default function App() {
           </div>
           );
         })}
+        </PreviewClip>
+        )}
       </main>
 
       </>}

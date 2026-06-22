@@ -14,6 +14,11 @@ const FRONTEND = process.env.FRONTEND_URL || "https://thedjrankings.com";
 // plan id → { price env, Stripe mode }. `pro` is kept as a back-compat alias
 // for `solo` so older links/buttons still resolve.
 const PLANS = {
+  // Preview-model tiers (USD): rankings $7 · booking $29 · all-access $45.
+  rankings:  { price: process.env.STRIPE_PRICE_RANKINGS,  mode: "subscription" }, // rankings + club index + scouting
+  booking:   { price: process.env.STRIPE_PRICE_BOOKING,   mode: "subscription" }, // booking intelligence toolset
+  allaccess: { price: process.env.STRIPE_PRICE_ALLACCESS, mode: "subscription" }, // everything bundled
+  // legacy / back-compat plans
   solo:   { price: process.env.STRIPE_PRICE_SOLO,   mode: "subscription" },
   pro:    { price: process.env.STRIPE_PRICE_SOLO,   mode: "subscription" },
   team:   { price: process.env.STRIPE_PRICE_TEAM,   mode: "subscription" },

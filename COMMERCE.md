@@ -90,7 +90,36 @@ signed cookie, so the stub still runs.
   customer. For multi-device access, add an account layer (Clerk or Supabase Auth,
   magic-link) and key the store on the user id as well as the customer id.
 
-## Pricing (starting point)
+## Preview model — tiered access (USD)
+
+The site runs a freemium preview: each surface shows a free slice, then blurs the
+rest behind a tier. Gating lives in `frontend/src/Paywall.jsx` (`PreviewClip` for
+ranked lists, `LockGate`/`LockCard` for whole tools) and the tier hook in
+`frontend/src/usePro.js` (`useTier`, `useEntitlements`). All of it is inert until
+`VITE_PAYWALL_ENABLED=true` — with the flag off, `useTier` reports everything
+unlocked and the site is fully open, exactly as today.
+
+| Tier | plan id | Price | Unlocks | Free preview |
+|------|---------|-------|---------|--------------|
+| **Rankings** | `rankings` | **$7/mo** | Full Rankings, Club Index, all Scouting sub-tabs | Rankings top 50 · Club Index top 10 · each Scouting tab top 10 |
+| **Booking Intelligence** | `booking` | **$29/mo** | The Booking Intelligence toolset (City Scout, City Read, Saturation, Spotlight, Who's Underpriced, Value Gap, A Booking Day) | The Index + Lineup Builder stay open |
+| **All Access** | `allaccess` | **$45/mo** | Everything above **+ Deep Dive** (Booker dashboard + Artist Portal) | Deep Dive shows 2 example acts + the Mau&nbsp;P example report |
+
+Tiers are **separate add-ons**: `rankings` and `booking` each grant only their own
+surfaces; only `allaccess` bundles all three. The grant map lives in two mirrored
+places — `PLAN_GRANTS` in `usePro.js` and `PLAN_TIERS` in `api/me.js` — keep them in
+sync. Legacy plans (`solo`/`team`/`pro`/`intel`) map to All Access so existing buyers
+keep access.
+
+**Env vars to add (API):** one Stripe recurring price per tier —
+`STRIPE_PRICE_RANKINGS` ($7/mo), `STRIPE_PRICE_BOOKING` ($29/mo),
+`STRIPE_PRICE_ALLACCESS` ($45/mo). `api/checkout.js` maps each plan id to its price.
+`api/me.js` returns `{ pro, plan, tiers }`; the frontend reads `tiers`.
+
+**Local QA:** `localStorage.setItem('peaktime_pro','1')` unlocks all tiers;
+`localStorage.setItem('peaktime_tier','rankings,booking')` unlocks a specific set.
+
+## Pricing (legacy GBP tiers)
 
 Live pricing tiers (in `frontend/src/Pricing.jsx` → `PLANS`; shown via the gated
 upgrade modal only when the paywall is ON):

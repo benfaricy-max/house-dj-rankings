@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import "./ClubsPage.css";
 import { CLUB_PROFILES } from "./clubProfiles";
 import { CLUB_IMAGES } from "./clubImages";
+import { PreviewClip } from "./Paywall";
 
 /**
  * PEAKTIME Club Index — the world's most legendary house & techno destinations.
@@ -58,6 +59,9 @@ export default function ClubsPage() {
       </div>
 
       <div className="clubs-list">
+        <PreviewClip tier="rankings" freeCount={10} source="club-index"
+          headline="See the full Club Index"
+          sub="The top 10 are free. The complete ranking of 50 legendary rooms is part of the $7/mo ranking subscription.">
         {ranked.map(c => (
           <a key={c.name} className="club-row" href={`/club/${clubSlug(c.name)}`}>
             <div className="club-rank">{c.rank <= 3 ? ["🥇","🥈","🥉"][c.rank-1] : <span>#{c.rank}</span>}</div>
@@ -72,6 +76,7 @@ export default function ClubsPage() {
             </div>
           </a>
         ))}
+        </PreviewClip>
       </div>
 
       <div className="clubs-foot">
