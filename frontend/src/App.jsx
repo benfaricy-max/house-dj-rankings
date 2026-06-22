@@ -2778,9 +2778,9 @@ export default function App() {
         {lastUpdated && <p className="header-updated">Updated {new Date(lastUpdated).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}</p>}
         <div className="top-tabs">
           <button className={`top-tab ${activeTab === "rankings"      ? "top-tab--active" : ""}`} onClick={() => setActiveTab("rankings")}>Rankings</button>
+          <button className={`top-tab ${activeTab === "clubs" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("clubs")}>Club Index</button>
           <button className={`top-tab ${activeTab === "how-it-works"  ? "top-tab--active" : ""}`} onClick={() => setActiveTab("how-it-works")}>How It Works</button>
           <button className={`top-tab ${activeTab === "booking" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("booking")}>Booking Intelligence</button>
-          <button className={`top-tab ${activeTab === "clubs" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("clubs")}>Club Index</button>
           <button className={`top-tab ${activeTab === "reports" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("reports")}>Reports</button>
           {/* "The Index" now lives as a sub-tab under Booking Intelligence */}
           {editor && <button className={`top-tab ${activeTab === "journal" ? "top-tab--active" : ""}`} onClick={() => setActiveTab("journal")}>Journal <span className="tab-private">·private</span></button>}
@@ -2830,6 +2830,7 @@ export default function App() {
       {activeTab === "how-it-works"  && <HowItWorksPage />}
 
       {activeTab === "rankings" && <>
+      <BuyerLane rankings={rankings} onOpenValue={slug => { window.location.href = `/value/${slug}`; }} />
       <MomentumAlertsBanner alerts={momentumAlerts} onDismiss={dismissAlerts} onOpen={name => { window.location.href = `/artist/${slugify(name)}`; }} />
 
  {/* Stakeholder lens: same index, three jobs-to-be-done */}
