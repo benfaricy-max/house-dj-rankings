@@ -173,13 +173,15 @@ jobs:
           # conflict our freshly-built version is authoritative: `-X theirs` makes the
           # commit being replayed (ours) win every conflicting hunk, while still
           # cleanly merging non-overlapping concurrent edits (e.g. a manual roster add
-          # to artists.json on different lines). Always `--abort` a failed rebase
-          # before the next attempt — otherwise an unmerged/detached-HEAD state makes
-          # every subsequent attempt fail with "you have unmerged files" and the loop
-          # can never recover (the bug this replaces).
+          # to artists.json on different lines). `--autostash` shelves the working
+          # tree's *unstaged* changes (the refresh pipeline rewrites many files but we
+          # only commit four of them) so the rebase isn't blocked by "you have unstaged
+          # changes". Always `--abort` a failed rebase before the next attempt —
+          # otherwise an unmerged/detached-HEAD state makes every subsequent attempt
+          # fail with "you have unmerged files" and the loop can never recover.
           for i in 1 2 3 4 5; do
             git fetch origin main || true
-            git rebase -X theirs origin/main || { git rebase --abort 2>/dev/null || true; }
+            git rebase --autostash -X theirs origin/main || { git rebase --abort 2>/dev/null || true; }
             git push && { echo "pushed on attempt $i"; exit 0; }
             echo "push attempt $i failed — retrying"; sleep $((i * 3))
           done
