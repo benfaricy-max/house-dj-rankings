@@ -363,3 +363,71 @@ the homepage shell (baked top-25 + Organization/WebSite/SearchAction/**Dataset(d
 - `booking_fee` {label, mid, tier, color} — curated club/festival estimate.
 - `debut_year` — iTunes-sourced (partial coverage).
 - `youtube_channel_id` — cached UC id once resolved.
+
+---
+
+## Active Skills (always-on for this project)
+
+### /beautifulprose — always apply to all prose output
+Every word written for PEAKTIME — newsletter copy, social captions, report narrative,
+pitch text, UI microcopy, README prose, outreach messages — must follow the
+beautiful-prose style contract. No AI cadence, no filler, no therapeutic hedging.
+Concrete, verb-forward, reads fast, rewards a reread. Violations are failures.
+Invoke the `beautifulprose` skill for any prose task in this project.
+
+### /brandguidelines — PEAKTIME brand facts (authoritative source: BRAND.md)
+Enforce brand consistency on every visual, copy, and code output. Locked facts:
+
+**Identity**
+- Brand name: **PEAKTIME** (all-caps). Descriptor domain: thedjrankings.com.
+- Spoken shorthand: "the Index." Social handle: @peaktime.
+- Tagline: *"The demand index for electronic music. Before the industry catches on."*
+- Aesthetic: **editorial data-terminal** — restrained, numeric, confident, never decorative.
+
+**Voice**
+- Write like a Bloomberg terminal that goes to warehouse parties.
+- Numeric and specific ("Up 41% in 90 days" > "blowing up right now").
+- Declarative — state the read, then the evidence. No hedging, no exclamation marks.
+- Culture-literate, not try-hard. Never breathless. Never emoji in product or logo.
+- Never post a take without a number behind it.
+
+**Color tokens**
+| Token | Value | Use |
+|-------|-------|-----|
+| `--bg` | `#0c0c0e` | near-black warm background |
+| `--card` | `#111114` | panels |
+| `--text-h` | `#E9E7DF` | off-white headings/numbers |
+| `--text` | `#a9a8a2` | body |
+| `--muted` | `#75767d` | captions |
+| `--border` | `#1e1f23` | hairlines |
+| `--accent` | `#C8F750` | acid lime — sparingly, emphasis & data only |
+| `--on-accent` | `#0c0c0e` | dark text ON lime fills (never white on lime) |
+
+**Typography**
+- Display / UI: Space Grotesk (400/500/700).
+- Data / numbers / labels: IBM Plex Mono (400/500/600). All ranks, scores, deltas,
+  and eyebrow labels are mono. Mono numbers are a brand signature.
+- No gradient text. Accent is a scalpel, not a highlighter.
+
+**Logomark**
+- Four ascending lime bars (EQ/ranking ladder) in `frontend/public/favicon.svg`.
+- Bars in #C8F750 on #0c0c0e rounded square. Never recolor to gradient.
+- Lockup: mark + "PEAKTIME" in IBM Plex Mono 600, ~0.22em tracking, uppercase.
+- No turntables, headphones, vinyl, drop shadows, or glows.
+
+**Social post format**
+- 1080×1080 feed / 1080×1920 story. Dark bg, hairline border, mark top-left,
+  mono eyebrow label, one big number or chart, one-line read.
+- Caption: lead with the number → the read → the method in one line.
+- Hashtags sparing: #housemusic #techno #djs #beatport + artist name.
+
+Invoke the `brandguidelines` skill whenever producing visual assets, copy, social
+content, or UI components. Cross-check against BRAND.md for any detail not listed here.
+
+### /remotion — apply to all Remotion/video work
+PEAKTIME uses Remotion for animated social assets (`backend/makeBrandAssets.js` renders
+to `frontend/public/brand/`). Apply the `remotion` skill for any Remotion composition
+work: scaffold with `npx create-video@latest --blank`, follow Remotion's frame-based
+timing model, keep compositions stateless and deterministic, use `spring()`/`interpolate()`
+for animations, and ensure outputs match the brand tokens above (dark bg, lime accent,
+mono numbers). Invoke the `remotion` skill whenever writing or editing Remotion code.
