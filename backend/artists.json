@@ -8998,7 +8998,7 @@
     "wikipedia_title": "Gui Boratto",
     "image": "https://cdn-images.dzcdn.net/images/artist/f413b8a08bc6b2d2cc0ad14fff3dd5bd/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "guiboratto",
-    "demand_index": 37,
+    "demand_index": 36,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -24695,7 +24695,7 @@
     "youtube_channel_id": "UCn9fKDkQ9eilxMX5AzcSKdQ",
     "emerging": false,
     "image": "https://cdn-images.dzcdn.net/images/artist/13de7d0a1369e91156b7c66f56d27eac/1000x1000-000000-80-0-0.jpg",
-    "demand_index": 69,
+    "demand_index": 68,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -26185,16 +26185,22 @@
   {
     "name": "Makebo",
     "manual_scene_score": 50,
-    "source": "beatport-discovery"
+    "source": "beatport-discovery",
+    "spotify_id": "0hMfbfkUs2tiOOZpSwLmDu",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb2d273e33edffa31fecb0169c"
   },
   {
     "name": "Provi",
     "manual_scene_score": 50,
-    "source": "beatport-discovery"
+    "source": "beatport-discovery",
+    "spotify_id": "09WKhhJl9OZwZEKXRoSnOo",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebaf2f91ef08ae03ed405702c2"
   },
   {
     "name": "Armin van Buuren",
     "manual_scene_score": 50,
-    "source": "beatport-discovery"
+    "source": "beatport-discovery",
+    "spotify_id": "0SfsnGyD8FpIN4U4WCkBZ5",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb60f60edeaa78efbf3d335b2c"
   }
 ]
