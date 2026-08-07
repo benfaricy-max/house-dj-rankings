@@ -2207,7 +2207,7 @@
     "demand_index": 61,
     "demand_tier": 4,
     "value_gap": 1,
-    "value_signal": "strong-buy",
+    "value_signal": "buy",
     "beatport_labels": [
       "PAWZ"
     ],
@@ -10855,7 +10855,7 @@
     "demand_index": 60,
     "demand_tier": 4,
     "value_gap": 1,
-    "value_signal": "strong-buy",
+    "value_signal": "buy",
     "beatport_labels": [
       "Tomorrowland Music",
       "Drumcode"
@@ -16948,7 +16948,7 @@
   },
   {
     "name": "Themba",
-    "spotify_id": "42rqSuMW9VQ8ccRKgpOZOD",
+    "spotify_id": "64tzIMKX4Npx37YLcNZZNC",
     "youtube_channel_id": "UCiiqeL2dpQP1DYeSqmWDn_Q",
     "soundcloud_permalink": "thembadj",
     "album_count": 20,
@@ -16967,7 +16967,7 @@
     },
     "trends_mom_12w": -3.3,
     "wikipedia_title": "Themba",
-    "image": "https://i.scdn.co/image/ab6761610000e5ebae9ddab383a2d34441451949",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb41fe95338ef0b682f4548cad",
     "ra_slug": "themba",
     "demand_index": 51,
     "demand_tier": null,
@@ -19780,7 +19780,7 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb6d46eba60972d0ce0f5e6544",
-    "demand_index": 76,
+    "demand_index": 75,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -21399,7 +21399,7 @@
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb3a1441be1eb329cbeb1ad4b7",
     "ra_slug": "antdot",
-    "demand_index": 57,
+    "demand_index": 56,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -26142,6 +26142,8 @@
   {
     "name": "Redhead Queen",
     "manual_scene_score": 50,
-    "source": "beatport-discovery"
+    "source": "beatport-discovery",
+    "spotify_id": "48eU8m3jwr2bB2WzXoocg6",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebcd2814a920496f6235ebc3c5"
   }
 ]
