@@ -40,22 +40,9 @@
     "tl_set_recent": true,
     "beatport_artist_id": 52348,
     "beatport_labels": [
-      "HiMusic",
-      "Glamour Punk Recordings",
       "Yellow Productions",
-      "Ashwood Records Ltd",
-      "Kidz Luv Tekkno",
-      "Milk \\u0026 Sugar",
-      "Universal-Island Records Ltd.",
-      "Big Beat Records",
-      "Black Hole Recordings",
-      "FSOE",
-      "Astralwerks",
-      "Enhanced Recordings",
-      "Grotesque Music",
-      "Adjusted Music",
-      "Supercomps",
-      "RNM Bundles (RazNitzanMusic)"
+      "Method 808",
+      "Catch & Release"
     ],
     "label_best": "HiMusic",
     "label_tier": 2,
@@ -86,14 +73,14 @@
       "Ibiza residency",
       "Festival headliner"
     ],
-    "beatport_score": 68,
-    "beatport_best_position": 38,
-    "beatport_charting_tracks": 4,
+    "beatport_score": 64,
+    "beatport_best_position": 36,
+    "beatport_charting_tracks": 3,
     "beatport_charts": [
       "House",
       "Tech House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "instagram_handle": "followthefishtv",
     "tiktok_handle": "fisher"
   },
@@ -117,8 +104,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 41,
-    "beatport_best_position": 57,
+    "beatport_score": 40,
+    "beatport_best_position": 60,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Tech House"
@@ -131,17 +118,7 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Long Jacket Music",
-      "Black Book Records",
-      "OWSLA/Atlantic",
-      "Primavera Labels",
-      "Strictly Rhythm",
-      "Taylor Swift",
-      "Strictly Rhythm Records",
-      "Capitol Records UK",
-      "Polydor Records",
-      "Disorder",
-      "Positiva"
+      "Black Book Records"
     ],
     "label_best": "Black Book Records",
     "label_tier": 4,
@@ -158,7 +135,7 @@
     "tl_djs": 0,
     "tl_chart_now": null,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 2,
     "tl_setplays_total": 2,
     "tl_set_recent": true,
@@ -223,8 +200,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 52,
-    "beatport_best_position": 47,
+    "beatport_score": 54,
+    "beatport_best_position": 44,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -238,11 +215,8 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Defected",
       "Experts Only",
-      "Saved Records",
-      "Positiva",
-      "Tomorrowland Music"
+      "mau5trap Recordings Limited / Arkade / Epicwin Ltd."
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -253,7 +227,7 @@
     "tl_djs": 0,
     "tl_support_score": 45,
     "tl_updated": "2026-06-23T08:05:35.616Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 8,
@@ -347,23 +321,14 @@
     "demand_tier": 3,
     "value_gap": -2,
     "value_signal": "premium",
-    "beatport_score": 29,
-    "beatport_best_position": 70,
+    "beatport_score": 33,
+    "beatport_best_position": 63,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Minimal / Deep Tech"
     ],
     "beatport_labels": [
-      "Roadrunner Records",
-      "Text Records",
-      "Young",
-      "XL Recordings",
-      "Atlantic Records UK",
-      "Warner Records",
-      "RADIANT WELL",
-      "Ministry of Sound Recordings",
-      "Capitol Records UK",
-      "Lex Records"
+      "Text Records"
     ],
     "label_best": "Roadrunner Records",
     "label_tier": 2,
@@ -412,7 +377,7 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:06:23.464Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Disclosure",
@@ -448,12 +413,7 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Disorder",
-      "Sony Music Entertainment",
-      "Ninja Tune",
-      "Warehouse Project Records",
-      "Black Book Records",
-      "PLG - Capitol"
+      "UMC (Universal Music Catalogue)"
     ],
     "label_best": "Ninja Tune",
     "label_tier": 5,
@@ -464,7 +424,7 @@
     "tl_djs": 0,
     "tl_support_score": 27,
     "tl_updated": "2026-06-23T08:05:35.618Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 2,
@@ -532,30 +492,21 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 39,
-    "beatport_best_position": 52,
-    "beatport_charting_tracks": 1,
+    "beatport_score": 45,
+    "beatport_best_position": 51,
+    "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Indie Dance"
     ],
     "trends_mom_12w": -9.1,
     "wikipedia_title": "Peggy Gou",
     "ra_slug": "peggygou",
-    "demand_index": 66,
+    "demand_index": 67,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "XL Recordings",
-      "Warner Records",
-      "Mavin/Republic",
-      "Defected",
-      "Atlantic Records",
-      "Gudu Records",
-      "Phonica Recordings",
-      "Cuttin' Headz",
-      "Café Del Mar Music",
-      "Parlophone UK"
+      "Gudu Records"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -566,7 +517,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.615Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -634,8 +585,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 65,
-    "beatport_best_position": 17,
+    "beatport_score": 64,
+    "beatport_best_position": 20,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -648,22 +599,8 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "KLTR Music",
-      "BMG Rights Management (UK) Ltd.",
-      "Marie Joly Music",
-      "Innervisions",
-      "Deep Root Tribe",
-      "soWHAT Records",
-      "IBIZA PARTY SQUAD",
-      "M-Sol Records",
-      "Parlophone UK",
-      "Paradise City",
       "Keinemusik",
-      "Crosstown Rebels",
-      "Artium Recordings, LLC, under exclusive license to Roc Nation Records, LLC",
-      "Chill 'N Chill Records",
-      "Armada Music Albums",
-      "Embassy One"
+      "Innervisions"
     ],
     "label_best": "Innervisions",
     "label_tier": 5,
@@ -674,7 +611,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.615Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -743,8 +680,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 64,
-    "beatport_best_position": 28,
+    "beatport_score": 66,
+    "beatport_best_position": 25,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Tech House",
@@ -758,17 +695,7 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Diynamic",
-      "Young",
-      "Watergate Records",
-      "Nu Moda",
-      "SNK",
-      "Verve",
-      "RADIANT WELL",
-      "BMG Rights Management GmbH",
-      "Mushroom Music",
-      "Jolly Jams",
-      "MAHOOL"
+      "Diynamic"
     ],
     "label_best": "Diynamic",
     "label_tier": 5,
@@ -825,7 +752,7 @@
     ],
     "instagram_handle": "solomun",
     "tiktok_handle": "solomun",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_hype_score": 14,
     "beatport_hype_best": 94,
     "beatport_hype_tracks": 1,
@@ -1033,8 +960,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 41,
-    "beatport_best_position": 50,
+    "beatport_score": 48,
+    "beatport_best_position": 38,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Tech House"
@@ -1042,20 +969,12 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Jamie Jones",
     "ra_slug": "jamiejones",
-    "demand_index": 57,
+    "demand_index": 58,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Definitive Recordings",
-      "Young",
-      "Helix Records",
-      "DX3N",
-      "Hot Creations",
-      "BMG Rights Management (UK) Ltd.",
-      "BMG Rights Management GmbH",
-      "Defected",
-      "Cercle Records"
+      "Definitive Recordings"
     ],
     "label_best": "Hot Creations",
     "label_tier": 5,
@@ -1066,7 +985,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.619Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -1141,7 +1060,7 @@
     "trends_mom_12w": 15.3,
     "wikipedia_title": "Amelie Lens",
     "ra_slug": "amelielens",
-    "demand_index": 67,
+    "demand_index": 68,
     "demand_tier": 4,
     "value_gap": -1,
     "value_signal": "premium",
@@ -1160,10 +1079,7 @@
     "beatport_artist_id": 533826,
     "beatport_labels": [
       "Exhale",
-      "Sony Music Germany",
-      "B2B",
-      "Vermillion Trax",
-      "Afterlife Records"
+      "B2B"
     ],
     "label_best": "Afterlife Records",
     "label_tier": 5,
@@ -1188,13 +1104,13 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:07:24.962Z",
-    "beatport_score": 55,
-    "beatport_best_position": 42,
-    "beatport_charting_tracks": 3,
+    "beatport_score": 69,
+    "beatport_best_position": 36,
+    "beatport_charting_tracks": 5,
     "beatport_charts": [
       "Techno (Peak Time / Driving)"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Charlotte de Witte",
@@ -1216,28 +1132,22 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 50,
+    "beatport_score": 55,
     "beatport_best_position": 34,
-    "beatport_charting_tracks": 1,
+    "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Techno (Peak Time / Driving)"
     ],
     "trends_mom_12w": 15.7,
     "wikipedia_title": "Charlotte de Witte",
     "ra_slug": "charlottedewitte",
-    "demand_index": 68,
+    "demand_index": 69,
     "demand_tier": 4,
     "value_gap": -1,
     "value_signal": "premium",
     "beatport_labels": [
       "KNTXT",
-      "CLR",
-      "Époque",
-      "NINETOZERO",
-      "B2B",
-      "Armada Music Albums",
-      "Bonzai Classics",
-      "Dolma Records"
+      "B2B"
     ],
     "label_best": "Armada Music Albums",
     "label_tier": 4,
@@ -1248,7 +1158,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.615Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -1316,8 +1226,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 86,
-    "beatport_best_position": 7,
+    "beatport_score": 88,
+    "beatport_best_position": 5,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -1331,14 +1241,8 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "541",
       "RAVE THE WORLD",
-      "A State of Trance",
-      "Drumcode",
-      "Natura Viva",
-      "Hyperreal",
-      "Armada Music Albums",
-      "Tronic"
+      "Drumcode"
     ],
     "label_best": "Drumcode",
     "label_tier": 5,
@@ -1355,7 +1259,7 @@
     "tl_djs": 0,
     "tl_chart_now": null,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 2,
     "tl_setplays_total": 2,
     "tl_set_recent": true,
@@ -1432,19 +1336,7 @@
     "demand_tier": 3,
     "value_gap": -1,
     "value_signal": "premium",
-    "beatport_labels": [
-      "541",
-      "Feines Tier",
-      "XL Recordings",
-      "Pampa Records",
-      "Maeve",
-      "BMG Rights Management GmbH",
-      "Kompakt",
-      "Italic",
-      "Natura Viva In The Mix",
-      "8 Head",
-      "Freude Am Tanzen Recordings"
-    ],
+    "beatport_labels": [],
     "label_best": "Kompakt",
     "label_tier": 5,
     "label_score": 100,
@@ -1606,15 +1498,7 @@
     "demand_tier": 4,
     "value_gap": 0,
     "value_signal": "fair",
-    "beatport_labels": [
-      "Looking For Trouble",
-      "ROSSI.HOME//GRXWN.",
-      "Columbia (Sony)",
-      "Fragrance Recordings",
-      "FFRR",
-      "Mall Grab",
-      "Running Back"
-    ],
+    "beatport_labels": [],
     "label_best": "Running Back",
     "label_tier": 4,
     "label_score": 80,
@@ -1788,14 +1672,7 @@
     "tl_setplays_total": 1,
     "tl_set_recent": true,
     "beatport_artist_id": 248079,
-    "beatport_labels": [
-      "REALM Records",
-      "Toolroom",
-      "Warehouse Project Records",
-      "Disorder",
-      "Experts Only",
-      "Cercle Records"
-    ],
+    "beatport_labels": [],
     "label_best": "REALM Records",
     "label_tier": 4,
     "label_score": 85,
@@ -1863,21 +1740,7 @@
     "tl_setplays_total": 0,
     "tl_set_recent": false,
     "beatport_artist_id": 30928,
-    "beatport_labels": [
-      "EMPIRE",
-      "K7 Records",
-      "Defected",
-      "Virgin",
-      "Ibadan Sound",
-      "fabric Records",
-      "Vatos Locos",
-      "Drizzly Records",
-      "Rosebud Recordings",
-      "One House",
-      "Freerange Records",
-      "Independent",
-      "Cuttin' Headz"
-    ],
+    "beatport_labels": [],
     "label_best": "Defected",
     "label_tier": 5,
     "label_score": 100,
@@ -1928,30 +1791,21 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 13,
-    "beatport_best_position": 96,
+    "beatport_score": 16,
+    "beatport_best_position": 91,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
-      "House"
+      "Tech House"
     ],
     "trends_mom_12w": 0,
     "wikipedia_title": "Hot Since 82",
     "ra_slug": "hotsince82",
-    "demand_index": 48,
+    "demand_index": 49,
     "demand_tier": 3,
     "value_gap": -1,
     "value_signal": "premium",
     "beatport_labels": [
-      "Knee Deep In Sound",
-      "Bedrock Records",
-      "Defected",
-      "Front of House Recordings",
-      "Hot Creations",
-      "LTF Records",
-      "PIV",
-      "Saved Records",
-      "Armada Music",
-      "STORIES"
+      "Knee Deep In Sound"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -1962,7 +1816,7 @@
     "tl_djs": 0,
     "tl_support_score": 8,
     "tl_updated": "2026-06-23T08:05:35.619Z",
-    "beatport_updated": "2026-09-04T12:42:39.682Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 1,
@@ -2126,19 +1980,9 @@
     "value_gap": 1,
     "value_signal": "buy",
     "beatport_labels": [
-      "Warner Records",
       "CircoLoco Records",
-      "ELOVATE",
-      "Solid Grooves Records",
       "EMPIRE",
-      "BEAT Music Fund",
-      "Rumors",
-      "Criminal Hype",
-      "ISO LAT",
-      "Snatch! Records",
-      "Solid Grooves Raw",
-      "FFRR",
-      "Mad Decent/mtheory"
+      "Solid Grooves Records"
     ],
     "label_best": "Solid Grooves Records",
     "label_tier": 4,
@@ -2149,7 +1993,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.616Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -2215,9 +2059,9 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 97,
+    "beatport_score": 92,
     "beatport_best_position": 6,
-    "beatport_charting_tracks": 5,
+    "beatport_charting_tracks": 4,
     "beatport_charts": [
       "House",
       "Deep House",
@@ -2225,20 +2069,12 @@
     ],
     "trends_mom_12w": 140,
     "ra_slug": "anotr",
-    "demand_index": 61,
+    "demand_index": 60,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "CircoLoco Records",
-      "Defected",
-      "NO ART",
-      "Armada Subjekt",
-      "Sola",
-      "Reverb Records",
-      "Armada Music Albums",
-      "Moan",
-      "Snatch! Records"
+      "NO ART"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -2251,7 +2087,7 @@
     "tl_updated": "2026-06-23T08:05:35.615Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 11,
     "tl_setplays_total": 11,
     "tl_set_recent": true,
@@ -2317,7 +2153,7 @@
       "fee_confidence": "medium"
     },
     "beatport_score": 80,
-    "beatport_best_position": 18,
+    "beatport_best_position": 17,
     "beatport_charting_tracks": 5,
     "beatport_charts": [
       "Tech House"
@@ -2330,19 +2166,11 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Generation Rebrand B.V., under exclusive license to Interscope Records",
-      "Insomniac Music Group",
       "Black Book Records",
-      "Nervous Records",
-      "Defected",
-      "Insomniac Records",
       "Diynamic",
-      "Columbia (Sony)",
+      "Nervous Records",
       "Repopulate Mars",
-      "Swedish House Mafia",
-      "Southern Fried Records",
-      "Afterlife Records",
-      "Experts Only"
+      "Defected"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -2355,7 +2183,7 @@
     "tl_updated": "2026-06-23T08:05:35.616Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 1,
     "tl_setplays_total": 1,
     "tl_set_recent": true,
@@ -2432,16 +2260,7 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "LIP SERVICE",
-      "CONTROVERSIA",
-      "Catch \\u0026 Release",
-      "Experts Only",
-      "Defected",
-      "Toolroom",
-      "Big Beat Records",
-      "FFRR",
-      "Higher Ground",
-      "Cr2 Records"
+      "LIP SERVICE"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -2490,7 +2309,7 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:09:48.644Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Chris Stussy",
@@ -2523,19 +2342,7 @@
     "demand_tier": 4,
     "value_gap": 0,
     "value_signal": "fair",
-    "beatport_labels": [
-      "CSS",
-      "Up The Stuss",
-      "Steel City Dance Discs",
-      "Hard Times Records",
-      "Milk \\u0026 Sugar",
-      "Fuse London",
-      "City Soul Recordings",
-      "Atlantic Records UK",
-      "Moscow Records",
-      "PURISM",
-      "Back2House"
-    ],
+    "beatport_labels": [],
     "label_best": "Up The Stuss",
     "label_tier": 4,
     "label_score": 80,
@@ -2611,8 +2418,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 47,
-    "beatport_best_position": 40,
+    "beatport_score": 48,
+    "beatport_best_position": 38,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
@@ -2625,12 +2432,7 @@
     "value_gap": 1,
     "value_signal": "buy",
     "beatport_labels": [
-      "Solid Grooves Records",
-      "Atlantic Records",
-      "PAWZ",
-      "Altra Moda",
-      "CircoLoco Records",
-      "Solid Grooves Raw"
+      "PAWZ"
     ],
     "label_best": "Solid Grooves Records",
     "label_tier": 4,
@@ -2641,7 +2443,7 @@
     "tl_djs": 0,
     "tl_support_score": 7,
     "tl_updated": "2026-06-23T08:05:35.620Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 1,
@@ -2727,19 +2529,7 @@
     "tl_set_recent": true,
     "beatport_artist_id": 645190,
     "beatport_labels": [
-      "Ninja Tune",
-      "Beleza",
-      "Ed Banger Records / Because Music",
-      "Frau Blau",
-      "Cercle Records",
-      "Rose Avenue/Reprise",
-      "fabric Records",
-      "Mine Recordings",
-      "Counter Records",
-      "Disorder",
-      "Chaos",
-      "Universal Music Division Island Def Jam",
-      "CircoLoco Records"
+      "Beleza"
     ],
     "label_best": "Ninja Tune",
     "label_tier": 5,
@@ -2764,13 +2554,13 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:09:52.068Z",
-    "beatport_score": 29,
-    "beatport_best_position": 70,
+    "beatport_score": 30,
+    "beatport_best_position": 67,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "East End Dubs",
@@ -2805,20 +2595,8 @@
     "value_gap": 0,
     "value_signal": "fair",
     "beatport_labels": [
-      "DUBS",
-      "Eastenderz",
-      "Chaos",
-      "East End Dubs",
       "Solid Grooves Records",
-      "Bedrock Records",
-      "K7 Records",
-      "Hot Creations",
-      "Up The Stuss",
-      "Lolife",
-      "TRMNL",
-      "Tervisio",
-      "Four Thirty Two",
-      "Fuse London"
+      "Eastenderz"
     ],
     "label_best": "Hot Creations",
     "label_tier": 5,
@@ -2829,7 +2607,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.619Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -2902,11 +2680,8 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Atlantic Records UK",
-      "Crate Classics",
-      "Insomniac Music Group",
       "Insomniac Records",
-      "Disorder",
+      "Atlantic Records UK",
       "Baker's Dozen"
     ],
     "label_best": "Insomniac Music Group",
@@ -2918,7 +2693,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.618Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -2978,8 +2753,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 14,
-    "beatport_best_position": 95,
+    "beatport_score": 26,
+    "beatport_best_position": 74,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
@@ -2987,28 +2762,12 @@
     "trends_mom_12w": 0,
     "wikipedia_title": "Dennis Cruz",
     "ra_slug": "denniscruz",
-    "demand_index": 60,
+    "demand_index": 61,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
     "beatport_labels": [
-      "Botaniq",
-      "This Moment",
-      "Solid Grooves Records",
-      "Moon Harbour Recordings",
-      "Insomniac Music Group",
-      "MoBlack Records",
-      "King Street Sounds",
-      "Metamorfosi Records",
-      "Vamos Music",
-      "MOE'S RECORDS",
-      "The Moment",
-      "Play This! Records",
-      "Crosstown Rebels",
-      "MUSE",
-      "Armada Music Albums",
-      "WOK Records",
-      "Street King"
+      "Botaniq"
     ],
     "label_best": "Crosstown Rebels",
     "label_tier": 5,
@@ -3019,7 +2778,7 @@
     "tl_djs": 0,
     "tl_support_score": 7,
     "tl_updated": "2026-06-23T08:05:35.622Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 1,
@@ -3099,17 +2858,8 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Hellbent Records",
       "CircoLoco Records",
-      "Def Jam Recordings",
-      "Epic/Legacy",
-      "You\\u0026Me Records",
-      "Atlantic Records",
-      "Chaos",
-      "Immortal/Epic",
-      "Armada Music Albums",
-      "Desert Hearts Records",
-      "Helix Records"
+      "Hellbent Records"
     ],
     "label_best": "Armada Music Albums",
     "label_tier": 4,
@@ -3126,7 +2876,7 @@
     "tl_djs": 0,
     "tl_chart_now": 7,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 7,
     "tl_setplays_total": 7,
     "tl_set_recent": true,
@@ -3206,17 +2956,9 @@
     "value_gap": 2,
     "value_signal": "buy",
     "beatport_labels": [
-      "You\\u0026Me Records",
       "Baker's Dozen",
-      "LW Recordings",
-      "Defected",
-      "tszr",
-      "Atlantic/Circoloco",
-      "Atlantic Records UK",
-      "Politics Of Dancing Digital",
-      "Automatic Writing",
-      "fabric Records",
-      "Chaos"
+      "You&Me Records",
+      "Three Six Zero"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -3233,7 +2975,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.616Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -3312,16 +3054,8 @@
     "value_gap": 2,
     "value_signal": "buy",
     "beatport_labels": [
-      "XL Recordings",
-      "Defected",
       "LTF Records",
-      "Disorder",
-      "Strictly Rhythm Records",
-      "Saved Records",
-      "Voltaire Music",
-      "Chaos",
-      "Armada Subjekt",
-      "Helix Records"
+      "Room Two Recordings"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -3334,7 +3068,7 @@
     "tl_updated": "2026-06-23T08:05:35.618Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 1,
     "tl_setplays_total": 1,
     "tl_set_recent": true,
@@ -3405,30 +3139,12 @@
     "beatport_best_position": null,
     "beatport_charting_tracks": 0,
     "beatport_charts": [],
-    "beatport_labels": [
-      "Slacker 85",
-      "Cecille",
-      "Turbo Recordings",
-      "Chaos",
-      "Insomniac Music Group",
-      "Counter Records",
-      "Insomniac Records",
-      "PlanetX",
-      "2026 Planet X",
-      "Dark Side Of The Sun",
-      "Domino",
-      "Solid Grooves Records",
-      "Global Underground",
-      "Planet X",
-      "LW Recordings",
-      "Flamingo Recordings",
-      "[PIAS] ÉLECTRONIQUE"
-    ],
+    "beatport_labels": [],
     "label_best": "Solid Grooves Records",
     "label_tier": 4,
     "label_score": 80,
-    "beatport_hype_score": 19,
-    "beatport_hype_best": 86,
+    "beatport_hype_score": 32,
+    "beatport_hype_best": 65,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Indie Dance"
@@ -3568,7 +3284,7 @@
       "fee_confidence": "low"
     },
     "beatport_score": 74,
-    "beatport_best_position": 27,
+    "beatport_best_position": 28,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "House",
@@ -3582,19 +3298,10 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Long Jacket Music",
-      "Chaos",
       "tszr",
       "Turbo Blanco",
-      "MPH UK",
       "Black Book Records",
-      "Catch \\u0026 Release",
-      "Fool's Gold Records",
-      "Three Six Zero Recordings",
-      "Late Checkout",
-      "Ultra",
-      "Fly With Us",
-      "Night Bass Records"
+      "Chaos"
     ],
     "label_best": "Black Book Records",
     "label_tier": 4,
@@ -3611,7 +3318,7 @@
     "tl_djs": 0,
     "tl_chart_now": null,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 5,
     "tl_setplays_total": 5,
     "tl_set_recent": true,
@@ -3686,12 +3393,8 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Roadrunner Records",
-      "CircoLoco Records",
       "Steel City Dance Discs",
-      "Unknown To The Unknown",
-      "Atlantic Records UK",
-      "G-TOWN RECORDS/Sony"
+      "CircoLoco Records"
     ],
     "label_best": "CircoLoco Records",
     "label_tier": 3,
@@ -3702,7 +3405,7 @@
     "tl_djs": 0,
     "tl_support_score": 28,
     "tl_updated": "2026-06-23T08:05:35.621Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 4,
@@ -3768,8 +3471,8 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_score": 79,
-    "beatport_best_position": 11,
+    "beatport_score": 78,
+    "beatport_best_position": 12,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "House",
@@ -3777,31 +3480,23 @@
     ],
     "trends_mom_12w": 66.7,
     "ra_slug": "rangertrucco",
-    "demand_index": 57,
+    "demand_index": 56,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
       "Defected",
       "ROSSI.HOME//GRXWN.",
-      "range.",
-      "Room Two Recordings",
-      "Staff Only",
-      "Heavy House Society",
-      "TBX Records",
-      "tszr",
-      "Pitch Records",
-      "Moan",
-      "MicroHertz",
-      "Deeperfect"
+      "range."
     ],
     "label_best": "Defected",
     "label_tier": 5,
     "label_score": 100,
-    "beatport_hype_score": 91,
+    "beatport_hype_score": 96,
     "beatport_hype_best": 7,
-    "beatport_hype_tracks": 4,
+    "beatport_hype_tracks": 5,
     "beatport_hype_charts": [
+      "House",
       "Tech House",
       "Minimal / Deep Tech",
       "Deep House"
@@ -3812,7 +3507,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.623Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -3975,26 +3670,14 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 46,
-    "beatport_best_position": 50,
+    "beatport_score": 45,
+    "beatport_best_position": 51,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Minimal / Deep Tech"
     ],
     "beatport_labels": [
-      "ROSSI.HOME//GRXWN.",
-      "Chaos",
-      "Disorder",
-      "Hard Times Records",
-      "Yellow Dot.",
-      "Good Company",
-      "Three Six Zero",
-      "Beeyou Records",
-      "Hot Creations",
-      "Key Records",
-      "LW Recordings",
-      "Eastenderz",
-      "Modula Records"
+      "ROSSI.HOME//GRXWN."
     ],
     "label_best": "Hot Creations",
     "label_tier": 5,
@@ -4006,7 +3689,7 @@
     "tl_djs": 0,
     "tl_support_score": 7,
     "tl_updated": "2026-06-23T08:05:35.623Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 1,
@@ -4080,18 +3763,8 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Hellbent Records",
       "CircoLoco Records",
-      "Stress Records",
-      "Steel City Dance Discs",
-      "Atlantic/Circoloco",
-      "Atlantic Records UK",
-      "Ministry of Sound Recordings",
-      "Skreamizm",
-      "Southern Fried Records",
-      "EMI",
-      "Polydor Records",
-      "Chaos"
+      "Hellbent Records"
     ],
     "label_best": "CircoLoco Records",
     "label_tier": 3,
@@ -4109,7 +3782,7 @@
     "tl_djs": 0,
     "tl_chart_now": 7,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 10,
     "tl_setplays_total": 10,
     "tl_set_recent": true,
@@ -4253,8 +3926,8 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:09:04.574Z",
-    "beatport_hype_score": 74,
-    "beatport_hype_best": 19,
+    "beatport_hype_score": 72,
+    "beatport_hype_best": 23,
     "beatport_hype_tracks": 3,
     "beatport_hype_charts": [
       "Melodic House & Techno",
@@ -4281,8 +3954,8 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_score": 58,
-    "beatport_best_position": 54,
+    "beatport_score": 55,
+    "beatport_best_position": 59,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Tech House",
@@ -4290,25 +3963,14 @@
       "Deep House"
     ],
     "trends_mom_12w": 4.9,
-    "demand_index": 53,
+    "demand_index": 52,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
       "Black Book Records",
-      "GDB RECORDS",
-      "Disorder",
-      "Disorder Artist \\u0026 Label Services",
-      "Insomniac Music Group",
       "Solid Grooves Records",
-      "Crosstown Rebels",
-      "Experts Only",
-      "Catch \\u0026 Release",
-      "HARD Recs",
-      "Insomniac Records",
-      "FUNKSHWAY",
-      "APG Inc. - Odetari",
-      "Sweat It Out"
+      "Crosstown Rebels"
     ],
     "label_best": "Crosstown Rebels",
     "label_tier": 5,
@@ -4319,7 +3981,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.619Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -4393,21 +4055,8 @@
     "value_signal": null,
     "beatport_labels": [
       "Nu Moda",
-      "A State of Trance",
-      "AFFAIRS",
-      "Armada Music Albums",
-      "Armada Music",
-      "Insomniac Music Group",
-      "Diynamic",
-      "When Stars Align",
       "Black Book Records",
-      "Columbia (Sony)",
-      "Mad Decent",
-      "Trick",
-      "Incorrect",
-      "Insomniac Records",
-      "Experts Only",
-      "tszr"
+      "Diynamic"
     ],
     "label_best": "Diynamic",
     "label_tier": 5,
@@ -4420,7 +4069,7 @@
     "tl_updated": "2026-06-23T08:05:35.616Z",
     "tl_chart_now": null,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 6,
     "tl_setplays_total": 6,
     "tl_set_recent": true,
@@ -4478,9 +4127,9 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_score": 68,
+    "beatport_score": 73,
     "beatport_best_position": 4,
-    "beatport_charting_tracks": 1,
+    "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Tech House"
     ],
@@ -4492,19 +4141,7 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Safelight Records.",
-      "Safelight Records",
-      "Hot Creations",
-      "Room Two Recordings",
-      "Insomniac Music Group",
-      "REALM Records",
-      "Casablanca new/Republic Records",
-      "tszr",
-      "DSOTS",
-      "ATW Records",
-      "Insomniac Records",
-      "Catch \\u0026 Release",
-      "Black Book Records"
+      "Safelight Records."
     ],
     "label_best": "Hot Creations",
     "label_tier": 5,
@@ -4515,7 +4152,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.622Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -4593,31 +4230,16 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.623Z",
-    "beatport_score": 15,
-    "beatport_best_position": 93,
+    "beatport_score": 13,
+    "beatport_best_position": 96,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
     ],
     "beatport_labels": [
-      "tszr",
-      "Dark Side Of The Sun",
-      "Up The Stuss",
-      "Constant Sound",
-      "Fuse London",
-      "Vatos Locos",
-      "Pilot (UK)",
-      "Key Records",
-      "Locus",
-      "Personality Disorder Music",
-      "Moan",
-      "Champion Records",
-      "Pleasure Zone",
-      "Heavy House Society",
-      "PIV",
-      "Rawax"
+      "Up The Stuss"
     ],
-    "beatport_updated": "2026-09-06T12:14:30.864Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "label_best": "Up The Stuss",
     "label_tier": 4,
     "label_score": 80,
@@ -4691,17 +4313,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 812365,
     "beatport_labels": [
-      "Disorder",
-      "Warehouse Project Records",
-      "Solid Grooves Raw",
-      "Defected",
-      "SMiiLE Records / Disorder",
-      "neXup recz",
-      "Eastenderz",
-      "Strictly Rhythm Records",
-      "Parlophone UK",
-      "Shall Not Fade",
-      "Sweat It Out"
+      "Disorder"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -4726,13 +4338,13 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:10:13.567Z",
-    "beatport_score": 42,
-    "beatport_best_position": 48,
+    "beatport_score": 44,
+    "beatport_best_position": 44,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Kolter",
@@ -4755,7 +4367,7 @@
     },
     "beatport_score": 100,
     "beatport_best_position": 1,
-    "beatport_charting_tracks": 6,
+    "beatport_charting_tracks": 7,
     "beatport_charts": [
       "House",
       "Minimal / Deep Tech",
@@ -4771,20 +4383,8 @@
     "beatport_labels": [
       "Positiva",
       "Koltrax",
-      "Heist Recordings",
-      "Hot Creations",
-      "Berg Audio",
-      "Disorder",
-      "Chaos",
-      "Heavy House Society",
-      "All Ways Dance",
-      "ROSSI.HOME//GRXWN.",
-      "Snatch! Records",
-      "PIV",
-      "Freeborn Records",
-      "Personality Disorder Music",
-      "Three Six Zero",
-      "HOOVE"
+      "KOLTERCAMP",
+      "PIV"
     ],
     "label_best": "Hot Creations",
     "label_tier": 5,
@@ -4795,7 +4395,7 @@
     "tl_djs": 0,
     "tl_support_score": 14,
     "tl_updated": "2026-06-23T08:05:35.618Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 2,
@@ -4878,8 +4478,8 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_score": 66,
-    "beatport_best_position": 24,
+    "beatport_score": 69,
+    "beatport_best_position": 20,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Tech House",
@@ -4887,24 +4487,13 @@
     ],
     "trends_mom_12w": -4,
     "wikipedia_title": "Luke Dean",
-    "demand_index": 58,
+    "demand_index": 59,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Dance Traxx LDN",
-      "0207 Def Jam",
-      "fabric Records",
-      "Insomniac Music Group",
-      "Heavy House Society",
-      "Atlantic Records UK",
-      "DX3N",
       "Insomniac Records",
-      "FFRR",
-      "neXup recz",
-      "Reliance",
-      "Disorder",
-      "Locus"
+      "neXup recz"
     ],
     "label_best": "Insomniac Music Group",
     "label_tier": 3,
@@ -4915,7 +4504,7 @@
     "tl_djs": 0,
     "tl_support_score": 7,
     "tl_updated": "2026-06-23T08:05:35.623Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 1,
@@ -4974,8 +4563,8 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_score": 76,
-    "beatport_best_position": 16,
+    "beatport_score": 75,
+    "beatport_best_position": 18,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Minimal / Deep Tech",
@@ -4988,18 +4577,9 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "DX3N",
       "Hot Creations",
-      "Blackground Records/Interscope Records",
-      "MVSON",
-      "FFRR",
-      "neXup recz",
-      "Disorder",
-      "Positiva",
-      "LW Recordings",
-      "MOXY MUZIK",
-      "Four Thirty Two",
-      "BOX RED"
+      "DX3N",
+      "neXup recz"
     ],
     "label_best": "Hot Creations",
     "label_tier": 5,
@@ -5010,7 +4590,7 @@
     "tl_djs": 0,
     "tl_support_score": 7,
     "tl_updated": "2026-06-23T08:05:35.619Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 1,
@@ -5076,37 +4656,20 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_score": 68,
-    "beatport_best_position": 30,
-    "beatport_charting_tracks": 3,
+    "beatport_score": 53,
+    "beatport_best_position": 29,
+    "beatport_charting_tracks": 1,
     "beatport_charts": [
-      "Minimal / Deep Tech",
-      "Deep House"
+      "Minimal / Deep Tech"
     ],
     "trends_mom_12w": 157.1,
     "ra_slug": "julianfijma",
-    "demand_index": 67,
+    "demand_index": 65,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Fijma Trax",
-      "Creamfields Recordings",
-      "Whoyostro White",
-      "Method 808",
-      "neXup recz",
-      "tszr",
-      "UNLISH",
-      "PVCLB",
-      "Eastenderz",
-      "Belief",
-      "PIV",
-      "Whoyostro",
-      "LW Recordings",
-      "WYLD",
-      "Airtime Records",
-      "MAISON Label",
-      "Samani"
+      "tszr"
     ],
     "label_best": "Fijma Trax",
     "label_tier": 2,
@@ -5117,7 +4680,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.621Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -5261,34 +4824,22 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_score": 12,
-    "beatport_best_position": 97,
-    "beatport_charting_tracks": 1,
-    "beatport_charts": [
-      "House"
-    ],
+    "beatport_score": 0,
+    "beatport_best_position": null,
+    "beatport_charting_tracks": 0,
+    "beatport_charts": [],
     "trends_mom_12w": -34.8,
     "ra_slug": "silvabumpa",
-    "demand_index": 63,
+    "demand_index": 72,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_labels": [
-      "Room Two Recordings",
-      "Baker's Dozen",
-      "Dance Traxx LDN",
-      "Amuse",
-      "ATW Records",
-      "Noir Fever Records",
-      "Polydor Records",
-      "ec2a",
-      "House Anxiety"
-    ],
+    "beatport_labels": [],
     "label_best": "Room Two Recordings",
     "label_tier": 2,
     "label_score": 40,
-    "beatport_hype_score": 61,
-    "beatport_hype_best": 16,
+    "beatport_hype_score": 62,
+    "beatport_hype_best": 14,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "House"
@@ -5392,25 +4943,7 @@
     "value_signal": null,
     "beatport_labels": [
       "Metamorfosi Records",
-      "Insomniac Music Group",
-      "Insomniac Records",
-      "tszr",
-      "Experts Only",
-      "Solid Grooves Records",
-      "Moan",
-      "Black Book Records",
-      "Revival New York",
-      "Take Notes",
-      "elrow Limited",
-      "Desolat",
-      "Shout Label",
-      "DOSMUNDOS",
-      "COCO.",
-      "Roush Label",
-      "MUSE",
-      "Deeperfect",
-      "LW Recordings",
-      "Issues"
+      "Solid Grooves Records"
     ],
     "label_best": "COCO.",
     "label_tier": 5,
@@ -5422,7 +4955,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.624Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -5482,8 +5015,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 62,
-    "beatport_best_position": 14,
+    "beatport_score": 63,
+    "beatport_best_position": 13,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
@@ -5496,21 +5029,7 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Intec",
-      "Perfecto Records (Armada Music)",
-      "4AD",
-      "Deepalma",
-      "We Are The Brave",
-      "Awesome Soundwave",
-      "Universal Records",
-      "Systematic Recordings",
-      "Factory 93 Records",
-      "Global Underground",
-      "Virgin",
-      "Natura Viva Black",
-      "Armada Music Albums",
-      "Toolroom",
-      "Orange Recordings"
+      "Kling Klong Records"
     ],
     "label_best": "Perfecto Records (Armada Music)",
     "label_tier": 4,
@@ -5521,7 +5040,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.616Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -5595,7 +5114,7 @@
       "fee_confidence": "medium"
     },
     "beatport_score": 65,
-    "beatport_best_position": 9,
+    "beatport_best_position": 10,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Tech House"
@@ -5609,19 +5128,7 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Hellbent Records",
-      "A State of Trance",
-      "Broke",
-      "Drumcode",
-      "Armada Music Albums",
-      "Warner Records",
-      "MADMINDS",
-      "Nervous Records",
-      "Helix Records",
-      "Big Beat Records",
-      "Armada Subjekt",
-      "Black Book Records",
-      "Experts Only"
+      "Broke"
     ],
     "label_best": "Drumcode",
     "label_tier": 5,
@@ -5638,7 +5145,7 @@
     "tl_djs": 0,
     "tl_chart_now": 1,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 4,
     "tl_setplays_total": 5,
     "tl_set_recent": true,
@@ -5703,8 +5210,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 18,
-    "beatport_best_position": 88,
+    "beatport_score": 21,
+    "beatport_best_position": 82,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
@@ -5713,17 +5220,12 @@
     "wikipedia_title": "Dom Dolla",
     "image": "https://cdn-images.dzcdn.net/images/artist/64e51b9c69e898c15cf61e200e277a17/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "domdolla",
-    "demand_index": 55,
+    "demand_index": 56,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Steel City Dance Discs",
-      "Three Six Zero Recordings",
-      "TMRW Music",
-      "Atlantic Records",
-      "Defected",
-      "SOLOTOKO"
+      "Steel City Dance Discs"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -5740,7 +5242,7 @@
     "tl_djs": 0,
     "tl_chart_now": null,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 1,
     "tl_setplays_total": 1,
     "tl_set_recent": true,
@@ -5823,17 +5325,7 @@
     "tl_setplays_total": 2,
     "tl_set_recent": true,
     "beatport_artist_id": 522539,
-    "beatport_labels": [
-      "Tomorrowland Music / SoundOn",
-      "STEREOHYPE",
-      "Disorder",
-      "Universal-Island Records Ltd.",
-      "Isekai Records",
-      "Armada Music Albums",
-      "SoundOn",
-      "Grimey Limey",
-      "Armada Music"
-    ],
+    "beatport_labels": [],
     "label_best": "Armada Music Albums",
     "label_tier": 4,
     "label_score": 85,
@@ -5895,22 +5387,7 @@
     "demand_tier": 3,
     "value_gap": -1,
     "value_signal": "premium",
-    "beatport_labels": [
-      "ERA",
-      "Nublu Records",
-      "Wrong Number Records",
-      "LW Recordings",
-      "Armada Music Albums",
-      "Almost Like We Met",
-      "Crosstown Rebels",
-      "Ceci n’est pas un label.",
-      "Variance Recordings",
-      "DIRTYBIRD",
-      "dOP only",
-      "Pets Recordings",
-      "Rekids",
-      "Ultra"
-    ],
+    "beatport_labels": [],
     "label_best": "Crosstown Rebels",
     "label_tier": 5,
     "label_score": 100,
@@ -6067,8 +5544,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 58,
-    "beatport_best_position": 29,
+    "beatport_score": 59,
+    "beatport_best_position": 28,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Techno (Peak Time / Driving)"
@@ -6082,16 +5559,8 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Insomniac Records",
-      "Insomniac Music Group",
       "Arcane Music",
-      "Armada Music Albums",
-      "A State of Trance",
-      "Armada Music",
-      "Ultra",
-      "Sola",
-      "Three Six Zero Recordings",
-      "Drumcode"
+      "Filth on Acid"
     ],
     "label_best": "Drumcode",
     "label_tier": 5,
@@ -6104,7 +5573,7 @@
     "tl_updated": "2026-06-23T08:05:35.619Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 1,
     "tl_setplays_total": 1,
     "tl_set_recent": true,
@@ -6186,23 +5655,7 @@
     "tl_setplays_total": 1,
     "tl_set_recent": true,
     "beatport_artist_id": 967935,
-    "beatport_labels": [
-      "Helix Records",
-      "Rhino Atlantic",
-      "Major Recordings/Warner Records",
-      "Casablanca new/Republic Records",
-      "Insomniac Music Group",
-      "Sound International",
-      "Right Hand Music Group, LLC/RCA Records",
-      "Cercle Records",
-      "Insomniac Records",
-      "Tuskegee",
-      "Global Underground",
-      "CAPITOL CATALOG MKT (C92)",
-      "BMG Rights Management GmbH",
-      "Armada Subjekt",
-      "Supergiant Records, LLC / Def Jam Recordings"
-    ],
+    "beatport_labels": [],
     "label_best": "Armada Subjekt",
     "label_tier": 4,
     "label_score": 80,
@@ -6270,15 +5723,7 @@
     "beatport_best_position": null,
     "beatport_charting_tracks": 0,
     "beatport_charts": [],
-    "beatport_labels": [
-      "WRONG.",
-      "Selected.",
-      "Insomniac Music Group",
-      "Armada Music Albums",
-      "Insomniac Records",
-      "Armada Subjekt",
-      "Armada Music"
-    ],
+    "beatport_labels": [],
     "beatport_updated": "2026-06-10T05:34:56.201Z",
     "label_best": "Armada Music Albums",
     "label_tier": 4,
@@ -6509,8 +5954,8 @@
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
-    "beatport_hype_score": 21,
-    "beatport_hype_best": 82,
+    "beatport_hype_score": 29,
+    "beatport_hype_best": 70,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Tech House"
@@ -6528,20 +5973,7 @@
     "tl_setplays_total": 0,
     "tl_set_recent": false,
     "beatport_artist_id": 194849,
-    "beatport_labels": [
-      "Moan",
-      "counter culture music",
-      "Nervous Records",
-      "Electronic Nature Records",
-      "MOOD Collective",
-      "Moon Harbour Recordings",
-      "Defected",
-      "Stress Records",
-      "Ministry of Sound Recordings",
-      "DFTD",
-      "Room Two Recordings",
-      "Sola"
-    ],
+    "beatport_labels": [],
     "label_best": "Defected",
     "label_tier": 5,
     "label_score": 100,
@@ -6676,8 +6108,8 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_score": 76,
-    "beatport_best_position": 8,
+    "beatport_score": 77,
+    "beatport_best_position": 6,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -6687,24 +6119,12 @@
     "wikipedia_title": "Âme",
     "image": "https://cdn-images.dzcdn.net/images/artist/5381f9f67e6b7cef61861a59d0c19ed2/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "ame",
-    "demand_index": 59,
+    "demand_index": 60,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Innervisions",
-      "LoudKult",
-      "Young",
-      "BMG Rights Management (UK) Ltd.",
-      "Paradise Sound System",
-      "Armada Electronic Elements",
-      "Polydor Records",
-      "Global Underground",
-      "Ibadan Sound",
-      "Stolen Goods Records",
-      "Stolen Goods",
-      "Armada Music Albums",
-      "Life And Death"
+      "Innervisions"
     ],
     "label_best": "Innervisions",
     "label_tier": 5,
@@ -6715,7 +6135,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.618Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -6882,16 +6302,8 @@
     "tl_set_recent": false,
     "beatport_artist_id": 21680,
     "beatport_labels": [
-      "Vega Records",
-      "MAW Records",
       "Nervous Records",
-      "BBE Music",
-      "iM Electronica",
-      "Heist Recordings",
-      "Strictly Rhythm Records",
-      "Nothing But",
-      "NuLu Music",
-      "Malligator Productions / Because Music"
+      "Vega Records"
     ],
     "label_best": "Vega Records",
     "label_tier": 2,
@@ -6916,13 +6328,13 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:08:01.631Z",
-    "beatport_score": 40,
-    "beatport_best_position": 51,
-    "beatport_charting_tracks": 1,
+    "beatport_score": 44,
+    "beatport_best_position": 52,
+    "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Afro House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Dennis Ferrer",
@@ -6943,8 +6355,8 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_score": 57,
-    "beatport_best_position": 22,
+    "beatport_score": 54,
+    "beatport_best_position": 27,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
@@ -6958,20 +6370,7 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "K7 Records",
-      "Defected",
-      "Moon Harbour Recordings",
-      "Strictly Rhythm",
-      "Armada Music Albums",
-      "Rekids",
-      "Strictly Rhythm Records",
-      "Classic Music Company",
-      "Z Records",
-      "Armada Electronic Elements",
-      "Papa Records",
-      "Ibadan Sound",
-      "King Street Sounds",
-      "Warner Music Africa"
+      "Defected"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -6982,7 +6381,7 @@
     "tl_djs": 0,
     "tl_support_score": 1,
     "tl_updated": "2026-06-23T08:05:35.625Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -7045,7 +6444,7 @@
     "wikipedia_title": "Roger Sanchez",
     "image": "https://cdn-images.dzcdn.net/images/artist/b7dfca93bf80433e50010850aab555c8/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "rogersanchez",
-    "demand_index": 37,
+    "demand_index": 38,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -7062,12 +6461,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 4418,
     "beatport_labels": [
-      "Stealth Records",
-      "EMI",
-      "Solaris Records",
-      "BTECH",
-      "UNDR THE RADR",
-      "Strictly Rhythm Records"
+      "Virgin"
     ],
     "label_best": "Solaris Records",
     "label_tier": 4,
@@ -7092,13 +6486,13 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:08:57.353Z",
-    "beatport_score": 11,
-    "beatport_best_position": 99,
+    "beatport_score": 20,
+    "beatport_best_position": 84,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Afro House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Armand Van Helden",
@@ -7134,18 +6528,8 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "XL Recordings",
-      "3 Beat",
-      "Rhino",
-      "Nublu Records",
-      "Toolroom",
-      "London Records (Because Ltd)",
       "Southern Fried Records",
-      "SPINNIN' RECORDS",
-      "Interscope",
-      "Strictly Rhythm",
-      "Moveltraxx",
-      "Strictly Rhythm Records"
+      "X-Mix Productions"
     ],
     "label_best": "Toolroom",
     "label_tier": 4,
@@ -7158,7 +6542,7 @@
     "tl_updated": "2026-06-23T08:05:35.618Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 2,
     "tl_setplays_total": 2,
     "tl_set_recent": true,
@@ -7215,8 +6599,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 52,
-    "beatport_best_position": 31,
+    "beatport_score": 51,
+    "beatport_best_position": 32,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
@@ -7230,15 +6614,7 @@
     "value_gap": 0,
     "value_signal": "fair",
     "beatport_labels": [
-      "Toolroom",
-      "Toolroom Trax",
-      "Fool's Paradise",
-      "Strictly Rhythm Records",
-      "BMG Rights Management (UK) Ltd.",
-      "fabric Records",
-      "Zerothree",
-      "Armada Subjekt",
-      "Chrysalis Records"
+      "Toolroom"
     ],
     "label_best": "Toolroom",
     "label_tier": 4,
@@ -7251,7 +6627,7 @@
     "tl_updated": "2026-06-23T08:05:35.618Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 5,
     "tl_setplays_total": 5,
     "tl_set_recent": true,
@@ -7640,7 +7016,7 @@
     "wikipedia_title": "Kyle Watson",
     "image": "https://cdn-images.dzcdn.net/images/artist/7477a88887bb1e4b9c9870a3a46e60bb/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "kylewatson",
-    "demand_index": 34,
+    "demand_index": 33,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -7657,18 +7033,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 39303,
     "beatport_labels": [
-      "No Context Records",
-      "Black Book Records",
-      "REALM Records",
-      "Box Of Cats",
-      "Catch \\u0026 Release",
-      "Bunny Tiger",
-      "Armada Electronic Elements",
-      "Armada Music",
-      "Sweat It Out",
-      "Insomniac Music Group",
-      "Experts Only",
-      "DVINE Sounds"
+      "No Context Records"
     ],
     "label_best": "Black Book Records",
     "label_tier": 4,
@@ -7693,19 +7058,19 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:12:31.694Z",
-    "beatport_hype_score": 59,
-    "beatport_hype_best": 20,
+    "beatport_hype_score": 60,
+    "beatport_hype_best": 17,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Tech House"
     ],
-    "beatport_score": 15,
-    "beatport_best_position": 93,
+    "beatport_score": 13,
+    "beatport_best_position": 96,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Tech House"
     ],
-    "beatport_updated": "2026-09-06T12:14:30.864Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Wehbba",
@@ -7746,25 +7111,7 @@
     "tl_setplays_total": 0,
     "tl_set_recent": false,
     "beatport_artist_id": 15479,
-    "beatport_labels": [
-      "Iboga Records",
-      "Perfecto Fluoro (Armada Music)",
-      "Tronic",
-      "Sway",
-      "Armada Music",
-      "Zatar Music",
-      "Skint Records",
-      "Watergate Records",
-      "Natura Viva Black",
-      "Awesome Soundwave",
-      "Set About Music",
-      "We Are The Brave",
-      "Kaligo Records",
-      "Iturnem Music",
-      "HIFN",
-      "Global Underground",
-      "WTF! Music"
-    ],
+    "beatport_labels": [],
     "label_best": "Perfecto Fluoro (Armada Music)",
     "label_tier": 4,
     "label_score": 90,
@@ -8095,18 +7442,8 @@
     "tl_set_recent": true,
     "beatport_artist_id": 342275,
     "beatport_labels": [
-      "Voltaire Music",
       "Toolroom",
-      "Consequence Of Society Recordings",
-      "Interstellar Recordings (Insomniac)",
-      "The Cross Records",
-      "Insomniac Music Group",
-      "Nordic Trax",
-      "BMG Rights Management (UK) Ltd.",
-      "Loaded Records",
-      "fabric Records",
-      "Variety Music",
-      "Selected."
+      "Consequence Of Society Recordings"
     ],
     "label_best": "Toolroom",
     "label_tier": 4,
@@ -8131,17 +7468,17 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:08:26.541Z",
-    "beatport_score": 62,
-    "beatport_best_position": 31,
+    "beatport_score": 61,
+    "beatport_best_position": 32,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "House",
       "Progressive House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
-    "beatport_hype_score": 85,
-    "beatport_hype_best": 9,
-    "beatport_hype_tracks": 4,
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
+    "beatport_hype_score": 73,
+    "beatport_hype_best": 13,
+    "beatport_hype_tracks": 2,
     "beatport_hype_charts": [
       "House",
       "Progressive House"
@@ -8403,8 +7740,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_hype_score": 34,
-    "beatport_hype_best": 61,
+    "beatport_hype_score": 28,
+    "beatport_hype_best": 71,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Deep House"
@@ -8498,21 +7835,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 293649,
     "beatport_labels": [
-      "Flores",
-      "Ravanelli Disco Club",
-      "LAOLAO Records",
-      "XL Recordings",
-      "Running Back",
-      "Armada Music",
-      "Ano Ano",
-      "Music For Dreams",
-      "Skint Records",
-      "Stil Vor Talent",
-      "Horisontal Mambo",
-      "rollover Milano",
-      "Armada Electronic Elements",
-      "Volt Recordings",
-      "Character"
+      "Ravanelli Disco Club"
     ],
     "label_best": "Running Back",
     "label_tier": 4,
@@ -8537,13 +7860,13 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:09:34.718Z",
-    "beatport_score": 30,
-    "beatport_best_position": 68,
+    "beatport_score": 31,
+    "beatport_best_position": 66,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Roman Flügel",
@@ -8676,13 +7999,7 @@
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
-    "beatport_labels": [
-      "Blaufield Music",
-      "WTF! Music",
-      "Get Physical Music",
-      "Natura Viva",
-      "Café Del Mar Music"
-    ],
+    "beatport_labels": [],
     "label_best": "Get Physical Music",
     "label_tier": 4,
     "label_score": 80,
@@ -8829,8 +8146,8 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_score": 78,
-    "beatport_best_position": 5,
+    "beatport_score": 79,
+    "beatport_best_position": 3,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Progressive House",
@@ -8845,9 +8162,8 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Warner Music Central Europe",
-      "Insomniac Records",
-      "SPINNIN' DEEP"
+      "Defected",
+      "ABRA X"
     ],
     "label_best": "SPINNIN' DEEP",
     "label_tier": 4,
@@ -8860,7 +8176,7 @@
     "tl_updated": "2026-06-23T08:05:35.619Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 4,
     "tl_setplays_total": 4,
     "tl_set_recent": true,
@@ -9173,18 +8489,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 2108,
     "beatport_labels": [
-      "430 West Records",
-      "Skint Records",
-      "BMG Rights Management (UK) Ltd.",
-      "Tresor Records",
-      "UMC (Universal Music Catalogue)",
-      "Intangible Records and Soundworks",
-      "Festina Lente",
-      "Orbital Recordings Ltd",
-      "London Records (Because Ltd)",
-      "Yoruba Records",
-      "Mixmag Records",
-      "Stil Vor Talent"
+      "430 West Records"
     ],
     "label_best": "Tresor Records",
     "label_tier": 5,
@@ -9210,13 +8515,13 @@
     ],
     "artist_labels_updated": "2026-09-07T14:09:53.524Z",
     "genre_lean": "techno",
-    "beatport_score": 18,
-    "beatport_best_position": 87,
+    "beatport_score": 20,
+    "beatport_best_position": 85,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Pig&Dan",
@@ -9337,20 +8642,7 @@
     "value_signal": null,
     "beatport_labels": [
       "Innervisions",
-      "Natura Viva",
-      "Watergate Records",
-      "CircoLoco Records",
-      "Cocoon Recordings",
-      "Rose Avenue/Reprise",
-      "Colore",
-      "Natura Viva In The Mix",
-      "Life And Death",
-      "Rose Avenue",
-      "Armada Electronic Elements",
-      "Armada Music Albums",
-      "Musical Freedom",
-      "Drumpoet Community",
-      "Counter Records"
+      "Defected"
     ],
     "label_best": "Innervisions",
     "label_tier": 5,
@@ -9361,7 +8653,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.622Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -9431,29 +8723,12 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_labels": [
-      "RaRaLand Records",
-      "Get Physical Music",
-      "Factory 93 Records",
-      "All Night Long",
-      "SPINNIN' DEEP",
-      "Frau Blau",
-      "Scenarios",
-      "Global Underground",
-      "Abracadabra Music",
-      "Poker Flat Recordings",
-      "X Recordings",
-      "When Stars Align",
-      "Songspire Records",
-      "Warner Music Central Europe",
-      "Rose Avenue/Reprise",
-      "HABITAT Records"
-    ],
+    "beatport_labels": [],
     "label_best": "Get Physical Music",
     "label_tier": 4,
     "label_score": 85,
     "beatport_hype_score": 23,
-    "beatport_hype_best": 80,
+    "beatport_hype_best": 79,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Melodic House & Techno"
@@ -9527,7 +8802,7 @@
     "wikipedia_title": "Colyn",
     "image": "https://cdn-images.dzcdn.net/images/artist/a25b208534aaf17c8ec2fa4cb0460ce5/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "colyn",
-    "demand_index": 57,
+    "demand_index": 58,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -9545,24 +8820,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 661550,
     "beatport_labels": [
-      "Interstellar Recordings (Insomniac)",
-      "ÆDEN RECORDS",
-      "CORE Records",
-      "Embassy One",
-      "This Never Happened",
-      "Popart Discos",
-      "Warner Music Central Europe",
-      "MAHOOL",
-      "BMG Rights Management (UK) Ltd.",
-      "belonging",
-      "Dog Triumph Profound Mysteries",
-      "Afterlife Records",
-      "Cercle Records",
-      "Rose Avenue/Reprise",
-      "Musical Freedom",
-      "Vintage Culture",
-      "Foreign Family Collective",
-      "Watergate Records"
+      "ÆDEN RECORDS"
     ],
     "label_best": "Afterlife Records",
     "label_tier": 5,
@@ -9587,13 +8845,13 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:09:29.429Z",
-    "beatport_score": 44,
-    "beatport_best_position": 44,
+    "beatport_score": 48,
+    "beatport_best_position": 37,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Anyma",
@@ -9816,13 +9074,7 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_labels": [
-      "WE'RE HERE",
-      "LW Recordings",
-      "MoBlack Records",
-      "Frau Blau",
-      "Natura Viva In The Mix"
-    ],
+    "beatport_labels": [],
     "label_best": "WE'RE HERE",
     "label_tier": 2,
     "label_score": 40,
@@ -9986,10 +9238,7 @@
     "beatport_best_position": null,
     "beatport_charting_tracks": 0,
     "beatport_charts": [],
-    "beatport_labels": [
-      "Unreleased Records",
-      "Bantwanas Kollektiv"
-    ],
+    "beatport_labels": [],
     "beatport_updated": "2026-07-24T10:06:29.909Z",
     "label_best": "Unreleased Records",
     "label_tier": 2,
@@ -10471,8 +9720,8 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:11:20.977Z",
-    "beatport_hype_score": 28,
-    "beatport_hype_best": 71,
+    "beatport_hype_score": 23,
+    "beatport_hype_best": 80,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Deep House"
@@ -10650,7 +9899,7 @@
     "image": "https://cdn-images.dzcdn.net/images/artist/623c0d8a9306d60397e896158f92b780/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Michael Mayer",
     "ra_slug": "michaelmayer",
-    "demand_index": 45,
+    "demand_index": 46,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
@@ -10668,19 +9917,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 7474,
     "beatport_labels": [
-      "Kompakt",
-      "Fame Game Recordings",
-      "Natura Viva In The Mix",
-      "Global Underground",
-      "BMG Rights Management (UK) Ltd.",
-      "BMG Rights Management GmbH",
-      "Kompakt Extra",
-      "Snick Snack",
-      "DSK Records",
-      "Skull And Bones",
-      "Feines Tier",
-      "Clepsydra",
-      "Superstition Records"
+      "Kompakt"
     ],
     "label_best": "Kompakt",
     "label_tier": 5,
@@ -10705,13 +9942,13 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:07:54.048Z",
-    "beatport_score": 11,
-    "beatport_best_position": 99,
+    "beatport_score": 14,
+    "beatport_best_position": 94,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Gui Boratto",
@@ -11002,9 +10239,9 @@
     "image": "https://cdn-images.dzcdn.net/images/artist/b3bc5e2fa9c9a62dc77adea71c09ec61/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "objekt",
     "demand_index": 65,
-    "demand_tier": 3,
-    "value_gap": 0,
-    "value_signal": "fair",
+    "demand_tier": 4,
+    "value_gap": 1,
+    "value_signal": "buy",
     "youtube_search_alias": "Objekt TJ Hertz music",
     "tl_weeks_charted": 0,
     "tl_chart_best": null,
@@ -11232,8 +10469,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 70,
-    "beatport_best_position": 34,
+    "beatport_score": 76,
+    "beatport_best_position": 24,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Tech House",
@@ -11244,20 +10481,14 @@
     "wikipedia_title": "Tiga",
     "image": "https://cdn-images.dzcdn.net/images/artist/bac70428661be07d87075b37eef1a263/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "tiga",
-    "demand_index": 67,
+    "demand_index": 68,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Turbo Recordings",
-      "Armada Music",
       "Black Book Records",
-      "XL Recordings",
-      "K7 Records",
-      "Three Six Zero Recordings",
-      "Armada Music Albums",
-      "Alt:Vision",
-      "MADMINDS"
+      "Armada Music",
+      "Turbo Recordings"
     ],
     "label_best": "Armada Music",
     "label_tier": 4,
@@ -11274,7 +10505,7 @@
     "tl_djs": 0,
     "tl_chart_now": null,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 4,
     "tl_setplays_total": 4,
     "tl_set_recent": true,
@@ -11428,16 +10659,7 @@
     "tl_setplays_total": 0,
     "tl_set_recent": false,
     "beatport_artist_id": 99758,
-    "beatport_labels": [
-      "fabric Records",
-      "Fantasy",
-      "Warp Records",
-      "HIJINXX/Island",
-      "Hotflush Recordings",
-      "Ninja Tune",
-      "Transgressive Records / Co-op",
-      "Method"
-    ],
+    "beatport_labels": [],
     "label_best": "Warp Records",
     "label_tier": 5,
     "label_score": 100,
@@ -11719,8 +10941,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 21,
-    "beatport_best_position": 83,
+    "beatport_score": 20,
+    "beatport_best_position": 85,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -11734,15 +10956,7 @@
     "value_gap": -1,
     "value_signal": "premium",
     "beatport_labels": [
-      "Spectrum (NL)",
-      "Armada Music",
-      "A State of Trance",
-      "Armada Music Albums",
-      "Tomorrrowland Music",
-      "Astralwerks",
-      "BMG Rights Management (UK) Ltd.",
-      "BMG Rights Management (US) LLC",
-      "Mute, a BMG Company"
+      "Spectrum (NL)"
     ],
     "label_best": "Armada Music",
     "label_tier": 4,
@@ -11759,7 +10973,7 @@
     "tl_djs": 0,
     "tl_chart_now": null,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 1,
     "tl_setplays_total": 1,
     "tl_set_recent": true,
@@ -11919,26 +11133,7 @@
     "tl_setplays_total": 0,
     "tl_set_recent": false,
     "beatport_artist_id": 8501,
-    "beatport_labels": [
-      "541",
-      "Tronic",
-      "DIKI Records Classics",
-      "fabric Records",
-      "Kompakt",
-      "COD3 QR",
-      "Character",
-      "Global Underground",
-      "[PIAS] ÉLECTRONIQUE",
-      "Dolma Records",
-      "Natura Viva Black",
-      "Wagram Music / Balagan Music",
-      "Ed Banger Records / Because Music",
-      "Something Happening Somewhere",
-      "Berreto Music",
-      "Astropolis Records",
-      "Tronic Soundz",
-      "Nuits Sonores"
-    ],
+    "beatport_labels": [],
     "label_best": "Kompakt",
     "label_tier": 5,
     "label_score": 100,
@@ -12226,20 +11421,7 @@
     "tl_setplays_total": 0,
     "tl_set_recent": false,
     "beatport_artist_id": 8624,
-    "beatport_labels": [
-      "Cocoon Recordings",
-      "Kompakt",
-      "[PIAS] ÉLECTRONIQUE",
-      "K7 Records",
-      "Turbo Recordings",
-      "Avatar Records",
-      "Safe Trip",
-      "Music For Dreams",
-      "Mixmag Records",
-      "Café Del Mar Music",
-      "Natura Viva Black",
-      "Natura Viva"
-    ],
+    "beatport_labels": [],
     "label_best": "Cocoon Recordings",
     "label_tier": 5,
     "label_score": 100,
@@ -12292,7 +11474,7 @@
     "wikipedia_title": "Richie Hawtin",
     "image": "https://cdn-images.dzcdn.net/images/artist/f9977b35e4579e7fec01e84ea5c52941/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "richiehawtin",
-    "demand_index": 59,
+    "demand_index": 60,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -12309,11 +11491,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 1050413,
     "beatport_labels": [
-      "Plus 8 Records",
-      "From Our Minds",
-      "Turbo Recordings",
-      "Lovesupreme",
-      "Metropolis Records"
+      "Definitive Recordings"
     ],
     "label_best": "Plus 8 Records",
     "label_tier": 2,
@@ -12345,13 +11523,13 @@
       "House",
       "Tech House"
     ],
-    "beatport_score": 41,
-    "beatport_best_position": 50,
+    "beatport_score": 48,
+    "beatport_best_position": 38,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Tech House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Joseph Capriati",
@@ -12393,24 +11571,7 @@
     "tl_setplays_total": 0,
     "tl_set_recent": false,
     "beatport_artist_id": 33777,
-    "beatport_labels": [
-      "Metamorfosi Records",
-      "FCKNG SERIOUS",
-      "Defected",
-      "Insomniac Music Group",
-      "Cocoon Recordings",
-      "Global Underground",
-      "Wake UP",
-      "Nervous Records",
-      "Loose Records",
-      "ARTCORE RECORDS",
-      "Agile Recordings",
-      "Stride",
-      "Natura Viva",
-      "Kompakt",
-      "REDIMENSION",
-      "Afterlife Records"
-    ],
+    "beatport_labels": [],
     "label_best": "Defected",
     "label_tier": 5,
     "label_score": 100,
@@ -12459,8 +11620,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 36,
-    "beatport_best_position": 75,
+    "beatport_score": 41,
+    "beatport_best_position": 66,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Techno (Peak Time / Driving)",
@@ -12470,7 +11631,7 @@
     "image": "https://cdn-images.dzcdn.net/images/artist/9409d8dc0befa21f01323225476067b3/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Sam Paganini",
     "ra_slug": "sampaganini",
-    "demand_index": 52,
+    "demand_index": 53,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
@@ -12488,11 +11649,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 8637,
     "beatport_labels": [
-      "Adilonia Music",
-      "JAM",
-      "Sea Of Sand",
-      "Natura Viva In The Mix",
-      "Natura Viva Black"
+      "JAM"
     ],
     "label_best": "Adilonia Music",
     "label_tier": 2,
@@ -12517,7 +11674,7 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:07:09.030Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Maceo Plex",
@@ -12542,7 +11699,7 @@
     "image": "https://cdn-images.dzcdn.net/images/artist/c02e49a5c71f43770db7e53ebac32bbf/1000x1000-000000-80-0-0.jpg",
     "wikipedia_title": "Maceo Plex",
     "ra_slug": "maceoplex",
-    "demand_index": 62,
+    "demand_index": 61,
     "demand_tier": 3,
     "value_gap": -2,
     "value_signal": "premium",
@@ -12560,23 +11717,7 @@
     "tl_set_recent": true,
     "beatport_artist_id": 119538,
     "beatport_labels": [
-      "541",
-      "Rekids",
-      "Ellum",
-      "Watergate Records",
-      "Pixadelic.",
-      "Skint Records",
-      "BMG Rights Management (UK) Ltd.",
-      "Tronic Soundz",
-      "Get Physical Music",
-      "Natura Viva",
-      "Lone Romantic",
-      "Milk \\u0026 Sugar",
-      "Dog Triumph Profound Mysteries",
-      "Crosstown Rebels",
-      "Higher Ground",
-      "NINL",
-      "Herzblut Recordings"
+      "Ellum"
     ],
     "label_best": "Rekids",
     "label_tier": 5,
@@ -12607,13 +11748,13 @@
       "Essential Mix",
       "Awakenings"
     ],
-    "beatport_score": 21,
-    "beatport_best_position": 83,
+    "beatport_score": 11,
+    "beatport_best_position": 99,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Mind Against",
@@ -12645,21 +11786,7 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_labels": [
-      "HABITAT Records",
-      "Maeve",
-      "CORE Records",
-      "Nervous Records",
-      "Drumcode",
-      "Afterlife Records",
-      "Rose Avenue/Reprise",
-      "Life And Death",
-      "Global Underground",
-      "When Stars Align / The Nations",
-      "The Moment",
-      "Dog Triumph Profound Mysteries",
-      "Hotflush Recordings"
-    ],
+    "beatport_labels": [],
     "label_best": "Drumcode",
     "label_tier": 5,
     "label_score": 100,
@@ -12959,8 +12086,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 11,
-    "beatport_best_position": 100,
+    "beatport_score": 12,
+    "beatport_best_position": 98,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -12974,12 +12101,7 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Crosstown Rebels",
-      "Embassy One",
-      "Sol Selectas",
-      "Global Underground",
-      "Cercle Records",
-      "MoBlack Records"
+      "Embassy One"
     ],
     "label_best": "Crosstown Rebels",
     "label_tier": 5,
@@ -13029,7 +12151,7 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:10:02.501Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Massano",
@@ -13050,28 +12172,21 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 0,
-    "beatport_best_position": null,
-    "beatport_charting_tracks": 0,
-    "beatport_charts": [],
+    "beatport_score": 16,
+    "beatport_best_position": 91,
+    "beatport_charting_tracks": 1,
+    "beatport_charts": [
+      "Melodic House & Techno"
+    ],
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/06a41e2ec0c3a373af5db2b85763f00e/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "massano",
-    "demand_index": 67,
-    "demand_tier": 4,
-    "value_gap": 1,
-    "value_signal": "buy",
+    "demand_index": 60,
+    "demand_tier": 3,
+    "value_gap": 0,
+    "value_signal": "fair",
     "beatport_labels": [
-      "ÆDEN RECORDS",
-      "Tomorrowland Music",
-      "Simulate Recordings",
-      "Positiva",
-      "Drumcode",
-      "Diynamic",
-      "Afterlife Records",
-      "UMC (Universal Music Catalogue)",
-      "The End Of Genesys",
-      "Anyma/Interscope Records"
+      "Simulate Recordings"
     ],
     "label_best": "Drumcode",
     "label_tier": 5,
@@ -13082,7 +12197,7 @@
     "tl_djs": 0,
     "tl_support_score": 28,
     "tl_updated": "2026-06-23T08:05:35.620Z",
-    "beatport_updated": "2026-08-10T09:25:00.982Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 4,
@@ -13143,7 +12258,7 @@
       "fee_confidence": "medium"
     },
     "beatport_score": 64,
-    "beatport_best_position": 27,
+    "beatport_best_position": 28,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -13158,7 +12273,8 @@
     "value_gap": 0,
     "value_signal": "fair",
     "beatport_labels": [
-      "Armada Music Albums"
+      "Afterlife Records",
+      "Armada Music"
     ],
     "label_best": "Armada Music Albums",
     "label_tier": 4,
@@ -13171,7 +12287,7 @@
     "tl_updated": "2026-06-23T08:05:35.619Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 0,
     "tl_setplays_total": 0,
     "tl_set_recent": false,
@@ -13253,19 +12369,7 @@
     "tl_setplays_total": 1,
     "tl_set_recent": true,
     "beatport_artist_id": 383347,
-    "beatport_labels": [
-      "Anjunadeep",
-      "Nasua Music",
-      "Ninja Tune",
-      "Anjunachill",
-      "Anjunabeats",
-      "Armada Music Albums",
-      "Cercle Records",
-      "Armada Electronic Elements",
-      "Variety Music",
-      "Global Underground",
-      "Poesie Musik"
-    ],
+    "beatport_labels": [],
     "label_best": "Anjunadeep",
     "label_tier": 5,
     "label_score": 100,
@@ -13314,8 +12418,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 42,
-    "beatport_best_position": 47,
+    "beatport_score": 39,
+    "beatport_best_position": 53,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Organic House / Downtempo"
@@ -13329,12 +12433,7 @@
     "value_gap": -1,
     "value_signal": "premium",
     "beatport_labels": [
-      "Casablanca new/Republic Records",
-      "Enormous Tunes",
-      "Sirup Music",
-      "Rhino Atlantic",
-      "DAYS like NIGHTS",
-      "Chrysalis Records"
+      "Enormous Tunes"
     ],
     "label_best": "Casablanca new/Republic Records",
     "label_tier": 2,
@@ -13345,7 +12444,7 @@
     "tl_djs": 0,
     "tl_support_score": 7,
     "tl_updated": "2026-06-23T08:05:35.622Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 1,
@@ -13404,9 +12503,9 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 80,
+    "beatport_score": 75,
     "beatport_best_position": 10,
-    "beatport_charting_tracks": 4,
+    "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Melodic House & Techno"
     ],
@@ -13420,15 +12519,6 @@
     "value_signal": "buy",
     "beatport_labels": [
       "X Recordings",
-      "Watergate Records",
-      "Armada Music Albums",
-      "Afterlife Records",
-      "Chaos",
-      "Cercle Records",
-      "Siamese",
-      "Deja Vu Records",
-      "Interscope",
-      "X Recordings (back cat)",
       "Rose Avenue/Reprise"
     ],
     "label_best": "Afterlife Records",
@@ -13442,7 +12532,7 @@
     "tl_updated": "2026-06-23T08:05:35.618Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 2,
     "tl_setplays_total": 2,
     "tl_set_recent": true,
@@ -13525,24 +12615,7 @@
     "tl_setplays_total": 0,
     "tl_set_recent": false,
     "beatport_artist_id": 36233,
-    "beatport_labels": [
-      "Post Hope Audio",
-      "Poker Flat Recordings",
-      "Eleatics Records",
-      "recordJet",
-      "Turmstrasse Backstock",
-      "Not Sorry Music",
-      "Watergate Records",
-      "Natura Viva In The Mix",
-      "Clepsydra",
-      "Skull And Bones",
-      "Connaisseur Recordings",
-      "Café Del Mar Music",
-      "Global Underground",
-      "Milk \\u0026 Sugar",
-      "Stripped Down Records",
-      "Musik Gewinnt Freunde"
-    ],
+    "beatport_labels": [],
     "label_best": "Watergate Records",
     "label_tier": 4,
     "label_score": 80,
@@ -13940,7 +13013,7 @@
     "wikipedia_title": "Surgeon",
     "image": "https://cdn-images.dzcdn.net/images/artist/cbb8855d3aec037618667a16bffe1735/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "surgeon",
-    "demand_index": 54,
+    "demand_index": 53,
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
@@ -13957,18 +13030,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 4036,
     "beatport_labels": [
-      "Soma Records",
-      "Symbolism",
-      "XL Recordings",
-      "Downwards",
-      "Tresor Records",
-      "STOOR",
-      "Semantica Records",
-      "Dust Science",
-      "Repetitive Rhythm Research",
-      "Mental Disorder",
-      "Rocket Recordings",
-      "Blueprint Records"
+      "Soma Records"
     ],
     "label_best": "Tresor Records",
     "label_tier": 5,
@@ -13994,13 +13056,13 @@
     ],
     "artist_labels_updated": "2026-09-07T14:07:12.378Z",
     "genre_lean": "techno",
-    "beatport_score": 34,
-    "beatport_best_position": 61,
+    "beatport_score": 31,
+    "beatport_best_position": 66,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Blawan",
@@ -14105,26 +13167,7 @@
     "demand_tier": 4,
     "value_gap": 1,
     "value_signal": "strong-buy",
-    "beatport_labels": [
-      "Shadow State",
-      "RBC",
-      "Voltaire Music",
-      "Van Czar Series",
-      "541",
-      "Natura Viva Black",
-      "Planet X Recordings",
-      "Audiotools",
-      "Arts",
-      "WTF! Music",
-      "Electric Ballroom",
-      "Frenzy Recordings",
-      "Techno Parade Compilations",
-      "Chart Series",
-      "Chiwax",
-      "Adroit",
-      "Natura Viva In The Mix",
-      "Naked Lunch"
-    ],
+    "beatport_labels": [],
     "label_best": "Shadow State",
     "label_tier": 2,
     "label_score": 40,
@@ -14213,19 +13256,7 @@
     "tl_setplays_total": 0,
     "tl_set_recent": false,
     "beatport_artist_id": 87565,
-    "beatport_labels": [
-      "Monnom Black",
-      "Clergy",
-      "Analogue",
-      "Mutual Rytm",
-      "Arts",
-      "DGTL",
-      "POSSESSION",
-      "The Third Room",
-      "Perc Trax",
-      "44 LABEL GROUP",
-      "Weekend Circuit"
-    ],
+    "beatport_labels": [],
     "label_best": "Monnom Black",
     "label_tier": 2,
     "label_score": 40,
@@ -14362,8 +13393,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_hype_score": 24,
-    "beatport_hype_best": 77,
+    "beatport_hype_score": 39,
+    "beatport_hype_best": 53,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Melodic House & Techno"
@@ -14459,22 +13490,7 @@
     "tl_setplays_total": 1,
     "tl_set_recent": true,
     "beatport_artist_id": 525644,
-    "beatport_labels": [
-      "belonging",
-      "Insomniac Music Group",
-      "MUKKE",
-      "belonging (Finding Home)",
-      "Experts Only",
-      "RH2",
-      "Insomniac Records",
-      "Musical Freedom",
-      "Distorted Youth",
-      "[PIAS] ÉLECTRONIQUE",
-      "Vintage Culture",
-      "Steyoyoke",
-      "The Moment",
-      "A State of Trance"
-    ],
+    "beatport_labels": [],
     "label_best": "Insomniac Music Group",
     "label_tier": 3,
     "label_score": 60,
@@ -14534,19 +13550,7 @@
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
-    "beatport_labels": [
-      "Time Machine Recordings",
-      "Tomorrowland Music",
-      "Skint Records",
-      "Armada Music",
-      "Disorder",
-      "SUPERHUMAN MUSIC",
-      "SOLOTOKO",
-      "A State of Trance",
-      "Virgin",
-      "Armada Music Albums",
-      "Natura Viva"
-    ],
+    "beatport_labels": [],
     "label_best": "Armada Music",
     "label_tier": 4,
     "label_score": 85,
@@ -14800,19 +13804,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 280733,
     "beatport_labels": [
-      "Life And Death",
-      "fabric Records",
-      "Street Cinema",
-      "Dog Triumph Profound Mysteries",
-      "Cercle Records",
-      "Armada Electronic Elements",
-      "EMI Music Australia",
-      "EMI Recorded Music Australia Pty Ltd",
-      "always centered at night",
-      "Mute (NA)",
-      "Global Underground",
-      "Ninja Tune",
-      "Counter Records"
+      "Life And Death"
     ],
     "label_best": "Ninja Tune",
     "label_tier": 5,
@@ -14837,13 +13829,13 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:08:24.768Z",
-    "beatport_score": 41,
-    "beatport_best_position": 49,
+    "beatport_score": 39,
+    "beatport_best_position": 52,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Dario D'Attis",
@@ -14961,12 +13953,7 @@
     "tl_setplays_total": 0,
     "tl_set_recent": false,
     "beatport_artist_id": 11309,
-    "beatport_labels": [
-      "Natura Sonoris",
-      "Bedrock Records",
-      "DAYS like NIGHTS",
-      "Last Night On Earth"
-    ],
+    "beatport_labels": [],
     "label_best": "Natura Sonoris",
     "label_tier": 2,
     "label_score": 40,
@@ -15019,7 +14006,7 @@
     "wikipedia_title": "Pional",
     "image": "https://cdn-images.dzcdn.net/images/artist/c2e63c9541c963df261821ab03bceff0/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "pional",
-    "demand_index": 57,
+    "demand_index": 58,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -15037,22 +14024,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 128454,
     "beatport_labels": [
-      "Permanent Vacation",
-      "Young",
-      "Natura Sonoris",
-      "Turbo Recordings",
-      "Counter Records",
-      "Phonica Recordings",
-      "Lumière Noire Records",
-      "Voodoo Music",
-      "Global Underground",
-      "Lovely Mood Music",
-      "Riverette",
-      "Variety Music",
-      "DRAMA MUSIC",
-      "Hivern Discs",
-      "Voltaire Music",
-      "Aeon"
+      "Permanent Vacation"
     ],
     "label_best": "Permanent Vacation",
     "label_tier": 4,
@@ -15077,13 +14049,13 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:13:14.811Z",
-    "beatport_score": 17,
-    "beatport_best_position": 90,
+    "beatport_score": 21,
+    "beatport_best_position": 83,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Ryan Crosson",
@@ -15205,21 +14177,7 @@
     "tl_setplays_total": 0,
     "tl_set_recent": false,
     "beatport_artist_id": 96732,
-    "beatport_labels": [
-      "Captive Soul",
-      "HABITAT Records",
-      "Eleatics Records",
-      "OTHERVOICE",
-      "Watergate Records",
-      "Simulate Recordings",
-      "Just This",
-      "Semantica Records",
-      "Afterlife Records",
-      "Armada Electronic Elements",
-      "UPPERGROUND",
-      "Innervisions",
-      "TIMECODE Records"
-    ],
+    "beatport_labels": [],
     "label_best": "Afterlife Records",
     "label_tier": 5,
     "label_score": 100,
@@ -15917,21 +14875,7 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_labels": [
-      "Dark Flower",
-      "Magical Comps",
-      "RBC",
-      "Tronic",
-      "Manual Music",
-      "Bedrock Records",
-      "Systematic Recordings",
-      "Natura Viva",
-      "DOC",
-      "Kelch",
-      "Variety Music",
-      "Flemcy Music",
-      "Mopad"
-    ],
+    "beatport_labels": [],
     "label_best": "Dark Flower",
     "label_tier": 2,
     "label_score": 40,
@@ -16250,8 +15194,8 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_score": 44,
-    "beatport_best_position": 53,
+    "beatport_score": 46,
+    "beatport_best_position": 50,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Techno (Peak Time / Driving)"
@@ -16266,12 +15210,7 @@
     "value_signal": null,
     "beatport_labels": [
       "Arcane Music",
-      "Footwork",
-      "X erie",
-      "PLAYGROUND",
-      "UNCAGE",
-      "Global Underground",
-      "Factory 93 Records"
+      "Footwork"
     ],
     "label_best": "Arcane Music",
     "label_tier": 2,
@@ -16282,7 +15221,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.628Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -16530,32 +15469,7 @@
     "tl_setplays_total": 0,
     "tl_set_recent": false,
     "beatport_artist_id": 29406,
-    "beatport_labels": [
-      "DOBRO",
-      "Permanent Vacation",
-      "Lumière Noire Records",
-      "Futurescope",
-      "Balearic London",
-      "Altered Circuits",
-      "Bordello A Parigi",
-      "Club Session",
-      "Emerald \\u0026 Doreen Records",
-      "LW Recordings",
-      "Buttress",
-      "Dublife Music",
-      "Melodize",
-      "Hell Yeah Recordings",
-      "Feinstoff",
-      "rollover Milano",
-      "Cracki Records",
-      "Loaded Records",
-      "ITALO MODERNI",
-      "DistroKid",
-      "Connaisseur Recordings",
-      "Martin Hossbach",
-      "Running Back",
-      "Creatures Of The Night"
-    ],
+    "beatport_labels": [],
     "label_best": "Permanent Vacation",
     "label_tier": 4,
     "label_score": 85,
@@ -17075,7 +15989,7 @@
       "fee_confidence": "low"
     },
     "beatport_score": 78,
-    "beatport_best_position": 13,
+    "beatport_best_position": 12,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Deep House"
@@ -17088,20 +16002,9 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Defected",
-      "8Bit",
-      "Natura Viva",
-      "Deepalma",
-      "Saved Records",
-      "Full Circle",
-      "Mother Recordings",
       "Cecille",
-      "Armada Music",
-      "Variety Music",
-      "Lapsus Music",
-      "Mood Child",
-      "LTF Records",
-      "Stride"
+      "8Bit",
+      "Defected"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -17118,7 +16021,7 @@
     "tl_djs": 0,
     "tl_support_score": 14,
     "tl_updated": "2026-06-23T08:05:35.621Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 2,
@@ -17585,8 +16488,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 72,
-    "beatport_best_position": 23,
+    "beatport_score": 71,
+    "beatport_best_position": 24,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Tech House",
@@ -17596,18 +16499,14 @@
     "wikipedia_title": "Marshall Jefferson",
     "image": "https://cdn-images.dzcdn.net/images/artist/c6a568324347a6c45eb24daaa607ce0d/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "marshalljefferson",
-    "demand_index": 45,
+    "demand_index": 44,
     "demand_tier": 2,
     "value_gap": -1,
     "value_signal": "premium",
     "beatport_labels": [
+      "Ultra",
       "Definitive Recordings",
-      "Helix Records",
-      "Plastic City",
-      "Skint Records",
-      "Utter",
-      "Trax Records",
-      "Airtight"
+      "Helix Records"
     ],
     "label_best": "Definitive Recordings",
     "label_tier": 2,
@@ -17618,7 +16517,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.623Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -18381,8 +17280,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 61,
-    "beatport_best_position": 16,
+    "beatport_score": 62,
+    "beatport_best_position": 15,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Progressive House"
@@ -18396,18 +17295,7 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Night Time Stories",
-      "Last Night On Earth",
-      "XL Recordings",
-      "Leaving Records",
-      "4AD",
-      "Watergate Records",
-      "Black Hole Recordings",
-      "BMG Rights Management and Administration (Spain) S.L.U",
-      "BMG Rights Management (US) LLC",
-      "Best Sound",
-      "Anjunadeep",
-      "Warner Records"
+      "Black Hole Recordings"
     ],
     "label_best": "Anjunadeep",
     "label_tier": 5,
@@ -18418,7 +17306,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.618Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -18559,8 +17447,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 63,
-    "beatport_best_position": 30,
+    "beatport_score": 61,
+    "beatport_best_position": 33,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -18570,26 +17458,13 @@
     "wikipedia_title": "Eric Prydz",
     "image": "https://cdn-images.dzcdn.net/images/artist/0adb6d9882303b2429a5ec930fbbd2f5/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "ericprydz",
-    "demand_index": 51,
+    "demand_index": 50,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "541",
-      "Cocoon Recordings",
-      "EMI Recorded Music Australia Pty Ltd",
-      "Afterlife Records",
-      "mau5trap",
-      "Cr2 Compilations",
-      "Urban Gorillaz",
-      "REAL MAGIC",
-      "IBIZA PARTY SQUAD",
-      "Alter Ego Recordings",
-      "iCompilations",
-      "Cherry Lounge Recordings",
-      "Club Cuts",
-      "Groove Nation",
-      "Skint Records"
+      "Pryda Presents",
+      "Virgin Records Ltd"
     ],
     "label_best": "Cocoon Recordings",
     "label_tier": 5,
@@ -18600,7 +17475,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.616Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -18671,22 +17546,7 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_labels": [
-      "Blue Highway Records",
-      "Young",
-      "Outpost/Assemble Sound",
-      "GRD LTD",
-      "Method 808",
-      "HOMO-CENTRIC RECORDS",
-      "Big Machine Records, LLC",
-      "Classic Music Company",
-      "Defected",
-      "The Valory Music Co., LLC",
-      "CHSN FMLY",
-      "toucan sounds",
-      "Graded Records",
-      "fabric Records"
-    ],
+    "beatport_labels": [],
     "label_best": "Defected",
     "label_tier": 5,
     "label_score": 100,
@@ -18773,25 +17633,7 @@
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
-    "beatport_labels": [
-      "Maeve",
-      "Innervisions",
-      "Volt Recordings",
-      "Turbo Recordings",
-      "Ocultismo",
-      "Global Underground",
-      "Denature Records",
-      "Passion Beat",
-      "HABITAT Records",
-      "fabric Records",
-      "Live At Robert Johnson",
-      "Just This",
-      "x2 Recordings Limited",
-      "Dirt Crew Recordings",
-      "Natura Viva",
-      "Cocoon Recordings",
-      "Hotflush Recordings"
-    ],
+    "beatport_labels": [],
     "label_best": "Innervisions",
     "label_tier": 5,
     "label_score": 100,
@@ -19154,14 +17996,7 @@
     "demand_tier": 3,
     "value_gap": 0,
     "value_signal": "fair",
-    "beatport_labels": [
-      "Rumors",
-      "Armada Music Albums",
-      "Street King",
-      "King Street Sounds",
-      "Italians Do It Better",
-      "Last Man Music"
-    ],
+    "beatport_labels": [],
     "label_best": "Armada Music Albums",
     "label_tier": 4,
     "label_score": 80,
@@ -19525,8 +18360,8 @@
       "Techno (Peak Time / Driving)"
     ],
     "beatport_updated": "2026-09-06T12:14:30.864Z",
-    "beatport_hype_score": 39,
-    "beatport_hype_best": 52,
+    "beatport_hype_score": 23,
+    "beatport_hype_best": 80,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "House"
@@ -19636,7 +18471,7 @@
     "image": "https://i.scdn.co/image/29dd50d9a51002524ea2354c9fed0b5ec34b8ae6",
     "wikipedia_title": "Larry Heard",
     "ra_slug": "larryheard",
-    "demand_index": 45,
+    "demand_index": 44,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -19654,26 +18489,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 963,
     "beatport_labels": [
-      "Café Del Mar Music",
-      "Alleviated Records",
-      "Clone Royal Oak",
-      "UMC (Universal Music Catalogue)",
-      "Cyclo Recordings",
-      "Tromino Music",
-      "Hotmix Records",
-      "Claremont 56",
-      "Tribe Records",
-      "Harvey's General Store",
-      "Goldmin Music",
-      "Dessous Recordings",
-      "Real Tone Records",
-      "Nite Grooves",
-      "Black Catalogue Rewinds",
-      "Push Communications",
-      "Enchanté Records",
-      "B2 Recordings",
-      "Rush Hour",
-      "Eskimo Recordings"
+      "Alleviated Records"
     ],
     "label_best": "Café Del Mar Music",
     "label_tier": 2,
@@ -19698,13 +18514,13 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:12:27.566Z",
-    "beatport_score": 36,
-    "beatport_best_position": 57,
+    "beatport_score": 34,
+    "beatport_best_position": 61,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Deborah De Luca",
@@ -19819,29 +18635,12 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_labels": [
-      "Armada Music",
-      "Defected",
-      "HABITAT Records",
-      "ZAMNA Records",
-      "VOD",
-      "Scenarios",
-      "Disconnected",
-      "All I Need (Armada Music)",
-      "Madorasindahouse Records",
-      "Armada Music Albums",
-      "MoBlack Records",
-      "Siamese",
-      "Unreleased Records",
-      "Rose Avenue/Reprise",
-      "Moon Hunt",
-      "Black Book Records"
-    ],
+    "beatport_labels": [],
     "label_best": "Defected",
     "label_tier": 5,
     "label_score": 100,
-    "beatport_hype_score": 23,
-    "beatport_hype_best": 79,
+    "beatport_hype_score": 24,
+    "beatport_hype_best": 78,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Melodic House & Techno"
@@ -20251,13 +19050,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 450773,
     "beatport_labels": [
-      "AfroRepublik",
-      "Salted Music",
-      "Four Music/SIRA",
-      "Music Speaks Sounds",
-      "BEAT Music Fund",
-      "Universal-Island Records Ltd.",
-      "Sound Chronicles Recordz"
+      "AfroRepublik"
     ],
     "label_best": "AfroRepublik",
     "label_tier": 2,
@@ -20282,13 +19075,13 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:09:18.450Z",
-    "beatport_score": 50,
-    "beatport_best_position": 35,
+    "beatport_score": 48,
+    "beatport_best_position": 37,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Afro House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Culoe De Song",
@@ -20313,7 +19106,7 @@
     "wikipedia_title": "Culoe De Song",
     "image": "https://i.scdn.co/image/ab67616d0000b273fd10450a643e0923715bf8d7",
     "ra_slug": "culoedesong",
-    "demand_index": 46,
+    "demand_index": 45,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -20331,21 +19124,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 103692,
     "beatport_labels": [
-      "BandaBanda Agency | De Song Music",
-      "Crosstown Rebels",
-      "Bedrock Records",
-      "Global Underground",
-      "Aluku Records",
-      "Madorasindahouse Records",
-      "fabric Records",
-      "EMPIRE",
-      "M2KR MELT2000 Revisited",
-      "Innervisions",
-      "Mixed In Motion Recordings",
-      "De Song Music",
-      "4 To The Floor Records",
-      "Watergate Records",
-      "SubSensual "
+      "Crosstown Rebels"
     ],
     "label_best": "Crosstown Rebels",
     "label_tier": 5,
@@ -20370,13 +19149,13 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:10:45.920Z",
-    "beatport_score": 26,
-    "beatport_best_position": 74,
+    "beatport_score": 25,
+    "beatport_best_position": 76,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Afro House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Luciano",
@@ -20564,9 +19343,9 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 48,
-    "beatport_best_position": 38,
-    "beatport_charting_tracks": 1,
+    "beatport_score": 54,
+    "beatport_best_position": 36,
+    "beatport_charting_tracks": 2,
     "beatport_charts": [
       "House"
     ],
@@ -20574,23 +19353,12 @@
     "wikipedia_title": "Bob Sinclar",
     "image": "https://i.scdn.co/image/ab6761610000e5eb9bf03e6d3ab7ceb543638845",
     "ra_slug": "bobsinclar",
-    "demand_index": 57,
+    "demand_index": 58,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Yellow Productions",
-      "Milk \\u0026 Sugar",
-      "Purple Music",
-      "Deepalma",
-      "Pixadelic.",
-      "Strictly Rhythm",
-      "Warner Records",
-      "Altra Moda",
-      "Altra Moda Music",
-      "Launch",
-      "Strictly Rhythm Records",
-      "Tru Thoughts"
+      "Yellow Productions"
     ],
     "label_best": "Yellow Productions",
     "label_tier": 2,
@@ -20601,7 +19369,7 @@
     "tl_djs": 0,
     "tl_support_score": 42,
     "tl_updated": "2026-06-23T08:05:35.619Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 6,
@@ -20682,14 +19450,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 24808,
     "beatport_labels": [
-      "Club Blasé",
-      "EMI",
-      "Club Blasé / EMI",
-      "Sweat It Out",
-      "TH3RD BRAIN",
-      "Columbia Local",
-      "Verve Pop",
-      "Made To Play"
+      "Club Blasé"
     ],
     "label_best": "Sweat It Out",
     "label_tier": 4,
@@ -20714,13 +19475,13 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:09:46.875Z",
-    "beatport_score": 21,
-    "beatport_best_position": 82,
+    "beatport_score": 17,
+    "beatport_best_position": 90,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Route 94",
@@ -20760,14 +19521,8 @@
     "value_signal": null,
     "beatport_labels": [
       "Defected",
-      "Positiva",
       "Rinse",
-      "Mad Decent",
-      "Solid Grooves Raw",
-      "Solid Grooves Records",
-      "GAZE RCDS",
-      "Polydor Records",
-      "Warner Records"
+      "Positiva"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -20779,7 +19534,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.621Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -20858,21 +19613,7 @@
     "tl_setplays_total": 0,
     "tl_set_recent": false,
     "beatport_artist_id": 192241,
-    "beatport_labels": [
-      "Skint Records",
-      "Wah Wah 45s",
-      "Get Physical Music",
-      "Me Me Me",
-      "Gottwax",
-      "Fossil Sounds",
-      "Permanent Vacation",
-      "Music is 4 Lovers",
-      "Anjunadeep",
-      "Moda Black",
-      "Variety Music",
-      "Hypercolour",
-      "Nurvous Records"
-    ],
+    "beatport_labels": [],
     "label_best": "Anjunadeep",
     "label_tier": 5,
     "label_score": 100,
@@ -20943,16 +19684,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 504,
     "beatport_labels": [
-      "Definitive Recordings",
-      "Freeze Records",
-      "RH2",
-      "Strictly Rhythm Records",
-      "Tommy Boy Music, LLC",
-      "G.O.N.Y.",
-      "Snatch! Records",
-      "King Street Sounds",
-      "Artistfy Music",
-      "Get Physical Music"
+      "Definitive Recordings"
     ],
     "label_best": "Snatch! Records",
     "label_tier": 4,
@@ -20977,19 +19709,19 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:09:06.184Z",
-    "beatport_hype_score": 68,
-    "beatport_hype_best": 5,
+    "beatport_hype_score": 67,
+    "beatport_hype_best": 6,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Deep House"
     ],
-    "beatport_score": 33,
-    "beatport_best_position": 62,
+    "beatport_score": 31,
+    "beatport_best_position": 66,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Stacey Pullen",
@@ -21031,24 +19763,7 @@
     "tl_setplays_total": 0,
     "tl_set_recent": false,
     "beatport_artist_id": 56338,
-    "beatport_labels": [
-      "DFTD",
-      "Blackflag Recordings",
-      "Deeperfect",
-      "MOXY MUZIK",
-      "Vatos Locos",
-      "KMS Records (BEAT Music Fund)",
-      "Crammed",
-      "PACIFIC RECORDS LONDON",
-      "Factory 93 Records",
-      "Planet E Communications",
-      "Whippin",
-      "Celesta Recordings",
-      "Rawthentic",
-      "Variety Music",
-      "Wow! Recordings",
-      "Voltaire Music"
-    ],
+    "beatport_labels": [],
     "label_best": "DFTD",
     "label_tier": 2,
     "label_score": 40,
@@ -21354,8 +20069,8 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_score": 37,
-    "beatport_best_position": 56,
+    "beatport_score": 39,
+    "beatport_best_position": 52,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Minimal / Deep Tech"
@@ -21368,22 +20083,7 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_labels": [
-      "Phonogramme",
-      "Poker Flat Recordings",
-      "Embassy One",
-      "COD3 QR",
-      "Superstition Records",
-      "Sublease Music",
-      "Nu Groove Records",
-      "Bondage Music",
-      "Voltaire Music",
-      "Zatar Music",
-      "Global Underground",
-      "Moon Harbour Recordings",
-      "Running Back",
-      "Heideton Records",
-      "Headfire International",
-      "KMS Records"
+      "Phonogramme"
     ],
     "label_best": "Running Back",
     "label_tier": 4,
@@ -21429,7 +20129,7 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:09:44.441Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Akufen",
@@ -21559,26 +20259,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 7385,
     "beatport_labels": [
-      "SCI+TEC",
-      "Global Underground",
-      "Mama Told Ya",
-      "BMG Rights Management GmbH",
-      "Kompakt",
-      "SPANDAU20",
-      "Nobody's Bizzness",
-      "Italic",
-      "Bordello A Parigi",
-      "Zenzontle Records",
-      "Dekmantel",
-      "LW Recordings",
-      "Systematic Recordings",
-      "Muller Records",
-      "Cuttin' Headz",
-      "Predicaments",
-      "Armada Electronic Elements",
-      "Natura Viva Black",
-      "I/AM/ME (back catalogue)",
-      "Trip Recordings"
+      "SCI+TEC"
     ],
     "label_best": "Kompakt",
     "label_tier": 5,
@@ -21609,7 +20290,7 @@
     "beatport_charts": [
       "Progressive House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "The Hacker",
@@ -21651,27 +20332,7 @@
     "tl_setplays_total": 0,
     "tl_set_recent": false,
     "beatport_artist_id": 7386,
-    "beatport_labels": [
-      "A4H",
-      "Meant Records",
-      "Rekids",
-      "play loud! productions",
-      "International DeeJay Gigolo Records",
-      "Armada Music",
-      "Skint Records",
-      "LINK Audio",
-      "Bordello A Parigi",
-      "UMC (Universal Music Catalogue)",
-      "DistroKid",
-      "Murder Records",
-      "DSK Records",
-      "Phantasy Sound",
-      "Mannequin",
-      "Hot Banana",
-      "Icon Series",
-      "Dame Music",
-      "FJAAK"
-    ],
+    "beatport_labels": [],
     "label_best": "Rekids",
     "label_tier": 5,
     "label_score": 100,
@@ -21880,8 +20541,8 @@
       "House"
     ],
     "beatport_updated": "2026-08-29T13:44:58.362Z",
-    "beatport_hype_score": 47,
-    "beatport_hype_best": 40,
+    "beatport_hype_score": 44,
+    "beatport_hype_best": 45,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "House"
@@ -22154,16 +20815,7 @@
     "tl_set_recent": false,
     "beatport_artist_id": 252555,
     "beatport_labels": [
-      "TAKEOFF",
-      "ORBITAL",
-      "KNTXT",
-      "Voxnox",
-      "Pushmaster Discs",
-      "FLASH Recordings",
-      "DUEL",
-      "Etruria Beat",
-      "POSSESSION",
-      "Involve Records"
+      "TAKEOFF"
     ],
     "label_best": "TAKEOFF",
     "label_tier": 2,
@@ -22194,7 +20846,7 @@
     "beatport_charts": [
       "Techno (Peak Time / Driving)"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Len Faki",
@@ -22215,8 +20867,8 @@
       "basis": "curated",
       "fee_confidence": "medium"
     },
-    "beatport_score": 20,
-    "beatport_best_position": 84,
+    "beatport_score": 14,
+    "beatport_best_position": 94,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
@@ -22230,14 +20882,7 @@
     "value_gap": 0,
     "value_signal": "fair",
     "beatport_labels": [
-      "Hardspace",
-      "Unknown To The Unknown",
-      "Figure",
-      "Global Underground",
-      "Natura Viva Black",
-      "Mote Evolver",
-      "Berlin Sensation",
-      "Natura Viva In The Mix"
+      "Figure"
     ],
     "label_best": "Hardspace",
     "label_tier": 2,
@@ -22248,7 +20893,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.621Z",
-    "beatport_updated": "2026-09-05T11:51:14.977Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -22311,7 +20956,7 @@
     "wikipedia_title": "Truncate (SQL)",
     "image": "https://i.scdn.co/image/ab6761610000e5eb384ca3cf22a48969e283325c",
     "ra_slug": "truncate",
-    "demand_index": 53,
+    "demand_index": 54,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -22329,25 +20974,7 @@
     "tl_set_recent": true,
     "beatport_artist_id": 165306,
     "beatport_labels": [
-      "Blank Code",
-      "Truncate",
-      "Van Czar Series",
-      "Obscurity Is Infinite",
-      "Unknown To The Unknown",
-      "WRKTRX",
-      "Techno Parade Compilations",
-      "Synthetik Sounds",
-      "LILA RECORDS",
-      "S.Lab Ltd",
-      "Studio Barnhus",
-      "Planet X Recordings",
-      "Illegal Alien LTD",
-      "Clergy",
-      "ANAOH",
-      "Global Underground",
-      "4 Track Recordings",
-      "Activity FM",
-      "fabric Records"
+      "Obscurity Is Infinite"
     ],
     "label_best": "Blank Code",
     "label_tier": 2,
@@ -22372,13 +20999,13 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:10:51.156Z",
-    "beatport_score": 68,
-    "beatport_best_position": 13,
-    "beatport_charting_tracks": 2,
+    "beatport_score": 71,
+    "beatport_best_position": 16,
+    "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Techno (Raw / Deep / Hypnotic)"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "Planetary Assault Systems",
@@ -22410,27 +21037,7 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_labels": [
-      "Ostgut Ton",
-      "541",
-      "Mote Evolver",
-      "Fuse Imprint",
-      "Second State Audio",
-      "Figure",
-      "Balance Music",
-      "Pushmaster Discs",
-      "Cocoon Recordings",
-      "Mixmag Records",
-      "Music Man Records",
-      "We Are The Brave",
-      "Hotflush Recordings",
-      "Token",
-      "CLR",
-      "Yael Trip",
-      "Suara",
-      "Truncate",
-      "Houndstooth"
-    ],
+    "beatport_labels": [],
     "label_best": "Ostgut Ton",
     "label_tier": 5,
     "label_score": 100,
@@ -22604,19 +21211,7 @@
     "tl_setplays_total": 0,
     "tl_set_recent": false,
     "beatport_artist_id": 500592,
-    "beatport_labels": [
-      "Dekmantel",
-      "Jealous God",
-      "Falling Ethics",
-      "Bite",
-      "Standard Deviation",
-      "VEYL",
-      "Eskimo Recordings",
-      "Sacred Bones Records",
-      "Sonic Groove",
-      "Bpitch Control",
-      "Play It Again Sam"
-    ],
+    "beatport_labels": [],
     "label_best": "Dekmantel",
     "label_tier": 2,
     "label_score": 40,
@@ -22659,7 +21254,7 @@
     "value_signal": null,
     "beatport_score": 100,
     "beatport_best_position": 1,
-    "beatport_charting_tracks": 14,
+    "beatport_charting_tracks": 13,
     "beatport_charts": [
       "House",
       "Tech House",
@@ -22668,11 +21263,10 @@
     "beatport_labels": [
       "Make The Girls Dance Records",
       "Cr2 Records",
-      "Insomniac Music Group",
-      "BMG Rights Management GmbH",
-      "Defected",
       "MoBlack Records",
-      "Warner Music Central Europe"
+      "UNION RECORDS (IT)",
+      "Defected",
+      "Virgin"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -22695,7 +21289,7 @@
     "tl_updated": "2026-06-23T08:05:35.622Z",
     "tl_chart_now": 5,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 12,
     "tl_setplays_total": 13,
     "tl_set_recent": true,
@@ -22758,19 +21352,10 @@
       "Indie Dance"
     ],
     "beatport_labels": [
-      "Kompakt",
-      "Rekids",
       "Maccabi House",
       "Defected",
-      "Experts Only",
-      "Hot Creations",
-      "MoBlack Records",
-      "Crosstown Rebels",
-      "Hell Beach (back catalog)",
-      "Island Def Jam",
-      "Higher Ground",
       "Rose Avenue/Reprise",
-      "Insomniac Music Group"
+      "Higher Ground"
     ],
     "label_best": "Kompakt",
     "label_tier": 5,
@@ -22794,7 +21379,7 @@
     "tl_updated": "2026-06-23T08:05:35.620Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 1,
     "tl_setplays_total": 1,
     "tl_set_recent": true,
@@ -22838,33 +21423,19 @@
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb2ce015e7efe44a5255407dfd",
     "ra_slug": "sidneycharles",
-    "demand_index": 57,
+    "demand_index": 58,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 49,
-    "beatport_best_position": 45,
+    "beatport_score": 56,
+    "beatport_best_position": 32,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Deep House"
     ],
     "beatport_labels": [
-      "Defected",
       "Koltrax",
-      "Insomniac Music Group",
-      "Heavy House Society",
-      "WTF! Music",
-      "Moon Harbour Recordings",
-      "Factory 93 Records",
-      "Up The Stuss",
-      "LW Recordings",
-      "Dark Side Of The Sun",
-      "AVOTRE",
-      "Natura Viva",
-      "Skull And Bones",
-      "Hot Creations",
-      "Kaluki Musik",
-      "Eastenderz"
+      "Heavy House Society"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -22885,7 +21456,7 @@
     "tl_djs": 0,
     "tl_support_score": 7,
     "tl_updated": "2026-06-23T08:05:35.619Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 1,
@@ -22950,12 +21521,8 @@
       "Indie Dance"
     ],
     "beatport_labels": [
-      "Turbo Recordings",
       "Mellow Circus Records",
-      "Nervous Records",
-      "Frooogs Records",
-      "House of Youth",
-      "When Stars Align"
+      "Nervous Records"
     ],
     "label_best": "Turbo Recordings",
     "label_tier": 2,
@@ -22976,7 +21543,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.628Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -23037,20 +21604,8 @@
       "Indie Dance"
     ],
     "beatport_labels": [
-      "Crosstown Rebels",
-      "tszr",
-      "Label Music Group",
       "Maccabi House",
-      "Beltools Records",
-      "Island Records",
-      "Get Physical Music",
-      "Hot Creations",
-      "Defected",
-      "PlanetX",
-      "DFTD",
-      "Rose Avenue/Reprise",
-      "Collecting Dots",
-      "Helix Records"
+      "tszr"
     ],
     "label_best": "Crosstown Rebels",
     "label_tier": 5,
@@ -23071,7 +21626,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.628Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -23132,17 +21687,9 @@
       "Organic House / Downtempo"
     ],
     "beatport_labels": [
-      "Island Moods",
-      "Tales of Romance",
-      "Voltaire Music",
-      "Global Underground",
-      "Katchuli",
-      "Variety Music",
-      "Deepalma",
-      "Bar 25 Music",
       "8Bit",
-      "Skull And Bones",
-      "Deeplomatic Recordings"
+      "Tales of Romance",
+      "Katchuli"
     ],
     "label_best": "8Bit",
     "label_tier": 3,
@@ -23157,8 +21704,8 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_hype_score": 82,
-    "beatport_hype_best": 6,
+    "beatport_hype_score": 83,
+    "beatport_hype_best": 5,
     "beatport_hype_tracks": 3,
     "beatport_hype_charts": [
       "Progressive House",
@@ -23170,7 +21717,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.623Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -23216,31 +21763,18 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb9b29726fc74da1d132b180d2",
-    "demand_index": 41,
+    "demand_index": 40,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 30,
-    "beatport_best_position": 68,
+    "beatport_score": 27,
+    "beatport_best_position": 73,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Organic House / Downtempo"
     ],
     "beatport_labels": [
-      "Songuara",
-      "SkyTop",
-      "Movement Recordings",
-      "Journey of the Soul",
-      "Univack",
-      "WARPP",
-      "Melody Of the Soul",
-      "Warung Recordings",
-      "Amulanga",
-      "Ready Mix Records",
-      "Hollystone Records",
-      "Melodic Therapy",
-      "Shady\\u0026Friends",
-      "Clubsonica Records"
+      "Journey of the Soul"
     ],
     "label_best": "WARPP",
     "label_tier": 5,
@@ -23255,8 +21789,8 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_hype_score": 77,
-    "beatport_hype_best": 23,
+    "beatport_hype_score": 75,
+    "beatport_hype_best": 26,
     "beatport_hype_tracks": 4,
     "beatport_hype_charts": [
       "Progressive House",
@@ -23268,7 +21802,7 @@
     "tl_djs": 0,
     "tl_support_score": 7,
     "tl_updated": "2026-06-23T08:05:35.632Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 1,
@@ -23319,8 +21853,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 80,
-    "beatport_best_position": 34,
+    "beatport_score": 81,
+    "beatport_best_position": 32,
     "beatport_charting_tracks": 5,
     "beatport_charts": [
       "Tech House",
@@ -23328,24 +21862,9 @@
       "Indie Dance"
     ],
     "beatport_labels": [
-      "Crosstown Rebels",
-      "Maison Arts",
-      "Human By Default",
       "Gozar Records",
-      "Warner Music Central Europe",
-      "Ninja Tune",
-      "Paranormal",
-      "Global Underground",
-      "UNI/MOTOWN",
-      "Magnifik Music",
-      "Purified Records",
-      "Places \\u0026 Spaces",
-      "tszr",
-      "10K Projects / Queens Road Music",
-      "Abracadabra Music",
-      "Rhino Atlantic",
-      "Unreleased Records",
-      "Insomniac Records"
+      "Human By Default",
+      "Maison Arts"
     ],
     "label_best": "Crosstown Rebels",
     "label_tier": 5,
@@ -23367,7 +21886,7 @@
     "tl_djs": 0,
     "tl_support_score": 14,
     "tl_updated": "2026-06-23T08:05:35.630Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 2,
@@ -23418,8 +21937,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 87,
-    "beatport_best_position": 14,
+    "beatport_score": 88,
+    "beatport_best_position": 13,
     "beatport_charting_tracks": 5,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -23427,17 +21946,7 @@
     ],
     "beatport_labels": [
       "Keinemusik",
-      "Moon Harbour Recordings",
-      "Defected",
-      "Stryv, Malachiii, Adam Port",
-      "Cocoon Recordings",
-      "Keinemusik under exclusive license to Interscope Records",
-      "Madorasindahouse Records",
-      "Warner Records",
-      "Afterlife Records",
-      "Eskimo Recordings",
-      "Play It Down",
-      "Front Room Recordings"
+      "Stryv, Malachiii, Adam Port"
     ],
     "label_best": "Keinemusik",
     "label_tier": 5,
@@ -23459,7 +21968,7 @@
     "tl_djs": 0,
     "tl_support_score": 20,
     "tl_updated": "2026-06-23T08:05:35.616Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 1,
@@ -23514,8 +22023,8 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 87,
-    "beatport_best_position": 14,
+    "beatport_score": 88,
+    "beatport_best_position": 13,
     "beatport_charting_tracks": 8,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -23523,10 +22032,6 @@
     ],
     "beatport_labels": [
       "Keinemusik",
-      "VOD",
-      "Defected",
-      "Keinemusik under exclusive license to Interscope Records",
-      "Madorasindahouse Records",
       "Genesis (Because)"
     ],
     "label_best": "Keinemusik",
@@ -23549,7 +22054,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.618Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -23601,23 +22106,18 @@
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb06b08bc598832401202aa41b",
     "wikipedia_title": "Omri",
-    "demand_index": 48,
+    "demand_index": 44,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 49,
-    "beatport_best_position": 53,
-    "beatport_charting_tracks": 3,
+    "beatport_score": 38,
+    "beatport_best_position": 62,
+    "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Deep House"
     ],
     "beatport_labels": [
-      "Create Music Group",
-      "NOYZ",
-      "DistroKid",
-      "NCS",
-      "Lowly (CMG)",
-      "The Reef"
+      "Crosstown Rebels"
     ],
     "label_best": "Create Music Group",
     "label_tier": 2,
@@ -23638,7 +22138,7 @@
     "tl_djs": 0,
     "tl_support_score": 7,
     "tl_updated": "2026-06-23T08:05:35.632Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 1,
@@ -23678,8 +22178,8 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:13:50.109Z",
-    "beatport_hype_score": 17,
-    "beatport_hype_best": 89,
+    "beatport_hype_score": 13,
+    "beatport_hype_best": 96,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Tech House"
@@ -23690,25 +22190,21 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb6d46eba60972d0ce0f5e6544",
-    "demand_index": 65,
+    "demand_index": 64,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 69,
-    "beatport_best_position": 28,
+    "beatport_score": 66,
+    "beatport_best_position": 33,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Tech House",
       "Indie Dance"
     ],
     "beatport_labels": [
-      "Get Physical Music",
       "Crosstown Rebels",
-      "Club Sweat",
-      "Maccabi House",
       "Beat Boutique",
-      "Collecting Dots",
-      "Beats on Time"
+      "Club Sweat"
     ],
     "label_best": "Crosstown Rebels",
     "label_tier": 5,
@@ -23723,8 +22219,8 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_hype_score": 65,
-    "beatport_hype_best": 9,
+    "beatport_hype_score": 64,
+    "beatport_hype_best": 11,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Indie Dance"
@@ -23735,7 +22231,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.631Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -23781,33 +22277,19 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb28eb3ef8ecd29ca04527dd20",
-    "demand_index": 58,
+    "demand_index": 57,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 78,
-    "beatport_best_position": 5,
+    "beatport_score": 76,
+    "beatport_best_position": 7,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Melodic House & Techno"
     ],
     "beatport_labels": [
-      "Tomorrowland Music / SoundOn",
       "Drumcode",
-      "ÆDEN RECORDS",
-      "When Stars Align",
-      "Hot Creations",
-      "THRIVE MUSIC",
-      "AFFAIRS",
-      "Black Book Records",
-      "Maccabi House",
-      "Diynamic",
-      "Sweat It Out",
-      "Metamorfosi Records",
-      "Special",
-      "Club Sweat",
-      "TH3RD BRAIN",
-      "PARADE Rec"
+      "ÆDEN RECORDS"
     ],
     "label_best": "Drumcode",
     "label_tier": 5,
@@ -23835,7 +22317,7 @@
     "tl_djs": 0,
     "tl_chart_now": null,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 3,
     "tl_setplays_total": 3,
     "tl_set_recent": true,
@@ -23883,21 +22365,14 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 32,
-    "beatport_best_position": 64,
+    "beatport_score": 35,
+    "beatport_best_position": 59,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Melodic House & Techno"
     ],
     "beatport_labels": [
-      "When Stars Align",
-      "tszr",
-      "Nu Moda",
-      "Diynamic",
-      "Simulate Recordings",
-      "Rose Avenue",
-      "When Stars Align / The Nations",
-      "Afterlife Records"
+      "tszr"
     ],
     "label_best": "Diynamic",
     "label_tier": 5,
@@ -23925,7 +22400,7 @@
     "tl_djs": 0,
     "tl_chart_now": 2,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 5,
     "tl_setplays_total": 5,
     "tl_set_recent": true,
@@ -23969,39 +22444,20 @@
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb4f92eae7b45fe3da4be1ea1b",
     "ra_slug": "gaibarone",
-    "demand_index": 50,
+    "demand_index": 51,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 58,
-    "beatport_best_position": 30,
-    "beatport_charting_tracks": 2,
+    "beatport_score": 66,
+    "beatport_best_position": 24,
+    "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Progressive House"
     ],
     "beatport_labels": [
-      "Suza Records",
-      "Future Romance",
-      "Barra Uno",
       "Stripped Recordings",
-      "Mango Alley",
-      "Global Underground",
-      "Transensations Records",
-      "Polyptych Bundles",
-      "Platipus",
-      "Movement Recordings",
-      "Fall From Grace Records",
-      "Balance Music",
-      "Elebated Records",
-      "Tronic",
-      "Dissident Music / EMG",
-      "Lost Language",
-      "My Secret Agenda",
-      "Vapour Recordings",
-      "ASTIR Recordings",
-      "Dreaming Awake",
-      "Music To Die For",
-      "Forensic Records"
+      "Barra Uno",
+      "Mango Alley"
     ],
     "label_best": "Suza Records",
     "label_tier": 2,
@@ -24029,7 +22485,7 @@
     "tl_djs": 0,
     "tl_support_score": 14,
     "tl_updated": "2026-06-23T08:05:35.628Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 2,
@@ -24087,17 +22543,10 @@
       "Melodic House & Techno"
     ],
     "beatport_labels": [
-      "Magnifik Music",
-      "Global Underground",
-      "Abracadabra Music",
       "Siamese",
-      "Madorasindahouse Records",
+      "Abracadabra Music",
       "One Seven Music",
-      "Get Physical Music",
-      "Insomniac Records",
-      "Unreleased Records",
-      "7CULT",
-      "NYX Music"
+      "Global Underground"
     ],
     "label_best": "Get Physical Music",
     "label_tier": 4,
@@ -24112,8 +22561,8 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_hype_score": 66,
-    "beatport_hype_best": 8,
+    "beatport_hype_score": 65,
+    "beatport_hype_best": 10,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Melodic House & Techno"
@@ -24125,7 +22574,7 @@
     "tl_djs": 0,
     "tl_support_score": 7,
     "tl_updated": "2026-06-23T08:05:35.627Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 1,
@@ -24178,27 +22627,7 @@
     "beatport_best_position": null,
     "beatport_charting_tracks": 0,
     "beatport_charts": [],
-    "beatport_labels": [
-      "Songuara",
-      "TalkTalk Records",
-      "Sol Selectas",
-      "The Soundgarden",
-      "Sounds Of Sirin",
-      "Midnight Riders",
-      "AMITABHA",
-      "DAYS like NIGHTS",
-      "BAU_HAUS",
-      "Sprout",
-      "Bayaka Records",
-      "Akbal Music Editions",
-      "Cafe De Anatolia LAB",
-      "Starlight Music Group",
-      "Nothing But",
-      "Rebellion der Traumer",
-      "onedotsixtwo",
-      "Buttress",
-      "Sudam Recordings"
-    ],
+    "beatport_labels": [],
     "label_best": "Songuara",
     "label_tier": 2,
     "label_score": 40,
@@ -24366,28 +22795,19 @@
     "image": "https://i.scdn.co/image/ab6761610000e5ebbf5cac401f8b25cda35221e9",
     "wikipedia_title": "&Me",
     "ra_slug": "me",
-    "demand_index": 63,
+    "demand_index": 64,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 87,
-    "beatport_best_position": 14,
+    "beatport_score": 88,
+    "beatport_best_position": 13,
     "beatport_charting_tracks": 5,
     "beatport_charts": [
       "Melodic House & Techno",
       "Afro House"
     ],
     "beatport_labels": [
-      "Keinemusik",
-      "VOD",
-      "Deepalma",
-      "Mago Music",
-      "Young Art Records",
-      "Dog Triumph Profound Mysteries",
-      "Embassy One",
-      "Play It Down",
-      "Front Room Recordings",
-      "Pampa Records"
+      "Keinemusik"
     ],
     "label_best": "Keinemusik",
     "label_tier": 5,
@@ -24409,7 +22829,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.616Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -24467,10 +22887,7 @@
     "beatport_best_position": null,
     "beatport_charting_tracks": 0,
     "beatport_charts": [],
-    "beatport_labels": [
-      "ABODE Records",
-      "You\\u0026Me Records"
-    ],
+    "beatport_labels": [],
     "label_best": "ABODE Records",
     "label_tier": 2,
     "label_score": 40,
@@ -24538,38 +22955,23 @@
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb3abf59b9626af670673af263",
     "ra_slug": "kamilosanclemente",
-    "demand_index": 53,
+    "demand_index": 54,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 70,
-    "beatport_best_position": 42,
+    "beatport_score": 72,
+    "beatport_best_position": 40,
     "beatport_charting_tracks": 5,
     "beatport_charts": [
       "Progressive House",
       "Organic House / Downtempo"
     ],
     "beatport_labels": [
-      "Freegrant Music",
-      "Univack",
-      "Future Romance",
-      "GROOVE ESSENTIALS",
-      "Voodoo \\u0026 Prayers",
-      "Droid9 South America",
-      "Voltaire Music",
       "Tronic",
+      "Voodoo & Prayers",
       "Sprout",
-      "Songspire Records",
-      "Polyptych Bundles",
-      "Balance Music",
-      "Elebated Records",
-      "Clubsonica Records",
-      "Dissident Music / EMG",
-      "Mango Alley",
-      "Kling Klong Music",
-      "A State of Trance",
-      "Magical Comps",
-      "SkyTop"
+      "Freegrant Music",
+      "Univack"
     ],
     "label_best": "Freegrant Music",
     "label_tier": 2,
@@ -24584,9 +22986,9 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_hype_score": 93,
-    "beatport_hype_best": 12,
-    "beatport_hype_tracks": 6,
+    "beatport_hype_score": 95,
+    "beatport_hype_best": 10,
+    "beatport_hype_tracks": 7,
     "beatport_hype_charts": [
       "Melodic House & Techno",
       "Progressive House",
@@ -24598,7 +23000,7 @@
     "tl_djs": 0,
     "tl_support_score": 7,
     "tl_updated": "2026-06-23T08:05:35.623Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 1,
@@ -24651,28 +23053,17 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_score": 85,
-    "beatport_best_position": 9,
+    "beatport_best_position": 10,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Tech House",
       "Melodic House & Techno"
     ],
     "beatport_labels": [
-      "Tomorrowland Music",
-      "etcetc",
-      "Universal-Island Records Ltd.",
-      "Insomniac Records",
-      "Kygo",
       "Broke",
-      "Insomniac Music Group",
-      "Armada Music Albums",
-      "NEWORLD",
-      "Loaded Records",
-      "BMG Rights Management (UK) Ltd.",
-      "Armada Music",
-      "Experts Only",
-      "AETERNA Records",
-      "Universal Music AB"
+      "Tomorrowland Music",
+      "Axtone Records",
+      "Armada Music"
     ],
     "label_best": "Armada Music Albums",
     "label_tier": 4,
@@ -24700,7 +23091,7 @@
     "tl_djs": 0,
     "tl_chart_now": 1,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 11,
     "tl_setplays_total": 11,
     "tl_set_recent": true,
@@ -24756,20 +23147,7 @@
       "Melodic House & Techno"
     ],
     "beatport_labels": [
-      "Sapiens Recordings",
-      "AFFAIRS",
-      "Yellow Productions",
-      "Cercle Records",
-      "THRIVE MUSIC",
-      "Awesome Soundwave",
-      "Vintage Culture",
-      "Defected",
-      "Journeey Records",
-      "Knee Deep In Sound",
-      "Nu Moda",
-      "Hell Beach (back catalog)",
-      "Diynamic",
-      "Rose Avenue/Reprise"
+      "AFFAIRS"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -24803,7 +23181,7 @@
     "tl_djs": 0,
     "tl_chart_now": null,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 6,
     "tl_setplays_total": 6,
     "tl_set_recent": true,
@@ -24956,23 +23334,16 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 87,
-    "beatport_best_position": 14,
+    "beatport_score": 88,
+    "beatport_best_position": 13,
     "beatport_charting_tracks": 6,
     "beatport_charts": [
       "Melodic House & Techno",
       "Afro House"
     ],
     "beatport_labels": [
-      "Defected",
       "Keinemusik",
-      "Cercle Records",
-      "Genesis (Because)",
-      "K7 Records",
-      "VOD",
-      "Kina Music",
-      "Embassy One",
-      "Front Room Recordings"
+      "Genesis (Because)"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -24994,7 +23365,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.616Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -25045,37 +23416,18 @@
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb1f17c6481f60e951fff3e959",
     "ra_slug": "bosspriester",
-    "demand_index": 45,
+    "demand_index": 44,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 14,
-    "beatport_best_position": 95,
+    "beatport_score": 11,
+    "beatport_best_position": 99,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Minimal / Deep Tech"
     ],
     "beatport_labels": [
-      "Haven Trax",
-      "Heavy House Society",
-      "Constant Sound",
-      "Fuse London",
-      "Contact Music",
-      "Dark Side Of The Sun",
-      "OBP",
-      "RAW CUTS Records",
-      "Future Feel",
-      "Reliance",
-      "What NxT",
-      "X-Kalay",
-      "Locus",
-      "Infinite Pleasure",
-      "Tafelberg Records",
-      "Borderline Black Records",
-      "Inhale Exhale",
-      "HAAS Records",
-      "Hattrick Records",
-      "Dul Recordings"
+      "Contact Music"
     ],
     "label_best": "Haven Trax",
     "label_tier": 2,
@@ -25096,7 +23448,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.629Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -25185,12 +23537,11 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_hype_score": 65,
-    "beatport_hype_best": 26,
-    "beatport_hype_tracks": 2,
+    "beatport_hype_score": 53,
+    "beatport_hype_best": 30,
+    "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
-      "Progressive House",
-      "Organic House / Downtempo"
+      "Progressive House"
     ],
     "tl_weeks_charted": 0,
     "tl_chart_best": null,
@@ -25250,21 +23601,14 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 23,
-    "beatport_best_position": 79,
+    "beatport_score": 26,
+    "beatport_best_position": 75,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
     ],
     "beatport_labels": [
-      "BluFire / Peace Bisquit",
-      "Strictly Rhythm Records",
-      "Make The Girls Dance Records",
-      "d:vision",
-      "Insomniac Records",
-      "BMG Rights Management (UK) Ltd.",
-      "Signatune",
-      "Cr2 Records"
+      "Make The Girls Dance Records"
     ],
     "label_best": "Insomniac Records",
     "label_tier": 3,
@@ -25287,7 +23631,7 @@
     "tl_updated": "2026-06-23T08:05:35.625Z",
     "tl_chart_now": 5,
     "tl_chart_recent": true,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 6,
     "tl_setplays_total": 6,
     "tl_set_recent": true,
@@ -25337,22 +23681,13 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_score": 59,
-    "beatport_best_position": 20,
+    "beatport_best_position": 19,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Afro House"
     ],
     "beatport_labels": [
-      "Crosstown Rebels",
-      "Armada Music",
-      "Nervous Records",
-      "Magnifik Music",
-      "Armada Music Albums",
-      "NO ART",
-      "Siamese",
-      "Universal Music Division Decca Records France",
-      "Armada Electronic Elements",
-      "Electronic Elements (Armada)"
+      "Universal Music Division Decca Records France"
     ],
     "label_best": "Crosstown Rebels",
     "label_tier": 5,
@@ -25373,7 +23708,7 @@
     "tl_djs": 0,
     "tl_support_score": 7,
     "tl_updated": "2026-06-23T08:05:35.630Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 1,
@@ -25421,23 +23756,21 @@
     "image": "https://i.scdn.co/image/ab6761610000e5ebdbe0d58f538b7d18e324af5e",
     "wikipedia_title": "Rüfüs Du Sol",
     "ra_slug": "rufusdusol",
-    "demand_index": 60,
+    "demand_index": 59,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 84,
-    "beatport_best_position": 19,
-    "beatport_charting_tracks": 4,
+    "beatport_score": 80,
+    "beatport_best_position": 18,
+    "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Tech House",
       "Melodic House & Techno",
       "Deep House"
     ],
     "beatport_labels": [
-      "Rose Avenue/Reprise",
-      "Ninja Tune",
-      "Rose Avenue",
-      "Pets Recordings"
+      "Sweat It Out",
+      "Rose Avenue/Reprise"
     ],
     "label_best": "Ninja Tune",
     "label_tier": 5,
@@ -25459,7 +23792,7 @@
     "tl_djs": 0,
     "tl_support_score": 7,
     "tl_updated": "2026-06-23T08:05:35.627Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 1,
@@ -25518,19 +23851,7 @@
     ],
     "beatport_labels": [
       "HILOMATIK",
-      "Stil Vor Talent",
-      "Ritter Butzke Records",
-      "MAHOOL",
-      "This Never Happened",
-      "Drumcode",
-      "Truesoul",
-      "Nasua Music",
-      "Einmusika Recordings",
-      "Anjunabeats",
-      "Interstellar Recordings (Insomniac)",
-      "Rose Avenue",
-      "Insomniac Music Group",
-      "Filth on Acid"
+      "Drumcode"
     ],
     "label_best": "Drumcode",
     "label_tier": 5,
@@ -25546,7 +23867,7 @@
       "fee_confidence": "low"
     },
     "beatport_hype_score": 50,
-    "beatport_hype_best": 35,
+    "beatport_hype_best": 34,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Melodic House & Techno"
@@ -25558,7 +23879,7 @@
     "tl_djs": 0,
     "tl_support_score": 7,
     "tl_updated": "2026-06-23T08:05:35.620Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 1,
@@ -25608,26 +23929,20 @@
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb998ad662216ba33e18f6b12b",
     "ra_slug": "camstockman",
-    "demand_index": 63,
+    "demand_index": 62,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 66,
-    "beatport_best_position": 25,
+    "beatport_score": 64,
+    "beatport_best_position": 28,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Minimal / Deep Tech",
       "Deep House"
     ],
     "beatport_labels": [
-      "Pilot (UK)",
-      "tszr",
       "neXup recz",
-      "Whoyostro",
-      "Solid Grooves Raw",
-      "Locus",
-      "On Every Planet",
-      "Whoyostro Black"
+      "tszr"
     ],
     "label_best": "Solid Grooves Raw",
     "label_tier": 4,
@@ -25648,7 +23963,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.626Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -25700,25 +24015,14 @@
     "value_gap": null,
     "value_signal": null,
     "beatport_score": 80,
-    "beatport_best_position": 10,
+    "beatport_best_position": 9,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Afro House",
       "Progressive House"
     ],
     "beatport_labels": [
-      "Verve",
-      "Armada Music",
-      "Golden Path Recordings",
-      "Dawn Patrol Records",
-      "Deep Root Tribe",
-      "Cercle Records",
-      "Insomniac Records",
-      "Just This",
-      "TH3RD BRAIN",
-      "Transensations Records",
-      "Universal Music Ltda.",
-      "Zatar Music"
+      "Dawn Patrol Records"
     ],
     "label_best": "Armada Music",
     "label_tier": 4,
@@ -25740,7 +24044,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.623Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -25790,26 +24094,16 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 68,
-    "beatport_best_position": 21,
+    "beatport_score": 67,
+    "beatport_best_position": 22,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "House",
       "Minimal / Deep Tech"
     ],
     "beatport_labels": [
-      "Life And Death",
       "Defected",
-      "DFTD",
-      "Southern Fried Records",
-      "Dark Side Of The Sun",
-      "not without friends",
-      "Shall Not Fade",
-      "Future Classic",
-      "NO ART",
-      "Astralwerks",
-      "Club Sweat",
-      "Rawsome Recordings"
+      "Dark Side Of The Sun"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -25830,7 +24124,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.629Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -25880,25 +24174,14 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 39,
-    "beatport_best_position": 52,
+    "beatport_score": 38,
+    "beatport_best_position": 55,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Tech House"
     ],
     "beatport_labels": [
-      "THRIVE MUSIC",
-      "The Jazz Diaries Rec.",
-      "BMG Rights Management (UK) Ltd.",
-      "Tartelet Records",
-      "SHUSH",
-      "Adi Oasis",
-      "Needwant",
-      "Unity Records",
-      "Boogie Angst",
-      "Naya Beat",
-      "Heist Recordings",
-      "Roya"
+      "THRIVE MUSIC"
     ],
     "label_best": "THRIVE MUSIC",
     "label_tier": 2,
@@ -25922,7 +24205,7 @@
     "tl_updated": "2026-06-23T08:05:35.629Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 0,
     "tl_setplays_total": 0,
     "tl_set_recent": false,
@@ -25969,25 +24252,15 @@
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 52,
-    "beatport_best_position": 39,
+    "beatport_score": 50,
+    "beatport_best_position": 43,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Tech House"
     ],
     "beatport_labels": [
       "Insomniac Records",
-      "Defected",
-      "THRIVE MUSIC",
-      "DRAMA MUSIC",
-      "Pussycat Dolls",
-      "SPINNIN' RECORDS",
-      "Insomniac Music Group",
-      "Good Good Records",
-      "HARD Recs",
-      "Thrive Music/Capitol Records",
-      "Helix Records",
-      "Bite This!"
+      "THRIVE MUSIC"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -26011,7 +24284,7 @@
     "tl_updated": "2026-06-23T08:05:35.632Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 5,
     "tl_setplays_total": 5,
     "tl_set_recent": true,
@@ -26055,34 +24328,18 @@
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5eb5cae8a863816980f7fd1f4e3",
     "ra_slug": "masoncollective",
-    "demand_index": 49,
+    "demand_index": 50,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 42,
-    "beatport_best_position": 47,
+    "beatport_score": 44,
+    "beatport_best_position": 44,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
     ],
     "beatport_labels": [
-      "tszr",
-      "MVSON",
-      "Factory 93 Records",
-      "Nervous Records",
-      "Cuttin' Headz",
-      "Fool's Gold Records",
-      "Insomniac Music Group",
-      "Blackflag Recordings",
-      "V-House Sound",
-      "Take Notes",
-      "Defected",
-      "Cecille",
-      "MOXY MUZIK",
-      "DFTD",
-      "Whippin",
-      "Re:vibe Audio",
-      "Knee Deep In Sound"
+      "tszr"
     ],
     "label_best": "Defected",
     "label_tier": 5,
@@ -26097,8 +24354,8 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_hype_score": 53,
-    "beatport_hype_best": 30,
+    "beatport_hype_score": 54,
+    "beatport_hype_best": 28,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Tech House"
@@ -26109,7 +24366,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.621Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -26201,9 +24458,9 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_hype_score": 53,
+    "beatport_hype_score": 48,
     "beatport_hype_best": 37,
-    "beatport_hype_tracks": 2,
+    "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Tech House"
     ],
@@ -26259,31 +24516,20 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "image": "https://i.scdn.co/image/ab6761610000e5ebebdd74a5194a9d19b666376f",
-    "demand_index": 60,
+    "demand_index": 61,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
-    "beatport_score": 58,
-    "beatport_best_position": 54,
+    "beatport_score": 59,
+    "beatport_best_position": 53,
     "beatport_charting_tracks": 4,
     "beatport_charts": [
       "Tech House",
       "Deep House"
     ],
     "beatport_labels": [
-      "Anjunadeep Explorations",
-      "Get Physical Music",
       "Crosstown Rebels",
-      "Theory X",
-      "Collecting Dots",
-      "Zenon Records",
-      "Anjunadeep",
-      "Moments",
-      "SPINNIN' RECORDS",
-      "Maccabi House",
-      "Magician On Duty",
-      "Street Tracks",
-      "Plattenbank"
+      "Anjunadeep Explorations"
     ],
     "label_best": "Anjunadeep Explorations",
     "label_tier": 5,
@@ -26298,8 +24544,8 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "beatport_hype_score": 51,
-    "beatport_hype_best": 41,
+    "beatport_hype_score": 38,
+    "beatport_hype_best": 62,
     "beatport_hype_tracks": 2,
     "beatport_hype_charts": [
       "Deep House"
@@ -26311,7 +24557,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.632Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -26365,28 +24611,12 @@
       "House"
     ],
     "beatport_labels": [
-      "Nervous Records",
-      "Verve",
-      "Nothing But",
-      "BMG Rights Management (Brazil) Ltda",
-      "BMG Rights Management (UK) Ltd.",
-      "Disorder",
-      "Warner Records",
-      "Cercle Records",
-      "Global Underground",
-      "LW Recordings",
-      "Ninja Tune",
-      "gROWNuPkIDS",
-      "Atlantic Records",
-      "Defected",
-      "Milk \\u0026 Sugar",
-      "CircoLoco Records",
-      "Blackartel"
+      "Nervous Records"
     ],
     "label_best": "Ninja Tune",
     "label_tier": 5,
     "label_score": 100,
-    "demand_index": 63,
+    "demand_index": 64,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -26408,7 +24638,7 @@
     "tl_djs": 0,
     "tl_support_score": 0,
     "tl_updated": "2026-06-23T08:05:35.622Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 0,
@@ -26451,7 +24681,7 @@
     "image": "https://i.scdn.co/image/ab6761610000e5ebbc9d0179e9d2f6ca78a03fe7",
     "spotify_id": "39B7ChWwrWDs7zXlsu3MoP",
     "ra_slug": "sonnyfodera",
-    "demand_index": 58,
+    "demand_index": 57,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -26517,22 +24747,16 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb1c4a89caa76ae4f1d3232f61",
     "spotify_id": "7mC3RkNNTV6p2j9w4F8Ip4",
     "ra_slug": "laytongiordani",
-    "beatport_score": 64,
-    "beatport_best_position": 27,
+    "beatport_score": 63,
+    "beatport_best_position": 30,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Melodic House & Techno",
       "Techno (Peak Time / Driving)"
     ],
     "beatport_labels": [
-      "Drumcode",
-      "MADMINDS",
-      "A State of Trance",
-      "Insomniac Records",
-      "Insomniac Music Group",
-      "Experts Only",
-      "Armada Music Albums",
-      "Defected"
+      "Defected",
+      "Drumcode"
     ],
     "label_best": "Drumcode",
     "label_tier": 5,
@@ -26559,7 +24783,7 @@
     "tl_updated": "2026-06-23T08:05:35.625Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 4,
     "tl_setplays_total": 4,
     "tl_set_recent": true,
@@ -26933,7 +25157,7 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb2744c0aa6cccfab6120ef015",
     "spotify_id": "0HHa7ZJZxUQlg5l2mB0N0f",
     "ra_slug": "marlonhoffstadt",
-    "demand_index": 66,
+    "demand_index": 65,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -26961,16 +25185,7 @@
     "tl_set_recent": true,
     "beatport_artist_id": 211050,
     "beatport_labels": [
-      "A State of Trance",
-      "Capitol Records",
-      "Young",
-      "Smash The House Official",
-      "SM Entertainment",
-      "doof",
-      "Lyfestyle Corporation/Field Trip Recordings/Capitol Records",
-      "EMI Music Australia",
-      "Columbia Local",
-      "Ultra"
+      "Method 808"
     ],
     "label_best": "A State of Trance",
     "label_tier": 2,
@@ -26995,13 +25210,13 @@
       }
     ],
     "artist_labels_updated": "2026-09-07T14:13:27.824Z",
-    "beatport_score": 19,
-    "beatport_best_position": 86,
+    "beatport_score": 15,
+    "beatport_best_position": 93,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "KAS:ST",
@@ -27037,17 +25252,7 @@
     "tl_set_recent": false,
     "youtube_channel_id": "UC4TpV2iGpAmoM5N8eo5XxwA",
     "beatport_artist_id": 576074,
-    "beatport_labels": [
-      "Armada Music",
-      "Flyance Records",
-      "Informa Records",
-      "Cercle Records",
-      "HILOMATIK",
-      "Interstellar Recordings (Insomniac)",
-      "UPPERGROUND",
-      "Afterlife Records",
-      "Sapiens Recordings"
-    ],
+    "beatport_labels": [],
     "label_best": "Afterlife Records",
     "label_tier": 5,
     "label_score": 100,
@@ -27221,38 +25426,19 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb0d8537d57ae20d107b197b27",
     "spotify_id": "6hr0SehcycxwgYfCgVy32M",
     "ra_slug": "jaydelys",
-    "beatport_score": 69,
-    "beatport_best_position": 19,
-    "beatport_charting_tracks": 2,
+    "beatport_score": 58,
+    "beatport_best_position": 21,
+    "beatport_charting_tracks": 1,
     "beatport_charts": [
-      "House",
-      "Minimal / Deep Tech"
+      "House"
     ],
     "beatport_labels": [
-      "Cecille",
-      "tszr",
-      "Black Book Records",
-      "PIV",
-      "elrow Music",
-      "Alternatived Music",
-      "Faces",
-      "Under No Illusion",
-      "Deeperfect",
-      "Criterio Music",
-      "elrow Limited",
-      "Blackflag Recordings",
-      "Paradise",
-      "Klaphouse Records",
-      "Toolroom",
-      "Glasgow Underground",
-      "Flashmob Records",
-      "Toolroom Trax",
-      "Voltaire Music"
+      "Cecille"
     ],
     "label_best": "Black Book Records",
     "label_tier": 4,
     "label_score": 90,
-    "demand_index": 40,
+    "demand_index": 39,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -27272,7 +25458,7 @@
     "tl_djs": 0,
     "tl_support_score": 7,
     "tl_updated": "2026-06-23T08:05:35.631Z",
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
     "tl_setplays_recent": 1,
@@ -27349,19 +25535,7 @@
     "tl_set_recent": false,
     "youtube_channel_id": "UCq22O-P7ovqk1JAxNppqVMA",
     "beatport_artist_id": 1047245,
-    "beatport_labels": [
-      "Technicolour",
-      "LB aka LABAT",
-      "Warehouse Project Records",
-      "Earth's Only Paradise",
-      "bebé recordings",
-      "Disorder",
-      "Planet Strangelove",
-      "CSS",
-      "Misfit Melodies ",
-      "Gallery Recordings",
-      "Astral People Recordings"
-    ],
+    "beatport_labels": [],
     "label_best": "Technicolour",
     "label_tier": 2,
     "label_score": 40,
@@ -27402,19 +25576,7 @@
     "beatport_best_position": null,
     "beatport_charting_tracks": 0,
     "beatport_charts": [],
-    "beatport_labels": [
-      "Unreleased Records",
-      "Cercle Records",
-      "Interstellar Recordings (Insomniac)",
-      "Remind",
-      "Disconnected",
-      "MoBlack Records",
-      "One Seven Music",
-      "Armada Music Albums",
-      "A State of Trance",
-      "DAYS like NIGHTS",
-      "Musical Freedom"
-    ],
+    "beatport_labels": [],
     "label_best": "Armada Music Albums",
     "label_tier": 4,
     "label_score": 80,
@@ -27433,8 +25595,8 @@
       "fee_confidence": "low"
     },
     "wikipedia_title": "Arodes",
-    "beatport_hype_score": 41,
-    "beatport_hype_best": 49,
+    "beatport_hype_score": 45,
+    "beatport_hype_best": 43,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Melodic House & Techno"
@@ -27568,18 +25730,7 @@
       "Melodic House & Techno"
     ],
     "beatport_labels": [
-      "Time Machine Recordings",
-      "Great Blondino",
-      "Magnifik Music",
-      "NEWORLD",
-      "Diynamic",
-      "Mathame",
-      "Afterlife Records",
-      "Exhale",
-      "The End Of Genesys",
-      "Anyma/Interscope Records",
-      "New World",
-      "Siamese"
+      "The End Of Genesys"
     ],
     "label_best": "Diynamic",
     "label_tier": 5,
@@ -27606,7 +25757,7 @@
     "tl_updated": "2026-06-23T08:05:35.631Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 2,
     "tl_setplays_total": 2,
     "tl_set_recent": true,
@@ -27681,11 +25832,7 @@
     "tl_set_recent": false,
     "youtube_channel_id": "UCu6A_Inq4h1-ti0AowLPAtw",
     "beatport_artist_id": 1031062,
-    "beatport_labels": [
-      "Chaste Records",
-      "Solid Grooves Records",
-      "Revival New York"
-    ],
+    "beatport_labels": [],
     "label_best": "Solid Grooves Records",
     "label_tier": 4,
     "label_score": 80,
@@ -27822,22 +25969,7 @@
     "tl_setplays_total": 1,
     "tl_set_recent": true,
     "beatport_artist_id": 1091938,
-    "beatport_labels": [
-      "MADMINDS",
-      "AFFAIRS",
-      "Insomniac Records",
-      "Nervous Records",
-      "tszr",
-      "Experts Only",
-      "ABRA X",
-      "Terminal Underground",
-      "2NIGHT Recordings",
-      "Catch \\u0026 Release",
-      "Hellbent Records",
-      "WRONG.",
-      "Mood Child",
-      "CUFF"
-    ],
+    "beatport_labels": [],
     "label_best": "Insomniac Records",
     "label_tier": 3,
     "label_score": 60,
@@ -27883,19 +26015,9 @@
     ],
     "beatport_labels": [
       "JAMWORX",
-      "Solid Grooves Records",
       "CircoLoco Records",
       "ROSSI.HOME//GRXWN.",
-      "OG Records",
-      "Hot Creations",
-      "BOX RED",
-      "PIV",
-      "Eastenderz",
-      "PUSH",
-      "Airtime Records",
-      "Obvious Records",
-      "OVRDOSE DEEP",
-      "Whippin"
+      "BOX RED"
     ],
     "label_best": "Hot Creations",
     "label_tier": 5,
@@ -27922,7 +26044,7 @@
     "tl_updated": "2026-06-23T08:05:35.627Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 0,
     "tl_setplays_total": 1,
     "tl_set_recent": false,
@@ -28039,16 +26161,14 @@
     "image": "https://i.scdn.co/image/ab6761610000e5ebeaab6c2f430d35bce8b88240",
     "spotify_id": "3BcWcwYXVjvLWHMGKsuvsd",
     "ra_slug": "deanturnley",
-    "beatport_score": 41,
-    "beatport_best_position": 49,
+    "beatport_score": 44,
+    "beatport_best_position": 45,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
     ],
     "beatport_labels": [
-      "ROSSI.HOME//GRXWN.",
-      "Dean Turnley",
-      "Love International"
+      "ROSSI.HOME//GRXWN."
     ],
     "label_best": "ROSSI.HOME//GRXWN.",
     "label_tier": 2,
@@ -28076,7 +26196,7 @@
     "tl_updated": "2026-06-23T08:05:35.631Z",
     "tl_chart_now": null,
     "tl_chart_recent": false,
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "tl_setplays_recent": 3,
     "tl_setplays_total": 3,
     "tl_set_recent": true,
@@ -28195,13 +26315,7 @@
     "beatport_best_position": null,
     "beatport_charting_tracks": 0,
     "beatport_charts": [],
-    "beatport_labels": [
-      "7CULT",
-      "RCA Local",
-      "Right Hand Music Group, LLC/RCA Records",
-      "7Cult/B1 Recordings",
-      "Members Media"
-    ],
+    "beatport_labels": [],
     "label_best": "7CULT",
     "label_tier": 2,
     "label_score": 40,
@@ -28274,8 +26388,8 @@
       "EDC"
     ],
     "emerging": true,
-    "beatport_score": 41,
-    "beatport_best_position": 49,
+    "beatport_score": 46,
+    "beatport_best_position": 41,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Deep House"
@@ -28283,7 +26397,7 @@
     "beatport_labels": [
       "Columbia/B1 Recordings"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "booking_fee": {
       "label": "£8K–£18K",
       "mid": 12000,
@@ -28293,7 +26407,7 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "demand_index": 64,
+    "demand_index": 65,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -28530,7 +26644,7 @@
     "beatport_charts": [
       "House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z"
+    "beatport_updated": "2026-09-08T12:43:16.878Z"
   },
   {
     "name": "ARTBAT",
@@ -28575,7 +26689,7 @@
       "EMI Music Australia",
       "Embassy One"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_hype_score": 11,
     "beatport_hype_best": 100,
     "beatport_hype_tracks": 1,
@@ -28698,8 +26812,8 @@
     "tl_setplays_total": 0,
     "tl_set_recent": false,
     "tl_updated": "2026-06-23T08:05:35.620Z",
-    "beatport_score": 57,
-    "beatport_best_position": 23,
+    "beatport_score": 56,
+    "beatport_best_position": 24,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Tech House"
@@ -28707,7 +26821,7 @@
     "beatport_labels": [
       "Ultra"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_artist_id": 497288,
     "label_best": "Defected",
     "label_tier": 5,
@@ -28728,8 +26842,8 @@
       }
     ],
     "artist_labels_updated": "2026-08-20T08:29:57.700Z",
-    "beatport_hype_score": 26,
-    "beatport_hype_best": 75,
+    "beatport_hype_score": 21,
+    "beatport_hype_best": 83,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Deep House"
@@ -28836,8 +26950,8 @@
     "tl_setplays_total": 4,
     "tl_set_recent": true,
     "tl_updated": "2026-06-23T08:05:35.618Z",
-    "beatport_score": 86,
-    "beatport_best_position": 7,
+    "beatport_score": 88,
+    "beatport_best_position": 5,
     "beatport_charting_tracks": 6,
     "beatport_charts": [
       "Melodic House & Techno"
@@ -28849,7 +26963,7 @@
       "Afterlife Records",
       "The End Of Genesys"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_artist_id": 8642,
     "label_best": "Afterlife Records",
     "label_tier": 5,
@@ -29146,7 +27260,7 @@
     "youtube_channel_id": "UCn9fKDkQ9eilxMX5AzcSKdQ",
     "emerging": false,
     "image": "https://cdn-images.dzcdn.net/images/artist/13de7d0a1369e91156b7c66f56d27eac/1000x1000-000000-80-0-0.jpg",
-    "demand_index": 52,
+    "demand_index": 51,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -29182,15 +27296,15 @@
       }
     ],
     "artist_labels_updated": "2026-08-20T08:30:19.234Z",
-    "beatport_score": 34,
-    "beatport_best_position": 61,
+    "beatport_score": 32,
+    "beatport_best_position": 65,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Afro House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
-    "beatport_hype_score": 62,
-    "beatport_hype_best": 15,
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
+    "beatport_hype_score": 60,
+    "beatport_hype_best": 18,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Afro House"
@@ -29286,7 +27400,7 @@
     "beatport_labels": [
       "8Bit"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_artist_id": 1528597,
     "label_best": "Purple Condor Records",
     "label_tier": 2,
@@ -29338,8 +27452,8 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "youtube_channel_id": "UC_0Rsbn9hBa4S1EIh_hVXCA",
-    "beatport_score": 58,
-    "beatport_best_position": 21,
+    "beatport_score": 57,
+    "beatport_best_position": 22,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
@@ -29347,9 +27461,9 @@
     "beatport_labels": [
       "Defected"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
-    "beatport_hype_score": 33,
-    "beatport_hype_best": 62,
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
+    "beatport_hype_score": 30,
+    "beatport_hype_best": 67,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "House"
@@ -29405,17 +27519,16 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "youtube_channel_id": "UCXB8JrqhJyTaHzPwTjGfRyA",
-    "beatport_score": 41,
-    "beatport_best_position": 66,
-    "beatport_charting_tracks": 2,
+    "beatport_score": 35,
+    "beatport_best_position": 60,
+    "beatport_charting_tracks": 1,
     "beatport_charts": [
-      "House",
       "Afro House"
     ],
     "beatport_labels": [
       "NO ART"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_artist_id": 1285275,
     "label_best": "NO ART",
     "label_tier": 4,
@@ -29447,7 +27560,7 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "demand_index": 24,
+    "demand_index": 23,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -29477,7 +27590,7 @@
       "Yoshitoshi Recordings",
       "Lost Miracle"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_artist_id": 4618,
     "label_best": "Global Underground",
     "label_tier": 2,
@@ -29530,8 +27643,8 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "youtube_channel_id": "UCSbWrx8T1J7F_itOzfVAiSw",
-    "beatport_score": 68,
-    "beatport_best_position": 38,
+    "beatport_score": 69,
+    "beatport_best_position": 36,
     "beatport_charting_tracks": 3,
     "beatport_charts": [
       "Tech House",
@@ -29543,7 +27656,7 @@
       "HIGH CEILINGS",
       "Cecille"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_artist_id": 586621,
     "label_best": "Solid Grooves Records",
     "label_tier": 4,
@@ -29596,17 +27709,16 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "youtube_channel_id": "UChHRP3dlwU-1XtdW3NXAViQ",
-    "beatport_score": 27,
-    "beatport_best_position": 81,
-    "beatport_charting_tracks": 2,
+    "beatport_score": 20,
+    "beatport_best_position": 84,
+    "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
     ],
     "beatport_labels": [
-      "Lapsus Music",
-      "LTF Records"
+      "Lapsus Music"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_hype_score": 73,
     "beatport_hype_best": 13,
     "beatport_hype_tracks": 3,
@@ -29645,7 +27757,7 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "demand_index": 37,
+    "demand_index": 36,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -29665,9 +27777,9 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "youtube_channel_id": "UCFDg3MJ_rbqJSNGbwQdcUeg",
-    "beatport_score": 91,
-    "beatport_best_position": 7,
-    "beatport_charting_tracks": 7,
+    "beatport_score": 92,
+    "beatport_best_position": 6,
+    "beatport_charting_tracks": 6,
     "beatport_charts": [
       "Deep House",
       "Progressive House"
@@ -29676,13 +27788,12 @@
       "Narratives",
       "Selador",
       "Closure",
-      "Sudbeat Music",
-      "UV"
+      "Sudbeat Music"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_hype_score": 95,
     "beatport_hype_best": 1,
-    "beatport_hype_tracks": 6,
+    "beatport_hype_tracks": 7,
     "beatport_hype_charts": [
       "Deep House",
       "Progressive House"
@@ -29738,12 +27849,16 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "youtube_channel_id": "UCzr4BoxeY8wKi182O1Tipkw",
-    "beatport_score": 0,
-    "beatport_best_position": null,
-    "beatport_charting_tracks": 0,
-    "beatport_charts": [],
-    "beatport_labels": [],
-    "beatport_updated": "2026-08-21T08:30:01.770Z",
+    "beatport_score": 15,
+    "beatport_best_position": 92,
+    "beatport_charting_tracks": 1,
+    "beatport_charts": [
+      "Organic House / Downtempo"
+    ],
+    "beatport_labels": [
+      "Lost Miracle"
+    ],
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_artist_id": 1313016,
     "label_best": "Lost Miracle",
     "label_tier": 2,
@@ -29774,7 +27889,7 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "demand_index": 61,
+    "demand_index": 39,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -29915,8 +28030,8 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "youtube_channel_id": "UC9YnCynx7RFIwp1wcKMD5gg",
-    "beatport_score": 55,
-    "beatport_best_position": 26,
+    "beatport_score": 54,
+    "beatport_best_position": 28,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
@@ -29924,7 +28039,7 @@
     "beatport_labels": [
       "Diynamic"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_artist_id": 1008902,
     "label_best": "Diynamic",
     "label_tier": 5,
@@ -29977,8 +28092,8 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "youtube_channel_id": "UCU-9aBTeP3pJVutFppAr4Ng",
-    "beatport_score": 61,
-    "beatport_best_position": 32,
+    "beatport_score": 67,
+    "beatport_best_position": 23,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Minimal / Deep Tech",
@@ -29988,7 +28103,7 @@
       "Solid Grooves Records",
       "Cecille"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_artist_id": 642183,
     "label_best": "Defected",
     "label_tier": 5,
@@ -30021,7 +28136,7 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "demand_index": 53,
+    "demand_index": 54,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -30041,8 +28156,8 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "youtube_channel_id": "UCysoUImmxH0QUL_1EURltXg",
-    "beatport_score": 50,
-    "beatport_best_position": 42,
+    "beatport_score": 55,
+    "beatport_best_position": 34,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Deep House"
@@ -30051,7 +28166,7 @@
       "Rose Avenue/Reprise",
       "Maccabi House"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_artist_id": 790101,
     "label_best": "Crosstown Rebels",
     "label_tier": 5,
@@ -30083,7 +28198,7 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "demand_index": 59,
+    "demand_index": 60,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -30103,8 +28218,8 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "youtube_channel_id": "UCUmsKvRACPGL77BPjdnlo2g",
-    "beatport_score": 59,
-    "beatport_best_position": 20,
+    "beatport_score": 57,
+    "beatport_best_position": 22,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Tech House"
@@ -30112,7 +28227,7 @@
     "beatport_labels": [
       "TH3RD BRAIN"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_artist_id": 336304,
     "label_best": "Armada Music",
     "label_tier": 4,
@@ -30222,7 +28337,7 @@
     "source": "beatport-discovery",
     "youtube_channel_id": "UCYEK6xds6eo-3tr4xRdflmQ",
     "beatport_score": 48,
-    "beatport_best_position": 55,
+    "beatport_best_position": 54,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Melodic House & Techno",
@@ -30232,7 +28347,7 @@
       "mau5trap",
       "mau5trap Recordings Limited / Arkade / Epicwin Ltd."
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_artist_id": 26182,
     "label_best": "mau5trap",
     "label_tier": 5,
@@ -30285,8 +28400,8 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "youtube_channel_id": "UCgZJvivOYKk0jrx8e70Nq1A",
-    "beatport_score": 50,
-    "beatport_best_position": 35,
+    "beatport_score": 46,
+    "beatport_best_position": 41,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "House"
@@ -30294,7 +28409,7 @@
     "beatport_labels": [
       "Scenarios"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_hype_score": 83,
     "beatport_hype_best": 5,
     "beatport_hype_tracks": 3,
@@ -30333,7 +28448,7 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "demand_index": 47,
+    "demand_index": 46,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -30353,19 +28468,19 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "youtube_channel_id": "UCYPoo7YjRMYU5iEj_G9zsjg",
-    "beatport_score": 40,
-    "beatport_best_position": 59,
+    "beatport_score": 41,
+    "beatport_best_position": 57,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "Tech House"
     ],
     "beatport_labels": [
-      "COCO",
-      "range."
+      "range.",
+      "COCO"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_hype_score": 83,
-    "beatport_hype_best": 13,
+    "beatport_hype_best": 12,
     "beatport_hype_tracks": 4,
     "beatport_hype_charts": [
       "House",
@@ -30413,8 +28528,8 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "youtube_channel_id": "UCVWkCw8uMIg90CyE40LrMRA",
-    "beatport_score": 54,
-    "beatport_best_position": 28,
+    "beatport_score": 51,
+    "beatport_best_position": 33,
     "beatport_charting_tracks": 1,
     "beatport_charts": [
       "Indie Dance"
@@ -30422,9 +28537,9 @@
     "beatport_labels": [
       "Beat Boutique"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
-    "beatport_hype_score": 65,
-    "beatport_hype_best": 9,
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
+    "beatport_hype_score": 64,
+    "beatport_hype_best": 11,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Indie Dance"
@@ -30472,7 +28587,7 @@
     "source": "beatport-discovery",
     "youtube_channel_id": "UCjxIeuusyiMcPuALvWzz7Fw",
     "beatport_score": 63,
-    "beatport_best_position": 29,
+    "beatport_best_position": 30,
     "beatport_charting_tracks": 2,
     "beatport_charts": [
       "House",
@@ -30482,7 +28597,7 @@
       "ROSSI.HOME//GRXWN.",
       "range."
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_hype_score": 81,
     "beatport_hype_best": 7,
     "beatport_hype_tracks": 3,
@@ -30531,31 +28646,14 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "youtube_channel_id": "UCjJdSg6sUd0QMxgrLcv8rpg",
-    "beatport_score": 17,
-    "beatport_best_position": 90,
-    "beatport_charting_tracks": 1,
-    "beatport_charts": [
-      "House"
-    ],
-    "beatport_labels": [
-      "Fool's Paradise",
-      "Flamenca Records",
-      "Armada Music",
-      "Queen House Music",
-      "Toolroom",
-      "Golden Recordings",
-      "Milk \\u0026 Sugar",
-      "KISM Recordings",
-      "d:vision",
-      "BMG Rights Management (UK) Ltd.",
-      "Toolroom Trax",
-      "Crown Recordings",
-      "Revival Records Ltd",
-      "Armada Subjekt"
-    ],
+    "beatport_score": 0,
+    "beatport_best_position": null,
+    "beatport_charting_tracks": 0,
+    "beatport_charts": [],
+    "beatport_labels": [],
     "beatport_updated": "2026-08-25T08:30:45.042Z",
     "beatport_hype_score": 38,
-    "beatport_hype_best": 55,
+    "beatport_hype_best": 54,
     "beatport_hype_tracks": 1,
     "beatport_hype_charts": [
       "Afro House"
@@ -30592,7 +28690,7 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "demand_index": 43,
+    "demand_index": 50,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -30603,9 +28701,9 @@
     "manual_scene_score": 50,
     "source": "beatport-discovery",
     "youtube_channel_id": "UC1rp-0aiOtcW2ffk6AsT4yw",
-    "beatport_score": 77,
-    "beatport_best_position": 23,
-    "beatport_charting_tracks": 4,
+    "beatport_score": 85,
+    "beatport_best_position": 17,
+    "beatport_charting_tracks": 5,
     "beatport_charts": [
       "Melodic House & Techno",
       "Techno (Peak Time / Driving)"
@@ -30614,9 +28712,10 @@
       "MADMINDS",
       "Kinetica Records",
       "Drumcode",
-      "BROKE / BLACKLIZT SOUND SYNDICATE"
+      "BROKE / BLACKLIZT SOUND SYNDICATE",
+      "Arcane Music"
     ],
-    "beatport_updated": "2026-09-07T14:05:09.436Z",
+    "beatport_updated": "2026-09-08T12:43:16.878Z",
     "beatport_artist_id": 862283,
     "label_best": "Drumcode",
     "label_tier": 5,
@@ -30648,7 +28747,7 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "demand_index": 46,
+    "demand_index": 48,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -31321,5 +29420,10 @@
     "source": "beatport-discovery",
     "spotify_id": "7scXA3hBD8JyGGajVR9q9l",
     "image": "https://i.scdn.co/image/ab6761610000e5eb296467ee9912d55e4096fcad"
+  },
+  {
+    "name": "Fioretti",
+    "manual_scene_score": 50,
+    "source": "beatport-discovery"
   }
 ]
