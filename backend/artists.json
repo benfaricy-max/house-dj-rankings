@@ -4291,7 +4291,7 @@
     "trends_mom_12w": -6.2,
     "wikipedia_title": "Riordan",
     "ra_slug": "riordan",
-    "demand_index": 59,
+    "demand_index": 60,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -26051,7 +26051,7 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb2744c0aa6cccfab6120ef015",
     "spotify_id": "0HHa7ZJZxUQlg5l2mB0N0f",
     "ra_slug": "marlonhoffstadt",
-    "demand_index": 65,
+    "demand_index": 64,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -28753,7 +28753,7 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "demand_index": 60,
+    "demand_index": 59,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -29304,7 +29304,7 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "demand_index": 61,
+    "demand_index": 60,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -29498,7 +29498,7 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "demand_index": 49,
+    "demand_index": 48,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -30782,16 +30782,22 @@
   {
     "name": "Aitor Astiz",
     "manual_scene_score": 50,
-    "source": "beatport-discovery"
+    "source": "beatport-discovery",
+    "spotify_id": "2bsLrKmjDykFzFMvA3DaXz",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebaa34355465f2d854b144192c"
   },
   {
     "name": "Jamek Ortega",
     "manual_scene_score": 50,
-    "source": "beatport-discovery"
+    "source": "beatport-discovery",
+    "spotify_id": "0z4954ccQLUdwTHCSMXtem",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb2e855533a7f853e115e95c83"
   },
   {
     "name": "Kevin de Vries",
     "manual_scene_score": 50,
-    "source": "beatport-discovery"
+    "source": "beatport-discovery",
+    "spotify_id": "11aPF3sc8lDWNqPVInm4Zx",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebc691e61a687ca030cfe6985a"
   }
 ]
