@@ -2170,7 +2170,7 @@
     ],
     "trends_mom_12w": 140,
     "ra_slug": "anotr",
-    "demand_index": 73,
+    "demand_index": 74,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -6194,7 +6194,7 @@
     "wikipedia_title": "Hannah Wants",
     "image": "https://cdn-images.dzcdn.net/images/artist/526257ab17ab4487ef8659fee7e6eb59/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "hannahwants",
-    "demand_index": 44,
+    "demand_index": 45,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -17385,7 +17385,7 @@
     "trends_mom_12w": 0,
     "image": "https://cdn-images.dzcdn.net/images/artist/f33ef9727735973921fea1b0bb848590/1000x1000-000000-80-0-0.jpg",
     "ra_slug": "nicholasvanorton",
-    "demand_index": 33,
+    "demand_index": 34,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -25757,7 +25757,7 @@
     "image": "https://i.scdn.co/image/ab6761610000e5eb922cfaf258406578ccb12bcc",
     "spotify_id": "67tgMwUfnmqzYsNAtnP6YJ",
     "ra_slug": "groovearmada",
-    "demand_index": 68,
+    "demand_index": 69,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -27311,7 +27311,7 @@
       "basis": "estimate",
       "fee_confidence": "low"
     },
-    "demand_index": 55,
+    "demand_index": 52,
     "demand_tier": null,
     "value_gap": null,
     "value_signal": null,
@@ -30649,7 +30649,9 @@
   {
     "name": "Danis",
     "manual_scene_score": 50,
-    "source": "beatport-discovery"
+    "source": "beatport-discovery",
+    "spotify_id": "6cumClwwPA5FXheg8ZwVyE",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb0260654b19ef08e66d487d1c"
   },
   {
     "name": "Nick Muir",
@@ -30738,11 +30740,15 @@
   {
     "name": "CHRIS STASSY",
     "manual_scene_score": 50,
-    "source": "beatport-discovery"
+    "source": "beatport-discovery",
+    "spotify_id": "3BxjasMelf9pKaE4f7Y0So",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb4cc3d7f3a3274ecfe6692aa6"
   },
   {
     "name": "N-You-Up",
     "manual_scene_score": 50,
-    "source": "beatport-discovery"
+    "source": "beatport-discovery",
+    "spotify_id": "0XQcADWLrtubMCp5DOXDE7",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb1844141fc0543d0bc91f228b"
   }
 ]
