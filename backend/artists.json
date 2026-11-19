@@ -32616,11 +32616,15 @@
   {
     "name": "Drunken Kong",
     "manual_scene_score": 50,
-    "source": "beatport-discovery"
+    "source": "beatport-discovery",
+    "spotify_id": "2c8K7cdY2IU2jBacPOxYqk",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb04b47dfdcc46f1c8e31e87e2"
   },
   {
     "name": "briqs",
     "manual_scene_score": 50,
-    "source": "beatport-discovery"
+    "source": "beatport-discovery",
+    "spotify_id": "2fimBXXBJgpNOdq7Jk1osw",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb859604abb687391d3b849bbf"
   }
 ]
